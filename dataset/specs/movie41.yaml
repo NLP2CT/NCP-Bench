@@ -1,0 +1,319 @@
+commitments:
+- description: Joe Gillis cannot recognize or reveal Norma Desmond's delusional state
+    before entering the mansion and meeting her (s_0 precedes s_1).
+  id: c_0
+  satisfaction_condition: Player encounters Norma inside the mansion only after Joe’s
+    tire blows out and he enters the property (progress through s_0 then s_1).
+  type: ordering
+  violation_condition: Player reveals Norma’s delusion or confronts her with reality
+    before arriving at the mansion or meeting Norma.
+- description: Norma’s fragile mental state and denial of her fading stardom remain
+    unbroken prior to Joe’s blunt confrontation (from s_1 to s_14).
+  id: c_1
+  satisfaction_condition: Throughout narrative nodes s_1 through s_14, Norma maintains
+    denial and delusion about her current irrelevance and the truth about fan mail.
+  type: invariant
+  violation_condition: Player causes Norma to accept or explicitly acknowledge her
+    lost fame and Max’s deceit before node s_14.
+- description: Joe must become dependent on Norma before the relationship deepens
+    and emotional conflicts arise (s_3 precedes s_5 and s_12).
+  id: c_2
+  satisfaction_condition: Player experiences Joe’s belongings moved and rent paid
+    by Norma before any romantic gift-giving or jealousy events happen.
+  type: ordering
+  violation_condition: Player advances to emotional intimacy or jealousy scenes involving
+    Norma and Joe without establishing Joe’s dependency on Norma.
+- description: Joe’s secret collaboration with Betty and associated emotional triangle
+    cannot develop before Joe’s initial involvement with Norma is firmly established
+    (s_3 precedes s_6 and s_11).
+  id: c_3
+  satisfaction_condition: Player reaches scenes where Joe attends party and works
+    with Betty only after dependency on Norma is established.
+  type: ordering
+  violation_condition: Player introduces Betty-related screenplay collaboration or
+    romantic tension before Joe lives in Norma’s mansion and accepts her support.
+- description: Joe must explicitly confront Norma with the truth about her fading
+    fame and Max’s deceptions before the final shooting incident occurs (before s_15).
+  id: c_4
+  satisfaction_condition: Player triggers Joe’s blunt disclosure to Norma about the
+    false fan mail and her lost stardom during or prior to s_14.
+  type: achievement
+  violation_condition: Player allows Joe to be shot or the narrative to end without
+    this confrontation occurring.
+- description: Norma remains in full delusion and refuses to accept brutal reality
+    after Joe’s death, sustained by Max's intervention (from s_15 to s_16).
+  id: c_5
+  satisfaction_condition: Following Joe's death, Norma maintains hallucination of
+    filming and Max perpetuates her fantasy until police arrive.
+  type: invariant
+  violation_condition: Player causes Norma to recognize Joe’s death or acknowledge
+    her crushed career after the shooting and before or during police arrival.
+- description: The final fantasy scene (Norma’s ‘close-up’) can only occur after Joe’s
+    death and Norma’s descent into full delusion is established (s_15 precedes s_16).
+  id: c_6
+  satisfaction_condition: Player witnesses or triggers Norma’s final speech and take
+    on her ‘close-up’ line only after Joe is confirmed dead in the pool.
+  type: ordering
+  violation_condition: Player skips the shooting event or introduces Norma’s acceptance
+    of reality prior to the final fantasy scene.
+initial_facts:
+- content: Norma Desmond resides in a vast, decaying mansion on Sunset Boulevard.
+  id: f_0
+  negated: false
+- content: Norma Desmond is a forgotten silent-film star living in seclusion.
+  id: f_1
+  negated: false
+- content: The mansion is mostly deserted and filled with memorabilia from Norma's
+    silent film career.
+  id: f_2
+  negated: false
+- content: Max Von Mayerling is Norma's butler and lives in the mansion with her.
+  id: f_3
+  negated: false
+- content: Norma Desmond is isolated from the modern world and clings to her past
+    fame.
+  id: f_4
+  negated: false
+- content: Norma Desmond is in a fragile mental state characterized by denial of her
+    faded stardom.
+  id: f_5
+  negated: false
+- content: Norma Desmond is unaware and unacknowledging of her lost fame and Max’s
+    deceit.
+  id: f_6
+  negated: false
+- content: At t=0, Joe Gillis’s car tire has just blown out near Norma’s mansion.
+  id: f_7
+  negated: false
+- content: Joe Gillis begins to explore Norma’s property from outside the mansion
+    but has not yet met Norma.
+  id: f_8
+  negated: false
+- content: Joe Gillis does not recognize or know about Norma’s delusional state before
+    entering the mansion.
+  id: f_9
+  negated: false
+- content: Joe Gillis does not yet have any belongings inside Norma’s mansion nor
+    is he dependent on her.
+  id: f_10
+  negated: false
+- content: Joe Gillis has no established emotional or romantic connection to Norma
+    Desmond.
+  id: f_11
+  negated: false
+- content: Joe Gillis has not begun collaboration or developed a relationship with
+    Betty Schaefer.
+  id: f_12
+  negated: false
+- content: Norma Desmond has not confronted or acknowledged any truth about her fading
+    stardom or Max’s fabricated fan mail.
+  id: f_13
+  negated: false
+- content: No confrontation or disclosure regarding Norma’s lost fame or Max’s deception
+    has occurred.
+  id: f_14
+  negated: false
+- content: Joe Gillis is alive and safe outside Norma’s mansion.
+  id: f_15
+  negated: false
+- content: Norma Desmond has not attempted suicide or shown any immediate signs of
+    crisis.
+  id: f_16
+  negated: false
+- content: Police are not present at or near Norma Desmond’s mansion.
+  id: f_17
+  negated: false
+- content: Norma Desmond maintains full delusion without knowledge of future events.
+  id: f_18
+  negated: false
+meta:
+  genres: ["Drama", "Film-Noir"]
+  id: movie41
+  player_role: Norma Desmond
+  title: "Sunset Boulevard"
+synopsis: The film opens with the camera tracking down Sunset Boulevard in Los Angeles,
+  California as police cars begin racing down it. The lifeless body of a young man,
+  Joe Gillis floats in the swimming pool of a palatial mansion. As the police begin
+  converging on the house Joe's voice narrates, in flashback style, the events leading
+  up to his own murder. Six months earlier, Joe was down on his luck, unable to find
+  work as a screenwriter, having only made a few undistinguished films in his short
+  career. Broke and on the verge of having his car repossessed, with no other options
+  except a low-paying newspaper job in Ohio, Joe tries to persuade Paramount Pictures
+  producer Sheldrake to buy his most recent script, but fails after script reader
+  Betty Schaefer gives Sheldrake a harsh critique of the script in her summation.
+  Joe then tries unsuccessfully to borrow money from his friends. Fleeing from repossession
+  men in his car, one of Joe's tires blows out in front of a large and seemingly deserted
+  mansion on Sunset. Hiding the car in the garage, he sets out to explore the decaying
+  house, when a woman inside calls to him. Mistaken for the undertaker to a recently
+  deceased pet chimpanzee, he is ushered in by the mysterious butler, Max Von Mayerling.
+  Meeting the woman who owns the house, he recognizes her as long-forgotten silent-film
+  star Norma Desmond. When she learns that he is a writer, she invites him in and
+  asks for his opinion on an immense script she has written for a film about Salome
+  that she hopes will revive her faded acting career. Although Joe finds the script
+  awful, he flatters Norma into hiring him as an editor. Joe is put up in her guest
+  room. The next morning he objects when he sees that Max has moved his belongings
+  to the mansion on Norma's orders, and that she has paid his overdue rent. Though
+  he hates being dependent on her, he accepts the situation and begins living at the
+  mansion, first in a room over the garage, then in the mansion itself. As he works
+  on Norma's script, he comes to see how unaware she is of how her fame has died.
+  She refuses to hear any criticism of her work, and makes him watch her old films
+  in the evenings. Although she still receives fan mail, Joe later learns that Max
+  feeds into Norma's fantasy by sending the letters himself. He explains that Norma's
+  state of mind is fragile, and she has attempted suicide in the past. Over the next
+  few weeks, Norma lavishes attention on Joe and buys him expensive clothing, including
+  a tuxedo for a private New Year's Eve party attended only by the two of them. Horrified
+  to learn that she has fallen in love with him, he tries to let her down gently,
+  but she slaps him and retreats to her room. Joe, thinking his time with her is over,
+  escapes to a party at his friend, assistant director Artie Green's house, where
+  he meets Betty Schaefer again. While still unimpressed with most of his work, she
+  believes a scene in one of his scripts has potential. Joe half-agrees to work on
+  it with her, and calls the house on Sunset to tell Max he is leaving. However, when
+  Max informs him that Norma has attempted suicide with Joe's razor blade, Joe leaves
+  the party and returns to the mansion, where he apologizes to Norma and makes love
+  to her. After a while, Norma considers her script complete, and sends it to Cecil
+  B. DeMille at Paramount and waits for his answer. Not long afterwards, calls from
+  Paramount asking for Norma begin to arrive. They come from an executive named Gordon
+  Cole, and Norma petulantly refuses to speak to anyone other than DeMille himself.
+  Eventually, she has Max drive her and Joe to the studio in her 1929 Isotta Fraschini
+  Tipo 8A, a rare vintage luxury car. While DeMille entertains Norma, many of the
+  older guards, technicians and extras on the set recognize her and welcome her back.
+  Joe and Max, meanwhile, learn that Cole had called because the studio wants to rent
+  her car and has no interest in her script. Max insists that they hide these facts
+  from her. He later confesses to Joe that he was once a respected film director who
+  discovered Norma as a girl, and was also her first husband, and that he now remains
+  as her servant because he cannot bear to leave her. While Norma undergoes a rigorous
+  series of beauty treatments to prepare for her comeback, Joe has secretly begun
+  to work with Betty on a screenplay. Though she is now engaged to Artie, she falls
+  in love with him. Although he likes her, Joe is dismayed at the triangle in which
+  he is now caught. When Norma discovers the script with Betty's name on it, she phones
+  Betty and insinuates what sort of man Joe really is. Joe, hearing her, invites Betty
+  to the mansion to see for herself. When she arrives, he coldly terminates their
+  relationship by letting her believe that he is a gigolo and prefers to live off
+  Norma. After Betty leaves the mansion in tears, Joe begins packing, having decided
+  to return to Ohio. He bluntly informs Norma of the truth - that there will be no
+  comeback, her fan letters come from Max, and she is forgotten. He ignores Norma's
+  threats to shoot herself, and in a fit of passion she shoots him as he leaves, leaving
+  him dead in the pool. The scene returns to the opening. Still narrating, Joe expresses
+  fear over how Norma will be unable to cope with the disgrace, and the discovery
+  of how forgotten she truly is. By the time the police arrive, however, she has slipped
+  into a delusional state of mind, and thinks the news cameras are set-up for a film
+  shoot. To help the police coax her down the stairs, Max plays along with her hallucination
+  that she is on the set of her new film. He verbally sets up the scene for her, and
+  yells "Action!"; Norma dramatically descends her grand staircase. Joe, in voiceover,
+  remarks that life has decided to spare her the pain of that discovery, and that
+  "The dream she had clung to so desperately had enfolded her." Norma makes a short
+  speech at how happy she is to be back making a film, and delivers the film's most
+  famous line——"All right, Mr. DeMille, I'm ready for my close-up."
+trajectory:
+- description: Norma Desmond's vast, decaying mansion on Sunset Boulevard late at
+    night; the atmosphere is eerie and silent except for distant city sounds. Norma,
+    a forgotten silent-film star, lives in seclusion with her devoted butler Max,
+    isolated from the modern world and clinging to past fame.
+  id: s_0
+  key_delta: Introduction of Norma's isolated and deluded environment; arrival of
+    an outsider (Joe) who enters her world, setting the stage for interaction and
+    conflict.
+  trigger_event: Joe Gillis's car breaks down outside the mansion, and he explores
+    the property.
+- description: Inside the mansion, the dimly lit rooms filled with memorabilia of
+    Norma's silent film career; Norma awaits visitors who never come. She mistakes
+    Joe for the undertaker of her pet chimpanzee, showing her detachment from reality.
+  id: s_1
+  key_delta: Joe is brought physically into Norma’s domain; Norma’s fragile mental
+    state and distorted reality become apparent through her behavior and expectations.
+  trigger_event: Max ushers Joe in, introducing him to Norma Desmond.
+- description: Norma proudly presents a large script she has written, filled with
+    grandiose visions for a comeback film about Salome. The mansion remains oppressive
+    and filled with echoes of faded grandeur.
+  id: s_2
+  key_delta: Norma entrusts Joe with her hopes for revival; Joe takes on the role
+    of script editor, becoming involved in Norma's fantasy.
+  trigger_event: Norma asks Joe, as a writer, to read and critique her script.
+- description: Norma’s guest room in the mansion; the atmosphere is both luxurious
+    and claustrophobic. Joe’s belongings are moved in, signaling deeper involvement.
+  id: s_3
+  key_delta: Joe becomes dependent on Norma and effectively trapped within the mansion
+    and her influence.
+  trigger_event: Max moves Joe’s belongings into the mansion and informs him Norma
+    has paid his overdue rent.
+- description: Norma's living room where she makes Joe watch her old silent films
+    nightly; Max supports Norma’s delusions by forging fan letters.
+  id: s_4
+  key_delta: Revealed the extent of Norma's isolation and Max’s role in maintaining
+    her delusion; Joe gains partial insight into the true state of affairs.
+  trigger_event: Joe discovers that Max is fabricating fan mail to sustain Norma’s
+    fantasy.
+- description: Norma lavishes Joe with expensive gifts and attention; the mansion
+    is filled with lavish but empty celebrations between them.
+  id: s_5
+  key_delta: Norma reveals emotional and romantic attachment to Joe, escalating the
+    intimacy and tension between them.
+  trigger_event: Norma buys Joe a tuxedo for a private New Year’s Eve party attended
+    only by them.
+- description: Outside the mansion at a lively party, contrasting the mansion’s gloom;
+    Joe reunites with Betty Schaefer, the studio script reader.
+  id: s_6
+  key_delta: Joe reconnects with the external world and professional opportunities;
+    emotional triangle begins to form.
+  trigger_event: Joe escapes Norma’s mansion to attend a party and meets Betty again.
+- description: Norma’s mansion, after Joe’s return; atmosphere is tense and fragile
+    following Norma’s suicide attempt.
+  id: s_7
+  key_delta: Joe returns to Norma out of guilt and obligation; Norma’s mental instability
+    escalates dangerously.
+  trigger_event: Max informs Joe that Norma attempted suicide using Joe’s razor blade.
+- description: Norma and Joe share intimate moments after her suicide attempt; mansion’s
+    atmosphere mixes passion and deepening despair.
+  id: s_8
+  key_delta: Their relationship deepens physically and emotionally, binding Joe closer
+    to Norma.
+  trigger_event: Joe apologizes and makes love to Norma.
+- description: Norma awaiting Paramount's response in the mansion; anticipation fills
+    the air mixed with tension and hope.
+  id: s_9
+  key_delta: Norma puts her comeback hopes in motion; Joe is further involved in her
+    professional aspirations.
+  trigger_event: Norma sends the completed Salome script to Cecil B. DeMille at Paramount
+    Studios.
+- description: Paramount Studio lot; Norma visits with Joe and Max in a rare vintage
+    car; the studio is busy and modern, contrasting sharply with Norma’s nostalgia.
+  id: s_10
+  key_delta: Norma confronts the reality of the studio’s disinterest in her script;
+    the gap between her fantasy and reality widens.
+  trigger_event: Norma visits Paramount with Max and Joe to meet studio executives.
+- description: Norma undergoing extensive beauty treatments at the mansion; Joe working
+    secretly on a new screenplay with Betty.
+  id: s_11
+  key_delta: Joe pursues independent creative work and emotional connection with Betty,
+    complicating his position.
+  trigger_event: Joe begins collaborating on a script with Betty Schaefer.
+- description: Norma becomes suspicious and jealous; mansion heats with confrontation.
+  id: s_12
+  key_delta: Norma’s jealousy damages Joe’s relationship with Betty and deepens emotional
+    conflicts.
+  trigger_event: Norma calls Betty, insinuating Joe’s exploitation and immorality.
+- description: Betty arrives at the mansion, emotionally distressed; tension peaks
+    inside the decaying mansion.
+  id: s_13
+  key_delta: Joe severs ties with Betty; his duplicity and dependency on Norma become
+    explicit.
+  trigger_event: Joe terminates his relationship with Betty by coldly presenting himself
+    as Norma’s kept man.
+- description: Norma’s mansion, late night; an atmosphere of confrontation and finality.
+  id: s_14
+  key_delta: Norma’s delusions are shattered by Joe’s blunt truth; the relationship
+    fractures irreparably.
+  trigger_event: Joe packs to leave and confronts Norma with the truth about her lost
+    stardom and Max’s deceit.
+- description: Norma’s mansion poolside; cold, bleak, and ominous night scene.
+  id: s_15
+  key_delta: Joe’s death; the ultimate irreversible event that ends their conflict
+    and drama.
+  trigger_event: Norma shoots Joe as he attempts to leave the mansion.
+- description: Police arrive at the mansion to find Joe dead in the pool; Norma remains
+    delusional, believing she is on set filming anew.
+  id: s_16
+  key_delta: Norma is protected from the brutal reality of Joe’s death and her lost
+    career by Max’s intervention; she embraces her final fantasy.
+  trigger_event: Police confront Norma, but Max orchestrates her delusion by pretending
+    it is a film set.

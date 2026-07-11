@@ -1,0 +1,232 @@
+commitments:
+- description: Prevent player from knowing or acting on the fact that Thao is pressured
+    by the gang before catching him attempting to steal the Gran Torino (trigger event
+    s_0).
+  id: c_0
+  satisfaction_condition: Node s_0 (Walt catching Thao stealing) has occurred before
+    any player acknowledgment or action involving gang pressure on Thao.
+  type: ordering
+  violation_condition: Player accesses or acts on knowledge about Thao's gang coercion
+    before s_0 is completed.
+- description: Walt must reject moving to a retirement community and remain living
+    alone with his dog throughout the narrative progression until his death at s_5.
+  id: c_1
+  satisfaction_condition: From s_0 through s_5, Walt does not relocate or permanently
+    leave his house and continuously lives alone with his dog.
+  type: invariant
+  violation_condition: Player forces or causes Walt to move out of his home or abandon
+    living alone prior to s_5.
+- description: Thao can only begin working for Walt after Walt confronts and scares
+    off the gang (s_1), establishing the forced relationship.
+  id: c_2
+  satisfaction_condition: Thao’s work-for-Walt arrangement is only enabled after s_1
+    is achieved.
+  type: ordering
+  violation_condition: Player initiates or triggers Thao working for Walt before Walt
+    confronts the gang and gains their respect.
+- description: The gang’s violent retaliation against the Vang Lor family, including
+    injuring Thao and assaulting his sister, must occur only after Walt escalates
+    his intervention by attacking a gang member (between s_3 and s_4).
+  id: c_3
+  satisfaction_condition: Gang drive-by shooting and sister’s kidnapping occur strictly
+    after s_3 event (Walt attacking gang member) has occurred.
+  type: invariant
+  violation_condition: Gang violence or retaliation against the family occurs before
+    s_3 or without Walt’s intervention.
+- description: Walt’s preparations (buying a suit, haircut, confession) and the act
+    of locking Thao in the basement with the Silver Star must precede Walt’s solo
+    confrontation of the gang (s_4 before s_5).
+  id: c_4
+  satisfaction_condition: Player completes Walt’s personal preparations and basement
+    scene with Thao prior to initiating confrontation leading to Walt’s death.
+  type: ordering
+  violation_condition: Player triggers gang confrontation or Walt’s death before Walt
+    completes these preparations and locks Thao away.
+- description: Walt's confrontation with the gang is carried out unarmed, provoking
+    the gang to shoot him, leading to his death; he never draws a real weapon during
+    this confrontation in s_5.
+  id: c_5
+  satisfaction_condition: During confrontation, Walt simulates drawing a gun but actually
+    has only a lighter, resulting in being shot dead without firing any weapon.
+  type: invariant
+  violation_condition: Player causes Walt to be armed and shoot gang members or fails
+    to provoke gang shooting as designed.
+- description: Thao and Sue’s liberation and arrival at the gang scene with the Gran
+    Torino must occur after Walt’s death (s_5) and before police arrest announcement
+    (s_6).
+  id: c_6
+  satisfaction_condition: Thao and Sue are freed and arrive at gang scene only after
+    s_5 and before s_6 narration proceeds.
+  type: ordering
+  violation_condition: Player frees Thao or arrives at gang scene before Walt’s sacrificial
+    death is completed.
+- description: Walt’s last will must be read posthumously, transferring his house
+    to the church and the Gran Torino to Thao, symbolizing legacy transfer to the
+    community and Thao.
+  id: c_7
+  satisfaction_condition: After Walt’s funeral (s_6), the will is read explicitly
+    specifying these bequests before narrative resolution.
+  type: achievement
+  violation_condition: Player or system bypasses the will reading or alters the intended
+    distribution of Walt’s possessions at the narrative ending.
+- description: The narrative must conclude with the scene of Thao driving the Gran
+    Torino with Walt’s dog Daisy along Lakeshore Drive, symbolizing legacy continuation.
+  id: c_8
+  satisfaction_condition: Final narrative state (s_7) shows Thao driving with Daisy
+    peacefully, marking story resolution.
+  type: achievement
+  violation_condition: Player or system prevents or skips this final scene or replaces
+    it with incongruent outcomes.
+- description: Walt’s emotional isolation and physical symptoms (coughing fits with
+    blood) must persist and remain concealed from family from s_0 up to his death
+    at s_5.
+  id: c_9
+  satisfaction_condition: Throughout s_0 to s_5, Walt’s health issues remain private,
+    and family remain unaware.
+  type: ordering
+  violation_condition: Player actions cause Walt’s health issues to be admitted or
+    exposed to family prior to s_5.
+initial_facts:
+- content: Walt Kowalski lives alone with his dog in his Highland Park Detroit home
+    at t=0.
+  id: f_0
+  negated: false
+- content: Walt Kowalski is recently widowed at t=0.
+  id: f_1
+  negated: false
+- content: Walt Kowalski's neighborhood is predominantly populated by poor Asian immigrants
+    and experiences frequent gang violence at t=0.
+  id: f_2
+  negated: false
+- content: Walt Kowalski is emotionally isolated from his family at t=0.
+  id: f_3
+  negated: false
+- content: Walt Kowalski is suffering from coughing fits, occasionally coughing up
+    blood, but conceals these symptoms from his family at t=0.
+  id: f_4
+  negated: false
+- content: Walt Kowalski has not moved from his home and has rejected any suggestion
+    to move to a retirement community at t=0.
+  id: f_5
+  negated: false
+- content: Walt Kowalski has not yet caught Thao Vang Lor attempting to steal his
+    Ford Gran Torino at t=0.
+  id: f_6
+  negated: false
+- content: Walt Kowalski is unaware of Thao Vang Lor's coercion by a gang at t=0.
+  id: f_7
+  negated: false
+- content: Walt Kowalski has not confronted any gang members or interacted with Thao
+    Vang Lor beyond the initial neighborhood relations at t=0.
+  id: f_8
+  negated: false
+- content: Thao Vang Lor is a member of the Hmong family living next door to Walt
+    Kowalski at t=0.
+  id: f_9
+  negated: false
+- content: Walt Kowalski has a young Catholic priest who attempts to comfort him,
+    but Walt disdains this priest at t=0.
+  id: f_10
+  negated: false
+meta:
+  genres: ["Drama", "Crime"]
+  id: movie98
+  player_role: Walt Kowalski
+  title: "Gran Torino"
+synopsis: Walt Kowalski, a gruff retired Polish American factory worker and war veteran,
+  has recently been widowed after 50 years of marriage. His Highland Park neighborhood
+  in Detroit, formerly populated by working-class white families, is now dominated
+  by poor Asian immigrants, and gang violence is commonplace. Adding to the isolation
+  he feels is the emotional detachment of his family. He rejects a suggestion from
+  one of his sons to move to a retirement community, and lives alone with his dog.
+  Walt suffers from coughing fits, occasionally coughing up blood, but conceals this
+  from his family. A young Catholic priest tries to comfort him, but Walt disdains
+  the young, inexperienced man. The Hmong Vang Lor family reside next door to Walt.
+  Initially, he wants nothing to do with his new neighbors, particularly after he
+  catches Thao Vang Lor, a member of that family, attempting to steal his Ford Gran
+  Torino as a coerced initiation into a Hmong gang run by Thao's cousin, "Spider."
+  The gang is infuriated and attacks Thao, but Walt confronts them with a rifle and
+  chases them off, earning the respect of the Hmong community. As penance, Thao's
+  mother makes him work for Walt, who has him do odd jobs around the neighborhood,
+  and the two form a grudging mutual respect. Walt helps Thao get a job and gives
+  him advice on dating. The gang continues to pressure Thao and again assaults him
+  on his way home from work. Walt sees Thao's injuries and visits the gang members'
+  house where he attacks a gang member. In retaliation, the gang performs a drive-by
+  shooting on the Vang Lor home, injuring Thao, and kidnapping and raping his sister.
+  The next day, Thao seeks Walt's help to exact revenge, who tells him to return later
+  in the afternoon. In the meantime, Walt makes personal preparations——he buys a suit,
+  gets a haircut and makes a confession to Father Janovich. When Thao returns, Walt
+  takes him to the basement and gives him his Silver Star; Walt then locks Thao in
+  his basement and tells him that he has been haunted by the memory of killing an
+  enemy soldier and insists that Thao must never be haunted with the experience of
+  killing another man. Walt then goes to the house of the gang members where they
+  draw their weapons on him. He talks loudly, berating them and drawing the attention
+  of the neighbors. Putting a cigarette in his mouth, he asks for a light; he then
+  puts his hand in his jacket and provocatively pulls it out as if it is a gun, inciting
+  the gang members to shoot and kill him. As he falls to the ground, his hand opens
+  to reveal an army lighter——he was unarmed. Sue frees Thao and they drive to the
+  scene in Walt's Gran Torino. A Hmong police officer tells them the gang will be
+  arrested for murder and imprisoned for a long time. Walt's funeral Mass is celebrated
+  by the young priest, Father Janovich, and attended by his family and many of the
+  Hmong community. Afterward, his last will and testament is read, and to the surprise
+  of his family, Walt leaves them nothing——his house goes to the church and his cherished
+  Gran Torino to Thao. As the film ends, Thao is seen driving the car along Lakeshore
+  Drive with Walt's dog, Daisy.
+trajectory:
+- description: Walt Kowalski lives alone in his Highland Park Detroit home, recently
+    widowed, surrounded by a neighborhood transformed from working-class white families
+    to predominantly poor Asian immigrants with frequent gang violence; Walt is emotionally
+    isolated from his family and conceals his coughing fits, occasionally with blood.
+  id: s_0
+  key_delta: Walt now sees that Thao is acting under gang pressure, and his intervention
+    makes him newly visible to the Hmong family next door.
+  trigger_event: Walt catches Thao attempting to steal his Ford Gran Torino.
+- description: After catching Thao trying to steal his car, Walt confronts and scares
+    off the gang members who typically coerce Thao, earning respect from the Hmong
+    community.
+  id: s_1
+  key_delta: Thao begins working for Walt, establishing a forced but burgeoning relationship
+    between them.
+  trigger_event: Thao's mother insists Thao work for Walt as penance.
+- description: Thao works for Walt doing odd jobs, and Walt advises Thao about finding
+    employment and managing personal life.
+  id: s_2
+  key_delta: The gang threat intensifies, leaving Thao visibly injured and dependent
+    on Walt’s support.
+  trigger_event: Thao is assaulted again by gang members after work.
+- description: Walt observes Thao's injuries and escalates his intervention by attacking
+    a gang member at their home.
+  id: s_3
+  key_delta: The gang's violent retaliation dramatically raises the stakes, severely
+    impacting the Vang Lor family and pushing Walt toward decisive action.
+  trigger_event: Gang retaliates with a drive-by shooting at the Vang Lor home, injuring
+    Thao and kidnapping and raping his sister.
+- description: Thao seeks Walt’s help to take revenge; Walt prepares himself by purchasing
+    a suit, getting a haircut, and confessing to Father Janovich.
+  id: s_4
+  key_delta: Walt takes symbolic and practical steps to face the gang alone, distancing
+    Thao from violent retaliation and foreshadowing Walt's self-sacrifice.
+  trigger_event: Walt locks Thao in the basement and gives him his Silver Star medal
+    before confronting the gang.
+- description: Walt confronts the gang at their house, provoking them to shoot him
+    by simulating drawing a gun while actually holding only a lighter, resulting in
+    his death.
+  id: s_5
+  key_delta: Walt’s death incapacitates the local gang leadership and enables Thao’s
+    liberation, shifting power away from the gang.
+  trigger_event: Sue frees Thao from captivity and they arrive with the Gran Torino
+    at the gang’s scene.
+- description: Thao and Sue are freed; police inform them gang members will be arrested
+    and imprisoned; Walt's funeral is held, attended by both family and the Hmong
+    community.
+  id: s_6
+  key_delta: Walt’s posthumous actions redistribute his possessions, symbolizing a
+    transfer of legacy and trust to Thao and the community.
+  trigger_event: Walt's last will and testament is read, revealing Walt leaves his
+    house to the church and his Gran Torino to Thao.
+- description: Thao drives Walt’s Gran Torino with Walt’s dog, Daisy, along Lakeshore
+    Drive, embodying the continuation of Walt’s legacy and the bonding between cultures.
+  id: s_7
+  key_delta: Resolution of Walt’s story thread with peaceful legacy transmission and
+    hopeful future implied for Thao.
+  trigger_event: Scene shown of Thao driving the car with Daisy.

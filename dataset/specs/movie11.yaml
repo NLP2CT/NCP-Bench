@@ -1,0 +1,355 @@
+commitments:
+- description: Muntz's initial public disgrace and accusation of fabricating the giant
+    bird skeleton must remain unrefuted until node s_1 is reached to preserve the
+    narrative integrity of his motivation and reputation loss.
+  id: c_0
+  satisfaction_condition: The narrative state fully reflects Muntz's public disgrace
+    as active and undisputed from s_0 up to but not including s_1.
+  type: invariant
+  violation_condition: The system grants player or NPC characters knowledge or confirmation
+    of the giant bird's existence or Muntz's innocence before node s_1 is completed.
+- description: Muntz must solemnly vow to return to Paradise Falls and capture a live
+    specimen to redeem himself, establishing his core motivation and quest central
+    to the narrative.
+  id: c_1
+  satisfaction_condition: Node s_1 is triggered, capturing Muntz's personal commitment
+    and mission to redeem his reputation.
+  type: achievement
+  violation_condition: Narrative progression reaches a state beyond s_1 without Muntz's
+    vow being explicitly made or acknowledged.
+- description: The physical expedition of Muntz to Paradise Falls (s_2) must strictly
+    occur after his vow (s_1), to maintain logical narrative causality.
+  id: c_2
+  satisfaction_condition: Node s_2 occurs strictly after s_1 in the narrative progression.
+  type: ordering
+  violation_condition: The system presents Muntz arriving at or preparing for Paradise
+    Falls expedition (s_2) before the vow (s_1) has been triggered.
+- description: Between s_2 and s_4, Muntz must maintain an active role of hunting
+    the giant bird with his pack of dogs, evidencing increasing obsession but with
+    intact control over his mission.
+  id: c_3
+  satisfaction_condition: Throughout s_2 to s_4, Muntz’s active hunt via dogs and
+    use of technology is undisputed and ongoing without signs of madness.
+  type: invariant
+  violation_condition: The narrative shows Muntz idle, has abandoned hunting, or portrays
+    his dogs disloyal or unorganized before s_4 is reached.
+- description: Muntz's mental instability, paranoia, and violent actions (including
+    eliminating rival explorers) must not appear before s_4 and must be firmly established
+    during and after s_4 to preserve narrative logic of his descent.
+  id: c_4
+  satisfaction_condition: From s_4 onward until s_11, Muntz shows increasing paranoia,
+    violent elimination of rivals, and unstable behavior as core characteristics.
+  type: invariant
+  violation_condition: The player or system attributes violent or paranoid behavior
+    to Muntz before s_4, or reports his destabilization absent the hunting context.
+- description: Muntz must first establish territory near Paradise Falls (s_3, s_4)
+    and be equipped with his pack of dogs before becoming aware of Carl and Russell’s
+    intrusion (s_5).
+  id: c_5
+  satisfaction_condition: The appearance of Carl and Russell near Paradise Falls and
+    Muntz’s awareness (s_5) strictly follows the establishment of his camp and hunting
+    operations (s_3, s_4).
+  type: ordering
+  violation_condition: The narrative depicts Muntz detecting intruders or interacting
+    with them before establishing his base camp or hunting party.
+- description: Muntz's hostility and paranoia must escalate upon learning of the connection
+    between Russell and Kevin (the giant bird) at node s_6, reinforcing his threat
+    perception and behavior.
+  id: c_6
+  satisfaction_condition: Immediately at s_6, Muntz’s hostility and paranoia increase
+    when Russell reveals his friendship with Kevin, triggering defensive and aggressive
+    responses.
+  type: invariant
+  violation_condition: The system allows calm or neutral Muntz reactions to the revelation
+    of Russell's bond with Kevin at or after s_6.
+- description: The narrative must show Muntz pursuing Kevin and the others (s_7) only
+    after escalation of hostility and confirmation that others are after the giant
+    bird (s_6).
+  id: c_7
+  satisfaction_condition: Node s_7 (pursuit and chase) occurs strictly after s_6 has
+    established Muntz’s suspicion and hostility.
+  type: ordering
+  violation_condition: Muntz initiates pursuit and aggression toward Kevin and the
+    group before hearing about Russell’s association with Kevin.
+- description: Muntz’s aggressive tactics, including setting fire beneath Carl’s house
+    to force surrender of Kevin (s_8), must represent an escalation in hostility and
+    must not occur before prior pursuit and conflict is established.
+  id: c_8
+  satisfaction_condition: At node s_8, Muntz commits aggressive actions endangering
+    others, obviously escalating the conflict from prior nodes.
+  type: invariant
+  violation_condition: The system allows fire or destructive aggressive actions from
+    Muntz before pursuit and hostility are established at s_7.
+- description: Kevin must be captured by Muntz (s_9) before any rescue operation starts,
+    ensuring the stakes and motivations for conflict are valid.
+  id: c_9
+  satisfaction_condition: Node s_9 is reached with Kevin in Muntz’s captivity and
+    Carl and Russell regrouping for rescue.
+  type: achievement
+  violation_condition: Narrative progress allows a rescue attempt or reconciliation
+    over Kevin without her having been captured by Muntz.
+- description: Carl’s boarding of Muntz’s dirigible (s_10) to free Russell and Kevin
+    must occur after Muntz’s capture of Kevin (s_9) and before final confrontation
+    (s_11).
+  id: c_10
+  satisfaction_condition: Node s_10 strictly follows s_9 and precedes s_11 in progression.
+  type: ordering
+  violation_condition: Carl attempts or successfully frees Kevin before Muntz has
+    captured her, or after Muntz is dead.
+- description: Muntz’s death (s_11) is a narrative milestone finalizing his threat
+    and enabling resolution of conflict.
+  id: c_11
+  satisfaction_condition: Node s_11 occurs, culminating in Muntz’s fatal accident
+    and removal as antagonist threat.
+  type: achievement
+  violation_condition: The narrative ends or progresses beyond the conflict with Muntz
+    remaining alive and threatening Kevin or other characters.
+- description: Kevin’s safe reunion with her chicks (s_12) must occur only after Muntz’s
+    threat is neutralized (s_11), ensuring resolution is consistent.
+  id: c_12
+  satisfaction_condition: Node s_12 follows s_11, with Kevin safely returned after
+    antagonist defeat.
+  type: ordering
+  violation_condition: Kevin is returned to her family or considered safe while Muntz
+    remains alive and capable of recapture.
+- description: Carl must present Russell with his final merit badge and Ellie’s grape
+    soda badge (s_13), symbolizing narrative closure of Carl’s character arc and bridging
+    generations.
+  id: c_13
+  satisfaction_condition: Node s_13 is reached with the badge presentation ceremony
+    complete before narrative conclusion.
+  type: achievement
+  violation_condition: The story concludes without Carl awarding Russell the final
+    badge and personal token from Ellie.
+- description: Carl’s house must be shown resting peacefully on the cliff overlooking
+    Paradise Falls (s_14), fulfilling the original dream and signaling narrative resolution
+    and closure.
+  id: c_14
+  satisfaction_condition: Node s_14 occurs, depicting the house positioned as promised,
+    symbolizing fulfillment and legacy.
+  type: achievement
+  violation_condition: The narrative concludes without fulfilling or visually signaling
+    the realization of Carl and Ellie’s shared dream house placement.
+initial_facts:
+- content: Charles Muntz is publicly accused of fabricating the giant bird skeleton
+    he claimed to have discovered at Paradise Falls, Venezuela.
+  id: f_0
+  negated: false
+- content: Charles Muntz's reputation is severely damaged and he is publicly disgraced.
+  id: f_1
+  negated: false
+- content: Charles Muntz has not yet made a vow to return to Paradise Falls to capture
+    a live specimen.
+  id: f_2
+  negated: false
+- content: Charles Muntz is present in a grand hall filled with his expedition trophies
+    and the giant bird skeleton.
+  id: f_3
+  negated: false
+- content: Journalists and scientific peers are gathered to witness the exhibition
+    of Muntz's findings.
+  id: f_4
+  negated: false
+- content: Charles Muntz is aware of the public inquiry challenging his giant bird
+    skeleton.
+  id: f_5
+  negated: false
+- content: Charles Muntz has not yet begun his expedition to Paradise Falls.
+  id: f_6
+  negated: false
+- content: Charles Muntz has not yet established a base camp near Paradise Falls or
+    assembled his pack of dogs.
+  id: f_7
+  negated: false
+- content: Charles Muntz has not yet shown signs of mental instability, paranoia,
+    or violent behavior.
+  id: f_8
+  negated: false
+- content: Charles Muntz is not yet aware of Carl Fredricksen, Russell, or the giant
+    bird Kevin.
+  id: f_9
+  negated: false
+- content: Charles Muntz has not yet captured Kevin or engaged in any pursuit or conflict.
+  id: f_10
+  negated: false
+- content: No rescue operation or direct confrontation has occurred involving Carl,
+    Russell, Kevin, or Muntz.
+  id: f_11
+  negated: false
+meta:
+  genres: ["Animation", "Adventure"]
+  id: movie11
+  player_role: Charles Muntz
+  title: "Up"
+synopsis: Young Carl Fredricksen is a shy, quiet boy who idolizes renowned explorer
+  Charles F. Muntz. He is saddened to learn, however, that Muntz has been accused
+  of fabricating the skeleton of a giant bird he had claimed to have discovered in
+  Paradise Falls, Venezuela, and was publicly disgraced. Muntz vowed to return to
+  Paradise Falls and not leave until he had captured a specimen alive to clear his
+  name. One day, Carl befriends an energetic and somewhat eccentric tomboy named Ellie,
+  who is also a Muntz fan. She confides to Carl her desire to move her "clubhouse"—an
+  abandoned house in the neighborhood—to a cliff overlooking Paradise Falls, making
+  him promise to help her. Carl and Ellie eventually get married and grow old together
+  in the restored house, working as a toy balloon vendor and a zookeeper, respectively.
+  After being told they are infertile, the two decide to realize their dream of visiting
+  Paradise Falls. They try to save up for the trip, but repeatedly end up spending
+  the money on more pressing needs. Finally, elderly Carl Fredricksen arranges for
+  the trip, but Ellie suddenly becomes ill and dies, leaving him alone. Some time
+  later, Carl is still living in their house, now surrounded by urban development,
+  but he refuses to sell. He ends up injuring a construction worker over damage done
+  to his mailbox. He is evicted from the house by court order due to being deemed
+  a "public menace", and is ordered to move to a retirement home. However, Carl comes
+  up with a scheme to keep his promise to Ellie——he turns his house into a makeshift
+  airship, using thousands of helium balloons to lift it off its foundation. A young
+  member of the "Wilderness Explorers"  named Russell becomes an accidental passenger,
+  having pestered Carl earlier in an attempt to earn his final merit badge, "Assisting
+  the Elderly". After surviving a thunderstorm, the house lands near a large ravine
+  facing Paradise Falls. Carl and Russell harness themselves to the still-buoyant
+  house and begin to walk it around the ravine, hoping to reach the falls before the
+  balloons deflate. They later befriend a tall, colorful flightless bird  trying to
+  reach her chicks, and then a dog named Dug, who wears a special collar that allows
+  him to speak. Carl and Russell encounter a pack of dogs led by Alpha, and are taken
+  to Dug's master, who turns out to be an elderly Charles Muntz. Muntz invites Carl
+  and Russell aboard his dirigible, where he explains that he has spent the years
+  since his disgrace searching Paradise Falls for the giant bird. The time he has
+  spent alone and concentrating only on his mission has made him extremely paranoid,
+  mentally unstable and dangerous. When Russell innocently reveals his friendship
+  with Kevin, Muntz becomes disturbingly hostile and starts showing the flight helmets
+  of explorers whom he has apparently eliminated, believing they were all after the
+  bird. This prompts Carl, Russell, Kevin and Dug to flee, chased by Muntz's dogs.
+  Muntz eventually catches up with them and starts a fire beneath Carl's house, forcing
+  Carl to choose between saving his home or Kevin. Carl rushes to put out the fire,
+  allowing Muntz to take the bird. Carl and Russell eventually reach the falls, but
+  Russell is angry with Carl. Settling into his home, Carl discovers photos of their
+  married life in Ellie's childhood scrapbook and a final note from his wife thanking
+  him for the "adventure" and encouraging him to go on a new one. Reinvigorated, he
+  goes to find Russell, only to see him sailing off on some balloons to rescue Kevin.
+  Because many balloons have popped or deflated from Muntz's attack, Carl is forced
+  to empty the house of furniture so it can lift off again so that Carl can pursue
+  Russell. Russell is captured by Muntz, but Carl boards the dirigible in flight and
+  frees both Russell and Kevin. Muntz pursues them around the airship, finally cornering
+  Dug, Kevin, and Russell inside Carl's tethered house. Carl lures Kevin out through
+  a window and back onto the airship with Dug and Russell clinging to her back, just
+  as Muntz is about to close in; the insane hunter leaps after them, only to snag
+  his foot on some balloon lines and fall to his death. Snapped from its tether, the
+  house descends out of sight through the clouds, which Carl accepts as being for
+  the best. Carl, Russell and Dug reunite Kevin with her chicks, then fly the dirigible
+  back to the city. When Russell's father misses his son's Senior Explorer ceremony,
+  Carl proudly presents Russell with his final badge for assisting the elderly, as
+  well as a personal addition——the grape soda cap that Ellie gave to Carl when they
+  first met . Meanwhile, Carl's house is shown to have landed on the cliff beside
+  Paradise Falls, as promised to Ellie. During the credits, a series of photographs
+  shows Carl enjoying his latest adventure——living an active life as a surrogate grandfather
+  to Russell.
+trajectory:
+- description: Charles Muntz is a renowned explorer who has recently arrived in a
+    grand hall filled with his many expedition trophies and the giant bird skeleton
+    he claims to have discovered at Paradise Falls, Venezuela. The atmosphere is celebratory
+    but tense, with journalists and scientific peers gathered to witness the exhibition.
+  id: s_0
+  key_delta: The giant bird skeleton is challenged publicly; Muntz is disgraced and
+    his reputation is severely damaged.
+  trigger_event: A public inquiry is announced that accuses Muntz of fabricating the
+    giant bird skeleton.
+- description: Muntz is isolated in his private study, surrounded by packed expedition
+    gear and maps of Paradise Falls. The once celebrated explorer is now under scrutiny
+    and in personal retreat.
+  id: s_1
+  key_delta: Muntz commits to a personal mission to redeem his reputation by tracking
+    and capturing the giant bird alive.
+  trigger_event: Muntz vows to return to Paradise Falls and capture a live specimen
+    to prove the bird's existence and clear his name.
+- description: At his home base, Muntz prepares his dirigible and equipment for a
+    new expedition to Paradise Falls. The workshop and airship are outfitted with
+    technology for capturing wildlife.
+  id: s_2
+  key_delta: Muntz physically relocates to the site of his quest, leaving behind society
+    and entering the field.
+  trigger_event: Muntz embarks alone on his journey back to Paradise Falls.
+- description: Muntz has established a base camp near Paradise Falls, with a group
+    of highly trained dogs, including Alpha, acting as his loyal followers. The environment
+    is dense jungle and misty cliffs.
+  id: s_3
+  key_delta: Muntz creates a command structure with his dogs and begins active tracking
+    and hunting of the bird.
+  trigger_event: Muntz releases his dogs to scout for the giant bird and intensifies
+    his hunt.
+- description: Muntz remains isolated in his camp, obsessively studying and waiting
+    for the giant bird, with walls of helmets from previous explorers displayed as
+    grim trophies.
+  id: s_4
+  key_delta: Muntz has become mentally unstable and violent, killing rivals and growing
+    paranoid in his quest.
+  trigger_event: Muntz eliminates perceived rival explorers who approach Paradise
+    Falls, removing threats to his exclusive claim on the giant bird.
+- description: Muntz is aboard his dirigible, his demeanor dark and distrustful, as
+    his dogs surround him with tense loyalty. The dirigible is airborne, patrolling
+    along the cliffs of Paradise Falls.
+  id: s_5
+  key_delta: Muntz is made aware of outsiders in his territory and views them as possible
+    threats to his mission.
+  trigger_event: Muntz encounters Carl Fredricksen and accidentally captured Wilderness
+    Explorer Russell near Paradise Falls aboard the floating house.
+- description: On the dirigible, Muntz confronts Carl and Russell, interrogating them
+    about their intentions and their contact with the colorful giant bird (Kevin).
+    The atmosphere is tense and hostile.
+  id: s_6
+  key_delta: Muntz's hostility and paranoia escalate, confirming his suspicion that
+    others are after the giant bird.
+  trigger_event: Russell reveals his friendship with the giant bird, Kevin.
+- description: Muntz orders his pack of dogs to capture Kevin, Carl, and Russell.
+    The three attempt to flee, moving through the jungle terrain near Paradise Falls.
+  id: s_7
+  key_delta: Open hostility leads to a chase as Muntz seeks to forcibly reclaim the
+    giant bird.
+  trigger_event: Muntz and his dogs launch a pursuit to recapture Kevin and detain
+    Carl and Russell.
+- description: Muntz corners the group near Carl’s airborne house. The setting is
+    precarious with heavy jungle foliage and rocky terrain near the cliffs. Muntz
+    attempts to force Kevin back onto his dirigible.
+  id: s_8
+  key_delta: Muntz’s aggressive tactics endanger Carl’s home, temporarily separating
+    Kevin from her protectors.
+  trigger_event: Muntz sets fire beneath Carl’s house to smoke out Kevin and force
+    surrender.
+- description: Muntz captures Kevin onboard his dirigible after Carl extinguishes
+    the fire and loses immediate control over the bird. Carl and Russell are left
+    on the ground amidst the jungle.
+  id: s_9
+  key_delta: Kevin is now a prisoner of Muntz, raising the stakes for a confrontation.
+  trigger_event: Carl and Russell regroup and plan a rescue operation to reclaim Kevin.
+- description: Muntz flies the dirigible with Kevin captive, maintaining a tight,
+    defensive control over the bird. Carl and Russell pursue him using the now balloon-lifted
+    house.
+  id: s_10
+  key_delta: Carl breaches Muntz’s control, initiating direct confrontation on the
+    airship.
+  trigger_event: Carl boards the dirigible during flight to free Russell and Kevin.
+- description: Muntz corners Carl, Russell, Dug, and Kevin inside the dirigible, becoming
+    increasingly unhinged and desperate to retain the bird.
+  id: s_11
+  key_delta: Muntz dies from a fatal accident; his threat to Kevin and the others
+    is eliminated.
+  trigger_event: Muntz attempts to attack but trips on loose balloon lines and falls
+    to his death.
+- description: Carl, Russell, Dug, and Kevin are free aboard the dirigible, flying
+    away from Paradise Falls toward the city. The atmosphere is calm and hopeful.
+  id: s_12
+  key_delta: Kevin is safely returned to her family; the main conflict over the bird
+    is resolved.
+  trigger_event: They reunite Kevin with her chicks near Paradise Falls.
+- description: Carl presents Russell his final Wilderness Explorer badge in a city
+    ceremony, symbolizing a new bond formed between generations. The environment is
+    urban, with celebratory atmosphere.
+  id: s_13
+  key_delta: Carl fulfills his promise to Ellie by embracing a new life role and connection
+    to Russell.
+  trigger_event: Carl gives Russell both the final merit badge and Ellie’s grape soda
+    badge.
+- description: Carl’s house is shown resting peacefully on the cliff overlooking Paradise
+    Falls, fulfilling the original dream he shared with Ellie. The scene is serene
+    and triumphant.
+  id: s_14
+  key_delta: Carl's house now stands at Paradise Falls, confirming that he has fulfilled
+    the dream he shared with Ellie.
+  trigger_event: The house becomes a symbol of fulfilled promises and new beginnings.

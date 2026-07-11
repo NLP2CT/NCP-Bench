@@ -1,0 +1,448 @@
+commitments:
+- description: Mia's discovery of her royal identity at s_1 must precede any acknowledgment
+    or use of her princess status elsewhere.
+  id: c_0
+  satisfaction_condition: Node s_1 has occurred before any other node where Mia's
+    royal status is publicly or privately acknowledged or acted upon.
+  type: ordering
+  violation_condition: Narrative allows Mia or any NPC to treat Mia as princess or
+    reveal her status before s_1 has occurred.
+- description: Mia's rejection of the princess identity after initial revelation remains
+    consistent until she accepts it at s_19 or later.
+  id: c_1
+  satisfaction_condition: Between s_2 and s_18 (inclusive), Mia explicitly resists
+    or denies fully accepting her role as princess without final commitment.
+  type: invariant
+  violation_condition: Mia acts or decides to fully embrace her princess identity
+    or authority before s_19 is triggered.
+- description: Mia's secret royal identity must only be publicly known after the leak
+    at s_7, not before.
+  id: c_2
+  satisfaction_condition: Public awareness of Mia as crown princess is only revealed
+    at s_7 or afterward.
+  type: ordering
+  violation_condition: Any public or press knowledge of Mia’s princess status occurs
+    before s_7.
+- description: Between s_6 and s_7, Mia's royal identity remains confidential outside
+    the existing family and royal inner circle, with Lilly newly informed directly
+    and Paulo aware through his makeover work under an expectation of confidentiality.
+  id: c_3
+  satisfaction_condition: Between s_6 and s_7, Mia's identity is known only within
+    the established family and royal circle, by Lilly through Mia's disclosure, and
+    by Paulo through his makeover role; no media or broader public awareness exists.
+  type: invariant
+  violation_condition: Any character or media outside the established family and royal
+    circle, Lilly, and Paulo learns Mia's secret before s_7, or Paulo discloses it
+    before the leak event at s_7.
+- description: Mia’s formal princess lessons and lifestyle shift start at s_4 and
+    are not to begin earlier.
+  id: c_4
+  satisfaction_condition: Princess lessons and formal lifestyle elements like limousine
+    and bodyguard appear following s_4 only.
+  type: ordering
+  violation_condition: Mia begins princess lessons or uses royal privileges before
+    s_4.
+- description: Mia’s humiliation and media incidents (s_8, s_12) must not occur before
+    the public leak of her royal identity at s_7.
+  id: c_5
+  satisfaction_condition: Events involving public embarrassment or paparazzi exposure
+    happen only at or after s_7.
+  type: ordering
+  violation_condition: Media or public humiliation related to Mia’s princess status
+    occurs before s_7.
+- description: Legal and reputational consequences of Mia's accident at s_9 are resolved
+    by Queen Clarisse’s intervention at s_10, preventing legal prosecution.
+  id: c_6
+  satisfaction_condition: After s_10, no charges or legal penalties remain pending
+    from the accident event s_9.
+  type: invariant
+  violation_condition: Player causes Mia to be prosecuted or penalized for driving-related
+    charges after s_9 and s_10.
+- description: Mia’s decision to publicly accept the Genovian throne (s_21) must only
+    occur after her receipt of the letter from her father (s_18/s_19).
+  id: c_7
+  satisfaction_condition: Mia publicly accepts the throne at s_21 only if s_18 and
+    s_19 events have occurred, reflecting her resolved decision.
+  type: ordering
+  violation_condition: Mia publicly accepts the throne or commits to the crown before
+    receiving and considering her father’s letter.
+- description: Mia must publicly announce acceptance of the Genovian throne (s_21)
+    to conclude her narrative arc successfully.
+  id: c_8
+  satisfaction_condition: Node s_21 is reached and Mia declares her acceptance of
+    the throne in a public setting.
+  type: achievement
+  violation_condition: The narrative ends or branches off without Mia making a public
+    acceptance declaration of her royal role.
+- description: Mia’s close friendships with Lilly and Michael require active engagement
+    and repair after conflicts triggered around s_16 and s_17 until the ball.
+  id: c_9
+  satisfaction_condition: Between s_16 and s_21, Mia takes actions to restore and
+    maintain trust with Lilly and Michael, including invitations and apologies.
+  type: invariant
+  violation_condition: Mia permanently alienates Lilly or Michael without attempts
+    to reconcile before s_21.
+- description: Mia’s romantic involvement with Michael is permitted only after she
+    publicly accepts her princess role (post s_21).
+  id: c_10
+  satisfaction_condition: The kiss and romantic connection with Michael occur at s_22,
+    which is after Mia accepts her royal status at s_21.
+  type: ordering
+  violation_condition: Romantic actions or expressions between Mia and Michael occur
+    before Mia’s acceptance of her royal role at s_21.
+- description: Queen Clarisse's supportive relationship with Joe develops only after
+    Mia commits to the throne, maintaining appropriate leadership focus.
+  id: c_11
+  satisfaction_condition: Clarisse and Joe’s relationship is only shown developing
+    at s_23 or after.
+  type: invariant
+  violation_condition: The Queen and Joe form a romantic or personal relationship
+    prior to Mia's final decision on the throne.
+- description: Mia’s physical relocation to Genovia with her mother (s_24 and s_25)
+    marks the successful narrative transition into her role as a royal heir.
+  id: c_12
+  satisfaction_condition: Mia boards the plane to Genovia and reflects on her new
+    life, concluding with arrival and welcome to Genovia.
+  type: achievement
+  violation_condition: Narrative concludes without Mia physically transitioning to
+    Genovia or expressing commitment to her new life.
+initial_facts:
+- content: Mia Thermopolis is 15 years old at the story start.
+  id: f_0
+  negated: false
+- content: Mia is a private school sophomore.
+  id: f_1
+  negated: false
+- content: Mia lives with her mother Helen Thermopolis.
+  id: f_2
+  negated: false
+- content: Mia and Helen live in a renovated San Francisco firehouse.
+  id: f_3
+  negated: false
+- content: Mia has a cat named Fat Louie living with her.
+  id: f_4
+  negated: false
+- content: Mia is an average student.
+  id: f_5
+  negated: false
+- content: Mia is extremely unpopular at her school.
+  id: f_6
+  negated: false
+- content: Mia has a crush on Josh Bryant.
+  id: f_7
+  negated: false
+- content: Josh Bryant dates Lana Thomas.
+  id: f_8
+  negated: false
+- content: Mia is seemingly invisible to Josh Bryant and Lana Thomas.
+  id: f_9
+  negated: false
+- content: Mia's closest friends at the story start are Lilly Moscovitz and Lilly's
+    brother Michael.
+  id: f_10
+  negated: false
+- content: Mia does not yet know that her paternal grandmother Queen Clarisse Renaldi
+    is visiting.
+  id: f_11
+  negated: false
+- content: Mia does not yet know about her royal heritage or that she is a princess.
+  id: f_12
+  negated: false
+- content: Mia has not yet met Queen Clarisse Renaldi.
+  id: f_13
+  negated: false
+- content: Mia has not yet received any princess lessons or royal privileges such
+    as a limousine or bodyguard.
+  id: f_14
+  negated: false
+- content: Mia's royal identity is not publicly known.
+  id: f_15
+  negated: false
+- content: Only Mia knows about her current social relationships; no characters know
+    she is a princess.
+  id: f_16
+  negated: false
+- content: Mia has not yet been humiliated publicly or involved in any media incidents.
+  id: f_17
+  negated: false
+- content: Mia has had no accidents or legal incidents related to driving.
+  id: f_18
+  negated: false
+- content: Mia has not yet received any letter or message from her deceased father.
+  id: f_19
+  negated: false
+- content: Mia has not yet accepted or publicly committed to her role as Princess
+    or Genovian throne heir.
+  id: f_20
+  negated: false
+- content: Mia has not expressed any romantic involvement with Michael.
+  id: f_21
+  negated: false
+- content: Queen Clarisse has not initiated princess lessons or formal interactions
+    with Mia.
+  id: f_22
+  negated: false
+- content: Queen Clarisse is present or arriving but Mia is unaware of her intentions.
+  id: f_23
+  negated: false
+- content: Joe, the Queen's head of security, is not yet assigned as Mia’s bodyguard.
+  id: f_24
+  negated: false
+- content: No public or media knowledge exists regarding Mia’s royal status or Genovian
+    heritage.
+  id: f_25
+  negated: false
+- content: Mia's friendships with Lilly and Michael exist currently without tension
+    triggered by royal revelations.
+  id: f_26
+  negated: false
+- content: Mia has not planned to run away or rejected any royal responsibility because
+    she is not yet aware of it.
+  id: f_27
+  negated: false
+meta:
+  genres: ["Comedy", "Family"]
+  id: movie47
+  player_role: Mia Thermopolis
+  title: "The Princess Diaries"
+synopsis: Mia Thermopolis is a 15-year-old private school sophomore who lives with
+  her mother Helen Thermopolis and her cat, Fat Louie, in a renovated San Francisco
+  firehouse. Mia is an average student and extremely unpopular. She is seemingly invisible
+  to her crush, Josh Bryant and his cheerleader girlfriend Lana Thomas. Mia, however,
+  has one best friend——Lilly Moscovitz as well as Lilly's brother Michael. A few weeks
+  before Mia's 16th birthday, Mia learns her paternal grandmother is visiting from
+  Genovia, a small European kingdom. Mia meets her grandmother, Queen Clarisse Renaldi,
+  at the Genovian consulate for the first time in her life. Queen Clarisse explains
+  that the reason she wanted to see her was because of a "life-changing" problem.
+  Mia learns that her father was Crown Prince of Genovia and, due to his recent death,
+  she is now next and sole heir to the Genovian throne. She is shocked to learn that
+  she is in fact a princess and runs away, rejecting the notion. Queen Clarisse visits
+  Mia and Helen and explains that if Mia refuses the throne, Genovia will be without
+  a ruler. She also explains that Mia needs to be presented as their princess at the
+  upcoming Genovian State Dinner. Helen convinces Mia to attend "princess lessons"
+  with the Queen, who tells Mia need not have to make her full decision until the
+  annual Genovian Independence Day ball. The Queen gives Mia a limousine to use as
+  well as her own bodyguard, Joe, the Queen's head of security. Mia begins seeing
+  her grandmother everyday after school for her lessons, which include table manners,
+  dancing, and personal presentation. Mia's frequent absence begins to put Lilly on-edge,
+  and after Mia receives a makeover from Italian hairdresser Paulo, Lilly confronts
+  her and accuses her of trying to be like the popular girls. Mia breaks down and
+  tells Lilly everything, and Mia makes Lilly promise not to tell anyone that she
+  is a princess to avoid a frenzy with the press. The San Francisco Chronicle however
+  learns that Mia is the Genovian Crown Princess after Paulo breaks his confidentiality
+  agreement. Although thoroughly annoyed, Queen Clarisse presses onward and prepares
+  for the State Dinner. Mia attends, but publicly humiliates herself and her grandmother
+  with her clumsiness. While driving with her grandmother back to the Genovian consulate,
+  Mia's car fails on a hill and rams into a cable car loaded with people. No one is
+  hurt, but two nuns call the police. To save Mia a trip to the police station for
+  driving without a license, Queen Clarisse appoints the police man and trolley master
+  to the "Genovian Order of the Rose". The men are so flattered that they drop any
+  charges and give Queen Clarisse and Mia a ride back to the consulate in a police
+  car. Josh Bryant, the popular boy Mia has a crush on, asks her to go with him to
+  the school's annual beach party. She agrees, but Michael and Lilly are both hurt
+  that she blew them off. The beach party spirals out of control when the media learns
+  of Mia's presence. Josh uses her to get his fifteen minutes of fame by publicly
+  kissing Mia, after which Lana and two popular girls trick Mia into undressing in
+  a tent. They remove the tent as she is semi-nude and call the paparazzi. Mia's gym
+  coach shoos off the paparazzi and takes Mia home. Later that night, Mia cries in
+  her mother's arms. The unflattering photos wind up on tabloid covers the following
+  day and Queen Clarisse chides her granddaughter. Joe later reminds Queen Clarisse
+  that although Mia is a princess, she is still a teenager and her granddaughter.
+  To rescue her friendships with Lilly and Michael, Mia apologizes and invites them
+  to the Genovian Independence Day Ball. Mia also publicly humiliates Lana by smearing
+  ice cream on her cheerleader dress at school in front of students and calling her
+  a jerk. Terrified knowing that she must personally and publicly announce her decision,
+  Mia plans to run away. She is stopped when she receives a letter from her father
+  written before his death. Touched by his words, she changes her mind and makes her
+  way to the ball. Her car breaks down but she is taken by Joe, who arrives with a
+  limousine. When they arrive, Mia voices her acceptance of the Genovian throne. She
+  shares her first dance with Michael, who then takes her outside to the consulate's
+  garden where they kiss. Clarisse and Joe are seen holding hands, signifying the
+  start of a relationship. The last scene shows Mia on the plane with Joe and her
+  cat, whose name is Fat Louie. Mia is writing in her diary, explaining that she is
+  moving with her mother to Genovia, and that Lily and Michael will visit her during
+  summer holiday. When Mia looks out of the plane's window, Joe welcomes her to Genovia
+  as she sees the beautiful royal palace and landscape below.
+trajectory:
+- description: Mia Thermopolis, a 15-year-old private school sophomore, lives with
+    her mother Helen and their cat Fat Louie in a renovated San Francisco firehouse.
+    Mia is an average, unpopular student with a crush on Josh Bryant, who dates Lana
+    Thomas. Mia’s close friends are Lilly Moscovitz and Lilly’s brother Michael.
+  id: s_0
+  key_delta: Introduction of Mia's normal life context and social environment; the
+    arrival of Queen Clarisse from Genovia sets up an impending major revelation.
+  trigger_event: Mia receives news that her paternal grandmother, Queen Clarisse Renaldi,
+    is visiting from Genovia.
+- description: Mia meets Queen Clarisse for the first time at the Genovian consulate
+    in San Francisco. The setting is formal and unfamiliar to Mia.
+  id: s_1
+  key_delta: Mia learns about her royal heritage and unexpected responsibility; her
+    identity as a princess is factually revealed, shocking her.
+  trigger_event: Queen Clarisse reveals that Mia's father was the Crown Prince of
+    Genovia and that Mia is now the sole heir to the Genovian throne after his recent
+    death.
+- description: Mia is alone in a familiar urban environment, grappling with the newfound
+    royal information.
+  id: s_2
+  key_delta: Mia actively denies and avoids accepting her royal identity, creating
+    a gap between her reality and the expectations placed on her.
+  trigger_event: Mia runs away, rejecting the notion that she is a princess and next
+    in line to the throne.
+- description: Queen Clarisse visits Mia and her mother Helen at their home, explaining
+    the consequences for Genovia if Mia refuses the throne. The home atmosphere is
+    tense and serious.
+  id: s_3
+  key_delta: Official preparation for Mia’s royal debut begins; Mia is compelled to
+    engage with her princess identity on a public level.
+  trigger_event: Queen Clarisse informs Mia and Helen about the upcoming Genovian
+    State Dinner where Mia must be presented as princess; Helen convinces Mia to attend
+    princess lessons.
+- description: Mia meets Queen Clarisse daily after school at a formal setting for
+    princess lessons, including etiquette, dancing, and personal presentation.
+  id: s_4
+  key_delta: Mia’s lifestyle shifts visibly towards royalty; she gains new resources
+    and responsibilities tied to her princess role.
+  trigger_event: Mia begins her princess lessons with the Queen and receives a limousine
+    and her own bodyguard, Joe.
+- description: Mia’s social environment at school becomes strained as she spends less
+    time with Lilly, who is upset by Mia’s absence.
+  id: s_5
+  key_delta: Tension arises in Mia’s close friendships due to her transformation and
+    changed behavior; trust issues begin to surface.
+  trigger_event: After an Italian hairdresser Paulo gives Mia a makeover, Lilly confronts
+    Mia about changing and trying to be like popular girls.
+- description: Mia confides in Lilly about being a princess and asks her to keep the
+    secret, in a private setting at school or home.
+  id: s_6
+  key_delta: The royal secret enters Mia’s close friendship circle, binding Lilly
+    to secrecy and intensifying the stakes of Mia’s dual life.
+  trigger_event: Mia reveals her royal identity to Lilly and obtains a promise of
+    confidentiality.
+- description: Mia is back in the public eye, with her makeover and royal lessons
+    ongoing, but the private nature of her status is compromised.
+  id: s_7
+  key_delta: The royal secret is leaked to the public, exposing Mia’s identity beyond
+    her control and increasing media attention.
+  trigger_event: Paulo breaks his confidentiality and the San Francisco Chronicle
+    publishes Mia's identity as the Genovian Crown Princess.
+- description: At the Genovian State Dinner, Mia is in a grand, formal setting surrounded
+    by dignitaries but feels out of place.
+  id: s_8
+  key_delta: Mia’s royal debut is marred by social and personal failure; public perception
+    of her readiness and grace as a princess is damaged.
+  trigger_event: Mia attends the State Dinner but publicly humiliates herself and
+    her grandmother with clumsy behavior.
+- description: Driving with Queen Clarisse back from the consulate in a limousine,
+    late afternoon in the city.
+  id: s_9
+  key_delta: An accident occurs involving Mia, creating legal and reputational risk
+    but no physical harm to others.
+  trigger_event: Mia’s car stalls on a hill and accidentally crashes into a cable
+    car packed with people.
+- description: At the scene of the accident with police and witnesses present, including
+    two nuns who call the police.
+  id: s_10
+  key_delta: The potential legal consequences are averted through royal privilege,
+    maintaining Mia’s and her family’s public standing.
+  trigger_event: To avoid police charges for driving without a license, Queen Clarisse
+    appoints the police officer and trolley master to the Genovian Order of the Rose.
+- description: Back at school, Mia's social life is trying to balance her royal obligations
+    and personal relationships.
+  id: s_11
+  key_delta: Mia attempts to maintain normal teenage social interactions despite growing
+    public and royal pressures.
+  trigger_event: Josh Bryant invites Mia to the school’s annual beach party, and she
+    agrees to go.
+- description: At the beach party, the atmosphere is energetic but tense with media
+    presence after Mia’s attendance becomes known.
+  id: s_12
+  key_delta: Mia becomes a media spectacle and victim of humiliation, severely damaging
+    her social standing and personal dignity.
+  trigger_event: Media discovers Mia at the party; Josh kisses her publicly to gain
+    fame; Lana and others trick Mia into being exposed in a tent and call paparazzi.
+- description: Mia is taken from the beach party by her gym coach to her home; evening,
+    a private and somber environment.
+  id: s_13
+  key_delta: Emotional fallout from public embarrassment intensifies, increasing Mia’s
+    vulnerability and isolation.
+  trigger_event: Mia cries in her mother’s arms later that night after the humiliating
+    media event.
+- description: The following day at school and home, media spreads unflattering photos
+    and Queen Clarisse reproaches Mia.
+  id: s_14
+  key_delta: Public scrutiny escalates and Mia faces pressure from her grandmother,
+    deepening internal and external conflicts.
+  trigger_event: Tabloid covers showing humiliating photos are published; Queen Clarisse
+    voices her displeasure.
+- description: Queen Clarisse's security head Joe reminds her of Mia's youth at their
+    residence or office.
+  id: s_15
+  key_delta: Supportive perspective from Joe influences Queen Clarisse’s approach
+    to Mia’s challenges.
+  trigger_event: Joe advocates for empathy towards Mia, citing her age and their family
+    bond.
+- description: Mia seeks to repair her friendships with Lilly and Michael at her home
+    or school.
+  id: s_16
+  key_delta: Mia makes active efforts to restore damaged personal relationships and
+    rebuild trust.
+  trigger_event: Mia apologizes to Lilly and Michael and invites them to the upcoming
+    Genovian Independence Day Ball.
+- description: At school during the day, social standing and peer dynamics are active
+    around Mia.
+  id: s_17
+  key_delta: Mia reasserts herself socially through assertive confrontation, altering
+    peer dynamics.
+  trigger_event: Mia publicly humiliates Lana by smearing ice cream on her cheerleader
+    dress and calls her a jerk in front of students.
+- description: Mia contemplates running away at home; the atmosphere is isolated and
+    tense.
+  id: s_18
+  key_delta: Introduction of a new motivating factor through the letter; possibility
+    of emotional reconciliation and decision change.
+  trigger_event: Mia prepares to flee but is stopped upon receiving a letter from
+    her late father.
+- description: Mia, after reading the letter, is in a more resolved and determined
+    state at home.
+  id: s_19
+  key_delta: Mia commits to accepting her royal role publicly, marking a turning point
+    in her personal growth.
+  trigger_event: Mia changes her mind about running away and decides to attend the
+    Genovian Independence Day Ball.
+- description: En route to the ball, evening, Mia’s car breaks down on the way.
+  id: s_20
+  key_delta: Logistical support re-established; Mia’s entry to the ball is secured
+    by royal assistance.
+  trigger_event: Joe arrives with a limousine to pick up Mia and takes her to the
+    ball.
+- description: At the Genovian Independence Day Ball, a grand formal setting filled
+    with aristocrats and dignitaries.
+  id: s_21
+  key_delta: Mia’s official acceptance of her royal destiny; public acknowledgment
+    of her role as princess and heir.
+  trigger_event: Mia publicly announces her acceptance of the Genovian throne.
+- description: During the ball, Mia shares her first dance with Michael; private garden
+    outside the venue.
+  id: s_22
+  key_delta: Emergence of romantic connection; Mia’s personal life intertwines with
+    her new royal identity.
+  trigger_event: Michael takes Mia outside to the garden, and they share a kiss.
+- description: Clarisse and Joe are nearby at the ball, signifying a warm and supportive
+    adult relationship.
+  id: s_23
+  key_delta: Beginning of a new romantic relationship between Queen Clarisse and Joe,
+    indicating personal growth for secondary characters.
+  trigger_event: Clarisse and Joe are seen holding hands.
+- description: On a plane flying to Genovia; Mia is writing in her diary with Fat
+    Louie the cat and Joe seated nearby.
+  id: s_24
+  key_delta: Transition in setting from San Francisco to Genovia; Mia embraces a new
+    life chapter as a royal heir.
+  trigger_event: Mia reflects in her diary about moving to Genovia with her mother
+    and upcoming visits from Lilly and Michael.
+- description: Looking out the plane window, Mia observes the royal palace and Genovian
+    landscape below as the aircraft descends.
+  id: s_25
+  key_delta: Arrival in Genovia symbolically completes Mia's transformation and entrance
+    into her royal life.
+  trigger_event: Joe welcomes Mia to Genovia as she sees the majestic palace and landscape.

@@ -1,0 +1,356 @@
+commitments:
+- description: 'Frank must not accept to transport more or fewer than the originally
+    agreed number of passengers before resolving any violation of Rule #1.'
+  id: c_0
+  satisfaction_condition: From s_0 until delivery at s_3, Frank only transports the
+    agreed three men; no unauthorized passengers are allowed in the vehicle.
+  type: invariant
+  violation_condition: Player permits transport to proceed with a passenger number
+    different from the agreed three without first addressing or resetting the transport
+    conditions.
+- description: 'Frank cannot accept or agree to modify the original deal once it is
+    set (Rule #1: ''No new deals, when it''s a deal, it''s a deal'').'
+  id: c_1
+  satisfaction_condition: From s_0 through s_3 and continuing at future transport
+    tasks, Frank refuses any offer that changes the terms of an existing transport
+    agreement.
+  type: invariant
+  violation_condition: 'Player actions lead Frank to accept altered terms or additional
+    transport conditions after a deal is confirmed, contradicting Rule #1.'
+- description: 'Frank must not open the package during transport unless an unavoidable
+    emergency justifies it (Rule #3: ''Don''t open the package'' upheld until the
+    flat tire event at s_6).'
+  id: c_2
+  satisfaction_condition: Between s_5 and s_6, the package remains sealed and unopened
+    unless explicitly triggered by the flat tire incident.
+  type: invariant
+  violation_condition: Player opens the package prematurely, outside of the authorized
+    emergency context associated with s_6.
+- description: Frank must discover Lai inside the package (s_6) before any knowledge
+    of her identity or engagement with Wall Street's criminal network is revealed.
+  id: c_3
+  satisfaction_condition: Node s_6 (opening the package and discovering Lai) occurs
+    before s_7 and later nodes involving Lai's background or the trafficking plot.
+  type: ordering
+  violation_condition: Player accesses Lai’s identity, background, or trafficking
+    knowledge before opening the package to discover her physically.
+- description: Frank must be attacked by the briefcase bomb (s_8) before he initiates
+    active hostility toward Wall Street (s_9).
+  id: c_4
+  satisfaction_condition: The briefcase explosion event s_8 occurs prior to s_9 where
+    Frank retaliates against Wall Street.
+  type: ordering
+  violation_condition: Player provokes or initiates hostile actions against Wall Street
+    before the briefcase bomb attack happens.
+- description: 'Frank and Lai must maintain fabricated cover stories during police
+    interrogation (Rule #2: ''No names'' extended to avoid revealing Lai’s true status
+    until necessary).'
+  id: c_5
+  satisfaction_condition: Between s_10 and s_13, Lai and Frank consistently deny or
+    obscure Lai’s true relationship and background to police inquiries.
+  type: invariant
+  violation_condition: Player reveals Lai’s true identity or relationship to Frank
+    prematurely during police questioning prior to s_13.
+- description: Frank and Lai must successfully access and obtain credible intelligence
+    about Wall Street’s human trafficking operation before confronting the traffickers
+    directly.
+  id: c_6
+  satisfaction_condition: By s_12, Lai has hacked police computer records and provided
+    Frank with actionable information about the trafficking operation.
+  type: achievement
+  violation_condition: Player attempts to confront or make legal accusations against
+    Wall Street’s trafficking operation without first obtaining intelligence at s_12.
+- description: Frank must be framed and arrested (s_13) before he escapes custody
+    to directly intervene in the trafficking operation (s_14).
+  id: c_7
+  satisfaction_condition: Node s_13 (arrest) precedes s_14 (escape and intervention).
+  type: ordering
+  violation_condition: Player bypasses arrest and escape steps, directly proceeding
+    to dock intervention without arrest occurring.
+- description: Frank must eliminate Wall Street and neutralize immediate threats before
+    rescuing the trafficking victims, marking the climax of hostile engagement.
+  id: c_8
+  satisfaction_condition: At s_15, Frank kills Wall Street and henchmen; Lai shoots
+    her father, effectively neutralizing key antagonists.
+  type: achievement
+  violation_condition: Player attempts to rescue victims or end the trafficking operation
+    without first eliminating Wall Street and the trafficker leadership.
+- description: The human trafficking victims must be safely rescued as the narrative
+    resolution after defeating the traffickers.
+  id: c_9
+  satisfaction_condition: At s_16, victims are released from shipping containers and
+    assisted by Frank, Lai, and police.
+  type: achievement
+  violation_condition: Player concludes or ends narrative conflict without effecting
+    the rescue of trafficking victims at s_16.
+- description: Player cannot obtain official police clearance or dismissal of suspicion
+    regarding Frank’s role before key evidence patterns unfold and proper investigative
+    steps complete.
+  id: c_10
+  satisfaction_condition: Until s_16, Inspector Tarconi remains suspicious and no
+    official exoneration is granted to Frank.
+  type: invariant
+  violation_condition: Player prematurely clears Frank from suspicion or obtains police
+    exoneration before reaching s_16.
+initial_facts:
+- content: Frank Martin is physically located at his mansion on the French Mediterranean
+    coastline.
+  id: f_0
+  negated: false
+- content: Frank Martin's professional role is a transporter known as 'The Transporter'.
+  id: f_1
+  negated: false
+- content: Frank Martin has an active transport agreement to transport three men and
+    254 kilos from Point A to Point B as of s_0.
+  id: f_2
+  negated: false
+- content: Frank Martin is aware that the agreed number of men to transport is exactly
+    three.
+  id: f_3
+  negated: false
+- content: 'Frank Martin strictly adheres to his four rules including Rule #1 (''No
+    new deals, when it’s a deal, it’s a deal''), Rule #2 (''No names''), Rule #3 (''Don’t
+    open the package''), and Rule #4 (''Never make a promise you can’t keep'').'
+  id: f_4
+  negated: false
+- content: Frank Martin currently transports no unauthorized passengers; no passengers
+    other than the agreed three are in his vehicle.
+  id: f_5
+  negated: false
+- content: Frank Martin has not yet accepted any changes or modifications to the original
+    transport agreement.
+  id: f_6
+  negated: false
+- content: Frank Martin has not yet transported or received any packages other than
+    the current men and cargo agreement.
+  id: f_7
+  negated: false
+- content: Frank Martin does not currently know the identity or contents of any package
+    beyond the cargo of three men and 254 kilos agreed.
+  id: f_8
+  negated: false
+- content: Frank Martin has no suspicion or knowledge related to criminal activities
+    involving the current passengers at s_0.
+  id: f_9
+  negated: false
+- content: Inspector Tarconi has not yet questioned or interacted with Frank Martin
+    regarding any robbery or criminal suspicion.
+  id: f_10
+  negated: false
+- content: Frank Martin has not yet interacted with the character known as Lai or
+    'Wall Street' at s_0.
+  id: f_11
+  negated: false
+- content: Frank Martin does not yet know of any human trafficking operation or any
+    related shipping containers.
+  id: f_12
+  negated: false
+- content: Frank Martin has no current hostility or conflict with Wall Street or any
+    criminal organization.
+  id: f_13
+  negated: false
+- content: Frank Martin has not been attacked or harmed by any bomb or weapon.
+  id: f_14
+  negated: false
+- content: Frank Martin is not under arrest or police custody.
+  id: f_15
+  negated: false
+- content: Frank Martin has not attempted escape from custody.
+  id: f_16
+  negated: false
+- content: Frank Martin has not yet visited or been at Wall Street's residence or
+    offices.
+  id: f_17
+  negated: false
+- content: Frank Martin's vehicle is intact and not destroyed.
+  id: f_18
+  negated: false
+- content: Frank Martin is unaware of any bombing, missile attack or house destruction.
+  id: f_19
+  negated: false
+- content: Frank Martin has no knowledge of Lai’s true identity or existence.
+  id: f_20
+  negated: false
+meta:
+  genres: ["Action", "Thriller"]
+  id: movie08
+  player_role: Frank Martin
+  title: "The Transporter"
+synopsis: 'Frank Martin is a highly skilled driver known only as "The Transporter."
+  The titular character is a former Special Forces officer who, disillusioned with
+  his former leadership and tortured by the memories of his past, now lives on the
+  French Mediterranean coastline with a lucrative "backup" career. He will transport
+  anything, no questions asked, from Point A to Point B, always on time, and he is
+  known as the best in the business. He strictly follows four rules when transporting——Rule
+  #1——"No new deals, when it''s a deal, it''s a deal", Rule #2——"No names", Rule #3——"Don''t
+  open the package", and Rule #4——"Never make a promise you can''t keep". Frank has
+  been hired to transport "Three men, 254 kilos." When not three but four men get
+  into his car, fresh from a bank heist, Frank refuses to move, holding fast to Rule
+  #1. After one gang member is killed by the others, Frank leaves with the remaining
+  robbers. On delivery to their destination, they foist new money on Frank to drive
+  further from the city. He refuses the deal, again adhering to Rule #1. The robbers
+  escape in another car, and Frank leaves. Frank returns to his mansion in the south
+  of France, and he finds out via the news that the gang was caught after crashing
+  their getaway car in a pursuit. Later, local police Inspector Tarconi, who happens
+  to be a close acquaintance, arrives to question Frank about the robbery, since his
+  make and model of car was the same used in the robbery. However, despite his suspicions
+  about Frank''s involvement, Tarconi has no concrete proof about the heist and leaves
+  his Villa. Frank is then hired to deliver a package to an American gangster known
+  only as "Wall Street." During the way, he notices that something is moving in the
+  package, but he refuses to open the bag due to Rule #3. While changing a flat tire
+  on the road in France, he breaks one of his rules and opens the package that was
+  placed into the trunk at Point A. He finds the package is really a woman, and he
+  makes a small hole in the tape over her mouth and gives her a bottle of juice to
+  drink. He delivers the package as promised to Point B. After receiving the package,
+  Wall Street asks Frank to transport a briefcase. Frank reluctantly accepts the job.
+  He takes the briefcase and leaves. On the way, he stops at a gas station to eat
+  and rest for a little while, but the briefcase turns out to be a bomb that destroys
+  Frank''s car in the parking lot but leaves him unharmed. Frank snaps and returns
+  to Wall Street''s residence with a vengeance, dispatching several of his henchmen
+  and then stealing a car to get away, only to find "the package" tied to a chair
+  in the back seat. Later on, he returns to his house, and unties the package who
+  tells him that her name is Lai. The next day, Tarconi arrives. Lai opens the door
+  and claims to be Frank''s new cook. He makes the usual inquiries, producing a scorched
+  license plate, and expressing suspicion that Frank''s "cook" drives a Mercedes.
+  Lai now says she is Frank''s new girlfriend and supports Frank''s alibi with an
+  invented story about how they met. Tarconi leaves with no proof again. However,
+  shortly after he leaves, missiles rain down on Frank''s house, and Frank and Lai
+  are barely able to escape the house into the sewer, swimming away from the house
+  before it completely explodes. At the police station, being questioned about the
+  destruction of Frank''s house, Frank and Lai are able to deflect Tarconi''s questions,
+  and Lai manages to sneak onto Tarconi''s computer to access information on Wall
+  Street. She tells Frank that Wall Street is trafficking two shipping containers
+  full of Chinese people including her own father and family, and is planning to sell
+  them into slavery. Lai and Frank go to Wall Street''s office to find the shipping
+  docket identifying the containers. However, Wall Street reveals that Lai''s family
+  is not in the containers. In fact, her father is the man responsible for the human
+  trafficking. Tarconi, who was following Frank, then arrives at the office. Wall
+  Street and Lai''s father accuse Frank of kidnapping Lai and attempting to blackmail
+  them. Unable to prove otherwise, Tarconi has Frank arrested and locked up in the
+  station. At the station, Frank does his best to explain the situation to Tarconi.
+  Tarconi agrees to abet Frank''s escape as his faux hostage. Frank then tracks the
+  criminals to the docks, where they load the containers onto trucks. However, Frank
+  is spotted and is forced to fight his way through the guards, failing to stop the
+  trucks. He then steals a small airplane and parachutes onto one of the trucks, killing
+  Wall Street and a number of his henchmen. After getting out of the truck, Frank
+  is then ambushed by Lai''s father. However, Frank is saved when Lai shoots her own
+  father. Afterwards, Tarconi arrives with the police and they rescue the people trapped
+  inside the containers, and Frank and Lai help to load them in the ambulances as
+  the film ends.'
+trajectory:
+- description: Frank Martin, known as The Transporter, lives in his mansion on the
+    French Mediterranean coastline working as a professional transporter who follows
+    four strict rules. He is hired to transport 'Three men, 254 kilos' without asking
+    questions.
+  id: s_0
+  key_delta: The initial job is accepted under the Transporter's rules, establishing
+    Frank's neutral, professional role and the start of the central conflict.
+  trigger_event: Frank is hired for the transport job involving three men and a cargo
+    weighing 254 kilos.
+- description: Frank waits with his car to pick up three men as agreed. Instead, four
+    men, freshly involved in a bank heist, get into his car.
+  id: s_1
+  key_delta: 'The agreed terms are breached, challenging Rule #1 directly.'
+  trigger_event: Four men enter Frank's car instead of the expected three.
+- description: After one gang member is killed by another inside the car, Frank continues
+    to drive with the three remaining robbers to the agreed destination.
+  id: s_2
+  key_delta: The passenger count aligns again with the original agreement, resetting
+    transport conditions to the original deal.
+  trigger_event: A violent altercation leads to one gang member's death in the car.
+- description: At the destination, the remaining robbers offer Frank extra money to
+    drive farther, which he refuses, staying loyal to his rules.
+  id: s_3
+  key_delta: 'Frank reinforces his adherence to Rule #1 by refusing to alter the deal.'
+  trigger_event: Robbers insist that Frank drives further with additional payment.
+- description: Frank returns to his mansion, learns from the news that the robbers
+    have been caught after a police chase, and then is questioned by Inspector Tarconi
+    who suspects but cannot prove Frank's involvement.
+  id: s_4
+  key_delta: Frank is implicated by association but remains officially uncharged,
+    creating an environment of suspicion.
+  trigger_event: Inspector Tarconi visits Frank to question him about the robbery
+    involving his car.
+- description: Frank is hired to transport a sealed package to an American gangster
+    known as Wall Street. During transport, he suspects something inside the package
+    is moving but does not open it immediately.
+  id: s_5
+  key_delta: 'The mysterious package introduces a new, unknown variable bound by Rule
+    #3.'
+  trigger_event: Frank receives the sealed package and begins the transport.
+- description: 'While changing a flat tire on the road, Frank breaks Rule #3 and opens
+    the package, discovering a woman inside whom he names Lai.'
+  id: s_6
+  key_delta: The package’s true nature as a captive woman is revealed to Frank.
+  trigger_event: Despite learning Lai is the cargo, Frank decides to complete the
+    delivery and face Wall Street.
+- description: Frank delivers Lai to Wall Street as agreed. Wall Street then hires
+    Frank to transport a briefcase, which Frank accepts reluctantly.
+  id: s_7
+  key_delta: Frank undertakes a new transport job, escalating his involvement with
+    Wall Street.
+  trigger_event: Wall Street requests Frank to transport a briefcase after delivering
+    Lai.
+- description: At a gas station rest stop, Frank places the briefcase down, which
+    suddenly detonates and destroys his car but leaves him physically unharmed.
+  id: s_8
+  key_delta: Frank is attacked via the briefcase bomb, signaling betrayal and initiating
+    open conflict.
+  trigger_event: The briefcase explodes in the parking lot while Frank is at the gas
+    station.
+- description: Frank retaliates by attacking Wall Street’s residence, kills several
+    henchmen, and rescues Lai who was left tied in a car.
+  id: s_9
+  key_delta: Frank becomes actively hostile towards Wall Street and fully assumes
+    a protective role over Lai.
+  trigger_event: Frank invades Wall Street’s estate and frees Lai from captivity.
+- description: Frank and Lai return to his mansion; Lai poses as Frank's cook and
+    then as his girlfriend when questioned by Tarconi, who remains suspicious but
+    unable to prove anything.
+  id: s_10
+  key_delta: Lai integrates into Frank's life under a false identity; suspicion from
+    the police continues.
+  trigger_event: Inspector Tarconi visits Frank’s home and interrogates him about
+    his new companion.
+- description: Missiles strike Frank’s mansion, forcing Frank and Lai to escape through
+    the sewers and causing the mansion to be destroyed.
+  id: s_11
+  key_delta: Frank and Lai lose their safe haven, escalating their danger and vulnerability.
+  trigger_event: An attack involving missiles targets Frank’s home.
+- description: At the police station, Frank and Lai deflect questioning about the
+    mansion’s destruction. Lai hacks into Tarconi’s computer and uncovers Wall Street’s
+    human trafficking operation involving shipping containers.
+  id: s_12
+  key_delta: Frank and Lai gain critical intelligence about Wall Street’s human trafficking
+    enterprise.
+  trigger_event: Lai accesses police computer records during interrogation.
+- description: Frank and Lai attempt to find the shipping docket at Wall Street’s
+    office but learn Lai’s father is the actual trafficker. Wall Street and Lai’s
+    father accuse Frank of kidnapping Lai. Tarconi arrests Frank.
+  id: s_13
+  key_delta: Frank is framed and detained, escalating his legal jeopardy and complicating
+    the conflict.
+  trigger_event: Frank is confronted and arrested at Wall Street’s office during the
+    confrontation.
+- description: Frank convinces Tarconi to help him escape the station as a fake hostage.
+    Frank then locates the docks where the containers are being shipped.
+  id: s_14
+  key_delta: Frank regains freedom and initiates a plan to directly intervene in the
+    trafficking operation.
+  trigger_event: Frank escapes custody with Tarconi’s assistance.
+- description: Frank fights guards at the docks but fails to stop the trucks. He steals
+    a small plane, parachutes onto a truck, kills Wall Street and henchmen, but is
+    ambushed by Lai’s father until Lai shoots her own father.
+  id: s_15
+  key_delta: Wall Street and the human trafficker are eliminated; Lai severes ties
+    with her criminal father.
+  trigger_event: Frank parachutes onto the truck and neutralizes threats; Lai intervenes
+    by shooting her father.
+- description: Police arrive at the docks led by Tarconi; the trafficked people are
+    rescued from the containers. Frank and Lai assist in the rescue and loading them
+    into ambulances as the crisis resolves.
+  id: s_16
+  key_delta: Human trafficking victims are saved and the criminal operation is dismantled,
+    resolving the main conflict.
+  trigger_event: Police secure the docks and begin rescue operations with Frank and
+    Lai’s help.

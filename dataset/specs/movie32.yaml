@@ -1,0 +1,295 @@
+commitments:
+- description: Tommy must be established as a core gangster crew member under Paulie
+    with Henry joining before subsequent joint operations can occur, setting the baseline
+    hierarchy.
+  id: c_0
+  satisfaction_condition: Progression has reached or passed s_0, confirming Tommy's
+    role and Henry's entry into the crew.
+  type: ordering
+  violation_condition: Any narrative logic that allows joint crew actions or operations
+    involving Tommy, Henry, and Jimmy before s_0 is completed.
+- description: Tommy, Henry, and the crew successfully complete the Air France robbery
+    as their first major heist, marking their debut into organized big-time crime.
+  id: c_1
+  satisfaction_condition: Node s_1 is reached and the Air France robbery is executed
+    successfully involving Tommy.
+  type: achievement
+  violation_condition: The narrative contradicts the heist accomplishment or bypasses
+    this milestone before progressing to later heist-related events.
+- description: The crew lifestyle upgrade to high-profile gangster status (Copacabana
+    nights) logically must follow after the Air France heist success.
+  id: c_2
+  satisfaction_condition: Node s_2 is reached only after node s_1, depicting nights
+    at Copacabana after the heist.
+  type: ordering
+  violation_condition: Any depiction of the glamorous Copacabana lifestyle involving
+    Tommy before the Air France heist is completed.
+- description: Tommy is always an aggressive, violent enforcer with a hair-trigger
+    temper throughout his involvement in the crew (s_0 to s_11).
+  id: c_3
+  satisfaction_condition: Throughout nodes s_0 to s_11, Tommy's behavior and decisions
+    consistently reflect aggressive armed robbery and violent temper.
+  type: invariant
+  violation_condition: Any player action or narrative that contradicts Tommy’s established
+    temperament or removes his aggressive enforcement role.
+- description: Tommy’s brutal beating of Billy Batts and the ensuing cover-up must
+    occur in strict sequence before the ideation and execution of further major crimes
+    like drug trade expansions and Lufthansa heist.
+  id: c_4
+  satisfaction_condition: Node s_4 occurs before nodes s_5 through s_11, maintaining
+    logical flow from offense, cover-up, to subsequent consequences.
+  type: ordering
+  violation_condition: Any narrative suggesting later crimes or crew tensions prior
+    to the Billy Batts beating and murder cover-up.
+- description: The murder of Billy Batts and its cover-up remain an unrevoked, core
+    crime logically acknowledged by the gang throughout nodes s_4 to s_11.
+  id: c_5
+  satisfaction_condition: Throughout s_4 to s_11, the murder and disposal of Billy
+    Batts’ body are intact and recognized as an outstanding threat.
+  type: invariant
+  violation_condition: Any system state or narrative where the murder is denied, ignored,
+    or magically erased before Tommy’s death.
+- description: The exhumation and relocation of Billy Batts’ corpse must occur after
+    the initial burial and before the crew’s continued criminal operations progress.
+  id: c_6
+  satisfaction_condition: Node s_6 occurs sequentially after s_5, maintaining logical
+    order of events regarding the corpse.
+  type: ordering
+  violation_condition: Any event implying the exhumation happens before the initial
+    burial or after Tommy’s death.
+- description: Henry and Jimmy’s out-of-Brooklyn collection work in Florida must
+    logically follow the crew’s earlier consolidation and Billy Batts cover-up, while
+    Tommy remains part of the broader crew but not this specific trip.
+  id: c_7
+  satisfaction_condition: Node s_7 follows completion of s_4 through s_6, preserving
+    the later expansion of crew operations beyond Brooklyn without requiring Tommy's
+    presence on the Florida collection trip.
+  type: ordering
+  violation_condition: The Florida collection trip occurs before the Billy Batts
+    murder and cover-up arc is settled, or Tommy is incorrectly depicted as being
+    physically present on that trip.
+- description: Tommy remains free of arrest during the Florida job incident while
+    many associates are arrested, increasing his exposure to law enforcement pressure.
+  id: c_8
+  satisfaction_condition: During and after s_8, Tommy is never incarcerated while
+    others from the crew are imprisoned due to the FBI tipoff.
+  type: invariant
+  violation_condition: Player input or narrative states Tommy was arrested or jailed
+    alongside others during or immediately following the Florida job.
+- description: Tommy joins Henry and Jimmy post-prison release to participate in the
+    drug trade and Lufthansa heist preparations.
+  id: c_9
+  satisfaction_condition: Node s_9 occurs only after s_8 and prison release events
+    have taken place.
+  type: ordering
+  violation_condition: Tommy initiates drug trade or Lufthansa heist participation
+    before crew members’ release from prison.
+- description: Jimmy executes ruthlessly the murder of Lufthansa heist participants
+    disobedient to his orders, causing heightened paranoia impacting Tommy.
+  id: c_10
+  satisfaction_condition: From s_10 onward, the crew recognizes consequences of disobedience
+    including enforced murders as real threats to Tommy and others.
+  type: invariant
+  violation_condition: Any narrative state where the consequences of Jimmy’s ordered
+    killings are negated or dismissed by Tommy or the system.
+- description: Tommy’s death is an inevitable and concluding event due to his past
+    offenses and misjudgment about becoming a made man.
+  id: c_11
+  satisfaction_condition: Node s_11 is reached with Tommy’s death as a narrative endpoint,
+    removing him from active story progression.
+  type: achievement
+  violation_condition: Any attempt to prevent or bypass Tommy’s death, continuing
+    his presence or influence in the crew after s_11.
+initial_facts:
+- content: Tommy DeVito is a young, aggressive armed robber with a hair-trigger temper.
+  id: f_0
+  negated: false
+- content: Tommy DeVito operates in East New York, Brooklyn in 1955.
+  id: f_1
+  negated: false
+- content: Tommy is a core member of the local gangster crew under Paulie Cicero.
+  id: f_2
+  negated: false
+- content: Henry Hill has joined the Lucchese crime family crew and is working alongside
+    Tommy and Jimmy Conway.
+  id: f_3
+  negated: false
+- content: Tommy, Henry, Jimmy, and Paulie Cicero are aware of their membership and
+    roles within the Lucchese crime family crew.
+  id: f_4
+  negated: false
+- content: At time t=0, no major joint crew operations like the Air France robbery
+    have yet occurred.
+  id: f_5
+  negated: false
+- content: Tommy has not yet committed the brutal beating of Billy Batts.
+  id: f_6
+  negated: false
+- content: Tommy has not yet participated in covering up any murders.
+  id: f_7
+  negated: false
+- content: No involvement in out-of-Brooklyn enforcement or collection operations
+    has occurred for Tommy.
+  id: f_8
+  negated: false
+- content: Tommy is free of any recent arrests or incarcerations related to FBI investigations.
+  id: f_9
+  negated: false
+- content: Tommy is unaware of any planned drug trade expansions or participation
+    in the Lufthansa heist.
+  id: f_10
+  negated: false
+- content: Tommy has not yet experienced any threats or consequences from internal
+    crew killings or paranoia.
+  id: f_11
+  negated: false
+- content: Tommy is alive and active within the crew with no foreknowledge of his
+    imminent death.
+  id: f_12
+  negated: false
+meta:
+  genres: ["Crime", "Biography"]
+  id: movie32
+  player_role: Tommy DeVito
+  title: "Goodfellas"
+synopsis: Henry Hill admits, "As far back as I can remember, I always wanted to be
+  a gangster," referring to his idolizing the Lucchese crime family gangsters in his
+  blue-collar, predominantly Italian-American neighborhood in East New York, Brooklyn
+  in 1955. Wanting to be part of something significant, Henry quits school and goes
+  to work for them. His Irish-American father tries to stop Henry after learning of
+  his truancy, but the gangsters threaten the local postal carrier with dire consequences
+  should he deliver any more letters from the school to Henry's house. Henry is able
+  to make a living for himself, and learns the two most important lessons in life——"Never
+  rat on your friends, and always keep your mouth shut," the advice given to him after
+  being acquitted of criminal charges early in his career. Henry is taken under the
+  wing of the local mob capo, Paul "Paulie" Cicero and his associates, Jimmy "The
+  Gent" Conway, who loves hijacking trucks, and Tommy DeVito, an aggressive armed
+  robber with a hair-trigger temper. In late 1967 they commit the Air France Robbery,
+  marking Henry's debut into the big time. Enjoying the perks of their criminal life,
+  they spend most of their nights at the Copacabana with countless women. Henry meets
+  and later marries Karen, a Jewish girl from the Five Towns. Karen is initially troubled
+  by Henry's criminal activities, but is soon seduced by his glamorous lifestyle.
+  When a neighbor assaults her for refusing his advances, Henry pistol-whips him in
+  front of her. She feels aroused by the act, especially when Henry gives her the
+  gun and tells her to hide it. On June 11, 1970, Tommy brutally beats Billy Batts,
+  a mobster with the Gambino crime family, for insulting him about being a shoeshine
+  boy in his younger days. However, Batts was a made man, meaning that he could not
+  be touched without the consent of his Gambino family bosses. Realizing that this
+  was an offense that could get them all killed, Jimmy, Henry, and Tommy need to cover
+  up the murder. They transport the body in the trunk of Henry's car and bury it upstate.
+  Six months later Jimmy learns that the burial site will be developed, forcing them
+  to exhume the decomposing corpse and move it. Henry begins to see a mistress named
+  Janice Rossi, setting her up in an apartment. When Karen finds out, she goes to
+  Janice's apartment building to confront her, but is not let in past the front door.
+  She then confronts Henry, points a revolver at his face, and threatens to kill both
+  of them, demanding to know if he loves Janice. Karen cannot bring herself to kill
+  him and an enraged Henry threatens Karen with the gun and says he has bigger concerns,
+  like being murdered on the streets. Henry goes to live in the apartment with Janice.
+  Paulie soon directs him to return to Karen after completing a job for him; Henry
+  and Jimmy are sent to collect from an indebted gambler in Florida, which they succeed
+  at after beating him. However most of the crew are arrested after being turned in
+  by the gambler's sister, a typist for the FBI. In prison, Henry sells drugs to support
+  his family on the outside. Soon after he is released in 1978, the crew commits the
+  Lufthansa heist at John F. Kennedy International Airport. Despite Paulie's warning
+  to stop, Henry further establishes himself in the drug trade, convincing Tommy and
+  Jimmy to join him. Jimmy has the other participants in the Lufthansa robbery killed
+  after they ignore his command to not immediately buy expensive things with their
+  share of the stolen money. Then Tommy is killed for the murder of Billy Batts, having
+  been fooled into thinking that he is going to be made. By 1980, Henry is a nervous
+  wreck from cocaine use and insomnia, as he tries to organize a drug deal with his
+  associates in Pittsburgh. However, he is caught by narcotics agents and sent to
+  jail. On his release, Karen tells him that she flushed $60,000 worth of cocaine
+  down the toilet to prevent the FBI agents from finding it during their raid, leaving
+  Henry and his family virtually penniless. Feeling Henry betrayed him by dealing
+  drugs, Paulie gives Henry $3,200 and ends his association with him. Henry decides
+  to enroll in the Witness Protection Program after realizing that Jimmy intends to
+  have him killed. Forced out of his gangster life, he now has to face living in the
+  real world——"I'm an average nobody. I get to live the rest of my life like a schnook."
+  Titles explain that Henry was subsequently arrested on drug charges in Seattle,
+  Washington but has been clean since 1987. Paul Cicero died in Fort Worth Federal
+  Prison of respiratory illness in 1988 at 73. Jimmy, as of 1990, was serving a 20-year-to-life
+  sentence in a New York State prison.
+trajectory:
+- description: Tommy DeVito is a young, aggressive armed robber with a hair-trigger
+    temper living in East New York, Brooklyn, 1955. He operates under Paulie Cicero
+    and alongside Jimmy Conway and Henry Hill, surrounded by the local Lucchese crime
+    family gangsters in a blue-collar Italian-American neighborhood.
+  id: s_0
+  key_delta: Tommy is established as a core member of the gangsters' crew, setting
+    the initial hierarchy and alliances within the criminal environment.
+  trigger_event: Henry grows deeper into Paulie's crew as their robberies expand
+    into a stable criminal operation.
+- description: Tommy and the crew have established themselves as successful criminals
+    involved in truck hijacking and armed robberies in Brooklyn.
+  id: s_1
+  key_delta: Tommy and the crew achieve their first major heist, marking their debut
+    into the big time and elevating their criminal stature.
+  trigger_event: Planning and executing the Air France robbery in late 1967.
+- description: Tommy spends nights at the Copacabana with Henry, Jimmy, and others,
+    enjoying the perks of their criminal lifestyle, surrounded by women and luxury.
+  id: s_2
+  key_delta: The crew's lifestyle shifts from street-level crime to high-profile gangster
+    perks, solidifying their high status in the organization.
+  trigger_event: Tommy participates in socializing at the Copacabana following the
+    Air France heist.
+- description: Tommy witnesses Henry's developing personal life as Henry marries Karen
+    and their relationship is shaped by the violent, glamorous gangster culture.
+  id: s_3
+  key_delta: The personal lives of the gangsters become intertwined with violence,
+    demonstrating Tommy's proximity to such events within the crew.
+  trigger_event: Tommy sees Henry pistol-whip a neighbor who assaulted Karen.
+- description: Tensions escalate after Tommy brutally beats Billy Batts, a made man
+    from the Gambino family, creating a dangerous conflict between crime families.
+  id: s_4
+  key_delta: Tommy initiates a grave offense that risks retaliation from the Gambino
+    family, forcing the crew to cover up a murder.
+  trigger_event: Tommy assaults Billy Batts over a personal insult on June 11, 1970.
+- description: Tommy, Henry, and Jimmy transport Billy Batts' body in the trunk of
+    Henry's car and bury it upstate to avoid discovery.
+  id: s_5
+  key_delta: The crew commits murder and undertakes a covert disposal of a body, escalating
+    their criminal actions to fatal violence.
+  trigger_event: The crew moves Billy Batts' corpse to a remote burial site.
+- description: Six months later, the burial site is threatened by development, and
+    Tommy and the crew exhume and relocate the decomposing body.
+  id: s_6
+  key_delta: Tommy participates in the risky act of moving a decomposing corpse, increasing
+    the pressure and risks on the crew.
+  trigger_event: Jimmy discovers the impending development project on the burial site.
+- description: The crew takes on new jobs despite personal tensions; Henry and Jimmy
+    travel to Florida to collect from an indebted gambler while Tommy remains in New
+    York and outside the specific job.
+  id: s_7
+  key_delta: Crew operations extend beyond Brooklyn through Henry and Jimmy's Florida
+    collection job, while Tommy remains exposed to its later consequences without
+    joining the trip.
+  trigger_event: The fallout from the Florida collection job triggers an FBI tip-off that leads to arrests around the crew.
+- description: After the Florida job, most of the crew except Tommy and a few are
+    arrested due to an FBI tip-off, increasing risk and instability for the gangsters.
+  id: s_8
+  key_delta: Tommy remains free while many associates are incarcerated, heightening
+    exposure to law enforcement pressure.
+  trigger_event: The gambler's sister tips off the FBI leading to arrests.
+- description: Tommy maintains loyalty and criminal activities, continuing involvement
+    with drug trade expansion alongside Henry and Jimmy after release periods.
+  id: s_9
+  key_delta: Tommy integrates into the lucrative but dangerous narcotics operations,
+    deepening criminal risks.
+  trigger_event: Tommy agrees to join Henry and Jimmy in the escalating drug business
+    and Lufthansa heist preparations after prison releases.
+- description: Tensions rise within the crew as Jimmy executes orders to eliminate
+    participants of the Lufthansa heist who disobey him, increasing paranoia and insecurity
+    among the members including Tommy.
+  id: s_10
+  key_delta: Tommy faces increased internal threats and witnesses deadly enforcement
+    of Jimmy’s authority.
+  trigger_event: Jimmy's purge leaves Tommy exposed just as he is called to what
+    he believes is a making ceremony.
+- description: Tommy is killed for his murder of Billy Batts and for mistakenly believing
+    he would be inducted as a made man, abruptly ending his violent and volatile presence
+    in the crew.
+  id: s_11
+  key_delta: Tommy's death removes a key aggressive enforcer, causing a significant
+    shift in crew dynamics and eliminating his direct influence.
+  trigger_event: Tommy is lured and killed due to his past transgressions and perceived
+    betrayal.

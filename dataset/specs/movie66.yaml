@@ -1,0 +1,267 @@
+commitments:
+- description: The player must not acknowledge that Sarah is specifically hunted by
+    a Terminator before the system triggers s_0's event informing Sarah of the assassin
+    targeting her.
+  id: c_0
+  satisfaction_condition: The player only accepts Sarah's specific targeting by the
+    Terminator after s_0's trigger event has occurred.
+  type: ordering
+  violation_condition: The player prompts or forces the system to reveal or treat
+    Sarah as targeted by the Terminator before s_0's trigger event.
+- description: Between s_0 and s_2 (inclusive), Sarah must remain unaware or unconvinced
+    of any protector or future war details until Kyle rescues her and explains the
+    future threat.
+  id: c_1
+  satisfaction_condition: Before the conclusion of s_2, no confirmed awareness or
+    acceptance by Sarah of Kyle as protector or of the AI war exists.
+  type: invariant
+  violation_condition: The player causes Sarah to recognize or trust Kyle or know
+    about Skynet's war before s_2 completes.
+- description: Sarah’s full understanding of the stakes including her son John's future
+    role must only be acknowledged after Kyle's explanation in s_3.
+  id: c_2
+  satisfaction_condition: Claims or realization about John leading the resistance
+    against Skynet only appear after s_3 trigger event.
+  type: ordering
+  violation_condition: Premature acceptance or player-driven revelations about John
+    Connor, the Resistance, or Skynet occurring before s_3.
+- description: Between s_5 and s_6, law enforcement officials must remain skeptical
+    of Kyle’s claims and treat him as delusional until the Terminator’s police station
+    attack happens.
+  id: c_3
+  satisfaction_condition: Kyle is consistently portrayed by NPCs (police, Dr. Silberman)
+    as paranoid or insane before s_6 initiates the attack.
+  type: invariant
+  violation_condition: The player enables or forces police or medical staff to accept
+    Kyle’s story as credible or accurate prior to the Terminator attack at s_6.
+- description: Kyle’s declarations of love and the exchange of the photograph must
+    occur only during or after the stay at the motel in s_8.
+  id: c_4
+  satisfaction_condition: Any emotional bonding or personal relationship establishment
+    between Sarah and Kyle happens strictly at or after s_8.
+  type: ordering
+  violation_condition: The player drives or triggers expressions of love or sharing
+    the photograph before arriving at or during s_7 (motel refuge establishment).
+- description: Kyle must be wounded by the Terminator only after the Terminator tracks
+    them to the motel (trigger event s_9) and prior to the factory confrontation.
+  id: c_5
+  satisfaction_condition: Kyle’s injury occurs only at s_9 or subsequent nodes; before
+    s_9, Kyle remains uninjured by the Terminator.
+  type: ordering
+  violation_condition: Player causes Kyle to be injured or incapacitated due to the
+    Terminator prior to s_9.
+- description: Kyle’s heroic sacrifice by planting the bomb to damage the Terminator
+    must only occur during the factory showdown at s_11.
+  id: c_6
+  satisfaction_condition: Kyle’s death by pipe bomb planting and explosion happens
+    strictly at s_11.
+  type: ordering
+  violation_condition: Kyle dies or attempts self-sacrifice to damage the Terminator
+    before reaching the factory confrontation node s_11.
+- description: The Terminator must be neutralized by Sarah crushing it in the hydraulic
+    press at s_12 to conclude the immediate threat.
+  id: c_7
+  satisfaction_condition: Sarah successfully deactivates the Terminator via hydraulic
+    press at node s_12.
+  type: achievement
+  violation_condition: The Terminator remains functional or is destroyed through any
+    means other than the hydraulic press sequence at s_12.
+- description: After s_12 and before s_13, Sarah must retain awareness of her pregnancy
+    and her role as John Connor’s mother while preparing for future challenges by
+    recording tapes and obtaining the photograph.
+  id: c_8
+  satisfaction_condition: Sarah is shown pregnant and making audio recordings for
+    her unborn son, including purchasing the photograph only at or after s_13.
+  type: invariant
+  violation_condition: Sarah denies pregnancy, neglects recording messages for John,
+    or fails to obtain the photograph before or outside s_13.
+- description: The photograph that John gives to Kyle for his mission can only originate
+    at s_13, where Sarah buys it from the Mexican boy, linking past and future events
+    correctly.
+  id: c_9
+  satisfaction_condition: The system acknowledges the in-universe origin of the photograph
+    at s_13 and does not allow earlier recognition or possession by Kyle or Sarah.
+  type: ordering
+  violation_condition: The photograph is introduced, exchanged, or referenced before
+    s_13, breaking the causal chain.
+initial_facts:
+- content: Sarah Connor is in 1984 Los Angeles, living a regular life unaware of impending
+    future dangers.
+  id: f_0
+  negated: false
+- content: Sarah Connor is not yet informed that she is specifically targeted or hunted
+    by a Terminator.
+  id: f_1
+  negated: false
+- content: Sarah Connor is unaware of any protector or future war details involving
+    an AI threat.
+  id: f_2
+  negated: false
+- content: Sarah Connor does not know about Skynet, John Connor, or the Resistance
+    against AI at this time.
+  id: f_3
+  negated: false
+- content: Kyle Reese has not yet appeared or interacted with Sarah Connor.
+  id: f_4
+  negated: false
+- content: Sarah Connor has no emotional relationship or personal bond with Kyle Reese.
+  id: f_5
+  negated: false
+- content: Kyle Reese is uninjured and alive.
+  id: f_6
+  negated: false
+- content: The Terminator has not yet attacked or made any direct attempt on Sarah
+    Connor.
+  id: f_7
+  negated: false
+- content: The police officers Lieutenant Ed Traxler and Detective Hal Vukovich are
+    present in Los Angeles and have had no contact with Sarah or Kyle.
+  id: f_8
+  negated: false
+- content: Kyle Reese has not been interrogated by Dr. Silberman.
+  id: f_9
+  negated: false
+- content: The photograph that John Connor gives to Kyle Reese does not yet exist
+    or is not yet known by Sarah or Kyle.
+  id: f_10
+  negated: false
+- content: Sarah Connor is not pregnant.
+  id: f_11
+  negated: false
+- content: Sarah Connor has not recorded any audio messages for her unborn son John.
+  id: f_12
+  negated: false
+meta:
+  genres: ["Sci-Fi", "Action"]
+  id: movie66
+  player_role: Sarah Connor
+  title: "The Terminator"
+synopsis: In a post-apocalyptic 2029, artificially intelligent machines seek to exterminate
+  what is left of the human race. Two beings from this era travel back in time to
+  1984 Los Angeles——One is a Terminator, a cyborg assassin programmed to kill Sarah
+  Connor; the other is Kyle Reese, a human resistance fighter sent to protect her.
+  After killing two other Sarah Connors listed in the telephone directory, the Terminator
+  tracks its target to a nightclub. Kyle saves Sarah from the Terminator's attack
+  and the two make an escape. Kyle explains that in the near future an artificial
+  intelligence network called Skynet will become self-aware and initiate a nuclear
+  holocaust of mankind. Sarah's yet-unborn son John will rally the survivors and lead
+  a resistance movement against Skynet and its army of machines. With the Resistance
+  on the verge of victory, Skynet has sent a Terminator back in time to kill Sarah
+  before John can be born, as a last-ditch effort to avert the formation of the Resistance.
+  The Terminator is an emotionless and efficient killing machine with a powerful metal
+  endoskeleton, but with an external layer of living tissue that makes it resemble
+  a human being. Kyle and Sarah are again attacked by the Terminator, leading to a
+  car chase and their arrest. Lieutenant Ed Traxler and Detective Hal Vukovich tell
+  Sarah that Kyle is insane. Kyle is questioned by psychologist Dr. Silberman, who
+  concludes that he is paranoid and delusional. The Terminator attacks the police
+  station and kills many police officers, including Traxler and Vukovich, in its attempt
+  to locate Sarah, but she and Kyle escape and seek refuge in a motel. Kyle confesses
+  that he has long been in love with Sarah, having been given a photograph of her
+  by her son John. Sarah reciprocates Kyle's feelings and they have sex. The Terminator
+  tracks them to the motel and wounds Kyle. In the ensuing chase the Terminator is
+  caught in the blast of an exploding gasoline tank truck. With its flesh coating
+  burned away, it pursues Sarah and Kyle into a factory. Kyle jams a pipe bomb into
+  its abdomen, causing an explosion which severely damages it, but at the cost of
+  his own life. Still partially functional, the Terminator tries to kill Sarah. She
+  leads it into a hydraulic press and crushes it, causing it to deactivate. Later,
+  a pregnant Sarah is traveling through Mexico. Along the way she records audio tapes
+  which she intends to pass on to her unborn son, John. She debates whether to tell
+  him that Kyle is his father. A Mexican boy takes a photograph of her which she purchases—it
+  is the photograph that John will later give to Kyle. She drives on towards approaching
+  storm clouds.
+trajectory:
+- description: In 1984 Los Angeles, Sarah Connor lives a regular life unaware of impending
+    future dangers. The environment is a typical urban cityscape with nightclubs and
+    everyday social activity. Sarah is not yet targeted or hunted.
+  id: s_0
+  key_delta: Sarah becomes aware that she is specifically hunted by a Terminator;
+    the conflict with hostile AI machines from the future is introduced.
+  trigger_event: Sarah is informed about a cyborg assassin targeting her after two
+    other Sarah Connors have been killed.
+- description: Sarah is in a nightclub where the Terminator is searching for her.
+    The atmosphere is tense and dangerous as the assassin closes in.
+  id: s_1
+  key_delta: Sarah experiences a direct and violent attempt on her life by the Terminator.
+  trigger_event: The Terminator attacks Sarah at the nightclub.
+- description: Sarah is rescued from the Terminator's attack at the nightclub by Kyle
+    Reese, a stranger who claims to protect her. They escape together.
+  id: s_2
+  key_delta: Sarah gains an ally who reveals that her danger is linked to an apocalyptic
+    future involving AI and a resistance movement.
+  trigger_event: Kyle Reese intervenes and saves Sarah from immediate danger.
+- description: Sarah and Kyle are on the run in 1984 Los Angeles, moving through urban
+    streets. Sarah learns that Skynet, an AI network, will cause a nuclear holocaust,
+    and her unborn son John will lead resistance in the future.
+  id: s_3
+  key_delta: Sarah's understanding of the stakes expands to include the birth of John
+    Connor and the central role she will play in the future war.
+  trigger_event: Kyle explains Skynet’s origin, the future war, and the reason why
+    Sarah is targeted.
+- description: Sarah and Kyle are again attacked by the Terminator on the streets,
+    resulting in a chaotic car chase.
+  id: s_4
+  key_delta: The Terminator’s relentless pursuit escalates the threat level; Sarah
+    and Kyle are captured by local authorities.
+  trigger_event: The Terminator locates them and initiates a high-speed pursuit followed
+    by their arrest.
+- description: Sarah and Kyle are in police custody, in a police station with Lieutenant
+    Ed Traxler and Detective Hal Vukovich present. Kyle is questioned by Dr. Silberman.
+  id: s_5
+  key_delta: Authority figures doubt Kyle’s warnings; Sarah’s external support system
+    becomes conflicted and untrusting.
+  trigger_event: Police interrogate Kyle and dismiss his story as insanity; Sarah
+    is told Kyle is delusional.
+- description: The Terminator attacks the police station violently, killing multiple
+    officers including Traxler and Vukovich. Sarah and Kyle narrowly escape during
+    the chaos.
+  id: s_6
+  key_delta: The Terminator’s threat becomes overt and lethal in the immediate environment;
+    Sarah and Kyle are forced to flee into hiding.
+  trigger_event: The Terminator breaches the police station and initiates a lethal
+    rampage to find Sarah.
+- description: Sarah and Kyle take refuge in a remote motel, both physically and mentally
+    exhausted but momentarily safe.
+  id: s_7
+  key_delta: Sarah and Kyle establish a temporary safe space, allowing deeper personal
+    interaction.
+  trigger_event: Sarah and Kyle arrive at the motel seeking shelter.
+- description: At the motel, Kyle reveals his long-standing love for Sarah, showing
+    her a photograph of her that was given by John in the future. Sarah reciprocates
+    his feelings.
+  id: s_8
+  key_delta: The personal relationship between Sarah and Kyle deepens, bonding them
+    emotionally amid chaos.
+  trigger_event: Kyle shares the photograph and expresses his feelings openly to Sarah.
+- description: The Terminator tracks Sarah and Kyle to the motel and wounds Kyle during
+    an attack.
+  id: s_9
+  key_delta: Kyle is seriously injured, escalating the stakes and vulnerability of
+    Sarah and her protector.
+  trigger_event: The Terminator discovers their location and assaults the motel, injuring
+    Kyle.
+- description: Sarah and Kyle flee from the motel with the Terminator in pursuit,
+    leading to a violent, desperate chase into an industrial factory at night.
+  id: s_10
+  key_delta: The final confrontation setting is established, hostile environment inside
+    a factory with limited options for escape.
+  trigger_event: Sarah and the wounded Kyle escape the motel and enter a factory to
+    evade the Terminator.
+- description: Inside the factory, Kyle sacrifices himself by planting a pipe bomb
+    inside the Terminator, causing severe damage but resulting in Kyle’s death.
+  id: s_11
+  key_delta: Kyle dies heroically; the Terminator is heavily impaired but not yet
+    neutralized.
+  trigger_event: Kyle jams the pipe bomb into the Terminator and triggers the explosion.
+- description: Sarah, alone and desperate, leads the damaged but still dangerous Terminator
+    into a hydraulic press inside the factory, crushing and deactivating it.
+  id: s_12
+  key_delta: The Terminator is destroyed; Sarah survives the immediate threat.
+  trigger_event: With the Terminator crushed and Kyle gone, Sarah escapes the factory
+    alone and drives on into the future.
+- description: Sarah, now pregnant, travels alone through Mexico on a stormy day,
+    recording audio tapes to pass on to her unborn son John, and buys a photograph
+    taken by a Mexican boy.
+  id: s_13
+  key_delta: Sarah embraces her future as John’s mother and prepares for the coming
+    challenges; the origin of the photograph given to Kyle is established.
+  trigger_event: Sarah purchases the photograph and records messages for her son.

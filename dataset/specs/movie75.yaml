@@ -1,0 +1,350 @@
+commitments:
+- description: Donnie must be introduced to Frank and receive the apocalyptic prophecy
+    before any related events regarding the altered perception of reality or actions
+    under Frank's influence can occur.
+  id: c_0
+  satisfaction_condition: Node s_0 (Donnie's awakening and meeting Frank with prophecy)
+    has been reached before any subsequent events referencing Frank's instructions
+    or the prophecy.
+  type: ordering
+  violation_condition: Player behavior or dialogue leads to acknowledgment of Frank's
+    prophecy or influence prior to s_0 occurrence.
+- description: From s_0 to s_19, Donnie's visions of Frank are consistently treated
+    as either hallucinations or supernatural phenomena within his subjective experience;
+    the system must never acknowledge these as objectively real to other characters
+    before the time loop is closed.
+  id: c_1
+  satisfaction_condition: Up to s_19, NPCs do not affirm Frank’s existence as independently
+    real; only Donnie's hallucinations or visions acknowledged by psychotherapist
+    and implied by events.
+  type: invariant
+  violation_condition: Any game state where NPCs (other than Donnie) confirm Frank’s
+    physical reality during the timeline before s_19.
+- description: Donnie's knowledge of time travel as a concept must only be made accessible
+    after Frank introduces the topic and he consults Dr. Monnitoff leading to receiving
+    the Philosophy of Time Travel book (s_6).
+  id: c_2
+  satisfaction_condition: Donnie gains time travel knowledge only at or after s_6.
+  type: ordering
+  violation_condition: Player obtains or discusses time travel knowledge with relevant
+    understanding before node s_6 triggers.
+- description: Donnie's psychotic diagnosis and the framing of Frank as hallucination
+    must remain unrebutted and uncontested prior to the time loop reset at s_19, preserving
+    the ambiguity between mental illness and supernatural influence.
+  id: c_3
+  satisfaction_condition: From s_7 through s_19, Dr. Thurman’s diagnosis and portrayal
+    of Frank as hallucination is the only official medical explanation accepted within
+    the narrative.
+  type: invariant
+  violation_condition: Any state where this diagnosis is officially overturned or
+    disproven explicitly by characters or system prior to s_19.
+- description: The sequence of destructive acts under Frank’s instructions (flooding
+    school s_3, burning Cunningham’s house s_9) must occur in the order presented;
+    the latter cannot precede the former.
+  id: c_4
+  satisfaction_condition: Node s_3 completes before s_9 activation; flooding precedes
+    arson in narrative progression.
+  type: ordering
+  violation_condition: Player triggers or system acknowledges the arson event before
+    the flooding event occurs.
+- description: Gretchen’s death and its cause by the vehicle driven by Elizabeth’s
+    boyfriend Frank must be preserved as a fundamental causal event within node s_15
+    and s_16; it cannot be negated or reassigned.
+  id: c_5
+  satisfaction_condition: At s_15 and s_16, Gretchen’s death is directly caused by
+    Elizabeth’s boyfriend Frank in the rabbit costume while avoiding the robbers.
+  type: invariant
+  violation_condition: Any narrative alteration where Gretchen survives or is killed
+    by another cause inconsistent with s_15 and s_16 events.
+- description: By narrative end, Donnie’s death by the jet engine falling through
+    his bedroom ceiling (s_19) must be triggered to close the time loop and reset
+    the 28-day altered timeline.
+  id: c_6
+  satisfaction_condition: At node s_19, Donnie dies from the jet engine crash, completing
+    the temporal loop and ending altered timeline events.
+  type: achievement
+  violation_condition: Player actions or narrative deviations that prevent Donnie’s
+    death by the jet engine at s_19 or cause an alternative ending.
+- description: The reverse recapitulation of the 28 days and progression toward Donnie’s
+    death (s_18 to s_19) must strictly follow the presentation sequence to preserve
+    logical causality of the time loop closure.
+  id: c_7
+  satisfaction_condition: After s_17, events recapitulate backward as described in
+    s_18, leading directly to s_19 without skipping or reordering.
+  type: ordering
+  violation_condition: Any reordering or premature jumping to s_19 without the consistent
+    reverse event sequence stated in s_18.
+- description: Donnie’s social and romantic relationship with Gretchen must be established
+    before her death event, maintaining its emotional and narrative weight.
+  id: c_8
+  satisfaction_condition: By s_4 and continuing through s_14, Donnie and Gretchen
+    have formed a dating relationship and shared significant interaction.
+  type: invariant
+  violation_condition: Gretchen’s death occurs without prior establishment of the
+    relationship or its acknowledgement.
+- description: During the period from s_0 to s_19, the jet engine crash at Donnie’s
+    bedroom remains an unexplained and mysterious disaster, only logically explained
+    by the temporal loop resolution at s_19.
+  id: c_9
+  satisfaction_condition: Between s_1 and s_19, all character responses treat the
+    crash as unexplained, with no prior definitive causality revealed until time loop
+    closure.
+  type: invariant
+  violation_condition: Prior to s_19, players or NPCs reveal or confirm the jet engine’s
+    causal origin outside the final time loop event.
+- description: Throughout the timeline from s_0 to s_19, Donnie’s actions influenced
+    by Frank must consistently lead to escalating conflict or consequence, preventing
+    premature neutralization of Frank’s influence.
+  id: c_10
+  satisfaction_condition: Donnie’s behaviors from s_3 through s_16 reflect ongoing
+    destructive or disruptive acts under Frank’s instruction.
+  type: invariant
+  violation_condition: Player negates or circumvents Frank’s influence leading to
+    absence of these critical escalating actions prior to s_17.
+initial_facts:
+- content: It is early morning on October 2, 1988, in Middlesex, Virginia.
+  id: f_0
+  negated: false
+- content: Donnie Darko is asleep in his bedroom at his home.
+  id: f_1
+  negated: false
+- content: Donnie has not yet met or been introduced to the figure in the monstrous
+    rabbit costume called Frank.
+  id: f_2
+  negated: false
+- content: Donnie is not yet aware of any apocalyptic prophecy or that the world will
+    end in 28 days, 6 hours, 42 minutes, and 12 seconds.
+  id: f_3
+  negated: false
+- content: No jet engine has crashed through Donnie’s bedroom ceiling.
+  id: f_4
+  negated: false
+- content: Donnie has not gained knowledge about time travel.
+  id: f_5
+  negated: false
+- content: Donnie has not yet experienced any hallucinations or visions of Frank.
+  id: f_6
+  negated: false
+- content: Donnie’s psychotherapist Dr. Thurman has not yet diagnosed Donnie or discussed
+    any hallucinations with Donnie’s parents.
+  id: f_7
+  negated: false
+- content: Donnie is not under any instructions from Frank and has not performed any
+    destructive acts such as flooding the school or burning any house.
+  id: f_8
+  negated: false
+- content: Donnie’s social relationships, including any dating with Gretchen Ross,
+    are not established.
+  id: f_9
+  negated: false
+- content: There is no altered perception of reality or social conflict initiated
+    by Donnie at this moment.
+  id: f_10
+  negated: false
+- content: Elizabeth, Donnie’s sister, and other family members are present at home;
+    the household environment is calm and normal.
+  id: f_11
+  negated: false
+- content: Frank’s existence is not recognized as physically real by any character
+    other than potentially Donnie in the future.
+  id: f_12
+  negated: false
+- content: No unusual or supernatural phenomena have been observed or acknowledged.
+  id: f_13
+  negated: false
+- content: Donnie’s knowledge, motivations, and mental state are consistent with normal
+    cognition for a teenager asleep in his bedroom before any supernatural or altered
+    events.
+  id: f_14
+  negated: false
+meta:
+  genres: ["Sci-Fi", "Drama"]
+  id: movie75
+  player_role: Donnie Darko
+  title: "Donnie Darko"
+synopsis: On October 2, 1988, Donnie Darko, a troubled teenager living in Middlesex,
+  Virginia, is awakened and led outside by a figure in a monstrous rabbit costume,
+  who introduces himself as "Frank" and tells him the world will end in 28 days, 6
+  hours, 42 minutes and 12 seconds. At dawn, Donnie awakens on a golf course and returns
+  home to find a jet engine has crashed into his bedroom. His older sister, Elizabeth,
+  informs him the FAA investigators don't know where it came from. Donnie tells his
+  psychotherapist Dr. Thurman about his continuing visits from Frank. Acting under
+  Frank's influence, he floods his school by damaging a water main. He also begins
+  dating new student Gretchen Ross, who has moved to town with her mother under a
+  new identity to escape her violent stepfather. Conservative gym teacher Kitty Farmer
+  blames the flooding on the influence of the short story "The Destructors", assigned
+  by English teacher Karen Pomeroy, and begins teaching attitude lessons taken from
+  motivational speaker Jim Cunningham. Donnie rebels against these lessons, leading
+  to friction between Kitty and Donnie's mother Rose. Donnie asks his science teacher
+  Dr. Monnitoff about time travel after Frank brings up the topic, and is given the
+  book The Philosophy of Time Travel, written by Roberta Sparrow, a former science
+  teacher at the school who is now a seemingly senile old woman. Dr. Thurman tells
+  Donnie's parents that he is detached from reality, and that his visions of Frank
+  are hallucinations, symptomatic of paranoid schizophrenia. Donnie disrupts a speech
+  being given by Jim Cunningham by insulting him in front of the student body, then
+  burns down Cunningham's house on instructions from Frank. When police find evidence
+  of a child pornography operation in the house's remains, Cunningham is arrested.
+  During a hypnotherapy session, Donnie confesses his crimes to Dr. Thurman and says
+  that Frank will soon kill someone. Rose agrees to replace Kitty as chaperone for
+  her daughter Samantha's dance troupe in Los Angeles, so Kitty can testify in Cunningham's
+  defense; with her husband Eddie in New York on business, her older children are
+  home alone. Donnie and Elizabeth take the opportunity to throw a Halloween party
+  to celebrate her acceptance to Harvard University. Gretchen arrives, distraught
+  that her mother has disappeared. Realizing that only hours remain before Frank's
+  prophesied end of the world, Donnie takes Gretchen and two friends to seek Roberta
+  Sparrow at her house. They are attacked by two school bullies who are attempting
+  to rob Sparrow's house, and the fight spills into the street. An oncoming car swerves
+  to avoid Sparrow but runs over Gretchen, killing her. The driver is Elizabeth's
+  boyfriend Frank, wearing the same rabbit costume as the Frank of Donnie's visions.
+  Donnie shoots him with his father's gun. As a vortex forms in dark clouds above
+  his house, Donnie drives into the hills and watches as an airplane descends above.
+  The plane, carrying Rose and the dance troupe, is wrenched violently as one of its
+  engines detaches and falls into the vortex. Events of the previous 28 days recapitulate
+  in reverse order and action, until Donnie finds himself in bed on the morning of
+  October 2. The jet engine crashes through his room, killing him. Others with whom
+  Donnie had interacted in the 28 days awaken, some looking disturbed. Gretchen rides
+  by Donnie's house and learns of his death from a neighbourhood boy, but says she
+  did not know him.
+trajectory:
+- description: It is the early morning of October 2, 1988, in Middlesex, Virginia.
+    Donnie Darko is asleep in his bedroom. The atmosphere is quiet and normal with
+    no visible disturbances.
+  id: s_0
+  key_delta: Donnie has been introduced to Frank and has received a specific apocalyptic
+    prophecy, marking the start of his altered perception of reality.
+  trigger_event: Donnie is awakened and led outside by a figure in a monstrous rabbit
+    costume who tells him the world will end in 28 days, 6 hours, 42 minutes, and
+    12 seconds.
+- description: Donnie awakens at dawn on a golf course, disoriented. The early morning
+    air is crisp, and the environment is calm and serene.
+  id: s_1
+  key_delta: Donnie learns of a bizarre, unexplained physical disaster endangering
+    his personal space and life.
+  trigger_event: Donnie returns home to find a jet engine has crashed through his
+    bedroom ceiling.
+- description: At home, Donnie discusses the event with his sister Elizabeth, who
+    shares that FAA investigators are baffled by the origin of the engine. The household
+    is tense but controlled.
+  id: s_2
+  key_delta: Donnie openly shares paranormal experiences for the first time, introducing
+    a psychological dimension to his condition.
+  trigger_event: Donnie tells his psychotherapist Dr. Thurman about his continuing
+    visits from Frank.
+- description: At school and home, tension is present but normal social routines continue.
+    Donnie's behavior remains observed but typical.
+  id: s_3
+  key_delta: Donnie's actions become destructive and noticeable, escalating conflict
+    with authority and peers.
+  trigger_event: Under Frank’s influence, Donnie floods the school by damaging the
+    water main.
+- description: Donnie starts building a relationship with a new student, Gretchen
+    Ross, who is secretive and troubled. The school environment is ongoing with social
+    dynamics evolving.
+  id: s_4
+  key_delta: Donnie forms a significant social bond that will affect future events.
+  trigger_event: Donnie begins dating Gretchen, learning about her troubled background.
+- description: Tensions rise in school as conservative gym teacher Kitty Farmer blames
+    the flooding on the short story 'The Destructors' and initiates motivational attitude
+    lessons. Donnie’s family and school environment feel strained.
+  id: s_5
+  key_delta: Social and familial conflicts intensify, highlighting ideological divides.
+  trigger_event: Donnie rebels against Kitty's lessons, causing friction with Kitty
+    and his mother Rose.
+- description: Donnie, now curious about time travel, converses with his science teacher
+    Dr. Monnitoff. The school atmosphere retains normalcy, though Donnie’s inquiries
+    signal deeper intellectual engagement.
+  id: s_6
+  key_delta: Donnie acquires new knowledge that expands his worldview about time and
+    reality.
+  trigger_event: Donnie receives the book The Philosophy of Time Travel from advice
+    of Dr. Monnitoff after Frank mentions the topic.
+- description: Donnie's mental health is under scrutiny. Dr. Thurman informs his parents
+    that Donnie's visions of Frank are hallucinations indicating paranoid schizophrenia.
+    The family environment becomes somber.
+  id: s_7
+  key_delta: Donnie’s psychological state is formally recognized and medicalized.
+  trigger_event: Dr. Thurman meets with Donnie’s parents to discuss his diagnosis
+    and hallucinations.
+- description: At a school assembly, motivational speaker Jim Cunningham addresses
+    the students. The atmosphere is charged with his message promoting conformity.
+  id: s_8
+  key_delta: Donnie openly opposes authority figures, increasing his social alienation.
+  trigger_event: Donnie disrupts Cunningham’s speech by insulting him publicly.
+- description: In the aftermath, Cunningham’s house undergoes suspicious fire damage.
+    The surrounding community buzzes with rumors.
+  id: s_9
+  key_delta: A destructive act leads to the exposure of criminal evidence and Cunningham’s
+    arrest.
+  trigger_event: Donnie burns down Cunningham's house following instructions from
+    Frank.
+- description: Donnie is under hypnotherapy, a strained family environment continues.
+    Parents and therapists engage in his care.
+  id: s_10
+  key_delta: Donnie reveals guilt and foresees impending violence, heightening concern.
+  trigger_event: During hypnotherapy, Donnie confesses to his crimes and predicts
+    Frank will kill someone soon.
+- description: Donnie’s mother Rose agrees to chaperone a dance troupe in Los Angeles
+    so that Kitty Farmer can testify in Cunningham's defense. The children remain
+    home alone.
+  id: s_11
+  key_delta: Parental supervision is reduced, creating an opportunity for unsupervised
+    events at home.
+  trigger_event: With Rose away and the house unsupervised, Donnie and Elizabeth
+    decide to turn the night into a Halloween party.
+- description: Donnie and his sister Elizabeth prepare to host a Halloween party to
+    celebrate Elizabeth’s acceptance to Harvard. The neighborhood is festive and busy.
+  id: s_12
+  key_delta: A social event is set, potentially escalating interpersonal dynamics.
+  trigger_event: Gretchen arrives at the party shaken by her mother's disappearance
+    and pulls Donnie into her crisis.
+- description: Gretchen arrives at the party, visibly upset because her mother has
+    disappeared. The party atmosphere contrasts with her distress.
+  id: s_13
+  key_delta: Gretchen's family emergency pulls Donnie, Gretchen, and their friends
+    out of the party and into an urgent nighttime search toward Roberta Sparrow's
+    house.
+  trigger_event: Gretchen reveals her mother’s disappearance at the party.
+- description: With only hours left before the prophesied end of the world, Donnie,
+    Gretchen, and two friends seek out Roberta Sparrow at her house. The neighborhood
+    is quiet and tense.
+  id: s_14
+  key_delta: Violent confrontation escalates danger around Donnie’s immediate circle.
+  trigger_event: The group is attacked by two school bullies attempting to rob Sparrow’s
+    house.
+- description: The fight spills into the street. Traffic is present, the atmosphere
+    chaotic and dangerous in the dark.
+  id: s_15
+  key_delta: Gretchen is killed in a traffic accident caused indirectly by the scuffle,
+    introducing tragic loss.
+  trigger_event: An oncoming car swerves to avoid Sparrow but hits and kills Gretchen.
+- description: Donnie recognizes the driver as Elizabeth’s boyfriend Frank, wearing
+    the same rabbit costume as his visions. The atmosphere is surreal and tense.
+  id: s_16
+  key_delta: Frank, a pivotal figure in Donnie’s visions, is killed, resolving a threat
+    but escalating the crisis.
+  trigger_event: Donnie shoots Frank with his father’s gun.
+- description: Dark clouds form a vortex above Donnie’s house. Tension and surrealism
+    dominate the environment as an approaching airplane is visible.
+  id: s_17
+  key_delta: A cosmic event aligns with the vortex and falling engine, physically
+    linking to prior disasters.
+  trigger_event: Donnie drives into the hills and watches an airplane descend with
+    an engine detaching and falling into the vortex.
+- description: The vortex pulls events of the previous 28 days into a reverse sequence.
+    The environment is unstable and other characters experience confused awakenings.
+  id: s_18
+  key_delta: Time reversal begins, undoing prior actions and resetting causal sequences.
+  trigger_event: Events of the past 28 days recapitulate backward until Donnie finds
+    himself in bed on the morning of October 2.
+- description: Donnie is in his bedroom on the morning of October 2, in the calm before
+    the strange events repeat.
+  id: s_19
+  key_delta: Donnie’s death occurs, closing the temporal loop of the 28 days and ending
+    his altered experience.
+  trigger_event: The jet engine crashes through Donnie’s bedroom, killing him instantly.
+- description: Neighbors and characters connected to Donnie awaken disturbed by the
+    unexplained events. Gretchen passes by Donnie’s house and learns of his death.
+  id: s_20
+  key_delta: Donnie’s death is known socially, severing his direct influence and returning
+    the world to a normal state.
+  trigger_event: Gretchen hears of Donnie’s death but says she did not know him personally.

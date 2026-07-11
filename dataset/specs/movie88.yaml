@@ -1,0 +1,329 @@
+commitments:
+- description: The initial ambush by Acheron (s_0) must happen before Surprise can
+    be damaged and forced into retreat (s_1), ensuring the cause-effect sequence of
+    battle initiation and consequence.
+  id: c_0
+  satisfaction_condition: Node s_0 is completed before s_1 is reached; the ambush
+    event precedes damage and retreat.
+  type: ordering
+  violation_condition: Player attempts to progress to damage/retreat state s_1 without
+    the ambush event s_0 having occurred.
+- description: From s_1 to s_3, Surprise remains heavily damaged, unsteerable, and
+    forced into evasive maneuvers until proper repairs or decisive action occurs.
+  id: c_1
+  satisfaction_condition: During phases s_1 through s_3, the ship’s damage state and
+    limited maneuverability remain active and acknowledged.
+  type: invariant
+  violation_condition: Player actions cause Surprise to be fully repaired, steered
+    normally, or regain offensive capability before node s_3 completion.
+- description: Aubrey’s knowledge of Acheron’s superiority and decision to pursue
+    must precede any further pursuit actions or tactical gameplay responses (s_2 before
+    s_3).
+  id: c_2
+  satisfaction_condition: The order to continue pursuit and risk ship damage (s_2)
+    is confirmed before the second encounter and escape attempt (s_3).
+  type: ordering
+  violation_condition: Player initiates second encounter or evasion (s_3) before receiving
+    or acknowledging the strategic assessment at s_2.
+- description: The rescue of survivors from a whaling ship destroyed by Acheron at
+    the Galapagos (s_4) is the event that confirms Acheron’s nearby presence and
+    renews the chase.
+  id: c_3
+  satisfaction_condition: At s_4, rescuing the survivors and learning from their
+    fate establishes that Acheron is operating near the Galapagos, motivating continued
+    pursuit.
+  type: ordering
+  violation_condition: Player causes Acheron’s confirmed proximity at the Galapagos
+    to be established before or independently of the survivor rescue event at s_4.
+- description: Maturin’s injury (s_5) must be recognized and treated before continuing
+    pursuit or battle preparedness, ensuring logical progression of medical priority.
+  id: c_4
+  satisfaction_condition: Maturin’s wound and need for shore surgery (s_5) is acknowledged
+    prior to any renewed pursuit or combat escalation.
+  type: ordering
+  violation_condition: Player ignores or skips the injury event and orders pursuit
+    or combat engagement before medical treatment initiation.
+- description: Between s_5 and s_7, pursuit of Acheron is explicitly halted to prioritize
+    Maturin’s surgery and recovery, enforcing an enforced narrative pause in the chase.
+  id: c_5
+  satisfaction_condition: No pursuit or combat attempts against Acheron occur while
+    medical procedures and recovery at Galapagos are ongoing.
+  type: invariant
+  violation_condition: Player attempts to resume chase or engages Acheron before Maturin’s
+    surgery and recovery phase at s_7 completes.
+- description: Maturin must survive self-surgery and recovery (node s_6) to progress
+    the narrative and allow resumption of pursuit activities.
+  id: c_6
+  satisfaction_condition: Maturin successfully completes surgery and survives, enabling
+    further narrative progress past s_6.
+  type: achievement
+  violation_condition: Maturin dies or surgery fails, preventing continuation into
+    subsequent narrative stages.
+- description: Discovery of Acheron at the Galapagos by Maturin (s_7) must precede
+    preparation for the decisive battle (s_8) to reflect narrative build-up.
+  id: c_7
+  satisfaction_condition: Node s_7 completes by locating Acheron on the island before
+    any battle preparations at s_8 initiate.
+  type: ordering
+  violation_condition: Player attempts battle preparation or disguising Surprise as
+    a whaler (s_8) before Acheron’s location is discovered at s_7.
+- description: Between s_8 and s_9, Surprise is disguised as a whaler, and the enemy
+    ship falls for the deception only after this tactic is implemented.
+  id: c_8
+  satisfaction_condition: Surprise’s disguise occurs before Acheron approaches and
+    is disabled; no premature success in battle before deploying disguise.
+  type: invariant
+  violation_condition: Player gains battle advantage or disables Acheron without first
+    executing the deception tactic at s_8.
+- description: Acheron must be disabled and captured through boarding (s_9), marking
+    the successful climax of the conflict phase.
+  id: c_9
+  satisfaction_condition: The boarding and capture of Acheron are completed, handing
+    control firmly to Aubrey’s crew.
+  type: achievement
+  violation_condition: Battle ends without Acheron being disabled and captured, or
+    player fails to initiate or complete boarding successfully.
+- description: After capture (s_9), Aubrey’s confirmation of the enemy captain’s death
+    and receipt of his sword (s_10) is required before proceeding to repairs and escort
+    arrangements.
+  id: c_10
+  satisfaction_condition: Leadership transfer and prisoner identification completes
+    at s_10 before preparations to escort Acheron begin.
+  type: ordering
+  violation_condition: Player attempts to proceed with escort or ship repairs and
+    strategic decisions without verifying command transfer at s_10.
+- description: Between s_10 and s_11, the identity deception of the false French captain
+    remains undisclosed until Maturin reveals the truth.
+  id: c_11
+  satisfaction_condition: No player or NPC gains knowledge of the captain’s impersonation
+    prior to node s_11.
+  type: invariant
+  violation_condition: Player uncovers or acts upon the captain’s fake identity before
+    the narrative delivery at s_11.
+- description: The narrative must reach the recognition of the enemy deception and
+    ordering of the escort to Valparaíso (s_11) to conclude the careful resolution
+    of the threat.
+  id: c_12
+  satisfaction_condition: Aubrey realizes deception and orders engagement (beat to
+    quarters) and escort duty at s_11.
+  type: achievement
+  violation_condition: Player fails to uncover the deception or neglects to place
+    escort under alert, ending the narrative unresolvably.
+- description: All critical discoveries and key tactical choices follow the explicit
+    s_i sequence as outlined in the Reference Trajectory, preventing out-of-order
+    conclusions or premature narrative jumps.
+  id: c_13
+  satisfaction_condition: Progress through all narrative nodes s_0 to s_11 follows
+    the numerical order without skipping required logical events.
+  type: ordering
+  violation_condition: Player actions or narrative logic attempt to jump forward,
+    skipping intermediate node results or conclusions essential to story coherence.
+initial_facts:
+- content: The current time is May 1805.
+  id: f_0
+  negated: false
+- content: The setting is aboard HMS Surprise.
+  id: f_1
+  negated: false
+- content: Captain Jack Aubrey is aboard HMS Surprise and stands watch.
+  id: f_2
+  negated: false
+- content: HMS Surprise is engaged in the Napoleonic Wars.
+  id: f_3
+  negated: false
+- content: Captain Aubrey has orders to pursue and capture or destroy the French privateer
+    Acheron.
+  id: f_4
+  negated: false
+- content: The ship’s crewmembers are alert and attentive, indicated by a crewmember
+    hearing a bell signaling increased vigilance.
+  id: f_5
+  negated: false
+- content: Captain Aubrey is currently looking through his telescope at the fog.
+  id: f_6
+  negated: false
+- content: The player (Captain Aubrey) is not yet aware of any damage to HMS Surprise.
+  id: f_7
+  negated: false
+- content: No combat with Acheron has yet occurred.
+  id: f_8
+  negated: false
+- content: The French privateer Acheron has not yet been confirmed as nearby or sighted.
+  id: f_9
+  negated: false
+- content: The status of HMS Surprise’s rudder, helm, and hull integrity is undamaged.
+  id: f_10
+  negated: false
+- content: No pursuit or evasion actions have been initiated.
+  id: f_11
+  negated: false
+- content: Doctor Maturin is aboard Surprise and not injured.
+  id: f_12
+  negated: false
+- content: Captain Aubrey has no knowledge of Acheron’s size, speed, or superiority
+    over Surprise.
+  id: f_13
+  negated: false
+- content: No survivors from any whaling ship have been rescued.
+  id: f_14
+  negated: false
+- content: No surgical interventions or injuries requiring treatment have occurred
+    aboard Surprise.
+  id: f_15
+  negated: false
+- content: The crew and Captain Aubrey have no knowledge of any deception by the enemy
+    or false identities.
+  id: f_16
+  negated: false
+- content: No preparations for battle or tactical ruses such as disguise have been
+    made.
+  id: f_17
+  negated: false
+- content: No boarding actions or capture of Acheron or any other ship have taken
+    place.
+  id: f_18
+  negated: false
+meta:
+  genres: ["Adventure", "War"]
+  id: movie88
+  player_role: Jack Aubrey
+  title: "Master and Commander——The Far Side of the World"
+synopsis: The film takes place in May 1805, during the Napoleonic Wars. Captain "Lucky
+  Jack" Aubrey of HMS Surprise is ordered to pursue the French privateer Acheron,
+  and "Sink, Burn, or take her a Prize." As the film opens, a crewmember aboard the
+  British warship hears a bell sound and the ship becomes alert. As captain Aubrey
+  looks through his telescope at the fog, he sees cannonfire, and the ship is ambushed
+  by Acheron, a ship twice as large as the British warship. Surprise is heavily damaged,
+  while its own cannon fire does not penetrate the enemy ship's hull. Later in the
+  battle, Surprise's rudder is shot off and her helm is blown away, making the ship
+  unsteerable, adding to the fact that the ship is taking water fast. Using smaller
+  boats, the crew of Surprise tow the ship into a fog bank and evade pursuit. Aubrey
+  learns from a crewman who saw Acheron being built that it is heavier and faster
+  than Surprise, and the senior officers consider the ship out of their class. Aubrey
+  notes that such a ship could tip the balance of power in Napoleon's favour if allowed
+  to plunder the British whaling fleet at will. He orders pursuit of Acheron, rather
+  than returning to port for repairs. Acheron again ambushes Surprise, but Aubrey
+  slips away in the night by using a clever decoy buoy and ships lamps. Following
+  the privateer south, Surprise rounds Cape Horn and heads to the Galapagos Islands,
+  where Aubrey is sure Acheron will prey on Britain's whaling fleet. The ship's doctor,
+  Maturin, is interested in the islands' fauna and flora; Aubrey promises his friend
+  several days' exploration time. When Surprise reaches the Galapagos they recover
+  the survivors of a whaling ship destroyed by Acheron. Realizing the ship is close,
+  Aubrey hastily pursues the privateer. Maturin accuses Aubrey of going back on his
+  word, and of following Acheron more out of pride rather than duty, something which
+  Aubrey flatly denies, although not without acknowledging that he has exceeded his
+  orders in pursuit of the privateer. Marine officer Captain Howard attempts to shoot
+  an albatross, but accidentally hits Maturin. The surgeon's mate informs Aubrey that
+  the bullet and a piece of cloth it took with it must be removed, but also that the
+  operation should be performed on solid ground. Despite closing in on Acheron, Aubrey
+  turns around and takes the doctor back to the Galapagos. Maturin performs surgery
+  on himself using a mirror. Giving up the pursuit of the privateer, Aubrey grants
+  Maturin the chance to explore the island and gather specimens before they head for
+  home. On crossing the island looking for a species of flightless cormorant, the
+  doctor discovers Acheron on the other side of the island. Abandoning most of his
+  specimens, Maturin hastens back to warn Aubrey, and Surprise prepares for battle.
+  Due to Acheron's sturdy hull, Surprise must get within very close range to deal
+  damage, something which the officers consider almost impossible. However, after
+  observing the camouflage ability of one of Maturin's specimens — a stick insect
+  — Aubrey disguises Surprise as a whaling ship; he hopes the French would move close
+  to capture the valuable ship rather than destroy it. The Acheron falls for the disguise
+  and is disabled. Aubrey leads boarding parties across the wreckage, engaging in
+  fierce hand-to-hand combat before the ship is captured. Looking for the Acheron's
+  captain, Aubrey is directed to the sickbay, where a French doctor tells him the
+  captain is dead and offers Aubrey the commander's sword. Acheron and Surprise are
+  repaired; while Surprise will remain in the Galapagos, the captured Acheron is to
+  be taken to Valparaíso. As Acheron sails away, Maturin mentions that their doctor
+  had died months ago. Realizing the French captain deceived him by pretending to
+  be the ship's doctor, Aubrey gives the order to beat to quarters and escort Acheron
+  to Valparaíso. Maturin is again denied the chance to explore the Galapagos. Aubrey
+  notes that since the bird Maturin seeks is flightless, "it's not going anywhere",
+  and the two play a selection of Luigi Boccherini as the crew assumes battle stations.
+trajectory:
+- description: In May 1805, aboard HMS Surprise during the Napoleonic Wars, Captain
+    Jack Aubrey stands watch. The ship is on alert with orders to pursue and capture
+    or destroy the French privateer Acheron. The atmosphere is tense, and a shipboard
+    crewmember hears a bell sound signaling heightened vigilance.
+  id: s_0
+  key_delta: The Surprise is ambushed by the larger French privateer Acheron, initiating
+    combat that exposes Surprise's inferior firepower.
+  trigger_event: Aubrey observes cannonfire through his telescope in the fog, revealing
+    an ambush by Acheron.
+- description: Surprise is heavily damaged from the ambush; its cannon fire fails
+    to penetrate Acheron's hull. The ship’s rudder and helm are destroyed, leaving
+    it unsteerable and taking on water rapidly amidst battle damage.
+  id: s_1
+  key_delta: Surprise escapes immediate danger by hiding in a fog bank, transitioning
+    from active battle to retreat and repair mode.
+  trigger_event: Surprise’s crew uses smaller boats to tow the damaged ship into a
+    fog bank to evade further pursuit.
+- description: Aubrey learns from a crewmember that Acheron is a heavier and faster
+    ship, outclassing Surprise. Senior officers acknowledge the threat’s severity.
+    Aubrey contemplates the risk to the British whaling fleet if Acheron remains free.
+  id: s_2
+  key_delta: Pursuit is prioritized over repairs based on the strategic threat Acheron
+    poses to British interests.
+  trigger_event: Aubrey orders the pursuit of Acheron to continue despite Surprise
+    needing repairs.
+- description: During a second encounter, Acheron ambushes Surprise again. The battle
+    begins anew with Surprise attempting to evade.
+  id: s_3
+  key_delta: Surprise escapes a second ambush through deception but remains in active
+    pursuit.
+  trigger_event: Using a decoy buoy and ship’s lamps, Aubrey successfully slips away
+    from Acheron under cover of night.
+- description: Surprise sails south, rounding Cape Horn and reaching the Galapagos
+    Islands, a known target of Acheron’s raiding.
+  id: s_4
+  key_delta: Confirmation of Acheron’s presence near the Galapagos and the continuation
+    of Aubrey’s pursuit toward engagement.
+  trigger_event: Surprise rescues survivors from a British whaling ship destroyed
+    by Acheron upon arrival at the islands.
+- description: While closing in on Acheron, Maturin is accidentally shot by a marine
+    officer’s misfired weapon during a hunting attempt on the island.
+  id: s_5
+  key_delta: Maturin is wounded severely enough to require surgical intervention off
+    the ship, halting the immediate pursuit.
+  trigger_event: Surgeon’s mate reports the bullet wound requires an operation, which
+    must be performed on stable ground.
+- description: Aubrey decides to turn back to the Galapagos rather than continue pursuit,
+    prioritizing Maturin’s surgery and recovery.
+  id: s_6
+  key_delta: Maturin survives a self-conducted surgery, and pursuit of Acheron is
+    temporarily abandoned.
+  trigger_event: Maturin performs surgery on himself using a mirror on shore at the
+    Galapagos Islands.
+- description: After recovery, Maturin is granted exploration time to study the islands'
+    unique fauna, including the sought-after flightless cormorant.
+  id: s_7
+  key_delta: Acheron’s proximity is discovered on land, prompting Surprise to prepare
+    for an imminent battle.
+  trigger_event: While crossing the island, Maturin spots Acheron anchored nearby,
+    renewing the immediate threat.
+- description: Surprise prepares for combat, acknowledging the need to get within
+    close range to damage the heavily armored Acheron.
+  id: s_8
+  key_delta: Surprise masquerades as a non-threatening whaler, setting a trap to engage
+    Acheron in close combat.
+  trigger_event: Aubrey implements a disguise for Surprise, camouflaging it as a whaling
+    ship to lure Acheron close.
+- description: Acheron is deceived by the disguise, approaches within range, and is
+    disabled by Surprise’s attack.
+  id: s_9
+  key_delta: Acheron is captured after a brutal boarding action, shifting control
+    to Aubrey and his crew.
+  trigger_event: Aubrey leads boarding parties onto Acheron, engaging in fierce hand-to-hand
+    combat.
+- description: Aubrey searches for Acheron’s captain but learns from the French doctor
+    in sickbay that the captain is dead; the doctor hands over the commander’s sword.
+  id: s_10
+  key_delta: The ship is secured under British control; the command structure of Acheron
+    officially passes to Aubrey.
+  trigger_event: Acheron and Surprise are repaired; plans are made to escort the captured
+    Acheron to Valparaíso with Surprise remaining in the Galapagos.
+- description: As Acheron departs, Maturin reveals their French doctor died months
+    earlier, implying the captured captain had impersonated him.
+  id: s_11
+  key_delta: Aubrey recognizes the enemy’s last deception, securing vigilance while
+    escorting the prize; Maturin again postpones his exploration.
+  trigger_event: Aubrey orders Surprise to beat to quarters and escort Acheron to
+    Valparaíso upon realizing the deception.

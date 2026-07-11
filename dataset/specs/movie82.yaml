@@ -1,0 +1,380 @@
+commitments:
+- description: Landing on Omaha Beach (s_0) must occur before squad formation and
+    breakout preparation inland (s_1). Prevents premature inland operations prior
+    to beach landing.
+  id: c_0
+  satisfaction_condition: Node s_0 is achieved before node s_1 triggers.
+  type: ordering
+  violation_condition: Node s_1 triggers prior to s_0's completion or confirmation
+    of beach landing.
+- description: The squad can only receive and accept the mission to find Pvt. Ryan
+    (s_2) after successfully assembling post-landing (s_1). Ensures the rescue mission
+    is not assigned prematurely.
+  id: c_1
+  satisfaction_condition: Node s_2 triggered only after s_1 is completed.
+  type: ordering
+  violation_condition: Player obtains or acts on Ryan rescue orders before squad formation
+    at s_1.
+- description: Squad must establish contact with 101st Airborne units near Neuville
+    (s_3) before progressing to gather intelligence about Ryan's location (s_5 and
+    s_6). This prevents skipping critical reconnaissance steps.
+  id: c_2
+  satisfaction_condition: Node s_3 occurs before s_5 and s_6.
+  type: ordering
+  violation_condition: Squad obtains or acts on Ryan location information (s_5, s_6)
+    without prior contact (s_3).
+- description: Ryan’s exact confirmed location (at Ramelle bridge) cannot be recognized
+    or disclosed before successful intelligence gathering and elimination of false
+    leads (between s_5 and s_6).
+  id: c_3
+  satisfaction_condition: Prior to node s_6, system refuses any permanent confirmation
+    that Ryan is at Ramelle bridge.
+  type: invariant
+  violation_condition: Player is allowed to identify or move directly to Ramelle bridge
+    as Ryan’s location before nodes s_5 and s_6 complete.
+- description: The squad’s decision to attack the German machine gun nest and intrusion
+    upon the radar station (s_7) should occur only after confirming Ryan’s probable
+    location (s_6), to keep mission focus coherent.
+  id: c_4
+  satisfaction_condition: Node s_7 only begins after s_6 completion.
+  type: ordering
+  violation_condition: Engagement at the radar station occurs without first knowing
+    Ryan's defense position at Ramelle.
+- description: Miller’s decision to spare Steamboat Willie (the surrendering German
+    soldier) must be preserved between s_7 and s_8 and cannot be overridden prior
+    or out of sequence, ensuring the tension and conflict remain intact.
+  id: c_5
+  satisfaction_condition: Between s_7 and s_8, the German soldier survives the skirmish
+    due to Miller's decision.
+  type: invariant
+  violation_condition: The surrendering German soldier is killed or removed before
+    Miller’s explicit decision at s_7.
+- description: Squad cohesion conflict triggered by Reiben’s desertion threat (s_8)
+    must only be acknowledged after Miller’s mercy decision regarding Steamboat Willie
+    (c_5) and before proceeding further, preserving narrative causality.
+  id: c_6
+  satisfaction_condition: Reiben’s desertion conflict occurs at or after Miller’s
+    decision to spare German and before squad reaches Ramelle.
+  type: invariant
+  violation_condition: Squad conflict over desertion arises prior to Miller's mercy
+    decision or after squad arrives at Ramelle.
+- description: The squad must locate and confirm Ryan alive in combat near Ramelle
+    (s_9) before revealing to Ryan the death of his brothers and the losses sustained
+    in the rescue effort (s_10).
+  id: c_7
+  satisfaction_condition: Node s_9 triggers prior to s_10.
+  type: ordering
+  violation_condition: Ryan learns of casualties and is confronted with mission sacrifices
+    before squad physically locates him.
+- description: Ryan’s refusal to leave his post and readiness to defend the bridge
+    (s_10) must occur before the full defensive preparations commanded by Miller at
+    the bridge (s_11).
+  id: c_8
+  satisfaction_condition: s_10 completion is prerequisite to s_11.
+  type: ordering
+  violation_condition: Defense setup at the bridge begins before Ryan commits to defending
+    it.
+- description: The battle defense of the Merderet River bridge (s_12) shall preserve
+    the fact of heavy American casualties and successful enemy tank destruction; no
+    player action may rewrite this battle’s casualty or damage outcomes.
+  id: c_9
+  satisfaction_condition: During s_12, high American casualties occur and two tanks
+    are destroyed by sticky bombs.
+  type: invariant
+  violation_condition: Player prematurely avoids casualties or prevents tank destruction
+    contrary to established battle facts.
+- description: Miller’s fatal wounding and attempt to destroy the bridge (s_13) must
+    transcur after the main German mechanized assault (s_12), and before arrival of
+    Allied air and ground reinforcements.
+  id: c_10
+  satisfaction_condition: s_12 completes and is followed by s_13 with Miller wounded,
+    then reinforcements arrive.
+  type: ordering
+  violation_condition: Miller is wounded or bridge destruction attempt occurs prior
+    to German assault initiation.
+- description: Upham’s transition from hiding to authoritative executor of surrendering
+    Germans, including his execution of Steamboat Willie (s_14), must be upheld as
+    an irreversible narrative fact.
+  id: c_11
+  satisfaction_condition: At s_14, Upham accepts surrender and summarily executes
+    Steamboat Willie as described.
+  type: invariant
+  violation_condition: Player disallows Upham’s authority or spares Steamboat Willie
+    contrary to narrative sequence.
+- description: Only Ryan, Reiben, and Upham survive the final battle (s_15), with
+    Miller’s death and last words occurring at the end of hostilities; players must
+    not modify survivor count or Miller’s final charge.
+  id: c_12
+  satisfaction_condition: Node s_15 triggers with correct survivors and Miller’s dying
+    words given to Ryan.
+  type: ordering
+  violation_condition: Player alters identity or count of survivors or suppresses
+    Miller’s last words.
+- description: The narrative must culminate with elderly Ryan visiting Miller’s grave
+    (s_16), seeking affirmation and honoring past sacrifices; this closure is essential
+    for narrative completion.
+  id: c_13
+  satisfaction_condition: Node s_16 is achieved, representing narrative closure with
+    Ryan’s visit and salute.
+  type: achievement
+  violation_condition: Player prematurely skips or omits Ryan’s grave visit and confirmation
+    scene in present day.
+initial_facts:
+- content: It is early morning on June 6, 1944.
+  id: f_0
+  negated: false
+- content: Cpl. Timothy P. Upham is aboard a landing craft approaching Omaha Beach.
+  id: f_1
+  negated: false
+- content: American soldiers, including Upham, are preparing to land on Omaha Beach
+    under heavy German gunfire.
+  id: f_2
+  negated: false
+- content: German defensive fire from infantry, machine guns, and artillery is active
+    on Omaha Beach.
+  id: f_3
+  negated: false
+- content: The Normandy invasion has begun but no inland squad formation or breakout
+    has yet occurred.
+  id: f_4
+  negated: false
+- content: Cpl. Timothy P. Upham is not yet assembled with Captain Miller’s squad.
+  id: f_5
+  negated: false
+- content: The squad has not yet received orders to find Private Ryan.
+  id: f_6
+  negated: false
+- content: The squad is not aware of Private Ryan’s whereabouts or mission details.
+  id: f_7
+  negated: false
+- content: The squad has no contact with the 101st Airborne near Neuville.
+  id: f_8
+  negated: false
+- content: No intelligence about Ryan’s precise location or status is known.
+  id: f_9
+  negated: false
+- content: No encounter, skirmish, or events near Neuville or Vierville have yet occurred.
+  id: f_10
+  negated: false
+- content: No conflict or interaction involving Steamboat Willie or decisions on sparing
+    enemy soldiers have happened.
+  id: f_11
+  negated: false
+- content: There are no current casualties or deaths among Upham's future squad members.
+  id: f_12
+  negated: false
+- content: Miller has not yet revealed his English teacher background to the squad.
+  id: f_13
+  negated: false
+- content: Upham has no authority or command role over other soldiers or prisoners.
+  id: f_14
+  negated: false
+- content: The Merderet River bridge and associated battles have not occurred.
+  id: f_15
+  negated: false
+- content: The Normandy American Cemetery scene in present day is in the future and
+    unknown to Upham.
+  id: f_16
+  negated: false
+meta:
+  genres: ["War", "Drama"]
+  id: movie82
+  player_role: Cpl. Timothy P. Upham
+  title: "Saving Private Ryan"
+synopsis: On the morning of June 6, 1944, the beginning of the Normandy invasion,
+  American soldiers prepare to land on Omaha Beach. They struggle against dug-in German
+  infantry, machine gun nests, and artillery fire, which cut down many of the men.
+  Captain John H. Miller, the company commander of Charlie Company, 2nd Ranger Battalion,
+  survives the initial landing and assembles a group of soldiers to penetrate the
+  German defenses, leading to a breakout from the beach. In the United States Department
+  of War in Washington, D.C., General George Marshall is informed that three of four
+  brothers in the Ryan family have all died within days of each other and that their
+  mother will receive all three telegrams on the same day. He learns that the fourth
+  son, Private First Class James Francis Ryan of Baker Company, 506th Parachute Infantry
+  Regiment, 101st Airborne Division is missing in action somewhere in Normandy. After
+  reading to his staff Abraham Lincoln's letter to Mrs. Bixby, Marshall orders that
+  Ryan be found and sent home immediately. In France, three days after D-Day, Miller
+  receives orders to find Ryan. He assembles six men from his company, plus one detailed
+  from the 29th Infantry Division, a clerk who speaks fluent French and German, to
+  accomplish the task. With no information about Ryan's whereabouts, Miller and his
+  men move out to Neuville. On the outskirts of Neuville they meet a platoon from
+  the 101st. After entering the town under heavy rain, Caparzo is wounded by a sniper
+  in the chest, and slowly bleeds to death, since nobody can go out into the open
+  without getting hit. Jackson is able to kill the sniper after Caparzo dies. They
+  locate a Private James Frederick Ryan from Minnesota, but soon realize that he's
+  not their man. They find a member of Charlie Company, 506th, who informs them that
+  his drop zone was at Vierville and that Baker and Charlie companies had the same
+  rally point. Once they reach it, Miller locates a friend of Ryan's, who reveals
+  that Ryan is defending a strategically important bridge over the Merderet River
+  in the town of Ramelle. On the way to Ramelle, Miller decides to take the opportunity
+  to neutralize a small German machine gun position close to an abandoned radar station,
+  despite the misgivings of his men. Wade, their medic, is fatally wounded in the
+  ensuing skirmish. The last surviving German, known only as "Steamboat Willie", incurs
+  the wrath of all the squad members except Upham, who protests to Miller about letting
+  the squad shoot the German soldier. The German pleads for his life and Miller decides
+  to let him walk away, blindfolded, and surrender himself to the next Allied patrol.
+  Viewing Miller's decision as letting the enemy go free, and no longer confident
+  in Miller's leadership, Reiben declares his intention to desert the squad and the
+  mission, prompting a confrontation with Horvath. The argument heats up, until Miller
+  defuses the situation by revealing his pre-war occupation as an English teacher,
+  a question upon which the squad had set up a betting pool. Reiben then reluctantly
+  decides to stay. The squad finally arrives on the outskirts of Ramelle, where they
+  come upon three paratroopers ambushing a German half-track. Among the paratroopers
+  is Ryan. After entering Ramelle, Ryan is told of his brothers' deaths, and their
+  mission to bring him home, and that two lives had been lost in the quest to find
+  him. He is distressed at the loss of his brothers, but does not feel it is fair
+  to go home, asking Miller to tell his mother "when you found me I was here, I was
+  with the only brothers I have left," looking at the small band whose duty it was
+  to defend a bridge and destroy an approaching German mechanized unit. Miller decides
+  to take command and defend the bridge with what little manpower and resources are
+  available. The Germans arrive in force with more than 50 men supported by armor.
+  In spite of inflicting heavy German casualties and destroying two tanks with sticky
+  bombs, most of the Americans—including Jackson, Mellish, and Horvath—are killed.
+  While attempting to blow the bridge, Miller is shot and mortally wounded. Just before
+  a Tiger reaches the bridge, an American P-51 Mustang flies over and destroys it,
+  followed by more Mustangs and advancing American infantry and M4 Sherman tanks who
+  rout the remaining Germans. Upham, who was cut off from the Americans and hid in
+  a ditch next to the advancing Germans, comes out of hiding as the Germans flee and
+  orders them to drop their weapons. The Germans comply but Upham summarily executes
+  "Steamboat Willie" when the latter recognizes him. Ryan, Reiben, and Upham are the
+  only surviving Americans of the battle. Ryan is with Miller as he dies and says
+  his last words, "James... earn this. Earn it." In the present day, Ryan, now an
+  elderly veteran, and his family visit the Normandy American Cemetery and Memorial
+  at Colleville-sur-mer; Normandy, France. Ryan stands at Miller's grave. He asks
+  his wife to confirm that he has led a good life and that he is a "good man" and
+  thus worthy of the sacrifice of Miller and the others. He then salutes Miller's
+  grave.
+trajectory:
+- description: Early morning on June 6, 1944. Cpl. Timothy P. Upham is aboard a landing
+    craft approaching Omaha Beach amid heavy gunfire, with American soldiers preparing
+    to disembark under intense German defensive fire.
+  id: s_0
+  key_delta: American soldiers have landed on Omaha Beach and are under immediate
+    heavy attack, marking the start of the Normandy invasion with high casualties
+    occurring.
+  trigger_event: Landing craft reaches Omaha Beach and soldiers begin to disembark
+    amid machine gun, artillery, and infantry fire.
+- description: After surviving the initial landing chaos, Upham is with Captain Miller
+    and the assembled squad that is organizing to push inland beyond the beachhead
+    under continuous threat.
+  id: s_1
+  key_delta: Upham becomes part of Captain Miller’s squad tasked with breaking through
+    German beach defenses.
+  trigger_event: Captain Miller gathers a group of soldiers, including Upham, to penetrate
+    German defenses and lead the breakout from the beach.
+- description: Upham and the squad receive new orders three days after D-Day to locate
+    Pvt. James Francis Ryan, who is missing in action somewhere in Normandy, with
+    no known location assigned.
+  id: s_2
+  key_delta: The squad’s mission shifts to a rescue operation to find the missing
+    Pvt. Ryan in Normandy.
+  trigger_event: Squad receives orders from headquarters to find Private Ryan and
+    bring him home.
+- description: Upham and the squad depart from the beach and move towards Neuville,
+    encountering a platoon from the 101st Airborne outside the town under heavy rain
+    conditions.
+  id: s_3
+  key_delta: Squad establishes contact with 101st Airborne units, broadening their
+    knowledge of the local battlefield environment.
+  trigger_event: The squad pushes into Neuville under heavy rain and immediately
+    comes under sniper fire.
+- description: While entering Neuville under heavy sniper fire, squad member Caparzo
+    is fatally wounded, dying while the sniper position remains active until Jackson
+    kills the sniper.
+  id: s_4
+  key_delta: Squad suffers a fatal casualty; enemy sniper nest is neutralized but
+    at the cost of a squad member’s life.
+  trigger_event: Sniper shoots Caparzo; sniper is killed by Jackson after Caparzo’s
+    death.
+- description: In Neuville, the squad locates a Private James Frederick Ryan but confirms
+    he is not their target, learning from a Charlie Company member about rally points
+    linked to Pvt. Ryan’s drop zone.
+  id: s_5
+  key_delta: Squad eliminates a false lead and gains actionable intelligence on Ryan's
+    probable location.
+  trigger_event: Squad identifies and interrogates a soldier who provides critical
+    information on Ryan’s likely position near Vierville.
+- description: The squad reaches the rally point near Vierville and meets a friend
+    of Ryan’s, who confirms Ryan is defending a strategic bridge in Ramelle over the
+    Merderet River.
+  id: s_6
+  key_delta: Key location of Ryan is identified, setting the next phase of the mission
+    toward Ramelle.
+  trigger_event: Squad meets Ryan’s comrade who reveals Ryan’s defensive position
+    at Ramelle’s bridge.
+- description: En route to Ramelle, the squad encounters and neutralizes a German
+    machine gun nest at an abandoned radar station despite reservations, resulting
+    in the fatal wounding of medic Wade.
+  id: s_7
+  key_delta: Squad suffers another casualty; enemy resistance reduced but internal
+    tension arises due to Miller sparing a captured German soldier (Steamboat Willie).
+  trigger_event: Squad attacks German machine gun position; Wade is fatally wounded
+    during the skirmish.
+- description: After Miller spares the blindfolded surrendering German soldier, Reiben
+    confronts and threatens to desert, creating a heated argument that Miller diffuses
+    by revealing his prior profession.
+  id: s_8
+  key_delta: Squad cohesion is tested but ultimately reinforced by Miller's revelation
+    and leadership.
+  trigger_event: Reiben voices intention to desert over Miller's decision to spare
+    the German; confrontation escalates and is defused.
+- description: The squad arrives on the outskirts of Ramelle and witnesses three paratroopers
+    ambushing a German half-track; among them is Pvt. Ryan.
+  id: s_9
+  key_delta: Ryan is located alive and in combat; mission to find him is fulfilled.
+  trigger_event: Squad encounters paratroopers engaging enemy mechanized vehicle near
+    Ramelle.
+- description: Ryan learns of his brothers’ deaths and that Miller’s squad suffered
+    losses trying to find him; he refuses to leave, choosing to defend the bridge
+    with his comrades.
+  id: s_10
+  key_delta: Ryan commits to remaining at his strategic post rather than returning
+    home; the group prepares to defend the bridge.
+  trigger_event: Ryan is informed about his brothers and the squad’s sacrifices during
+    the mission.
+- description: Miller assumes command of the combined group at the Ramelle bridge,
+    preparing defenses despite limited manpower and resources, anticipating the approaching
+    German mechanized assault.
+  id: s_11
+  key_delta: Defensive posture established at the bridge, setting up for a major battle.
+  trigger_event: Miller organizes the defense of the Merderet River bridge against
+    an imminent German attack.
+- description: The German forces attack with more than 50 men and armor; heavy fighting
+    ensues with American casualties mounting and two German tanks destroyed by sticky
+    bombs before most Americans are killed or wounded.
+  id: s_12
+  key_delta: Massive casualties among American defenders; tactical defense inflicts
+    significant damage to German forces.
+  trigger_event: German mechanized assault launches on the bridge defense.
+- description: Miller is mortally wounded attempting to blow up the bridge; just as
+    a Tiger tank approaches, American P-51 Mustangs arrive, destroying the tank and
+    opening the way for Allied ground reinforcements.
+  id: s_13
+  key_delta: Miller is fatally wounded; air and ground reinforcements arrive, turning
+    the tide against the Germans.
+  trigger_event: Miller attempts to destroy the bridge and is shot; air support arrives
+    destroying German armor.
+- description: Separated from the main American force, Upham hides next to advancing
+    Germans; as Germans retreat and surrender to Upham, he executes Steamboat Willie,
+    the German soldier spared earlier.
+  id: s_14
+  key_delta: Upham transitions from a passive hiding position to active authority;
+    executes enemy who previously caused internal squad conflict.
+  trigger_event: Upham emerges from hiding and accepts surrender from retreating Germans,
+    executing 'Steamboat Willie'.
+- description: Ryan, Reiben, and Upham are the sole American survivors of the battle;
+    Ryan is by Miller’s dying side when Miller implores him to 'earn this,' meaning
+    to live worthy of their sacrifice.
+  id: s_15
+  key_delta: Loss of squad leader creates emotional and mission-driven imperative
+    for survivors; Ryan inherits Miller’s charge.
+  trigger_event: Miller dies after giving last words to Ryan.
+- description: In present day, an elderly Ryan visits the Normandy American Cemetery
+    with his family and stands at Miller’s grave, seeking affirmation from his wife
+    that he has lived a good life worthy of Miller’s sacrifice before saluting the
+    grave.
+  id: s_16
+  key_delta: Closure and remembrance of past sacrifices; Ryan’s life is retrospectively
+    evaluated against Miller’s final charge.
+  trigger_event: Ryan visits and salutes Miller’s grave at the Normandy Cemetery in
+    present time.

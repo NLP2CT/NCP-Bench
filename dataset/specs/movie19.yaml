@@ -1,0 +1,318 @@
+commitments:
+- description: The discovery and reading of the Buckner diary (s_0) must precede the
+    activation of the Buckner family zombie scenario (s_1), preventing premature supernatural
+    threat acknowledgment.
+  id: c_0
+  satisfaction_condition: Node s_0 has been reached and the diary is discovered before
+    node s_1 is triggered.
+  type: ordering
+  violation_condition: Scenario s_1 is triggered without prior diary discovery and
+    reading in s_0.
+- description: From s_0 until s_2, the group is influenced by technicians remotely
+    administering mood-altering drugs that lower awareness and increase libido; no
+    group member can logically resist or contradict this manipulation within this
+    phase.
+  id: c_1
+  satisfaction_condition: Between s_0 and s_2, NPC behaviors reflect drug influence;
+    player cannot invalidate presence of drug effects.
+  type: invariant
+  violation_condition: Player action or logic denies existence of drug manipulation
+    or causes characters to have full awareness and behavior inconsistent with impairment
+    before s_2.
+- description: Jules and Curt’s outdoor sex scene and subsequent attack/killing by
+    Buckner zombies (s_2) must occur before the group inside reacts and Marty discovers
+    the hidden camera (s_3), ensuring proper cause-effect timing of tension escalation.
+  id: c_2
+  satisfaction_condition: Scene s_2 (attack and Jules' death) is completed before
+    s_3 (Marty’s suspicion and camera discovery).
+  type: ordering
+  violation_condition: Player attempts to reveal camera or group suspicion before
+    Jules and Curt’s scene and attack has logically occurred.
+- description: Between s_3 and s_6, Marty’s paranoia due to marijuana and discovery
+    of control environment must remain logically consistent with his immunity to the
+    drugs and increased awareness of manipulation.
+  id: c_3
+  satisfaction_condition: From s_3 to s_6 player’s perception aligns with Marty being
+    immune and more aware than other members.
+  type: invariant
+  violation_condition: Player ignores or negates Marty’s continued awareness or immunity
+    inconsistent with marijuana habit before escaping or being assaulted.
+- description: The environmental boundaries and dangers outside the cabin (forcefield
+    and tunnel collapse) must be established before Curt’s death (s_4), ensuring the
+    threat environment is credibly contained.
+  id: c_4
+  satisfaction_condition: Player encounters and acknowledges environmental barriers
+    and attack attempts before Curt’s death occurs.
+  type: ordering
+  violation_condition: Curt’s death or escape attempt bypasses established environmental
+    barriers prior to those barriers being revealed or triggered.
+- description: Holden’s death inside the RV (s_5) and subsequent RV crash into the
+    lake establish the group’s reduction and separation before Dana and Marty proceed
+    alone.
+  id: c_5
+  satisfaction_condition: Holden’s death and RV sinking occur prior to further escape
+    attempts by Dana and Marty.
+  type: ordering
+  violation_condition: Player tries to access or command escape routes or knowledge
+    inconsistent with Holden’s death and RV crash before they happen.
+- description: Marty’s survival and revelation of immunity to mood-altering drugs
+    (s_6, s_7) must be triggered to provide the critical turning point for player
+    agency and deeper facility access.
+  id: c_6
+  satisfaction_condition: Marty survives initial assaults and gains access to control
+    box and underground levels.
+  type: achievement
+  violation_condition: Marty is killed or incapacitated before survival and immunity
+    are established or the control box discovery occurs.
+- description: The release of imprisoned monsters (s_8) must follow discovery of control
+    stations and the understanding that cellar items determine which monsters are
+    released, maintaining logical cause-effect sequence.
+  id: c_7
+  satisfaction_condition: Player activates control station to release monsters only
+    after exploration and item-monster connections are made.
+  type: ordering
+  violation_condition: Monsters are released or rampage before discovery of the control
+    station or item-monster relationships.
+- description: Encounter with the Director and the explanation of the ritual structure
+    (s_9, s_10) must occur only after facility is disrupted by monsters, supporting
+    narrative escalation and exposition placement.
+  id: c_8
+  satisfaction_condition: Director’s encounter and ritual explanation happen after
+    or concurrent with staff massacre caused by released monsters.
+  type: ordering
+  violation_condition: Director appears and explains ritual before monsters are released
+    or facility disruption occurs.
+- description: From the Director’s introduction to the ritual’s climax (s_10 to s_12),
+    the archetypal roles of the sacrificed youths and specific ritual rules (order
+    independence except Virgin last, Virgin’s death optional but suffering required)
+    must persist invariantly.
+  id: c_9
+  satisfaction_condition: During s_10 to s_12, sacrifices conform to archetypes and
+    ritual logic without contradiction or bypass.
+  type: invariant
+  violation_condition: Player actions or narrative events violate archetype assignments
+    or ritual conditions (e.g., Virgin dies first without suffering, or ritual completed
+    without necessary archetypal deaths).
+- description: The Director’s death and Patience Buckner’s intervention (s_11), followed
+    by Marty and Dana’s survival and alliance, must be achieved to unlock the final
+    confrontation and awakening of the Ancient Ones.
+  id: c_10
+  satisfaction_condition: Director is killed by Patience and Marty survives to side
+    with Dana, enabling final scene.
+  type: achievement
+  violation_condition: Director survives or Marty/Dana fail to form alliance or survive
+    the fight before Ancient Ones awaken.
+- description: The awakening of the Ancient Ones and the destruction of the facility
+    (s_12) is the unavoidable concluding milestone, marking the narrative end state.
+  id: c_11
+  satisfaction_condition: Ancient One’s hand rises and destroys the facility and cabin,
+    confirming ritual completion.
+  type: achievement
+  violation_condition: Narrative attempts to conclude or reach final state without
+    the awakening and destruction event.
+initial_facts:
+- content: Marty Mikalski is present at a remote cabin in the woods with college friends
+    Dana Polk, Holden McCrea, Jules Louden, and Curt Vaughan.
+  id: f_0
+  negated: false
+- content: The group is jovial and relaxed at the beginning of their vacation.
+  id: f_1
+  negated: false
+- content: Technicians Gary Sitterson, Steve Hadley, and Wendy Lin are remotely monitoring
+    and controlling the environment of the group.
+  id: f_2
+  negated: false
+- content: The group is unaware that technicians are controlling their environment.
+  id: f_3
+  negated: false
+- content: The group has not yet discovered the diary of Patience Buckner.
+  id: f_4
+  negated: false
+- content: Marty Mikalski is not yet aware of the Buckner family or any abusive history
+    associated with them.
+  id: f_5
+  negated: false
+- content: No supernatural events or zombie scenarios have been triggered.
+  id: f_6
+  negated: false
+- content: The mood-altering drugs administered by the technicians have not yet taken
+    effect or are just beginning at best.
+  id: f_7
+  negated: false
+- content: Marty is presumably influenced by the environmental drugs but has not yet
+    demonstrated immunity or awareness of manipulation.
+  id: f_8
+  negated: false
+- content: The group has not yet reacted to any attacks or deaths.
+  id: f_9
+  negated: false
+- content: There are no known environmental barriers such as forcefields or tunnel
+    collapses observed by the group.
+  id: f_10
+  negated: false
+- content: Marty has neither discovered any hidden cameras nor exhibits paranoia related
+    to manipulation.
+  id: f_11
+  negated: false
+- content: The group members are unaware of the presence of control stations, underground
+    elevators, or imprisoned monsters beneath the facility.
+  id: f_12
+  negated: false
+- content: No monsters, zombies, or ritual elements have been revealed to or discovered
+    by Marty at t=0.
+  id: f_13
+  negated: false
+- content: The ritual requiring sacrifices to appease the Ancient Ones is unknown
+    to Marty.
+  id: f_14
+  negated: false
+- content: Technicians Gary Sitterson, Steve Hadley, and Wendy Lin are jointly conducting
+    this operation with a jovial attitude.
+  id: f_15
+  negated: false
+meta:
+  genres: ["Horror", "Comedy"]
+  id: movie19
+  player_role: Marty Mikalski
+  title: "The Cabin in the Woods"
+synopsis: Technicians Gary Sitterson and Steve Hadley prepare for an operation, one
+  of several taking place around the world, while joking with fellow technician Wendy
+  Lin. College students Dana Polk, Holden McCrea, Marty Mikalski, Jules Louden and
+  her boyfriend Curt Vaughan go to a remote cabin in the woods for a vacation. The
+  technicians control the environment the group are in from afar and give them mood-altering
+  drugs to manipulate them into following a scenario. The drugs gradually reduce the
+  group's intelligence and awareness, and also increase their libido. After entering
+  the cellar, the group discovers a large assortment of items, including a diary by
+  Patience Buckner, a girl abused by her sadistic family. Reciting an incantation
+  from the diary, Dana inadvertently triggers the Buckner family scenario — a family
+  of zombies who rise from their graves. Curt and Jules go outside to have sex, encouraged
+  by more mood-altering drugs. The Buckners attack the lovers and kill Jules, but
+  Curt flees to the cabin. Meanwhile, Marty, who frequently smokes marijuana, becomes
+  paranoid and believes they are being manipulated. Curt informs the group of Jules'
+  death. Discovering a hidden camera, Marty thinks that he is on a reality television
+  show, but is attacked and dragged away by one of the Buckners. Holden, Dana, and
+  Curt attempt to flee in their RV, but the technicians barely trigger a tunnel collapse
+  to block their path. Curt attempts to jump a ravine to flee only to crash into an
+  invisible forcefield and fall to his death. Realizing that something is unusual
+  about the environment, Dana becomes convinced that Marty's worries about their being
+  manipulated were correct. While driving back to the cabin, Holden is killed by a
+  Buckner who has been hiding in the RV. The RV falls into the lake and Dana swims
+  away, only to be attacked by a Buckner on the dock. The technicians celebrate the
+  completion of the ritual, but a phone call informs them that Marty is still alive.
+  Arriving at the dock, Marty saves Dana. Marty reveals that he dismembered his assailant
+  after being dragged away, stumbled upon a hidden control box, and was able to access
+  an underground elevator. The technicians realize that Marty is immune to their drugs
+  because of his marijuana habit. Marty and Dana take the elevator down to the lower
+  levels of the facility, passing a variety of imprisoned monsters. One of the monsters
+  carries an item that Dana remembers seeing in the cabin's cellar, and she realizes
+  that the items in the cellar determine which monster will be released. When Dana
+  and Marty are cornered by a security team, Dana uses a control station to release
+  the monsters, which massacre the facility staff. Hadley, Lin and Sitterson are killed
+  in the carnage, while Dana and Marty flee into the lower levels of the facility.
+  Discovering a temple adorned with large stone tablets, Dana and Marty meet the Director.
+  They are informed that the ritual is to appease the "Ancient Ones" — beings who
+  live beneath the facility and are kept in perpetual slumber through an annual, ritual
+  sacrifice of five young people who embody certain archetypes——the Whore, the Athlete,
+  the Scholar, the Fool, and the Virgin. The order in which they die does not matter,
+  as long as the virgin is last, and her death is optional, as long as she suffers.
+  Should the Ancient Ones awake, they will destroy the world. The Director reveals
+  that rituals around the world have been taking place for the same purpose, but each
+  of them failed. The Director urges Dana to kill Marty to complete the ritual. Dana
+  draws a gun on Marty, but is attacked by a werewolf while the Director fights with
+  Marty. Patience Buckner arrives and kills the Director before Marty pushes them
+  both into the Ancient Ones' pit. Marty forgives Dana for threatening to shoot him.
+  The pair accepts that it might be better for another species to take humanity's
+  place if this is the price of its continued existence. Marty and Dana light a joint
+  and hold hands as the gigantic hand of an Ancient One rises up, destroying the facility
+  and the cabin.
+trajectory:
+- description: Marty Mikalski arrives at a remote cabin in the woods with college
+    friends Dana, Holden, Jules, and Curt for a vacation. The group is jovial and
+    relaxed, unaware that technicians are remotely monitoring and controlling their
+    environment.
+  id: s_0
+  key_delta: The discovery of the Buckner diary introduces the element of an abusive
+    family history and sets up the context for the subsequent ritual scenario.
+  trigger_event: Group members enter the cellar of the cabin and discover a diary
+    belonging to Patience Buckner.
+- description: The group is gathered in the cellar reading the diary. The environment
+    remains seemingly ordinary but gradually feels increasingly oppressive.
+  id: s_1
+  key_delta: The recitation triggers the activation of the Buckner family zombie scenario,
+    initiating the supernatural threat around the cabin.
+  trigger_event: Dana recites an incantation from the Buckner diary.
+- description: Jules and Curt leave the cabin to be alone outside, with the rest of
+    the group inside. The technicians increase mood-altering drug dosages influencing
+    the group's behavior.
+  id: s_2
+  key_delta: The Buckner zombies attack the outdoor couple, resulting in Jules' death
+    and Curt fleeing back to the cabin.
+  trigger_event: Curt and Jules begin to have sex outside as encouraged by the drug
+    effects.
+- description: The surviving group members inside the cabin react to Jules' death,
+    with heightened tension and suspicion, especially from Marty due to his paranoia
+    induced by marijuana.
+  id: s_3
+  key_delta: Marty suspects they are part of a reality television show and becomes
+    more aware of manipulation attempts.
+  trigger_event: Marty discovers a hidden camera in the cabin.
+- description: The group prepares to escape the cabin by RV while the Buckner zombies
+    attack again. The environment outside becomes dangerous and unpredictable.
+  id: s_4
+  key_delta: Curt’s death confirms the existence of an impenetrable boundary around
+    the environment, heightening the threat level.
+  trigger_event: Curt attempts to flee via ravine jump but crashes into an invisible
+    forcefield and dies.
+- description: Dana, Holden and Marty are left inside the cabin and attempt to escape
+    using the RV.
+  id: s_5
+  key_delta: Holden’s death narrows the group further and forces Dana and Marty to
+    survive on their own; the RV is destroyed.
+  trigger_event: Holden is killed by a hidden Buckner zombie inside the RV, which
+    then crashes into a lake.
+- description: Dana swims to the dock after the RV accident and is attacked by a Buckner
+    zombie; Marty arrives to save her.
+  id: s_6
+  key_delta: Marty’s survival and intervention reveal he is immune to the drugs and
+    aware of the manipulation, changing the dynamics of the scenario.
+  trigger_event: Marty arrives at the dock and rescues Dana from the attacking Buckner.
+- description: Marty reveals he dismembered his assailant and found a hidden control
+    box that operates an underground elevator inside the facility.
+  id: s_7
+  key_delta: Discovery of the facility’s underground areas exposes the deeper layers
+    of the environment and the monsters contained within.
+  trigger_event: Marty and Dana ride the hidden elevator down into the facility's
+    monster level.
+- description: Marty and Dana descend into lower facility levels and observe imprisoned
+    monsters, making connections to items found earlier in the cabin’s cellar.
+  id: s_8
+  key_delta: The monsters are unleashed, leading to a massacre of the facility staff
+    and disrupting the technicians’ control.
+  trigger_event: Dana uses a control station to release the imprisoned monsters.
+- description: Following the monster uprising, Marty and Dana flee deeper into the
+    lower levels of the facility.
+  id: s_9
+  key_delta: Meeting the Director reveals the true purpose of the ritual and the mythos
+    of the Ancient Ones beneath the facility.
+  trigger_event: They discover a temple area adorned with large stone tablets and
+    encounter the Director.
+- description: 'The Director explains the ritual’s nature: annual sacrifices to appease
+    the Ancient Ones, requiring five archetypal youths, with the Virgin’s death being
+    optional.'
+  id: s_10
+  key_delta: Dana is forced to choose between killing Marty and failing the ritual,
+    placing both of them in immediate danger.
+  trigger_event: The Director urges Dana to kill Marty to complete the ritual.
+- description: Dana aims a gun at Marty, both are suddenly attacked by a werewolf
+    and the Director.
+  id: s_11
+  key_delta: The Director’s death and Patience’s intervention shift control and hint
+    at rebellion against the ritual’s enforcement.
+  trigger_event: Patience Buckner arrives and kills the Director amid the struggle.
+- description: Marty pushes Patience Buckner and the Director into the pit containing
+    the Ancient Ones.
+  id: s_12
+  key_delta: The Ancient Ones awaken and begin destroying the facility and the cabin,
+    signaling possible doom or transformation for humanity.
+  trigger_event: Marty and Dana hold hands as the gigantic hand of an Ancient One
+    rises from the pit.

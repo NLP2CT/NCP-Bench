@@ -1,0 +1,341 @@
+commitments:
+- description: The Driver must never violate his initial getaway driver rule of never
+    working for the same criminals twice or waiting beyond the five-minute window
+    before leaving them, until s_5 is reached where he breaks this by aiding Standard.
+  id: c_0
+  satisfaction_condition: For all trajectory nodes s_i where i < 5, the Driver has
+    not repeated work for the same criminals nor waited more than five minutes for
+    a job to complete.
+  type: invariant
+  violation_condition: The system acknowledges the Driver working with the same criminals
+    in multiple jobs or waiting longer than five minutes before abandoning a job before
+    s_5.
+- description: The Driver’s relationship with Irene and Benicio must develop through
+    initial meeting (s_0), helping with car trouble (s_1), before progressing to deeper
+    involvement and meeting Standard (s_3).
+  id: c_1
+  satisfaction_condition: Node s_0 and s_1 have occurred before any scene involving
+    Irene and Standard's family relations as in s_3.
+  type: ordering
+  violation_condition: The Driver obtains knowledge of or acts upon Standard or Irene’s
+    family issues before meeting Irene and assisting her with car trouble.
+- description: The Driver gaining the stock car and connections with Bernie and Nino
+    (s_2) must precede discovery of Nino’s hostility and deeper criminal conflict
+    unfolding in later nodes (s_10+).
+  id: c_2
+  satisfaction_condition: Node s_2 completed before revelation of Nino’s orchestration
+    of the heist at s_10 or subsequent violent acts against the Driver.
+  type: ordering
+  violation_condition: Player accesses or acts on knowledge of Nino’s motivations
+    or involvement before the event sequences in s_2.
+- description: The Driver’s assistance to Standard in the pawn shop heist (s_5) must
+    be established after the threats from Cook and Standard’s debt are revealed (s_4).
+  id: c_3
+  satisfaction_condition: s_4 has occurred prior to s_5.
+  type: ordering
+  violation_condition: Driver begins assisting in the pawn shop robbery before the
+    debt threat from Cook is made explicit in s_4.
+- description: Standard’s death (s_6) must occur before the Driver’s pursuit and evasion
+    from Cook’s men, revealing betrayal and escalating danger (s_7 - s_9).
+  id: c_4
+  satisfaction_condition: Standard’s death has been triggered in s_6 prior to subsequent
+    motel confrontation and betrayals.
+  type: achievement
+  violation_condition: Driver or system acknowledges or triggers motel conflicts or
+    Cook’s betrayal without Standard’s death occurring first.
+- description: The Driver’s discovery of Blanche’s betrayal and Cook’s double-cross
+    (s_8) must precede Blanche’s death in the motel attack (s_9).
+  id: c_5
+  satisfaction_condition: Blanche’s betrayal is revealed in s_8 before s_9’s motel
+    attack.
+  type: ordering
+  violation_condition: Blanche is killed in the motel siege without prior confirmation
+    of her betrayal and double-cross plan.
+- description: The Driver must confront Cook and reveal Nino’s role as puppet master
+    of the pawn shop heist (s_10) before risks escalate with the hitman attack in
+    the apartment building (s_11).
+  id: c_6
+  satisfaction_condition: s_10 occurs before s_11.
+  type: ordering
+  violation_condition: Driver faces hitman sent by Nino or experiences assault related
+    to Nino’s orders before confronting Cook and learning Nino’s involvement.
+- description: Irene must not observe the Driver committing lethal violence prior
+    to s_11’s elevator kill scene, preserving her initial limited awareness of Driver’s
+    lethal capacity.
+  id: c_7
+  satisfaction_condition: Before s_11, no witnessed lethal acts by Driver are shown
+    to Irene.
+  type: invariant
+  violation_condition: Irene witnesses or knows of Driver’s lethal violence before
+    the elevator hitman assassination event.
+- description: Bernie and Nino’s decision to purge those with knowledge of the pawn
+    shop money and Bernie’s killing of Shannon (s_12) must happen after Nino’s role
+    is uncovered by Driver (s_10) and after Blanche and motel siege events.
+  id: c_8
+  satisfaction_condition: s_12 chronologically follows s_10 and s_9.
+  type: ordering
+  violation_condition: Bernie kills Shannon or attempts to purge knowledge sources
+    before Driver discovers Nino’s orchestration or before Blanche’s death escalates
+    conflict.
+- description: The Driver’s killing of Nino (s_13) must come after Shannon’s death
+    (s_12), concluding definitive elimination of major antagonists before the final
+    negotiation with Bernie (s_14).
+  id: c_9
+  satisfaction_condition: s_12 precedes s_13; s_13 precedes s_14.
+  type: ordering
+  violation_condition: Driver kills Nino before Shannon is killed; or final meeting
+    with Bernie (s_14) occurs before Nino’s death.
+- description: The Driver’s farewell call to Irene and decision to meet Bernie for
+    money-power exchange (s_14) must precede the final violent confrontation between
+    Driver and Bernie (s_15).
+  id: c_10
+  satisfaction_condition: s_14 occurs before s_15.
+  type: ordering
+  violation_condition: Driver directly confronts or fights Bernie without previously
+    making the call to Irene or scheduling the meeting.
+- description: The final violent resolution between the Driver and Bernie (s_15) must
+    occur to close the narrative, reflecting the irreconcilable conflict over money
+    and safety.
+  id: c_11
+  satisfaction_condition: s_15 has been triggered and completed before narrative closure.
+  type: achievement
+  violation_condition: Narrative attempts to resolve without the Driver and Bernie’s
+    fatal confrontation or skips the mutual stabbing sequence.
+- description: The Driver’s departure alone and absence of response to Irene’s knock
+    at the apartment door (s_16) marks narrative closure of separation and loneliness
+    and must be consistent and final.
+  id: c_12
+  satisfaction_condition: Driver is unresponsive to Irene’s knocking and drives off
+    alone at s_16.
+  type: invariant
+  violation_condition: Driver responds to Irene’s knock or remains present with Irene
+    after s_16 within the same narrative trajectory.
+initial_facts:
+- content: The Driver lives in a low-rent apartment building.
+  id: f_0
+  negated: false
+- content: The Driver works as a mechanic in a chop shop owned by Shannon.
+  id: f_1
+  negated: false
+- content: The Driver works as a part-time movie stuntman.
+  id: f_2
+  negated: false
+- content: The Driver operates as a getaway driver with the rule of never working
+    for the same criminals twice.
+  id: f_3
+  negated: false
+- content: The Driver operates as a getaway driver with the rule of waiting only five
+    minutes before abandoning a robbery.
+  id: f_4
+  negated: false
+- content: The Driver has not yet met Irene or her son Benicio.
+  id: f_5
+  negated: false
+- content: The Driver has not yet met Standard, Irene's husband.
+  id: f_6
+  negated: false
+- content: The Driver has no knowledge of any threat from Albanian gangster Cook.
+  id: f_7
+  negated: false
+- content: The Driver has no involvement in any pawn shop robbery.
+  id: f_8
+  negated: false
+- content: The Driver has no knowledge of mobsters Bernie Rose or Nino.
+  id: f_9
+  negated: false
+- content: The Driver has no knowledge or suspicion of Nino’s hostility toward Shannon.
+  id: f_10
+  negated: false
+- content: The Driver has no knowledge of any betrayal plans by Blanche.
+  id: f_11
+  negated: false
+- content: The Driver has not yet confronted Cook or learned of Nino’s role in any
+    crime.
+  id: f_12
+  negated: false
+- content: The Driver and Irene have not witnessed or know of the Driver committing
+    lethal violence.
+  id: f_13
+  negated: false
+- content: Shannon is alive and in control of his chop shop.
+  id: f_14
+  negated: false
+- content: The Driver does not possess a silicone mask disguise.
+  id: f_15
+  negated: false
+- content: The Driver has not made any arrangements or final calls regarding Irene
+    or any criminal money exchange.
+  id: f_16
+  negated: false
+- content: The Driver is physically healthy and uninjured.
+  id: f_17
+  negated: false
+meta:
+  genres: ["Crime", "Thriller"]
+  id: movie09
+  player_role: Driver
+  title: "Drive"
+synopsis: The unnamed Driver lives in a low-rent apartment building and works as a
+  mechanic in a chop shop owned by Shannon, and as a part-time movie stuntman. He
+  also has a secret job as a getaway driver, organized by Shannon, where his rule
+  is that he never works for the same people twice and only gives the criminals a
+  five-minute window to complete their robbery, after which he will leave them behind.
+  One day, he meets his new neighbor Irene in the apartment building elevator and
+  later helps her and her young son Benicio when Irene has car trouble at a local
+  supermarket. Shannon persuades the mobster Bernie Rose to purchase a stock car for
+  the Driver to race after seeing the Driver's skill. Rose's friend and business partner
+  is Nino, an aging Jewish mobster. Nino once had Shannon's pelvis broken when Shannon
+  overcharged him for a past job, leaving him with a limp. Irene has her car towed
+  to Shannon's garage and the Driver gives her and Benicio a ride home. The Driver
+  begins spending more and more time with Irene and Benicio, and later meets Irene's
+  husband, Standard, when he comes home from prison. Standard owes protection money
+  to an Albanian gangster, Cook, from his time in prison. Cook beats up Standard and
+  threatens to go after Irene and Benicio if Standard does not agree to rob a pawn
+  shop to pay the debt. The Driver agrees to help Standard pay off the debt by driving
+  him to and from the pawn shop. Blanche, Cook's moll, also participates in the heist.
+  While waiting in the parking lot for Standard and Blanche to complete the heist,
+  the Driver sees another car pull into the lot and park. Blanche returns to the car
+  with a large bag. But when Standard leaves the pawn shop, he is shot in the neck
+  by the owner and dies. The Driver flees with Blanche and the money, but the car
+  that pulled into the parking lot minutes earlier gives chase, trying to run them
+  off the road. The Driver eludes the other vehicle and they hide out in a motel room.
+  The Driver discovers that the amount of money is much more than was expected. After
+  the Driver threatens Blanche, she tells him that the chasing car belongs to Cook
+  and that she and Cook planned to double-cross the Driver and Standard, taking the
+  money for themselves. Two of Cook's men attack them in the motel room, killing Blanche
+  and injuring the Driver before he kills them both. The Driver confronts Cook in
+  his strip club and learns that Nino was behind the heist. Nino sends a hitman to
+  the Driver's apartment building, with whom the Driver and Irene unknowingly ride
+  the elevator. The Driver gives Irene a kiss before killing the hitman by repeatedly
+  stomping on his head, to her horror. Nino explains to Bernie that the money from
+  the pawn shop belonged to the East Coast mafia. Fearing retaliation, Bernie and
+  Nino agree to kill those with knowledge, starting with Cook. Bernie confronts Shannon
+  in his garage and reluctantly kills him with a straight razor. The Driver, wearing
+  a silicone mask disguise, follows Nino to the Pacific Coast Highway in his car and
+  T-Bones Nino's car onto a beach. With Nino wounded and weakened, the Driver drowns
+  him in the Pacific Ocean. The Driver speaks to Bernie on Nino's phone and they arrange
+  to meet at a Chinese restaurant. The Driver makes a final phone call to Irene to
+  tell her he is leaving, and says that meeting her and Benicio was the best thing
+  that has ever happened to him. At the restaurant, Bernie promises only Irene and
+  Benicio's safety, in exchange for the money. In the parking lot, Bernie stabs the
+  Driver in the abdomen as he pulls the money from the trunk of his car. The Driver
+  fatally stabs Bernie, leaving his corpse and the satchel of money behind. That evening,
+  Irene knocks on the Driver's apartment door, with no response. The Driver drives
+  off into the night.
+trajectory:
+- description: 'The Driver lives in a low-rent apartment building, works as a mechanic
+    at Shannon''s chop shop, moonlights as a stuntman, and operates as a getaway driver
+    with strict rules: never work for the same criminals twice and only wait five
+    minutes before abandoning them.'
+  id: s_0
+  key_delta: Irene and her young son Benicio are introduced as new figures in the
+    Driver's life, establishing the possibility of a personal connection outside his
+    criminal activities.
+  trigger_event: The Driver meets his new neighbor Irene in the apartment elevator.
+- description: The Driver helps Irene with car trouble at a supermarket and gives
+    her and Benicio a ride home from Shannon's garage.
+  id: s_1
+  key_delta: Driver's relationship with Irene and Benicio begins to deepen beyond
+    mere acquaintance.
+  trigger_event: The Driver assists Irene with her broken-down car and drives her
+    and Benicio home.
+- description: At Shannon's persuasion, mobster Bernie Rose buys a stock car for the
+    Driver to race; Bernie’s partner is Nino, who harbors a grudge against Shannon.
+  id: s_2
+  key_delta: Driver gains a new, high-profile connection in the criminal underworld
+    through racing, escalating his alliances; introduction of Nino's resentment toward
+    Shannon adds undercurrent tension.
+  trigger_event: Shannon convinces Bernie Rose to invest in a stock car for the Driver
+    after noticing his driving skills.
+- description: The Driver spends more time with Irene and Benicio, meeting Irene's
+    husband Standard upon his return from prison.
+  id: s_3
+  key_delta: Standard's reentry into Irene and Benicio's life establishes new relational
+    dynamics and future complications.
+  trigger_event: Standard returns from prison and meets the Driver at Irene's apartment
+    building.
+- description: Standard owes protection money to Albanian gangster Cook, who threatens
+    harm to Irene and Benicio if the debt is not paid by robbing a pawn shop.
+  id: s_4
+  key_delta: Standard is forced into the pawn shop robbery under threat to Irene
+    and Benicio, giving the Driver a direct reason to step in.
+  trigger_event: Cook assaults Standard to enforce the debt repayment demand via a
+    pawn shop robbery.
+- description: The Driver agrees to assist Standard by driving him to and from the
+    pawn shop for the robbery, alongside Blanche who participates in the heist.
+  id: s_5
+  key_delta: Driver becomes actively involved in the dangerous pawn shop robbery,
+    increasing risk exposure.
+  trigger_event: Standard recruits the Driver’s help for the pawn shop robbery, joined
+    by Blanche.
+- description: While waiting after the pawn shop robbery, disguised as success, Standard
+    is shot and killed by the shop owner; the Driver flees with Blanche and the money.
+  id: s_6
+  key_delta: Standard's death irreversibly alters the situation; the Driver escapes
+    with Blanche and stolen money, becoming a fugitive.
+  trigger_event: Pawn shop owner shoots Standard upon his exit.
+- description: The Driver evades a pursuing car linked to Cook, and hides out in a
+    motel room with Blanche.
+  id: s_7
+  key_delta: Clear revelation of betrayal and threat from Cook's faction; Driver and
+    Blanche seek refuge.
+  trigger_event: Another car chases Driver and Blanche after the pawn shop robbery.
+- description: After threatening Blanche, the Driver learns of her and Cook’s plan
+    to double-cross him and Standard by stealing the money.
+  id: s_8
+  key_delta: Betrayal within the criminal circle is confirmed; trust between Driver
+    and Blanche is broken.
+  trigger_event: Driver confronts Blanche about the unexpectedly large amount of money.
+- description: Two of Cook's men attack the Driver and Blanche in the motel; the Driver
+    kills the attackers but Blanche is killed.
+  id: s_9
+  key_delta: Driver suffers injury; Blanche dies, removing a betrayer but escalating
+    danger.
+  trigger_event: Motel room is violently attacked by Cook’s men.
+- description: Driver confronts Cook in his strip club, uncovering that Nino orchestrated
+    the pawn shop heist.
+  id: s_10
+  key_delta: The mastermind behind the heist is revealed as Nino, linking back to
+    the mob power struggle.
+  trigger_event: Driver confronts Cook about the betrayal and the source of the heist
+    order.
+- description: Nino sends a hitman to the Driver's apartment building; Driver kills
+    the hitman in the elevator in Irene's presence.
+  id: s_11
+  key_delta: Driver’s violent survival reveals the lethal level of threat; Irene witnesses
+    Driver’s lethal capacity, affecting their relationship.
+  trigger_event: Driver and Irene unknowingly ride the elevator with the hitman sent
+    by Nino.
+- description: Bernie and Nino decide to eliminate all who know about the pawn shop
+    money, starting with Cook; Bernie kills Shannon reluctantly.
+  id: s_12
+  key_delta: Elimination of Shannon removes an influential figure and tightens the
+    criminal purge.
+  trigger_event: Bernie confronts and kills Shannon at the garage under Nino’s orders.
+- description: Driver, disguised with a silicone mask, ambushes Nino on the Pacific
+    Coast Highway, crashing Nino’s car into the beach and drowning him in the ocean.
+  id: s_13
+  key_delta: Major antagonist Nino is neutralized, shifting power dynamics in the
+    criminal underworld.
+  trigger_event: Driver confronts and kills Nino after forcing his car off the road.
+- description: Driver arranges a meeting with Bernie to exchange the stolen money
+    for Irene and Benicio's safety; calls Irene to say farewell before the meeting.
+  id: s_14
+  key_delta: Driver plans to resolve conflict by surrendering money for protection
+    of loved ones, signaling imminent climax.
+  trigger_event: Driver contacts Bernie and agrees to meet at a Chinese restaurant;
+    makes final call to Irene.
+- description: At the restaurant parking lot, Bernie stabs the Driver during the money
+    exchange; Driver fatally stabs Bernie in return, leaving behind Bernie’s corpse
+    and the money.
+  id: s_15
+  key_delta: Both Driver and Bernie are fatally wounded; Driver gains survival but
+    leaves behind money and Bernie’s dead body.
+  trigger_event: Driver and Bernie engage in a violent confrontation culminating in
+    mutual fatal injuries.
+- description: That evening, Irene knocks on Driver's apartment door with no response;
+    Driver drives off alone into the night.
+  id: s_16
+  key_delta: Driver leaves Irene and Benicio behind and disappears alone after the
+    showdown with Bernie.
+  trigger_event: Irene’s unanswered knock at the Driver’s apartment door.

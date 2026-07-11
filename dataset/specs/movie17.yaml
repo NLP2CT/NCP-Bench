@@ -1,0 +1,315 @@
+commitments:
+- description: The outbreak of mutated mad cow disease causing humans to become cannibal
+    zombies must remain established throughout from s_0 to s_14.
+  id: c_0
+  satisfaction_condition: From s_0 onwards, the system always acknowledges the world
+    is overrun by cannibal zombies due to mutated mad cow disease.
+  type: invariant
+  violation_condition: Any event or player action denying or contradicting the existence
+    of the outbreak as origin of zombies after s_0.
+- description: Tallahassee must meet Columbus before forming a traveling alliance
+    to prevent logical gap in their partnership (ensures s_0 occurs before s_1).
+  id: c_1
+  satisfaction_condition: s_0 (encounter of Tallahassee and Columbus) occurs before
+    any joint travel or alliance represented by s_1.
+  type: ordering
+  violation_condition: System treats any outcome implying alliance or joint travel
+    before meeting at s_0.
+- description: The deception by Wichita and Little Rock must happen before Tallahassee
+    and Columbus lose their weapons and vehicles (s_1 before s_2).
+  id: c_2
+  satisfaction_condition: s_1 (first con by sisters) occurs before s_2 (regaining
+    weapons then losing them again).
+  type: ordering
+  violation_condition: Player bypasses or reverses this order, e.g., losing weapons
+    prior to encountering the sisters.
+- description: Wichita and Little Rock maintain their con artist deception consistently
+    from s_1 through s_3, enabling their repeated weapon/vehicle thefts.
+  id: c_3
+  satisfaction_condition: Between s_1 and s_3, all interactions preserve that Wichita
+    and Little Rock are tricksters who seize control via deception or force.
+  type: invariant
+  violation_condition: Any event where sisters act honestly or relinquish weapons/vehicle
+    without conflict during this phase.
+- description: A Mexican standoff with weapons drawn involving all four characters
+    (Tallahassee, Columbus, Wichita, Little Rock) must precede the negotiated truce
+    (s_3).
+  id: c_4
+  satisfaction_condition: s_3 (standoff and truce) only occurs after the conflict
+    buildup starting in s_2.
+  type: ordering
+  violation_condition: Truce or cooperation established before conflict escalation
+    and weapons draw confrontation.
+- description: All group members must agree to travel together towards Pacific Playland
+    only after the truce and explanation about the destination (s_3 before s_4).
+  id: c_5
+  satisfaction_condition: The joint decision and shared goal in s_4 logically follow
+    from the truce and group dynamic at s_3.
+  type: ordering
+  violation_condition: Group aligns or attempts journey together prior to resolving
+    the standoff or learning about Pacific Playland.
+- description: Bill Murray is uninfected but disguised as a zombie at s_5; he must
+    not be mistaken for a zombie by Tallahassee or Columbus until that point.
+  id: c_6
+  satisfaction_condition: At s_5, Bill Murray is recognized as human only after player/NPC
+    interactions reveal his disguise.
+  type: invariant
+  violation_condition: Player or system reveals Bill Murray's true nature before reaching
+    s_5 or misconstrues his identity prematurely.
+- description: Columbus must shoot and kill Bill Murray only after the attempted scare
+    prank at s_5 to maintain narrative causality.
+  id: c_7
+  satisfaction_condition: The fatal misunderstanding happens strictly at s_5 after
+    Bill Murray’s prank.
+  type: ordering
+  violation_condition: Bill Murray’s death occurs before the prank or without player
+    interaction triggering the misunderstanding.
+- description: Tallahassee must reveal his true grief about his son (s_6) only after
+    Bill Murray’s death (s_5).
+  id: c_8
+  satisfaction_condition: Conversation revealing Tallahassee's son's death takes place
+    at or after s_6, following s_5's events.
+  type: ordering
+  violation_condition: Truth of Tallahassee’s grief is disclosed prior to s_5 or without
+    the emotional context provided by Bill Murray’s incident.
+- description: Wichita’s near kiss and sudden departure (s_7) must happen only after
+    her growing relationship with Columbus and revealing tensions post s_6.
+  id: c_9
+  satisfaction_condition: s_7 event of nearly kissing then leaving occurs chronologically
+    after s_6’s revelations and group dynamics shifts.
+  type: ordering
+  violation_condition: Wichita leaves abruptly without preceding relational development
+    or emotional events.
+- description: Tallahassee’s pursuit of Wichita and Little Rock to Pacific Playland
+    (s_8) must follow Wichita’s departure (s_7).
+  id: c_10
+  satisfaction_condition: s_8 travel by Tallahassee and Columbus occurs only after
+    s_7 triggers Wichita and Little Rock’s departure.
+  type: ordering
+  violation_condition: The group reunites or pursues before the sisters actually leave.
+- description: The activation of amusement park rides and resultant zombie aggregation
+    (s_9) must occur to escalate the final confrontation.
+  id: c_11
+  satisfaction_condition: By s_9, the group has triggered all rides and lights, attracting
+    zombies, advancing plot tension.
+  type: achievement
+  violation_condition: Player action prevents or skips activation of rides, thereby
+    averting zombie convergence incompatible with plot escalation.
+- description: Wichita and Little Rock become trapped on the drop tower with depleted
+    ammunition during the zombie battle (s_10) and conflict must remain intense and
+    unresolved here.
+  id: c_12
+  satisfaction_condition: At s_10, sisters are surrounded, armed but out of ammo,
+    clearly endangered.
+  type: invariant
+  violation_condition: They have ammo, escape freely, or battle ends before s_10 triggers.
+- description: Tallahassee must distract zombies and enable Columbus’s rescue attempt
+    during s_11, preserving coordinated teamwork.
+  id: c_13
+  satisfaction_condition: s_11 occurs with the stalling action by Tallahassee and
+    rescue effort by Columbus sequentially aligned.
+  type: ordering
+  violation_condition: Player action prevents Tallahassee’s baiting or rescue attempts,
+    breaking cooperation logic.
+- description: Wichita reveals her real name 'Krista' to Columbus (s_12) as a milestone
+    of group trust and cohesion.
+  id: c_14
+  satisfaction_condition: s_12 happens only after siblings are rescued and trust is
+    sufficiently established.
+  type: achievement
+  violation_condition: Name revelation occurs before or without rescue or trust-building
+    events.
+- description: Tallahassee consumes a Twinkie after eliminating remaining zombies
+    (s_13), symbolizing fulfillment of his personal quest.
+  id: c_15
+  satisfaction_condition: s_13 is reached with zombie clearance and Twinkie consumption
+    acknowledged.
+  type: achievement
+  violation_condition: Twinkie consumption or zombie elimination happens prematurely
+    or is omitted from the narrative resolution.
+- description: The final group unity representing a newly formed family must be maintained
+    after s_14, resolving previous hostility and fragmentation.
+  id: c_16
+  satisfaction_condition: Post s_14, all four survivors remain united, with previous
+    conflicts resolved and collective cohesion present.
+  type: invariant
+  violation_condition: Player causes permanent group rupture or abandonment violating
+    the final family bond logic.
+initial_facts:
+- content: The world is overrun by cannibal zombies caused by a mutated strain of
+    mad cow disease.
+  id: f_0
+  negated: false
+- content: The story time is exactly two months after the outbreak of the mutated
+    mad cow disease.
+  id: f_1
+  negated: false
+- content: Tallahassee is traveling alone in a post-apocalyptic world overrun by zombies.
+  id: f_2
+  negated: false
+- content: Survival conditions are harsh and resources are scarce at this time.
+  id: f_3
+  negated: false
+- content: Tallahassee has not yet met Columbus.
+  id: f_4
+  negated: false
+- content: Tallahassee does not yet know the whereabouts or fate of Columbus's parents.
+  id: f_5
+  negated: false
+- content: Tallahassee does not yet know the identities or existence of Wichita and
+    Little Rock.
+  id: f_6
+  negated: false
+- content: Tallahassee possesses weapons and a vehicle at this point.
+  id: f_7
+  negated: false
+- content: Tallahassee has not yet formed any alliance or group partnership.
+  id: f_8
+  negated: false
+- content: Tallahassee is unaware of the Pacific Playland amusement park and its significance.
+  id: f_9
+  negated: false
+- content: Bill Murray exists but has not yet been encountered or identified by Tallahassee.
+  id: f_10
+  negated: false
+- content: Tallahassee has not yet revealed any personal grief about loss of family.
+  id: f_11
+  negated: false
+meta:
+  genres: ["Comedy", "Horror"]
+  id: movie17
+  player_role: Tallahassee
+  title: "Zombieland"
+synopsis: Two months after a mutated strain of mad cow disease has turned most humans
+  into cannibal zombies, unaffected college student "Columbus" is making his way to
+  Columbus, Ohio to see whether his parents are still alive. He encounters "Tallahassee",
+  another survivor who seeks Twinkies. They travel together. They later meet "Wichita"
+  and her younger, 12-year-old sister "Little Rock". The sisters were con artists
+  before the catastrophe, and have little trouble tricking the two guys into handing
+  over their weapons and stealing their vehicle. Later, the two men find a Hummer
+  loaded with weapons, but when they meet the girls again, the girls once more gain
+  the upper hand, taking their weapons and car. Tallahassee manages to wrestle away
+  Little Rock's gun, resulting in a Mexican standoff. Columbus negotiates a truce.
+  The girls are going to the "Pacific Playland" amusement park, which is supposedly
+  free of zombies. Columbus does not want to go along at first, but when Wichita informs
+  him that his hometown has been destroyed, he stays with the group. When they reach
+  Hollywood, Tallahassee takes them to Bill Murray's mansion. Tallahassee and Wichita
+  meet Murray himself, uninfected but disguised as a zombie so he can walk safely
+  among the infected. When Murray attempts to scare Columbus and Little Rock as a
+  practical joke, Columbus shoots and kills him, believing him a real zombie. Later,
+  Columbus realizes Tallahassee has been grieving for his young son, lost to the zombies,
+  rather than his dog as he had earlier led Columbus to believe. Wichita nearly kisses
+  Columbus, but fearing attachment, she leaves with Little Rock for Pacific Playland
+  without warning. Columbus persuades a reluctant Tallahassee to follow in one of
+  Murray's vehicles. At Pacific Playland, Wichita and Little Rock activate all the
+  rides and lights, attracting nearby zombies. A battle ensues, leaving the sisters
+  trapped on a drop tower ride. Tallahassee and Columbus arrive just as the sisters'
+  ammunition runs out. Tallahassee lures the zombies away, then locks himself in a
+  game booth, shooting zombies at his leisure, while Columbus goes after the sisters.
+  In thanks, Wichita reveals her real name, Krista. Tallahassee eliminates the remaining
+  zombies, then joyfully eats a Twinkie that Little Rock has found. The group leaves
+  Pacific Playland together after Little Rock and Wichita pretend to leave them behind,
+  Columbus having realized he's finally found what he's been looking for——a family.
+trajectory:
+- description: Two months after a mutated mad cow disease outbreak has transformed
+    most humans into cannibal zombies, Tallahassee is traveling alone in a post-apocalyptic
+    world overrun by zombies, survival is harsh and resources are scarce.
+  id: s_0
+  key_delta: Tallahassee meets Columbus, forming a new alliance with another survivor
+    who has a different goal.
+  trigger_event: Encountering Columbus, an unaffected college student traveling towards
+    Columbus, Ohio.
+- description: Tallahassee and Columbus are traveling together, scavenging for resources
+    in a dangerous zombie-infested environment.
+  id: s_1
+  key_delta: Tallahassee and Columbus lose their weapons and vehicle to Wichita and
+    Little Rock, shifting the power dynamic in the group.
+  trigger_event: Meeting Wichita and Little Rock, two con artist sisters who trick
+    Tallahassee and Columbus into giving up their weapons and vehicle.
+- description: Tallahassee and Columbus locate a Hummer loaded with weapons, temporarily
+    regaining superior firepower.
+  id: s_2
+  key_delta: Tallahassee and Columbus are disarmed and stranded again, increasing
+    tension and vulnerability.
+  trigger_event: Re-encountering Wichita and Little Rock, who again deceive Tallahassee
+    and Columbus to steal their weapons and vehicle for the second time.
+- description: Tallahassee and Columbus confront Wichita and Little Rock in a tense
+    Mexican standoff, weapons drawn.
+  id: s_3
+  key_delta: A truce is negotiated by Columbus, temporarily halting the conflict and
+    establishing uneasy cooperation.
+  trigger_event: Tallahassee wrestles Little Rock's gun, escalating the confrontation
+    to a Mexican standoff.
+- description: The group, now including Tallahassee, Columbus, Wichita, and Little
+    Rock, prepare to journey towards the Pacific Playland amusement park believed
+    to be zombie-free.
+  id: s_4
+  key_delta: The group aligns on a shared objective of reaching Pacific Playland,
+    agreeing to travel together.
+  trigger_event: Wichita informs Tallahassee and Columbus that Pacific Playland is
+    their destination, and Columbus learns his hometown has been destroyed.
+- description: Arriving in Hollywood, Tallahassee leads the group to Bill Murray's
+    mansion, who is disguised as a zombie to move safely among the infected.
+  id: s_5
+  key_delta: Columbus shoots and kills Bill Murray, believing him to be a real zombie,
+    resulting in a fatal misunderstanding.
+  trigger_event: Bill Murray attempts to scare Columbus and Little Rock as a joke.
+- description: After Bill Murray's death, Tallahassee reveals his true grief over
+    the loss of his young son to Columbus, correcting a prior false claim that it
+    was his dog.
+  id: s_6
+  key_delta: Columbus gains deeper understanding of Tallahassee’s emotional state;
+    bond between them is deepened.
+  trigger_event: Tallahassee's revelation of his son's death during conversation with
+    Columbus.
+- description: Wichita almost kisses Columbus but abruptly leaves with Little Rock
+    without informing the others, moving ahead toward Pacific Playland alone.
+  id: s_7
+  key_delta: The group is temporarily split, forcing Tallahassee and Columbus to decide
+    whether to pursue.
+  trigger_event: Wichita departs suddenly for Pacific Playland, leaving Columbus and
+    Tallahassee behind.
+- description: Tallahassee, persuaded by Columbus, follows Wichita and Little Rock
+    to Pacific Playland in one of Bill Murray’s vehicles.
+  id: s_8
+  key_delta: The group is reunited en route to the shared destination, restoring their
+    alliance.
+  trigger_event: Tallahassee and Columbus get into Bill Murray’s vehicle and resume
+    travel towards the amusement park.
+- description: At Pacific Playland, Wichita and Little Rock trigger all the rides
+    and lights, attracting a large horde of zombies.
+  id: s_9
+  key_delta: Zombies gather in large numbers, escalating direct confrontation imminently.
+  trigger_event: Activation of amusement park rides and lights by Wichita and Little
+    Rock.
+- description: A fierce battle against zombies unfolds; Wichita and Little Rock become
+    trapped on a drop tower ride as their ammunition runs out.
+  id: s_10
+  key_delta: The sisters are endangered and immobilized, requiring a rescue.
+  trigger_event: Zombies surround the sisters on the drop tower ride, and their weapons
+    are depleted.
+- description: Tallahassee distracts the zombies by locking himself in a game booth
+    and shooting them, while Columbus goes to rescue Wichita and Little Rock.
+  id: s_11
+  key_delta: The threat to the sisters is temporarily mitigated, allowing Columbus
+    to attempt a rescue.
+  trigger_event: Tallahassee lures zombies away into a game booth and starts shooting
+    them, creating opportunity for rescue.
+- description: Wichita reveals her real name 'Krista' to Columbus after being rescued,
+    signaling trust within the group.
+  id: s_12
+  key_delta: Group members share authentic identities, reinforcing group cohesion.
+  trigger_event: Wichita discloses her true identity to Columbus in gratitude.
+- description: Tallahassee eliminates the remaining zombies and happily eats a Twinkie
+    found by Little Rock, symbolizing a small victory and moment of joy.
+  id: s_13
+  key_delta: Tallahassee fulfills his personal quest momentarily, lifting group morale.
+  trigger_event: Tallahassee consumes a Twinkie after dispatching the last zombies
+    in Pacific Playland.
+- description: The group leaves Pacific Playland together; Little Rock and Wichita
+    pretend to leave them behind, but the group remains united as a newly formed family.
+  id: s_14
+  key_delta: The survivors form a cohesive family unit, resolving earlier tensions
+    and conflicts.
+  trigger_event: The group departs Pacific Playland after Little Rock and Wichita
+    simulate abandonment.

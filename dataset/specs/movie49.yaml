@@ -1,0 +1,331 @@
+commitments:
+- description: The player cannot identify Karen Eiffel as the narrator's voice before
+    visiting Jules Hilbert and discussing the literary nature of Harold's situation.
+  id: c_0
+  satisfaction_condition: Identification of Karen Eiffel as narrator voice occurs
+    only at or after node s_9.
+  type: ordering
+  violation_condition: Player attempts or system acknowledges Karen Eiffel's identity
+    as narrator before s_9.
+- description: The narrative cannot acknowledge the inevitability or acceptance of
+    Harold's death before Harold reads the manuscript and fully comprehends the death
+    scenario.
+  id: c_1
+  satisfaction_condition: Acceptance of Harold's death as inevitable occurs only at
+    or after node s_12.
+  type: ordering
+  violation_condition: System confirms or player acts on acceptance of fate prior
+    to Harold reading the manuscript (s_12).
+- description: Harold's death as described in Karen Eiffel's manuscript remains an
+    unavoidable narrative element until node s_14 where the death outcome is subverted
+    by survival.
+  id: c_2
+  satisfaction_condition: From s_10 through s_13, the narrative treats Harold’s scripted
+    death as inevitable and undisputed.
+  type: invariant
+  violation_condition: Any narrative or system acknowledgement of Harold’s survival
+    or failure of death before s_14.
+- description: The narrative must achieve Harold’s acceptance of his fate by reading
+    and appreciating Karen Eiffel’s manuscript to progress the story toward resolution.
+  id: c_3
+  satisfaction_condition: Player triggers Harold reading the manuscript and confirming
+    its ending (s_12).
+  type: achievement
+  violation_condition: Narrative attempts to proceed to final events without Harold
+    having read and accepted the manuscript.
+- description: Ana Pascal’s attitude towards Harold shifts naturally based on their
+    interactions (e.g., cookie incident), preventing premature reconciliation before
+    s_8 when Harold embraces life fully.
+  id: c_4
+  satisfaction_condition: From s_6 through s_7, Ana and Harold’s relationship is strained;
+    affectionate or reconciliatory interactions do not occur before s_8.
+  type: invariant
+  violation_condition: Player triggers or system acknowledges affectionate/resolved
+    relationship between Ana and Harold before s_8.
+- description: Harold cannot meaningfully attempt to control or alter his narrative
+    fate before confronting the narrative genre dilemma with Jules Hilbert.
+  id: c_5
+  satisfaction_condition: Harold’s attempts to influence his destiny (e.g., doing
+    nothing day) happen only after node s_5 and Jules’ advice (starting s_7).
+  type: ordering
+  violation_condition: System permits or player triggers attempts to alter plot before
+    the literary analysis phase at s_5.
+- description: The narrator’s voice remains incomprehensible and non-communicable
+    to Harold until the literary consultation phase.
+  id: c_6
+  satisfaction_condition: From s_2 through s_5, Harold hears the narrator but cannot
+    engage in dialogue or influence the voice directly.
+  type: invariant
+  violation_condition: Player elicits meaningful communication or alters narrator
+    voice prior to s_5.
+- description: The narrative must include Harold’s self-sacrificial act pushing the
+    child out of the bus’s path as a climax milestone.
+  id: c_7
+  satisfaction_condition: Harold performs the act saving the child at or after s_13.
+  type: achievement
+  violation_condition: The story attempts to conclude or diverge without this pivotal
+    event occurring.
+- description: The revelation of the wristwatch’s role in preventing Harold’s death
+    must occur only after Harold’s accident and hospital awakening.
+  id: c_8
+  satisfaction_condition: The narrative reveals watch fragments saving Harold only
+    at s_14 or after.
+  type: ordering
+  violation_condition: Player or system acknowledges watch's saving effect before
+    Harold’s accident and hospitalization (before s_14).
+- description: The final narrative resolution frames the wristwatch, not Harold, as
+    the tragic death character after Harold’s survival is confirmed.
+  id: c_9
+  satisfaction_condition: From s_15 onward, the tragic focal point of the narrative
+    shifts exclusively to the wristwatch’s anthropomorphized death.
+  type: invariant
+  violation_condition: Any narrative or system asserts Harold’s death remains the
+    tragic focal point after s_14.
+- description: Medical evaluation and literary consultation must precede any acknowledgment
+    of supernatural or metafictional elements.
+  id: c_10
+  satisfaction_condition: Harold visits psychiatrist (s_4) and Jules (s_5) before
+    system allows acceptance of metafictional narrator existence.
+  type: ordering
+  violation_condition: System allows or player uncovers metafictional elements before
+    medical and expert consultation events.
+initial_facts:
+- content: Ana Pascal is in her bakery, working and preparing goods.
+  id: f_0
+  negated: false
+- content: Harold Crick, an IRS auditor, is assigned to audit Ana Pascal's bakery
+    for tax delinquency.
+  id: f_1
+  negated: false
+- content: Ana Pascal is unaware of Harold Crick's impending arrival or the audit.
+  id: f_2
+  negated: false
+- content: Harold Crick is not yet hearing any narrator's voice.
+  id: f_3
+  negated: false
+- content: Harold Crick has not yet met Jules Hilbert or undergone any literary consultation.
+  id: f_4
+  negated: false
+- content: Harold Crick has not yet visited a psychiatrist or undergone medical evaluation
+    regarding any auditory phenomenon.
+  id: f_5
+  negated: false
+- content: Ana Pascal's attitude toward Harold Crick is neutral or routine, with no
+    conflict or romantic tension present.
+  id: f_6
+  negated: false
+- content: Harold Crick has not attempted to influence or control any narrative fate
+    or plot.
+  id: f_7
+  negated: false
+- content: Harold Crick is unaware of any metafictional or supernatural elements affecting
+    his life.
+  id: f_8
+  negated: false
+- content: Harold Crick is in normal health and alive at the bakery location.
+  id: f_9
+  negated: false
+- content: The wristwatch Harold wears is functioning normally.
+  id: f_10
+  negated: false
+- content: Karen Eiffel’s identity and narrator voice are unknown to Ana Pascal and
+    not identified by Harold.
+  id: f_11
+  negated: false
+- content: No manuscripts or drafts relating to Harold Crick’s life or death exist
+    or are known at t=0.
+  id: f_12
+  negated: false
+- content: No conflict, strained relationship, or personal tension exists between
+    Ana Pascal and Harold Crick.
+  id: f_13
+  negated: false
+meta:
+  genres: ["Comedy", "Drama"]
+  id: movie49
+  player_role: Ana Pascal
+  title: "Stranger Than Fiction"
+synopsis: Harold Crick is an auditor for the Internal Revenue Service, living his
+  entire life based on the timing of his wristwatch. He is given the job to audit
+  an intentionally tax-delinquent baker, Ana Pascal to whom he is awkwardly attracted.
+  On the same day, he begins hearing the voice of a woman that is omnisciently narrating
+  the events in his life, but he is unable to communicate with the voice. On his way
+  home, Harold's watch stops working and he resets it using the time given by a bystander;
+  the voice narrates "little did he know that this simple, seemingly innocuous act
+  would result in his imminent death". Worried over this prediction, Harold turns
+  to a psychiatrist who attributes the voice to schizophrenia; though they also consider
+  that if it is not schizophrenia and there really is a narrator, he should then visit
+  an expert in literature. Crick visits Jules Hilbert, a university literature professor,
+  and relates his story. Jules first comes to the same conclusion as the psychiatrist,
+  as Harold's dull life is not something commonly seen in novels. However, Jules then
+  recognizes aspects of a literary work in Harold's story, and encourages him to help
+  identify the author, first by determining if the work is a comedy or a tragedy.
+  As Harold proceeds to audit Ana, the two begin to fall for each other, but when
+  Harold refuses to accept cookies that Ana made for him on the grounds that they
+  could be viewed as a bribe, Ana angrily tells him to leave, making Harold believe
+  the story is a tragedy. On the advice of Jules, Harold spends the next day at home
+  to try to control his own destiny and stop the plot of the book by doing absolutely
+  nothing, but his apartment is partially demolished by a wrecking crew mistaking
+  the building for an abandoned one. Jules then believes that since Harold cannot
+  control the plot that has been set for him, he should accept that he will die and
+  enjoy whatever time he has left to the fullest. Harold takes this to heart——he takes
+  an extended vacation from work, develops his friendship with his co-worker Dave,
+  fulfills his dream of learning to play the guitar and starts to see Ana on a regular
+  basis. Harold believes he may have mistaken his story and now reassesses it as a
+  comedy. When he returns to Jules with this revelation, Harold inadvertently identifies
+  the voice in his head from a television interview as noted author Karen Eiffel.
+  Jules, an admirer of Eiffel's work, reveals that every book she has written is about
+  the main character's tragic death. Karen has been struggling from writer's block
+  for years and is currently researching numerous ways to have Crick die. Her publisher
+  has sent an assistant, Penny, to make sure the book gets completed. Harold finds
+  Eiffel through her tax records. When Karen learns that Harold is a real person and
+  has experienced everything she's written, she is horrified by the thought that all
+  of her previous books may have also resulted in the deaths of real people. She tells
+  Harold she has finally written a draft of the ending and his death, but has not
+  typed it up yet, since all the events in the book become true when she strikes the
+  period key. Penny suggests Harold read the book and the drafted ending to get his
+  opinion. Harold is unable to bring himself to read it and gives the manuscript to
+  Jules to review. Jules confirms its excellence, labeling it as Karen's masterpiece,
+  and makes clear that Harold's death is integral to its genius. Though Harold is
+  deeply distressed over his fate, Jules comforts him by stating the inevitability
+  of death——this one death, at least, will have a deeper meaning by completing the
+  book. Harold reads the manuscript himself over the course of a day; he returns the
+  manuscript to Karen, telling her the death she has written for him is "beautiful"
+  and that she should keep it as it is. Accepting his fate, he spends one last night
+  with Ana. The next day Harold prepares to return to work after his vacation, despite
+  Karen's voice narrating the fateful day as she types up her planned ending. Because
+  Harold's watch is three minutes fast he arrives at the bus stop early, and watches
+  as a young boy on a bicycle rides in front of the arriving bus but falls. Karen
+  continues to write, narrating as Harold leaps from the curb and pushes the child
+  out of the way, saving the boy at the cost of being struck by the bus, however Karen
+  is unable to complete the sentence confirming Harold's death. Harold wakes up to
+  find himself in a hospital, severely injured but alive, Ana by his side. He learns
+  that fragments of his wristwatch helped to block the right ulnar artery in his body
+  after the collision, preventing him from bleeding to death. When Jules reads Karen's
+  final manuscript, he notes that the story is weaker without Harold's death. Karen
+  admits the flaw, although she points out that the story was meant to be about a
+  man that dies unexpectedly; with Harold knowingly and willingly sacrificing himself,
+  the story would have lost its tragic impact. In place of Harold, his wristwatch—anthropomorphized
+  throughout most of the film—is now the character who died tragically.
+trajectory:
+- description: Ana Pascal is working in her bakery, preparing goods and interacting
+    with customers in a routine manner. Harold Crick, an IRS auditor, is assigned
+    to audit her business for tax delinquency. Ana is unaware of Harold's arrival
+    or the audit.
+  id: s_0
+  key_delta: Ana's bakery becomes subject to an IRS audit by Harold Crick; Harold
+    is introduced as auditor and Ana as the audited subject.
+  trigger_event: Harold Crick arrives at Ana Pascal's bakery ready to conduct a tax
+    audit.
+- description: Harold begins auditing Ana's bakery while Ana operates her business
+    as usual. Harold feels awkward attraction towards Ana during the audit process.
+    Their interactions are professional but marked by an undercurrent of personal
+    tension.
+  id: s_1
+  key_delta: The audit interaction initiates the personal connection between Ana and
+    Harold.
+  trigger_event: Harold performs the first part of the financial audit and interacts
+    with Ana.
+- description: Harold continues the audit. On the same day, he begins hearing an omniscient
+    female voice narrating his life, but he cannot respond to it. Meanwhile, Ana is
+    unaware of this phenomenon affecting Harold.
+  id: s_2
+  key_delta: Harold gains knowledge of an unseen omniscient narrator voice influencing
+    the perceived story of his life.
+  trigger_event: Harold experiences the first occurrence of the narrator's voice during
+    the audit.
+- description: Harold leaves the bakery after the audit and walks home. During this
+    time, his wristwatch stops; he resets it based on a bystander's time. The narrator
+    voice predicts Harold’s imminent death linked to this event.
+  id: s_3
+  key_delta: Harold’s watch time is changed, triggering the narrator's prediction
+    of an imminent death.
+  trigger_event: Harold's wristwatch stops; he resets it using a bystander's time.
+- description: Harold is worried by the narrator's ominous prediction. He visits a
+    psychiatrist to assess his mental state due to the hearing of the voice. The psychiatrist
+    suggests possible schizophrenia but also advises literature expert consultation.
+  id: s_4
+  key_delta: Medical evaluation of Harold’s hearing of the voice has been initiated;
+    literary consultation is recommended.
+  trigger_event: Harold schedules and attends an appointment with the psychiatrist.
+- description: Harold visits literature professor Jules Hilbert and recounts his experiences.
+    Jules initially agrees with the mental health assessment but then identifies literary
+    parallels. He advises Harold to determine if his story is a comedy or tragedy.
+  id: s_5
+  key_delta: Harold enters literary analysis phase; narrative genre assessment is
+    introduced as part of the investigation.
+  trigger_event: Harold meets Jules Hilbert and narrates his situation.
+- description: Harold resumes auditing Ana. Ana offers him cookies as a friendly gesture.
+    Harold refuses, fearing the cookies might be viewed as bribes. Ana reacts angrily
+    and tells him to leave, straining their relationship.
+  id: s_6
+  key_delta: Conflict arises between Harold and Ana, leading Harold to interpret the
+    story as a tragedy.
+  trigger_event: Ana offers Harold her homemade cookies; Harold declines them.
+- description: Harold follows Jules' advice to spend the next day doing nothing, trying
+    to control the plot. Instead, his apartment is partially demolished mistakenly
+    by a wrecking crew. Harold cannot control the story’s events.
+  id: s_7
+  key_delta: Harold’s attempt to influence the plot fails; external events override
+    his control.
+  trigger_event: Demolition crew arrives at Harold’s apartment and causes damage.
+- description: Jules advises Harold to accept his fate and enjoy his remaining time.
+    Harold adopts this view, takes a vacation, deepens his friendship with co-worker
+    Dave, learns guitar, and starts seeing Ana more regularly, seeming to shift the
+    story to a comedy.
+  id: s_8
+  key_delta: Harold embraces life, shifting his narrative interpretation from tragedy
+    to comedy.
+  trigger_event: Harold embarks on an extended vacation and pursues personal interests.
+- description: Harold identifies the narrator’s voice as author Karen Eiffel after
+    seeing her on television. Jules reveals Karen’s literary history of main characters
+    dying tragically and introduces Karen’s writer’s block and assistant Penny, who
+    is ensuring the book’s completion.
+  id: s_9
+  key_delta: The author of the narrator voice and her narrative patterns are uncovered.
+  trigger_event: Harold recognizes Karen Eiffel’s voice from a televised interview.
+- description: Karen discovers Harold is a real person living the story she is writing
+    and is horrified by the deadly consequences her previous books may have caused.
+    She reveals she has drafted Harold’s death but has not finalized it.
+  id: s_10
+  key_delta: Author acknowledges real-world impact of her narrative and prepares Harold’s
+    death scene.
+  trigger_event: Karen learns Harold’s true existence and reviews her draft ending.
+- description: Harold refuses to read the manuscript and gives it to Jules, who labels
+    it a masterpiece and insists Harold’s death is essential to the story’s excellence.
+    Jules counsels Harold on death’s inevitability and narrative significance.
+  id: s_11
+  key_delta: External validation of Harold’s death as integral narrative element is
+    established.
+  trigger_event: Harold transfers the manuscript to Jules for evaluation.
+- description: Harold reads the manuscript himself and tells Karen the death she wrote
+    is beautiful. He accepts his fate and spends one last night with Ana in a meaningful
+    way.
+  id: s_12
+  key_delta: Harold consciously accepts his scripted death and strengthens emotional
+    ties with Ana.
+  trigger_event: Harold reads the manuscript and meets with Ana for the final night
+    together.
+- description: Harold prepares to return to work, his watch running three minutes
+    fast. At the bus stop, he sees a young boy fall in front of an arriving bus and
+    pushes him out of the way, taking the impact himself.
+  id: s_13
+  key_delta: Harold’s act of self-sacrifice occurs, potentially fulfilling the narrator’s
+    death prediction.
+  trigger_event: Harold arrives at the bus stop early and intervenes to save a child
+    from a bus.
+- description: Harold wakes in a hospital, severely injured but alive, with Ana by
+    his side. It is revealed that fragments of his wristwatch prevented fatal bleeding.
+    The tragedy predicted has not occurred as expected.
+  id: s_14
+  key_delta: Harold survives the incident that was expected to result in death due
+    to an unforeseen factor.
+  trigger_event: Harold regains consciousness in the hospital post-accident.
+- description: Jules reads Karen's final manuscript, noting the story's weakness without
+    Harold’s death. Karen admits the flaw, explaining the story’s tragic impact depends
+    on Harold’s unexpected death. Instead, the anthropomorphized wristwatch is presented
+    as the tragic character who dies.
+  id: s_15
+  key_delta: Narrative resolution reframes the tragic death as belonging to the wristwatch,
+    not Harold.
+  trigger_event: Jules completes reading Karen’s revised manuscript.

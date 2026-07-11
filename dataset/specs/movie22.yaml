@@ -1,0 +1,376 @@
+commitments:
+- description: The overturned ticket number (616) must be recognized as 919 by Mr.
+    Bean before he can claim the raffle prize.
+  id: c_0
+  satisfaction_condition: Node s_1 has occurred where Mr. Bean notices 616 appears
+    as 919 and grabs the ticket.
+  type: ordering
+  violation_condition: Player attempts to claim the grand prize at s_0 without the
+    ticket number inversion event in s_1.
+- description: Mr. Bean must possess the winning ticket before beginning the documented
+    journey with the video camera.
+  id: c_1
+  satisfaction_condition: Between nodes s_1 and s_2, Mr. Bean has possession of the
+    claimed raffle ticket.
+  type: invariant
+  violation_condition: Mr. Bean films his travels (s_2) without having previously
+    secured the winning ticket (not passing s_1).
+- description: Mr. Bean must experience the taxi misunderstanding at Gare du Nord
+    before proceeding on foot to Gare de Lyon.
+  id: c_2
+  satisfaction_condition: Node s_3 has occurred where the misunderstanding happens
+    and Bean sets out by foot.
+  type: ordering
+  violation_condition: Player skips s_3 and directly continues from Paris to Gare
+    de Lyon without the taxi misunderstanding event.
+- description: Mr. Bean must wait an hour at Gare de Lyon and enter the restaurant
+    Le Train Bleu before any food ordering and related disturbance events.
+  id: c_3
+  satisfaction_condition: Node s_4 has occurred where Bean chooses to pass time at
+    the restaurant.
+  type: ordering
+  violation_condition: Player attempts to trigger restaurant events s_5 without first
+    passing s_4.
+- description: Mr. Bean's seafood ordering mishap and handbag oyster incident must
+    occur in the restaurant before public disturbance effects arise.
+  id: c_4
+  satisfaction_condition: Between s_4 and s_5, the mishap with oysters and langoustine
+    is enacted.
+  type: invariant
+  violation_condition: Public disturbance or lady shrieks (s_5) reported without preceding
+    seafood ordering event at s_4.
+- description: Mr. Bean must meet Emil Dachevsky and film boarding the train before
+    the train departs with Dachevsky unable to board.
+  id: c_5
+  satisfaction_condition: Node s_6 has occurred where Bean films boarding and Dachevsky
+    is left behind.
+  type: ordering
+  violation_condition: Train departure with Dachevsky left behind (s_6) occurs without
+    Bean meeting and filming with him first.
+- description: Stepan must be left alone on the train and Bean must miss the train
+    departure with his bag aboard before their joint journey begins.
+  id: c_6
+  satisfaction_condition: Between s_6 and s_7, Stepan is alone and Bean misses departure.
+  type: invariant
+  violation_condition: Bean starts to care for Stepan or attempts to reunite them
+    before Stepan is left alone and Bean misses train (before s_7).
+- description: Failed attempts to call Stepan's father must occur before Bean and
+    Stepan board the next train and subsequently get forced off due to lost documents.
+  id: c_7
+  satisfaction_condition: Nodes s_8 has occurred where unsuccessful calls lead to
+    boarding and being forced off train.
+  type: ordering
+  violation_condition: Player attempts boarding next train and being forced off before
+    trying to call or obtain Stepan's father's number.
+- description: Successful busking with Stepan must happen before Bean can purchase
+    a bus ticket to continue traveling toward Cannes.
+  id: c_8
+  satisfaction_condition: Node s_9 occurs where busking is successful and ticket is
+    acquired.
+  type: ordering
+  violation_condition: Player attempts to obtain bus ticket or proceed toward Cannes
+    by bus without first busking with Stepan.
+- description: The bus ticket must be lost via chicken's talon causing the need for
+    Bean to follow the chicken to the farm and ultimately lose transportation options.
+  id: c_9
+  satisfaction_condition: Between s_9 and s_10, the ticket loss and chicken carrying
+    it to the farm occurs.
+  type: invariant
+  violation_condition: Player retains bus ticket and proceeds toward Cannes by bus
+    without the ticket loss event (pre-s_10).
+- description: Bean's arrival at the chicken pen and destruction of his bicycle by
+    a tank must occur before attempting alternative transportation and encountering
+    the village set.
+  id: c_10
+  satisfaction_condition: Node s_10 occurs before node s_11 where alternate transport
+    attempts and on-set incident happen.
+  type: ordering
+  violation_condition: Player skips farm/bicycle destruction events and directly proceeds
+    to the village set incident.
+- description: Bean's accidental explosion on the TV commercial set and injury to
+    director Carson Clay must occur before hitchhiking with Sabine.
+  id: c_11
+  satisfaction_condition: Between s_11 and s_12, the explosion and director injury
+    occurred.
+  type: invariant
+  violation_condition: Player attempts to hitchhike with Sabine (s_12) without causing
+    explosion and injuring Carson Clay on set.
+- description: Bean must reunite with Stepan at the service station café and gain
+    control of Sabine's car before driving toward Cannes.
+  id: c_12
+  satisfaction_condition: Node s_13 happens where reunion and driving occur.
+  type: ordering
+  violation_condition: Player skips reunion or car driving with Sabine and directly
+    arrives in Cannes.
+- description: False media accusation about Bean kidnapping Stepan must arise only
+    after the arrival at the outskirts of Cannes and prior to checkpoint disguise.
+  id: c_13
+  satisfaction_condition: Between s_13 and s_14, media accusation is established before
+    disguise attempt.
+  type: invariant
+  violation_condition: Player attempts to bypass disguise and checkpoint without media
+    accusation being triggered.
+- description: Stepan's disguise as Sabine's daughter and Bean's disguise as Sabine's
+    mother must precede their successful entry through Cannes checkpoint.
+  id: c_14
+  satisfaction_condition: Node s_14 occurs when disguises allow passage.
+  type: ordering
+  violation_condition: Player tries to enter Cannes checkpoint without implementing
+    disguises or fails disguise event.
+- description: Bean must plug his video camera into the projector to show Sabine's
+    deleted scenes enriching the film screening and revitalizing audience interest.
+  id: c_15
+  satisfaction_condition: Node s_15 where screening is transformed with camera footage
+    and standing ovations occur.
+  type: ordering
+  violation_condition: Player skips camera footage insertion or audience reaction
+    and proceeds directly to film ending.
+- description: Stepping must be reunited with his father backstage after the revitalized
+    screening before the narrative resolution at the beach.
+  id: c_16
+  satisfaction_condition: Between s_15 and s_16, Stepan reunites with father; resolution
+    is established.
+  type: invariant
+  violation_condition: Player advances to final beach scene or ending without Stepan's
+    father reunification.
+- description: The narrative must conclude with Mr. Bean and others performing a musical
+    mime finale at the beach, followed by the post-credit scene of the ‘FIN’ written
+    in sand and filmed until camera shuts off.
+  id: c_17
+  satisfaction_condition: Node s_17 occurs where the musical finale and post-credits
+    'FIN' scene complete the story.
+  type: achievement
+  violation_condition: Player attempts to trigger narrative end prior to the musical
+    finale and ‘FIN’ post-credit sequence.
+initial_facts:
+- content: Mr. Bean is attending a raffle event in June in a typical crowded venue.
+  id: f_0
+  negated: false
+- content: Mr. Bean is holding a raffle ticket with the number 616.
+  id: f_1
+  negated: false
+- content: The grand prize raffle number 919 has not yet been called.
+  id: f_2
+  negated: false
+- content: Mr. Bean does not yet recognize that ticket number 616 can be read as 919
+    when inverted.
+  id: f_3
+  negated: false
+- content: Mr. Bean has not yet claimed the raffle prize.
+  id: f_4
+  negated: false
+- content: Mr. Bean does not yet possess a Sony video camera for filming.
+  id: f_5
+  negated: false
+- content: Mr. Bean is not yet filming his travels.
+  id: f_6
+  negated: false
+- content: Mr. Bean is unaware of the upcoming taxi misunderstanding at Gare du Nord.
+  id: f_7
+  negated: false
+- content: Mr. Bean is not yet at Gare du Nord railway station in Paris.
+  id: f_8
+  negated: false
+- content: Mr. Bean has not yet started traveling towards Cannes.
+  id: f_9
+  negated: false
+- content: Locations including Gare de Lyon, Le Train Bleu restaurant, and Cannes
+    Film Festival venue exist but Mr. Bean is not currently present at any of these.
+  id: f_10
+  negated: false
+- content: Mr. Bean is unaware of future events involving any characters including
+    Emil Dachevsky, Stepan, Sabine, Carson Clay, or any media allegations.
+  id: f_11
+  negated: false
+- content: Mr. Bean knows only the immediate raffle setting and is unaware of any
+    unfolding misunderstandings or later incidents.
+  id: f_12
+  negated: false
+meta:
+  genres: ["Comedy", "Family"]
+  id: movie22
+  player_role: Mr. Bean
+  title: "Mr. Bean's Holiday"
+synopsis: The film opens with Mr. Bean attending a raffle in June. As the grand prize
+  raffle number called to be 919, Mr. Bean is upset and throws his raffle ticket which
+  ends up in a toy train cart. The ticket being 616 is read upside down and becomes
+  919. Mr. Bean grabs the ticket before the final call and claims his prize. The prize
+  is a holiday involving a train journey to Cannes, a Sony video camera, and €200.
+  Bean proceeds to film the entirety of his travels on the video camera. Following
+  a misunderstanding involving a taxi at the Gare du Nord railway station in Paris,
+  Bean is forced to make his way on foot towards the Gare de Lyon to board his next
+  train towards Cannes. Upon discovering the train won't leave for another hour, he
+  has time to sample French seafood at Le Train Bleu restaurant. Unable to communicate
+  in French, he accidentally orders oysters and langoustine, which he cannot bring
+  himself to eat. He pours the oysters into a nearby lady's handbag, causing the lady
+  to shriek when she was about to answer her mobile phone inside the bag, then Mr.
+  Bean eats the whole langoustine without removing the shell. Back on the platform,
+  Bean asks a man, who happens to be a Cannes Film Festival jury member and Russian
+  movie critic Emil Dachevsky, to use his camcorder to film his walking onto the train.
+  By the time they are done, the TGV is about to leave. Although Bean manages to get
+  onto the train, the doors close before Dachevsky can get on. Dachevsky's son, Stepan
+  is left on board by himself. Bean attempts to befriend Stepan, who gets off at the
+  next stop to meet his father. While confronting a threatening stranger who approaches
+  Stepan, Bean accidentally misses the train's departure, leaving his bag aboard.
+  The train that Stepan's father has boarded does not stop at the station, and he
+  holds up a mobile number, but the last two digits are obscured. When their efforts
+  at calling the number prove fruitless, they board the next train, accidentally leaving
+  Bean's ticket and passport with $2 behind which results in the duo being forced
+  off the train. Attempts at busking by miming to Puccini's O mio babbino caro and
+  other music prove successful in a shopping area. Bean buys a bus ticket to Cannes
+  but loses his ticket when it gets caught in the breeze and then snagged in the talon
+  of a chicken, which is subsequently loaded into a farm pick-up. Bean steals a nearby
+  bicycle and follows the pick-up, only to reach a large chicken pen with no hope
+  of finding the ticket. While he is on the farm, the bicycle is run over by a passing
+  tank. After attempting to steal a moped and almost getting killed by a lorry, Bean
+  falls to sleep in a village but wakes up to realise that he stumbled onto a set
+  for a TV advertisement, which he accidentally blows up, injuring the director Carson
+  Clay. Hitchhiking, Bean is picked up by actress Sabine, whom Bean encountered at
+  the commercial filming, driving the same car as Bean. She is on her way to the 59th
+  Cannes Film Festival where Carson Clay's film in which she makes her debut is going
+  to be presented. When they stop at a service station, Bean finds Stepan in a café
+  with musicians whom he met when he never got on the bus. He joins them. When Sabine
+  falls deeply asleep on the way due to Bean accidentally activating a lullaby on
+  her cellphone, he then drives the car himself happily, finally reaching Cannes.
+  When Sabine goes into a petrol station to change for the premiere, news depicting
+  Bean as Stepan's kidnapper and Sabine as an accomplice spreads. Not wanting to miss
+  the premiere, they plan to get into Cannes without being identified. Stepan dresses
+  up as Sabine's daughter, while Mr. Bean dresses up as Sabine's mother. They manage
+  to get through the search and Sabine arrives at the premiere on time. After sneaking
+  into the premiere, the trio begin to watch Clay's picture "Playback Time," a shameless
+  vanity production written by, produced by, directed by, and starring Clay himself.
+  From the first few moments, the audience is horribly bored. Sabine tells Bean that
+  her big scene is coming up, but is disappointed to see that her role has been cut
+  from the film. Bean, hoping to cheer up Sabine, goes to the screening room and plugs
+  his video camera into the projector. The ensuing scenes, heavily featuring Sabine,
+  fit director Clay's narration so well that the director, Sabine, and Bean all receive
+  standing ovations. Clay's initial anger fades and he embraces Bean and takes credit
+  for the film's success, while Stepan is finally reunited with his father. After
+  the screening, Bean leaves the building and goes to the beach, encountering many
+  of the other characters including Sabine and Stepan. The film ends with Bean and
+  all the other characters of the film miming a large French musical finale, lip-syncing
+  the famous song by Charles Trenet, "La Mer". In a post-credits scene, Mr. Bean writes
+  "FIN" on the wet sand using his toe. He films it until the camera says "low battery"
+  then the sea washes the words away then the camera turns off.
+trajectory:
+- description: Mr. Bean is attending a raffle event in June in a typical crowded venue;
+    everyone is waiting anxiously for the grand prize to be announced.
+  id: s_0
+  key_delta: Mr. Bean becomes upset and discards his raffle ticket, which accidentally
+    lands in a toy train cart.
+  trigger_event: The grand prize raffle number 919 is called.
+- description: The discarded ticket inside the toy train cart shows the number 616,
+    which is visually inverted to be read as 919.
+  id: s_1
+  key_delta: Mr. Bean grabs the ticket just before the raffle finishes, claiming the
+    grand prize under the mistaken identity of the ticket number.
+  trigger_event: Mr. Bean notices the ticket number 616 appears as 919 when turned
+    upside down.
+- description: Mr. Bean has claimed the raffle prize which includes a holiday with
+    a train journey to Cannes, a Sony video camera, and €200; he begins filming his
+    journey.
+  id: s_2
+  key_delta: Bean is now actively documenting his trip, turning the camera on to capture
+    the adventure ahead.
+  trigger_event: Mr. Bean starts filming his travels with the video camera.
+- description: Mr. Bean arrives at Gare du Nord railway station in Paris, ready to
+    continue his journey to Cannes by train.
+  id: s_3
+  key_delta: Bean is left to find his own way on foot to Gare de Lyon station for
+    the next leg of his journey.
+  trigger_event: A misunderstanding involving a taxi occurs at Gare du Nord.
+- description: At Gare de Lyon, Mr. Bean discovers the train to Cannes will depart
+    in one hour; the station surroundings include a famous restaurant, Le Train Bleu.
+  id: s_4
+  key_delta: Bean faces a language barrier and orders seafood unintentionally, leading
+    to a problematic meal experience.
+  trigger_event: Bean chooses to enter Le Train Bleu restaurant to pass the waiting
+    time.
+- description: Inside Le Train Bleu, Bean accidentally pours oysters into a lady's
+    handbag and eats langoustine shell-on, causing a minor public scene.
+  id: s_5
+  key_delta: Bean's social awkwardness escalates, creating a disturbance in the restaurant
+    yet he finishes part of the seafood.
+  trigger_event: The lady shrieks upon discovering the oysters in her handbag while
+    about to answer a mobile phone.
+- description: Back on the platform at Gare de Lyon, Mr. Bean meets Emil Dachevsky,
+    a Cannes Film Festival jury member and Russian movie critic.
+  id: s_6
+  key_delta: They film Bean boarding just as the TGV prepares to leave; the doors
+    close before Dachevsky can board, leaving his son Stepan alone on the train.
+  trigger_event: Bean asks to use Dachevsky's camcorder to film himself boarding the
+    train.
+- description: Stepan, Dachevsky's son, is left alone on the train; Mr. Bean has missed
+    the departure and left his bag aboard the moving train.
+  id: s_7
+  key_delta: Bean assumes responsibility for Stepan and resolves to reunite him with
+    his father, beginning their joint journey.
+  trigger_event: Bean attempts to board but the train departs without him; he observes
+    Stepan confronting a threatening stranger.
+- description: Bean and Stepan attempt to call the mobile number held up by Stepan's
+    father, but the last two digits are obscured leading to failed calls.
+  id: s_8
+  key_delta: The duo is stranded and must find alternative ways to continue towards
+    Cannes.
+  trigger_event: After unsuccessful calls, Bean and Stepan board the next train but
+    are forced off after losing Bean's ticket and passport.
+- description: Bean and Stepan successfully busk by miming Puccini's 'O mio babbino
+    caro' and other melodies in a busy shopping area, earning money.
+  id: s_9
+  key_delta: Bean secures transportation but soon loses the bus ticket after it is
+    caught and taken by a chicken's talon.
+  trigger_event: Using earnings, Bean buys a bus ticket to Cannes.
+- description: Bean tracks the chicken carrying his lost ticket to a farm where the
+    chicken is placed in a large pen.
+  id: s_10
+  key_delta: Bean reaches the chicken pen still without the ticket and loses his
+    bicycle, leaving him stranded and desperate for new transport.
+  trigger_event: Bean steals a bicycle and follows the farm pick-up truck carrying
+    the chicken.
+- description: Bean attempts to steal a moped but narrowly avoids a fatal accident
+    with a lorry; later he falls asleep in a village environment.
+  id: s_11
+  key_delta: Bean inadvertently causes an explosion on set, injuring the director
+    Carson Clay.
+  trigger_event: Awakening in the village, Bean realizes he is on the set of a TV
+    advertisement shoot.
+- description: Bean, injured director Carson Clay, and actress Sabine now share a
+    connection; Sabine offers Bean a ride as they travel towards the Cannes Film Festival.
+  id: s_12
+  key_delta: Bean is traveling by car with Sabine, increasing his chance to reach
+    Cannes on time.
+  trigger_event: Bean hitchhikes and is picked up by Sabine driving to Cannes.
+- description: During a stop at a service station, Bean finds Stepan in a café with
+    musicians he had met earlier; they reunite and join the group.
+  id: s_13
+  key_delta: Bean drives Sabine's car himself, confidently heading towards Cannes.
+  trigger_event: Sabine falls asleep when Bean accidentally activates a lullaby on
+    her cellphone, and Bean takes control of the car.
+- description: Approaching Cannes, escalating media coverage falsely accuses Bean
+    of kidnapping Stepan with Sabine as accomplice.
+  id: s_14
+  key_delta: Bean and Stepan successfully enter Cannes without being identified as
+    suspects.
+  trigger_event: To avoid detection, they disguise themselves with Stepan as Sabine's
+    daughter and Bean as Sabine's mother at a Cannes checkpoint.
+- description: Inside the cinema premiere, Bean, Sabine, and Stepan watch director
+    Carson Clay's uninspiring film 'Playback Time' eagerly but frustrated.
+  id: s_15
+  key_delta: The supplemented screening revitalizes the audience's interest leading
+    to standing ovations for Bean, Sabine, and Clay.
+  trigger_event: Bean plugs in his video camera to the projector to show additional
+    footage highlighting Sabine's deleted scenes.
+- description: The director's anger turns to joy; Bean and Sabine are praised, and
+    Stepan is reunited with his father backstage.
+  id: s_16
+  key_delta: Harmony is restored among the main characters; conflicts are resolved
+    at the festival.
+  trigger_event: The screening ends and Bean departs the building, heading to the
+    nearby beach.
+- description: At the beach, Bean and the other characters mime a large French musical
+    finale lip-syncing 'La Mer' by Charles Trenet.
+  id: s_17
+  key_delta: The story concludes with a peaceful farewell as the sea washes away the
+    word and the camera turns off due to low battery.
+  trigger_event: The post-credits scene shows Bean writing 'FIN' on the wet sand with
+    his toe and filming it.

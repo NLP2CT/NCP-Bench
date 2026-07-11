@@ -1,0 +1,404 @@
+commitments:
+- description: The golden idol must be retrieved in the Peruvian temple (s_0) before
+    Indiana is confronted and surrenders it to Belloq (s_1).
+  id: c_0
+  satisfaction_condition: Node s_0 occurs strictly before node s_1 in the narrative
+    progression.
+  type: ordering
+  violation_condition: Player actions or system responses acknowledge surrendering
+    the idol to Belloq (s_1) before Indiana has retrieved it (s_0).
+- description: Indiana cannot possess the golden idol and be simultaneously outside
+    the temple environment before escaping on the seaplane (between s_0 and s_2).
+  id: c_1
+  satisfaction_condition: Indiana’s possession of the idol only occurs inside the
+    temple up to s_1; by s_2 he no longer has the idol and is outside the temple on
+    the seaplane.
+  type: invariant
+  violation_condition: The system acknowledges Indiana holding the idol while also
+    showing he has escaped the temple zone before s_2.
+- description: Indiana’s fear of snakes must only be revealed after escaping the temple
+    on the seaplane (at s_2).
+  id: c_2
+  satisfaction_condition: Snakes fear revelation occurs no earlier than node s_2.
+  type: ordering
+  violation_condition: Player triggers or system admits knowledge of Indiana’s snake
+    fear before node s_2.
+- description: Indiana must be informed by Army intelligence about the Nazi interest
+    in occult artifacts and Abner Ravenwood only after returning to the United States
+    (s_3).
+  id: c_3
+  satisfaction_condition: Node s_3 takes place after escape from the temple and before
+    any information about Nazis or Ravenwood is acknowledged.
+  type: ordering
+  violation_condition: System reveals Nazi occult pursuit or Ravenwood’s involvement
+    before Indiana’s interview by agents at s_3.
+- description: Indiana can only start active pursuit of the headpiece in Nepal after
+    receiving the intelligence briefing (after s_3 but enforced at s_4).
+  id: c_4
+  satisfaction_condition: Node s_4 occurs after s_3 and before acquisition of the
+    headpiece conversations.
+  type: ordering
+  violation_condition: Player obtains or uses the headpiece without the prior intelligence
+    briefing at s_3 and deployment to Nepal at s_4.
+- description: The negotiation and purchase offer for the headpiece by Indiana to
+    Marion must precede the Nazi tavern attack and headpiece seizure attempt (s_5
+    before s_6).
+  id: c_5
+  satisfaction_condition: Node s_5 strictly precedes s_6; negotiation terms are established
+    before the raid.
+  type: ordering
+  violation_condition: Nazi raid on the tavern at s_6 is acknowledged before any prior
+    negotiation or agreement at s_5.
+- description: The Nazis do not possess the original headpiece prior to the tavern
+    raid (between s_5 and s_6), but hold only a forged replica in Cairo (from s_7).
+  id: c_6
+  satisfaction_condition: Headpiece possession by Nazis is marked only by a replica
+    at node s_7 onwards, not before s_6.
+  type: invariant
+  violation_condition: Nascent acknowledgment or NPC dialogue grants Nazis possession
+    of the authentic headpiece prior to s_7.
+- description: Marion’s apparent death in the bazaar explosion must occur after arrival
+    in Cairo and before the deduction of the Nazis' error locating the Well of Souls
+    (s_8 before s_9).
+  id: c_7
+  satisfaction_condition: Events at nodes s_7 and s_8 happen before s_9, with Marion’s
+    presumed death establishing urgency.
+  type: ordering
+  violation_condition: Player or system recognizes or explores Well of Souls correction
+    before seeing Marion’s disappearance in s_8.
+- description: Indiana must successfully deduce the correct location of the Well of
+    Souls based on the headpiece markings before entering it (completion of s_9 prerequisite
+    for s_10).
+  id: c_8
+  satisfaction_condition: Node s_9 concluded with successful location deduction prior
+    to entering the Well of Souls in s_10.
+  type: achievement
+  violation_condition: Indiana enters or interacts with the Well of Souls environment
+    without prior correct location identification at s_9.
+- description: Indiana cannot acquire the Ark of the Covenant before battling the
+    hostile snake environment inside the Well of Souls (s_10).
+  id: c_9
+  satisfaction_condition: Ark possession by Indiana is registered only after the snake
+    confrontation at s_10.
+  type: invariant
+  violation_condition: System states or player obtains Ark possession bypassing the
+    snake challenge prior to s_10.
+- description: Indiana and Marion must be captured and sealed in the Well by Nazis
+    only after Indiana acquires the Ark (s_10 before s_11).
+  id: c_10
+  satisfaction_condition: Node s_11 occurs strictly subsequent to Ark acquisition
+    at s_10.
+  type: ordering
+  violation_condition: Player or system events show Indiana and Marion captured and
+    sealed before the Ark is obtained.
+- description: Escape from the Well and reclaiming exclusive Ark control requires
+    nodes s_11 and s_12 to follow in sequence.
+  id: c_11
+  satisfaction_condition: Node s_12 (pursuit and regaining Ark) occurs after the escape
+    and freedom restoration of s_11.
+  type: ordering
+  violation_condition: Ark is reclaimed or Nazi shipment prevented (s_12) prior to
+    Indiana and Marion’s escape from the Well (s_11).
+- description: Transporting the Ark away from active conflict zones aboard the tramp
+    steamer happens only after the Ark is secured in Cairo (s_12 before s_13).
+  id: c_12
+  satisfaction_condition: Node s_13 event of boarding steamer with the Ark strictly
+    follows Ark recovery and control in s_12.
+  type: ordering
+  violation_condition: Ark transport by steamer is initiated before Indiana has secured
+    it in s_12.
+- description: Nazis hijack the steamer and recapture Marion and the Ark only after
+    Indiana and Marion have embarked on the transport (s_13 before s_14).
+  id: c_13
+  satisfaction_condition: Node s_14 hijack event happens strictly after s_13 boarding.
+  type: ordering
+  violation_condition: Hijack or recapture events at s_14 precede steamer boarding
+    at s_13.
+- description: The ceremonial opening of the Ark by Belloq and Nazi leaders happens
+    only after Indiana infiltrates the U-boat and arrives at the isolated island (s_14
+    before s_15).
+  id: c_14
+  satisfaction_condition: Node s_15 occurs strictly after Indiana’s infiltration at
+    s_14.
+  type: ordering
+  violation_condition: Ark opening ceremony at s_15 occurs before Indiana’s pursuit
+    and infiltration of the Nazi U-boat at s_14.
+- description: Indiana must warn Marion to close her eyes before the supernatural
+    entities emerge from the opened Ark (between s_15 and s_16).
+  id: c_15
+  satisfaction_condition: Directive to close eyes is delivered immediately prior to
+    the Ark’s opening manifestations at s_16.
+  type: invariant
+  violation_condition: Supernatural events are acknowledged or player witnesses them
+    without prior warning given to Marion.
+- description: The Ark’s divine wrath must destroy the Nazi personnel and Belloq during
+    the ceremonial opening, ending their threat (conclusion of s_16).
+  id: c_16
+  satisfaction_condition: Killing of Nazi soldiers and Belloq by Ark’s supernatural
+    forces occurs during s_16.
+  type: achievement
+  violation_condition: The Ark’s opening ceremony results in survival or successful
+    escape of the Nazis and Belloq.
+- description: The Ark’s secure confiscation and storage by U.S. Army intelligence
+    and removal from Indiana’s control happens only after the supernatural events
+    conclude (s_16 before s_17).
+  id: c_17
+  satisfaction_condition: Node s_17 occurs strictly after all Ark-related supernatural
+    events at s_16 have concluded.
+  type: ordering
+  violation_condition: Ark is stored by government or declared safe prior to or during
+    the supernatural manifestations in s_16.
+initial_facts:
+- content: Indiana Jones is inside an ancient Peruvian temple at t=0.
+  id: f_0
+  negated: false
+- content: The golden idol is located on a pedestal inside the Peruvian temple at
+    t=0.
+  id: f_1
+  negated: false
+- content: Indiana Jones does not yet possess the golden idol at t=0.
+  id: f_2
+  negated: false
+- content: Indiana Jones has no revealed fear of snakes at t=0.
+  id: f_3
+  negated: false
+- content: Indiana Jones does not yet know about the Nazis' interest in occult artifacts
+    or Abner Ravenwood at t=0.
+  id: f_4
+  negated: false
+- content: Indiana Jones is not yet aware of the Staff of Ra or the location of the
+    Ark of the Covenant at t=0.
+  id: f_5
+  negated: false
+- content: Indiana Jones has not yet been interviewed by Army intelligence agents
+    at t=0.
+  id: f_6
+  negated: false
+- content: Indiana Jones has not yet traveled to Nepal or re-encountered Marion Ravenwood
+    during the events of the story at t=0.
+  id: f_7
+  negated: false
+- content: Indiana Jones has not yet acquired or negotiated for the headpiece of the
+    Staff of Ra at t=0.
+  id: f_8
+  negated: false
+- content: The Nazis do not possess either the original or a replica of the headpiece
+    at t=0.
+  id: f_9
+  negated: false
+- content: Indiana Jones is unaware of any Nazi excavations or activities in Cairo
+    at t=0.
+  id: f_10
+  negated: false
+- content: Marion Ravenwood has not yet reappeared in person during the events of
+    the story at t=0, though Indiana Jones already knows her personally from their
+    past.
+  id: f_11
+  negated: false
+- content: The Ark of the Covenant is buried and undiscovered inside the ancient Egyptian
+    city of Tanis at t=0.
+  id: f_12
+  negated: false
+- content: Indiana Jones is not in possession of the Ark of the Covenant or the Staff
+    of Ra at t=0.
+  id: f_13
+  negated: false
+- content: Indiana Jones has not yet been captured, nor is he imprisoned or otherwise
+    constrained at t=0.
+  id: f_14
+  negated: false
+- content: Indiana Jones’s immediate environment at t=0 consists exclusively of the
+    temple interior; he is not outside the temple at t=0.
+  id: f_15
+  negated: false
+meta:
+  genres: ["Adventure", "Action"]
+  id: movie02
+  player_role: Indiana Jones
+  title: "Raiders of the Lost Ark"
+synopsis: In 1936, archaeologist Indiana Jones braves an ancient Peruvian temple filled
+  with booby traps to retrieve a golden idol. Upon fleeing the temple, Indiana is
+  confronted by rival archaeologist René Belloq and the indigenous Hovitos. Surrounded
+  and outnumbered, Indiana is forced to surrender the idol to Belloq and escapes aboard
+  a waiting Waco seaplane, in the process revealing his fear of snakes. Shortly after
+  returning to the college in the United States where he teaches archaeology, Indiana
+  is interviewed by two Army intelligence agents. They inform him that the Nazis,
+  in their quest for occult power, are searching for his old mentor, Abner Ravenwood,
+  who is the leading expert on the ancient Egyptian city of Tanis and possesses the
+  headpiece of an artifact called the Staff of Ra. Indiana deduces that the Nazis
+  are searching for Tanis because it is believed to be the location of the Ark of
+  the Covenant, the biblical chest built by the Israelites to contain the fragments
+  of the Ten Commandments; the Nazis believe that if they acquire it, their armies
+  will become invincible. The Staff of Ra, meanwhile, is the key to finding the Well
+  of Souls, a secret chamber in which the Ark is buried. The agents subsequently authorize
+  Indiana to recover the Ark before the Nazis. Indiana travels to Nepal, only to find
+  that Ravenwood has died and that the headpiece is in the possession of his daughter,
+  Marion, Indiana's embittered former lover. Indiana offers to buy the headpiece for
+  three thousand dollars, plus two thousand more when they return to the United States.
+  Marion's tavern is suddenly raided by a group of thugs commanded by Nazi agent Toht.
+  The tavern is burned down in the ensuing fight, during which Toht burns his hand
+  on the searing hot headpiece as he tries to grab it. Indiana and Marion escape with
+  the headpiece, with Marion declaring she will accompany Indiana in his search for
+  the Ark so he can repay his debt. They travel to Cairo where they learn from Indiana's
+  friend Sallah, a skilled excavator, that Belloq and the Nazis, led by Colonel Dietrich,
+  are currently digging for the Well of Souls with a replica of the headpiece modeled
+  after the scar on Toht's hand. In a bazaar, Nazi operatives attempt to kidnap Marion
+  and as Indiana chases after them it appears that she dies in an explosion. While
+  deciphering the markings on the headpiece, Indiana and Sallah realize that the Nazis
+  have miscalculated the location of the Well of Souls. Using this to their advantage,
+  they infiltrate the Nazi dig and use the Staff of Ra to determine the location correctly
+  and uncover the Well of Souls, which is filled with snakes. Indiana fends off the
+  snakes and acquires the Ark, but Belloq, Dietrich and the Nazis arrive to take it.
+  They toss Marion into the well with Indiana and seal them in, but they manage to
+  escape. After a fistfight with a giant Nazi mechanic, blowing up a flying wing on
+  the airstrip, and chasing down a convoy of trucks, Indiana takes back the Ark before
+  it can be shipped to Berlin. Indiana and Marion leave Cairo to escort the Ark to
+  England on board a tramp steamer. The next morning, their boat is boarded by Belloq,
+  Dietrich and the Nazis, who once again steal the Ark and kidnap Marion. Indiana
+  stows away on their U-boat and follows them to an isolated island in the Aegean
+  Sea where Belloq plans to test the power of the Ark before presenting it to Hitler.
+  Indiana reveals himself and threatens to destroy the Ark with a rocket-propelled
+  grenade launcher, but Belloq calls his bluff, knowing Indy cannot bear to eradicate
+  an important historical artifact. Indiana surrenders and is tied to a post with
+  Marion as Belloq performs a ceremonial opening of the Ark, which appears to contain
+  nothing but sand. Suddenly, spirits resembling Old Testament Seraphim emerge from
+  the Ark. Aware of the supernatural danger of looking at the opened Ark, Indiana
+  warns Marion to close her eyes. The apparitions suddenly morph into "angels of death",
+  and lightning bolts begin flying out of the Ark, gruesomely killing the Nazi soldiers,
+  while Belloq, Dietrich and Toht meet even more gruesome fates. The fires rise into
+  the sky, then fall back down to Earth and the Ark closes with a crack of thunder.
+  Back in Washington, D.C., the Army intelligence agents tell a suspicious Indiana
+  and Brody that the Ark "is someplace safe" to be studied by "top men". In reality,
+  the Ark is sealed in a wooden crate labeled "top secret" and stored in a giant government
+  warehouse filled with countless similar crates.
+trajectory:
+- description: Inside an ancient Peruvian temple, Indiana Jones cautiously navigates
+    a dimly lit stone chamber riddled with deadly booby traps aiming to retrieve a
+    golden idol placed on a pedestal.
+  id: s_0
+  key_delta: Indiana possesses the golden idol, shifting from outsider to target within
+    the temple environment.
+  trigger_event: Indiana Jones retrieves the golden idol from its pedestal.
+- description: Indiana rushes through the temple corridors after taking the idol,
+    confronted at the temple exit by rival archaeologist René Belloq and indigenous
+    Hovitos surrounding him.
+  id: s_1
+  key_delta: Indiana loses physical possession of the idol to Belloq and escapes the
+    temple environment.
+  trigger_event: Indiana is compelled to surrender the golden idol to Belloq when
+    outnumbered.
+- description: Aboard a Waco seaplane flying away from the Peruvian jungle, Indiana
+    Jones recuperates but reveals a fear of snakes during his escape.
+  id: s_2
+  key_delta: Indiana escapes the immediate danger of the temple and its inhabitants
+    but is marked by a revealed personal weakness.
+  trigger_event: The seaplane departs from the temple area to return Indiana to the
+    United States.
+- description: At the college campus in the United States where Indiana teaches, two
+    Army intelligence agents interview him in a secured office regarding Nazis' occult
+    pursuits.
+  id: s_3
+  key_delta: Indiana learns of the Nazi interest in Norse artifact expertise and the
+    Staff of Ra’s significance from intelligence sources.
+  trigger_event: The Army intelligence agents meet with Indiana to discuss the Nazi
+    search for Abner Ravenwood.
+- description: Indiana, now informed about the Staff of Ra and the location, prepares
+    to travel to Nepal to find Abner Ravenwood’s headpiece, crucial for locating the
+    Ark of the Covenant.
+  id: s_4
+  key_delta: Indiana moves from intellectual preparation to active pursuit of key
+    artifact in Nepal.
+  trigger_event: Indiana departs from the United States to Nepal on the mission to
+    acquire the headpiece of the Staff of Ra.
+- description: In a Nepalese tavern owned by Marion Ravenwood, Indiana negotiates
+    the purchase of the headpiece while tensions simmer.
+  id: s_5
+  key_delta: The headpiece’s ownership and deal terms are established, linking Marion
+    to the quest.
+  trigger_event: Indiana offers Marion three thousand dollars for the headpiece of
+    the Staff of Ra.
+- description: Marion’s tavern is violently raided by Nazi thugs led by agent Toht,
+    who attempts to seize the headpiece but burns his hand on it.
+  id: s_6
+  key_delta: The Nazis confirm their immediate pursuit of the headpiece; Indiana and
+    Marion escape together with it.
+  trigger_event: Nazi agents attack the tavern and try to grab the headpiece, which
+    causes Toht’s injury.
+- description: Indiana and Marion travel to Cairo, Egypt; Indiana meets Sallah, who
+    informs them of Nazi and Belloq digging operations using a forged headpiece.
+  id: s_7
+  key_delta: Indiana gains local intelligence on Nazi activity and false artifacts,
+    shifting strategic focus to the Well of Souls.
+  trigger_event: Indiana and Marion arrive in Cairo and consult with Sallah regarding
+    the ongoing Nazi excavations.
+- description: At a crowded Cairo bazaar, Nazis attempt to kidnap Marion; an explosion
+    seemingly results in her death during Indiana’s pursuit.
+  id: s_8
+  key_delta: Marion’s apparent death removes her immediate presence, intensifying
+    Indiana’s solitary quest.
+  trigger_event: Nazis kidnap Marion in the bazaar and an explosion breaks out during
+    the chase.
+- description: Indiana and Sallah deduce the Nazis have miscalculated the exact location
+    of the Well of Souls on the excavation site.
+  id: s_9
+  key_delta: Knowledge of the Well’s accurate location corrects the strategic error
+    in Nazi excavation efforts.
+  trigger_event: Indiana and Sallah analyze cryptic markings on the headpiece to identify
+    the true Well of Souls location.
+- description: Inside the Well of Souls filled with snakes, Indiana battles the hostile
+    environment to retrieve the Ark of the Covenant amid the excavation site.
+  id: s_10
+  key_delta: Indiana gains possession of the Ark, escalating direct conflict with
+    the Nazis and Belloq.
+  trigger_event: Indiana descends into the Well of Souls and retrieves the Ark amidst
+    attacking snakes.
+- description: Belloq, Dietrich, and Nazi forces capture Indiana and Marion, sealing
+    them in the Well; Indiana and Marion escape confinement shortly thereafter.
+  id: s_11
+  key_delta: Indiana and Marion recover freedom and retain the Ark, maintaining opposition
+    to Nazi control.
+  trigger_event: Nazis trap Indiana and Marion in the Well, then Indiana and Marion
+    evade captivity and rejoin the fight.
+- description: After a physical confrontation with a Nazi mechanic, Indiana survives
+    a destroyed flying wing and pursues a Nazi convoy, reclaiming the Ark.
+  id: s_12
+  key_delta: Indiana regains exclusive control of the Ark, preventing its shipment
+    to Berlin.
+  trigger_event: Indiana fights, causes the crash of the flying wing, and intercepts
+    the Nazi convoy transporting the Ark.
+- description: Indiana and Marion prepare to transport the Ark aboard a tramp steamer
+    to England, away from the Middle Eastern war zone.
+  id: s_13
+  key_delta: The Ark is moved from active conflict zones to nominally safer transport.
+  trigger_event: Indiana and Marion board the tramp steamer for their voyage to England
+    with the Ark.
+- description: The tramp steamer is boarded by Belloq, Dietrich, and Nazis who steal
+    the Ark and kidnap Marion, forcing Indiana to stow away on a U-boat pursuing them.
+  id: s_14
+  key_delta: The Ark and Marion fall again under Nazi control; Indiana moves covertly
+    onto the U-boat to pursue.
+  trigger_event: Nazis hijack the steamer and take the Ark along with Marion captive.
+- description: On an isolated Aegean island, Belloq prepares a ritual opening of the
+    Ark before Nazi leaders with Indiana and Marion captured and tied to wooden posts
+    nearby.
+  id: s_15
+  key_delta: Indiana is forced into helpless witness of the Ark’s revealing and Nazi
+    arrogance.
+  trigger_event: Belloq initiates the Ark’s ceremonial opening while Indiana is exposed
+    and Marion is held captive.
+- description: The Ark opens revealing no visible contents but unleashes supernatural
+    Old Testament seraphim, who kill the Nazis and Belloq with divine wrath as Indiana
+    and Marion shield their eyes.
+  id: s_16
+  key_delta: The Ark’s supernatural power destroys the Nazi threat and Belloq, ending
+    their quest forcibly.
+  trigger_event: The spirits emerge from the Ark and begin killing Nazi personnel
+    present during the ceremony.
+- description: Back in Washington, D.C., Army intelligence officers inform Indiana
+    and Marcus Brody the Ark is secure and under study by top government officials,
+    then store it in a secret warehouse.
+  id: s_17
+  key_delta: The Ark is confiscated by the U.S. government and removed from Indiana’s
+    control, concluding his immediate involvement.
+  trigger_event: Indiana and Brody witness the government officials storing the Ark
+    in a labeled, secure warehouse.

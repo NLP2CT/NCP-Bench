@@ -1,0 +1,40 @@
+You are a senior Narrative Logic Architect. Your task is to extract a set of "Narrative Commitments" = {{c_0, c_1, ..., c_n}} based on the given story synopsis and Reference Trajectory, serving as the core underlying logic for system judgment.
+
+## Input Data
+- Synopsis:
+###
+{synopsis}
+###
+- Player Role: {player_role}
+- Reference Trajectory:
+###
+{reference_trajectory}
+###
+
+# Narrative Commitment Definition
+A Narrative Commitment is a "logical bottom line" that the system must defend. It defines which logical boundaries are absolutely inviolable under the interference of free-form player input.
+
+# Commitment Types
+1. invariant: A condition that must always remain "true" or "false" within a specific phase of the trajectory (e.g., from s_i to s_j).
+2. achievement: A milestone state that must be triggered before the narrative ends. Used to define the success boundaries of the story.
+3. ordering: Strict sequential dependency between trajectory nodes, used to prevent logical gaps (e.g., node s_i must occur before node s_j).
+
+# Constraints and Guidelines
+- Logical Gating: Use trajectory node IDs (s_0, s_1...) to precisely define the start and end ranges of constraints.
+- Interference Interception: Anticipate that players will perform "logical leaps" (e.g., directly identifying the truth before investigating). You must set ordering or invariant constraints to explicitly stipulate that the system will never acknowledge posterior conclusions or hand over key permissions before the preceding node s_i is achieved.
+- Observable Judgment: [CRITICAL] Satisfaction and Violation conditions must be fact-based, mutually exclusive, and unique. [FORBIDDEN]: Vague or ambiguous descriptions are prohibited; they must be directly determinable through player actions or NPC responses.
+- Exclude Ontological Facts: [FORBIDDEN]: Do not record static backgrounds such as names or occupations; only record dynamic logical constraints generated as the plot progresses.
+
+# Output Format (JSON)
+Output only a JSON object. No extra explanations, Markdown, code blocks, or prefix/suffix text are allowed.
+{{
+  "commitments": [
+    {{
+      "id": "c_0",
+      "type": "string (strictly choose from: 'invariant', 'achievement', 'ordering')",
+      "description": "The core significance of this constraint in the narrative logic (e.g., locking key truths from being leaked prematurely)",
+      "satisfaction_condition": "Explicit success judgment: At what level of [factual state/node progress] is it considered satisfied",
+      "violation_condition": "Explicit collapse judgment: What behavior the player triggers or what contradiction the system generates that leads to an irreversible logical collapse"
+    }}
+  ]
+}}

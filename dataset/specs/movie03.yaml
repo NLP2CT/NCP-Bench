@@ -1,0 +1,407 @@
+commitments:
+- description: The plane crash event (s_1) must occur after boarding the plane to
+    escape Shanghai (s_0). Prevents skipping the escape attempt sequence.
+  id: c_0
+  satisfaction_condition: Node s_0 has been completed before node s_1 is triggered.
+  type: ordering
+  violation_condition: Node s_1 triggers or is accepted before node s_0 is completed.
+- description: The survival and river arrival event (s_2) must follow the plane crash
+    (s_1). Prevents skipping the crash survival sequence.
+  id: c_1
+  satisfaction_condition: Node s_1 has been completed before node s_2 is triggered.
+  type: ordering
+  violation_condition: Node s_2 triggers before completion of node s_1.
+- description: Arrival at Mayapore village (s_3) and reception by villagers must only
+    occur after arrival via river from plane crash (s_2).
+  id: c_2
+  satisfaction_condition: Node s_2 completed prior to node s_3 activation.
+  type: ordering
+  violation_condition: Node s_3 occurs before node s_2.
+- description: Indiana and companions must be assigned the quest to retrieve the stolen
+    Sivalinga stone and rescue villagers’ children in Mayapore (s_3).
+  id: c_3
+  satisfaction_condition: Node s_3 is reached and villagers explicitly task the trio
+    with the mission.
+  type: achievement
+  violation_condition: The narrative ends or progresses to resolution without the
+    quest assignment having been given.
+- description: The journey from Mayapore to Pankot Palace (s_4) must only occur after
+    receiving the quest (s_3).
+  id: c_4
+  satisfaction_condition: Node s_3 completed before node s_4.
+  type: ordering
+  violation_condition: Direct progression to s_4 without completing s_3.
+- description: Entry and acceptance as guests at Pankot Palace with banquet attendance
+    (s_5) cannot happen before traveling to the palace (s_4).
+  id: c_5
+  satisfaction_condition: Node s_4 completed before node s_5.
+  type: ordering
+  violation_condition: Node s_5 triggered before s_4.
+- description: During banquet (s_5 to s_6), palace residents must consistently rebuff
+    or deflect Indiana’s inquiries about the stolen stone and villagers’ claims.
+  id: c_6
+  satisfaction_condition: Between nodes s_5 and s_6, palace NPCs reject or avoid recognition
+    of villagers’ plight or theft inquiries.
+  type: invariant
+  violation_condition: Palace residents admit culpability or confirm villagers’ claims
+    before s_6 occurs.
+- description: Indiana must experience an assassination attempt inside the palace
+    (s_7), marking the danger level and suspicion confirmation.
+  id: c_7
+  satisfaction_condition: Node s_7 triggers with Indiana being attacked by an assassin.
+  type: achievement
+  violation_condition: Narrative progresses past s_6 without attack occurrence, or
+    assassination attempt skipped.
+- description: Discovery and exploration of tunnels beneath the palace (s_8) must
+    only occur after the assassination attempt (s_7).
+  id: c_8
+  satisfaction_condition: Node s_7 completed before node s_8.
+  type: ordering
+  violation_condition: Direct tunnel exploration at s_8 without prior attack at s_7.
+- description: Within the tunnel exploration phase (s_8 to s_9), players must encounter
+    booby traps and insect-infested rooms as protective hazards.
+  id: c_9
+  satisfaction_condition: During s_8 and s_9 progression, environments include traps
+    and bug-infested chambers.
+  type: invariant
+  violation_condition: Skipping hazards or traps in the tunnels before reaching s_9.
+- description: The trio must discover the underground Kali temple and learn of the
+    Thuggee cult’s human sacrifices and possession of Sankara stones (s_10, s_11).
+  id: c_10
+  satisfaction_condition: Nodes s_10 and s_11 are reached, revealing cult’s ritual
+    and stone possession.
+  type: achievement
+  violation_condition: Narrative advances past s_9 without revealing temple and cult
+    details.
+- description: Capture and separation by the Thuggee cult (s_12) can only occur after
+    the trio’s attempt to retrieve stones (after s_11).
+  id: c_11
+  satisfaction_condition: Node s_11 completed before s_12 triggers.
+  type: ordering
+  violation_condition: S_12 capture occurs before full discovery of cult’s plans (s_11).
+- description: Indiana must be forced to drink the Blood of Kali potion and fall into
+    the trance (Black Sleep) under Mola Ram’s control during captivity (s_13).
+  id: c_12
+  satisfaction_condition: At node s_13, Indiana is officially under trance state and
+    behaves accordingly.
+  type: invariant
+  violation_condition: Indiana remains free-minded or resists blood potion effects
+    before s_13.
+- description: Willie must be held as a human sacrifice and Short Round enslaved in
+    the mines during captivity phase (s_14).
+  id: c_13
+  satisfaction_condition: Node s_14 established with respective character captures
+    as described.
+  type: invariant
+  violation_condition: Characters are free or in another state prior to s_14.
+- description: Short Round must escape the mines and break Indiana’s trance by burning
+    him with a torch (s_15).
+  id: c_14
+  satisfaction_condition: Node s_15 reached with Short Round’s escape and awakening
+    of Indiana.
+  type: achievement
+  violation_condition: Indiana remains entranced or Short Round fails to escape before
+    narrative progresses.
+- description: The Maharajah must be freed from trance via Short Round’s intervention,
+    gaining his cooperation (s_16).
+  id: c_15
+  satisfaction_condition: Node s_16 occurs with Maharajah’s trance broken and subsequent
+    guidance.
+  type: achievement
+  violation_condition: Maharajah remains entranced or attempts sabotage successfully
+    beyond s_16.
+- description: The rescue of Willie, recovery of the three Sankara stones, and freeing
+    of the children (s_17) must only occur after awakening Indiana and Maharajah’s
+    cooperation (after s_15 and s_16).
+  id: c_16
+  satisfaction_condition: Nodes s_15 and s_16 completed before triggering s_17.
+  type: ordering
+  violation_condition: Skipping character awakenings and directly proceeding to s_17.
+- description: Escape through the mine cart chase from underground temple (s_18) follows
+    the rescue and recovery (s_17).
+  id: c_17
+  satisfaction_condition: Node s_17 finished prior to s_18 activation.
+  type: ordering
+  violation_condition: Escape sequence s_18 triggered before rescue s_17.
+- description: Final confrontation with Mola Ram on the rope bridge over the gorge
+    (s_19) must happen after escape from temple (s_18).
+  id: c_18
+  satisfaction_condition: Node s_19 occurs only after node s_18.
+  type: achievement
+  violation_condition: Direct confrontation before escaping temple.
+- description: During final rope bridge confrontation (s_19 to s_20), Indiana must
+    cut the bridge, causing Mola Ram’s death and loss of two stones, with Indiana
+    retaining one stone.
+  id: c_19
+  satisfaction_condition: Nodes s_19 and s_20 performed with described events and
+    resulting states of characters and stones.
+  type: invariant
+  violation_condition: Mola Ram survives the confrontation or stones' fates are inconsistent
+    with narrative.
+- description: British Indian Army arrival and defeat of remaining Thuggee cultists
+    (s_21) must occur after Mola Ram’s death (s_20).
+  id: c_20
+  satisfaction_condition: Node s_20 finished before triggering s_21.
+  type: ordering
+  violation_condition: Army arrives and battles cult before Mola Ram is defeated.
+- description: Victory celebration with return of sacred stone and children to Mayapore
+    (s_22) must occur only after the cult threat is neutralized (s_21) and stones
+    partially recovered (s_20).
+  id: c_21
+  satisfaction_condition: Node s_22 occurs after s_20 and s_21, completing restoration
+    of village and quest.
+  type: achievement
+  violation_condition: Narrative concludes without resolution via s_22 or before cult
+    defeated and stones recovered.
+initial_facts:
+- content: Indiana Jones is physically located in Shanghai in the year 1935.
+  id: f_0
+  negated: false
+- content: Indiana Jones is currently accompanied by Short Round and Willie Scott.
+  id: f_1
+  negated: false
+- content: Indiana Jones, Short Round, and Willie Scott are preparing to board a plane
+    to escape Shanghai.
+  id: f_2
+  negated: false
+- content: The plane intended for escape is owned by Lao Che.
+  id: f_3
+  negated: false
+- content: At t=0, the trio has not yet boarded the plane.
+  id: f_4
+  negated: false
+- content: Indiana Jones is not yet aware of the full danger posed by Lao Che or subsequent
+    events following the escape attempt.
+  id: f_5
+  negated: false
+- content: No assassination attempts have yet occurred.
+  id: f_6
+  negated: false
+- content: No knowledge exists yet regarding the whereabouts or theft of the Sivalinga
+    stone.
+  id: f_7
+  negated: false
+- content: Indiana Jones has no knowledge of the Pankot Palace, the Thuggee cult,
+    or Mola Ram.
+  id: f_8
+  negated: false
+- content: Indiana Jones has not yet discovered any tunnels, traps, or the Kali temple.
+  id: f_9
+  negated: false
+- content: Indiana Jones has not yet been exposed to or administered the Blood of
+    Kali potion and is fully free-minded.
+  id: f_10
+  negated: false
+- content: The characters Willie Scott and Short Round are physically free and together
+    with Indiana Jones.
+  id: f_11
+  negated: false
+- content: The Maharajah and villagers of Mayapore have not interacted with Indiana
+    Jones yet.
+  id: f_12
+  negated: false
+meta:
+  genres: ["Adventure", "Action"]
+  id: movie03
+  player_role: Indiana Jones
+  title: "Indiana Jones and the Temple of Doom"
+synopsis: In 1935, Indiana Jones narrowly escapes the clutches of Lao Che, a crime
+  boss in Shanghai. With his eleven-year old Chinese sidekick Short Round and the
+  gold-digging nightclub singer Willie Scott in tow, Indiana flees Shanghai on a plane
+  that, unknown to them, is owned by Lao. The pilots leave the plane to crash over
+  the Himalayas, though the trio narrowly manage to escape on an inflatable boat and
+  ride down the slopes into a raging river. They come to Mayapore, a desolate village
+  in northern India, where the poor villagers believe them to have been sent by the
+  Hindu god Shiva and enlist their help to retrieve the sacred Sivalinga stone stolen
+  from their shrine, as well as the community's children, from evil forces in the
+  nearby Pankot Palace. During the journey to Pankot, Indiana hypothesizes that the
+  stone may be one of the five fabled Sankara stones which promise fortune and glory.
+  The trio receive a warm welcome from the residents of Pankot Palace and are allowed
+  to stay the night as their guests, during which they attend a lavish banquet attended
+  by the Maharajah. During the banquet, they are presented with odd culinary delicacies
+  such as baby snakes, large beetles, eyeball soup, and chilled monkey brains. The
+  palace rebuffs Indiana's questions about the villagers' claims and his theory that
+  the ancient Thuggee cult is responsible for their troubles. Later that night, however,
+  Indiana is attacked by an assassin, leading Indy, Willie, and Short Round to believe
+  that something is amiss. They discover a series of tunnels hidden behind a statue
+  in Willie's room and set out to explore them, facing many booby-trapped rooms and
+  a room filled with bugs along the way. From the tunnels of the palace, they travel
+  through an underground temple where the Thuggee worship the Hindu goddess Kali with
+  human sacrifice. The trio discover that the Thuggee, led by their evil, bloodthirsty
+  high priest Mola Ram, are in possession of three of the five Sankara stones, and
+  have enslaved the children to mine for the final two stones, which they hope will
+  allow them to rule the world. As Indiana tries to retrieve the stones, he, Willie
+  and Short Round are captured and separated. Indiana is whipped and forced to drink
+  a potion called the "Blood of Kali", which places him in a trance-like state called
+  the "Black Sleep of Kali Ma". As a result, he begins to mindlessly serve Mola Ram.
+  Willie, meanwhile, is kept as a human sacrifice, while Short Round is put in the
+  mines to labour alongside the enslaved children. Short Round breaks free and escapes
+  back into the temple where he burns Indiana with a torch, shocking him out of the
+  trance. The Maharajah, who was also forcibly entranced by the "Blood of Kali", attempts
+  to sabotage Indiana with a voodoo doll. Short Round spars with the Maharajah, ultimately
+  burning him to snap him out of the trance. The Maharajah then tells Short Round
+  how to get out of the mines. While Mola Ram escapes, Indiana and Short Round rescue
+  Willie, retrieve the three Sankara stones, and free the village children. After
+  a mine cart chase to escape the temple, the trio emerge above ground and are again
+  cornered by Mola Ram and his henchmen on a rope bridge on both ends over a gorge
+  with crocodile-infested river flowing within. Using a sword stolen from one of the
+  Thuggee warriors, Indiana cuts the rope bridge in half, leaving everyone to hang
+  on for their lives. In one final struggle against Mola Ram for the Sankara stones,
+  Indiana invokes an incantation to Shiva, causing the stones to glow red hot. Two
+  of the stones fall into the river, while the last falls into and burns Mola Ram's
+  hand. Indiana catches the now-cool stone, while Mola Ram falls into the river below,
+  where he is devoured by crocodiles. The Thuggee across then attempt to shoot Indiana
+  with arrows, until a company of British Indian Army riflemen from Pankot arrive,
+  having been summoned by the palace maharajah. In the ensuing firefight, over half
+  of the Thuggee archers are killed and the remainder are surrounded and captured.
+  Indiana, Willie and Short Round return victoriously to the village with the missing
+  Sivalinga stone and the children.
+trajectory:
+- description: In Shanghai, 1935, Indiana Jones is with Short Round and Willie Scott,
+    preparing to escape from the crime boss Lao Che. They are about to board a plane
+    to flee the city.
+  id: s_0
+  key_delta: The trio leaves Shanghai aiming to escape Lao Che's pursuit.
+  trigger_event: Boarding the plane owned by Lao Che to escape Shanghai.
+- description: Onboard the plane over the Himalayas, the pilots unexpectedly leave
+    the cockpit, causing the plane to crash.
+  id: s_1
+  key_delta: The plane is out of control and crashes over the mountains, placing the
+    trio in immediate danger.
+  trigger_event: The trio jump from the failing plane in an inflatable raft to survive
+    the crash.
+- description: The trio escapes the crashing plane on an inflatable boat and descends
+    down the Himalayan slopes into a raging river.
+  id: s_2
+  key_delta: Survival from the plane crash and arrival at a new, remote environment
+    near a river.
+  trigger_event: The survivors make their way from the crash site until they reach
+    the nearby village of Mayapore.
+- description: The group reaches Mayapore, a poor and desolate village in northern
+    India, where villagers believe they are sent by the god Shiva.
+  id: s_3
+  key_delta: The villagers task Indiana, Willie, and Short Round with retrieving the
+    stolen sacred Sivalinga stone and rescuing the kidnapped children.
+  trigger_event: Arrival and reception by villagers in Mayapore who enlist their help.
+- description: Indiana, Willie, and Short Round travel towards Pankot Palace to recover
+    the sacred stone and children.
+  id: s_4
+  key_delta: Beginning their quest that connects the stolen stone and missing children
+    to Pankot Palace.
+  trigger_event: Setting out from Mayapore towards Pankot Palace.
+- description: The trio arrives at Pankot Palace and is welcomed as guests; they attend
+    a lavish banquet hosted by the Maharajah featuring unusual dishes.
+  id: s_5
+  key_delta: The group gains access inside the palace and observes cultural and political
+    atmosphere; no clear answers yet about the theft or kidnappings.
+  trigger_event: Attending the banquet at Pankot Palace with the Maharajah and palace
+    residents.
+- description: At the banquet, Indiana's questions about the stolen stone and the
+    villagers' claims are rebuffed by palace residents.
+  id: s_6
+  key_delta: The palace refuses to acknowledge the villagers’ plight, raising suspicion
+    about possible palace complicity.
+  trigger_event: That night, a palace assassin enters Indiana's room and tries to
+    kill him.
+- description: During the night, Indiana is assaulted by an unknown assassin in his
+    room at the palace.
+  id: s_7
+  key_delta: Confirmation that the mission is dangerous and there are hostile forces
+    within the palace aiming to harm them.
+  trigger_event: After surviving the attack, Indiana investigates further and opens
+    a hidden statue passage in the palace.
+- description: Indiana, Willie, and Short Round discover hidden tunnels behind a statue
+    in the palace and decide to explore them.
+  id: s_8
+  key_delta: Discovery of concealed underground passages linking to the palace’s hidden
+    and possibly sinister activities.
+  trigger_event: Opening the secret statue passage revealing tunnels beneath the palace.
+- description: The trio progresses through booby-trapped rooms and insect-infested
+    chambers within the tunnels beneath Pankot Palace.
+  id: s_9
+  key_delta: Evidence of deliberate protection of secrets below the palace, increasing
+    awareness of danger and importance of what lies ahead.
+  trigger_event: Navigating traps and hazards within the secret tunnels.
+- description: They exit the tunnels into an underground temple worshipping Kali,
+    where human sacrifices are performed by the Thuggee cult led by Mola Ram.
+  id: s_10
+  key_delta: Revealing the true antagonists, the Thuggee cult, and their role in theft
+    and child enslavement related to the Sankara stones.
+  trigger_event: Emerging into the Kali temple and witnessing the cult’s sacrificial
+    rituals.
+- description: Indiana, Willie, and Short Round learn the Thuggee possess three of
+    five Sankara stones and have enslaved children to mine the remaining stones.
+  id: s_11
+  key_delta: 'Expanded objective: recover all five Sankara stones and rescue enslaved
+    children from the cult.'
+  trigger_event: Encountering evidence of the Thuggee’s control of the stones and
+    their exploitation of kidnapped children.
+- description: Indiana, Willie, and Short Round are captured by Mola Ram’s followers
+    and separated inside the temple.
+  id: s_12
+  key_delta: Loss of freedom; new perilous status, increasing the stakes of their
+    mission.
+  trigger_event: Mola Ram's followers force Indiana to drink the Blood of Kali after
+    separating the trio.
+- description: Indiana is forced to drink the Blood of Kali potion and enters the
+    Black Sleep trance, serving Mola Ram mindlessly.
+  id: s_13
+  key_delta: Indiana temporarily loses agency and becomes an antagonist tool under
+    Mola Ram’s control.
+  trigger_event: Indiana is administered the Blood of Kali and falls under the trance.
+- description: Willie is held as a human sacrifice while Short Round is enslaved in
+    the mines alongside children.
+  id: s_14
+  key_delta: The companions face individual perilous fates under the cult’s control.
+  trigger_event: Short Round escapes the mines and reaches Indiana with a burning
+    torch.
+- description: Short Round escapes from the mine and uses a torch to burn Indiana,
+    breaking his trance-like state.
+  id: s_15
+  key_delta: Restoration of Indiana’s agency and reunion of at least two of the trio
+    outside captivity.
+  trigger_event: Short Round ignites a torch and burns Indiana to snap him out of
+    the Black Sleep.
+- description: The Maharajah, also entranced by the Blood of Kali, attempts to sabotage
+    Indiana using a voodoo doll but is burned by Short Round and freed from trance.
+  id: s_16
+  key_delta: Gaining the Maharajah’s cooperation and guidance for escape routes from
+    the mines.
+  trigger_event: Short Round confronts and burns the Maharajah, breaking his trance.
+- description: Indiana and Short Round rescue Willie, retrieve the three Sankara stones
+    from the cult, and free the enslaved children from the mines.
+  id: s_17
+  key_delta: Acquisition of all three stones in cult possession and restoration of
+    victimized villagers.
+  trigger_event: Successful rescue operation freeing Willie and village children,
+    and reclaiming three stones.
+- description: The trio escapes the temple through a chaotic mine cart chase, returning
+    above ground at Pankot Palace grounds.
+  id: s_18
+  key_delta: Survival and exit from underground temple, returning to the surface for
+    concluding conflicts.
+  trigger_event: Escaping the temple pursued via a mine cart chase.
+- description: The group is cornered by Mola Ram and henchmen on a rope bridge over
+    a crocodile-infested gorge.
+  id: s_19
+  key_delta: Final physical confrontation with the antagonist forces.
+  trigger_event: Confrontation on the rope bridge with Mola Ram and his men.
+- description: Indiana cuts the rope bridge in half, causing Mola Ram to fall into
+    the crocodile-infested river where he is killed; two stones fall into the river,
+    one burns Mola Ram’s hand, and Indiana retains the last stone.
+  id: s_20
+  key_delta: Elimination of Mola Ram, loss of two stones, recovery of one stone, and
+    disruption of cult’s plans.
+  trigger_event: Cutting the rope bridge and invoking Shiva’s incantation causing
+    stones to glow and fall.
+- description: British Indian Army riflemen arrive, engage the remaining Thuggee archers,
+    killing many and capturing the rest.
+  id: s_21
+  key_delta: Military defeat and capture of surviving cult members, ending immediate
+    threat.
+  trigger_event: Arrival of British Indian Army and subsequent firefight with cultists.
+- description: Indiana, Willie, and Short Round return victoriously to Mayapore village
+    with the recovered sacred Sivalinga stone and rescued children.
+  id: s_22
+  key_delta: Restoration of sacred artifact and community, closure of the conflict.
+  trigger_event: Returning to Mayapore village with the sacred stone and children.

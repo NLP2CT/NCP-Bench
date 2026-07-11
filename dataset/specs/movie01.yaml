@@ -1,0 +1,374 @@
+commitments:
+- description: The initial mission deployment and all team members must be present
+    before any mission outcomes are acknowledged, preventing premature conclusions
+    about failure or mole presence.
+  id: c_0
+  satisfaction_condition: Node s_0 has occurred, establishing mission start with full
+    team presence inside the embassy.
+  type: ordering
+  violation_condition: Player or system acknowledges mission failure or mole existence
+    prior to s_0 completion.
+- description: From mission start until mission collapse, no conclusive statement
+    or confirmation about the mole or the authenticity of the NOC list can be held
+    true to maintain narrative uncertainty.
+  id: c_1
+  satisfaction_condition: Between s_0 and s_2, no narrative states confirm mole identity
+    or NOC list authenticity beyond suspicion.
+  type: invariant
+  violation_condition: Any claim or proof of mole identity or NOC list fakery is accepted
+    before node s_2.
+- description: The revelation that the operation was a setup to expose a mole, the
+    NOC list is fake, and that Ethan is suspected must occur before Ethan flees and
+    becomes a fugitive.
+  id: c_2
+  satisfaction_condition: Node s_2 is reached; Kittridge reveals operation setup and
+    suspects Ethan.
+  type: achievement
+  violation_condition: Player circumvents s_2 by escaping or behaving as fugitive
+    without knowledge of setup or suspicion.
+- description: Ethan’s flight and fugitive status must follow Kittridge's suspicion
+    and not precede it, preventing skipping of important narrative rationale.
+  id: c_3
+  satisfaction_condition: s_3 occurs strictly after s_2.
+  type: ordering
+  violation_condition: Player initiates or system acknowledges Ethan as fugitive before
+    s_2 triggers suspicion.
+- description: Until Ethan initiates communication with Max and confirms Claire's
+    survival, any knowledge of these facts remains unknown and unacknowledged.
+  id: c_4
+  satisfaction_condition: From s_3 to s_4, no acknowledgment of Max communication
+    or Claire’s survival.
+  type: invariant
+  violation_condition: Player or system declares contact with Max or Claire’s survival
+    prior to s_4.
+- description: Ethan’s assembling of a new team and executing the theft of the real
+    NOC list must await establishment of communication and meetings with Max and Claire.
+  id: c_5
+  satisfaction_condition: s_6 occurs only after s_4 and s_5.
+  type: ordering
+  violation_condition: Retrieval of the real NOC list or team assembly occurs before
+    knowledge/communication with Max in s_4 and s_5.
+- description: Throughout the discovery of Kittridge’s manipulation via family baiting
+    and Jim’s reappearance, Ethan must not have confirmed either Kittridge or Jim's
+    mole roles, preserving narrative progression.
+  id: c_6
+  satisfaction_condition: Between s_6 and s_8, no confirmed mole identity about Kittridge
+    or Jim is acknowledged.
+  type: invariant
+  violation_condition: Player or system reveals Kittridge or Jim as mole before s_8,
+    or discloses their roles prematurely.
+- description: Reveal of Jim alive and accusing Kittridge as mole must occur to unlock
+    the subsequent conflict and shift of suspicion within the narrative.
+  id: c_7
+  satisfaction_condition: Node s_8 is triggered.
+  type: achievement
+  violation_condition: Player bypasses or fails to acknowledge Jim’s revelation and
+    accusation, but proceeds to final resolution.
+- description: Final confrontation on the TGV train must happen only after the mole's
+    identity is discovered and all main players consolidated with Kittridge's presence
+    orchestrated by Ethan.
+  id: c_8
+  satisfaction_condition: s_9 through s_14 occur only after s_8’s mole revelation
+    and related preceding events.
+  type: ordering
+  violation_condition: Final showdown or resolution events occur before confirmation
+    of mole identity and player assembling all key characters.
+- description: Claire’s betrayal and true allegiance cannot be revealed before the
+    encounter on the train, preserving narrative surprise and conflict escalation.
+  id: c_9
+  satisfaction_condition: Between s_8 and s_10, no narrative or factual acceptance
+    of Claire’s betrayal.
+  type: invariant
+  violation_condition: Claire’s betrayal is disclosed or accepted before s_10.
+- description: Ethan must successfully expose Jim as the mole 'Job' using the disguise
+    and live transmission before the final physical confrontation can unfold.
+  id: c_10
+  satisfaction_condition: s_11 is reached and Jim’s identity is revealed to Kittridge
+    via live feed.
+  type: achievement
+  violation_condition: Final physical pursuit or mole’s death occurs before exposure
+    of Jim as the mole.
+- description: Krieger and Jim’s deaths through Ethan’s explosive setup must strictly
+    follow exposure and chase, enforcing logical consequence of the mole’s defeat.
+  id: c_11
+  satisfaction_condition: s_13 triggers only after s_11 and s_12, completing exposure
+    and pursuit.
+  type: ordering
+  violation_condition: Deaths of Jim and Krieger happen before mole’s exposure or
+    final confrontation.
+- description: Resolution state of Ethan cleared, Luther reinstated, and Ethan’s resignation
+    occurs only after mole neutralization and NOC list secured.
+  id: c_12
+  satisfaction_condition: Node s_14 is triggered with all prior key events (mole neutralized,
+    list secured).
+  type: achievement
+  violation_condition: Agency clearance, resignation, or mission closure acknowledged
+    before mole is neutralized or NOC list recovered.
+- description: At no point before s_14 may Ethan engage in any new mission or accept
+    any new assignments; preclusion maintains closure of current narrative before
+    sequel implication.
+  id: c_13
+  satisfaction_condition: Before s_14, no knowledge or acceptance of new missions.
+  type: invariant
+  violation_condition: Player or system acknowledges new mission offers before s_14
+    is reached.
+initial_facts:
+- content: Ethan Hunt is present in Prague inside the U.S. Embassy at the start of
+    the mission.
+  id: f_0
+  negated: false
+- content: The Impossible Missions Force (IMF) team assembled for the mission includes
+    Ethan Hunt, Jim Phelps (team leader), Claire Phelps, Sarah Davies, Hannah Williams,
+    Jack Harmon, and Franz Krieger.
+  id: f_1
+  negated: false
+- content: The team is fully assembled and present at the embassy location at the
+    mission's start.
+  id: f_2
+  negated: false
+- content: The mission objective at t=0 is to prevent Alexander Golitsyn, an American
+    diplomat, from stealing the non-official cover (NOC) list of covert agents in
+    Eastern Europe from the U.S. Embassy.
+  id: f_3
+  negated: false
+- content: Ethan Hunt does not know if the NOC list is genuine or fake at mission
+    start.
+  id: f_4
+  negated: false
+- content: No IMF team members, including Ethan, know the existence or identity of
+    a mole in the IMF at the mission's start.
+  id: f_5
+  negated: false
+- content: Ethan Hunt is unaware that the mission is a setup or that there will be
+    subsequent suspicion against him or others.
+  id: f_6
+  negated: false
+- content: Ethan Hunt does not know that the team members are going to be attacked
+    or killed during the mission.
+  id: f_7
+  negated: false
+- content: Technician Jack Harmon, Claire Phelps, Sarah Davies, Hannah Williams, Franz
+    Krieger, Alexander Golitsyn, and Jim Phelps are all alive and present as team
+    members or relevant contacts at t=0.
+  id: f_8
+  negated: false
+- content: Eugene Kittridge, IMF director, is not involved in the mission location
+    at the embassy at time zero and not present with Ethan.
+  id: f_9
+  negated: false
+- content: Ethan Hunt's cognitive state includes no suspicion of betrayal by any team
+    members, including Claire.
+  id: f_10
+  negated: false
+- content: Ethan Hunt does not possess any knowledge of the arms dealer Max, the 'Job
+    314' operation, or any subsequent events.
+  id: f_11
+  negated: false
+- content: Ethan Hunt is currently trusted and considered an active agent of the IMF
+    with no fugitive status.
+  id: f_12
+  negated: false
+- content: No team member, including Ethan, is aware of any tracking devices or fake
+    documents related to the NOC list.
+  id: f_13
+  negated: false
+- content: Ethan Hunt's mission focus is purely on preventing the theft and protecting
+    the NOC list, with no knowledge of the future aftermath.
+  id: f_14
+  negated: false
+meta:
+  genres: ["Action", "Thriller"]
+  id: movie01
+  player_role: Ethan Hunt
+  title: "Mission Impossible"
+synopsis: Ethan Hunt is part of a small team of the Impossible Missions Force, an
+  unofficial branch of the Central Intelligence Agency. Led by Jim Phelps, the team
+  assembles for a mission in Prague to prevent Alexander Golitsyn, an American diplomat,
+  from stealing the non-official cover list, a comprehensive list of all covert agents
+  in Eastern Europe, from the U.S. Embassy. The mission goes hopelessly wrong, apparently
+  resulting in the deaths of the entire team except for Ethan. Technician Jack Harmon
+  is impaled in an elevator shaft, Jim is shot on a bridge by an unknown assailant,
+  Hannah Williams and Jim's wife Claire are both killed by a car bomb and both Sarah
+  Davies and Golitsyn are stabbed to death by an unknown assailant. After fleeing
+  the scene, Ethan meets with IMF director Eugene Kittridge at a café where they discuss
+  the events of that night. Eventually, Ethan realizes that a second IMF team was
+  watching his team during the failed operation. Kittridge then discloses that the
+  operation was a setup meant to draw out a mole in the IMF. The mole has made a deal
+  to sell the list to an arms dealer known as "Max" as part of an operation called
+  "Job 314". As a result, the NOC list taken in the mission was a fake and the computer
+  disk it is on is rigged with a tracking device. After Kittridge informs Ethan of
+  his suspicion that Ethan is the mole, Ethan blows up the floor-to-ceiling aquarium
+  with a stick of explosive chewing gum in the café and flees. Ethan returns to the
+  IMF safe house where, realizing that "Job 314" refers to a Bible verse in the Book
+  of Job, Ethan begins email correspondence with Max over a biblical correspondence
+  web site and warns Max about the fake NOC list. Ethan then encounters Claire and
+  discovers that she has survived the mission, having gotten out of the car in which
+  she was waiting before it exploded. Max arranges a meeting with Ethan where he offers
+  to deliver the real NOC list in exchange for $10 million and a face-to-face meeting
+  with the real Job. Max agrees and she and Ethan then escape moments before a CIA
+  team, alerted by the tracking device, arrives in search of the fake NOC list. Ethan
+  assembles a team of disavowed agents——computer expert Luther Stickell and pilot
+  Franz Krieger. Ethan, Luther, Krieger, and Claire infiltrate the CIA's headquarters
+  and successfully steal the full NOC list before escaping to a safe house in London.
+  While in London, Ethan discovers that his uncle and mother have been falsely arrested
+  for drug trafficking in an attempt by Kittridge to lure him out of hiding. This
+  infuriates Ethan, and he contacts Kittridge who offers to drop the charges if Ethan
+  surrenders. Ethan stays on the line long enough for Kittridge to trace him to London
+  and then hangs up, only to find Jim standing next to him. Jim, presumed dead in
+  the Prague operation and following Ethan ever since, tells Ethan that Kittridge
+  is the mole and is trying to tie up loose ends. As Ethan listens, he mentally pieces
+  together the operation and realizes that Jim, having become disillusioned with his
+  work, is actually Job and that Krieger - who uses the same distinctive make of knife
+  that was used to kill Sarah and Golitsyn – has assisted him. However, Ethan is still
+  doubtful about Claire's place in the conspiracy. The next day, Max and Ethan arrange
+  to meet aboard the TGV en route to Paris, with Claire and Luther aboard to provide
+  backup. Kittridge is also aboard, having received tickets and a watch from Ethan.
+  Aboard the train, Ethan delivers the NOC list to Max, who directs him to the baggage
+  car to find his money and Job. Claire arrives in the baggage car to meet with her
+  husband, revealing her complicity as she suggests that they leave with the money
+  and let Ethan take the blame. Jim suddenly peels his face away, revealing himself
+  to be Ethan in disguise. They are interrupted by the arrival of the real Jim Phelps——unhinged,
+  armed and demanding that Ethan hand over the money. Ethan does so, but then slowly
+  puts on a pair of glasses from the original operation in Prague, with a camera built
+  into the bridge. The image of Jim, alive, is transmitted to the watch Ethan sent
+  to Kittridge, exposing Job's true identity. Claire tries to intervene, but Jim kills
+  her and climbs up to the roof of the train, while Krieger approaches in a helicopter
+  to extract him. Ethan follows him onto the roof, impeding him and tethering Krieger's
+  helicopter to the train, dragging it into the Channel Tunnel. In the tunnel, Jim
+  leaps to the helicopter. Ethan follows, climbing the helicopter's landing skids
+  and attaching another piece of explosive chewing gum, a final relic of Prague, to
+  the windshield. He leaps back to the train just as the ensuing explosion kills Krieger
+  and Jim is crushed in between the copter remains and the tracks. Now with custody
+  of the NOC list, Max, and Job's true identity, Kittridge reinstates Luther and drops
+  his investigation against Ethan, who resigns from the IMF. As he flies home, a flight
+  attendant approaches him and asks, through a coded phrase, if he is ready to take
+  on a new mission.
+trajectory:
+- description: Ethan Hunt is in Prague as part of a small IMF team assembled for a
+    covert mission to prevent an American diplomat, Alexander Golitsyn, from stealing
+    the U.S. Embassy's non-official cover (NOC) list of covert agents in Eastern Europe.
+    The team is led by Jim Phelps, operating under official but secretive circumstances,
+    with all members ready at the embassy location.
+  id: s_0
+  key_delta: Set the initial mission context with all team members present and the
+    objective to stop Golitsyn from stealing the NOC list.
+  trigger_event: The IMF team initiates the mission inside the U.S. Embassy in Prague
+    to secure the NOC list.
+- description: The mission to prevent the theft of the NOC list unfolds inside the
+    embassy, but events rapidly spiral out of control with attacks on team members
+    and the apparent deaths of almost all, except Ethan, amid violent encounters in
+    various locations including an elevator shaft, a bridge, and a car bomb.
+  id: s_1
+  key_delta: Most team members, including Jim Phelps, Claire, Sarah Davies, Hannah
+    Williams, and Jack Harmon, are presumed dead; Ethan escapes as sole survivor,
+    creating suspicion and confusion about the mission's failure.
+  trigger_event: The team experiences coordinated lethal attacks resulting in deaths
+    and injuries of members during the attempted operation.
+- description: Ethan meets IMF director Eugene Kittridge at a café shortly after the
+    operation's collapse. The atmosphere is tense, with Kittridge expressing mistrust
+    and suspicion toward Ethan while discussing the mission's disastrous outcome and
+    the notion of a mole in the IMF.
+  id: s_2
+  key_delta: Kittridge reveals the operation was a setup to expose a mole, that the
+    NOC list taken was fake, and that he suspects Ethan himself to be the mole.
+  trigger_event: Ethan and Kittridge's café meeting to debrief the failed Prague mission.
+- description: In the café, Ethan detonates an explosive chewing gum inside a floor-to-ceiling
+    aquarium to escape after Kittridge accuses him of treason and attempts to detain
+    him. Ethan flees into the night, now considered a fugitive by his own agency.
+  id: s_3
+  key_delta: Ethan evades capture and officially becomes a suspect within the IMF;
+    his status shifts from agent to fugitive.
+  trigger_event: Ethan blowing up the aquarium to escape from Kittridge's suspicion.
+- description: At a safe house, Ethan discovers a coded message where 'Job 314' refers
+    to a Bible verse and starts email correspondence with arms dealer Max on a biblical
+    website, warning about the fake NOC list. Ethan also encounters Claire, who claims
+    to have survived the Prague explosion.
+  id: s_4
+  key_delta: Ethan re-establishes contact with supposed allies, confirms Claire is
+    alive, and sets up negotiation with the arms dealer.
+  trigger_event: Ethan initiates communication with Max and meets Claire at the safe
+    house.
+- description: Max arranges a meeting with Ethan, offering the real NOC list in exchange
+    for $10 million and a face-to-face meeting with the real 'Job.' Ethan and Max
+    prepare to leave just before a CIA tactical team, alerted by the tracking device
+    on the fake list, arrives to seize it.
+  id: s_5
+  key_delta: Ethan gains an active lead on recovering the genuine NOC list and faces
+    external CIA interference due to the tracking device.
+  trigger_event: Max's arranged meeting offer and the CIA raid on Ethan's location.
+- description: 'Ethan assembles a new team of disavowed agents: computer expert Luther
+    Stickell and pilot Franz Krieger. Together with Claire, they infiltrate CIA headquarters
+    and successfully steal the authentic NOC list before escaping to a London safe
+    house.'
+  id: s_6
+  key_delta: Ethan regains the authentic NOC list through his new team, increasing
+    his leverage and ensuring possession of critical intelligence.
+  trigger_event: Ethan's assembling of a new team and their break-in at CIA headquarters
+    to retrieve the real NOC list.
+- description: At the London safe house, Ethan discovers his uncle and mother have
+    been falsely arrested on drug trafficking charges as bait set by Kittridge to
+    lure him. Ethan calls Kittridge under the pretense of surrendering but arranges
+    a trace back to reveal Kittridge’s location.
+  id: s_7
+  key_delta: Ethan gains evidence of Kittridge’s manipulative and possibly malicious
+    intent, locating his position.
+  trigger_event: Ethan’s phone call to Kittridge concerning his family’s arrest and
+    surrender offer.
+- description: Jim Phelps, previously presumed dead, appears beside Ethan after Ethan’s
+    call with Kittridge, revealing himself alive and claiming Kittridge is the mole
+    responsible for the setup, complicating Ethan’s trust within the team and confirming
+    deeper conspiracy layers.
+  id: s_8
+  key_delta: Jim is revealed alive, identifies Kittridge as the mole; shifts suspicion
+    away from Ethan and introduces another conspirator.
+  trigger_event: Jim Phelps’ unexpected arrival and declaration in Ethan's presence.
+- description: Ethan assembles with Max, Claire, and Luther aboard the TGV train to
+    Paris for a final exchange involving the NOC list. The atmosphere is charged and
+    tense with all principal actors present, including Kittridge secretly aboard with
+    tickets provided by Ethan.
+  id: s_9
+  key_delta: All key players are consolidated in one location for confrontation and
+    resolution.
+  trigger_event: Boarding of the high-speed train for the arranged meeting with Max.
+- description: In the train’s baggage car, Claire reveals her betrayal by suggesting
+    to escape with the money and leave Ethan to take blame. Amid this, Jim peels off
+    a disguise revealing Ethan himself impersonating Jim, leading to a confrontation
+    with the real Jim Phelps who appears armed and unhinged.
+  id: s_10
+  key_delta: Claire’s true allegiance is exposed; the identity deception involving
+    Ethan and Jim escalates the confrontation.
+  trigger_event: Claire’s betrayal disclosure and the reveal of Ethan disguised as
+    Jim in the baggage car.
+- description: Ethan uses glasses equipped with a camera to transmit live proof that
+    Jim Phelps is the mole Job, exposing him to Kittridge via a watch. Claire attempts
+    to intervene but is killed by Jim. Jim escapes to the train roof, attempting extraction
+    by Krieger in a helicopter.
+  id: s_11
+  key_delta: Jim is unmasked as the true mole and assassin, Claire is dead, and a
+    physical pursuit begins.
+  trigger_event: Live transmission exposing Jim as the mole and Jim killing Claire
+    before escaping.
+- description: Ethan pursues Jim onto the train roof and physically engages as Krieger
+    attempts helicopter extraction. Ethan tethers the helicopter to the train and
+    drags it into the Channel Tunnel, preventing escape.
+  id: s_12
+  key_delta: The helicopter extraction is compromised, restraining Jim and Krieger.
+  trigger_event: Ethan’s physical confrontation with Jim and Krieger on the train
+    roof and helicopter tethering.
+- description: Inside the tunnel, Jim leaps onto the helicopter. Ethan climbs onto
+    it, plants explosive chewing gum on the windshield, then leaps back to the train
+    just before the explosion kills Krieger and crushes Jim between wreckage and tracks.
+  id: s_13
+  key_delta: Jim and Krieger are killed, effectively ending the mole operation and
+    internal threat.
+  trigger_event: Ethan planting explosives and the resulting helicopter crash inside
+    the Channel Tunnel.
+- description: With the NOC list secured, Max in custody, and Job's true identity
+    exposed, Kittridge reinstates Luther and drops the investigation against Ethan.
+    Ethan resigns from the IMF and flies home, where a flight attendant approaches
+    with a coded phrase inviting him to a new mission.
+  id: s_14
+  key_delta: Mission concludes with resolution of conspiracies; Ethan publicly cleared
+    but chooses to resign; implication of new assignments ahead.
+  trigger_event: Ethan’s flight home and the flight attendant’s coded approach offering
+    a new mission.

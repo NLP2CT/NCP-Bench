@@ -1,0 +1,322 @@
+commitments:
+- description: Stark's critical wounding and capture by the Ten Rings (s_0) must occur
+    before any captivity or surgery events; ensures no premature knowledge or access
+    to captivity phase.
+  id: c_0
+  satisfaction_condition: Event s_0 (Stark wounded and captured) occurs before s_1
+    (captive surgery and imprisonment workshop).
+  type: ordering
+  violation_condition: Player triggers any narrative acceptance or action related
+    to captive surgery, electromagnet implantation, or workshop labor before s_0 occurs.
+- description: The invention of the arc reactor and the construction of the armor
+    (s_2) must only happen after establishing the prisoners' forced labor to build
+    the Jericho missile (s_1).
+  id: c_1
+  satisfaction_condition: Node s_1 (workshop captivity and forced missile construction)
+    happens before s_2 (secret arc reactor and armor building).
+  type: ordering
+  violation_condition: Player obtains knowledge, tools, or initiates armor construction
+    without first being subjected to forced labor under terrorist coercion.
+- description: Between s_1 and s_3, Stark and Yinsen's secrecy about building the
+    arc reactor and armor must be maintained; terrorists must not know the project
+    until s_3 trigger event.
+  id: c_2
+  satisfaction_condition: From s_1 until s_3, terrorists are unaware of Stark and
+    Yinsen’s secret construction activities.
+  type: invariant
+  violation_condition: Player informs terrorists or system prematurely reveals armor
+    construction to terrorists before s_3 trigger event.
+- description: Yinsen’s self-sacrifice (s_3) enabling Stark to activate armor must
+    happen strictly before Stark defeats terrorists and escapes (s_4).
+  id: c_3
+  satisfaction_condition: Yinsen’s sacrifice at s_3 occurs prior to Stark powering
+    up and eliminating enemies at s_4.
+  type: ordering
+  violation_condition: Player bypasses Yinsen’s sacrifice and directly activates or
+    uses armor to defeat terrorists.
+- description: Stark must decide to abandon weapon manufacturing and commit to peaceful
+    technology development after captivity (transition s_4 to s_5).
+  id: c_4
+  satisfaction_condition: Player explicitly halts weapon production at Stark Industries
+    and starts peaceful technology work (s_5).
+  type: achievement
+  violation_condition: Player resumes or continues weapons manufacturing after the
+    captivity and escape events instead of shifting focus.
+- description: Stark's discovery of Jericho missiles being used by terrorists (s_6)
+    must follow his suspension of weapons manufacturing (s_5) before retaliation (s_7).
+  id: c_5
+  satisfaction_condition: Player learns of weapon misuse by Ten Rings (via Christine
+    Everhart) only after Stark suspends weapons production (after s_5) and before
+    assaulting Afghanistan at s_7.
+  type: ordering
+  violation_condition: Player discovers terrorist use of weapons or reacts with violence
+    prior to suspending weapons production or before s_6 event triggers.
+- description: Stark’s secret identity as Iron Man remains undisclosed publicly before
+    his intentional reveal at s_11.
+  id: c_6
+  satisfaction_condition: Prior to s_11, no NPC or player action publicly exposes
+    Stark as Iron Man or leads to direct public knowledge.
+  type: invariant
+  violation_condition: Player or NPCs reveal Stark's Iron Man identity publicly before
+    s_11 press conference reveal.
+- description: Stane’s betrayal (evidence discovered at s_8) must precede Stark’s
+    confrontation with Stane (s_9, s_10), ensuring logical buildup and discovery before
+    combat.
+  id: c_7
+  satisfaction_condition: Player uncovers Stane's collusion with Ten Rings by s_8
+    before any direct attack or ambush from Stane.
+  type: ordering
+  violation_condition: Stane attacks or steals arc reactor before sufficient player
+    knowledge of his betrayal is established.
+- description: Stark must regain power to operate armor by installing the original
+    arc reactor after Stane steals the new one (s_9), ensuring no invincible armor
+    usage prior.
+  id: c_8
+  satisfaction_condition: Player successfully reactivates armor with original arc
+    reactor at s_9 before final fight with Stane.
+  type: achievement
+  violation_condition: Player uses full armor capabilities without first regaining
+    power from original arc reactor post-stolen event.
+- description: Defeat of Stane (s_10) must only occur after proper build-up of Stark’s
+    regained capacities, Pepper’s hacking, and S.H.I.E.L.D. involvement (s_8 and s_9).
+  id: c_9
+  satisfaction_condition: Stane is defeated only after prior discovery, arc reactor
+    recovery, and coordinated arrest attempt scenes.
+  type: ordering
+  violation_condition: Player kills or defeats Stane without preceding discovery or
+    arc reactor theft/resolution events.
+- description: Stark must publicly declare himself Iron Man (s_11), marking a fundamental
+    narrative milestone and identity acceptance.
+  id: c_10
+  satisfaction_condition: Player chooses or the system triggers the public announcement
+    of Stark's identity as Iron Man at s_11.
+  type: achievement
+  violation_condition: Narrative ends or progresses beyond s_11 without Stark revealing
+    his identity publicly, leaving contradiction or secrecy intact.
+- description: Introduction to the wider superhero world and Avengers Initiative by
+    Nick Fury (s_12) must occur after Stark’s public reveal as Iron Man (s_11).
+  id: c_11
+  satisfaction_condition: Node s_11 occurs completely before s_12 introduction and
+    engagement with Fury.
+  type: ordering
+  violation_condition: Fury approaches Stark with Avengers Initiative before Stark’s
+    public identity declaration.
+initial_facts:
+- content: Tony Stark is located at a remote military demonstration site in Afghanistan.
+  id: f_0
+  negated: false
+- content: Lieutenant Colonel James Rhodes is accompanying Tony Stark at the military
+    demonstration site.
+  id: f_1
+  negated: false
+- content: The Jericho missile demonstration is ongoing and controlled by Stark Industries
+    personnel and military observers.
+  id: f_2
+  negated: false
+- content: The environment at the demonstration site is tense but disciplined.
+  id: f_3
+  negated: false
+- content: Tony Stark is uninjured and not yet captured by any hostile party.
+  id: f_4
+  negated: false
+- content: Tony Stark is unaware of any imminent ambush or attack by the Ten Rings
+    terrorist group.
+  id: f_5
+  negated: false
+- content: The Ten Rings terrorist group is not actively engaged with or holding Tony
+    Stark.
+  id: f_6
+  negated: false
+- content: Tony Stark has not been subjected to captivity or forced labor by any terrorist
+    group.
+  id: f_7
+  negated: false
+- content: Tony Stark has no electromagnet implanted in his chest.
+  id: f_8
+  negated: false
+- content: Tony Stark has not started constructing any arc reactor or powered armor.
+  id: f_9
+  negated: false
+- content: Tony Stark does not possess knowledge of any secret plans or betrayals
+    involving Obadiah Stane.
+  id: f_10
+  negated: false
+- content: Tony Stark’s secret identity as Iron Man does not exist or is undisclosed
+    to himself or others.
+  id: f_11
+  negated: false
+- content: Stark Industries is fully operational and producing weapons, including
+    the Jericho missile.
+  id: f_12
+  negated: false
+- content: Tony Stark believes in and maintains his playboy reputation and genius
+    inventor image unchallenged.
+  id: f_13
+  negated: false
+- content: No interaction with S.H.I.E.L.D., Phil Coulson, or Nick Fury has occurred.
+  id: f_14
+  negated: false
+- content: Tony Stark has no wounds, implants, or life-threatening injuries at this
+    moment.
+  id: f_15
+  negated: false
+meta:
+  genres: ["Action", "Sci-Fi"]
+  id: movie52
+  player_role: Tony Stark
+  title: "Iron Man"
+synopsis: Playboy and genius Tony Stark, who has inherited the defense contractor
+  Stark Industries from his father, is in Afghanistan with his friend and military
+  liaison, Lieutenant Colonel James Rhodes to demonstrate the new "Jericho" missile.
+  Stark is critically wounded in an ambush and imprisoned in a cave by the terrorist
+  group the Ten Rings. An electromagnet grafted into Stark's chest by fellow captive
+  Yinsen keeps the shrapnel that wounded him from reaching his heart and killing him.
+  Ten Rings leader Raza offers places the prisoners into a workshop, promising Stark
+  freedom in exchange for building a Jericho missile for the group, but Tony and Yinsen
+  agree Raza will not keep his word. Stark and Yinsen secretly build a powerful electric
+  generator called an arc reactor, to power Stark's electromagnet, and then begin
+  to build a suit of armor to escape. The Ten Rings attack the workshop when they
+  discover what Stark is doing. Yinsen sacrifices himself to divert them while Stark's
+  suit powers up. The armored Stark eliminates the terrorists, then returns to the
+  cave to rescue Yinsen. However, Yinsen is mortally wounded; as he dies he implores
+  Stark not to continue wasting his life. An enraged Stark burns the terrorist's munitions
+  and flies away, only to crash in the desert, destroying the suit. After being rescued
+  by Rhodes, Stark returns home and announces that he has suspended production on
+  his company until they can make peaceful technology; thus no more weapons will be
+  made. In his home workshop, Stark builds an improved version of his suit, as well
+  as a more powerful arc reactor for his chest. At the Stark Industries building,
+  Tony works on a larger version of the arc reactor which he believes may be able
+  to supply tremendous amounts of clean energy, but Obadiah Stane, his father's old
+  partner and the company's manager, advises Stark that this may bankrupt Stark Industries
+  and ruin his father's legacy. At Stark's first public appearance after his return,
+  reporter Christine Everhart informs him that Stark Industries weapons, including
+  the Jericho, were recently delivered to the Ten Rings and are being used to attack
+  Yinsen's home village, Gulmira. Stark also learns that Stane is trying to replace
+  him as head of the company. Enraged, Stark dons his new armor and flies to Afghanistan,
+  where he saves Yinsen's village and delivers a devastating blow to the Ten Rings.
+  While flying home, Stark is shot at by two F-22 Raptor fighter jets. He phones Rhodes
+  and reveals his secret identity in an attempt to end the attack. Meanwhile, the
+  Ten Rings gather the pieces of Stark's prototype suit and meet with Stane, who subdues
+  Raza with a sonic device and has the rest of the group eliminated. He has a new
+  suit reverse engineered from the wreckage. Seeking to find any other weapons delivered
+  to the Ten Rings, Stark sends assistant Virginia "Pepper" Potts to hack into the
+  company computer system from Stane's office. She discovers Stane has been supplying
+  the terrorists and hired the Ten Rings to kill Stark, but the group reneged. Potts
+  later meets with agent Phil Coulson of S.H.I.E.L.D., the Strategic Homeland Intervention,
+  Enforcement and Logistics Division, a counter-terrorism agency, to inform him of
+  Stane's activities. Stane's scientists cannot duplicate Stark's arc reactor, so
+  Stane ambushes Stark at home, using his sonic device to paralyze him and take his
+  arc reactor. Left to die, Stark manages to crawl to his lab and plug in his original
+  reactor. Potts and several S.H.I.E.L.D. agents attempt to arrest Stane, but he dons
+  his suit and attacks them. Stark fights Stane, but is overmatched without his new
+  reactor to run his suit at full capacity. Stark lures Stane atop the Stark Industries
+  building and instructs Potts to overload the large arc reactor there. This unleashes
+  a massive electrical surge that knocks Stane unconscious, causing him and his armor
+  to fall into the exploding reactor, killing him. The next day, the press has dubbed
+  the armored hero "Iron Man". Agent Coulson gives Stark a cover story to explain
+  the events of the night and Stane's death. At a press conference, Stark begins giving
+  the cover story, but then announces that he is Iron Man, prompting the reporters
+  to swarm the stage and ask more questions. In a post-credits scene, S.H.I.E.L.D.
+  Director Nick Fury visits Stark at home, and, noting that Iron Man is not "the only
+  superhero in the world", says he wants to discuss the "Avengers Initiative".
+trajectory:
+- description: Tony Stark and Lieutenant Colonel James Rhodes are in Afghanistan at
+    a remote military demonstration site of the new Jericho missile, representing
+    Stark Industries. The environment is tense but controlled, with military personnel
+    and local observers present.
+  id: s_0
+  key_delta: Tony Stark is injured and taken prisoner by the Ten Rings, shifting from
+    a public demonstration to captivity.
+  trigger_event: Tony Stark is critically wounded in an ambush by the terrorist group
+    the Ten Rings and captured.
+- description: Tony Stark awakens in a cave prison controlled by the Ten Rings terrorists.
+    Fellow captive Yinsen performs surgery to implant an electromagnet in Stark's
+    chest to prevent shrapnel from reaching his heart.
+  id: s_1
+  key_delta: Stark and Yinsen are isolated in a workshop under coercion to build a
+    missile, beginning their forced labor.
+  trigger_event: Leader Raza offers freedom to prisoners in exchange for building
+    a Jericho missile, placing them in a workshop.
+- description: Inside the Ten Rings workshop cave, Stark and Yinsen secretly construct
+    an arc reactor device to power Stark’s electromagnet, working covertly away from
+    the terrorists' knowledge.
+  id: s_2
+  key_delta: They initiate the secret project to build powered armor, creating a tool
+    for potential escape.
+  trigger_event: Stark and Yinsen start building a suit of armor using the arc reactor
+    as power.
+- description: The Ten Rings terrorists discover Stark’s secret activities and attack
+    the workshop while Stark powers up his armor.
+  id: s_3
+  key_delta: Yinsen dies defending Stark; Stark activates his armored suit to fight
+    the terrorists.
+  trigger_event: Yinsen sacrifices himself to hold off attackers, allowing Stark's
+    armor to fully power up.
+- description: After defeating the terrorists, Stark returns to the cave but finds
+    Yinsen mortally wounded; Yinsen urges Stark to change his life’s purpose.
+  id: s_4
+  key_delta: Stark abandons his previous life as a weapons manufacturer, initiating
+    personal transformation.
+  trigger_event: Stark burns the Ten Rings' munitions and escapes the cave, flying
+    away in the armor.
+- description: Stark crashes the armor suit in the desert and is rescued by Rhodes.
+    Back home, Stark suspends weapon production at Stark Industries to focus on peaceful
+    technology.
+  id: s_5
+  key_delta: Stark commits to developing new technology for protection and clean energy
+    rather than weaponry.
+  trigger_event: Stark begins building an improved armor suit and a more powerful
+    arc reactor in his private workshop.
+- description: At Stark Industries headquarters, Stark is warned by Obadiah Stane
+    that his pursuit of large arc reactors may endanger the company’s finances and
+    legacy.
+  id: s_6
+  key_delta: Stark learns weapons his company produced are fueling terrorist attacks,
+    escalating the conflict.
+  trigger_event: At a public event, reporter Christine Everhart reveals that Ten Rings
+    terrorists are using Stark Industries’ Jericho missiles against Yinsen’s home
+    village, Gulmira.
+- description: Enraged, Stark dons his upgraded armor and flies to Afghanistan to
+    defend Yinsen’s village from the Ten Rings attack.
+  id: s_7
+  key_delta: Stark reveals his public vulnerability and begins operating as Iron Man.
+  trigger_event: During his return flight, Stark is pursued and attacked by U.S. military
+    fighter jets.
+- description: The remnants of Stark’s prototype armor are collected by the Ten Rings
+    who meet with Stane. Stane subdues Raza and eliminates the terrorists, secretly
+    reverse engineering the suit.
+  id: s_8
+  key_delta: Evidence is obtained that Stane is colluding with terrorists and attempting
+    to undermine Stark.
+  trigger_event: Stark sends Pepper Potts to hack into Stark Industries’ computer,
+    uncovering Stane’s secret support of the Ten Rings.
+- description: Pepper Potts informs S.H.I.E.L.D. agent Phil Coulson of Stane’s illegal
+    activities. Stane ambushes Stark at home and steals his new arc reactor, paralyzing
+    him with a sonic device.
+  id: s_9
+  key_delta: Stark regains the minimal power source necessary to animate his armor
+    and continue the fight.
+  trigger_event: Stark crawls to his lab to reinstall his original arc reactor and
+    recover his strength.
+- description: Stark, with Pepper Potts and S.H.I.E.L.D. agents attempting an arrest,
+    confronts Stane who has armed himself with a new armored suit powered by Stark’s
+    stolen arc reactor.
+  id: s_10
+  key_delta: Stane is defeated and killed after an electrical surge disables his armor
+    and causes fatal injury.
+  trigger_event: Stark lures Stane atop Stark Industries, instructing Pepper to overload
+    the large arc reactor.
+- description: The press dubs Stark’s armored persona 'Iron Man'. S.H.I.E.L.D. provides
+    Stark with a cover story to explain recent events and protect his identity.
+  id: s_11
+  key_delta: Stark publicly accepts his superhero identity, ending any illusion of
+    secrecy.
+  trigger_event: At a press conference, Stark begins the cover story but surprises
+    all by declaring publicly that he is Iron Man.
+- description: At Stark’s home, S.H.I.E.L.D. Director Nick Fury visits and informs
+    him of a wider world of superheroes and the Avengers Initiative.
+  id: s_12
+  key_delta: Stark is introduced to a greater mission beyond his personal story, setting
+    the stage for future alliances.
+  trigger_event: Fury expresses interest in recruiting Stark as part of a larger team
+    of heroes.

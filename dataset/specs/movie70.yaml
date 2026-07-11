@@ -1,0 +1,334 @@
+commitments:
+- description: Clarice cannot begin interviewing Hannibal Lecter before Jack Crawford
+    pulls her from Quantico training and assigns the task.
+  id: c_0
+  satisfaction_condition: Node s_0 has been reached and completed before s_1 begins.
+  type: ordering
+  violation_condition: Player attempts to initiate Lecter interview (s_1) without
+    first triggering Crawford's summoning and Clarice leaving training (s_0).
+- description: Lecter's first demeanor toward Clarice is initially courteous but progressively
+    grows impatient, establishing their dynamic early interaction.
+  id: c_1
+  satisfaction_condition: During s_1, Lecter expresses initial courtesy and then clearly
+    shows impatience as Clarice interrogates.
+  type: invariant
+  violation_condition: Lecter’s initial interaction with Clarice lacks this evolving
+    demeanor from courteous to impatient in s_1, or contradicts this pattern.
+- description: Clarice must receive the investigative lead from Lecter (direction
+    to the old patient) before discovering the severed head evidence.
+  id: c_2
+  satisfaction_condition: s_2 completes prior to s_3, ensuring Clarice is first instructed
+    by Lecter before following up at the storage shed.
+  type: ordering
+  violation_condition: Player uncovers or references severed head evidence (s_3) before
+    Lecter instructs Clarice to seek the old patient (s_2).
+- description: Lecter's cooperation in profiling Buffalo Bill is strictly conditional
+    on his transfer away from Dr. Chilton.
+  id: c_3
+  satisfaction_condition: From s_3 onwards until the transfer occurs at s_5, Lecter
+    consistently links his cooperation to the transfer demand.
+  type: invariant
+  violation_condition: Lecter provides profiling help or key information before securing
+    or negotiating the transfer condition, violating quid pro quo logic.
+- description: The fake deal offering Lecter transfer in exchange for info is presented
+    only after Buffalo Bill kidnaps Catherine Martin and Crawford authorizes Clarice
+    to negotiate.
+  id: c_4
+  satisfaction_condition: Node s_4 occurs only after the kidnapping event and authorization;
+    prior nodes do not contain this negotiation attempt.
+  type: ordering
+  violation_condition: Player attempts or system acknowledges a fake deal negotiation
+    with Lecter before the kidnapping and Crawford authorization events.
+- description: Lecter’s information exchange with Clarice during the fake deal interview
+    involves him demanding personal details about Clarice in return for clues.
+  id: c_5
+  satisfaction_condition: During s_4, Lecter explicitly demands Clarice share personal
+    past details as part of information exchange.
+  type: invariant
+  violation_condition: Lecter fully discloses clues without requesting or coercing
+    Clarice for personal information in s_4.
+- description: Lecter's transfer to Memphis under Chilton’s terms (s_5) must occur
+    before Lecter reveals personal Buffalo Bill information to federal agents.
+  id: c_6
+  satisfaction_condition: s_5 completes before s_6 begins, preserving logical custody
+    and transfer sequence.
+  type: ordering
+  violation_condition: Player or system allows Lecter to reveal personal Buffalo Bill
+    info to agents (s_6) before confirmed transfer (s_5).
+- description: Clarice must recount her traumatic childhood to Lecter to receive back
+    Buffalo Bill’s case files annotated during their courthouse encounter.
+  id: c_7
+  satisfaction_condition: In s_6, Clarice openly shares details of her orphaned past
+    and lamb rescue attempt, followed by Lecter giving case files.
+  type: invariant
+  violation_condition: Case files are transferred or Lecter grants full information
+    without Clarice revealing her childhood history at s_6.
+- description: Lecter’s escape from custody (s_7) must occur after his interaction
+    with Clarice at the courthouse and her receiving annotated case files.
+  id: c_8
+  satisfaction_condition: s_6 precedes s_7; Lecter’s escape only occurs after the
+    courthouse encounter and handing over of files.
+  type: ordering
+  violation_condition: Lecter escapes prior to or during his meeting with Clarice
+    before annotated files are received, disrupting narrative flow.
+- description: Clarice’s analysis of Lecter’s case file annotations correctly reveals
+    Buffalo Bill’s personal connection to his first victim and his tailoring modus
+    operandi.
+  id: c_9
+  satisfaction_condition: At s_8, Clarice logically deduces from Lecter's notes that
+    Buffalo Bill was a tailor connected to victim patterns.
+  type: invariant
+  violation_condition: Clarice or player prematurely identifies Buffalo Bill’s identity
+    or modus operandi before analyzing Lecter’s annotations post-escape (after s_7).
+- description: Identification of Jame Gumb as Buffalo Bill must occur before tactical
+    operations and Clarice’s pursuit to the killer’s basement lair.
+  id: c_10
+  satisfaction_condition: s_8 node completes (identification) before s_9 begins (interviews
+    and pursuit).
+  type: ordering
+  violation_condition: Player or system allows direct confrontation or pursuit of
+    Buffalo Bill prior to formal identification by Crawford and Clarice.
+- description: Clarice must kill Buffalo Bill during the basement confrontation to
+    resolve the main serial killer threat.
+  id: c_11
+  satisfaction_condition: At s_10, Buffalo Bill is explicitly killed by Clarice following
+    the night-vision confrontation in the dark basement.
+  type: achievement
+  violation_condition: The narrative ends or moves forward without Buffalo Bill’s
+    death or neutralization after the confrontation sequence.
+- description: Lecter remains at large and active after Buffalo Bill’s death, continuing
+    his own agenda including targeting Dr. Chilton.
+  id: c_12
+  satisfaction_condition: Post s_11, Lecter is confirmed escaped, follows Chilton,
+    and remains free at large.
+  type: invariant
+  violation_condition: Lecter is captured, neutralized, or permanently restrained
+    before or during s_11, contradicting the open-ended danger.
+initial_facts:
+- content: Clarice Starling is currently training at the FBI Academy in Quantico,
+    Virginia.
+  id: f_0
+  negated: false
+- content: Clarice Starling has not yet been pulled from the FBI Academy training.
+  id: f_1
+  negated: false
+- content: Jack Crawford has not yet arrived to summon Clarice Starling for an assignment.
+  id: f_2
+  negated: false
+- content: Hannibal Lecter is imprisoned in solitary confinement at Baltimore State
+    Hospital for the Criminally Insane.
+  id: f_3
+  negated: false
+- content: Clarice Starling has not yet met or interviewed Hannibal Lecter.
+  id: f_4
+  negated: false
+- content: Clarice Starling is unaware of the serial killer 'Buffalo Bill' investigation.
+  id: f_5
+  negated: false
+- content: Buffalo Bill has not kidnapped Senator's daughter Catherine Martin.
+  id: f_6
+  negated: false
+- content: Dr. Frederick Chilton is the administrator responsible for Hannibal Lecter's
+    imprisonment.
+  id: f_7
+  negated: false
+- content: Clarice Starling has no knowledge of Hannibal Lecter's demands or personality
+    beyond rumor.
+  id: f_8
+  negated: false
+- content: No investigative leads regarding Buffalo Bill or severed heads have been
+    discovered or received by Clarice Starling.
+  id: f_9
+  negated: false
+- content: Hannibal Lecter has not negotiated or agreed to any quid pro quo cooperation.
+  id: f_10
+  negated: false
+- content: The FBI has not authorized any fake deals or negotiations with Hannibal
+    Lecter.
+  id: f_11
+  negated: false
+- content: Lecter has not been transferred from Baltimore State Hospital to any other
+    facility.
+  id: f_12
+  negated: false
+- content: Clarice Starling has not recounted any personal or traumatic past to Hannibal
+    Lecter.
+  id: f_13
+  negated: false
+- content: Lecter is securely in custody with guards and has not escaped.
+  id: f_14
+  negated: false
+- content: No case files about Buffalo Bill have been provided to Clarice Starling
+    by Lecter.
+  id: f_15
+  negated: false
+- content: Clarice Starling cannot identify Buffalo Bill or Jame Gumb.
+  id: f_16
+  negated: false
+- content: Clarice Starling has not yet interviewed any associates or friends of Buffalo
+    Bill's victims.
+  id: f_17
+  negated: false
+- content: No tactical operations against Buffalo Bill or Jame Gumb have been initiated.
+  id: f_18
+  negated: false
+- content: Clarice Starling has not confronted or yet encountered Buffalo Bill.
+  id: f_19
+  negated: false
+- content: Lecter has no direct communication or ongoing contact with Clarice Starling.
+  id: f_20
+  negated: false
+meta:
+  genres: ["Thriller", "Crime"]
+  id: movie70
+  player_role: Clarice Starling
+  title: "The Silence of the Lambs"
+synopsis: Clarice Starling is pulled from her training at the FBI Academy at Quantico,
+  Virginia, by Jack Crawford of the Bureau's Behavioral Science Unit. He tasks her
+  with interviewing Hannibal Lecter, a former psychiatrist and incarcerated cannibalistic
+  serial killer, believing Lecter's insight might be useful in the pursuit of a serial
+  killer nicknamed "Buffalo Bill", who skins his female victims' corpses. Starling
+  travels to the Baltimore State Hospital for the Criminally Insane, where she is
+  led by Dr. Frederick Chilton to Lecter's solitary quarters. Although initially pleasant
+  and courteous, Lecter grows impatient with Starling's attempts at "dissecting" him
+  and rebuffs her. As she is leaving, one of the prisoners flicks semen at her. Lecter,
+  who considers the discourtesy "unspeakably ugly", calls Starling back and tells
+  her to seek out an old patient of his. This leads her to a storage shed where she
+  discovers a man's severed head. She returns to Lecter, who tells her that the man
+  is linked to Buffalo Bill. He offers to profile Buffalo Bill on the condition that
+  he be transferred away from Chilton, whom he detests. When Buffalo Bill kidnaps
+  a Senator's daughter, Catherine Martin, Crawford authorizes Starling to offer Lecter
+  a fake deal promising a prison transfer if he provides information that helps find
+  Buffalo Bill and rescue the abductee. Instead, Lecter begins a game of quid pro
+  quo with Starling, offering comprehensive clues and insights about Buffalo Bill
+  if Starling will give him information about her own past, something she was advised
+  not to do. Chilton secretly records the conversation and reveals Starling's deal
+  as a sham before offering to transfer Lecter in exchange for a deal of Chilton's
+  own making. Lecter agrees and is flown to Memphis, Tennessee, where he reveals personal
+  information on Buffalo Bill to federal agents. As the manhunt begins, Starling visits
+  Lecter at his special cell in a Tennessee courthouse and confronts him with her
+  decryption of the name he provided. Lecter refuses Starling's pleas for the truth
+  and forces her to recount her traumatic childhood. She tells him how she was orphaned
+  and relocated to a relative's farm, where she discovered a lamb slaughterhouse and
+  made a failed attempt to rescue one of the lambs. Lecter gives her back the case
+  files on Buffalo Bill after their conversation is interrupted by Chilton and the
+  police who escort her from the building. Later that evening, Lecter kills his two
+  guards, escapes from his cell and disappears. Starling analyzes Lecter's annotations
+  to the case files and realizes that Buffalo Bill knew his first victim personally.
+  Starling travels to the victim's hometown and discovers that Buffalo Bill was a
+  tailor, with dresses and dress patterns identical to the patches of skin removed
+  from each of his victims. She telephones Crawford to inform him that Buffalo Bill
+  is trying to fashion a "woman suit" of real skin, but Crawford is already en route
+  to make an arrest, having cross-referenced Lecter's notes with hospital archives
+  and finding a man named Jame Gumb, who once applied unsuccessfully for a sex-change
+  operation. Starling continues interviewing friends of Buffalo Bill's first victim
+  in Ohio while Crawford leads an FBI tactical team to Gumb's address in Illinois.
+  The house in Illinois is empty and Starling is led to the house of "Jack Gordon",
+  who she realizes is actually Jame Gumb. She pursues him into his multi-room basement,
+  where she discovers that Catherine is still alive, but trapped in a dry well. After
+  turning off the basement lights, Gumb stalks Starling in the dark with night-vision
+  goggles but gives his position away when he cocks his revolver; Starling turns around
+  just in time and kills him. Some time later at her FBI Academy graduation party,
+  Starling receives a phone call from Lecter, who is at an airport in Bimini. He assures
+  her that he does not plan to pursue her and asks her to return the favor, which
+  she says she cannot do. Lecter then hangs up the phone, saying that he is "having
+  an old friend for dinner" and begins following a newly-arrived Chilton before disappearing
+  into the crowd.
+trajectory:
+- description: Clarice Starling is training at the FBI Academy in Quantico, Virginia.
+    The atmosphere is formal and disciplined, with new agents undergoing rigorous
+    preparation. Clarice is unaware of any immediate field assignment and is focused
+    solely on her training under the supervision of FBI instructors.
+  id: s_0
+  key_delta: Clarice is pulled from training by Jack Crawford to interview Hannibal
+    Lecter, establishing the initial mission and connecting her to the serial killer
+    investigation.
+  trigger_event: Jack Crawford arrives at the FBI Academy and summons Clarice Starling
+    for an urgent assignment.
+- description: Clarice Starling arrives at the Baltimore State Hospital for the Criminally
+    Insane, standing outside the imposing facility and preparing to meet Hannibal
+    Lecter. Dr. Frederick Chilton, the hospital administrator, leads her to Lecter's
+    solitary cell. The atmosphere is tense and clinical.
+  id: s_1
+  key_delta: The first direct interaction with Lecter occurs; his initial courteous
+    demeanor followed by growing impatience defines their relationship’s dynamic.
+  trigger_event: Clarice enters Hannibal Lecter's quarters and begins the first interview.
+- description: Clarice is leaving Lecter's cell after the first interrogation when
+    a prisoner silently spits semen at her. Lecter calls her back into his cell, appearing
+    displeased by the disrespect shown.
+  id: s_2
+  key_delta: Lecter reveals a new investigative lead by directing Clarice to follow
+    up on another patient, expanding the investigation beyond Lecter himself.
+  trigger_event: Hannibal Lecter instructs Clarice to seek out an old former patient
+    of his.
+- description: Clarice finds a storage shed containing a man's severed head, linked
+    to the Buffalo Bill case. She returns to Lecter for confirmation and further insight.
+    Lecter is now negotiating terms for his cooperation.
+  id: s_3
+  key_delta: Lecter establishes a quid pro quo condition linking his cooperation to
+    a change in his imprisonment conditions.
+  trigger_event: Lecter offers to profile Buffalo Bill if he is transferred away from
+    Dr. Chilton.
+- description: Buffalo Bill kidnaps Senator's daughter Catherine Martin. Crawford
+    authorizes Clarice to offer Lecter a fake deal promising transfer in exchange
+    for information. Clarice confronts Lecter with the fake deal proposition.
+  id: s_4
+  key_delta: The informational exchange turns intimate and strategic; Lecter provides
+    clues but demands personal details from Clarice, complicating their interaction.
+  trigger_event: Lecter begins exchanging clues about Buffalo Bill in return for personal
+    information from Clarice during an interview.
+- description: Dr. Chilton secretly records Lecter and Clarice's conversation and
+    exposes the sham deal. Chilton offers his own deal to transfer Lecter and personally
+    takes charge of the transfer arrangements.
+  id: s_5
+  key_delta: Lecter's transfer out of Baltimore is arranged under Chilton’s terms,
+    shifting control of Lecter’s custody and setting up his temporary relocation.
+  trigger_event: Lecter agrees to Chilton’s deal and is flown to Memphis, Tennessee,
+    for transfer.
+- description: Lecter reveals personal information about Buffalo Bill to federal agents
+    after arriving in Memphis. Clarice visits him at a courthouse cell and confronts
+    him with the decrypted key name. Lecter refuses to confirm and presses Clarice
+    to reveal her childhood traumas.
+  id: s_6
+  key_delta: Lecter releases the Buffalo Bill case files annotated, and Clarice shares
+    personal history, deepening their psychological connection and information transfer.
+  trigger_event: Clarice recounts her orphaned childhood and the lamb rescue attempt
+    to Lecter during this confrontation.
+- description: Clarice is escorted away by Chilton and police after the courthouse
+    encounter while Lecter kills his guards during the night and escapes from custody.
+    The atmosphere shifts from containment to open threat with Lecter’s escape.
+  id: s_7
+  key_delta: Lecter's escape removes him from controlled custody; Clarice gains fresh
+    insights from his case file annotations, advancing the Buffalo Bill investigation.
+  trigger_event: Clarice later analyzes Lecter's annotations in the case files.
+- description: Clarice travels to the first victim's hometown and discovers Buffalo
+    Bill was a tailor with dresses matching skin patches removed from victims. She
+    calls Crawford to report the pattern discovering Buffalo Bill’s clothing-based
+    modus operandi.
+  id: s_8
+  key_delta: Identification of Jame Gumb as Buffalo Bill crystallizes the investigation’s
+    suspect profile and grounds the hunt geographically and personally.
+  trigger_event: Crawford cross-references Lecter's notes and hospital archives identifying
+    Jame Gumb as a suspect.
+- description: Clarice interviews friends of the first victim in Ohio while Crawford
+    leads an FBI tactical team to Jame Gumb's Illinois residence. The tactical team
+    arrives at an apparently empty house. Clarice is led to another house attributed
+    to the alias Jack Gordon.
+  id: s_9
+  key_delta: Clarice locates Buffalo Bill’s lair and the abducted victim, progressing
+    from suspect identification to active search and confrontation.
+  trigger_event: Clarice chases Buffalo Bill into his basement after discovering the
+    victim Catherine Martin trapped in a dry well.
+- description: Clarice navigates the dark, multi-room basement. Jame Gumb stalks her using night-vision goggles but gives his position away when he cocks his revolver. Clarice turns around just in time and shoots him.
+  id: s_10
+  key_delta: Clarice shoots and kills Buffalo Bill, rescuing Catherine Martin and resolving the primary serial killer threat.
+  trigger_event: With Buffalo Bill dead and Catherine rescued, Clarice returns to normal FBI life until Lecter later contacts her from Bimini.
+- description: At her FBI Academy graduation party, Clarice receives a phone call
+    from Lecter, who is at an airport in Bimini. Lecter assures her he will not pursue
+    her and requests a favor he knows she cannot grant. Lecter then mentions having
+    an old friend for dinner, signaling future danger.
+  id: s_11
+  key_delta: Lecter is free and already tailing Chilton after contacting Clarice
+    from abroad.
+  trigger_event: Lecter ends the phone call and begins following Dr. Chilton before
+    disappearing into a crowd.

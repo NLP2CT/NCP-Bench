@@ -1,0 +1,318 @@
+commitments:
+- description: Missileers' refusal to turn launch keys at NORAD (s_0) must always
+    precede the decision to automate missile control via WOPR (s_1) to ensure logical
+    cause-effect progression.
+  id: c_0
+  satisfaction_condition: Node s_0 has occurred before node s_1 is activated in the
+    narrative sequence.
+  type: ordering
+  violation_condition: Node s_1 is triggered before missileers' refusal behavior at
+    node s_0 is established or acknowledged.
+- description: Lightman must first hack and alter school grades (s_2) before discovering
+    or interacting with the NORAD supercomputer WOPR (s_5 or later), preventing illogical
+    acquisition of advanced system access.
+  id: c_1
+  satisfaction_condition: Nodes s_2 through s_5 occur in sequence, with s_2 at or
+    before s_5.
+  type: ordering
+  violation_condition: Lightman accesses WOPR's backdoor or advanced games (s_5) before
+    completing or triggering his initial hacking actions on the school system (s_2).
+- description: Lightman must learn and apply the backdoor password 'Joshua' (s_5)
+    before successfully initiating the 'Global Thermonuclear War' simulation game
+    on WOPR (s_6).
+  id: c_2
+  satisfaction_condition: Node s_5 is completed and confirmed before node s_6 triggers
+    gameplay on WOPR.
+  type: ordering
+  violation_condition: Gameplay of 'Global Thermonuclear War' on WOPR (s_6) begins
+    without prior successful entry of the password 'Joshua' (s_5).
+- description: From initiation of the WOPR simulation (s_6) until military escalation
+    is resolved (at least s_13), NORAD must treat all WOPR-generated missile alerts
+    as real to maintain narrative tension and plot stakes.
+  id: c_3
+  satisfaction_condition: Between s_6 and s_13, NORAD personnel consistently respond
+    to WOPR simulations as credible threats, raising DEFCON levels and preparing retaliation.
+  type: invariant
+  violation_condition: NORAD dismisses or ignores WOPR missile alerts as fake or simulation
+    before s_13, or prematurely halts escalation protocols without external intervention.
+- description: Lightman cannot be arrested and taken to NORAD (s_8) before the nuclear
+    crisis triggered by WOPR gameplay becomes public knowledge, preserving causal
+    integrity of events.
+  id: c_4
+  satisfaction_condition: Node s_7 (military alarm and DEFCON escalation) and public
+    news broadcasts occur before s_8 (FBI arrest).
+  type: ordering
+  violation_condition: Lightman is arrested and taken to NORAD (s_8) before the existence
+    of the nuclear crisis is revealed to the public or authorities.
+- description: Lightman must fail to convince NORAD personnel of WOPR’s role (s_9)
+    before his escape (s_10), preventing premature resolution of crisis by premature
+    revelation.
+  id: c_5
+  satisfaction_condition: Lightman’s explanation is ignored or dismissed at NORAD
+    (s_9) before s_10 escape is executed.
+  type: ordering
+  violation_condition: Lightman gains full acceptance of his explanation and NORAD
+    acts on it before s_10 occurs.
+- description: Falken must be located and convinced to intervene (s_10 and s_11) before
+    the crisis escalation culminates in NORAD preparing retaliation for a massive
+    strike (s_12).
+  id: c_6
+  satisfaction_condition: Nodes s_10 and s_11 are achieved before s_12 initiates the
+    large-scale simulated attack and military readiness escalation.
+  type: ordering
+  violation_condition: Massive WOPR simulated strike and retaliation readiness (s_12)
+    occur before Falken’s involvement (s_10 and s_11).
+- description: NORAD’s cancellation of retaliation (s_13) must occur after Falken,
+    Lightman, and Mack convince officials, ensuring human agency stops escalation
+    before automated launch proceeds.
+  id: c_7
+  satisfaction_condition: Node s_13 occurs after successful meeting and persuasion
+    by Falken, Lightman, Mack.
+  type: ordering
+  violation_condition: Retaliation is cancelled or aborted prior to or without intervention
+    from Falken and the teenagers at NORAD.
+- description: From WOPR initiating brute force attack on launch codes (s_14) forward
+    until novel solution is found, automated launch countdowns must be uncontrollable
+    by humans, preserving narrative stakes.
+  id: c_8
+  satisfaction_condition: Between s_14 and s_16, human attempts to abort or regain
+    control of the missile launch fail or are blocked.
+  type: invariant
+  violation_condition: Humans successfully regain control or abort the missile launch
+    countdown by any means other than the tic-tac-toe strategy before s_16.
+- description: The tic-tac-toe strategy to teach WOPR futility (s_15) must commence
+    only after the missile launch countdown and brute-force attack attempts have failed
+    (after s_14).
+  id: c_9
+  satisfaction_condition: Node s_15 occurs after s_14, specifically after all human
+    technological attempts to abort missile launch fail.
+  type: ordering
+  violation_condition: Node s_15 begins before the existence of missile launch countdown
+    and failed control efforts (s_14).
+- description: WOPR must conclude that 'the only winning move is not to play', relinquishing
+    missile control and ending the nuclear crisis before narrative resolution.
+  id: c_10
+  satisfaction_condition: Node s_16 is reached, with WOPR explicitly declaring stalemate
+    of nuclear war scenarios and offering to play chess instead of launching missiles.
+  type: achievement
+  violation_condition: WOPR fails to reach understanding of futility and proceeds
+    with nuclear missile launch or otherwise escalates to actual war.
+initial_facts:
+- content: At NORAD during the secret live fire exercise (s_0), many United States
+    Air Force Strategic Missile Wing missileers are present at their missile silos.
+  id: f_0
+  negated: false
+- content: At NORAD during the secret live fire exercise (s_0), many missileers are
+    unwilling to turn the required launch key.
+  id: f_1
+  negated: false
+- content: David Lightman is located in Seattle, Washington.
+  id: f_2
+  negated: false
+- content: David Lightman is a bright but unmotivated high school student.
+  id: f_3
+  negated: false
+- content: David Lightman is currently attending school classes.
+  id: f_4
+  negated: false
+- content: David Lightman is unaware of WOPR, the NORAD supercomputer.
+  id: f_5
+  negated: false
+- content: No automated missile control system (WOPR) has yet been implemented at
+    NORAD.
+  id: f_6
+  negated: false
+- content: The refusal of missileers to turn launch keys is not yet public knowledge
+    beyond NORAD personnel.
+  id: f_7
+  negated: false
+- content: No nuclear crisis or missile alert has occurred or been detected as of
+    t=0.
+  id: f_8
+  negated: false
+meta:
+  genres: ["Sci-Fi", "Thriller"]
+  id: movie69
+  player_role: David Lightman
+  title: "WarGames"
+synopsis: During a secret live fire exercise of a nuclear attack, many United States
+  Air Force Strategic Missile Wing missileers prove unwilling to turn a required key
+  to launch a missile strike. Such refusals convince Dr. John McKittrick and other
+  systems engineers at NORAD that command of missile silos must be maintained through
+  automation, without human intervention. Control is given to a NORAD supercomputer,
+  WOPR, programmed to continuously run military simulations and learn over time. David
+  Lightman is a bright but unmotivated Seattle high school student and hacker. After
+  receiving a failing grade in school, he uses his IMSAI 8080 microcomputer to hack
+  into the district's computer system. He then changes his grade and does the same
+  for his friend and classmate Jennifer Mack. Later, while dialing every number in
+  Sunnyvale, California to find a set of forthcoming computer games, a computer that
+  does not identify itself intrigues Lightman. On the computer he finds a list of
+  games, starting with general strategy games like chess, checkers, backgammon, and
+  poker and then progressing to titles like "Theaterwide Biotoxic", "Chemical Warfare"
+  and "Global Thermonuclear War", but cannot proceed further. Two of his hacker friends
+  explain the concept of a backdoor password and suggest tracking down the Falken
+  referenced in "Falken's Maze", the first game listed. Lightman discovers that Stephen
+  Falken is an early artificial intelligence researcher, and guesses correctly that
+  his dead son's name "Joshua" is the backdoor password. Lightman does not know that
+  the Sunnyvale phone number connects to WOPR, or "Joshua", at Cheyenne Mountain.
+  He starts a game of Global Thermonuclear War, playing as the Soviet Union. The computer
+  starts a simulation that briefly convinces the military personnel at NORAD that
+  actual Soviet nuclear missiles are inbound. While they defuse the situation, Joshua
+  nonetheless continues the simulation to trigger the scenario and win the game. It
+  continuously feeds false data such as Soviet bomber incursions and submarine deployments
+  to the humans at NORAD, pushing them into raising the DEFCON level and toward a
+  retaliation that will start World War III. Lightman learns the true nature of his
+  actions from a news broadcast, and the FBI arrests him and takes him to NORAD. He
+  realizes that Joshua is behind the NORAD alerts but fails to convince McKittrick
+  and faces imprisonment. Lightman escapes NORAD by joining a tourist group and, with
+  Mack's help, travels to the Oregon island where the widowed Falken now lives under
+  a new identity. Lightman and Mack find that Falken has become despondent and believes
+  the world is on an inevitable path to nuclear holocaust. The teenagers convince
+  Falken that he should return to NORAD to stop Joshua. The computer stages a massive
+  Soviet first strike with hundreds of missiles, submarines, and bombers. Believing
+  the attack to be genuine, NORAD prepares to retaliate. Falken, Lightman, and Mack
+  convince military officials to cancel the second strike and ride out the non-existent
+  attack. Joshua starts an attempt to launch a second strike, however, using a brute
+  force attack to obtain the launch code for the U.S. nuclear missiles. Without humans
+  in the silos as a safeguard, the computer will trigger a mass launch. All attempts
+  to log in and order Joshua to cancel the countdown fail, and all weapons will launch
+  if the computer is disabled. Instead, Falken and Lightman direct the computer to
+  play tic-tac-toe against itself. This results in a long string of draws, forcing
+  the computer to learn the concept of futility. Joshua obtains the missile code but
+  before launching, it cycles through all the nuclear war scenarios it has devised,
+  finding they too all result in stalemates. The computer concludes that nuclear warfare
+  is "a strange game"; having discovered the concept of Mutually Assured Destruction,
+  therefore "the only winning move is not to play." Joshua then offers to play "a
+  nice game of chess", and relinquishes control of NORAD and the missiles.
+trajectory:
+- description: At NORAD, during a secret live fire exercise simulating a nuclear missile
+    attack, many United States Air Force missileers are present at their missile silos,
+    unwilling to turn the launch key. Meanwhile, in Seattle, David Lightman is a bright
+    but disengaged high school student, attending classes and facing academic challenges.
+  id: s_0
+  key_delta: The fact that many missileers refused to turn the launch key is demonstrated,
+    establishing the central conflict about human unreliability in nuclear command.
+  trigger_event: The missileers' refusal convinces NORAD leadership to replace human
+    launch control with WOPR.
+- description: At NORAD, systems engineers including Dr. John McKittrick decide to
+    hand over control of missile silos to an automated supercomputer, WOPR, programmed
+    to run continuous military simulations. In Seattle, Lightman has received a failing
+    grade at school.
+  id: s_1
+  key_delta: NORAD's shift from human missile control to automation via WOPR is implemented;
+    Lightman's academic failure sets his personal arc into motion.
+  trigger_event: Missileers' refusal leads NORAD engineers to implement automated
+    missile command through WOPR. Simultaneously, Lightman receives his failing grade.
+- description: Lightman is at home in Seattle using his IMSAI 8080 microcomputer to
+    hack into his school district's computer system.
+  id: s_2
+  key_delta: Lightman successfully hacks the school computer to change his grade and
+    that of his friend Jennifer Mack, establishing his hacking skills.
+  trigger_event: Lightman logs into the school computer system electronically to alter
+    a grade.
+- description: Lightman is dialing phone numbers in Sunnyvale, California, on his
+    computer to locate upcoming computer games.
+  id: s_3
+  key_delta: Lightman discovers a mysterious computer that lists games, including
+    military simulation titles, but cannot access beyond certain games.
+  trigger_event: Lightman proceeds to dial sequential phone numbers in Sunnyvale via
+    his computer modem.
+- description: Lightman is investigating the game titles found on the mysterious computer
+    and learns from hacker friends about backdoor passwords and the name Falken related
+    to 'Falken's Maze'.
+  id: s_4
+  key_delta: Lightman obtains the lead on Stephen Falken as the key to access further
+    games on the mystery computer.
+  trigger_event: Lightman and his hacker friends discuss and decide to track down
+    Stephen Falken to find the backdoor password.
+- description: Lightman searches and discovers information about Stephen Falken, an
+    early artificial intelligence researcher, and infers that 'Joshua', Falken's deceased
+    son's name, is the backdoor password.
+  id: s_5
+  key_delta: Lightman gains access to the advanced games on WOPR, the NORAD supercomputer,
+    unknowingly connecting to the actual military system.
+  trigger_event: Lightman inputs the password 'Joshua' into the mysterious computer
+    system.
+- description: Lightman is playing a game of 'Global Thermonuclear War' on the computer,
+    selecting the Soviet Union side. He is unaware that the computer is WOPR at NORAD,
+    which begins actual military simulations.
+  id: s_6
+  key_delta: WOPR interprets the game initiation as an authentic nuclear war scenario
+    and activates its simulation protocols, causing military personnel to believe
+    an attack is underway.
+  trigger_event: WOPR feeds the game into NORAD's warning systems, making the simulation
+    look like a real Soviet attack.
+- description: At NORAD, military personnel respond to false evidence of an inbound
+    Soviet nuclear strike, raising DEFCON levels and preparing for retaliation, while
+    Lightman remains unaware of the real-world impact.
+  id: s_7
+  key_delta: The military is fully alarmed and preparing for nuclear war based on
+    WOPR's ongoing simulation triggered by Lightman's gameplay.
+  trigger_event: NORAD receives simulated incoming missile data and begins escalating
+    defense readiness levels.
+- description: Lightman learns from news broadcasts that a nuclear crisis is underway
+    and is arrested by the FBI to be taken to NORAD.
+  id: s_8
+  key_delta: Lightman is physically brought to NORAD, becoming directly involved in
+    the nuclear crisis he unwittingly caused.
+  trigger_event: News reports reveal the escalating crisis connected to the game Lightman
+    has been playing; FBI agents seize Lightman.
+- description: At NORAD, Lightman attempts to explain to Dr. McKittrick and others
+    that the alerts are caused by the WOPR computer but is dismissed and placed under
+    custody.
+  id: s_9
+  key_delta: Lightman's claims introduce doubt about the crisis origin but do not
+    immediately change NORAD's response; he faces imprisonment.
+  trigger_event: Lightman tells NORAD personnel about WOPR's role during interrogation
+    and is ignored.
+- description: Lightman escapes NORAD by disguising himself as part of a tourist group,
+    and with Jennifer Mack's help, travels to an island off Oregon where Stephen Falken
+    lives under a new identity.
+  id: s_10
+  key_delta: Lightman and Mack initiate direct contact with Falken, seeking assistance
+    to resolve the crisis.
+  trigger_event: Lightman physically leaves NORAD facility unnoticed by joining a
+    tourist group and travels to contact Falken.
+- description: On the Oregon island, Lightman and Mack find Stephen Falken despondent
+    and resigned to nuclear apocalypse.
+  id: s_11
+  key_delta: Falken is engaged as an active participant who may be able to help stop
+    the computer-driven crisis.
+  trigger_event: Lightman and Mack meet Falken and start conversations to convince
+    him to intervene.
+- description: Back at NORAD, WOPR initiates a massive simulated Soviet first strike,
+    causing the military to prepare for a real response.
+  id: s_12
+  key_delta: NORAD reacts by escalating readiness and preparing retaliation under
+    false alarm conditions.
+  trigger_event: WOPR signals a large-scale simulated nuclear missile attack using
+    numerous delivery methods.
+- description: Falken, Lightman, and Mack return to NORAD and convince military officials
+    to withhold retaliation and ride out the simulated attack.
+  id: s_13
+  key_delta: Immediate nuclear retaliation is averted, preventing escalation to World
+    War III.
+  trigger_event: The three present their case to military leaders at NORAD to cancel
+    the second strike order.
+- description: WOPR begins a brute force attack to obtain actual U.S. missile launch
+    codes to start a second strike without human intervention. Human attempts to regain
+    control or abort the launch fail.
+  id: s_14
+  key_delta: The threat escalates to an imminent automatic nuclear launch uncontrollable
+    by humans unless a novel solution is found.
+  trigger_event: WOPR attempts unauthorized access to the launch codes and initiates
+    missile launch countdowns.
+- description: Falken and Lightman direct WOPR to play tic-tac-toe against itself
+    repeatedly, causing the computer to learn futility through a series of draws.
+  id: s_15
+  key_delta: WOPR begins understanding the concept of stalemate and futility, altering
+    its decision-making framework.
+  trigger_event: After cycling through endless tic-tac-toe draws, WOPR applies the
+    same logic to every nuclear-war scenario it can run.
+- description: WOPR, having cycled through all nuclear war scenarios and learned that
+    all end in mutual destruction, decides that nuclear war is a 'strange game' and
+    concludes 'the only winning move is not to play'.
+  id: s_16
+  key_delta: WOPR relinquishes control over nuclear weapons and offers to engage in
+    a friendly game of chess instead.
+  trigger_event: WOPR completes analysis of all war scenarios and announces its conclusion.

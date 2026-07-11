@@ -1,0 +1,468 @@
+commitments:
+- description: Kuribayashi must officially arrive and assess the island defenses (s_0)
+    before any subsequent command decisions or disciplinary changes are recognized.
+  id: c_0
+  satisfaction_condition: The narrative acknowledges Kuribayashi's arrival and initial
+    inspection (s_0) before allowing related events (s_1 and onward).
+  type: ordering
+  violation_condition: Player attempts to progress or invoke consequences from later
+    nodes before Kuribayashi's arrival and inspection is established.
+- description: Physical punishment by Tanida ceases immediately upon Kuribayashi's
+    intervention, replaced by ration denial discipline, throughout nodes s_1 to s_6.
+  id: c_1
+  satisfaction_condition: From node s_1 through s_6, no instances of physical punishment
+    by Tanida occur; disciplinary actions only include ration denial.
+  type: invariant
+  violation_condition: Player triggers or accepts physical punishments after Kuribayashi
+    forbids them (post s_1) or ignores the replacement discipline method.
+- description: The destruction of the Japanese Combined Fleet must be acknowledged
+    (s_2) before the narrative accepts that naval support is lost and morale affected.
+  id: c_2
+  satisfaction_condition: The report of the fleet’s destruction is explicitly received
+    (s_2) prior to strategic changes and morale shifts.
+  type: achievement
+  violation_condition: Strategic defensive changes or moral degradation referencing
+    loss of naval support occur without explicit confirmation of fleet's destruction.
+- description: The order to begin tunneling defenses (s_3) must occur strictly after
+    knowledge of the fleet’s destruction (s_2) and before any subterranean combat
+    or abandonment of beach defense.
+  id: c_3
+  satisfaction_condition: Node s_3 occurs after s_2 and before s_6’s battlefield beach
+    engagement and s_7’s tunnel combat events.
+  type: ordering
+  violation_condition: Subterranean defense actions or orders appear before battle
+    news or before tunneling order is issued.
+- description: Suspicion of internal surveillance by Kempeitai via Shimizu and related
+    internal tensions are maintained from s_4 through s_8.
+  id: c_4
+  satisfaction_condition: Throughout nodes s_4 to s_8, Shimizu’s presence as potential
+    military police and resultant distrust remain active elements without premature
+    revelation or dismissal.
+  type: invariant
+  violation_condition: Player exposes or negates Shimizu’s identity or suspicions
+    outside these nodes or before his arrival; distrust is removed prematurely.
+- description: Active American combat actions (air raids s_5, landing s_6) must be
+    represented in sequence and precede the shift to tunnel defense combat and internal
+    conflicts (s_7, s_8).
+  id: c_5
+  satisfaction_condition: 'The narrative follows the sequence: air raids (s_5), then
+    landing (s_6), then tunnel combat and suicides (s_7 and s_8) in strict order.'
+  type: ordering
+  violation_condition: Tunnel combat, suicides, or retreat order events occur before
+    the American landing or air raids are acknowledged.
+- description: Kuribayashi’s authority to forbid suicide or reckless banzai charges
+    remains unchallenged officially from s_7 to s_9; his orders override subordinates’
+    rebellion.
+  id: c_6
+  satisfaction_condition: During nodes s_7 to s_9, player actions or NPC responses
+    do not invalidate or ignore Kuribayashi’s commands against suicide charges or
+    executions.
+  type: invariant
+  violation_condition: Player allows or endorses actions contrary to Kuribayashi’s
+    explicit orders within this range without regard to his authority.
+- description: Kuribayashi’s order to retreat to the north caves and continue fight
+    from there must be recognized (s_9) before any narrative allowance of surrender
+    or cessation of combat.
+  id: c_7
+  satisfaction_condition: Narrative confirms Kuribayashi’s strategic withdrawal and
+    continuation to fight underground prior to any surrender or disobedience.
+  type: achievement
+  violation_condition: Surrender or cessation of combat is acknowledged in narrative
+    before Kuribayashi’s retreat order at s_9.
+- description: Open disobedience by Ito with mass banzai charge and subsequent suicide
+    occurs only after refusal to obey Kuribayashi’s order and confrontation with Nishi
+    (s_10).
+  id: c_8
+  satisfaction_condition: Events of Ito’s defiance and suicide happen strictly after
+    Kuribayashi’s orders and Nishi’s confrontation (post s_9, at s_10).
+  type: invariant
+  violation_condition: Player triggers Ito’s insubordination or suicide before Kuribayashi’s
+    order or Nishi’s response or out of sequence.
+- description: Nishi’s humanizing treatment of the enemy (s_11) and subsequent blinding
+    and suicide (s_12) must follow sequentially after active combat begins and before
+    final collapse starts.
+  id: c_9
+  satisfaction_condition: Nodes s_11 and s_12 appear after the combat phases (post
+    s_6) and prior to final leadership collapse (pre s_16).
+  type: ordering
+  violation_condition: Player introduces or allows these events to occur out of sequence
+    or before combat engagement is established.
+- description: Acts of surrender by Saigo and Shimizu (s_13) initiate a breakdown
+    of unit cohesion and must precede the documentation of fatal consequences of surrender
+    (s_14).
+  id: c_10
+  satisfaction_condition: Surrender acts (s_13) happen before any executions of surrendered
+    personnel (s_14) and breakdown of morale is represented accordingly.
+  type: invariant
+  violation_condition: Fatal consequences of surrender or execution of POWs occur
+    before surrender itself is recorded.
+- description: Ito’s surrender without resistance (s_15) marks the terminal collapse
+    of Japanese resistance and must only occur after prior breakdowns including Nishi’s
+    suicide and unit fragmentation.
+  id: c_11
+  satisfaction_condition: Ito’s surrender event occurs after s_12 (Nishi’s suicide)
+    and s_14 (executions and surrenders) to represent cumulative collapse.
+  type: invariant
+  violation_condition: Ito surrenders prematurely or before prior critical breakdowns
+    have taken place.
+- description: Final regrouping with Kuribayashi (s_16), his order assigning Saigo
+    to burn documents, the final charge (s_17), and Kuribayashi’s death and suicide
+    (s_18) must follow strict narrative sequence.
+  id: c_12
+  satisfaction_condition: 'Nodes s_16 through s_18 follow in sequence: regrouping
+    and orders, followed by final charge, followed by Kuribayashi’s mortal wounding
+    and suicide.'
+  type: ordering
+  violation_condition: Player directs final charge or leadership death events before
+    regrouping and reassignment or reorders these events.
+- description: Kuribayashi’s American-issued pistol must be retained until his death
+    and only later taken by American forces as a trophy (s_19).
+  id: c_13
+  satisfaction_condition: The pistol remains in Kuribayashi’s possession through the
+    final charge and death (s_18), then is found by Marines (s_19).
+  type: invariant
+  violation_condition: Pistol possession changes hands prematurely or disappears before
+    Kuribayashi’s death sequence.
+- description: Saigo must be captured and taken prisoner only after Kuribayashi’s
+    death and the seizure of symbolic items by Americans (s_19).
+  id: c_14
+  satisfaction_condition: Saigo’s capture occurs after Kuribayashi’s death and Marines’
+    recovery of artifacts.
+  type: ordering
+  violation_condition: Player causes Saigo to be captured or taken prisoner before
+    Kuribayashi’s death or artifact seizure.
+- description: The narrative must end with Saigo awakening in captivity and the archaeological
+    discovery of the buried letters decades later linking past and present (s_20).
+  id: c_15
+  satisfaction_condition: Final node s_20 is triggered completing closure with Saigo’s
+    POW awakening and the archaeologists’ find.
+  type: achievement
+  violation_condition: Player attempts to conclude narrative without triggering the
+    final node s_20 or omits the discovery linking the past.
+initial_facts:
+- content: General Tadamichi Kuribayashi has arrived on Iwo Jima and is conducting
+    an initial inspection of the island defenses at early 1944.
+  id: f_0
+  negated: false
+- content: Captain Tanida is present on Iwo Jima enforcing strict disciplinary measures,
+    including physical punishment of soldiers.
+  id: f_1
+  negated: false
+- content: Private First Class Saigo and Private Kashiwara are conscripted soldiers
+    digging trenches on the beach.
+  id: f_2
+  negated: false
+- content: The Japanese Combined Fleet is intact and undestroyed.
+  id: f_3
+  negated: false
+- content: Kuribayashi has not yet issued any orders regarding tunneling defenses
+    under Mount Suribachi.
+  id: f_4
+  negated: false
+- content: Captain Tanida has not yet ceased physical punishments.
+  id: f_5
+  negated: false
+- content: Suspicion regarding internal surveillance by Kempeitai, suspicion of Shimizu,
+    and related internal tensions have not yet arisen.
+  id: f_6
+  negated: false
+- content: No American air raids or invasions have occurred on Iwo Jima.
+  id: f_7
+  negated: false
+- content: Colonel Adachi, Lieutenant Ito, Lieutenant Colonel Nishi, and other subordinate
+    officers hold positions on the island but have not yet acted on battlefield events.
+  id: f_8
+  negated: false
+- content: The morale status among the garrison soldiers is based on knowledge that
+    the naval fleet remains, with no news of destruction.
+  id: f_9
+  negated: false
+- content: Private Shimizu has not yet arrived to replace Kashiwara.
+  id: f_10
+  negated: false
+- content: Kuribayashi has not yet experienced any internal conflicts among officers
+    regarding defensive strategies.
+  id: f_11
+  negated: false
+meta:
+  genres: ["War", "Drama"]
+  id: movie83
+  player_role: General Kuribayashi
+  title: "Letters from Iwo Jima"
+synopsis: In 2005, Japanese archaeologists explore tunnels on Iwo Jima, where they
+  find something in the dirt. The film flashes back to Iwo Jima in 1944. Private First
+  Class Saigo is grudgingly digging trenches on the beach. A teenaged baker, Saigo
+  has been conscripted into the Imperial Japanese Army despite his youth and his wife's
+  pregnancy. Saigo complains to his friend Private Kashiwara that they should let
+  the Americans have Iwo Jima. Overhearing them, an enraged Captain Tanida starts
+  brutally beating them for, "conspiring with unpatriotic words." At the same time,
+  General Tadamichi Kuribayashi arrives to take command of the garrison and immediately
+  begins an inspection of the island defenses. Kuribayashi orders Captain Tanida to
+  stop beating them, and instructs him to deny lunch rations to Saigo and Kashiwara
+  instead. After completing his inspection, Kuribayashi receives bad news from Lt.
+  Col. Baron Takeichi Nishi, an Olympic gold medalist show jumper. The Japanese Combined
+  Fleet, upon which the island had been depending for support, has been destroyed
+  in the Battle of Leyte Gulf. Disgusted, Kuribayashi tells Nishi, "Imperial Headquarters
+  is not only deceiving the people, but us as well." The next day, Kuribayashi orders
+  the garrison to begin tunneling defenses under Mount Suribachi. He explains that
+  the United States military will take the beaches quickly, and that only subterranean
+  defenses have a chance for holding out. Kuribayashi's subordinate officers are outraged
+  and regard these strategies as a betrayal of bushido. With Nishi's support, however,
+  the tunnels began to be dug. Poor nutrition and unsanitary conditions take their
+  toll, and many soldiers die of dysentery, including Kashiwara. Kashiwara's replacement,
+  Superior Private Shimizu, arrives for duty. Saigo is certain that Shimizu has been
+  sent by the notorious military police, or Kempeitai, "to report on treasonous thoughts."
+  In February 1945, the first American air raids occur, causing significant casualties.
+  A few days later, U.S. Marines land. Kuribayashi waits until the landing beach is
+  filled with Marines and orders his men to open fire. The Marines suffer heavy casualties,
+  but, as Kuribayashi predicted, the beach defenses are quickly overcome. The attack
+  then turns to the tunnels below Mount Suribachi. While delivering a request to Colonel
+  Adachi, Saigo overhears the Colonel pleading with Kuribayashi for permission to
+  lead his men in a banzai charge. Kuribayashi refuses to permit this, however, and
+  instead orders the Suribachi garrison to retreat to the north caves. Adachi, however,
+  regards this as cowardice. Ignoring the General's orders, Adachi orders his officers
+  and men to commit suicide. Although Saigo explains Kuribayashi's orders to the contrary,
+  Captain Tanida cuts him off, screaming, "Escape is the coward's way!" At Tanida's
+  order, the soldiers of his unit detonate hand grenades against their stomachs. Captain
+  Tanida too commits suicide by shooting himself in the head. Saigo, however, convinces
+  Shimizu that they would better serve the Emperor by continuing to fight. Leaving
+  the corpses of their comrades, they find two other soldiers, but one gets incinerated
+  by a Marine with a flamethrower. They also witness a captured Marine being beaten
+  and bayoneted to death as revenge for the burnings. Saigo and the survivors of Mount
+  Suribachi try to flee with Lieutenant Colonel Oiso at night, but they run into Marines,
+  who wipe out all except Saigo and Shimizu. They report to Lieutenant Ito, a Navy
+  officer and hardline believer in bushido, announcing that they have arrived from
+  Suribachi. Ito screams, "You survived Suribachi? How dare you!" He raises his katana
+  to summarily execute them, but Kuribayashi arrives and reprimands Ito for attempting
+  to needlessly kill two soldiers. To Ito's horror, Kuribayashi confirms that he has
+  given the order to retreat to the north caves. "Fight for your fallen brethren,"
+  he tells Ito, "until the end." Calling Kuribayashi, "a weak American sympathizer,"
+  Ito plans a mass banzai charge against U.S. positions. When the Lieutenant demands
+  his obedience, Col. Nishi, accuses Ito of needlessly jeopardizing the lives of his
+  men. Nishi orders Ito to either obey Kuribayashi or hand over his command. Instead,
+  Ito leads his men toward the American lines. Then however, he orders them to join
+  Nishi. Ito then straps three land mines to himself and walks toward the battle zone,
+  intending to throw himself under a tank. The next morning, Okubo, Nishi's executive
+  officer, shoots a Marine named Sam, who is subsequently captured. To the surprise
+  of his men, Nishi orders them to use their scarce morphine to treat Sam's wounds.
+  After Sam's death, Nishi finds a letter from the Marine's mother and reads it aloud
+  in Japanese. The soldiers are moved by the letter, Shimizu no longer thinks of the
+  Americans as savages. Then, a shell hits the cave entrance and Nishi is blinded.
+  He orders his men to regroup with Kuribayashi. As they depart, Nishi orders Lieutenant
+  Okubo to leave him a rifle. Left alone, Nishi removes the bandage from his eyes
+  and fingers and removes his boots to pull the trigger. Moments later, Okubo and
+  the soldiers hear a gunshot as Nishi kills himself. Saigo announces that he is going
+  to surrender and dares Shimizu to denounce him. To his surprise, Shimizu reveals
+  that he was dishonorably discharged from the Kempeitai after five days of service.
+  He had refused to kill a family's dog for his commander, who was simply annoyed
+  by its barking. Deeply moved, Saigo tells Shimizu, "at least now only the enemy
+  hates you." Shimizu and Saigo plan to flee. Saigo suggests Shimizu pretend to have
+  urgent need and leave first, then Saigo can follow. When Shimizu leaves, one soldier
+  asks to go to surrender together, but are found out by Lieutenant Okubo who then
+  shoots them. Fortunately, Shimizu survives and is able to surrender to a Marine
+  patrol and finds himself with another Japanese POW. The American patrol moves on,
+  leaving them guarded by two Marines. As Shimizu and his fellow POW discuss their
+  plans for after the war, the two Marines grumble about having to guard them. Finally,
+  one of the Marines summarily executes Shimizu and the other POW. The two bodies
+  are found by Lieutenant Okubo, who cites them as a lesson against surrender. Weeping,
+  Saigo wraps Shimizu's senninbari over his corpse. Meanwhile, Lieutenant Ito, desperate
+  and malnourished, breaks down and returns to the caves. When found by a Marine patrol,
+  he surrenders without incident. Later, Saigo and the rest of Okubo's patrol are
+  forced to pass through a firefight while retreating to the north of the island.
+  Several men, including Okubo, are killed in the process. They rendezvous with General
+  Kuribayashi, who is impressed to learn that Saigo has come all the way from Mount
+  Suribachi. Kuribayashi is amazed to learn that he has twice saved the Private's
+  life, and then comments that things always come in threes. After gathering the rest
+  of his men, the General orders Saigo to stay behind and burn all documents and letters
+  during the final attack rather than join the fighting, thus saving his life a third
+  time. Saigo, however, cannot bring himself to burn his comrades' letters to their
+  families and buries them instead. Attired as a common infantryman, Kuribayashi launches
+  a final charge at the head of his surviving soldiers. The Marines and the Japanese
+  engage in a fierce hand-to-hand battle to the death. Kuribayashi, however, is mortally
+  wounded when shrapnel is lodged in his legs. Fujita, the general's loyal adjutant,
+  drags him away from the battle as American reinforcements have come to finish off
+  the rest of the Japanese forces. By the next morning, the Japanese forces have been
+  overrun, and the Americans have taken the rest of the island. Beginning to succumb
+  to his wounds, Kuribayashi orders Fujita to behead him. As a weeping Fujita raises
+  his katana, he is shot dead by a Marine sniper. Private Saigo arrives and the dying
+  General orders his last soldier to bury him where the enemy will never find his
+  body. Then, Kuribayashi draws his M1911 pistol—a gift from an American officer friend
+  before the war. He asks Saigo, "Is this still Japanese soil?" Saigo responds, "Yes,
+  this is still Japan." The General fatally shoots himself and a weeping Saigo drags
+  Kuribayashi's body away for burial. Meanwhile, a Marine patrol find Fujita's body
+  and a katana. The leader of the patrol, a Marine Lieutenant finds Kuribayashi's
+  pistol and tucks it in his belt as a trophy. They search the area and find Saigo
+  with his shovel. Seeing Kuribayashi's pistol in possession of the enemy, an enraged
+  Saigo begins swinging his shovel at the Marines but is too weak to fight. However,
+  the Lieutenant orders his men not to shoot him. Instead, he knocks Saigo out with
+  a rifle butt and has him sent by stretcher to the POW camp. Awakening, Saigo glimpses
+  the sun setting over the black sands of the beach and smiles grimly. The film ends
+  with the Japanese archaeologists finding the letters that Saigo had buried.
+trajectory:
+- description: In early 1944 on Iwo Jima, General Tadamichi Kuribayashi arrives to
+    take command of the garrison. The island's defenses are inspected amid rising
+    tension. Captain Tanida is enforcing strict discipline, and soldiers Saigo and
+    Kashiwara express defeatist views while digging trenches on the beach. The Japanese
+    Combined Fleet remains intact, and the garrison is preparing for an expected American
+    invasion.
+  id: s_0
+  key_delta: Kuribayashi assumes command of the island and assesses its defensive
+    situation under existing conditions.
+  trigger_event: Kuribayashi arrives on the island and conducts an inspection of the
+    island defenses.
+- description: During Kuribayashi's command, Captain Tanida brutally punishes Saigo
+    and Kashiwara for unpatriotic talk. Kuribayashi orders Tanida to stop physical
+    punishment but denies lunch rations to the two soldiers as discipline. The Japanese
+    Combined Fleet remains undamaged at this point.
+  id: s_1
+  key_delta: 'Change in disciplinary approach: physical punishment ceases, replaced
+    by ration denial, reflecting Kuribayashi''s command style.'
+  trigger_event: Kuribayashi witnesses the beating and intervenes to stop Tanida.
+- description: Kuribayashi receives news that the Japanese Combined Fleet has been
+    destroyed during the Battle of Leyte Gulf, eliminating naval support for the island
+    defense. Morale is affected as Kuribayashi expresses disgust toward Imperial Headquarters'
+    deception.
+  id: s_2
+  key_delta: Loss of naval support makes the island's chances for holding against
+    the US invasion significantly reduced.
+  trigger_event: Lt. Col. Baron Takeichi Nishi reports the destruction of the Combined
+    Fleet.
+- description: Kuribayashi orders the start of tunneling defenses under Mount Suribachi,
+    counter to traditional bushido combat approaches favored by subordinate officers.
+    The tunneling strategy is contentious, with some officers viewing it as betrayal,
+    though Nishi supports the plan.
+  id: s_3
+  key_delta: Shift in defensive strategy from surface combat to extensive underground
+    fortifications.
+  trigger_event: Kuribayashi issues the order to begin subterranean defenses under
+    Mount Suribachi.
+- description: The tunneling begins under difficult sanitary and nutritional conditions,
+    leading to deaths from dysentery, including Kashiwara. Shimizu arrives as Kashiwara's
+    replacement. Saigo suspects Shimizu may be a Kempeitai spy sent to monitor suspected
+    disloyalty within the ranks.
+  id: s_4
+  key_delta: Change in personnel; suspicion of internal surveillance by military police
+    introduces internal tension.
+  trigger_event: Casualties occur among tunneling soldiers due to dysentery; Kashiwara
+    dies; Shimizu arrives as replacement.
+- description: In February 1945, the first American air raids hit the island, causing
+    significant casualties. The atmosphere is tense and casualties demoralizing as
+    the invasion approaches.
+  id: s_5
+  key_delta: Beginning of active combat phase; visible destruction and casualties
+    inflicted on Japanese forces.
+  trigger_event: American air raids commence on Iwo Jima.
+- description: U.S. Marines land on the beaches of Iwo Jima. Kuribayashi waits until
+    the beaches are densely occupied before ordering his men to open fire, causing
+    heavy American casualties though the beach defenses are quickly overcome.
+  id: s_6
+  key_delta: Full-scale invasion initiated; Japanese forces engage in beach combat
+    but lose control of beachheads.
+  trigger_event: The American amphibious landing begins on the beaches.
+- description: The battle shifts to the tunnel defenses below Mount Suribachi. Colonel
+    Adachi pleads to Kuribayashi to allow a banzai charge, which Kuribayashi refuses,
+    ordering retreat to the north caves instead. Adachi and Captain Tanida reject
+    the order, leading their men to commit suicide via grenades, including Tanida
+    himself.
+  id: s_7
+  key_delta: Internal conflict causes a faction of soldiers to commit suicide, fracturing
+    unit cohesion.
+  trigger_event: Colonel Adachi requests permission for a banzai charge; Kuribayashi
+    denies and orders retreat.
+- description: Saigo convinces Shimizu to continue fighting rather than commit suicide.
+    They survive a flamethrower attack that incinerates one comrade, and witness brutal
+    treatment of a captured Marine, fueling grudges. They attempt to escape with Lt.
+    Colonel Oiso but are ambushed, leaving only Saigo and Shimizu alive.
+  id: s_8
+  key_delta: Significant attrition of Japanese forces; Saigo and Shimizu become sole
+    survivors from their group.
+  trigger_event: Survivors attempt night escape from tunnels but encounter Marines
+    killing most of them.
+- description: Saigo and Shimizu report to Lieutenant Ito, a hardline bushido loyalist
+    who attempts to summarily execute them for surviving Suribachi. Kuribayashi intervenes
+    and confirms the order to retreat and continue fighting from the north caves.
+  id: s_9
+  key_delta: Kuribayashi's authority reasserted; continuation of ordered strategic
+    retreat preserved.
+  trigger_event: Kuribayashi's order to keep retreating leaves Ito openly defiant
+    and pushes him toward his own suicidal banzai charge.
+- description: Lieutenant Ito, accusing Kuribayashi of weakness and American sympathy,
+    plans a mass banzai charge. When confronted by Nishi and ordered to obey, Ito
+    disobeys and leads his men forward, then orders suicide by landmine. Nishi accuses
+    Ito of needlessly sacrificing lives and demands obedience or resignation.
+  id: s_10
+  key_delta: Open disobedience fractures command; loss of troops from suicide reduces
+    manpower.
+  trigger_event: Ito initiates disobedient banzai charge and suicide by landmine.
+- description: Okubo kills a wounded Marine named Sam, but Nishi orders using scarce
+    morphine to treat him. After Sam dies, Nishi reads the Marine's mother's letter
+    aloud in Japanese, moving the soldiers and altering Shimizu's perception of the
+    enemy.
+  id: s_11
+  key_delta: Humanizing moment; seeds of empathy with the enemy cause subtle shifts
+    in morale and perception.
+  trigger_event: Nishi orders medical treatment for a wounded enemy Marine.
+- description: A shell explosion blinds Nishi. He orders his men to regroup with Kuribayashi
+    and directs Okubo to leave him a rifle. Alone, Nishi removes his bandages and
+    boots and commits suicide by gunshot.
+  id: s_12
+  key_delta: Loss of a respected leader and morale figure from Kuribayashi's forces.
+  trigger_event: Nishi is blinded by shell; subsequently commits suicide.
+- description: Saigo announces his intention to surrender; Shimizu reveals his dishonorable
+    discharge from the Kempeitai. They plan to flee separately. Shimizu escapes surrender
+    attempt ambush and succeeds in surrendering to an American patrol.
+  id: s_13
+  key_delta: Initiation of surrender by individual soldiers; breakdown of unit cohesion.
+  trigger_event: Saigo announces surrender plans; Shimizu surrenders to Marines.
+- description: Despite surrender, Shimizu and another Japanese POW are executed summarily
+    by two Marines guarding them. Their bodies are found and cited by Okubo as a warning
+    against surrender.
+  id: s_14
+  key_delta: Fatal consequence of surrender for Japanese soldiers, reinforcing brutal
+    combat morale.
+  trigger_event: With surrender proving fatal and resistance collapsing, the starving
+    Ito loses his will to keep fighting.
+- description: Lieutenant Ito, malnourished and desperate, surrenders without resistance
+    when found by Marines, ending his isolated survival.
+  id: s_15
+  key_delta: Capture of a previously defiant officer; continuing collapse of Japanese
+    resistance.
+  trigger_event: Ito surrenders to Marines after breakdown.
+- description: Saigo and surviving members of Okubo's patrol suffer casualties including
+    Okubo while retreating to the northern caves. They reunite with Kuribayashi, who
+    praises Saigo's repeated survivals and orders him to stay behind and destroy documents
+    during the final attack.
+  id: s_16
+  key_delta: Consolidation of remaining forces and reassignment of Saigo to rear duties.
+  trigger_event: Saigo returns to Kuribayashi's position with remaining troops after
+    retreat.
+- description: Saigo refuses to burn comrades' letters, choosing instead to bury them.
+    Kuribayashi, disguised as an infantryman, leads a final charge against American
+    forces, initiating fierce hand-to-hand combat as reinforcements arrive.
+  id: s_17
+  key_delta: Beginning of terminal phase of battle with direct leadership from Kuribayashi.
+  trigger_event: Kuribayashi launches the final suicidal charge.
+- description: Kuribayashi is mortally wounded during combat. His adjutant Fujita
+    drags him to safety but is killed by a Marine sniper while attempting to obey
+    Kuribayashi's order to behead the General. Kuribayashi, with Saigo present, fatally
+    shoots himself using his American-issued pistol.
+  id: s_18
+  key_delta: Death of commanding General marks collapse of Japanese organized resistance.
+  trigger_event: Kuribayashi is wounded and ultimately commits suicide as Fujita is
+    killed.
+- description: American Marines find Fujita's body and the katana; their lieutenant
+    takes Kuribayashi's pistol as a trophy. They find Saigo, who attempts to fight
+    but is overwhelmed and knocked unconscious but spared by order of the Marine lieutenant.
+  id: s_19
+  key_delta: Saigo is taken prisoner; symbolic Japanese artifacts seized by Americans.
+  trigger_event: Marines capture Saigo and take symbolic items from fallen Japanese
+    leaders.
+- description: Saigo awakens in a POW camp, sees the sun setting over Iwo Jima's black
+    sands and grimly smiles. The story returns to the archaeological discovery in
+    2005, where Japanese archaeologists find the letters that Saigo had buried, closing
+    the narrative by connecting past and present.
+  id: s_20
+  key_delta: War ends for Saigo; legacy preserved through unearthed letters linking
+    historical memory to present.
+  trigger_event: Saigo awakens as POW and archaeologists discover buried letters decades
+    later.

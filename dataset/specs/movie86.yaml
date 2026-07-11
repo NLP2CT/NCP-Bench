@@ -1,0 +1,421 @@
+commitments:
+- description: Confederate initial intelligence from spy Harrison must be received
+    before Lee can confidently plan and issue strategic orders around Gettysburg.
+  id: c_0
+  satisfaction_condition: Player acknowledges or obtains Harrison's intelligence report
+    at or after node s_0.
+  type: ordering
+  violation_condition: Player attempts to act on detailed enemy dispositions or issues
+    major orders related to Union troop positions before Harrison's report is delivered
+    and processed by Longstreet and Lee (before s_0).
+- description: J.E.B. Stuart cavalry remains out of communication with Lee before
+    his return late on day two, affecting Confederate intelligence completeness.
+  id: c_1
+  satisfaction_condition: From s_0 through s_8, Stuart’s communication status is 'out
+    of contact' and does not update Lee.
+  type: invariant
+  violation_condition: Player gains or impersonates Stuart's intelligence report to
+    Lee before s_8 or acts as if Lee already possesses such information earlier.
+- description: Union forces must deploy defensively on Seminary Ridge before the first
+    engagement with Confederate divisions begins.
+  id: c_2
+  satisfaction_condition: Union cavalry under Buford positioned on Seminary Ridge
+    at or before s_1, and Heth’s division attack occurs at or after s_3.
+  type: ordering
+  violation_condition: Player bypasses Buford’s initial deployment and initiates or
+    acknowledges battle events before Union cavalry hold Seminary Ridge.
+- description: The internal discipline and cohesion of the 20th Maine regiment (including
+    absorption of rebellious 2nd Maine soldiers) must be established before the battle
+    at Little Round Top.
+  id: c_3
+  satisfaction_condition: Chamberlain successfully wins over rebellious soldiers,
+    consolidating the 20th Maine by s_3 or before s_7.
+  type: achievement
+  violation_condition: Player attempts to engage or depend on the 20th Maine's effectiveness
+    in battle without first resolving their internal discipline issues.
+- description: General Reynolds' arrival and his death must logically occur after
+    Buford's cavalry engagement and before Confederate flank attacks begin.
+  id: c_4
+  satisfaction_condition: Events at s_4 with Reynolds reinforcing Buford and subsequent
+    death happen after initial battle engagements at s_3 but before Ewell's flank
+    advance at s_5.
+  type: ordering
+  violation_condition: Player or narrative triggers Reynolds’ death or arrival out
+    of sequence, such as before Buford engages or after Ewell’s flank attack starts.
+- description: Ewell's failure to take Cemetery Hill must be represented as a critical
+    tactical loss, preserving Union control of the hill for subsequent defensive action.
+  id: c_5
+  satisfaction_condition: From s_5 onwards, Cemetery Hill remains under Union control,
+    with Ewell's hesitation preventing Confederate capture.
+  type: invariant
+  violation_condition: Player actions or changes result in Confederate forces capturing
+    Cemetery Hill before or during s_5, contradicting the established tactical loss.
+- description: Armistead’s personal preparations (Bible package for Hancock’s wife)
+    and camaraderie with Union forces must be established before Pickett’s Charge.
+  id: c_6
+  satisfaction_condition: Armistead entrusts Longstreet with the package during s_6
+    before the full-scale attack ordered at s_9.
+  type: ordering
+  violation_condition: Player skips or removes Armistead’s personal preparations prior
+    to initiating the final assault phase at s_9.
+- description: Chamberlain’s defense and bayonet charge on Little Round Top must occur
+    to prevent Confederate breakthrough on the Union left flank during the second
+    day of battle.
+  id: c_7
+  satisfaction_condition: The bayonet charge ordered by Chamberlain at s_7 successfully
+    repels Confederate attacks and holds Little Round Top.
+  type: achievement
+  violation_condition: Player allows Confederate forces to take Little Round Top without
+    resistance, violating the commitment of Union holding that flank.
+- description: Lee maintains command discipline by denying Stuart’s resignation and
+    demanding restoration of cavalry communication upon Stuart’s late return.
+  id: c_8
+  satisfaction_condition: At s_8, Lee rebukes Stuart and refuses resignation, enforcing
+    the command structure.
+  type: invariant
+  violation_condition: Player accepts Stuart’s resignation before s_8 or acts as if
+    Lee permits the absence to continue unchallenged.
+- description: Pickett’s Charge (the final frontal assault) must be ordered by Lee
+    only after prior days’ engagements and tactical developments have occurred.
+  id: c_9
+  satisfaction_condition: Final assault at s_9 only initiates after s_0 through s_8
+    have been completed with corresponding buildup and planning.
+  type: ordering
+  violation_condition: Player triggers or attempts Pickett’s Charge before preceding
+    battle phases are complete or strategically justified.
+- description: The partial breakthrough by Confederate forces and the mortal wounding
+    of Armistead must occur during Pickett’s Charge, symbolizing the heavy cost and
+    failure of the assault.
+  id: c_10
+  satisfaction_condition: At s_10, Armistead rallies troops and is mortally wounded
+    near the stone wall, and Union forces repulse the Confederate assault.
+  type: achievement
+  violation_condition: Any narrative progression or player action that prevents Armistead’s
+    wounding or the failure of the Confederate breakthrough.
+- description: Lee’s personal acceptance of defeat and ordered retreat must follow
+    the failure of Pickett’s Charge and depletion of Confederate forces.
+  id: c_11
+  satisfaction_condition: At s_11, Lee takes responsibility and commands retreat only
+    after the assault at s_10 has failed.
+  type: ordering
+  violation_condition: Player initiates Confederate retreat or Lee’s admission without
+    the prior failed frontal assault event.
+- description: The survival and emotional reunion of Chamberlain and his brother symbolize
+    Union endurance and must occur after the battle's conclusion.
+  id: c_12
+  satisfaction_condition: At s_12, Chamberlain reunites with Tom and the Union flag
+    is solemnly displayed, marking battle’s end.
+  type: achievement
+  violation_condition: Player proceeds to closure or victory without depicting Chamberlain
+    brothers’ survival and Union symbolic victory scene.
+initial_facts:
+- content: Confederate General Robert E. Lee and the Army of Northern Virginia are
+    positioned approaching Gettysburg, Pennsylvania at dawn.
+  id: f_0
+  negated: false
+- content: Confederate President Jefferson Davis has prepared a peace letter intended
+    for President Lincoln once the Union Army of the Potomac is destroyed.
+  id: f_1
+  negated: false
+- content: Confederate spy Henry Thomas Harrison has crossed the Confederate picket
+    lines and reported sighting Union cavalry and a major body of Union infantry.
+  id: f_2
+  negated: false
+- content: Lieutenant General James Longstreet, second-in-command of the Army of Northern
+    Virginia, is aware of Harrison's report and has relayed the intelligence to General
+    Lee.
+  id: f_3
+  negated: false
+- content: Confederate Major General J.E.B. Stuart's cavalry is currently off on raids
+    and out of communication with General Lee.
+  id: f_4
+  negated: false
+- content: General Lee lacks updated intelligence from Stuart and therefore has incomplete
+    knowledge of the Army of the Potomac's exact disposition.
+  id: f_5
+  negated: false
+- content: Union Brigadier General John Buford and his cavalry division have arrived
+    at Gettysburg and are in the process of deploying defensively along Seminary Ridge.
+  id: f_6
+  negated: false
+- content: Union cavalry under Buford have not yet engaged in battle, but anticipate
+    that controlling Gettysburg is strategically critical.
+  id: f_7
+  negated: false
+- content: Union Colonel Joshua Chamberlain is currently unaware of the imminent battle,
+    but is about to be informed that his 20th Maine regiment will absorb 120 rebellious
+    soldiers of the 2nd Maine.
+  id: f_8
+  negated: false
+- content: The 20th Maine regiment currently lacks internal cohesion regarding the
+    integration of the 2nd Maine soldiers.
+  id: f_9
+  negated: false
+- content: General Lee has not yet issued major strategic orders around Gettysburg
+    beyond preliminary planning based on Harrison's intelligence.
+  id: f_10
+  negated: false
+- content: General Lee is not yet aware of detailed enemy dispositions beyond Harrison's
+    report and Longstreet's relay.
+  id: f_11
+  negated: false
+- content: General Lee has not received any intelligence updates from J.E.B. Stuart's
+    cavalry since they departed on raids.
+  id: f_12
+  negated: false
+meta:
+  genres: ["War", "History"]
+  id: movie86
+  player_role: Gen. Robert E. Lee
+  title: "Gettysburg"
+synopsis: The film starts with spoken exposition over the image of a map that establishes
+  the location of the battle and how the two armies converged at Gettysburg. Confederate
+  General Robert E. Lee and his Army of Northern Virginia are making an offensive
+  through Pennsylvania to lure the Union Army of the Potomac into a decisive battle
+  that will end the war. The narration states that Confederate President Jefferson
+  Davis has prepared a letter of peace to be delivered to the desk of Abraham Lincoln
+  once the Army of the Potomac has been destroyed somewhere outside of Washington.
+  Early scenes depict actor-turned-spy Henry Thomas Harrison spotting Union cavalry.
+  Shortly thereafter, Harrison locates a major body of Union infantry and, immediately,
+  crosses the Confederate picket line in order to notify Lieutenant General James
+  "Pete" Longstreet, the senior lieutenant general in the Confederate Army and second-in-command
+  of the Army of Northern Virginia. Major General J.E.B. Stuart's cavalry, the “eyes”
+  of Lee’s army, has gone off on raids without keeping in touch with Lee’s army. Meanwhile,
+  U.S. Brig. Gen. John Buford and his cavalry division arrive at Gettysburg. Buford
+  surmizes that if Lee's army is allowed access to the town, the Confederates might
+  easily take a strong defensive position that could destroy the Army of the Potomac.
+  Buford decides to deploy his division along Seminary Ridge in order to obstruct
+  any Confederate advance on Gettysburg from the west. The day ends with Buford writing
+  a letter to Maj. Gen. John Reynolds, commanding officer of the nearby Union I Corps
+  infantry, inquiring if he should hold his position. Meanwhile, miles from Gettysburg,
+  U.S. Colonel Joshua Chamberlain of the 20th Maine regiment is awakened and informed
+  that his unit will be absorbing 120 recalcitrant members of another Maine regiment,
+  the 2nd Maine. Orders state that it is within his power to have the rebellious men
+  shot, if necessary. Chamberlain wins over all but six of the soldiers with an inspirational
+  speech. Back in Gettysburg on July 1, the first day of battle, Buford's cavalry
+  engages Henry Heth's division of A. P. Hill's corps; Heth had intended to lead his
+  troops to Gettysburg to restock the Confederacy's dwindling shoe supply. Believing
+  the forces at Gettysburg to be local militia, Heth engages Buford without first
+  communicating with General Lee. Buford repels Heth's initial attacks, but Heth's
+  superior numbers begin to tell. General Reynolds and the I Corps arrive to reinforce
+  the position. Meanwhile Lee arrives on the field but is hesitant to commit the whole
+  of Hill's Third Corps due to a lack of intelligence on the Army of the Potomac's
+  position, given J.E.B. Stuart's lack of contact with the Army of Northern Virginia.
+  Lee's only information on the enemy is what has been relayed to him by General Longstreet
+  from Harrison's report. Union forces retake Seminary Ridge, but Reynolds, while
+  leading the Iron Brigade into battle, is killed by a Confederate sharpshooter. Soon
+  after Heth informs Lee that Union forces are being flanked by Lt. General Dick Ewell's
+  corps advancing on Gettysburg from the north. Recognizing a tactical advantage,
+  Lee gives the order for all forces to attack. Union forces, out-manned and flanked,
+  begin to retreat, but a decisive Confederate victory is compromised when Ewell fails
+  to follow through with orders to take the crucial strategic location of Cemetery
+  Hill, allowing Union troops to rally in a strong defensive position. Confederate
+  General Isaac Trimble, attached to Ewell's command, but disgusted by Ewell's inability
+  to take the high ground of Cemetery Hill, reports to General Lee. Trimble asks to
+  be removed from Ewell's command, but Lee informs the enraged Trimble that such action
+  would not be necessary. At the end of the first day, one of Longstreet's division
+  commanders, Maj. Gen. George Pickett, arrives at Longstreet's headquarters with
+  his three brigade commanders, Gens. James Kemper, Richard B. Garnett and Lewis Armistead.
+  The four meet with Gen. Longstreet and begin exchanging banter around the fireside
+  with British Colonel Arthur Fremantle, who has been traveling with Lee's army as
+  an observer. Armistead discusses with Longstreet his friendship with Union General
+  Winfield Scott Hancock and his desire to meet with him. On the other side of the
+  battlefield, at the center of the Union position south of the town, Hancock congratulates
+  Buford on a hard fight on the first day. Hancock reflects on Reynolds's death and
+  Armistead's whereabouts, to which Buford responds that Armistead is serving in Pickett's
+  division. Hancock states that he would hate to meet Armistead again while still
+  on opposite sides. After a moment of recollection, he again congratulates Buford
+  and instructs him that he should reorganize his cavalry. On the second day, Lee
+  orders an attack on the Union left flank to be led by two divisions of Longstreet’s
+  First Corps. The primary focus of the attack is to be on the treacherous terrain
+  of Devil's Den and Little Round Top. John "Sam" Bell Hood, one of Longstreet's division
+  commanders and a close friend tasked with flanking the Union forces, pleads with
+  Longstreet to allow him to bypass Devil's Den and Little Round Top in favor of capturing
+  the taller heights of the adjacent Big Round Top. However, Longstreet tells Hood
+  that he has tried to argue much the same plan with Lee and that the commanding general
+  will not accept an attack elsewhere on the field. Meanwhile, Chamberlain and the
+  20th Maine are deployed on Little Round Top as the furthermost left flank of the
+  entire Federal line. When Devil’s Den falls, there is little to protect Chamberlain’s
+  regiment. Chamberlain and the undersized 20th put up a valiant defense, repelling
+  multiple Confederate charges, but his men become short on ammunition. Chamberlain
+  orders a bayonet charge and the Confederate forces retreat in confusion, many being
+  taken prisoner. Late that afternoon, Longstreet visits a severely wounded Hood in
+  a field hospital. Longstreet informs Hood that they took Devil’s Den, but that they
+  were unable to take Little Round Top. Hood again states that the Rebel attack should
+  have taken Big Round Top. That evening, in Longstreet’s camp, General Armistead,
+  believing he’s soon to see combat gives a package to Longstreet to be delivered
+  to the wife of General Hancock in the event of Armistead's death. The package contains
+  his personal Bible. Robert E. Lee meets with J.E.B. Stuart, who had finally returned
+  that afternoon, but not in time to give Lee an advantage. Lee scolds Stuart, who
+  attempts to resign, but Lee denies him and orders him to never leave Lee’s army
+  blind again. On the third and final day of combat, General Lee believes that the
+  Federal line is weakest in the center and could be divided in two. Longstreet protests,
+  but Lee, now confident that the Army of Northern Virginia is invincible, places
+  Longstreet in charge of a frontal assault on the Union position on Cemetery Ridge
+  with General Pickett’s division forming the center of the assault which would go
+  on to be known as Pickett's Charge. Longstreet, not believing the attack will be
+  successful from the beginning, orders for an extended artillery bombardment. However,
+  the Confederates do not realize that their guns are overshooting the Union defenses,
+  and in the process, the bombardment hardly does any damage to the Union center.
+  When the bombardment ends, Pickett’s forces begin their advance. Immediately they
+  fall under fire of the Union’s long-distance artillery. They make it to the Union
+  line where numbers are further decreased by canister and the Union musket fire.
+  Armistead, whose brigade was at the rear of Pickett’s forces, sees General Garnett’s
+  horse riding off away from the line, its rider having been killed by an artillery
+  round. This prompts Armistead to thrust his sword through his hat and rally his
+  fellow Virginians to follow him. His rally is enough to penetrate a low stone wall
+  near the Union line, but his force is too small, and Armistead is mortally wounded.
+  All Confederate forces that broke the line would be killed or captured. General
+  Kemper is wounded and captured, but rescued by Confederate troops. Thomas Chamberlain,
+  Joshua's brother, encounters the mortally wounded Armistead, who asks to see his
+  old friend Hancock. Chamberlain informs him that Hancock has been wounded as well.
+  Armistead asks Chamberlain to tell Hancock that he sends his regrets and that he
+  is very sorry. Chamberlain agrees to do this as Armistead begins to expire. Lee
+  rides out to the remains of the retreating Confederate forces and declares that
+  everything is all his fault. He orders a distraught General Pickett to reform his
+  division to prepare for a possible counter attack, to which Pickett informs Lee
+  that he has no division. The day, along with the battle, ends with a victorious
+  North and Lee informing Longstreet of plans to fall back into Virginia beginning
+  the next day, feeling that the Union forces would be unlikely to pursue on Independence
+  Day. However, Lee's hypothesis proves false. The film ends with Chamberlain and
+  his brother, Tom, hugging and in tears knowing that they both survived the battle.
+  The last scene in the film shows three zouaves of the 72nd Pennsylvania with the
+  Union flag against the sunset.
+trajectory:
+- description: At dawn, Confederate General Robert E. Lee and the Army of Northern
+    Virginia are positioned approaching Gettysburg, Pennsylvania. The surrounding
+    atmosphere is tense with anticipation of a decisive battle. Confederate President
+    Jefferson Davis has prepared a peace letter intended for President Lincoln once
+    the Union army is destroyed. Communication lines are strained; J.E.B. Stuart's
+    cavalry is off on raids without contact. Lieutenant General James Longstreet awaits
+    intelligence updates. The Union Army is mobilizing nearby.
+  id: s_0
+  key_delta: Lee receives initial intelligence from Harrison via Longstreet about
+    Union troop positions near Gettysburg, confirming the presence of enemy forces
+    and enabling strategic planning.
+  trigger_event: Spy Henry Thomas Harrison reports sighting Union cavalry and major
+    infantry concentrations after crossing Confederate picket lines.
+- description: Confederate forces have knowledge of Union troop presence near Gettysburg.
+    Longstreet is informed, and Lee is awaiting further updates. Meanwhile, Union
+    Brigadier General John Buford's cavalry arrives at Gettysburg and positions along
+    Seminary Ridge to block Confederate advance, anticipating strategic importance
+    of the town.
+  id: s_1
+  key_delta: Union forces occupy key defensive positions near Gettysburg, initiating
+    the contest for control of the town and setting the battlefield's initial frontline.
+  trigger_event: Buford deploys his cavalry division along Seminary Ridge to hold
+    the line against Confederate access to Gettysburg.
+- description: Confederate Major General J.E.B. Stuart's cavalry remains out of communication;
+    Lee lacks updated intelligence. Lieutenant General Longstreet and Lee consider
+    current intelligence from Harrison insufficient. Buford awaits reinforcements.
+    Union colonel Joshua Chamberlain is informed that the 20th Maine will absorb rebellious
+    soldiers from the 2nd Maine under the threat of execution.
+  id: s_2
+  key_delta: The 20th Maine regiment has restored internal discipline and cohesion,
+    preparing to fulfill their tactical defensive role on the Union left flank.
+  trigger_event: Chamberlain delivers an inspirational speech to the 2nd Maine recruits,
+    winning over most dissenters except six men.
+- description: The battlefield around Gettysburg is set with Union cavalry on Seminary
+    Ridge facing Confederate infantry movements. Confederate General Henry Heth's
+    division advances toward Gettysburg intending to gather supplies, unaware of the
+    strong Union presence. Buford's cavalry holds initial engagement lines.
+  id: s_3
+  key_delta: Engagement between Confederate and Union forces begins unexpectedly,
+    forcing Union cavalry to repel initial attacks and signaling the start of battle
+    despite incomplete Confederate command coordination.
+  trigger_event: Heth's division initiates attack on Buford's cavalry after misidentifying
+    them as local militia without notifying Lee.
+- description: Union infantry under Major General John Reynolds arrives to reinforce
+    Buford’s cavalry along Seminary Ridge. The Union line is strengthened but Reynolds
+    is on the field leading troops. Lee arrives but hesitates to commit all of Hill's
+    Corps due to lack of exact enemy disposition, caused by absence of Stuart's cavalry
+    intelligence.
+  id: s_4
+  key_delta: Loss of a key Union commander alters Union leadership on the battlefield;
+    Confederate forces gain partial advantage but remain cautious due to incomplete
+    intelligence.
+  trigger_event: General Reynolds is fatally shot by a Confederate sharpshooter while
+    leading the Iron Brigade into battle.
+- description: Confederate Lieutenant General Ewell's corps advances from the north
+    flanking Union forces. Lee decides to commit more forces to attack upon learning
+    Union units are being pressured on multiple fronts. Confederate troops push Union
+    forces back from Seminary Ridge. Union units begin retreat, but Ewell hesitates
+    at Cemetery Hill, losing a critical opportunity.
+  id: s_5
+  key_delta: Confederate forces lose critical tactical advantage by failing to capture
+    Cemetery Hill; Union forces establish a strong defensive position for subsequent
+    engagements.
+  trigger_event: Ewell chooses not to seize Cemetery Hill despite orders and opportunity,
+    allowing Union troops to regroup and fortify.
+- description: Confederate General Trimble expresses dissatisfaction with Ewell’s
+    command decisions and requests removal from his command. Lee refuses, maintaining
+    the chain of command. Confederate leadership consolidates. Meanwhile, Maj. Gen.
+    Pickett arrives at Longstreet’s headquarters with brigade commanders and British
+    observer Fremantle; camaraderie and discussions unfold, including Armistead's
+    friendship with Union General Hancock.
+  id: s_6
+  key_delta: Armistead prepares for imminent combat, signaling readiness and foreshadowing
+    the personal costs of the coming attacks; Confederate command solidifies in preparation
+    for the second day.
+  trigger_event: Armistead entrusts Longstreet with a package containing his Bible
+    to be delivered to Hancock’s wife in case of his death.
+- description: The second day of battle dawns with Lee ordering Longstreet to attack
+    the Union left flank at Devil's Den and Little Round Top. Longstreet debates plans
+    with subordinates Hood and others. Chamberlain’s 20th Maine is deployed on Little
+    Round Top, the extreme Union left flank, now largely exposed after Devil's Den
+    falls to Confederates.
+  id: s_7
+  key_delta: Union forces maintain control of Little Round Top through decisive action,
+    preventing Confederate forces from outflanking the Union line and protecting the
+    left flank.
+  trigger_event: Chamberlain commands a bayonet charge after his regiment runs low
+    on ammunition, repelling Confederate assaults at Little Round Top.
+- description: Confederate forces hold Devil's Den but fail to capture Little Round
+    Top. Hood is wounded and hospitalized; he voices continuing disagreement with
+    attack strategy. Armistead anticipates combat with providence and uploads his
+    personal Bible for delivery. Stuart returns to Lee late, apologetic for the prior
+    absence and lack of updates.
+  id: s_8
+  key_delta: Confederate command discipline is reasserted; Lee regains oversight on
+    cavalry intelligence crucial for battlefield awareness moving forward.
+  trigger_event: Lee rebukes Stuart for his unauthorized absence and orders him to
+    maintain contact, denying Stuart’s resignation attempt.
+- description: On the third and final day, Lee, confident in weakening Union center,
+    orders Longstreet to lead a frontal assault (Pickett’s Charge) on Cemetery Ridge.
+    Longstreet is reluctant but complies after extended artillery bombardment. Confederates
+    prepare for the decisive and risky attack under Union artillery fire.
+  id: s_9
+  key_delta: Confederate forces engage in a costly frontal assault that breaks through
+    part of the Union line but suffers heavy casualties and fails to achieve strategic
+    breakthrough.
+  trigger_event: Pickett’s division commences infantry advance across open ground
+    toward the Union center, immediately encountering heavy artillery and musket fire.
+- description: Confederate forces briefly penetrate the Union line but are overwhelmed.
+    Armistead rallies troops by waving his sword but is mortally wounded near the
+    stone wall. General Garnett is killed; Kemper is wounded and temporarily captured
+    then rescued. Union forces hold defensive positions despite heavy losses.
+  id: s_10
+  key_delta: A personal reconciliation request bridges opposing commanders even amidst
+    brutal combat; Armistead's death symbolizes the high human cost of the charge
+    and the failure of the Confederate assault.
+  trigger_event: Armistead is found mortally wounded by Union soldier Thomas Chamberlain,
+    who is tasked by Armistead to relay his regrets to Hancock.
+- description: The remnants of Confederate forces retreat under heavy losses. Lee
+    takes personal responsibility for the defeat and orders General Pickett to reform
+    his division, which no longer exists effectively. Union forces hold firm on Cemetery
+    Ridge, achieving victory as the battle concludes.
+  id: s_11
+  key_delta: Confederate army commits to strategic withdrawal, relinquishing the battlefield
+    and conceding Union victory at Gettysburg.
+  trigger_event: Lee announces plans to retreat back to Virginia the following day,
+    anticipating the Union will not pursue immediately due to Independence Day.
+- description: After the battlefield quiets, Joshua Chamberlain reunites with his
+    brother Tom, both relieved and emotional over their survival. The last visual
+    scene shows three Union 72nd Pennsylvania zouaves holding their flag against the
+    sunset symbolizing Union victory and endurance.
+  id: s_12
+  key_delta: Union survival and morale are affirmed at the conclusion of Gettysburg,
+    marking an end to the immediate conflict and highlighting personal and collective
+    sacrifices.
+  trigger_event: Chamberlain and his brother embrace amid the aftermath of battle;
+    Union flag is displayed solemnly at sunset.

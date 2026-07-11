@@ -1,0 +1,309 @@
+commitments:
+- description: Harmonica's lethal capability and presence must be introduced before
+    he can intervene in subsequent conflicts.
+  id: c_0
+  satisfaction_condition: Node s_0 (Harmonica kills three men sent by Frank) must
+    occur before any direct player involvement related to protecting Jill or Sweetwater.
+  type: ordering
+  violation_condition: Player attempts to protect Jill or reveal Harmonica's role
+    before killing the initial attackers at s_0.
+- description: Harmonica must inform Cheyenne about the imposters posing as Cheyenne’s
+    men before they form an uneasy alliance.
+  id: c_1
+  satisfaction_condition: Node s_1 (Harmonica informs Cheyenne in roadhouse) must
+    occur before Cheyenne’s gang assists in defending Sweetwater.
+  type: ordering
+  violation_condition: Cheyenne's gang aiding Sweetwater or cooperating with Harmonica
+    occurs before the imposters' revelation in s_1.
+- description: Jill must arrive and become the owner of Sweetwater only after McBain’s
+    death is established.
+  id: c_2
+  satisfaction_condition: Node s_2 (Jill arrives to find her family dead and inherits
+    land) must occur before Jill can act as landowner or before conflict over ownership
+    intensifies.
+  type: ordering
+  violation_condition: Jill exercises ownership rights or disputes land possession
+    before confirming McBain family’s death.
+- description: Harmonica actively protects Jill from attempts on her life during phases
+    s_3 through s_11.
+  id: c_3
+  satisfaction_condition: From s_3 onward, any attack on Jill by Frank’s men must
+    be intervened by Harmonica.
+  type: invariant
+  violation_condition: Jill is attacked or seriously harmed by Frank’s men without
+    Harmonica’s intervention after s_3.
+- description: Sweetwater’s survival depends on timely construction of the railroad
+    station; Cheyenne’s gang must participate in this construction after s_4.
+  id: c_4
+  satisfaction_condition: From s_4 forward, Cheyenne’s gang is actively building the
+    railroad station at Sweetwater.
+  type: invariant
+  violation_condition: The railroad station is not under construction at Sweetwater
+    after s_4, or Cheyenne’s gang refuses to build it.
+- description: Frank’s betrayal of Morton and coercion of Jill to sell Sweetwater
+    must occur before Harmonica reacquires the land at auction.
+  id: c_5
+  satisfaction_condition: Node s_5 (Frank forces Jill to sell) must happen before
+    s_6 (Harmonica bids and sells land back to Jill).
+  type: ordering
+  violation_condition: Harmonica attempts to buy Sweetwater at auction or confirms
+    ownership before Jill loses the land under Frank’s coercion.
+- description: Harmonica must successfully reacquire Sweetwater at auction and restore
+    ownership to Jill.
+  id: c_6
+  satisfaction_condition: Completion of s_6 where Harmonica’s bid wins and he sells
+    Sweetwater back to Jill.
+  type: achievement
+  violation_condition: Frank successfully retains control of Sweetwater through auction
+    without Harmonica’s intervention or Jill permanently losing ownership.
+- description: Harmonica maintains a temporary alliance with Frank by helping him
+    repel mutineers before final confrontation.
+  id: c_7
+  satisfaction_condition: At s_7, Harmonica helps Frank kill attackers sent by Morton
+    to betray him, preserving Frank’s dominance temporarily.
+  type: invariant
+  violation_condition: Harmonica refuses or fails to assist Frank against mutineers
+    at s_7, or kills Frank prematurely.
+- description: The battle between Frank, Morton, and Cheyenne’s gang must occur before
+    Frank’s final duel with Harmonica.
+  id: c_8
+  satisfaction_condition: Node s_8 (battle resulting in Morton and most of Frank’s
+    men dead) must precede s_9 (duel confrontation).
+  type: ordering
+  violation_condition: Final duel with Frank occurs before the major battle involving
+    Cheyenne’s gang and Frank’s forces.
+- description: Harmonica must confront Frank, reveal his identity through symbolic
+    references, and defeat him in a duel.
+  id: c_9
+  satisfaction_condition: Completion of s_9 and s_10, where Harmonica quotes past
+    murders and kills Frank with the harmonica symbolism.
+  type: achievement
+  violation_condition: Duel ends without Harmonica identifying himself or killing
+    Frank, or Frank kills Harmonica.
+- description: The revelation of Harmonica’s revenge motive linked to his childhood
+    trauma must remain undisclosed until the duel at s_10.
+  id: c_10
+  satisfaction_condition: Harmonica refuses to reveal his identity before s_9; motive
+    revealed only during s_10 flashback and duel.
+  type: invariant
+  violation_condition: Player uncovers or reveals Harmonica’s identity and motive
+    before the duel confrontation.
+- description: Following Frank’s death, the railroad construction at Sweetwater must
+    proceed, Jill supervises work, and Harmonica departs carrying Cheyenne's body.
+  id: c_11
+  satisfaction_condition: Final sequence s_11 completed with active railroad construction,
+    Jill managing site, Cheyenne dead from his wounds, and Harmonica leaving.
+  type: achievement
+  violation_condition: Railroad construction halted or no sign of progress post-Frank’s
+    death; Jill absent or Harmonica remains engaged indefinitely.
+initial_facts:
+- content: The setting is the American Old West around the fictional town of Flagstone.
+  id: f_0
+  negated: false
+- content: Sweetwater is a piece of land near Flagstone containing the region's only
+    water source.
+  id: f_1
+  negated: false
+- content: Brett McBain owns Sweetwater along with his family.
+  id: f_2
+  negated: false
+- content: Brett McBain foresees the railroad will pass through Sweetwater to access
+    water for steam locomotives.
+  id: f_3
+  negated: false
+- content: There is no open conflict yet among the factions interested in Sweetwater
+    at this point.
+  id: f_4
+  negated: false
+- content: Railroad tycoon Morton wants to acquire Sweetwater land.
+  id: f_5
+  negated: false
+- content: Frank is Morton's hired gun.
+  id: f_6
+  negated: false
+- content: Frank has been sent to intimidate Brett McBain to leave Sweetwater.
+  id: f_7
+  negated: false
+- content: The player character, Harmonica, is currently off-screen, unknown, and
+    has not yet been involved in the conflicts.
+  id: f_8
+  negated: false
+- content: Harmonica's lethal capability and presence have not yet been publicly introduced.
+  id: f_9
+  negated: false
+- content: Cheyenne and his gang are known as local bandits, but Harmonica has no
+    confirmed knowledge linking them to current events.
+  id: f_10
+  negated: false
+- content: Jill McBain, Brett's new bride, has not yet arrived from New Orleans.
+  id: f_11
+  negated: false
+- content: At t=0, the player role (Harmonica) already knows Frank is the man he
+    seeks, but has not yet revealed his personal motive of revenge to others.
+  id: f_12
+  negated: false
+- content: Harmonica is not yet allied with Cheyenne or aware of imposters posing
+    as Cheyenne's men.
+  id: f_13
+  negated: false
+- content: No construction has started at Sweetwater; no railroad station or town
+    has been built yet.
+  id: f_14
+  negated: false
+- content: No auction or land sale has occurred involving Sweetwater.
+  id: f_15
+  negated: false
+- content: Morton is known to be crippled but this condition has no impact on ongoing
+    events at this initial moment.
+  id: f_16
+  negated: false
+- content: No direct violent confrontation involving Harmonica has taken place yet.
+  id: f_17
+  negated: false
+- content: The bandit Cheyenne and his gang have not been implicated or framed in
+    any crimes at this time.
+  id: f_18
+  negated: false
+- content: Harmonica has no knowledge of Jill McBain's ownership status over Sweetwater.
+  id: f_19
+  negated: false
+meta:
+  genres: ["Western", "Drama"]
+  id: movie91
+  player_role: Harmonica
+  title: "Once Upon a Time in the West"
+synopsis: The film portrays two conflicts that take place around Flagstone, a fictional
+  town in the American Old West——a land battle related to construction of a railroad,
+  and a mission of vengeance against a cold-blooded killer. The main storyline revolves
+  around a struggle for Sweetwater, a piece of land near Flagstone containing the
+  region's only water source. The land was bought by Brett McBain, who foresaw that
+  the railroad would have to pass through that area to provide water for the steam
+  locomotives. When railroad tycoon Morton learns of this, he sends his hired gun
+  Frank to simply intimidate McBain to move off the land, but Frank instead kills
+  McBain and his three children, planting evidence on the scene to frame the bandit
+  Cheyenne and his gang. By the time McBain's new bride, Jill, arrives from New Orleans,
+  the family is dead and she is the owner of the land. Meanwhile, a mysterious harmonica-playing
+  gunman, whom Cheyenne later dubs "Harmonica", pursues Frank. In the film's opening
+  scene, Harmonica kills three men sent by Frank to kill him, and, in a roadhouse
+  on the way to Sweetwater, he informs Cheyenne that the three gunfighters he killed
+  appeared to be posing as Cheyenne's men. Sometime later, Harmonica kills two men
+  sent by Frank to kill Jill. Back at Sweetwater, construction materials are delivered
+  to build a railroad station and a small town. Harmonica explains to Cheyenne that
+  Jill will lose Sweetwater unless the station is built by the time the track's construction
+  crews reach that point, and Cheyenne puts his men to work building it. Meanwhile,
+  Frank turns against Morton, who wanted to make a deal with Jill. Frank's betrayal
+  is made easy by the fact that Morton is crippled. After having his way with her,
+  Frank forces Jill to sell the property in an auction. He tries to buy the farm cheaply
+  by intimidating the other bidders, but Harmonica arrives, holding Cheyenne at gunpoint,
+  and makes a much higher bid based on his reward money for delivering Cheyenne to
+  the authorities. After rebuffing another intimidation attempt by Frank, Harmonica
+  sells the farm back to Jill. At this point, some of Frank's men try to kill Frank,
+  having been paid by Morton to turn against him, but Harmonica helps Frank kill them
+  in order to save that privilege for himself. After Morton and the rest of Frank's
+  men are killed in a battle with Cheyenne's gang, Frank goes to Sweetwater to confront
+  Harmonica. On two occasions, Frank has asked Harmonica who he is, but both times
+  Harmonica refused to answer him. Instead, he mysteriously quoted names of men Frank
+  has murdered. The two men position themselves for a duel, at which point Harmonica's
+  motive for revenge is revealed in a flashback——When Harmonica was a boy, Frank forced
+  the boy to kill his own brother by tying a noose to the top of an arch, placing
+  it around the brother's neck, and forcing the struggling Harmonica to support his
+  brother on his shoulders with a harmonica in his mouth. Harmonica draws first and
+  shoots Frank, and when Frank again asks who he is, he puts the harmonica in Frank's
+  mouth. Frank nods weakly in recognition and dies. With Frank dead, Harmonica and
+  Cheyenne say goodbye to Jill, who is supervising construction of the train station
+  as the track-laying crews reach Sweetwater. Cheyenne collapses, revealing that he
+  was shot during the fight with Frank's gang. The work train arrives, Jill is carrying
+  water to the rail workers, and Harmonica rides off with Cheyenne's body.
+trajectory:
+- description: In the American Old West, around the fictional town of Flagstone, the
+    land called Sweetwater holds the only water source nearby. Brett McBain, who foresaw
+    the importance of Sweetwater for the railroad construction, owns this land with
+    his family. The atmosphere is tense with multiple interests converging, but no
+    open conflicts yet. The player (Harmonica) is off-screen, unknown and not yet
+    involved.
+  id: s_0
+  key_delta: The player’s presence is introduced as a skilled gunman with lethal capability;
+    a direct violent conflict involving Harmonica begins to unfold.
+  trigger_event: In the film’s opening scene, Harmonica kills three men who were sent
+    by Frank to kill him.
+- description: Harmonica encounters Cheyenne in a roadhouse on the way to Sweetwater.
+    The roadhouse is tense and suspicious. Harmonica informs Cheyenne that the men
+    he killed were posing as Cheyenne’s gang members.
+  id: s_1
+  key_delta: Harmonica and Cheyenne’s paths intersect and an uneasy alliance begins;
+    Cheyenne is made aware of a deeper scheme involving his name being used falsely.
+  trigger_event: Harmonica tells Cheyenne about the imposters after killing the three
+    men.
+- description: Frank has killed Brett McBain and his three children, framing Cheyenne
+    and his gang. The town around Sweetwater is relatively quiet but charged with
+    underlying menace. Jill McBain has not yet arrived from New Orleans.
+  id: s_2
+  key_delta: Ownership of Sweetwater unexpectedly passes to Jill; the land conflict
+    escalates with a new legitimate claimant present.
+  trigger_event: Jill arrives at Sweetwater and finds her family dead, becoming the
+    new owner of the land.
+- description: Harmonica kills two men sent by Frank to murder Jill. The threat level
+    around Jill increases; Harmonica moves closer to protecting Sweetwater’s new owner.
+  id: s_3
+  key_delta: Harmonica actively intervenes to protect Jill, solidifying his role as
+    her implicit protector and opponent to Frank.
+  trigger_event: Attack attempt on Jill by Frank’s men and her being saved by Harmonica.
+- description: Construction materials arrive at Sweetwater to begin building a railroad
+    station and small town. The atmosphere is one of determined progress mixed with
+    underlying tension among the factions.
+  id: s_4
+  key_delta: A practical goal for defending Sweetwater emerges (building the station);
+    Cheyenne’s gang is motivated to actively assist in construction.
+  trigger_event: Harmonica explains to Cheyenne that unless the railroad station is
+    built by the time the track crews arrive, Jill will lose Sweetwater.
+- description: Frank has turned against Morton, the railroad tycoon whom he initially
+    worked for. Frank is consolidating power by exploiting Morton's crippled condition,
+    escalating internal conflicts among the antagonists.
+  id: s_5
+  key_delta: Jill loses direct control of Sweetwater temporarily; Frank gains leverage
+    over the land through coercion.
+  trigger_event: Frank forces Jill to sell the property in an auction after abusing
+    her trust.
+- description: At the auction, Frank intimidates bidders to acquire Sweetwater cheaply,
+    but Harmonica arrives holding Cheyenne at gunpoint and openly bids using reward
+    money.
+  id: s_6
+  key_delta: Harmonica regains Sweetwater at auction and sells it back to Jill, protecting
+    her ownership despite Frank’s attempts.
+  trigger_event: Harmonica bids significantly above others at the Sweetwater auction.
+- description: 'Internal betrayal unfolds: some of Frank’s men attempt to kill him,
+    incentivized by Morton. Harmonica intervenes by helping Frank defeat these mutineers.'
+  id: s_7
+  key_delta: Frank’s immediate position is temporarily stabilized through Harmonica’s
+    intervention, preserving Frank’s dominant threat.
+  trigger_event: Frank’s men try to kill him; Harmonica helps Frank kill the attackers.
+- description: After Frank and Morton’s men clash with Cheyenne’s gang, Morton and
+    most of Frank’s men die in battle. Cheyenne’s gang survives but with casualties,
+    including Cheyenne himself injured.
+  id: s_8
+  key_delta: Major antagonists Morton and Frank’s forces are weakened severely; Cheyenne
+    is wounded, shifting balance toward the defenders.
+  trigger_event: Frank steps out after the gunfight and calls Harmonica into a final
+    duel at Sweetwater.
+- description: Frank confronts Harmonica at Sweetwater for a final duel. Tension is
+    high, the duel site is set, the atmosphere is charged with vengeance.
+  id: s_9
+  key_delta: Harmonica reveals knowledge that connects him to Frank’s past crimes,
+    establishing motive for revenge.
+  trigger_event: Frank asks Harmonica who he is; Harmonica refuses and quotes names
+    of men Frank killed.
+- description: The duel occurs; Harmonica recalls a brutal childhood trauma inflicted
+    by Frank involving Harmonica’s brother and the harmonica itself.
+  id: s_10
+  key_delta: Frank is killed by Harmonica; the revenge motive is fulfilled and Harmonica’s
+    identity and past pain are implicitly confirmed.
+  trigger_event: Harmonica draws first and shoots Frank; inserts the harmonica into
+    Frank’s mouth as he dies.
+- description: With Frank dead, Jill supervises railroad construction at Sweetwater.
+    Cheyenne, seriously wounded, collapses and dies from his injuries. The train
+    station is nearing completion and railroad track-laying crews are arriving.
+  id: s_11
+  key_delta: The immediate threats to Sweetwater are neutralized; the railroad expansion
+    proceeds; Harmonica departs, ending his involvement.
+  trigger_event: Cheyenne collapses from his wounds; Harmonica carries his body and
+    leaves the town.

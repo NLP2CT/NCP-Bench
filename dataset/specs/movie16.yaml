@@ -1,0 +1,300 @@
+commitments:
+- description: The personal tensions and living situation including Ed on the couch,
+    and Pete’s recent mugging and bite, must be established before the zombie outbreak
+    is acknowledged.
+  id: c_0
+  satisfaction_condition: Narrative has reached or passed s_0 before progressing to
+    s_1 or beyond.
+  type: ordering
+  violation_condition: Player attempts to trigger or acknowledge the outbreak (s_1
+    or later) without prior establishment of household tensions and bite status (s_0).
+- description: The external zombie outbreak must be introduced before any defensive
+    or escape actions against zombies are taken.
+  id: c_1
+  satisfaction_condition: Narrative has reached or passed s_1 before s_2 or beyond
+    occurs.
+  type: ordering
+  violation_condition: Player attempts zombie-related defense or planning (s_2 or
+    beyond) without the outbreak being known (before s_1).
+- description: Between nodes s_2 and s_3, the house is under zombie attack, requiring
+    defensive action and arming from the shed until Pete’s zombification and escape
+    occurs.
+  id: c_2
+  satisfaction_condition: While within s_2 to s_3 phase, player actions must reflect
+    the house being attacked and arming occurring prior to escape.
+  type: invariant
+  violation_condition: Player bypasses engagement with zombie attack on the house
+    or does not arm before fleeing the house containing zombie Pete.
+- description: Pete’s zombification and subsequent escape must occur before the group
+    attempts rescue and gathering of other survivors.
+  id: c_3
+  satisfaction_condition: Narrative reaches s_3 before progressing to s_4 and beyond.
+  type: ordering
+  violation_condition: Player attempts to gather survivors (s_4+) without first confirming
+    Pete’s zombification and escape (s_3).
+- description: Phillip’s infection and worsening condition must be recognized before
+    the group expands to include Liz and her flatmates.
+  id: c_4
+  satisfaction_condition: Narrative proceeds sequentially from s_4 (Phillip bitten)
+    to s_5 (group expansion).
+  type: ordering
+  violation_condition: Player collects Liz and flatmates (s_5) before acknowledging
+    Phillip’s infection state (s_4).
+- description: Phillip’s death and zombification must occur before the group abandons
+    the car and goes on foot towards the pub.
+  id: c_5
+  satisfaction_condition: Phillip’s death at s_6 is recognized before foot travel
+    or subsequent events.
+  type: ordering
+  violation_condition: Player initiates travel on foot or other related escapes prior
+    to Phillip’s death and transformation.
+- description: Between s_7 and s_8, the group must attempt stealth passage but on
+    being detected due to Ed and Shaun’s argument, must seek refuge in the pub.
+  id: c_6
+  satisfaction_condition: During s_7–s_8, player actions include stealth attempt followed
+    by defensive regrouping inside the pub.
+  type: invariant
+  violation_condition: Player bypasses detection and refuge sequence, or ignores the
+    argument’s role in alerting zombies.
+- description: While in s_9, the group defends the entire pub using the Winchester
+    rifle, during which Barbara’s bite wound becomes fatal requiring her to be shot
+    by Shaun.
+  id: c_7
+  satisfaction_condition: In s_9, defense using the rifle occurs, and Barbara’s death
+    and zombification followed by Shaun’s shooting is acknowledged.
+  type: invariant
+  violation_condition: Player avoids or negates Barbara’s death and subsequent defensive
+    shooting during the pub defense at s_9.
+- description: Ed’s infection via Pete’s bite must occur before the emergency escape
+    and fire set inside the pub.
+  id: c_8
+  satisfaction_condition: Narrative reaches s_10 with Ed bitten by Pete and Molotov
+    cocktail used in escape.
+  type: ordering
+  violation_condition: Player escapes or fires the pub without Ed being infected by
+    Pete’s bite recognized first.
+- description: Ed must remain behind, mortally wounded and holding the rifle in the
+    cellar while Shaun and Liz escape via the service hatch.
+  id: c_9
+  satisfaction_condition: Narrative progresses from s_11 with Ed remaining behind
+    after Shaun and Liz escape.
+  type: ordering
+  violation_condition: Player causes Shaun and Liz to escape without Ed’s sacrifice
+    and separation having occurred.
+- description: Rescue by the British Army and arrival of Yvonne must precede final
+    survivor safety and reconciliation.
+  id: c_10
+  satisfaction_condition: Narrative reaches s_12 before survivors achieve external
+    rescue and relative safety.
+  type: ordering
+  violation_condition: Player creates survivor safety or resolution without the recorded
+    military rescue and Yvonne’s arrival.
+- description: The story’s closing state with Ed zombified but tethered and living
+    with Shaun and Liz six months post-outbreak must be achieved to complete the narrative
+    arc.
+  id: c_11
+  satisfaction_condition: Narrative reaches s_13 with Ed as a zombie controlled companion
+    and Shaun and Liz cohabiting.
+  type: achievement
+  violation_condition: Player prematurely closes or alters the narrative ending without
+    depicting Ed zombified and tethered and post-outbreak normalcy.
+initial_facts:
+- content: Ed lives on the couch in a shared house with Shaun and Pete.
+  id: f_0
+  negated: false
+- content: Shaun is unhappy with his life as a salesman and has conflicts with his
+    stepfather Phillip.
+  id: f_1
+  negated: false
+- content: Shaun has a tense relationship with Pete, his housemate.
+  id: f_2
+  negated: false
+- content: Ed deals marijuana and frequently accompanies Shaun, including to the Winchester
+    pub.
+  id: f_3
+  negated: false
+- content: Liz is Shaun's girlfriend and is dissatisfied with their social life, which
+    mainly involves evenings at the Winchester pub.
+  id: f_4
+  negated: false
+- content: Shaun's younger colleagues show him no respect.
+  id: f_5
+  negated: false
+- content: Pete is suffering a headache and has recently been mugged and bitten.
+  id: f_6
+  negated: false
+- content: Shaun is unaware of any zombie outbreak at this time.
+  id: f_7
+  negated: false
+- content: No defensive or escape actions against zombies have been taken at this
+    time.
+  id: f_8
+  negated: false
+- content: Pete has not zombified or shown zombie behavior.
+  id: f_9
+  negated: false
+- content: Phillip is alive and unbitten.
+  id: f_10
+  negated: false
+- content: Liz and her flatmates David and Dianne are not currently gathered with
+    Shaun and Ed.
+  id: f_11
+  negated: false
+- content: The Winchester pub is Shaun and Ed's favorite social venue.
+  id: f_12
+  negated: false
+meta:
+  genres: ["Comedy", "Horror"]
+  id: movie16
+  player_role: Ed
+  title: "Shaun of the Dead"
+synopsis: Shaun is a salesman whose life has no direction. His younger colleagues
+  show him no respect, he has a rocky relationship with his stepfather, Phillip, a
+  tense relationship with his housemate, Pete, because of Ed, Shaun's crude best friend
+  who lives on their couch and deals marijuana, and his girlfriend, Liz, is dissatisfied
+  with their social life, as it consists primarily of spending every evening at the
+  Winchester, Shaun and Ed's favourite pub. They never do anything alone together
+  – Shaun always brings Ed, and Liz brings her flatmates, David and Dianne. After
+  a miserable day at work, Shaun meets an old friend, Yvonne, who asks him what he
+  and Liz are doing for their anniversary, which makes him realise he forgot to book
+  a table at a restaurant, as he had promised to do. Faced with this, Liz breaks up
+  with him. Shaun drowns his sorrows with Ed at the Winchester. The two return home
+  late and spin electro records, only to have Pete confront them, who is suffering
+  a headache after being mugged and bitten by "some crackheads". Pete berates Shaun
+  and tells him to sort his life out. Shaun resolves to do so. The next morning, an
+  uprising of zombies has overwhelmed the town, but Shaun is too busy dealing with
+  his problems and too hungover to notice. He and Ed become aware of what is happening
+  after watching reports on TV, as zombies attack their house. After fighting back
+  with weapons from the shed, they decide they need to go somewhere safe. Shaun and
+  Ed decide that the safest place they know is the Winchester, and they plan to collect
+  Shaun's mother, Barbara, Phillip, Liz, and her flatmates. Shaun discovers that a
+  naked Pete is still in the house and is now a zombie, and he and Ed escape in Pete's
+  car. After collecting Barbara and Phillip, who is bitten in the process, they switch
+  cars and drive in Phillip's Jaguar and head to Liz, Dianne and David's flat, and
+  collect them. Before they make it to the Winchester, Phillip dies of his bite, after
+  he manages to make peace with Shaun. Abandoning the car as Phillip turns into a
+  zombie, they set off on foot, bumping into Yvonne and her own band of survivors.
+  Discovering that the path is infested with zombies, they devise a plan to sneak
+  by, but Ed and Shaun get into an argument and the zombies are alerted. David smashes
+  the window while Shaun distracts the zombies. Everyone takes refuge inside the pub,
+  and Shaun joins them after giving the zombies the slip. After several hours, the
+  zombies return. Ed gives away their position and the zombies converge on the pub.
+  Shaun discovers that the Winchester rifle above the bar is functional and they use
+  it to fend off the zombies. Barbara reveals a bite wound she picked up along the
+  way and dies, becomes a zombie, and is reluctantly shot by a heartbroken Shaun.
+  David is dismembered and disembowelled by the zombies, as a frantic Dianne unbolts
+  the door to rescue him, exposing Shaun, Liz and Ed to the zombies. Ed prepares a
+  Molotov cocktail to fend them off, but Pete arrives and bites him. He manages to
+  get over the bar and Shaun uses the cocktail to set fire to the bar. They escape
+  into the cellar. Trapped, they contemplate suicide, then discover a service hatch.
+  Shaun and Liz escape through the hatch as a mortally wounded Ed stays behind with
+  the rifle. Back on the street, as Shaun and Liz prepare to fight the zombies once
+  more, the British Army arrives and they are rescued. Yvonne, who has also survived,
+  shows up and tells Shaun and Liz to follow her. They approach the safety of the
+  trucks, reconciled. Six months after the outbreak, the uninfected have returned
+  to daily life, while the remaining zombies, retaining their instincts, are used
+  as cheap labour and entertainment. Liz and Shaun have moved in together in Shaun's
+  house, and Shaun is keeping Ed, who is now a zombie, tethered in the shed and playing
+  video games.
+trajectory:
+- description: Ed is living on the couch in the shared house with Shaun and Pete.
+    Shaun is unhappy with his life, having conflicts with his stepfather Phillip,
+    his housemate Pete, and dissatisfaction in his relationship with Liz, who dislikes
+    their repetitive social life mainly centered around spending evenings at the Winchester
+    pub. Ed deals marijuana and is a constant presence in Shaun's life, often accompanying
+    him to the pub.
+  id: s_0
+  key_delta: The existing tensions among Shaun, Ed, Pete and others are foregrounded;
+    Pete's recent mugging and bite wound are introduced, setting a somber and volatile
+    household atmosphere.
+  trigger_event: Shaun returns home late with Ed, spins electro records, and Pete
+    confronts them about his headache from being mugged and bitten.
+- description: Pete confronts Shaun and Ed about their lifestyle and tells Shaun to
+    sort his life out. Shaun resolves to improve his life while Ed remains by his
+    side amidst the tense atmosphere.
+  id: s_1
+  key_delta: The external crisis of a zombie outbreak breaks into their personal issues,
+    signaling a dangerous environment beyond personal conflicts.
+  trigger_event: The next morning, local TV broadcasts show a sudden zombie uprising
+    overwhelming the town.
+- description: Ed and Shaun watch TV reports about zombies attacking their house.
+    They arm themselves with weapons from the shed as zombies begin to besiege their
+    home.
+  id: s_2
+  key_delta: Their awareness shifts from personal problems to immediate physical threat;
+    the house is no longer a safe place.
+  trigger_event: Zombies attack the house, forcing Ed and Shaun to fight and plan
+    for escape.
+- description: Ed and Shaun find that Pete has become a zombie inside the house, now
+    naked and aggressive. They escape using Pete's car.
+  id: s_3
+  key_delta: A close companion is revealed infected and lost; the survivors commit
+    to fleeing the house for survival.
+  trigger_event: Encountering zombie Pete and escaping in the car.
+- description: Ed and Shaun collect Shaun's mother Barbara and stepfather Phillip.
+    Phillip is bitten during the rescue and deteriorates physically.
+  id: s_4
+  key_delta: A close family member’s infection escalates, increasing the group’s vulnerability.
+  trigger_event: Phillip's bite wound worsens during transit.
+- description: Ed, Shaun, Barbara, and Phillip switch to Phillip's Jaguar and drive
+    to pick up Liz and her flatmates Dianne and David.
+  id: s_5
+  key_delta: Expanding the survivor group to include Liz and her friends, increasing
+    group complexity and interpersonal dynamics.
+  trigger_event: They reach Liz and her flatmates and gather the group.
+- description: Phillip dies from his infection and turns into a zombie. The group
+    abandons the car and sets off on foot toward the Winchester pub.
+  id: s_6
+  key_delta: The group loses a member to infection; emotional toll rises; they must
+    abandon vehicles and shift to on-foot travel.
+  trigger_event: Phillip’s death and zombification.
+- description: On the way, the group meets Yvonne and her band of survivors. They
+    attempt to sneak past a zombie-infested path but an argument between Ed and Shaun
+    alerts the zombies.
+  id: s_7
+  key_delta: The group is discovered by zombies; entry into a defensive position at
+    the pub becomes necessary.
+  trigger_event: Ed and Shaun argue, zombies are alerted, and David breaks a window
+    to seek refuge.
+- description: Everyone shelters inside the Winchester pub, with Shaun temporarily
+    separated after distracting the zombies outside.
+  id: s_8
+  key_delta: Group reunifies inside a defensible position, moving towards a survival
+    mindset.
+  trigger_event: Shaun rejoins the group inside the pub after escaping zombie pursuit.
+- description: Zombies return and converge on the pub. Ed accidentally reveals their
+    position. Using a functional Winchester rifle above the bar, the group fights
+    off the horde.
+  id: s_9
+  key_delta: Barbara’s infection becomes fatal, adding to group trauma; active defense
+    against zombies escalates from defense to casualties.
+  trigger_event: Barbara reveals her bite wound and dies, turning into a zombie and
+    forcing Shaun to shoot her.
+- description: David is dismembered by zombies after Dianne unbolts the door to rescue
+    him, exposing Shaun, Liz, and Ed. Ed readies a Molotov cocktail, but Pete appears
+    and bites him.
+  id: s_10
+  key_delta: Ed is infected with a bite; the group is forced into an emergency escape
+    under fire and flames.
+  trigger_event: Pete bites Ed during the pub attack and Ed manages to get over the
+    bar before Shaun uses the Molotov cocktail to set the bar on fire.
+- description: Trapped in the cellar after escaping the fire, Shaun, Liz, and Ed contemplate
+    suicide but discover a service hatch. Ed stays behind with the rifle, mortally
+    wounded.
+  id: s_11
+  key_delta: Separation occurs between Ed and Shaun/Liz; Ed remains behind to hold
+    off zombies, sacrificing himself.
+  trigger_event: Shaun and Liz escape through the cellar hatch, leaving Ed behind.
+- description: Shaun and Liz emerge on the street to prepare for further fight but
+    are rescued by the arriving British Army. Yvonne appears and leads them to safety.
+  id: s_12
+  key_delta: Immediate danger is mitigated through external rescue; survivors gain
+    hope and security temporarily.
+  trigger_event: Military trucks arrive, rescuing survivors.
+- description: Six months later, uninfected survivors have resumed normal life; zombies
+    are used for labor and entertainment. Liz and Shaun live together in Shaun’s house.
+    Ed, now a zombie, is kept in the shed tethered and playing video games.
+  id: s_13
+  key_delta: Post-outbreak social order established; Ed’s zombified but controlled
+    state represents ongoing links to the past and survivor adaptation.
+  trigger_event: Ed is revealed as an active zombie but kept as a companion.

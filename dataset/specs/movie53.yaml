@@ -1,0 +1,353 @@
+commitments:
+- description: The Dent Act's influence and Gotham's apparent safety as maintained
+    by the GCPD must be acknowledged from s_0 through s_6, preventing premature exposure
+    of Dent's crimes or Batman's return before the designated plot progression.
+  id: c_0
+  satisfaction_condition: The system only acknowledges the Dent Act's impact and Gotham's
+    controlled state during s_0 to s_6, with no public or official disclosure of Dent's
+    crimes or Batman's identity before s_7.
+  type: invariant
+  violation_condition: Player causes early revelation of Dent's crimes or Batman's
+    identity before s_7, or the system acknowledges Batman's active role publicly
+    before s_6, collapsing the narrative foundation of Gotham's fragile facade.
+- description: James Gordon's resignation speech confessing Dent’s crimes must be
+    stolen by Bane (s_1) before the public exposure of the cover-up and prisoner release
+    (s_7) to enforce logical causal flow.
+  id: c_1
+  satisfaction_condition: Event s_1 (Gordon’s speech stolen) occurs before s_7 (Bane
+    reveals Dent cover-up and frees prisoners).
+  type: ordering
+  violation_condition: Player triggers or narrative acknowledges Bane revealing Dent’s
+    crimes or releasing prisoners without first having Gordon’s speech stolen by Bane,
+    breaking event causality.
+- description: John Blake's promotion to detective (s_2) must precede the acknowledgement
+    of his knowledge of Batman's identity and encouragement of Batman’s return (s_3
+    and beyond).
+  id: c_2
+  satisfaction_condition: The system grants Blake detective status no later than s_2
+    and acknowledges his active role in s_3 after that promotion.
+  type: ordering
+  violation_condition: Player or system reveals Blake’s knowledge or authority related
+    to Batman before s_2 or without formal promotion and endorsement by Gordon.
+- description: Bruce Wayne must remain financially ruined and Wayne Enterprises unstable
+    from s_4 until Tate is entrusted with control at s_5, ensuring logical motivation
+    for handing control over and subsequent events.
+  id: c_3
+  satisfaction_condition: Bruce’s financial ruin and collapse of Wayne Enterprises
+    are persistent facts from s_4 through s_5 until the official control handover.
+  type: invariant
+  violation_condition: Player restores Wayne Enterprises stability or financial assets
+    before s_5 or causes Tate to assume control without preceding financial decline.
+- description: Batman must be captured and incapacitated by Bane (s_6) before Gotham
+    falls fully under siege and social order collapses (s_7).
+  id: c_4
+  satisfaction_condition: The narrative reaches the milestone where Batman is physically
+    broken and imprisoned by Bane (s_6) before s_7 events trigger.
+  type: achievement
+  violation_condition: Batman avoids capture or incapacitation, or player acts so
+    that Gotham’s collapse or Bane’s public actions start before Batman’s imprisonment,
+    reversing the intended narrative sequence.
+- description: Bane’s control of Gotham and the nuclear threat using the fusion reactor
+    core persists from s_7 through s_10 until Batman’s coalition forms and initiated
+    countermeasures.
+  id: c_5
+  satisfaction_condition: Bane’s domination of Gotham with prisoners released, police
+    trapped, and bomb armed is maintained invariantly through s_7 to s_10.
+  type: invariant
+  violation_condition: Player dismantles Bane’s control, frees Gotham, or disables
+    the nuclear threat before Batman escapes and allies unite at s_8, violating the
+    siege phase.
+- description: Batman’s escape and reassembly of allies (s_8) is prerequisite to Bane’s
+    death and bomb’s remote trigger disabling (s_9), ensuring that the player must
+    reclaim Gotham before attempting final confrontations.
+  id: c_6
+  satisfaction_condition: Event s_8 (Batman escape and alliance) always occurs before
+    s_9 (Bane’s death and disabling bomb remote).
+  type: ordering
+  violation_condition: Player kills Bane or neutralizes bomb remote trigger before
+    Batman’s escape and alliance formation, or narrative tries to progress s_9 without
+    s_8 completion.
+- description: Talia al Ghul’s true identity as Miranda Tate and her goal to complete
+    Ra’s al Ghul’s mission must remain hidden until s_9, preventing premature betrayal
+    or alliance shifts.
+  id: c_7
+  satisfaction_condition: Talia’s identity and lethal mission remain secret and unacknowledged
+    in the narrative prior to s_9.
+  type: invariant
+  violation_condition: Player or system reveals Tate’s true identity or her plan to
+    detonate the bomb before s_9, breaking the planned narrative suspense and logic.
+- description: Batman must physically haul the bomb away from Gotham using 'The Bat'
+    aircraft (s_10), marking the climax that prevents nuclear disaster in the city.
+  id: c_8
+  satisfaction_condition: Narrative and player actions culminate in Batman utilizing
+    the Bat aircraft to remove the bomb offshore as depicted in s_10.
+  type: achievement
+  violation_condition: Player attempts to disarm or detonate the bomb in Gotham or
+    uses alternative methods to bypass hauling the bomb away, contradicting the core
+    climax event.
+- description: Bruce Wayne’s presumed death and public funeral (s_11) must strictly
+    follow the bomb’s detonation (s_10) to preserve the narrative causality of his
+    sacrifice and legacy.
+  id: c_9
+  satisfaction_condition: Event s_11 (funeral and legacy establishment) occurs only
+    after s_10 bomb detonation is completed.
+  type: ordering
+  violation_condition: Player triggers Bruce’s presumed death or public funeral narrative
+    prior to bomb detonation, breaking the sacrifice and aftermath chronology.
+- description: The passing of the Batman mantle to John Blake and secret survival
+    of Bruce Wayne must be realized by story’s end (s_12), establishing continuity
+    and future hope.
+  id: c_10
+  satisfaction_condition: Narrative evidence confirms Bruce’s survival to Alfred and
+    Blake inherits the Batcave with the Bat-Signal restored as in s_12.
+  type: achievement
+  violation_condition: Bruce is irreversibly dead, or Blake is denied inheritance/actions
+    related to Batman’s legacy, preventing narrative closure and transfer of responsibility.
+initial_facts:
+- content: The Dent Act has been enacted and is influencing the Gotham City Police
+    Department's operations.
+  id: f_0
+  negated: false
+- content: Gotham City appears safe under the control of the Gotham City Police Department.
+  id: f_1
+  negated: false
+- content: Batman has disappeared and is not publicly active.
+  id: f_2
+  negated: false
+- content: Bruce Wayne is living as a recluse.
+  id: f_3
+  negated: false
+- content: Harvey Dent is deceased.
+  id: f_4
+  negated: false
+- content: James Gordon is still Police Commissioner and has not resigned.
+  id: f_5
+  negated: false
+- content: James Gordon is preparing a resignation speech that confesses Dent's crimes
+    but has not submitted or disclosed it.
+  id: f_6
+  negated: false
+- content: The public and official authorities have not been made aware of Dent's
+    criminal cover-up.
+  id: f_7
+  negated: false
+- content: The narrative and player do not yet know Batman's active identity or return.
+  id: f_8
+  negated: false
+- content: John Blake is a patrol officer without detective status and does not have
+    knowledge of Batman's identity.
+  id: f_9
+  negated: false
+- content: Wayne Enterprises is experiencing financial decline and instability.
+  id: f_10
+  negated: false
+- content: Bruce Wayne has invested in Miranda Tate's fusion reactor project, which
+    is ongoing at the moment.
+  id: f_11
+  negated: false
+- content: The fusion reactor core project is active and has not been shut down.
+  id: f_12
+  negated: false
+- content: Alfred Pennyworth is Bruce Wayne's loyal caretaker and has not resigned.
+  id: f_13
+  negated: false
+- content: Rachel Dawes's relationships and plans involving Harvey Dent are unknown
+    to Bruce Wayne.
+  id: f_14
+  negated: false
+- content: Police Commissioner Gordon and Bruce Wayne have not acknowledged or discovered
+    Bane's identity or threat.
+  id: f_15
+  negated: false
+- content: Bane's terrorist activities, including capture of Gordon, have not yet
+    occurred.
+  id: f_16
+  negated: false
+- content: No public or official disclosure of Dent's crimes or prisoner releases
+    has happened.
+  id: f_17
+  negated: false
+- content: No significant disruptions or sieges have been enacted upon Gotham City.
+  id: f_18
+  negated: false
+- content: Miranda Tate's true identity as Talia al Ghul and her mission are unknown.
+  id: f_19
+  negated: false
+- content: Batman is physically fit and not captured or incapacitated.
+  id: f_20
+  negated: false
+- content: The fusion reactor core has not been weaponized or used as a nuclear threat.
+  id: f_21
+  negated: false
+- content: Bruce Wayne retains ownership and control of Wayne Enterprises.
+  id: f_22
+  negated: false
+- content: The Bat-Signal exists but is not active or refurbished.
+  id: f_23
+  negated: false
+- content: Bruce Wayne's presumed death and public funeral have not occurred.
+  id: f_24
+  negated: false
+- content: John Blake has not inherited the Batcave or any Batman legacy.
+  id: f_25
+  negated: false
+- content: Bruce Wayne is alive and publicly assumed to be living as a recluse.
+  id: f_26
+  negated: false
+meta:
+  genres: ["Action", "Crime"]
+  id: movie53
+  player_role: Bruce Wayne
+  title: "The Dark Knight Rises"
+synopsis: Eight years after the death of Harvey Dent, the Gotham City Police Department
+  has nearly eradicated organized crime with powers granted by the Dent Act, legislation
+  inspired by Dent. Batman has disappeared, with Bruce Wayne becoming a recluse. Feeling
+  guilty over his role in the cover-up of Dent's crimes, Police Commissioner James
+  Gordon writes a resignation speech confessing the truth, but decides that the city
+  is not ready to hear it. While pursuing criminals in the sewers, Gordon is captured
+  and his speech is taken by a terrorist named Bane. Gordon escapes and is found by
+  patrol officer John Blake. While recuperating, Gordon promotes Blake to detective,
+  with Blake reporting directly to him. Wayne Enterprises is nearly bankrupt after
+  Bruce invested in board member Miranda Tate's sustainable energy project for a fusion
+  reactor, only to shut it down after discovering the reactor core could be used as
+  a nuclear weapon. Blake—who has deduced Batman's identity—and Gordon encourage Batman
+  to return, but Alfred Pennyworth resigns after a failed attempt to dissuade him,
+  including informing Bruce that Rachel Dawes had intended to marry Dent before she
+  died. Bane attacks the Gotham stock exchange and bankrupts Bruce using fingerprints
+  that cat burglar Selina Kyle obtained from him to make ruinous trades in his name.
+  Fearing that John Daggett—who employed Bane to aid in a hostile takeover—would gain
+  access to the reactor, Bruce asks Tate to take control of Wayne Enterprises. Bane
+  subsequently kills Daggett when he is no longer of use. Batman asks Selina to lead
+  him to Bane, but Selina double-crosses him, leading him into a trap. Bane then reveals
+  that he knows Batman's true identity and intends to fulfill Ra's al Ghul's mission
+  to destroy Gotham. He breaks Batman's back and locks him away in a prison that he
+  controls. While there, the inmates relate to Bruce the story of Ra's al Ghul's child,
+  who was born in the prison and is the only person known to have escaped; Bruce believes
+  that the child is Bane. Meanwhile, using bombs throughout the city, Bane traps most
+  of Gotham's police force underground and cuts Gotham off from the rest of the world,
+  using the weaponized reactor core to keep anyone from leaving the city. Bane reveals
+  the cover-up of Dent's crimes and releases the prisoners in Blackgate Penitentiary
+  under the pretense of starting a revolution. The wealthy and powerful are dragged
+  from their homes and given show trials, presided over by Dr. Jonathan Crane, where
+  the "convicted" die no matter the sentence. Bruce spends months recuperating and
+  retraining himself. He escapes from the prison and enlists Selina, Blake, Tate,
+  Gordon and Lucius Fox to help liberate Gotham and stop the nuclear bomb. During
+  a confrontation between the police and Bane's forces, Batman subdues Bane. Tate
+  comes to Bane's aid, revealing herself to be Ra's al Ghul's daughter Talia. She
+  escaped the prison as a child, returning with her father and the League of Shadows
+  to rescue Bane, who had helped her. She plans to complete her father's work by detonating
+  the bomb and destroying Gotham. Selina kills Bane before he can execute Batman,
+  while Gordon blocks the bomb's ability to be remotely detonated. Batman gives chase
+  to force Talia to take the bomb to the fusion chamber where it can be stabilized,
+  but she floods the chamber to prevent its disarming before she dies, taunting Batman
+  that the bomb cannot be stopped. Batman realizes that the only way to stop it is
+  to use "The Bat", an aircraft developed by Fox, to haul the bomb away from Gotham.
+  He escorts the bomb out over the ocean, where it detonates, presumably killing Batman.
+  In the aftermath, Batman is praised as a hero, while Bruce is assumed killed in
+  the riots. After Bruce's funeral, Wayne Manor is left to the city to become an orphanage,
+  and Bruce's remaining estate is left to Alfred. Fox discovers Bruce fixed the Bat's
+  on-board autopilot system before hauling the bomb away. Gordon finds the Bat-Signal
+  refurbished. Alfred witnesses Bruce and Selina together while visiting Florence,
+  and Blake inherits the Batcave.
+trajectory:
+- description: Gotham City is under heavy control by the Gotham City Police Department,
+    which has nearly eradicated organized crime following the Dent Act; Batman has
+    vanished, and Bruce Wayne lives as a recluse amid the collapsing Wayne Enterprises.
+  id: s_0
+  key_delta: Gotham's apparent safety is maintained under a facade; Bruce Wayne's
+    public absence as Batman is established, and the Dent Act laws shape the police
+    force's authority.
+  trigger_event: Police Commissioner James Gordon, troubled but still on duty, prepares
+    a resignation speech confessing Harvey Dent's crimes but ultimately does not submit
+    it.
+- description: James Gordon is actively pursuing criminals in Gotham's sewers, operating
+    with suspicion and caution under the heavy influence of the Dent Act enforcement.
+  id: s_1
+  key_delta: Gordon's confidential resignation speech is stolen by Bane, introducing
+    a tangible threat to the city's concealed truths.
+  trigger_event: Gordon is captured by the masked terrorist Bane during a sewer chase
+    and his confidential resignation speech is seized.
+- description: Gordon has escaped captivity and is found battered by patrol officer
+    John Blake; the political stability of Gotham is quietly fragile with dangerous
+    elements active underground.
+  id: s_2
+  key_delta: Blake enters a position of trust and investigative influence within the
+    police, marking a new alliance for Gotham's future.
+  trigger_event: Gordon recovers and promotes Blake to detective with direct reporting
+    authority to himself.
+- description: Bruce Wayne observes the financial decline of Wayne Enterprises after
+    shutting down Miranda Tate's fusion reactor project due to weaponization fears;
+    Selina Kyle, a cat burglar, is active in the city.
+  id: s_3
+  key_delta: Bruce Wayne is confronted with requests to resume his role as Batman,
+    linking several key characters and hinting at an impending resurgence.
+  trigger_event: Blake deduces Batman's identity and, alongside Gordon, urges Batman
+    to return to action.
+- description: Bruce Wayne suffers a personal blow as Alfred Pennyworth resigns after
+    failed efforts to dissuade him from returning as Batman, revealing Rachel Dawes's
+    past connection to Harvey Dent.
+  id: s_4
+  key_delta: Bruce Wayne's financial ruin is catalyzed by Bane's machinations, threatening
+    Wayne Enterprises' control and influence.
+  trigger_event: Bane launches an attack on the Gotham stock exchange, using fingerprints
+    stolen by Selina Kyle to ruin Bruce financially.
+- description: Bruce, financially crippled and politically cornered, entrusts Miranda
+    Tate with control of Wayne Enterprises to prevent hostile takeover by John Daggett,
+    who employs Bane as muscle.
+  id: s_5
+  key_delta: Bane asserts dominance by eliminating his employer Daggett, consolidating
+    his power and freeing Bruce from Daggett’s immediate threat.
+  trigger_event: John Daggett is killed by Bane when deemed unnecessary.
+- description: Batman, tracking Bane, is led into a trap by Selina Kyle, revealing
+    Bane’s awareness of Batman’s identity and his lethal plans for Gotham.
+  id: s_6
+  key_delta: Batman is physically incapacitated and removed from Gotham’s conflict,
+    marking a turning point in the struggle.
+  trigger_event: Bane breaks Batman’s back and imprisons him in a prison under his
+    control.
+- description: Imprisoned and broken, Bruce Wayne learns from inmates the story of
+    Ra's al Ghul's child who escaped the prison; Gotham is isolated and under siege
+    as police are trapped underground by Bane’s bombs.
+  id: s_7
+  key_delta: Gotham’s social order collapses with mass prisoner release and public
+    exposure of political lies, intensifying the threat to the city.
+  trigger_event: Bane publicly reveals Dent's crimes cover-up and frees Blackgate
+    Penitentiary prisoners to incite chaos.
+- description: After months in prison, Bruce retrains and recuperates, preparing for
+    his return; Bane controls Gotham with the threat of the weaponized fusion reactor
+    core bomb.
+  id: s_8
+  key_delta: Batman’s return is solidified with a coalition of trusted allies aimed
+    at defeating Bane and the nuclear threat.
+  trigger_event: Bruce escapes prison and reconnects with allies Selina Kyle, John
+    Blake, Miranda Tate, James Gordon, and Lucius Fox to reclaim Gotham.
+- description: During the battle to reclaim Gotham, Miranda Tate reveals herself as
+    Talia al Ghul, Ra's al Ghul's daughter, intending to complete her father's mission
+    by detonating the bomb.
+  id: s_9
+  key_delta: Bane is eliminated, and the bomb’s remote trigger is disabled, but Talia
+    remains a lethal threat with the bomb in her control.
+  trigger_event: Selina Kyle kills Bane before he can kill Batman; Gordon prevents
+    the bomb’s remote detonation.
+- description: Talia floods the fusion chamber to prevent bomb disarming; Batman pursues
+    her as she attempts to finalize her catastrophic plan.
+  id: s_10
+  key_delta: The bomb is removed from Gotham city aerially, initiating its detonation
+    away from civilians.
+  trigger_event: Batman uses the Bat aircraft developed by Lucius Fox to haul the
+    bomb away over the ocean.
+- description: The bomb detonates offshore, and Bruce Wayne is presumed dead after
+    an official funeral; Gotham begins recovery and reconstruction under new symbolic
+    leadership and hope.
+  id: s_11
+  key_delta: Bruce’s official death and legacy are cemented, shifting Gotham’s social
+    landscape and initiating a new era.
+  trigger_event: Bruce’s funeral is held; Wayne Manor is donated to the city, and
+    Alfred inherits Bruce’s estate.
+- description: In the aftermath, Bruce’s secret survival is revealed only to Alfred;
+    John Blake inherits the Batcave, prepared to continue Batman’s mission.
+  id: s_12
+  key_delta: The mantle of Batman is set to pass to the next generation, with Bruce
+    and Selina beginning a new life, leaving the city in capable hands.
+  trigger_event: Alfred witnesses Bruce and Selina together in Florence; Blake discovers
+    the refurbished Bat-Signal.

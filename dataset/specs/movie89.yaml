@@ -1,0 +1,301 @@
+commitments:
+- description: Lt. Werner must meet the captain, chief engineer, and crew of U-96
+    and experience the ideological tensions in the French nightclub before the U-96
+    departs La Rochelle (s_0 before s_1).
+  id: c_0
+  satisfaction_condition: Node s_0 is completed before progression to s_1 occurs.
+  type: ordering
+  violation_condition: Player attempts to access or act upon events or information
+    from s_1 or later without first completing s_0.
+- description: During the voyage from s_1 to s_4, ideological tensions between new
+    crew members and veterans, particularly the captain's cynicism, remain unresolved
+    and persist visibly in interactions.
+  id: c_1
+  satisfaction_condition: From nodes s_1 through s_4, social dynamics reflecting mockery
+    of new men and embittered captain’s attitudes are maintained in NPC dialogue and
+    player observations.
+  type: invariant
+  violation_condition: Player or system incorrectly resolves or removes crew ideological
+    tensions or changes captain's character to non-cynical prematurely before node
+    s_5.
+- description: The U-96 must encounter and survive at least one combat engagement
+    causing damage to the submarine, including the panic episode of the chief mechanic
+    Johann (node s_4).
+  id: c_2
+  satisfaction_condition: Node s_4 is reached and the depth charge attack with Johann’s
+    panic is witnessed or acknowledged.
+  type: achievement
+  violation_condition: Player bypasses or denies the combat event, removing damage
+    or Johann’s panic incident before node s_5.
+- description: The moral conflict of attacking a burning enemy tanker with survivors
+    on board must occur only after surviving the initial depth charge attack and surfacing
+    (s_4 before s_5).
+  id: c_3
+  satisfaction_condition: Event of torpedoing the still-afloat enemy tanker and refusal
+    to take prisoners (node s_5) happens only after node s_4 events.
+  type: ordering
+  violation_condition: Player triggers tanker attack or captain’s refusal to rescue
+    before the depth charge attack and heavy damage episode (node s_4).
+- description: The denial of the captain's personnel request to send Werner and the
+    chief engineer home must persist after the secret resupply at Vigo and before
+    the attack near Gibraltar (between s_6 and s_7).
+  id: c_4
+  satisfaction_condition: From nodes s_6 to s_7, the denial of personnel transfer
+    request is acknowledged and controls player/NPC dialogue options accordingly.
+  type: invariant
+  violation_condition: Player or system allows personnel transfer or removes captain’s
+    negative response before approaching Gibraltar attack (node s_7).
+- description: The submarine must experience a life-threatening uncontrolled sinking
+    to its crush depth and forced repairs with limited oxygen supply, culminating
+    in a miraculous resurfacing (nodes s_7 and s_8).
+  id: c_5
+  satisfaction_condition: Events from s_7 through s_8 involving sinking below rated
+    depth, repairs under oxygen scarcity, and surfacing are completed.
+  type: achievement
+  violation_condition: Player or system permits resurfacing or safe conditions prior
+    to implementing damage and sinking events.
+- description: The Allied air raid causing severe casualties must happen only after
+    the U-96 returns to La Rochelle on Christmas Eve (s_8 before s_9).
+  id: c_6
+  satisfaction_condition: Air raid and resulting casualties occur strictly after completion
+    of the submarine’s return voyage events.
+  type: ordering
+  violation_condition: Player triggers air raid or crew casualties before arrival
+    at La Rochelle or before node s_8 completion.
+- description: From the bombing onwards (s_9), the captain is critically wounded and
+    ultimately dies, and the submarine sinks at the dock, symbolizing final mission
+    failure and loss.
+  id: c_7
+  satisfaction_condition: During s_9, captain’s multiple wounds, collapse, and death
+    are recorded and submarine sinking at dock is displayed.
+  type: invariant
+  violation_condition: Player or system revives captain, prevents sinking of the U-96
+    at dock, or negates casualties post-air raid.
+- description: The narrative must follow strict chronological order of all trajectory
+    nodes from s_0 through s_9, reproducing established key events without skipping
+    or reordering nodes.
+  id: c_8
+  satisfaction_condition: Nodes s_0 through s_9 occur in sequence without reversal
+    or omission.
+  type: ordering
+  violation_condition: Player or system jumps forward or backward in trajectory nodes
+    out of order or skips any mandatory key event.
+initial_facts:
+- content: Lt. Werner is located in a smoky French nightclub at the story's starting
+    moment.
+  id: f_0
+  negated: false
+- content: Lt. Werner is meeting the captain, chief engineer, and crew members of
+    the German submarine U-96 in the French nightclub.
+  id: f_1
+  negated: false
+- content: The German submarine U-96 is docked at the harbour of La Rochelle and preparing
+    to sail.
+  id: f_2
+  negated: false
+- content: The atmosphere in the French nightclub is tense but festive.
+  id: f_3
+  negated: false
+- content: Thomsen, another captain, is giving a crude drunken speech celebrating
+    his Ritterkreuz award while openly mocking Winston Churchill and implicitly Adolf
+    Hitler.
+  id: f_4
+  negated: false
+- content: Ideological tensions between new crew members including Lt. Werner and
+    veteran crew members including the captain are present and observable.
+  id: f_5
+  negated: false
+- content: The captain of U-96 is embittered and cynical about the war.
+  id: f_6
+  negated: false
+- content: New crew members, including Lt. Werner, are often mocked by veteran crew
+    members who share a tight bond.
+  id: f_7
+  negated: false
+- content: Lt. Werner is not yet aware of any subsequent combat engagement or events
+    occurring after departure from La Rochelle.
+  id: f_8
+  negated: false
+- content: No personnel requests or denials concerning Lt. Werner or the chief engineer
+    have occurred yet.
+  id: f_9
+  negated: false
+- content: No damage or panic episodes have yet occurred on the U-96 submarine.
+  id: f_10
+  negated: false
+- content: No moral conflicts involving attacking enemy survivors or other combat
+    ethical dilemmas have yet happened.
+  id: f_11
+  negated: false
+- content: The U-96 has not yet made any secret resupply contacts, including with
+    the SS Weser.
+  id: f_12
+  negated: false
+- content: No injuries or attacks near Gibraltar or elsewhere have occurred at the
+    starting moment.
+  id: f_13
+  negated: false
+- content: The submarine U-96 is fully operational and crewed at the starting time.
+  id: f_14
+  negated: false
+- content: Lt. Werner's current cognition is limited to the events in the French nightclub
+    and has no knowledge of future events including battles, storms, or air raids.
+  id: f_15
+  negated: false
+- content: The captain has not yet requested to send Werner or the chief engineer
+    back to Germany.
+  id: f_16
+  negated: false
+- content: No Allied air raid or bombing has occurred at La Rochelle at this time.
+  id: f_17
+  negated: false
+- content: Lt. Werner, as the player role, is currently unaware of later destructions
+    or crew casualties.
+  id: f_18
+  negated: false
+meta:
+  genres: ["War", "Drama"]
+  id: movie89
+  player_role: Lt. Werner
+  title: "Das Boot"
+synopsis: The story is told from the viewpoint of Lt. Werner, who has been assigned
+  as a war correspondent on the German submarine U-96 in October 1941. He meets its
+  captain, chief engineer, and the crew in a French nightclub. Thomsen, another captain,
+  gives a crude drunken speech to celebrate his Ritterkreuz award, in which he openly
+  mocks Winston Churchill and implicitly Adolf Hitler. The next morning, they sail
+  out of the harbour of La Rochelle to cheering crowds and a playing band. Werner
+  is given a tour of the boat. As time passes, he observes ideological differences
+  between the new crew members and the hardened veterans, particularly the captain,
+  who is embittered and cynical about the war. The new men, including Werner, are
+  often mocked by the rest of the crew, who share a tight bond. After days of boredom,
+  the crew is excited by another U-boat's spotting of an enemy convoy. They soon locate
+  a British destroyer, but are bombarded with depth charges. They narrowly escape
+  with only light damage. The next three weeks are spent enduring a relentless storm.
+  Morale drops after what seems like an endless series of misfortunes, but the crew
+  is cheered temporarily by a chance encounter with Thomsen's boat. Shortly after
+  the storm ends, the boat encounters a British convoy and quickly launches four torpedoes,
+  sinking two ships. However, they are spotted by a destroyer and have to dive below
+  the submarine's rated limit. During the depth-charge attack, the chief mechanic,
+  Johann, panics and has to be restrained. The boat sustains heavy damage, but is
+  eventually able to safely surface in darkness. An enemy tanker remains afloat and
+  on fire, so they torpedo the ship, only to realize that there are still sailors
+  aboard; they watch in horror as the sailors, some on fire, leap overboard and swim
+  towards them. Following orders not to take prisoners, the captain gives the command
+  to back the ship away. The worn-out U-boat crew looks forward to returning home
+  to La Rochelle in time for Christmas, but the ship is ordered to La Spezia, Italy,
+  which means passing through the Strait of Gibraltar — an area heavily defended by
+  the Royal Navy. The U-boat makes a secret night rendezvous at the harbour of Vigo,
+  in neutral Spain, with the SS Weser, an interned German merchant ship that clandestinely
+  provides U-boats with fuel, torpedoes, and other supplies. The filthy officers seem
+  out of place on the opulent luxury liner, but are warmly greeted by enthusiastic
+  officers eager to hear their exploits. The captain learns from an envoy of the German
+  consulate that his request for Werner and the chief engineer to be sent back to
+  Germany has been denied. The crew finishes resupplying and departs for Italy. As
+  they carefully approach Gibraltar and are just about to dive, they are suddenly
+  attacked by a British fighter plane, wounding the navigator. The captain orders
+  the boat directly south towards the African coast at full speed. British ships begin
+  closing in and she is forced to dive; it is later implied that the ships used HF/DF
+  to locate the sub. When attempting to level off, the boat does not respond and continues
+  to sink until, just before being crushed by the pressure, it lands on a sea shelf,
+  at the staggering depth of 280 metres. The crew works desperately to make numerous
+  repairs before running out of oxygen. After over 16 hours, they are miraculously
+  able to surface by blowing out their ballast of water, and limp back to La Rochelle
+  under the cover of darkness. The crew is pale and weary upon reaching the alternative
+  harbour of La Rochelle on Christmas Eve. Shortly after the wounded navigator is
+  taken ashore to a waiting ambulance, Allied planes bomb and strafe the facilities,
+  wounding or killing most of the men. Ullmann, Johann and the 2nd Watch Officer are
+  killed. Frenssen, Bootsmann Lamprecht and Hinrich are badly wounded. After the raid,
+  Werner leaves the U-boat bunker in which he had taken shelter and finds the captain,
+  with multiple bullet wounds and bleeding from the mouth, watching the U-boat sink
+  at the dock. The captain collapses after the boat disappears under the water. Werner
+  runs to the captain's lifeless body, recoils, and quickly glances around at the
+  destruction, his face frozen with horror.
+trajectory:
+- description: Lt. Werner is present in a smoky French nightclub where he meets the
+    captain, chief engineer, and crew members of the German submarine U-96 in October
+    1941. The atmosphere is tense but festive, highlighted by Thomsen giving a crude
+    drunken speech celebrating his Ritterkreuz award while openly mocking Winston
+    Churchill and implicitly Adolf Hitler.
+  id: s_0
+  key_delta: Introduction of the main characters on the U-96 and establishment of
+    ideological tensions and morale; the submarine departs from port to begin its
+    mission.
+  trigger_event: Morning arrives and the U-96 prepares to sail out of the harbour
+    of La Rochelle amidst cheering crowds and a playing band.
+- description: The U-96 is sailing at sea with Lt. Werner being given a tour of the
+    submarine. Inside, ideological differences become apparent between the new crew
+    members, including Werner, and the hardened veterans led by the embittered, cynical
+    captain. The new men are mocked by the closely bonded veteran crew.
+  id: s_1
+  key_delta: The crew's attention shifts from routine boredom to active engagement
+    in wartime operations, revealing internal social dynamics and tensions.
+  trigger_event: Reports from another U-boat announce spotting an enemy convoy, exciting
+    the crew.
+- description: The U-96 locates a British destroyer and engages but suffers a depth
+    charge attack causing only light damage. The crew narrowly escapes.
+  id: s_2
+  key_delta: The vessel survives an initial combat encounter, but the crew’s morale
+    begins to deteriorate as they face prolonged adverse weather conditions.
+  trigger_event: The submarine encounters and must endure a relentless storm lasting
+    three weeks.
+- description: During the storm, the U-96 has a chance encounter with Thomsen's boat,
+    which temporarily cheers the crew and boosts morale.
+  id: s_3
+  key_delta: The temporary morale boost from the reunion is replaced by the imminent
+    combat engagement with a convoy.
+  trigger_event: The storm ends and the U-96 encounters a British convoy, initiating
+    an attack.
+- description: The U-96 launches four torpedoes, sinking two enemy ships but is subsequently
+    detected by a destroyer, forcing the submarine to dive below its rated depth and
+    sustain heavy damage.
+  id: s_4
+  key_delta: Combat causes critical damage and psychological strain within the crew,
+    particularly on Johann, illustrating the stress of warfare.
+  trigger_event: During the depth charge attack, the chief mechanic Johann panics
+    and must be physically restrained.
+- description: The damaged U-96 surfaces at night after surviving the attack. An enemy
+    tanker remains afloat and burning; the crew torpedoes it, only to see sailors
+    leaping into the water. The captain orders to back away following standing orders
+    to take no prisoners.
+  id: s_5
+  key_delta: The crew faces a moral and operational dilemma linked to the rescue of
+    enemy sailors and a strategic shift in orders, increasing the peril of their mission.
+  trigger_event: The U-96 prepares for a return journey home with optimism for Christmas
+    but receives orders to sail to La Spezia, Italy, requiring passage through the
+    heavily defended Strait of Gibraltar.
+- description: The U-96 makes a secret night rendezvous in Vigo, Spain, to resupply
+    from the interned German merchant ship SS Weser. The captain learns his request
+    to send Werner and the chief engineer back to Germany has been denied. The officers
+    contrast sharply with the luxury liner’s opulence.
+  id: s_6
+  key_delta: The mission becomes more hazardous with the injury of a key crew member
+    and maintenance of secrecy during resupply; the captain’s personnel request is
+    denied, maintaining crew tension.
+  trigger_event: After resupplying, the U-96 departs Vigo and approaches Gibraltar
+    where it is attacked by a British fighter plane, wounding the navigator.
+- description: Under direct attack and pursued by British ships, the U-96 is forced
+    to dive but sinks uncontrollably until resting on a seabed at 280 meters, far
+    below rated depth.
+  id: s_7
+  key_delta: The crew faces a life-threatening crisis with the submarine severely
+    damaged and trapped at extreme depth, testing their technical and physical endurance.
+  trigger_event: Crew members conduct desperate repairs to regain control and prevent
+    suffocation as oxygen runs low.
+- description: After over 16 hours, the U-96 surfaces using compressed air to blow
+    out ballast water and limps back towards La Rochelle under cover of darkness.
+    The crew is pale, weary, and facing the burden of their ordeal.
+  id: s_8
+  key_delta: The crew survives the underwater ordeal and returns home, only to be
+    immediately confronted by a deadly enemy air attack causing heavy casualties and
+    injuries.
+  trigger_event: Arrival at La Rochelle on Christmas Eve, followed by an Allied air
+    raid bombing and strafing the harbour facilities, causing numerous deaths and
+    injuries among the crew.
+- description: The wounded navigator is taken to an ambulance while the captain, severely
+    wounded and bleeding, watches the U-96 sink at the dock. The port area is devastated
+    by the bombing.
+  id: s_9
+  key_delta: The captain’s death and the destruction of the submarine at dock symbolize
+    the crushing toll of the war on the crew and their mission's tragic culmination.
+  trigger_event: The captain collapses after the submarine disappears underwater;
+    Werner rushes to his lifeless body amid the destruction.

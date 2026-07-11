@@ -1,0 +1,478 @@
+commitments:
+- description: The leadership challenge by Harvey Logan (s_1) must occur after Butch
+    and Sundance return to the hideout (s_0) to ensure logical progression of gang
+    leadership conflict.
+  id: c_0
+  satisfaction_condition: Node s_0 must be completed before node s_1 is acknowledged.
+  type: ordering
+  violation_condition: Player attempts to trigger Harvey Logan's leadership challenge
+    (s_1) before Butch and Sundance's return to the hideout (s_0).
+- description: The first successful train robbery (s_2) must precede celebration at
+    the brothel and sheriff’s failed posse formation (s_3) to maintain causal event
+    sequence.
+  id: c_1
+  satisfaction_condition: Node s_2 completed before node s_3 is triggered.
+  type: ordering
+  violation_condition: Player attempts to celebrate or observe the sheriff’s failed
+    posse before the train robbery is completed.
+- description: Butch and Sundance's visit to Etta Place (s_4) only recognized after
+    the first robbery’s completion and celebration (nodes s_2 and s_3), preserving
+    narrative introduction of personal relationships.
+  id: c_2
+  satisfaction_condition: Node s_4 can only be triggered after s_3 is achieved.
+  type: ordering
+  violation_condition: Player attempts interactions at Etta Place's residence prior
+    to first robbery completion and celebration.
+- description: The second train robbery attempt (s_5) must only happen after the first
+    robbery (s_2) and subsequent celebration (s_3), securing escalation order of criminal
+    plans.
+  id: c_3
+  satisfaction_condition: Node s_5 occurs strictly after s_2 and s_3.
+  type: ordering
+  violation_condition: Player initiates the second train robbery (s_5) before the
+    first robbery (s_2) or its immediate aftermath (s_3) have completed.
+- description: Arrival of lawmen posse on second train (s_6) must follow the excessive
+    dynamite explosion during second robbery (s_5) to maintain causal threat escalation.
+  id: c_4
+  satisfaction_condition: Node s_6 follows node s_5 in direct sequence.
+  type: ordering
+  violation_condition: Posse arrival (s_6) acknowledged before the second robbery
+    explosion event (s_5).
+- description: Butch and Sundance’s failed refuge attempts and pursuit persistence
+    (s_7) must happen only after posse arrival (s_6) to maintain pursuit integrity.
+  id: c_5
+  satisfaction_condition: Node s_7 triggered only after s_6 completion.
+  type: ordering
+  violation_condition: Player attempts to hide or request amnesty (s_7) prior to lawmen
+    posse’s arrival (s_6).
+- description: Identification of posse members (s_8) must occur after the start of
+    relentless pursuit (s_7) to avoid premature knowledge of enemy identity.
+  id: c_6
+  satisfaction_condition: Node s_8 can only be triggered after s_7 is established.
+  type: ordering
+  violation_condition: Player gains or reveals posse member identities before s_7
+    (pursuit phase) is active.
+- description: Butch and Sundance’s escape by cliff jump (s_9) must be acknowledged
+    only after persistent pursuit and posse identification (s_7 and s_8) to logically
+    justify extreme evasion.
+  id: c_7
+  satisfaction_condition: Node s_9 occurs after nodes s_7 and s_8.
+  type: ordering
+  violation_condition: Escape attempt (s_9) before posse identification and continued
+    pursuit phases.
+- description: Butch learns of the posse’s deadly backing by Harriman (s_10) only
+    after successful escape and safe contact with Etta (s_9), ensuring narrative threat
+    escalation is timed correctly.
+  id: c_8
+  satisfaction_condition: Node s_10 triggered only after s_9.
+  type: ordering
+  violation_condition: Player receives or acts on knowledge of Harriman’s bounty before
+    s_9 is achieved.
+- description: Decision to flee to Bolivia (s_11) must follow receipt of threat information
+    from Etta (s_10), maintaining cause and effect in fleeing decision.
+  id: c_9
+  satisfaction_condition: Node s_11 occurs after s_10 is completed.
+  type: ordering
+  violation_condition: Escape to Bolivia initiated before receiving the critical threat
+    information in s_10.
+- description: Arrival in Bolivia with challenges (s_12) follows decision to flee
+    there (s_11), preserving narrative flow of relocation and culture shock.
+  id: c_10
+  satisfaction_condition: Node s_12 succeeds s_11 without skipping.
+  type: ordering
+  violation_condition: Player experiences Bolivia events before fleeing decision is
+    made.
+- description: Spanish language teaching and successful bank robbery under alias (s_13)
+    only possible after arrival and acknowledgement of language barrier (s_12).
+  id: c_11
+  satisfaction_condition: Node s_13 only enabled after s_12 completion.
+  type: ordering
+  violation_condition: Player successfully robs banks in Bolivia before learning and
+    addressing language obstacles.
+- description: Spotting the man with white skimmer (s_14) indicating fear of pursuers
+    abroad must only occur after establishing criminal activity and presence in Bolivia
+    (s_13).
+  id: c_12
+  satisfaction_condition: Node s_14 triggered strictly after s_13.
+  type: ordering
+  violation_condition: Player suspects pursuers in Bolivia before initiating local
+    robberies.
+- description: Butch and Sundance’s attempt to go straight (s_15) must follow their
+    fears of being pursued abroad (s_14), showing their motivation for change.
+  id: c_13
+  satisfaction_condition: Node s_15 follows node s_14.
+  type: ordering
+  violation_condition: Player initiates honest employment before sensing or fearing
+    pursuers abroad.
+- description: Ambush during payroll job (s_16) must happen after the honest work
+    is accepted (s_15), maintaining event causality.
+  id: c_14
+  satisfaction_condition: Node s_16 directly follows s_15.
+  type: ordering
+  violation_condition: Player experiences ambush before accepting honest jobs.
+- description: Retaliation and Butch’s first kill (s_17) must occur after the ambush
+    and death of employer (s_16), marking key character development and escalating
+    violence.
+  id: c_15
+  satisfaction_condition: Node s_17 triggered after s_16 is completed.
+  type: ordering
+  violation_condition: Player performs lethal retaliation before ambush and employer’s
+    death.
+- description: Decision to abandon straight life and Etta’s departure (s_18) must
+    occur after retaliation (s_17), reflecting consequences of the violent events.
+  id: c_16
+  satisfaction_condition: Node s_18 follows s_17 chronologically.
+  type: ordering
+  violation_condition: Player loses Etta or abandons honest life before retaliation
+    phase.
+- description: The theft of the payroll and subsequent recognition in town (s_19)
+    must follow Etta’s departure (s_18), continuing the narrative flow of deterioration
+    of their situation.
+  id: c_17
+  satisfaction_condition: Node s_19 is enabled only after s_18.
+  type: ordering
+  violation_condition: Player triggers payroll theft and recognition before Etta departs.
+- description: Gunfight and injuries (s_20) logically must follow discovery in town
+    (s_19), preserving cause-effect of conflict escalation.
+  id: c_18
+  satisfaction_condition: Node s_20 follows the identification event s_19.
+  type: ordering
+  violation_condition: Player is wounded or enters gunfight prior to their discovery
+    by local police.
+- description: Butch proposing escape to Australia (s_21) must be preceded by being
+    surrounded and wounded in the gunfight (s_20), as motivation arises from immediate
+    threat.
+  id: c_19
+  satisfaction_condition: Node s_21 only triggered after s_20 completion.
+  type: ordering
+  violation_condition: Player contemplates or plans for Australia escape without being
+    besieged first.
+- description: Final charge out of the building (s_22) must be the last acknowledged
+    event, following surround and escape decision (s_21), ensuring narrative climax
+    progression is maintained.
+  id: c_20
+  satisfaction_condition: Node s_22 occurs after s_21 with no subsequent narrative
+    progression.
+  type: ordering
+  violation_condition: Player attempts to survive, negotiate, or retreat after initiating
+    the final charge without triggering s_22.
+- description: Butch Cassidy must maintain leadership presence over the gang until
+    he loses it forcibly (from s_0 to s_1, before Harvey Logan's challenge resolution).
+  id: c_21
+  satisfaction_condition: Butch’s leadership is asserted and uncontested during s_0
+    phase until s_1 knife fight is resolved.
+  type: invariant
+  violation_condition: Player or system prematurely recognize or concede loss of Butch's
+    leadership before challenge and resolution in s_1.
+- description: Etta Place’s role as linguistic and emotional accomplice is active
+    only from her introduction (s_4) until her departure (s_18); her assistance in
+    language and robbery competence is unavailable outside this range.
+  id: c_22
+  satisfaction_condition: Etta’s help and presence permitted only between s_4 and
+    s_18.
+  type: invariant
+  violation_condition: Player gains Etta’s assistance or Spanish language teaching
+    benefits outside s_4-s_18 timeframe.
+- description: The narrative must conclude with the climactic charge against Bolivian
+    forces (s_22) marking the endpoint of the story.
+  id: c_23
+  satisfaction_condition: Completion of node s_22 representing the final dramatic
+    confrontation.
+  type: achievement
+  violation_condition: Player ends story without reaching or triggering the final
+    attack phase (s_22).
+initial_facts:
+- content: The time is in the late 1890s in Wyoming.
+  id: f_0
+  negated: false
+- content: Butch Cassidy is the leader of the outlaw Hole in the Wall Gang.
+  id: f_1
+  negated: false
+- content: Butch Cassidy's leadership over the gang is currently uncontested.
+  id: f_2
+  negated: false
+- content: Butch Cassidy and Sundance Kid have just returned to the gang's hideout
+    at Hole-in-the-Wall after a long absence.
+  id: f_3
+  negated: false
+- content: The atmosphere in the hideout is tense due to Butch's frequent absences.
+  id: f_4
+  negated: false
+- content: Harvey Logan has not yet challenged Butch Cassidy for leadership.
+  id: f_5
+  negated: false
+- content: The first train robbery of the Union Pacific Overland Flyer has not yet
+    occurred.
+  id: f_6
+  negated: false
+- content: The gang has not yet celebrated any train robbery at the brothel.
+  id: f_7
+  negated: false
+- content: Butch Cassidy and Sundance Kid have not yet visited Etta Place.
+  id: f_8
+  negated: false
+- content: The second train robbery attempt has not yet taken place.
+  id: f_9
+  negated: false
+- content: The posse of lawmen has not yet arrived in pursuit.
+  id: f_10
+  negated: false
+- content: Butch and Sundance have not yet been pursued or sought refuge.
+  id: f_11
+  negated: false
+- content: Butch and Sundance have no knowledge of the identities of any posse members.
+  id: f_12
+  negated: false
+- content: Butch and Sundance have not yet attempted escape from pursuit.
+  id: f_13
+  negated: false
+- content: Butch and Sundance are unaware of any bounty or paid posse backing by E.
+    H. Harriman.
+  id: f_14
+  negated: false
+- content: No decision has been made to flee to Bolivia.
+  id: f_15
+  negated: false
+- content: Butch, Sundance, and Etta have not yet arrived in Bolivia.
+  id: f_16
+  negated: false
+- content: There has been no attempt to learn or teach Spanish in Bolivia.
+  id: f_17
+  negated: false
+- content: Butch and Sundance have not yet become successful bank robbers under any
+    alias.
+  id: f_18
+  negated: false
+- content: Butch and Sundance have not spotted any individual wearing a white skimmer
+    hat in Bolivia.
+  id: f_19
+  negated: false
+- content: Butch and Sundance have not yet attempted to 'go straight' or taken any
+    honest jobs.
+  id: f_20
+  negated: false
+- content: No ambush on Butch and Sundance has occurred during any payroll job.
+  id: f_21
+  negated: false
+- content: Butch has never before fired a lethal shot.
+  id: f_22
+  negated: false
+- content: Etta Place is not yet introduced to or assisting Butch and Sundance.
+  id: f_23
+  negated: false
+- content: Etta Place’s linguistic and emotional assistance is unavailable at this
+    time.
+  id: f_24
+  negated: false
+- content: No payroll theft or mule stealing has taken place.
+  id: f_25
+  negated: false
+- content: Butch and Sundance have not been recognized or confronted by local police
+    in any town.
+  id: f_26
+  negated: false
+- content: Butch and Sundance have not been wounded.
+  id: f_27
+  negated: false
+- content: Butch and Sundance are not yet surrounded by Bolivian soldiers.
+  id: f_28
+  negated: false
+- content: There is no current plan or proposal by Butch to escape to Australia.
+  id: f_29
+  negated: false
+- content: Butch and Sundance have not initiated any final charge or climactic gunfight.
+  id: f_30
+  negated: false
+meta:
+  genres: ["Western", "Adventure"]
+  id: movie94
+  player_role: Butch Cassidy
+  title: "Butch Cassidy and the Sundance Kid"
+synopsis: In late 1890s Wyoming, Butch Cassidy is the affable, clever, talkative leader
+  of the outlaw Hole in the Wall Gang. His closest companion is the laconic dead-shot
+  "Sundance Kid". The two return to their hideout at Hole-in-the-Wall to discover
+  that the rest of the gang, irked at Butch's long absences, have selected Harvey
+  Logan as their new leader. Harvey challenges Butch to a knife fight over the gang's
+  leadership. Butch defeats him using trickery, but embraces his idea to rob the Union
+  Pacific Overland Flyer train on both its eastward and westward runs, agreeing that
+  the second robbery would be unexpected and likely reap even more money than the
+  first. The first robbery goes well. To celebrate, Butch and Sundance visit a favorite
+  brothel in a nearby town and watch, amused, as the town sheriff unsuccessfully attempts
+  to organize a posse to track down the gang. They then visit Sundance's lover, schoolteacher
+  Etta Place. On the second train robbery, Butch uses too much dynamite to blow open
+  the safe, blowing up the baggage car. As the gang scrambles to gather up the money,
+  a second train arrives carrying a six-man team of lawmen. The robbers scatter but
+  the posse heads after Butch and Sundance, who unsuccessfully try to hide out in
+  the brothel and to seek amnesty from the friendly Sheriff Bledsoe. As the posse
+  remains in pursuit despite all attempts to elude them, Butch and Sundance determine
+  that the group includes renowned Indian tracker "Lord Baltimore" and relentless
+  lawman Joe LeFors, recognizable by his white skimmer. Butch and Sundance finally
+  elude their pursuers by jumping from a cliff into a river far below. They learn
+  from Etta that the posse has been paid by Union Pacific head E. H. Harriman to remain
+  on their trail until Butch and Sundance are both killed. Butch persuades Sundance
+  and Etta that the three should escape to Bolivia, which Butch envisions as a robber's
+  paradise. On their arrival there, a dismayed Sundance regards the country with contempt
+  while Butch remains optimistic. They soon discover that they know too little Spanish
+  to pull off a bank robbery, so Etta attempts to teach them the language. With her
+  as an accomplice, they become successful bank robbers known as Los Bandidos Yanquis.
+  However, their confidence drops when they see a man wearing a white skimmer and
+  fear that Harriman's posse is still after them. Butch suggests "going straight",
+  and he and Sundance land their first honest job as payroll guards for a mining company.
+  However, they are ambushed by local bandits on their first run and their boss, Percy
+  Garris, is killed. Butch and Sundance ambush and kill the bandits, the first time
+  Butch has ever shot someone. Concluding that the straight life isn't for them, they
+  return to robbery, but Etta decides to return to the United States. Butch and Sundance
+  steal a payroll and the mules carrying it, and arrive in a small town. A boy recognizes
+  the mules' brand and alerts the local police, leading to a gunfight with the outlaws.
+  They take cover in a building, but are both seriously wounded when Butch has to
+  make a run to the mules for more ammunition. As dozens of Bolivian soldiers surround
+  the area, Butch suggests the duo's next destination should be Australia. The film
+  ends with a freeze frame shot on the pair charging out of the building, guns blazing,
+  as the Bolivian forces fire repeatedly on them.
+trajectory:
+- description: In the Hole-in-the-Wall hideout in late 1890s Wyoming, Butch Cassidy
+    leads the outlaw gang with his close companion Sundance Kid among the members;
+    the gang atmosphere is tense due to Butch's frequent absences.
+  id: s_0
+  key_delta: Restoration of Butch's presence is confirmed, but gang members express
+    dissatisfaction by selecting a new leader, Harvey Logan.
+  trigger_event: Butch and Sundance return to the hideout after a long absence.
+- description: The gang has chosen Harvey Logan as new leader, challenging Butch’s
+    authority while stationed at the hideout.
+  id: s_1
+  key_delta: Leadership challenge is initiated; Butch defeats Harvey but accepts the
+    idea to rob the Union Pacific Overland Flyer on both directions.
+  trigger_event: Harvey Logan challenges Butch Cassidy to a knife fight for leadership.
+- description: Butch and the gang prepare to execute the plan to rob the eastward
+    Union Pacific Overland Flyer train.
+  id: s_2
+  key_delta: Successful completion of the first train robbery, securing money and
+    boosting gang morale.
+  trigger_event: The gang carries out the first train robbery.
+- description: Butch and Sundance celebrate the successful robbery at a local brothel
+    while the town sheriff attempts to organize a posse unsuccessfully.
+  id: s_3
+  key_delta: Confirmation that local law enforcement is ineffective so far, maintaining
+    gang's relative safety momentarily.
+  trigger_event: Butch and Sundance witness the sheriff fail to form a posse to pursue
+    the gang.
+- description: Butch and Sundance visit Sundance’s lover, schoolteacher Etta Place,
+    in a nearby town.
+  id: s_4
+  key_delta: Personal relationship with Etta Place is established and introduced into
+    the gang’s affairs.
+  trigger_event: Butch and Sundance arrive at Etta Place’s residence for a visit.
+- description: The gang prepares for the second Union Pacific Overland Flyer train
+    robbery, expecting increased risk and gain.
+  id: s_5
+  key_delta: The attempt detonates excessive dynamite, blowing up the baggage car,
+    alerting approaching lawmen.
+  trigger_event: Gang initiates the second robbery attempt on the train westward.
+- description: During the confusion caused by the explosion, the gang is scattered
+    as a posse of lawmen arrives on a second train.
+  id: s_6
+  key_delta: The gang's operation is interrupted, forcing members to flee and triggering
+    active law enforcement pursuit.
+  trigger_event: A posse arrives on a second train dispatching a six-man law enforcement
+    team.
+- description: Butch and Sundance are pursued and seek refuge unsuccessfully in the
+    brothel and by asking Sheriff Bledsoe for amnesty.
+  id: s_7
+  key_delta: Their protective cover is compromised and they are clearly identified
+    as targets of the posse.
+  trigger_event: The posse continues relentless pursuit despite Butch and Sundance's
+    attempts to hide and negotiate.
+- description: Butch and Sundance identify members of the posse, including tracker
+    Lord Baltimore and lawman Joe LeFors distinguished by his white skimmer hat.
+  id: s_8
+  key_delta: Now aware of the specific enemies pursuing them, enhancing their situational
+    awareness.
+  trigger_event: Butch and Sundance observe and recognize key posse members tracking
+    them.
+- description: Butch and Sundance escape by jumping from a cliff into a river below,
+    temporarily evading the posse.
+  id: s_9
+  key_delta: Escape from immediate danger is accomplished, allowing planning for future
+    moves.
+  trigger_event: Butch and Sundance jump off a cliff to evade capture during the posse’s
+    pursuit.
+- description: Safe with Etta, Butch learns the posse is financially backed by E.
+    H. Harriman to ensure their deaths.
+  id: s_10
+  key_delta: Information about the lethal intent of the posse reveals intensified
+    stakes for Butch and Sundance.
+  trigger_event: Etta informs Butch and Sundance about Union Pacific’s sponsorship
+    of the posse.
+- description: Butch persuades Sundance and Etta that fleeing to Bolivia offers a
+    safer, more profitable outlaw life.
+  id: s_11
+  key_delta: Decision to relocate internationally shifts the narrative to a new setting
+    and goal.
+  trigger_event: Butch convinces the others to escape to Bolivia.
+- description: Arrival in Bolivia finds Sundance discontented while Butch remains
+    hopeful; language barrier limits their immediate plans.
+  id: s_12
+  key_delta: Environmental and cultural obstacles appear; inability to immediate rob
+    banks due to Spanish language gap.
+  trigger_event: Butch, Sundance, and Etta arrive in Bolivia and confront linguistic
+    challenges.
+- description: With Etta helping to teach Spanish, Butch and Sundance become successful
+    bank robbers under the alias Los Bandidos Yanquis.
+  id: s_13
+  key_delta: The gang establishes local criminal credibility and develops operational
+    capability in Bolivia.
+  trigger_event: Butch and Sundance commit successful robberies aided by Etta’s translation.
+- description: Butch and Sundance observe a man in a white skimmer, stirring fear
+    that their pursuers might have followed them abroad.
+  id: s_14
+  key_delta: Rising suspicion that Union Pacific’s posse, or its equivalent, may persist
+    in tracking them internationally.
+  trigger_event: Butch and Sundance spot a man wearing a white skimmer hat in Bolivia.
+- description: Butch suggests abandoning outlaw life and Going Straight; they obtain
+    their first honest job as payroll guards for a mining company.
+  id: s_15
+  key_delta: Attempt to transition into lawful work marks a drastic life strategy
+    shift.
+  trigger_event: Butch and Sundance accept jobs as payroll guards.
+- description: On their first payroll run, Butch and Sundance are ambushed by local
+    bandits; their boss Percy Garris is killed.
+  id: s_16
+  key_delta: Honest life is violently disrupted; loss of employer signals increased
+    local lawlessness.
+  trigger_event: They are attacked by bandits during the payroll escort.
+- description: Butch and Sundance retaliate by ambushing and killing the bandits,
+    with Butch firing his first kill shot.
+  id: s_17
+  key_delta: Escalation into deadly violence; Butch crosses a personal milestone by
+    killing.
+  trigger_event: Butch and Sundance counterattack and eliminate the bandit threat.
+- description: Deciding that straight life is untenable, Butch and Sundance return
+    to robbery as Etta chooses to return to the US.
+  id: s_18
+  key_delta: Loss of their linguistic and domestic accomplice weakens their operational
+    capacity.
+  trigger_event: Etta departs Bolivia, ending her active role with Butch and Sundance.
+- description: Butch and Sundance steal a payroll shipment and the mules carrying
+    it, entering a small town where they become recognized.
+  id: s_19
+  key_delta: Their cover in the town is blown, triggering law enforcement response.
+  trigger_event: Local boy identifies mules’ brand and alerts authorities.
+- description: A gunfight ensues in the town; Butch and Sundance take cover and both
+    are seriously wounded during an ammunition run.
+  id: s_20
+  key_delta: Both outlaws are physically compromised and vulnerable to capture or
+    death.
+  trigger_event: Butch risks leaving cover to fetch more ammunition and is wounded
+    along with Sundance.
+- description: Surrounded by dozens of Bolivian soldiers, Butch suggests fleeing to
+    Australia as their next destination.
+  id: s_21
+  key_delta: The immediate external threat solidifies their decision to continue on
+    the run internationally.
+  trigger_event: They assess the encirclement and Butch proposes escape to Australia.
+- description: Butch and Sundance prepare for a final charge out of the building amidst
+    heavy fire from the Bolivian forces.
+  id: s_22
+  key_delta: Climactic confrontation underway; their fate is uncertain as the story
+    freezes on this moment.
+  trigger_event: They charge out guns blazing as soldiers fire upon them.

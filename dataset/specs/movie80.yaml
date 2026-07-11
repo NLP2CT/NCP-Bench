@@ -1,0 +1,461 @@
+commitments:
+- description: The public memorial service (s_0) and initial public perception of
+    Lawrence must occur before any wartime events involving Lawrence are acknowledged.
+  id: c_0
+  satisfaction_condition: Node s_0 is reached and completed before any narrative advancement
+    to s_1 or beyond.
+  type: ordering
+  violation_condition: Player actions or narrative states reference or reveal wartime
+    events or Lawrence’s activities prior to completion of s_0.
+- description: Lawrence is dispatched on a special mission only after receiving orders
+    from Mr. Dryden (starting at s_1); no earlier independent military action is permitted.
+  id: c_1
+  satisfaction_condition: From s_1 onwards, all Lawrence-led Arab Revolt activities
+    derive from Dryden's official order.
+  type: invariant
+  violation_condition: Player triggers Lawrence taking active action related to the
+    Arab Revolt without Dryden’s order or before s_1 narrative node.
+- description: Lawrence’s journey through the desert with Sherif Ali and enforcement
+    of tribal customs (s_2) must precede his arrival at Faisal's camp (s_3).
+  id: c_2
+  satisfaction_condition: Node s_2 is completed before s_3 becomes accessible or acknowledged.
+  type: ordering
+  violation_condition: Lawrence arrives at Faisal’s camp (s_3) or interacts with Faisal
+    before experiencing desert travel and tribal law enforcement in s_2.
+- description: General Brighton’s order to keep quiet and leave (s_3) must be acknowledged
+    and active at Faisal’s camp before Lawrence ignores it to engage with Faisal (s_4).
+  id: c_3
+  satisfaction_condition: Between s_3 and s_4, the British command’s restrictions
+    on Lawrence’s speech at Faisal’s camp remain in effect.
+  type: invariant
+  violation_condition: Player bypasses, denies, or negates Brighton’s order at Faisal’s
+    camp before s_3 or ignores it without recognition before s_4.
+- description: Lawrence must successfully convince Prince Faisal to attempt the surprise
+    attack on Aqaba (transition s_4 to s_5), establishing his influence.
+  id: c_4
+  satisfaction_condition: Clear player action or narrative acceptance confirming Faisal’s
+    approval and plan to attack Aqaba as proposed by Lawrence.
+  type: achievement
+  violation_condition: Player fails to secure Faisal’s agreement or causes Faisal
+    to reject or retreat without accepting Lawrence’s plan.
+- description: The desert crossing with fifty men plus Daud and Farraj (s_6) must
+    occur prior to the desert incidents involving Gasim’s loss and Lawrence's life-risking
+    rescue (s_7).
+  id: c_5
+  satisfaction_condition: Departure on desert crossing (s_6) completed before player
+    can trigger or acknowledge events of s_7.
+  type: ordering
+  violation_condition: Rescue of Gasim or desert incidents in s_7 occur without prior
+    assembly and departure in s_6.
+- description: Lawrence’s execution of Gasim to preserve the fragile tribal alliance
+    (s_8) must be recognized as a factual and irreversible moral act once the murder
+    within the coalition is discovered.
+  id: c_6
+  satisfaction_condition: Player commits to or accepts execution of Gasim before proceeding
+    past s_8.
+  type: invariant
+  violation_condition: Player refuses, negates, or reverses the execution decision
+    after it has been established or proceeds without addressing the murder and alliance
+    risk.
+- description: The allied forces must achieve successful capture of Aqaba (s_9), marking
+    a decisive military victory and momentum shift.
+  id: c_7
+  satisfaction_condition: Narrative progression confirms the Turkish garrison at Aqaba
+    is overrun under Lawrence’s leadership.
+  type: achievement
+  violation_condition: Player fails to conduct or secure the Aqaba assault or the
+    garrison remains in Turkish hands before narrative proceeds beyond s_9.
+- description: After Aqaba's capture (starting s_10), Lawrence has official British
+    promotion and support though personal moral doubts may surface; Allenby dismisses
+    these concerns.
+  id: c_8
+  satisfaction_condition: From s_10 onwards, Lawrence holds the rank of major with
+    authorized arms and funding; moral qualms exist but do not impede British support.
+  type: invariant
+  violation_condition: Player denies Lawrence’s promotion, support, or Allenby dismissing
+    Lawrence’s misgivings after s_10 or before official British sanction is given.
+- description: Lawrence’s guerrilla campaign and international notoriety (s_11) must
+    be initiated after receiving arms and British backing (s_10).
+  id: c_9
+  satisfaction_condition: s_10 completed prior to s_11 activities including sabotage
+    and press coverage becoming active.
+  type: ordering
+  violation_condition: Player launches guerrilla operations or achieves media fame
+    without prior British logistical support and promotion.
+- description: Lawrence executing Farraj (s_12) must occur only after Farraj is critically
+    injured during a raid; this act is irreversible and defines Lawrence’s harsh wartime
+    reality.
+  id: c_10
+  satisfaction_condition: Narrative lock on Farraj’s critical injury followed immediately
+    by Lawrence’s mercy killing before escape.
+  type: invariant
+  violation_condition: Player avoids Farraj’s execution after critical injury or denies
+    the event while progressing onwards.
+- description: Lawrence must first be captured and brutalized by Turkish forces at
+    Daraa (s_13) before he abandons previous arrogance (s_14).
+  id: c_11
+  satisfaction_condition: Physical and psychological trauma of s_13 happens prior
+    to Lawrence’s identity crisis and withdrawal in s_14.
+  type: ordering
+  violation_condition: Player triggers emotional breakdown or renounces prior behavior
+    before experiencing capture and flogging at s_13.
+- description: After his attempted reintegration and alienation (s_14), Lawrence must
+    be pressured by Allenby to recommit to military action (s_15).
+  id: c_12
+  satisfaction_condition: Rejection and discomfort at British forces (s_14) precedes
+    Allenby’s urging and Lawrence’s reluctant acceptance of the Damascus campaign
+    (s_15).
+  type: ordering
+  violation_condition: Lawrence commits to Allenby’s campaign or reenlists zealously
+    before undergoing alienation at s_14.
+- description: The army Lawrence assembles at s_16 is composed mainly of mercenaries
+    motivated by money rather than ideology, changing the moral character of his forces.
+  id: c_13
+  satisfaction_condition: Newly recruited forces are characterized as self-interested
+    killers, distinct from previous idealistic troops.
+  type: invariant
+  violation_condition: Player recruits or leads an idealistic or purely nationalist
+    force contrary to the mercenary composition after s_16.
+- description: Lawrence must actively participate in a massacre at Tafas (s_17), crossing
+    a moral boundary that shapes his internal conflict.
+  id: c_14
+  satisfaction_condition: Player triggers or accepts Lawrence’s involvement in the
+    massacre and internal recognition of its horror.
+  type: achievement
+  violation_condition: Player avoids or denies participation in the massacre despite
+    narrative progression to s_17.
+- description: Capture of Damascus by Lawrence’s forces (s_18) must precede the breakdown
+    of tribal governance and British reoccupation (s_19).
+  id: c_15
+  satisfaction_condition: 'Authority transition sequences: Arab tribal council established
+    after city capture, then cedes control to British authorities.'
+  type: ordering
+  violation_condition: Player allows British governance before Damascus is secured
+    by Lawrence’s coalition or tribal disputes escalate prematurely.
+- description: The Arab council is incapable of effectively governing Damascus, leading
+    to its abandonment of city administration in favor of British bureaucracy after
+    s_19.
+  id: c_16
+  satisfaction_condition: Arab governance failure and British bureaucratic authority
+    restored as factual narrative after s_19.
+  type: invariant
+  violation_condition: Player succeeds in maintaining Arab council governance or prevents
+    British administrative takeover after s_19.
+- description: Lawrence’s promotion to colonel and recall to Britain (s_20) must occur
+    only after the British regaining control of Damascus and the failure of the Arab
+    revolt’s political goals.
+  id: c_17
+  satisfaction_condition: Narrative completes s_19 before advancing to Lawrence’s
+    recall at s_20.
+  type: ordering
+  violation_condition: Player triggers Lawrence’s recall or promotion before the Arab
+    revolt’s political failure and British control solidify.
+- description: The narrative must conclude with Lawrence’s dejection and removal from
+    active involvement, marking an end to his direct influence in the Arab Revolt.
+  id: c_18
+  satisfaction_condition: Narrative terminates at s_20 with Lawrence’s departure from
+    the theatre of war, visibly dejected and isolated.
+  type: achievement
+  violation_condition: Narrative continues with Lawrence retaining active influence
+    or military leadership after s_20.
+initial_facts:
+- content: The current time is 1935 at St Paul's Cathedral where a memorial service
+    for T. E. Lawrence is underway.
+  id: f_0
+  negated: false
+- content: T. E. Lawrence is deceased at t=0.
+  id: f_1
+  negated: false
+- content: Reporters are present at the memorial service attempting to learn about
+    Lawrence's life from attendees.
+  id: f_2
+  negated: false
+- content: Attendees at the memorial service recall Lawrence as a remarkable and enigmatic
+    man.
+  id: f_3
+  negated: false
+- content: The player role, T. E. Lawrence, has not yet taken any wartime action or
+    received any orders from Mr. Dryden.
+  id: f_4
+  negated: false
+- content: No information about the First World War events involving Lawrence or his
+    activities with the Arab Revolt is known or accessible at t=0.
+  id: f_5
+  negated: false
+- content: Lawrence has not yet been dispatched on any special mission.
+  id: f_6
+  negated: false
+- content: Lawrence has not started any journey through the desert or any interaction
+    with Sherif Ali or Prince Faisal.
+  id: f_7
+  negated: false
+- content: Lawrence has no military rank, promotions, or British support related to
+    the Arab Revolt at t=0.
+  id: f_8
+  negated: false
+- content: Lawrence has not initiated any guerrilla campaign or become internationally
+    notorious.
+  id: f_9
+  negated: false
+- content: Lawrence has no companions such as Daud, Farraj, or Gasim at t=0.
+  id: f_10
+  negated: false
+- content: Lawrence has not been captured, flogged, or humiliated by Turkish forces.
+  id: f_11
+  negated: false
+- content: Lawrence has not experienced a personal identity crisis or alienation from
+    British forces.
+  id: f_12
+  negated: false
+- content: Lawrence has not been pressured by General Allenby to recommit to military
+    action.
+  id: f_13
+  negated: false
+- content: Lawrence has not recruited any army or led mercenaries.
+  id: f_14
+  negated: false
+- content: Lawrence has not participated in any massacre or morally questionable battle.
+  id: f_15
+  negated: false
+- content: Damascus is not yet captured by any Arab forces under Lawrence's leadership.
+  id: f_16
+  negated: false
+- content: There is no Arab council governing Damascus nor any British bureaucratic
+    involvement in the city.
+  id: f_17
+  negated: false
+- content: Lawrence has not been promoted to colonel nor recalled to Britain.
+  id: f_18
+  negated: false
+- content: At t=0, no active narrative progression has occurred beyond the memorial
+    service at St Paul's Cathedral.
+  id: f_19
+  negated: false
+meta:
+  genres: ["Biography", "Adventure"]
+  id: movie80
+  player_role: T. E. Lawrence
+  title: "Lawrence of Arabia"
+synopsis: The film is presented in two parts, separated by an intermission. In 1935,
+  T. E. Lawrence is killed in a motorcycle accident. At his memorial service at St
+  Paul's Cathedral, reporters try to gain insights into this remarkable, enigmatic
+  man from those who knew him, with little success. During the First World War, Lawrence
+  is a misfit British Army lieutenant stationed in Cairo, notable for his insolence
+  and knowledge of the Bedouin. Over the objections of General Murray, he is sent
+  by Mr. Dryden of the Arab Bureau to assess the prospects of Prince Faisal in his
+  revolt against the Turks. On the journey, his Bedouin guide is killed by Sherif
+  Ali for drinking from a well without permission. Lawrence later meets Colonel Brighton,
+  who orders him to keep quiet, make his assessment of Faisal's camp, and leave. Lawrence
+  promptly ignores Brighton's commands when he meets Faisal. His knowledge and outspokenness
+  pique the Prince's interest. Brighton advises Faisal to retreat after a major defeat,
+  but Lawrence proposes a daring surprise attack on Aqaba which, if successful, would
+  provide a port from which the British could offload much-needed supplies. While
+  strongly fortified against a naval assault, the town is lightly defended on the
+  landward side. He convinces Faisal to provide fifty men, led by a sceptical Sherif
+  Ali. Two teenage orphans, Daud and Farraj, attach themselves to Lawrence as his
+  servants. They cross the Nefud Desert, considered impassable even by the Bedouins,
+  travelling day and night on the last stage to reach water. Gasim succumbs to fatigue
+  and falls off his camel unnoticed during the night. The rest make it to an oasis,
+  but Lawrence turns back for the lost man, risking his own life and winning over
+  Sherif Ali after saving Gasim. Lawrence persuades Auda abu Tayi, the leader of the
+  powerful local Howeitat tribe, to turn against the Turks. Lawrence's plan is almost
+  derailed when one of Ali's men kills one of Auda's because of a blood feud. Since
+  Howeitat retaliation would shatter the fragile alliance, Lawrence declares that
+  he will execute the murderer himself. Stunned to discover that the culprit is Gasim,
+  he shoots him anyway. The next morning, the intact alliance overruns the Turkish
+  garrison. Lawrence heads to Cairo to inform Dryden and the new commander, General
+  Allenby, of his victory. During the crossing of the Sinai Desert, Daud dies when
+  he stumbles into quicksand. Lawrence is promoted to major and given arms and money
+  to support the Arabs. He is deeply disturbed, confessing that he enjoyed executing
+  Gasim, but Allenby brushes aside his qualms. He asks Allenby whether there is any
+  basis for the Arabs' suspicions that the British have designs on Arabia. Pressed,
+  the general states they have no such designs. Lawrence launches a guerrilla war,
+  blowing up trains and harassing the Turks at every turn. American war correspondent
+  Jackson Bentley publicizes his exploits, making him world famous. On one raid, Farraj
+  is badly injured. Unwilling to leave him to be tortured, Lawrence is forced to shoot
+  him before fleeing. When Lawrence scouts the enemy-held city of Daraa with Ali,
+  he is taken, along with several Arab residents, to the Turkish Bey. Lawrence is
+  stripped, ogled and prodded. For striking out at the Bey, he is severely flogged,
+  then thrown out into the street. Lawrence is so traumatized by the experience that
+  he abandons all of his exploits, going from having proclaimed himself a god, to
+  insisting he is merely a man. He attempts to return to the British forces and swear
+  off the desert, but he never fits in there. In Jerusalem, Allenby urges him to support
+  his "big push" on Damascus, but Lawrence is a changed, tormented man, unwilling
+  to return. After Allenby insists that Lawrence has a destiny, he finally relents.
+  Lawrence naively believes that the warriors will come for him rather than for money.
+  He recruits an army, mainly killers, mercenaries, and cutthroats motivated by money,
+  rather than the Arab cause. They sight a column of retreating Turkish soldiers who
+  have just slaughtered the people of Tafas. One of Lawrence's men from the village
+  demands, "No prisoners!" When Lawrence hesitates, the man charges the Turks alone
+  and is killed. Lawrence takes up the dead man's cry, resulting in a massacre in
+  which Lawrence himself participates with relish. Afterward, he realizes the horrible
+  consequences of what he has done. His men then take Damascus ahead of Allenby's
+  forces. The Arabs set up a council to administer the city, but they are desert tribesmen,
+  ill-suited for such a task. The various tribes argue among themselves and in spite
+  of Lawrence's insistence, cannot unite against the English, who in the end take
+  the city back under their bureaucracy. Unable to maintain the utilities and bickering
+  constantly with each other, they soon abandon most of the city to the British. Promoted
+  to colonel and immediately ordered home, his usefulness at an end to both Faisal
+  and the British diplomats, a dejected Lawrence is driven away in a staff car.
+trajectory:
+- description: At St Paul's Cathedral in 1935, mourners gather for the memorial service
+    of T. E. Lawrence, a man remembered with reverence and mystery; reporters are
+    present trying to uncover insights about his life from attendees.
+  id: s_0
+  key_delta: Player introduced posthumously; initial public perception of Lawrence
+    as enigmatic and remarkable is established.
+  trigger_event: The memorial service begins with speakers recalling Lawrence's life
+    and character.
+- description: During the First World War, Lieutenant T. E. Lawrence is stationed
+    in Cairo, recognized as a misfit British Army officer with notable knowledge of
+    Bedouin culture but marked by insolence.
+  id: s_1
+  key_delta: Lawrence is dispatched on a special mission, shifting focus from observation
+    to active involvement in the Arab revolt.
+  trigger_event: Mr. Dryden of the Arab Bureau orders Lawrence to assess Prince Faisal's
+    revolt against the Turks.
+- description: Lawrence begins his journey towards Prince Faisal's camp accompanied
+    by a Bedouin guide and Sherif Ali, moving through hostile desert terrain where
+    local customs are strictly enforced.
+  id: s_2
+  key_delta: Player witnesses strict tribal law enforcement and the tensions within
+    desert survival dynamics.
+  trigger_event: Sherif Ali kills the Bedouin guide for drinking from a well without
+    permission.
+- description: At Prince Faisal's camp, the atmosphere is tense; General Brighton
+    orders Lawrence to remain silent, assess, and leave, suggesting distrust or caution
+    from British command.
+  id: s_3
+  key_delta: Lawrence's military superiors impose restraint, attempting to limit his
+    influence on the Arab revolt.
+  trigger_event: Lawrence arrives at Faisal's camp and meets Faisal and General Brighton.
+- description: Lawrence challenges British orders by engaging Faisal personally; his
+    knowledge and boldness capture Faisal's interest, indicating a shift in alliance
+    dynamics.
+  id: s_4
+  key_delta: Lawrence establishes a personal rapport with Faisal and gains influence
+    within Arab leadership.
+  trigger_event: Lawrence openly advises Faisal, ignoring Brighton's orders to stay
+    silent.
+- description: Following a major defeat and British advice to retreat, Faisal's camp
+    debates strategies under Lawrence's urging for a surprise land attack on Aqaba,
+    a vulnerable and strategically critical town.
+  id: s_5
+  key_delta: A new military plan is set in motion based on Lawrence's assessment and
+    encouragement.
+  trigger_event: Faisal listens to Lawrence's proposal for a daring assault on Aqaba.
+- description: Lawrence secures a small force of fifty men, led by Sherif Ali, to
+    cross the Nefud Desert towards Aqaba, accompanied by teenage orphans Daud and
+    Farraj as servants.
+  id: s_6
+  key_delta: The mission escalates into an expedition across a perilous desert, solidifying
+    Lawrence's leadership role.
+  trigger_event: Lawrence assembles and departs with the selected men on the desert
+    crossing.
+- description: During the desert crossing, one camel rider, Gasim, falls behind and
+    is lost; Lawrence risks his life returning to save him, earning Sherif Ali's respect.
+  id: s_7
+  key_delta: Trust and loyalty are cemented between Lawrence and Sherif Ali through
+    an act of self-sacrifice.
+  trigger_event: Lawrence turns back into the desert night to rescue Gasim.
+- description: Lawrence persuades Auda abu Tayi, the Howeitat tribe leader, to join
+    the alliance against the Turks, despite tensions related to a blood feud within
+    the allied forces.
+  id: s_8
+  key_delta: Lawrence asserts authority to maintain fragile tribal alliances by enforcing
+    tribal justice himself.
+  trigger_event: Lawrence confronts the murder of one of Auda's men by an ally and
+    executes Gasim to prevent alliance collapse.
+- description: The allied forces, united under Lawrence's leadership, successfully
+    capture the Turkish garrison at Aqaba, establishing a crucial foothold.
+  id: s_9
+  key_delta: The first major victory achieved by Lawrence’s coalition, shifting momentum
+    in the revolt.
+  trigger_event: Dawn battle results in the overrunning of the Turkish fortifications.
+- description: Back in Cairo, Lawrence reports victory and receives promotion to major,
+    plus arms and money to further support the Arab revolt; Allenby dismisses Lawrence's
+    moral concerns about his actions.
+  id: s_10
+  key_delta: Lawrence gains official British support and resources, accelerating his
+    operational capability despite personal misgivings.
+  trigger_event: Lawrence meets with Mr. Dryden and General Allenby to deliver news
+    of Aqaba's capture.
+- description: Lawrence initiates a guerrilla campaign against Turkish forces, including
+    sabotage actions such as train bombings; the press, represented by Jackson Bentley,
+    broadcasts his exploits worldwide.
+  id: s_11
+  key_delta: Lawrence's notoriety and influence increase internationally, fueling
+    his legend and the revolt’s visibility.
+  trigger_event: Lawrence launches coordinated guerrilla raids and receives media
+    coverage.
+- description: During a raid, Farraj is critically wounded; Lawrence, confronted by
+    the risk of torture to his companion, executes Farraj to spare him suffering and
+    escapes.
+  id: s_12
+  key_delta: Lawrence faces the harsh realities of war and makes a grave, irreversible
+    decision.
+  trigger_event: Farraj is injured and Lawrence shoots him before fleeing the scene.
+- description: Lawrence and Sherif Ali are captured in the Turkish-held city of Daraa;
+    Lawrence is publicly humiliated, flogged, and discarded into the street, a traumatic
+    physical and psychological ordeal.
+  id: s_13
+  key_delta: Lawrence endures severe abuse, undermining his invincibility and affecting
+    his future resolve.
+  trigger_event: Turkish authorities apprehend Lawrence and subject him to brutal
+    punishment.
+- description: After his release, Lawrence abandons his previous arrogance and rejection
+    of humanity, attempting to return to British military life but experiencing alienation
+    and discomfort.
+  id: s_14
+  key_delta: Lawrence’s identity crisis deepens; his role as desert warrior conflicts
+    with his roots.
+  trigger_event: Lawrence attempts reintegration with British forces but fails to
+    fit in.
+- description: In Jerusalem, General Allenby presses Lawrence to support a major military
+    offensive against Damascus; initially resistant, Lawrence ultimately agrees to
+    lead a renewed Arab force.
+  id: s_15
+  key_delta: Lawrence recommits to the Arab revolt under external pressure, setting
+    the stage for the final campaign.
+  trigger_event: Allenby urges Lawrence to participate in the 'big push' on Damascus,
+    insisting on his destiny.
+- description: Lawrence recruits an army composed largely of mercenaries motivated
+    by money rather than Arab nationalism; the force displays ruthless behavior in
+    pursuit of victory.
+  id: s_16
+  key_delta: Shift from idealistic insurgency to mercenary-style warfare, complicating
+    Lawrence's leadership and moral standing.
+  trigger_event: Lawrence assembles and leads the newly raised troops against retreating
+    Turkish forces.
+- description: During a skirmish near Tafas, Lawrence’s troops massacre retreating
+    Turkish soldiers and villagers, with Lawrence joining actively in the slaughter
+    before grasping the horror of their actions.
+  id: s_17
+  key_delta: Lawrence crosses a moral boundary, confronting the brutal consequences
+    of war and his own culpability.
+  trigger_event: One of Lawrence's men demands 'No prisoners!' leading to a bloody
+    massacre, which Lawrence escalates.
+- description: Lawrence’s forces capture Damascus ahead of General Allenby’s army;
+    local Arab tribes lack unity and effective governance, resulting in disorganization
+    and factional disputes.
+  id: s_18
+  key_delta: The political vacuum highlights the fragility and impracticality of the
+    Arab coalition without cohesive leadership.
+  trigger_event: The captured city of Damascus is administered by a council of competing
+    Arab tribal leaders.
+- description: Branded unsuitable for governance, the Arab forces retreat from key
+    city functions, allowing British bureaucratic reoccupation and nullifying Arab
+    independence efforts.
+  id: s_19
+  key_delta: The British reassert authority over Damascus, undermining the Arab Revolt’s
+    political goals.
+  trigger_event: Arab council abandons administrative responsibilities, enabling British
+    officials to resume control.
+- description: Lawrence, promoted to colonel, is abruptly recalled to Britain; his
+    usefulness to both Arab leadership and British diplomacy ended, he departs in
+    a state of dejection and isolation.
+  id: s_20
+  key_delta: End of Lawrence’s active role in the Arab Revolt; his idealism and contributions
+    rendered obsolete by political realities.
+  trigger_event: Lawrence is ordered to return to Britain immediately and is driven
+    away in a staff car.

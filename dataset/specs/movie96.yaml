@@ -1,0 +1,332 @@
+commitments:
+- description: The village remains vulnerable and under the threat of Calvera’s bandits
+    before any defensive actions begin (from s_0 to s_3).
+  id: c_0
+  satisfaction_condition: In all nodes from s_0 up to and including s_3, Calvera’s
+    bandits hold a credible threat over the village; no lasting defense or repulsion
+    has yet occurred.
+  type: invariant
+  violation_condition: The system acknowledges the village as secure or effectively
+    defended before s_4 or before gunmen begin training villagers in s_3.
+- description: Chris and the other gunmen must be recruited before any defense or
+    training of villagers begins.
+  id: c_1
+  satisfaction_condition: Nodes s_1 and s_2, where Chris agrees to help and gunmen
+    are recruited, occur before s_3 where training commences.
+  type: ordering
+  violation_condition: Training or cooperative defense is acknowledged before the
+    recruitment of Chris and the other gunmen (before s_1 or s_2).
+- description: The villagers must successfully repel an initial bandit raid after
+    training begins, demonstrating the effectiveness of their defense.
+  id: c_2
+  satisfaction_condition: Node s_4 is reached where the village, aided by the gunmen,
+    repels Calvera’s bandits.
+  type: achievement
+  violation_condition: The village never effectively repels the bandits after training
+    begins or the first raid ends in failure.
+- description: Chico must infiltrate Calvera’s camp and learn the bandits’ desperation
+    and plan to raid again before the gunmen decide to take offensive action.
+  id: c_3
+  satisfaction_condition: In node s_5, Chico successfully gains intelligence on Calvera’s
+    intentions; this knowledge exists before s_7’s surprise attack.
+  type: invariant
+  violation_condition: The gunmen launch a surprise attack or plan offensive action
+    based on knowledge of Calvera’s plans before Chico’s infiltration and intelligence
+    gathering (before s_5).
+- description: The gunmen’s decision to defend or abandon the village after gaining
+    intelligence must come before the offensive surprise raid on Calvera’s camp.
+  id: c_4
+  satisfaction_condition: Node s_6, where the gunmen debate and decide on their course,
+    precedes s_7, the surprise raid.
+  type: ordering
+  violation_condition: The system allows s_7 (raid) to occur before the gunmen’s informed
+    decision-making and debate in s_6.
+- description: Calvera’s bandit camp must be found abandoned at the time of the gunmen’s
+    surprise raid.
+  id: c_5
+  satisfaction_condition: At s_8, the gunmen discover the bandit camp empty.
+  type: invariant
+  violation_condition: The system recognizes the camp as occupied or defended during
+    the surprise raid in s_7 or s_8.
+- description: After the failed surprise raid, the village falls under Calvera’s control,
+    and the gunmen are expelled before any further attempts to free the village.
+  id: c_6
+  satisfaction_condition: In s_8 and s_9, the village is occupied by bandits, and
+    the gunmen are driven out.
+  type: invariant
+  violation_condition: The gunmen retain control or freedom of action inside the village
+    after the failed raid or before the second assault attempts.
+- description: The gunmen must collectively resolve to retake the village, except
+    for Harry who leaves alone prior to the final battle.
+  id: c_7
+  satisfaction_condition: In s_9, most gunmen agree to return and free the village;
+    Harry departs alone.
+  type: achievement
+  violation_condition: The group splits differently, or there is no clear decision
+    to retake the village; Harry’s departure as a lone dissenter does not occur before
+    final battle.
+- description: The final gunfight in the village must follow the gunmen’s regrouping
+    and decision to retake the village.
+  id: c_8
+  satisfaction_condition: s_10 occurs after s_9, as the direct consequence of the
+    gunmen’s decision.
+  type: ordering
+  violation_condition: The battle (s_10) initiates before or without the prior regrouping
+    and vow to fight from s_9.
+- description: Key defenders must die during the final battle in the correct sequence,
+    preserving their narrative roles and sacrifices.
+  id: c_9
+  satisfaction_condition: During s_11, Bernardo, Britt, Lee, and Harry die in battle
+    as specified; deaths do not occur before the battle starts at s_10 or outside
+    that context.
+  type: invariant
+  violation_condition: Any key defender dies before the battle begins or outside the
+    battle flow, or their deaths happen out of sequence violating their narrative
+    role.
+- description: Chris must kill Calvera to end the bandit threat conclusively before
+    the story ends.
+  id: c_10
+  satisfaction_condition: Node s_12, where Chris shoots and kills Calvera, is achieved.
+  type: achievement
+  violation_condition: The story concludes without Chris killing Calvera or the bandit
+    threat remaining active.
+- description: After the final battle, Chico must commit to staying with the village
+    while Chris and Vin leave, preserving the thematic closure.
+  id: c_11
+  satisfaction_condition: At s_13, Chico announces his decision to stay; Chris and
+    Vin depart.
+  type: invariant
+  violation_condition: Chico leaves or the gunmen remain engaged indefinitely, disrupting
+    the story’s resolution and thematic intent.
+- description: The narrative fatalism that only the villagers truly ‘win’ must be
+    preserved at the story’s conclusion.
+  id: c_12
+  satisfaction_condition: In s_13, the village elder’s statement and Chris’s fatalistic
+    remark about only the farmers winning remain intact.
+  type: invariant
+  violation_condition: The narrative ends with a triumphant, unambiguous victory for
+    the gunmen or erases the villagers’ ultimate survival as key thematic closure.
+initial_facts:
+- content: The village is located in Mexico and currently has scarce food and supplies.
+  id: f_0
+  negated: false
+- content: Calvera and his bandits have recently raided the village and have just
+    ridden away, threatening to return for more food and loot.
+  id: f_1
+  negated: false
+- content: The village remains vulnerable and under the credible threat of Calvera's
+    bandits.
+  id: f_2
+  negated: false
+- content: No lasting defense or repulsion of Calvera's bandits has yet occurred in
+    the village.
+  id: f_3
+  negated: false
+- content: Chico is a young, inexperienced man and a resident of the village.
+  id: f_4
+  negated: false
+- content: The players in the village, including Chico, are aware of the imminent
+    and credible threat imposed by Calvera's bandits.
+  id: f_5
+  negated: false
+- content: Chico does not yet know about Calvera's bandits' desperation or specific
+    plans to raid again.
+  id: f_6
+  negated: false
+- content: Chico has not yet infiltrated Calvera’s bandit camp or gathered intelligence
+    from it.
+  id: f_7
+  negated: false
+- content: Chris, the gunslinger, has not yet been met or recruited by the village
+    leaders.
+  id: f_8
+  negated: false
+- content: The village has not yet started training or defense preparations with any
+    gunmen.
+  id: f_9
+  negated: false
+- content: No defensive cooperation or successful repulsion of bandits by the villagers
+    and gunmen has occurred.
+  id: f_10
+  negated: false
+- content: The village leaders, including Chico, have not yet traveled to the American
+    border town to seek aid.
+  id: f_11
+  negated: false
+- content: Chico and the other villagers do not yet know the identities or existence
+    of the other gunmen who will later be recruited.
+  id: f_12
+  negated: false
+- content: The village is in a state of anxiety and tension due to the constant threat
+    of bandit raids.
+  id: f_13
+  negated: false
+meta:
+  genres: ["Western", "Action"]
+  id: movie96
+  player_role: Chico
+  title: "The Magnificent Seven"
+synopsis: A Mexican village is periodically raided for food and supplies by bandits
+  led by Calvera. As he and his men rode away from their latest visit, Calvera had
+  promised to return for more booty and loot the village again. Taking what meager
+  goods they have, the village leaders ride to a town just inside the American border
+  hoping to barter for weapons to defend themselves. While there, they encounter veteran
+  gunslinger, Chris; after listening to their tale, Chris suggests that the village
+  hire more gunfighters as they would be cheaper than guns and ammunition. The village
+  men relentlessly try to convince Chris to be their gunman; while at first he agrees
+  just to help them find men, eventually he decides to help them out in person as
+  well as finding six other men to join them, despite the poor pay offered. The other
+  men include hotheaded, inexperienced Chico; Chris's friend Harry Luck who believes
+  Chris is seeking treasure; the drifter Vin, who has gone broke after a round of
+  gambling; Bernardo O'Reilly, a gunfighter of Irish-Mexican heritage; cowpuncher
+  Britt; and an on-the-run gunman Lee, who is in the midst of a crisis of confidence.
+  The group recognizes they will be outnumbered, but hope that when Calvera realizes
+  that the village has brought them aboard, he will move on to a different village.
+  Arriving at the village, the seven begin to train the villagers how to defend themselves.
+  They all find themselves bonding with the villagers, sharing the meal the women
+  of the village have made them when they discover that the villagers have little
+  food themselves. Chico is fascinated by Petra, one of the village's young women,
+  while Bernardo begins to bond with three of the village's little boys. Lee, meanwhile,
+  struggles with nightmares and fears the loss of his skills. Calvera and his bandits
+  soon arrive, sustain heavy losses, and are run out of town by the gunmen and the
+  villagers working in concert. Chico, who is Mexican, follows Calvera back to his
+  camp, pretending to be one of the gang of bandits. There he learns that Calvera
+  plans to return and raid the village because he is desperate for the food in order
+  to feed his men. Chico reports this back to Chris and the rest of the men. Though
+  a part of the group believes they should leave, Chris insists that they stay and
+  they ride out to make a surprise raid on Calvera's camp. However, they find the
+  camp empty and, on returning to the village, they find that the fearful villagers
+  allowed Calvera to take control. Calvera spares the gunmen's lives, believing they
+  have learned the lesson that the simple farmers are not worth fighting for. Calvera
+  also fears reprisals from the U.S. Army. The seven are curtly escorted out of the
+  village. The group debates their next move and all but Harry agree to return and
+  free the village from Calvera. Harry believes the effort will lead to their deaths
+  and rides off alone. A gunfight breaks out, and the villagers, recognizing the courage
+  of the gunmen, soon join in in the fight. Bernardo is killed protecting the children
+  he had befriended, and both Britt and Lee die after killing a considerable number
+  of bandits. Harry, who had a change of heart, arrives in time to protect Chris but
+  is fatally shot. Soon, the bandits are routed, and Chris shoots Calvera. Calvera,
+  in his dying breath, asks why men like Chris came back to protect such a small village.
+  The three remaining gunmen help to bury their own and the villagers' dead. Chico
+  announces he will be staying with Petra, while Chris and Vin begin to ride out.
+  The village elder bids them farewell and comments that it is only the villagers
+  who have really won——"You're like the wind, blowing over the land and... passing
+  on;... ¡Vaya con Dios!" However, as they leave and pass the graves of their fallen
+  comrades, Chris fatalistically observes, "The Old Man was right. Only the farmers
+  won. We lost. We always lose."
+trajectory:
+- description: In a small Mexican village with scarce food and supplies, the villagers
+    live under the constant threat of raids by Calvera and his bandits. The atmosphere
+    is tense and desperate as the villagers prepare for the likely return of the bandits.
+    Chico, a young, inexperienced man of the village, is among the residents watching
+    the horizon anxiously.
+  id: s_0
+  key_delta: The village is established as vulnerable; the immediate threat of Calvera's
+    return is clear and recognized by the villagers.
+  trigger_event: Calvera and his bandits ride away from their latest raid, threatening
+    to return again for more food and loot.
+- description: The village leaders, including Chico, have brought their meager goods
+    and traveled to a town just inside the American border. The environment is foreign
+    and tense as they seek weapons or means to defend their village.
+  id: s_1
+  key_delta: Introduction of Chris as a potential defender; the possibility of hiring
+    gunmen arises as a new hope for defense.
+  trigger_event: Village leaders meet Chris, a veteran gunslinger, and recount the
+    story of the raids.
+- description: Chico watches along with the village men as Chris initially agrees
+    to help find other gunfighters and later decides to join the defense himself.
+    The group gathers in the border town, with the atmosphere charged with cautious
+    optimism despite poor pay and risks.
+  id: s_2
+  key_delta: Formation of the gunfighter group; expansion of defensive forces with
+    a diverse set of personalities and skills.
+  trigger_event: 'Chris recruits six other gunmen: Chico, Harry Luck, Vin, Bernardo
+    O’Reilly, Britt, and Lee join the group.'
+- description: The seven gunmen return to the village, arriving at a place still under
+    threat but now with hope. The villagers and the gunmen begin preparations, training
+    each other on defense. The atmosphere is one of tentative alliance and effort
+    to organize.
+  id: s_3
+  key_delta: Village defense capability begins to improve; social bonds form between
+    gunmen and villagers, creating a unified front.
+  trigger_event: The gunmen start training the villagers in defense tactics, sharing
+    meals and bonding with the locals, including Chico’s growing interest in Petra.
+- description: Calvera and his bandits launch another raid on the village, expecting
+    easy plunder but meet strong resistance. Chico is present in the village, experiencing
+    the shock of battle and seeing the bandits suffer heavy losses.
+  id: s_4
+  key_delta: The villagers successfully repel the bandits for the first time, boosting
+    morale and demonstrating effectiveness of their defense.
+  trigger_event: The bandits arrive and fight ensues, being repelled by combined villagers
+    and gunmen defense.
+- description: Under cover of darkness in the bandit camp, Chico, disguised as a bandit,
+    observes and overhears Calvera’s plan to raid the village again because his men
+    need food desperately. Tension is high as Chico risks exposure.
+  id: s_5
+  key_delta: Critical intelligence about Calvera’s motivations and plans is gained
+    by Chico; the gravity of the ongoing threat is fully revealed.
+  trigger_event: Chico infiltrates the bandits’ camp pretending to be one of them
+    and learns about Calvera’s desperation.
+- description: Back at the village, Chico reports Calvera’s plan to Chris and the
+    other gunmen. The group debates whether to stay or leave, amidst an atmosphere
+    of uncertainty and fear.
+  id: s_6
+  key_delta: The gunmen are faced with the decision to either abandon or defend the
+    village again; the story shifts toward a decisive plan of action.
+  trigger_event: Chico returns to the village and informs the group of the impending
+    return of Calvera's raid.
+- description: The group sets out to surprise raid Calvera’s camp, hoping to end the
+    threat. The environment is tense and anticipatory as they approach the enemy position.
+  id: s_7
+  key_delta: The gunmen commit their force to the empty camp, leaving the village
+    exposed long enough for Calvera to re-enter and seize it.
+  trigger_event: The gunmen launch their surprise attack on what they expect to be
+    Calvera’s camp.
+- description: The gunmen find Calvera's camp abandoned. Upon returning to the village,
+    they discover it has fallen under Calvera's control because fearful villagers
+    surrendered without a fight.
+  id: s_8
+  key_delta: The village falls without resistance; the gunmen are expelled by Calvera,
+    who believes the fight is unnecessary and dangerous due to external threats.
+  trigger_event: The gunmen return to the village to find it occupied and controlled
+    by Calvera and his bandits.
+- description: The gunmen debate their next move outside the village. Most decide
+    to return and attempt to free the village, while Harry departs alone, doubting
+    their chances of survival.
+  id: s_9
+  key_delta: The resolve to rescue the village solidifies in most gunmen; Harry’s
+    departure marks a split in the group’s unity.
+  trigger_event: The gunmen agree to mount a second effort to retake the village except
+    for Harry, who rides off alone.
+- description: A fierce gunfight erupts in the village as the gunmen fight Calvera’s
+    bandits. Villagers gradually join the battle, inspired by the courage of the defenders.
+    The atmosphere is chaotic, desperate, and heroic.
+  id: s_10
+  key_delta: The battle commences; heavy casualties begin among the defenders and
+    attackers alike.
+  trigger_event: Gunfight erupts between gunmen and bandits in the village, with villagers
+    joining the combat.
+- description: During the battle, Bernardo is killed protecting children, Britt and
+    Lee fall after slaying many bandits, and Harry returns to save Chris but is fatally
+    shot. The village is becoming a bloody battleground.
+  id: s_11
+  key_delta: Significant loss of key gunmen; the village defenders pay a heavy price
+    but continue fighting.
+  trigger_event: Defenders suffer critical losses as Bernardo, Britt, Lee, and Harry
+    die in the fight.
+- description: Calvera is shot and killed by Chris at the battle’s end, ending the
+    bandit threat. The three remaining gunmen and the villagers hold a somber burial
+    for the fallen amid grief and exhaustion.
+  id: s_12
+  key_delta: The bandit leader is eliminated; victory is achieved but at the cost
+    of many lives.
+  trigger_event: Chris shoots Calvera, ending the fight and threat from the bandits.
+- description: In the aftermath, Chico pledges to stay with the village and Petra,
+    while Chris and Vin prepare to leave, passing by the graves of their comrades.
+    The village elder comments that only the villagers have truly won, reflecting
+    a sober and fatalistic mood.
+  id: s_13
+  key_delta: Chico’s commitment to the village signals continuity; the gunmen’s departure
+    marks the end of their direct involvement, leaving villagers as ultimate survivors.
+  trigger_event: Chico announces his decision to remain with the village; Chris and
+    Vin ride away amidst final farewells.

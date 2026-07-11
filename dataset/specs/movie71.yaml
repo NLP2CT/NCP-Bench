@@ -1,0 +1,271 @@
+commitments:
+- description: Chigurh's escape and acquisition of means (captive bolt pistol, tracking
+    device) must precede his active pursuit of the satchel money.
+  id: c_0
+  satisfaction_condition: Node s_0 is achieved before any subsequent pursuit states
+    (s_1 and beyond) are acknowledged.
+  type: ordering
+  violation_condition: Player attempts to activate tracking or pursue the satchel
+    before Chigurh has escaped custody and acquired the tracking device.
+- description: Chigurh may not have knowledge or presence at the motel hiding the
+    satchel before reaching and inspecting it (s_2).
+  id: c_1
+  satisfaction_condition: Nodes s_0 and s_1 sequentially precede s_2; the system will
+    not acknowledge Chigurh discovering the vent without prior traversal of s_0 and
+    s_1.
+  type: ordering
+  violation_condition: Player attempts to search or interact with the motel satchel
+    location before successfully arriving and tracking it from s_0 through s_1.
+- description: While pursuing the satchel and thief between s_2 and s_7, Chigurh’s
+    possession of the receiver and its accuracy must remain intact.
+  id: c_2
+  satisfaction_condition: From s_2 through s_7, the receiver consistently provides
+    accurate location updates leading Chigurh toward the satchel and then Moss.
+  type: invariant
+  violation_condition: Player actions or logic that cause the receiver to malfunction
+    or provide false locations during pursuit phases s_2 to s_7.
+- description: Chigurh must eliminate competing pursuers, specifically Carson Wells,
+    before contacting Moss with threats about his wife and the money.
+  id: c_3
+  satisfaction_condition: Node s_5 (Wells killed) occurs before node s_6 (phone conversation
+    with Moss).
+  type: ordering
+  violation_condition: Player attempts to make moral ultimatum contact with Moss (s_6)
+    before removing Wells as a rival pursuer (s_5).
+- description: Moss’s defiance in refusing to give up the money and keeping Carla
+    Jean protected is maintained from s_6 through s_7.
+  id: c_4
+  satisfaction_condition: Between nodes s_6 and s_7, Moss does not relinquish the
+    money or expose Carla Jean to immediate danger via cooperation.
+  type: invariant
+  violation_condition: Player alters Moss’s behavior to surrender money or compromise
+    Carla Jean’s safety before s_7 (Moss’s death) is reached.
+- description: Chigurh must confirm Moss’s death via inspection of the motel scene
+    before proceeding with the Carla Jean confrontation.
+  id: c_5
+  satisfaction_condition: Node s_7 (inspection of blown lock and empty vent) is completed
+    before node s_8 (confrontation with Carla Jean) is allowed.
+  type: achievement
+  violation_condition: Player attempts to confront Carla Jean (s_8) or make moral
+    decisions regarding her fate prior to verifying Moss’s death at s_7.
+- description: During confrontation with Carla Jean (s_8), Chigurh follows through
+    on the threat tied to his pledge to Moss; Carla Jean’s refusal to call the coin
+    does not spare her.
+  id: c_6
+  satisfaction_condition: At s_8, Carla Jean refuses to call the coin toss and Chigurh
+    still carries out the implied killing before leaving the house alone.
+  type: invariant
+  violation_condition: Player causes Carla Jean to survive the confrontation because
+    she refuses the coin toss, contradicting Chigurh’s threat and the film’s implied
+    outcome.
+- description: Chigurh’s car accident and subsequent injury (s_9) must occur after
+    the confrontation with Carla Jean and before narrative pause (s_10).
+  id: c_7
+  satisfaction_condition: Nodes s_8 precede s_9, and s_9 precedes s_10 in that strict
+    order.
+  type: ordering
+  violation_condition: Player actions cause Chigurh to incur physical injury or narrative
+    pause before confronting Carla Jean or before confirming Moss’s death.
+- description: Chigurh’s pursuit and capture of sole control over the money’s trail
+    is confirmed only upon Moss’s death and the removal of rival pursuers.
+  id: c_8
+  satisfaction_condition: After s_7 (Moss’s death) and s_5 (Wells’s death), Chigurh
+    holds undisputed control over the money’s trail indicated at s_8 and beyond.
+  type: achievement
+  violation_condition: Player enables active competition or rival pursuers to be alive
+    or controlling the trail after these milestones are reached.
+- description: Throughout the entire pursuit (s_0 through s_9), Chigurh’s fundamental
+    goal remains the recovery of the satchel money.
+  id: c_9
+  satisfaction_condition: From s_0 until s_9, every action or narrative state reflects
+    Chigurh’s active and focused pursuit of the money.
+  type: invariant
+  violation_condition: Player input or narrative events cause Chigurh to abandon,
+    neglect, or divert from the sustained goal of recovering the money before s_10.
+initial_facts:
+- content: Anton Chigurh has escaped custody by strangling a sheriff's deputy.
+  id: f_0
+  negated: false
+- content: Anton Chigurh is free and physically mobile in West Texas at t=0.
+  id: f_1
+  negated: false
+- content: Anton Chigurh possesses a captive bolt pistol.
+  id: f_2
+  negated: false
+- content: Anton Chigurh possesses a receiver device capable of tracking a satchel
+    with two million dollars.
+  id: f_3
+  negated: false
+- content: Anton Chigurh is carrying the tracking receiver and captive bolt pistol
+    but has not yet stolen a car.
+  id: f_4
+  negated: false
+- content: Anton Chigurh's current objective, known to him at t=0, is to recover the
+    satchel of two million dollars.
+  id: f_5
+  negated: false
+- content: Anton Chigurh does not yet have knowledge of or presence at any motel where
+    the satchel is hidden.
+  id: f_6
+  negated: false
+- content: Anton Chigurh’s receiver is functional and ready to track the satchel's
+    location.
+  id: f_7
+  negated: false
+- content: Anton Chigurh does not yet know the identity or location of any rival pursuers
+    such as Carson Wells.
+  id: f_8
+  negated: false
+- content: Anton Chigurh does not have knowledge of Moss’s or Carla Jean’s whereabouts.
+  id: f_9
+  negated: false
+- content: Anton Chigurh has not yet made any contact, threats, or moral ultimatums
+    to Moss or Carla Jean.
+  id: f_10
+  negated: false
+- content: Anton Chigurh has not killed any rival operative at t=0.
+  id: f_11
+  negated: false
+- content: Anton Chigurh has no physical injuries at t=0.
+  id: f_12
+  negated: false
+- content: The landscape at t=0 is desolate, wide open country in West Texas during
+    June 1980.
+  id: f_13
+  negated: false
+meta:
+  genres: ["Thriller", "Crime"]
+  id: movie71
+  player_role: Anton Chigurh
+  title: "No Country for Old Men"
+synopsis: West Texas in June 1980 is desolate, wide open country, and Ed Tom Bell
+  laments the increasing violence in a region where he, like his father and grandfather
+  before him, has risen to the office of sheriff. Llewelyn Moss, hunting pronghorn,
+  comes across the aftermath of a drug deal gone awry——several dead men and dogs,
+  a wounded Mexican begging for water, and two million dollars in a satchel that he
+  takes to his trailer home. Late that night, he returns with water for the dying
+  man, but is chased away by two men in a truck and loses his vehicle. When he gets
+  back home he grabs the cash, sends his wife Carla Jean to her mother's, and makes
+  his way to a motel in the next county where he hides the satchel in the air vent
+  of his room. Anton Chigurh is a hitman who has been hired to recover the money.
+  He has already strangled a sheriff's deputy to escape custody and stolen a car by
+  using a captive bolt pistol to kill the driver. Now he carries a receiver that traces
+  the money via a tracking device concealed inside the satchel. Bursting into Moss'
+  hideout at night, Chigurh surprises a group of Mexicans set to ambush Moss, and
+  murders them all. Moss, who has rented the connecting room on the other side, is
+  one step ahead. By the time Chigurh removes the vent cover with a dime, Moss is
+  already back on the road with the cash. In a border town hotel, Moss finally finds
+  the electronic bug, but not before Chigurh is upon him. A firefight between them
+  spills onto the streets, leaving both men wounded. Moss flees across the border,
+  collapsing from his injuries before he is taken to a Mexican hospital. There, Carson
+  Wells, another hired operative, offers protection in return for the money. After
+  Chigurh cleans and stitches his own wounds with stolen supplies, he gets the drop
+  on Wells back at his hotel and kills him just as Moss calls the room. Picking up
+  the call and casually raising his feet to avoid the spreading blood, Chigurh promises
+  Moss that Carla Jean will go untouched if he gives up the money. Moss remains defiant.
+  Moss arranges to rendezvous with his wife at a motel in El Paso to give her the
+  money and send her out of harm's way. She reluctantly accepts Bell's offer to save
+  her husband, but he arrives only in time to see a pickup carrying several men speeding
+  away from the motel and Moss lying dead in his room. That night, Bell returns to
+  the crime scene and finds the lock blown out in his suspect's familiar style. Chigurh
+  hides behind the door of a motel room, observing the shifting light through an empty
+  lock hole. His gun drawn, Bell enters Moss' room and notices that the vent cover
+  has been removed with a dime and the vent is empty. Bell visits his Uncle Ellis,
+  an ex-lawman. Bell plans to retire because he feels "overmatched," but Ellis points
+  out that the region has always been violent. For Ellis, thinking it is "all waiting
+  on you, that's vanity." Carla Jean returns from her mother's funeral to find Chigurh
+  waiting in the bedroom. When she tells him she does not have the money, he recalls
+  the pledge he made to her husband that could have spared her. The best he will offer
+  is a coin toss for her life, but she says that the choice is his. Chigurh leaves
+  the house alone and carefully checks the soles of his boots. As he drives away,
+  he is injured in a car accident and abandons the damaged vehicle. Now retired, Bell
+  shares two dreams with his wife, both involving his deceased father. In the first
+  dream he lost "some money" that his father had given him; in the second, he and
+  his father were riding horses through a snowy mountain pass. His father, who was
+  carrying fire in a horn, quietly passed by with his head down, "going on ahead,
+  and fixin' to make a fire" in the surrounding dark and cold. Bell knew that when
+  he got there his father would be waiting.
+trajectory:
+- description: Anton Chigurh has just escaped custody by strangling a sheriff's deputy.
+    He is free in West Texas, carrying a captive bolt pistol and in possession of
+    a receiver that tracks a satchel with two million dollars. The landscape is desolate
+    and quiet, with an undercurrent of violence rising.
+  id: s_0
+  key_delta: Chigurh transitions from captive to mobile fugitive, armed and equipped
+    with a tracking device aimed at recovering the satchel of money.
+  trigger_event: Chigurh steals a car by using the captive bolt pistol on the driver.
+- description: Chigurh is driving a stolen vehicle, actively tracking the location
+    of the satchel via the concealed receiver. His focus is on pursuing the money’s
+    trail through the region.
+  id: s_1
+  key_delta: Chigurh closes in on the satchel’s location, gaining proximity to the
+    target and preparing for confrontation.
+  trigger_event: The receiver signals activity nearby as Chigurh approaches a motel
+    where the satchel is hidden.
+- description: Chigurh arrives at the motel and removes the vent cover with a dime,
+    revealing the satchel is missing from the vent. He is aware that the money’s thief
+    is nearby, likely in the connecting room.
+  id: s_2
+  key_delta: Chigurh removes immediate threats and asserts control over the motel
+    environment, but discovers the satchel is no longer in place.
+  trigger_event: Chigurh surprises and kills a group of Mexicans lying in ambush at
+    the motel connected to the chosen room.
+- description: Chigurh inspects the connecting motel room but finds the satchel missing.
+    The pursuit is now directed at locating the thief who fled with the money.
+  id: s_3
+  key_delta: Chigurh confirms the stolen money is on the move, shifting pursuit to
+    an urban environment closer to the border.
+  trigger_event: Chigurh picks up the trail as the satchel’s location updates on his
+    receiver signal, leading him toward a border town hotel.
+- description: In the border town hotel, Chigurh encounters Llewelyn Moss and engages
+    in a firefight. Both sustain injuries but Moss escapes south across the border
+    into Mexico.
+  id: s_4
+  key_delta: Chigurh physically confronts the thief, but Moss temporarily evades capture,
+    escalating the manhunt and personal stakes.
+  trigger_event: Chigurh pursues Moss and confronts him directly in the hallway and
+    street outside the hotel.
+- description: Chigurh, recovering by cleaning and stitching his wounds with stolen
+    supplies, regains mobility and refocuses on finding Moss and the money in Mexico.
+  id: s_5
+  key_delta: Chigurh eliminates a rival operative and reasserts dominance over competing
+    pursuers of the money, maintaining sole control over the hunt.
+  trigger_event: Chigurh kills hired operative Carson Wells at Wells’ hotel just as
+    Moss calls the room.
+- description: Chigurh contacts Moss by phone after killing Wells, promises to spare
+    Carla Jean if Moss relinquishes the money. Moss remains defiant.
+  id: s_6
+  key_delta: Chigurh reveals terms to Moss, introducing a moral ultimatum tied to
+    the money and his wife, emphasizing his resolve.
+  trigger_event: Chigurh makes the direct call to Moss’s location and receives Moss’s
+    refusal.
+- description: Moss is killed in a motel room before he can hand Carla Jean the money.
+    Chigurh arrives at the motel after the attack and inspects the scene.
+  id: s_7
+  key_delta: Chigurh confirms the elimination of Moss, consolidating his position
+    as sole owner of the money’s trail.
+  trigger_event: Chigurh observes the blown lock and removed vent cover, evidencing
+    Moss’s style and confirming Moss’s death.
+- description: Chigurh tracks Carla Jean to her home and confronts her alone in the
+    bedroom with his gun drawn, offering her a coin toss to decide her fate.
+  id: s_8
+  key_delta: Carla Jean refuses Chigurh’s coin-toss ritual, but the confrontation
+    still ends with her implied death as Chigurh follows through on his threat to
+    Moss.
+  trigger_event: Carla Jean tells Chigurh she does not have the money and refuses
+    to leave the choice to chance, defying his offer.
+- description: Chigurh drives away from Carla Jean’s home but is injured in a car
+    accident, forcing him to abandon his vehicle and continue on foot or by other
+    means.
+  id: s_9
+  key_delta: Chigurh’s physical vulnerability increases, but his pursuit is not ended,
+    introducing risk to his goal.
+  trigger_event: Chigurh crashes his vehicle and exits it after assessing the damage.
+- description: Chigurh remains free but physically compromised. The violent cycle
+    that brought him to this point pauses as Ed Tom Bell retires, reflecting on the
+    nature of violence and fate.
+  id: s_10
+  key_delta: Chigurh’s narrative arc pauses, with his goals left in a fragile, unresolved
+    state due to injury and withdrawal.
+  trigger_event: Chigurh disappears from active pursuit after the accident, ending
+    the immediate chase from his perspective.

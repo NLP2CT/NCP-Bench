@@ -1,0 +1,459 @@
+commitments:
+- description: Achilles must be approached and persuaded by Odysseus before he considers
+    joining the war.
+  id: c_0
+  satisfaction_condition: Node s_0 is triggered before node s_2 occurs.
+  type: ordering
+  violation_condition: Achilles commits to war (s_2) without Odysseus' visit to Phtia
+    (s_0).
+- description: Achilles must receive prophecy from Thetis before deciding to join
+    the war.
+  id: c_1
+  satisfaction_condition: Node s_1 occurs prior to Achilles' commitment at s_2.
+  type: ordering
+  violation_condition: Achilles decides to go to Troy (s_2) without the visit to Thetis
+    (s_1).
+- description: Once Achilles decides to join the war, the Greek forces begin preparations
+    to sail to Troy and he leads the Myrmidons.
+  id: c_2
+  satisfaction_condition: From s_2 onward until s_3, it must be true that Achilles
+    and the Myrmidons are preparing to sail and act as vanguard.
+  type: invariant
+  violation_condition: Achilles commits to war (s_2) but the Greek forces do not organize
+    or sail to Troy immediately after.
+- description: Achilles' dispute with Agamemnon over Briseis causes Achilles to withdraw
+    from personal participation in battle during the Trojan campaign, until Patroclus
+    later enters combat wearing Achilles' armor.
+  id: c_3
+  satisfaction_condition: Between s_3 and s_9, Achilles himself remains withdrawn
+    from active battle operations; the apparent return at s_9 is actually Patroclus
+    leading the Myrmidons in Achilles' armor.
+  type: invariant
+  violation_condition: Achilles personally resumes open battle before Patroclus'
+    disguised intervention at s_9, or the story treats s_9 as Achilles truly returning
+    to combat.
+- description: The duel between Paris and Menelaus, and Menelaus' death by Hector,
+    must precede the major battle resumption and Greek retreat.
+  id: c_4
+  satisfaction_condition: Nodes s_4 and s_5 occur in order before s_6.
+  type: ordering
+  violation_condition: Greek retreat and casualty aftermath (s_6) are shown before
+    the duel and death of Menelaus (s_4, s_5).
+- description: Achilles protects and tends to Briseis personally during the Greek
+    army's low morale phase.
+  id: c_5
+  satisfaction_condition: Between s_6 and s_7, Achilles cares for Briseis and their
+    relationship deepens.
+  type: invariant
+  violation_condition: Briseis is unattended or harmed by Greeks while Achilles ignores
+    or avoids her during this period.
+- description: Achilles’ emotional state deteriorates after Patroclus’ death, triggering
+    rage and aggressive behavior.
+  id: c_6
+  satisfaction_condition: Between s_10 and s_12, Achilles exhibits grief and violent
+    outbursts including assaulting Eudorus and neglecting Briseis.
+  type: invariant
+  violation_condition: Achilles shows no significant change in behavior following
+    Patroclus’ death or before performing funeral rites.
+- description: Patroclus’ death must occur before Achilles’ personal revenge duel
+    with Hector.
+  id: c_7
+  satisfaction_condition: Node s_10 (Patroclus' death) must have occurred before s_14
+    (Achilles confronts Hector).
+  type: achievement
+  violation_condition: Achilles faces Hector in single combat (s_14) without Patroclus
+    having died previously (s_10).
+- description: Hector’s death and subsequent body retrieval by Priam must precede
+    the 12-day truce and funeral rites.
+  id: c_8
+  satisfaction_condition: Nodes s_16 and s_17 occur sequentially before s_18.
+  type: ordering
+  violation_condition: The funeral preparations or truce (s_18) occur before Hector’s
+    death and body retrieval (s_16, s_17).
+- description: During the 12-day truce, no attacks against Troy occur and both sides
+    respect the ceasefire.
+  id: c_9
+  satisfaction_condition: Between s_17 and s_19, the Greek army abstains from attacks;
+    the Trojans mourn.
+  type: invariant
+  violation_condition: Hostilities or offensives are initiated before the truce expires
+    (i.e., before s_19).
+- description: The wooden horse stratagem must be constructed and accepted into Troy
+    before the Greek army infiltrates the city for the sack.
+  id: c_10
+  satisfaction_condition: Nodes s_20 precedes s_21.
+  type: ordering
+  violation_condition: Greeks infiltrate Troy by surprise (s_21) without prior placement
+    and acceptance of the horse (s_20).
+- description: Briseis must kill Agamemnon during the sack to assert her agency and
+    survive.
+  id: c_11
+  satisfaction_condition: Node s_24 triggers with Agamemnon's death at Briseis' hand.
+  type: achievement
+  violation_condition: Agamemnon dies before or without Briseis killing him during
+    the sack.
+- description: Paris must shoot Achilles and Briseis must intervene before Achilles
+    dies from the fatal arrow wound.
+  id: c_12
+  satisfaction_condition: Node s_25 must occur before s_26.
+  type: ordering
+  violation_condition: Achilles dies (s_26) without the preceding shooting by Paris
+    and Briseis’ protection (s_25).
+- description: Funeral rites for Achilles and Odysseus’ final speech must occur to
+    close the story with proper legacy framing.
+  id: c_13
+  satisfaction_condition: Node s_27 must occur before narrative end.
+  type: achievement
+  violation_condition: The story ends without Achilles’ funeral and Odysseus’ concluding
+    remarks.
+initial_facts:
+- content: Achilles is in Phtia training with Patroclus, his cousin.
+  id: f_0
+  negated: false
+- content: The atmosphere in Phtia is calm but marked by the looming threat of war.
+  id: f_1
+  negated: false
+- content: The Greek leaders have started to organize an attack on Troy after Paris
+    abducted Helen.
+  id: f_2
+  negated: false
+- content: Troy and Sparta remain tense with unresolved conflict.
+  id: f_3
+  negated: false
+- content: Achilles is not yet visited by Odysseus to persuade him to join the war.
+  id: f_4
+  negated: false
+- content: Achilles has not yet received prophecy or counsel from his mother Thetis
+    about joining the war.
+  id: f_5
+  negated: false
+- content: Achilles has not yet made a decision to join the war or committed to Greek
+    preparations to sail to Troy.
+  id: f_6
+  negated: false
+- content: Achilles has not yet been approached or engaged in any conflict or dispute
+    with Agamemnon.
+  id: f_7
+  negated: false
+- content: Briseis has not yet been captured or involved in any events involving Achilles
+    or Agamemnon.
+  id: f_8
+  negated: false
+- content: Patroclus is alive and currently training with Achilles.
+  id: f_9
+  negated: false
+- content: Achilles is not yet aware of any deaths, battles, or personal losses in
+    the war.
+  id: f_10
+  negated: false
+- content: Achilles has not yet returned from battle or reentered any conflict.
+  id: f_11
+  negated: false
+- content: Hector, Paris, Andromache, Menelaus, Agamemnon, Odysseus, Priam, Briseis,
+    Eudorus, and other key characters exist but have not yet engaged in any conflict
+    directly involving Achilles.
+  id: f_12
+  negated: false
+- content: The Trojan War has not yet broken into active sieges, major battles, or
+    duels involving Achilles.
+  id: f_13
+  negated: false
+- content: The Sword of Troy is currently in the possession of the Trojans, held by
+    the royal family.
+  id: f_14
+  negated: false
+- content: Achilles is currently unaware of the prophecy about his fate and the choice
+    between glory and long life.
+  id: f_15
+  negated: false
+- content: The Greek forces have not yet assembled or set sail for Troy.
+  id: f_16
+  negated: false
+- content: Achilles' relationship with Briseis has not yet begun.
+  id: f_17
+  negated: false
+meta:
+  genres: ["Action", "Drama"]
+  id: movie58
+  player_role: Achilles
+  title: "Troy"
+synopsis: Prince Hector and his young brother Paris negotiate peace between Troy and
+  Sparta. Paris has fallen in love with Helen, the wife of king Menelaus, and smuggles
+  her back to Troy with him. Infuriated, Menelaus vows revenge. Menelaus approaches
+  his brother Agamemnon (Brian Cox), a king who has conquered every army of Greece,
+  and now commands them. Agamemnon, who has wanted to conquer Troy for years, uses
+  this as a justification to invade Troy. General Nestor asks him to take the legendary
+  warrior Achilles to rally the troops to the cause. Odysseus, a king of Mycenae commanded
+  by Agamemnon, visits Phtia to persuade Achilles to fight, and finds him training
+  with Patroclus, his cousin. Achilles, pondering his decision, visits his mother
+  Thetis for advice. She tells him that, before he was even born, she knew this day
+  would come. She also tells him that if he does not go to Troy, he will live a long,
+  happy life and have children, but after he dies, his name will be forgotten and
+  nobody will remember him. If he does go to Troy, he will find great glory in battle,
+  his name will be written into history forever, but he will die there. Achilles,
+  wanting his name to be remembered, chooses to go. The Greeks sail for Troy. Achilles
+  and the Myrmidons are the fastest rowers and land before anyone else. They kill
+  many Trojans and desecrate the temple of Apollo. Briseis, a member of the Trojan
+  royal family, is captured and taken as a prize to the Greeks, despite Achilles claiming
+  her as a war prize himself. Achilles and his Myrmidons do not fight the next day
+  because of Agamemnon's unfair claim to Briseis. With Greeks surrounding Troy, Paris
+  challenges Menelaus to a duel to settle things, using the Sword of Troy, his father
+  claiming that the city's people have a future so long as the sword is in the hands
+  of a Trojan. Menelaus agrees; however, Agamemnon plans on attacking the city regardless
+  of the outcome. Paris is easily defeated and wounded. Hector intervenes and kills
+  Menelaus. The Greeks charge the Trojan lines but are forced to fall back when they
+  are nearly wiped out by archers on Troy's walls. Ajax is slain in the battle at
+  the hands of Hector. Agamemnon gives Briseis to his men to amuse them after their
+  terrible loss, but Achilles rescues her after they try to rape her. He carries her
+  back to his tent and tends to her wounds. Briseis then tries to kill Achilles but
+  realizes that she has feelings for him and the two make love. The next day, Achilles
+  readies his men to leave, much to Patroclus' indignation. That night, the Trojans
+  launch a surprise offensive against the Greek encampment, aiming to destroy their
+  boats and prevent their escape. As the Greeks seem to be on the verge of defeat,
+  Achilles appears with the Myrmidons and joins the battle, eventually fighting against
+  Hector. The battle goes much better for the Greeks than before, but all are shocked
+  when Hector cuts Achilles' throat. Hector removes his foe's helmet, revealing the
+  face of Patroclus. After Hector finishes the mortally wounded youth mercifully,
+  both armies agree to end fighting for the day. Before he leaves, Odysseus informs
+  Hector it was his cousin whom he had killed. Achilles, who had slept through the
+  battle, is told by Eudorus of his cousin's death. The Greeks had also mistaken Patroclus
+  for Achilles, since he had put on Achilles' armour and moved like Achilles. Furious,
+  Achilles attacks Eudorus and when Briseis tries to stop him, he throws her to the
+  ground. Later that night, Achilles lights Patroclus' funeral pyre. Meanwhile, in
+  Troy, Hector realizes that Achilles will seek revenge for the death of his cousin,
+  and begins making preparations to save his loved ones. He leads Andromache to a
+  secret path out of the city, asking her to use it if the city falls. The next day
+  Achilles approaches the gates of Troy alone and shouts for Hector to come out and
+  face him. Hector knows he must face him alone, so he says his goodbyes to his family
+  and friends and then confronts Achilles. The two fight an evenly matched duel at
+  the start, but Hector begins to tire against the relentless assault of Achilles.
+  Eventually, Achilles slays Hector by stabbing him in the chest with Hector's broken
+  spear. He then ties Hector's body to the back of his chariot, dragging it to the
+  ships, leaving all the Trojans shocked. That night, King Priam visits the Greek
+  army's camp to convince Achilles to let him retrieve Hector's body. Moved by the
+  king's plea, Achilles acquiesces to his request and allows him to take his son to
+  be buried. Achilles breaks down and cries while preparing Hector's body for transport
+  back to Troy. He tells Priam that Hector was the best he had ever fought. He also
+  gives Priam his word that no Greek will attack Troy for 12 days. Achilles lets Priam
+  take Briseis back as well. He later apologises to Eudorus for harming him and gives
+  him one last order——to take the Myrmidons home. During the 12 day-truce, Troy mourns
+  Hector's death while Agamemnon fumes at the loss of an opportunity to end the war
+  once and for all and the Trojans are in disarray at the loss of their top general
+  even though his generals, including Odysseus, inform him that the death of Hector
+  makes no difference as the Greeks still can't breach the walls of Troy. Seeing that
+  the mad king will sooner see every one of his own men slaughtered before he gives
+  up his ambition, Odysseus plans to infiltrate the city by building a hollowed-out
+  wooden horse. The Greeks leave the horse at their camp and then depart, hiding their
+  ships in a nearby cove. Priam trusts his priests that the horse is an offering to
+  Poseidon and a gift, despite the misgivings of Paris. Assuming victory, the Trojans
+  take the horse into the city and celebrate. A Trojan scout finds the Greek ships
+  hiding in the cove, but is killed by their archers before he can spread the news.
+  A band of Greeks led by Achilles and Odysseus come out of the horse at night, opening
+  the gates to the city allowing the main army to enter. The Greeks commence the Sack
+  of Troy, massacring the inhabitants and looting buildings. The Trojan army attempts
+  to defend the royal palace but fails and the Greeks storm in. While Troy is burned,
+  Andromache helps Helen and many others escape from Troy through the secret passage
+  Hector showed her. Paris hands Aeneas the Sword of Troy by repeating his father's
+  words that the Trojans will have a future as long as the sword is in Trojan hands.
+  After helping the survivors off, he heads back into the city, bow and arrows at
+  the ready as he had been practicing archery to join the rest of the Trojan army,
+  but abandons them after hearing Briseis' voice calling him. Odysseus kills Glaucus
+  and Agamemnon kills Priam. Achilles searches for Briseis, who is being threatened
+  by Agamemnon. She kills Agamemnon with a concealed knife and is saved from his guards
+  by Achilles. While Achilles is helping Briseis to her feet, Paris, seeking revenge
+  for his brother's death, shoots Achilles several times before Briseis manages to
+  stay his hand. Achilles urges Briseis to join Paris and escape from the city and
+  then dies of the wound to the one spot on his body that was vulnerable, his heel.
+  The soldiers arrive to see the fallen Achilles with only the single arrow through
+  his heel, as he had removed all the others, in keeping with the myth that Achilles
+  was killed by a single arrow to the heel. Funeral rituals are performed for him
+  in the ruins of Troy the next day. The film ends with a speech from Odysseus, "If
+  they ever tell my story, let them say I walked with giants. Men rise and fall like
+  the winter wheat, but these names will never die. Let them say I lived in the time
+  of Hector, tamer of horses. Let them say, I lived, in the time of Achilles."
+trajectory:
+- description: Achilles is in Phtia training with Patroclus, his cousin. The atmosphere
+    is calm but marked by the looming threat of war. The Greek leaders have started
+    to organize an attack on Troy after Paris abducted Helen. Troy and Sparta remain
+    tense with unresolved conflict.
+  id: s_0
+  key_delta: The potential for Achilles to enter the war is introduced; the Greek
+    campaign against Troy is mobilizing.
+  trigger_event: Odysseus arrives in Phtia to persuade Achilles to join the Greek
+    army.
+- description: Achilles meets with Odysseus and discusses the war prospect. He is
+    undecided and visits his mother Thetis for counsel in a private setting.
+  id: s_1
+  key_delta: Achilles gains knowledge of the prophecy about his fate and the choice
+    between glory in Troy or a long peaceful life.
+  trigger_event: Achilles visits his mother Thetis to seek advice about joining the
+    war.
+- description: Achilles decides to join the Greek army after learning the inevitability
+    of his fate. The Greeks prepare to sail to Troy with Achilles and the Myrmidons
+    as vanguard.
+  id: s_2
+  key_delta: Achilles commits to the war effort, and the Greek forces begin sailing
+    toward Troy.
+  trigger_event: Achilles informs Odysseus and others of his decision to join the
+    war.
+- description: Greek forces arrive on the Trojan coast. Achilles and the Myrmidons
+    launch a fierce attack, killing many Trojans and capturing Briseis. A tense standoff
+    arises between Achilles and Agamemnon over the war prize Briseis.
+  id: s_3
+  key_delta: The conflict between Achilles and Agamemnon over Briseis leads to Achilles
+    withdrawing from battle.
+  trigger_event: Agamemnon claims Briseis as his prize, challenging Achilles' authority.
+- description: The Greek army is weakened without Achilles and the Myrmidons. Paris
+    challenges Menelaus to a duel outside Troy’s walls to settle the war, using the
+    Sword of Troy as symbol of Trojan hope.
+  id: s_4
+  key_delta: A temporary attempt is made to settle the conflict without full-scale
+    battle; focus shifts to individual combat.
+  trigger_event: Paris issues a duel challenge to Menelaus.
+- description: Paris is defeated in the duel and wounded. Hector kills Menelaus, triggering
+    resumed fighting between the Greeks and Trojans with high casualties on both sides.
+  id: s_5
+  key_delta: The fragile attempt at peace collapses; the war intensifies with Menelaus'
+    death.
+  trigger_event: Hector kills Menelaus during the aftermath of the duel.
+- description: The Greek army suffers heavy losses and is forced to retreat. Agamemnon
+    gives Briseis to his men as consolation, but Achilles rescues her and tends to
+    her wounds in his tent.
+  id: s_6
+  key_delta: Achilles personally cares for Briseis, deepening their connection and
+    solidifying their alliance.
+  trigger_event: Achilles intervenes to protect Briseis from Agamemnon’s men.
+- description: Briseis attempts to kill Achilles but fails and instead grows closer
+    to him. Achilles and Briseis consummate their relationship, further tying them
+    together.
+  id: s_7
+  key_delta: An emotional bond forms between Achilles and Briseis, affecting Achilles'
+    motivations.
+  trigger_event: Briseis attacks Achilles but ultimately surrenders to her feelings.
+- description: Achilles prepares to withdraw from battle, causing tension with Patroclus,
+    who urges him to stay and fight. Night falls with the Greek army on alert for
+    Trojan action.
+  id: s_8
+  key_delta: Achilles’ withdrawal creates a leadership vacuum and morale issues among
+    the Greeks.
+  trigger_event: Achilles orders his men to prepare to leave.
+- description: The Trojans launch a surprise night offensive aiming to destroy the
+    Greek ships. The Greek forces are close to defeat until Patroclus, wearing Achilles'
+    armor, leads the Myrmidons into battle and appears to turn the tide.
+  id: s_9
+  key_delta: Patroclus' disguise creates the illusion that Achilles has returned,
+    boosting Greek morale and drawing Hector into fatal combat with the wrong opponent.
+  trigger_event: Trojans attack the Greek camp during the night.
+- description: Hector faces Patroclus in battle, mistaking him for Achilles because
+    Patroclus is wearing Achilles' armor. During the fight, Hector kills Patroclus.
+  id: s_10
+  key_delta: Patroclus dies, mistaken by Trojans as Achilles, escalating the conflict
+    and affecting Achilles deeply.
+  trigger_event: Hector mortally wounds Patroclus in combat.
+- description: Achilles learns of Patroclus’ death and mistakes by the Greeks. Overcome
+    with rage, he assaults Eudorus and throws Briseis aside in anger.
+  id: s_11
+  key_delta: Achilles' rage manifests in violence and emotional outbursts, marking
+    a critical emotional turning point.
+  trigger_event: Eudorus informs Achilles of Patroclus’ death.
+- description: Achilles performs Patroclus’ funeral rites alone in his tent, surrounded
+    by a somber atmosphere within the Greek camp.
+  id: s_12
+  key_delta: Formal recognition of Patroclus’ death solidifies Achilles’ grief and
+    fuels his motivation for revenge.
+  trigger_event: Achilles lights Patroclus’ funeral pyre.
+- description: Hector prepares his family for possible defeat and arranges a secret
+    escape route for Andromache. He accepts the inevitability of a confrontation with
+    Achilles.
+  id: s_13
+  key_delta: Hector acknowledges the personal cost of the war and anticipates his
+    own death.
+  trigger_event: Hector leads Andromache to the hidden escape path and bids farewell.
+- description: Achilles approaches the gates of Troy alone, calling for Hector to
+    face him in single combat. The city and army prepare for the duel with tense anticipation.
+  id: s_14
+  key_delta: An imminent decisive duel is set, focusing the conflict on a personal
+    fight between Achilles and Hector.
+  trigger_event: Achilles challenges Hector at the city gates.
+- description: Achilles and Hector engage in a fierce, evenly matched duel which slowly
+    turns in Achilles’ favor due to his relentless assault.
+  id: s_15
+  key_delta: The battle between two champions culminates in a physical and symbolic
+    clash.
+  trigger_event: The duel between Achilles and Hector commences.
+- description: Achilles kills Hector by stabbing him with Hector’s broken spear, then
+    drags his body behind his chariot, shocking the Trojans.
+  id: s_16
+  key_delta: Hector is dead; Trojan morale is devastated by the dishonor to their
+    greatest warrior.
+  trigger_event: Achilles kills Hector and desecrates his body.
+- description: King Priam visits the Greek camp at night to plead for Hector’s body.
+    Achilles, moved by Priam’s appeal, agrees to return the body and allows a 12-day
+    truce.
+  id: s_17
+  key_delta: Temporary peace is established with the truce; Hector’s body will be
+    properly buried.
+  trigger_event: Priam requests Hector’s body from Achilles.
+- description: Achilles prepares Hector’s body for transport, showing rare vulnerability
+    and respect. He also returns Briseis to Priam and reconciles with Eudorus.
+  id: s_18
+  key_delta: Achilles undergoes emotional closure related to Hector’s death and his
+    personal conflicts.
+  trigger_event: Achilles performs funeral preparations and reconciliations.
+- description: During the 12-day truce, Troy mourns Hector. Agamemnon is frustrated
+    but the Greeks remain unable to breach the walls. Odysseus devises the wooden
+    horse stratagem.
+  id: s_19
+  key_delta: A new tactical approach to ending the war is initiated by the Greeks.
+  trigger_event: Odysseus proposes the wooden horse plan to infiltrate Troy.
+- description: Greeks construct and leave the wooden horse outside Troy, then conceal
+    their ships in a cove. The Trojans debate but decide to bring the horse inside
+    the city walls.
+  id: s_20
+  key_delta: The Greeks gain secret access to Troy via the horse, setting the stage
+    for invasion.
+  trigger_event: The Trojans accept the wooden horse into their city.
+- description: Greek soldiers, including Achilles and Odysseus, emerge from the horse
+    at night, open the city gates, and let the main army inside for the Sack of Troy.
+  id: s_21
+  key_delta: The Greek army infiltrates Troy, initiating a brutal assault on the city.
+  trigger_event: Greeks inside the horse reveal themselves and open the gates.
+- description: Trojans attempt to defend their palace but fail. The city is set ablaze.
+    Andromache helps Helen and others escape through Hector’s secret passage.
+  id: s_22
+  key_delta: Key Trojan survivors manage to escape; the city falls to the Greeks.
+  trigger_event: Andromache leads refugees out through the secret path as the city
+    burns.
+- description: Paris hands the Sword of Troy to Aeneas, reaffirming the hope of the
+    Trojan people. Paris prepares to fight but abandons it upon hearing Briseis’ voice.
+  id: s_23
+  key_delta: The symbol of Troy’s future is preserved, and Paris’ personal loyalties
+    are tested.
+  trigger_event: Paris transfers the sword and hesitates at Briseis’ call.
+- description: Odysseus kills Glaucus and Agamemnon kills Priam during the sack. Achilles
+    searches for Briseis who is threatened by Agamemnon, leading to her killing Agamemnon
+    with a knife.
+  id: s_24
+  key_delta: Agamemnon is dead; Briseis asserts agency and survives the peril.
+  trigger_event: Briseis kills Agamemnon to save herself from his guards.
+- description: Achilles helps Briseis to her feet. Paris, seeking revenge for Hector’s
+    death, shoots Achilles multiple times but Briseis restrains him.
+  id: s_25
+  key_delta: Achilles is mortally wounded; Briseis protects Achilles from fatal attacks
+    initially.
+  trigger_event: Paris shoots Achilles; Briseis intervenes to stop further harm.
+- description: Achilles dies from the fatal arrow to his heel. The Greek soldiers
+    discover him lifeless with a single arrow wound. The city lies in ruins under
+    Greek control.
+  id: s_26
+  key_delta: The legendary warrior Achilles is dead, marking a turning point in the
+    war’s legacy.
+  trigger_event: Achilles succumbs to his wound and dies on the battlefield.
+- description: Funeral rituals for Achilles are conducted in the ruins of Troy; the
+    mood is one of solemn respect. Odysseus delivers a closing speech honoring fallen
+    heroes and the immortal legacy of the age.
+  id: s_27
+  key_delta: The war ends with commemoration of heroes; the story’s legacy is framed
+    through Odysseus’ words.
+  trigger_event: The final funeral rites for Achilles are completed and Odysseus addresses
+    the survivors.

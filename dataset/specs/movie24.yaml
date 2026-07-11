@@ -1,0 +1,333 @@
+commitments:
+- description: Howard Beale must first be informed by Max Schumacher of his imminent
+    removal before publicly threatening suicide on air.
+  id: c_0
+  satisfaction_condition: Node s_0 occurs before s_1 is initiated; Howard has been
+    officially informed prior to the suicide announcement.
+  type: ordering
+  violation_condition: Player attempts to trigger the suicide announcement (s_1) before
+    the firing notification (s_0) has occurred.
+- description: Howard’s firing must happen in direct response to his suicide threat
+    on live television before he is granted a dignified farewell broadcast.
+  id: c_1
+  satisfaction_condition: Node s_2 occurs after s_1 and before s_3; firing is acknowledged
+    prior to controlled farewell.
+  type: ordering
+  violation_condition: Player tries to arrange forgiveness or farewell (s_2) before
+    firing (s_1) takes place.
+- description: During the farewell broadcast phase (s_3), Howard either apologizes
+    as promised or rants, causing ratings to spike, establishing network’s exploitation
+    strategy.
+  id: c_2
+  satisfaction_condition: Between s_3 and s_4, Howard’s on-air outburst occurs resulting
+    in a spike in ratings and network decision to exploit it.
+  type: invariant
+  violation_condition: Player alters farewell to omit the outburst or the ratings
+    spike, negating the network’s motivation to exploit Howard’s antics.
+- description: Howard’s iconic catchphrase and national galvanizing speech (s_4) must
+    occur prior to Diana Christensen making deals for provocative programming and
+    professional shifts in the network.
+  id: c_3
+  satisfaction_condition: s_4 precedes s_5 and s_6; Howard’s populist impact sets
+    the stage for Diana’s programming decisions.
+  type: ordering
+  violation_condition: Player attempts to progress Diana’s radical programming deal
+    or organizational restructuring (s_5, s_6) before the national rallying cry at
+    s_4.
+- description: Max and Diana’s personal relationship and professional conflicts unfold
+    in sequence, impacting control over Howard’s show and Max’s employment status.
+  id: c_4
+  satisfaction_condition: s_5 through s_9 occur in order, reflecting affairs, professional
+    refusals, firings, romantic progressions, and eventual disillusionment.
+  type: invariant
+  violation_condition: Player manages to execute personnel changes or relationship
+    outcomes out of order, such as firing Max before their affair begins, or closing
+    the romantic arc prematurely.
+- description: Howard’s public opposition to the CCA buyout (s_10) must happen before
+    his meeting with Arthur Jensen (s_11) to allow the philosophical conversion.
+  id: c_5
+  satisfaction_condition: s_10 is completed before s_11 initiates; Howard’s tirade
+    triggers the Jensen meeting.
+  type: ordering
+  violation_condition: Player attempts to trigger or conclude Jensen’s ideology exposition
+    (s_11) before Howard’s anti-merger broadcast (s_10).
+- description: After the Jensen meeting, Howard must adopt the corporate evangel (s_12)
+    leading to a measurable audience decline, marking a tonal and narrative shift.
+  id: c_6
+  satisfaction_condition: Between s_11 and s_13, Howard’s messaging changes and audience
+    ratings drop as a direct consequence.
+  type: invariant
+  violation_condition: Player prevents or reverses Howard’s adoption of Jensen’s message
+    or negates the ratings decline.
+- description: Despite falling ratings, Jensen forbids firing Howard (s_13) before
+    network conspirators hire the Ecumenical Liberation Army to assassinate him.
+  id: c_7
+  satisfaction_condition: s_13 occurs only after s_12 and before s_14; firing refusal
+    must precede assassination conspiracy.
+  type: ordering
+  violation_condition: Player attempts to fire Howard after Jensen’s veto without
+    the assassination plot or tries to assassinate Howard before Jensen’s involvement.
+- description: The narrative must culminate with Howard Beale’s live on-air assassination
+    and the immediate transition to Mao-Tse Tung Hour’s launch.
+  id: c_8
+  satisfaction_condition: s_14 finalizes the timeline, marking Howard’s death and
+    the new programming debut.
+  type: achievement
+  violation_condition: Player prevents assassination or skips the transition to Mao-Tse
+    Tung Hour, breaking the fundamental narrative resolution.
+initial_facts:
+- content: Howard Beale is the longtime anchor of the UBS Evening News at t=0.
+  id: f_0
+  negated: false
+- content: Howard Beale works in a newsroom environment where ratings are declining
+    at t=0.
+  id: f_1
+  negated: false
+- content: Tensions about the future of the news division at UBS are simmering at
+    t=0.
+  id: f_2
+  negated: false
+- content: Max Schumacher is the news division president at UBS at t=0.
+  id: f_3
+  negated: false
+- content: Howard Beale has not yet been informed by Max Schumacher about his imminent
+    removal from the anchor position at t=0.
+  id: f_4
+  negated: false
+- content: Howard Beale has not publicly threatened suicide on air at t=0.
+  id: f_5
+  negated: false
+- content: Howard Beale has not been fired by UBS at t=0.
+  id: f_6
+  negated: false
+- content: Howard Beale has not yet conducted a farewell broadcast at t=0.
+  id: f_7
+  negated: false
+- content: Howard Beale has not yet launched any on-air rant or caused a ratings spike
+    at t=0.
+  id: f_8
+  negated: false
+- content: Diana Christensen heads the network's programming department but has not
+    yet made deals with radical terrorists or begun any restructuring at t=0.
+  id: f_9
+  negated: false
+- content: Max Schumacher and Diana Christensen have not begun any personal or professional
+    relationship at t=0.
+  id: f_10
+  negated: false
+- content: Frank Hackett is a superior executive at UBS and has not yet made decisions
+    involving firing or division transfers at t=0.
+  id: f_11
+  negated: false
+- content: Howard Beale has not yet become host of The Howard Beale Show or reached
+    celebrity status at t=0.
+  id: f_12
+  negated: false
+- content: Max Schumacher is married and has not left his wife of over 25 years at
+    t=0.
+  id: f_13
+  negated: false
+- content: Howard Beale is not aware of the impending CCA buyout by the Saudi Arabian
+    conglomerate at t=0.
+  id: f_14
+  negated: false
+- content: Howard Beale has not publicly opposed any merger or launched any on-air
+    tirade against corporate decisions at t=0.
+  id: f_15
+  negated: false
+- content: Howard Beale has not met with Arthur Jensen or received any philosophical
+    messages about corporate cosmology at t=0.
+  id: f_16
+  negated: false
+- content: Howard Beale has not adopted any corporate evangel or changed his messaging
+    to a depressing tone at t=0.
+  id: f_17
+  negated: false
+- content: Howard Beale's later post-Jensen ratings decline has not yet begun at
+    t=0.
+  id: f_18
+  negated: false
+- content: Network executives have not yet conspired to assassinate Howard Beale at
+    t=0.
+  id: f_19
+  negated: false
+- content: Howard Beale is alive and hosting live broadcasts without threat at t=0.
+  id: f_20
+  negated: false
+meta:
+  genres: ["Drama", "Satire"]
+  id: movie24
+  player_role: Howard Beale
+  title: "Network"
+synopsis: Howard Beale, the longtime anchor of the UBS Evening News, learns from news
+  division president Max Schumacher that he has just two more weeks on the air because
+  of declining ratings. The two old friends get roaring drunk and lament the state
+  of their industry. The following night, Beale announces on live television that
+  he will commit suicide on next Tuesday's broadcast. UBS fires him after this incident,
+  but Schumacher intervenes so that Beale can have a dignified farewell. Beale promises
+  he will apologize for his outburst, but once on the air, he launches back into a
+  rant claiming that life is "bullshit". Beale's outburst causes the newscast's ratings
+  to spike, and much to Schumacher's dismay, the upper echelons of UBS decide to exploit
+  Beale's antics rather than pull him off the air. In one impassioned diatribe, Beale
+  galvanizes the nation, persuading his viewers to shout out of their windows "I'm
+  as mad as hell, and I'm not going to take this anymore!". Diana Christensen heads
+  the network's programming department; seeking just one hit show, she cuts a deal
+  with a band of radical terrorists for a new docudrama series called the Mao-Tse
+  Tung Hour for the upcoming fall season. When Beale's ratings seem to have topped
+  out, Christensen approaches Schumacher and offers to help him "develop" the news
+  show. He says no to the professional offer, but not to the personal one, and the
+  two begin an affair. When Schumacher decides to end the "Howard as Angry Man" format,
+  Christensen convinces her boss, Frank Hackett, to slot the evening news show under
+  the entertainment division so that she can develop it. Hackett agrees, bullies the
+  UBS executives to consent, and fires Schumacher at the same time. Soon after, Beale
+  is hosting a new program called The Howard Beale Show, top-billed as "the mad prophet
+  of the airwaves". Ultimately, the show becomes the most highly rated program on
+  television, and Beale finds new celebrity preaching his angry message in front of
+  a live studio audience that, on cue, chants Beale's signature catchphrase en masse——"We're
+  as mad as hell, and we're not going to take this anymore." At first, Max's and Diana's
+  romance withers as the show flourishes, but in the flush of high ratings, the two
+  ultimately find their ways back together, and Schumacher leaves his wife of over
+  25 years for Christensen. But Christensen's fanatical devotion to her job and emotional
+  emptiness ultimately drive Max back to his wife, and he warns his former lover that
+  she will self-destruct at the pace she is running with her career. "You are television
+  incarnate, Diana," he tells her, "indifferent to suffering, insensitive to joy.
+  All of life is reduced to the common rubble of banality." When Beale discovers that
+  CCA, the conglomerate that owns UBS, will be bought out by an even larger Saudi
+  Arabian conglomerate, he launches an on-screen tirade against the deal, encouraging
+  viewers to send telegrams to the White House telling them, "I want the CCA deal
+  stopped now!" This throws the top network brass into a state of panic because the
+  company's debt load has made merger essential for survival. Hackett takes Beale
+  to meet with CCA chairman Arthur Jensen, who explicates his own "corporate cosmology"
+  to the attentive Beale. Jensen delivers a tirade of his own in an "appropriate setting,"
+  the dramatically darkened CCA boardroom, that suggests to the docile Beale that
+  Jensen may himself be some higher power — describing the interrelatedness of the
+  participants in the international economy, and the illusory nature of nationality
+  distinctions. Jensen persuades Beale to abandon the populist messages and preach
+  his new "evangel". But television audiences find his new sermons on the dehumanization
+  of society to be depressing, and ratings begin to slide, yet Jensen will not allow
+  UBS executives to fire Beale. Seeing its two-for-the-price-of-one value — solving
+  the Beale problem plus sparking a boost in season-opener ratings — Christensen,
+  Hackett, and the other executives decide to hire the Ecumenical Liberation Army
+  to assassinate Beale on the air; the assassination succeeds, putting an end to The
+  Howard Beale Show and kicking off a second season of The Mao-Tse Tung Hour.
+trajectory:
+- description: Howard Beale is the longtime anchor of the UBS Evening News, working
+    in a newsroom environment where ratings are increasingly declining, and tensions
+    about the future of the news division are simmering. The atmosphere is one of
+    professional strain, with upcoming changes looming but not yet enacted.
+  id: s_0
+  key_delta: Howard Beale learns officially of his imminent removal from the anchor
+    position, establishing the central conflict of his threatened career end.
+  trigger_event: Max Schumacher, news division president, informs Howard Beale in
+    a private office that he has just two more weeks on the air due to declining ratings.
+- description: After being informed of his firing, Howard and Max Schumacher spend
+    an evening drinking heavily and expressing their frustrations about the state
+    of the news industry in a private setting.
+  id: s_1
+  key_delta: Howard's public threat to commit suicide on air shocks the network and
+    the audience, escalating the stakes surrounding his departure and forcing immediate
+    network reaction.
+  trigger_event: The following night's live broadcast where Howard Beale announces
+    his intention to commit suicide on the next Tuesday's broadcast.
+- description: Howard Beale is fired by UBS in direct response to his suicide threat
+    on live television, creating a tense and uncertain environment for him and the
+    news division.
+  id: s_2
+  key_delta: Howard is granted a controlled opportunity to say goodbye on air, temporarily
+    preserving his public image and influence.
+  trigger_event: Max Schumacher intervenes, negotiating for Howard to have a dignified
+    farewell broadcast instead of an abrupt removal.
+- description: During the farewell broadcast, Howard unexpectedly breaks his promise
+    to apologize and launches into a passionate rant labeling life as 'bullshit',
+    surprising the network team and viewers.
+  id: s_3
+  key_delta: Network executives recognize Howard's rebellious persona as a ratings
+    driver, shifting their strategy from sidelining him to exploiting his antics for
+    viewer engagement.
+  trigger_event: The ratings spike dramatically after Howard's on-air outburst during
+    the farewell broadcast.
+- description: Howard Beale delivers an emotionally charged speech on live television,
+    urging viewers to shout 'I'm as mad as hell, and I'm not going to take this anymore!'
+    from their windows, stirring national attention.
+  id: s_4
+  key_delta: The network expands its pursuit of sensational content by commissioning
+    a controversial program, marking a shift toward more provocative programming under
+    Diana's leadership.
+  trigger_event: Diana Christensen, head of programming, strikes a deal with radical
+    terrorists to develop a new docudrama called the Mao-Tse Tung Hour for the upcoming
+    season.
+- description: Howard's ratings plateau and Diana Christensen offers Max Schumacher
+    professional assistance to further develop the news show, while beginning a personal
+    relationship with him.
+  id: s_5
+  key_delta: A new interpersonal dynamic develops between Max and Diana, intersecting
+    with their professional lives and influencing future decisions at the network.
+  trigger_event: After Max declines the professional offer but accepts the personal
+    one, their affair begins.
+- description: Max Schumacher decides to move away from the 'Howard as Angry Man'
+    format, seeking to end Howard's sensationalized angry persona on the news broadcast.
+  id: s_6
+  key_delta: Organizational restructuring occurs with Max removed from his role, and
+    control over Howard's show shifting towards Diana's entertainment-driven vision.
+  trigger_event: Diana persuades Frank Hackett, her superior, to move the news show
+    under the entertainment division and to fire Max Schumacher.
+- description: Howard Beale becomes host of The Howard Beale Show, branded as 'the
+    mad prophet of the airwaves', with a live studio audience that echoes his catchphrase
+    enthusiastically.
+  id: s_7
+  key_delta: Howard transforms into a prominent celebrity figure, delivering his angry
+    message to a mass audience and becoming a central media personality.
+  trigger_event: The show's ratings soar, making it the highest-rated program on television
+    and cementing Howard's celebrity status.
+- description: Max and Diana's romantic relationship strains under the pressures of
+    the show's success and their clashing personal priorities.
+  id: s_8
+  key_delta: Max commits to Diana personally, reshaping his family and personal life
+    amidst the professional turmoil surrounding the show.
+  trigger_event: They reconcile and resume their affair, with Max eventually leaving
+    his wife of 25 years for Diana.
+- description: Despite the romantic reunion, Max grows disillusioned with Diana's
+    fanatical dedication to her career and emotional detachment.
+  id: s_9
+  key_delta: Tensions in their relationship deepen, with Max preparing to distance
+    himself from Diana emotionally, forecasting further personal and professional
+    conflicts.
+  trigger_event: Max warns Diana about the self-destructive trajectory of her career,
+    expressing his concerns about her indifference to human suffering and joy.
+- description: Howard discovers that CCA, the conglomerate owning UBS, is to be acquired
+    by a larger Saudi Arabian conglomerate, threatening the network's autonomy.
+  id: s_10
+  key_delta: Howard openly challenges corporate decisions affecting the network, raising
+    alarm among UBS executives and increasing corporate tensions.
+  trigger_event: Howard launches a public on-air tirade against the merger, urging
+    viewers to send telegrams to the White House demanding intervention.
+- description: In response to Howard's tirade, Hackett arranges a meeting between
+    Howard and CCA chairman Arthur Jensen in the corporate boardroom, shifting the
+    power dynamic.
+  id: s_11
+  key_delta: Howard's worldview is fundamentally challenged and reshaped by Jensen’s
+    'corporate cosmology', prompting a shift in Howard's public messaging.
+  trigger_event: Arthur Jensen delivers a persuasive and philosophical monologue to
+    Howard about the nature of the global economy and interdependence.
+- description: Howard adopts Jensen’s new message, preaching a corporate-centered
+    evangel that dehumanizes society and contradicts his earlier populist rhetoric.
+  id: s_12
+  key_delta: Howard’s transformation alienates the audience, resulting in a significant
+    and irreversible drop in show ratings.
+  trigger_event: Audience ratings begin to decline as the new sermons are received
+    as depressing and less engaging.
+- description: Despite falling ratings, Jensen refuses to allow UBS executives to
+    fire Howard, maintaining his controversial presence on air.
+  id: s_13
+  key_delta: A fatal conspiracy to eliminate Howard Beale is formed within the highest
+    levels of network management.
+  trigger_event: Network executives, including Diana and Hackett, conspire to hire
+    the Ecumenical Liberation Army to assassinate Howard on air.
+- description: Howard Beale is assassinated live on air, abruptly ending The Howard
+    Beale Show.
+  id: s_14
+  key_delta: Howard’s death terminates his media influence and marks a definitive
+    climax in the conflict between corporate control and populist media, allowing
+    the network to pivot fully to new programming.
+  trigger_event: The assassination coincides with the debut of the second season of
+    Diana’s Mao-Tse Tung Hour.

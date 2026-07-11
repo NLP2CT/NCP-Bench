@@ -1,0 +1,303 @@
+commitments:
+- description: The system must prevent acknowledgment that the One Ring's resurfacing
+    and possession by Bilbo is known before Gandalf becomes aware of it in the Shire
+    at s_0.
+  id: c_0
+  satisfaction_condition: Acknowledgment that the Ring is held by Bilbo occurs only
+    after completion of s_0.
+  type: ordering
+  violation_condition: Player obtains or acts upon knowledge that the Ring is in the
+    Shire or with Bilbo before s_0 is triggered.
+- description: The transition of the Ring from Bilbo to Frodo is only recognized after
+    Gandalf investigates in the Shire at s_1.
+  id: c_1
+  satisfaction_condition: System acknowledges Frodo as Ring-bearer and Bilbo's departure
+    only after s_1 occurs.
+  type: ordering
+  violation_condition: System or player prematurely treats Frodo as Ring-bearer before
+    Gandalf's investigation in the Shire at s_1.
+- description: From s_2 to s_3, Samwise Gamgee must be established as a trusted companion
+    of Frodo, included in the protective group.
+  id: c_2
+  satisfaction_condition: Sam's status as Frodo's companion and protector is recognized
+    from s_2 onward until s_3.
+  type: invariant
+  violation_condition: Player excludes Sam from Frodo's protective group or disregards
+    his role after s_2 and before s_3.
+- description: Gandalf's imprisonment by Saruman only occurs after Gandalf departs
+    the Shire and meets Saruman at Isengard at s_3.
+  id: c_3
+  satisfaction_condition: Gandalf's capture atop Orthanc is acknowledged only during
+    or after s_3.
+  type: ordering
+  violation_condition: Premature imprisonment of Gandalf before leaving the Shire
+    or meeting Saruman at Isengard.
+- description: Between s_3 and s_4, Gandalf remains physically confined and unable
+    to influence events until his rescue.
+  id: c_4
+  satisfaction_condition: Gandalf is marked imprisoned and inactive until s_4 triggers
+    his rescue.
+  type: invariant
+  violation_condition: Gandalf acts freely or influences other events while still
+    imprisoned (before s_4).
+- description: Gandalf’s escape from Orthanc precedes arrival at Rivendell and participation
+    in the Council of Elrond at s_5.
+  id: c_5
+  satisfaction_condition: Gandalf’s presence at Rivendell and council attendance is
+    only validated after s_4 release.
+  type: ordering
+  violation_condition: Gandalf attends the Council or arrives at Rivendell prior to
+    his escape from Orthanc.
+- description: From s_5 through s_6, the Council of Elrond’s decision to destroy the
+    Ring and formation of the Fellowship are established milestones; no progression
+    beyond can occur without these.
+  id: c_6
+  satisfaction_condition: The Council's conclusion and Fellowship creation are acknowledged
+    as completed before s_7.
+  type: invariant
+  violation_condition: Player or system progresses to Fellowship journey or beyond
+    without confirming the Council's decisions and Fellowship formation.
+- description: The journey into the Mines of Moria and encounter with Orcs precedes
+    the Balrog confrontation and Gandalf’s fall (s_7 before s_8).
+  id: c_7
+  satisfaction_condition: The Fellowship’s travel and discovery of hostile mines at
+    s_7 is established before Gandalf’s battle and fall at s_8.
+  type: ordering
+  violation_condition: Gandalf’s confrontation or disappearance occurs before the
+    Moria journey begins.
+- description: From Gandalf's fall at s_8 through the end of this story, Gandalf
+    remains presumed dead and absent as an active leader, and the Fellowship’s morale
+    reflects this loss.
+  id: c_8
+  satisfaction_condition: Gandalf remains absent and the Fellowship mourns his loss
+    from s_8 through the final split of the Fellowship.
+  type: invariant
+  violation_condition: Gandalf returns, provides leadership, or is treated as an
+    active participant again before the narrative concludes.
+- description: Galadriel’s revelation of Frodo’s destiny strictly happens during s_9
+    after Gandalf’s fall and before the Fellowship continues their journey at s_10.
+  id: c_9
+  satisfaction_condition: Frodo’s knowledge of his destiny is granted only within
+    s_9 timeframe.
+  type: ordering
+  violation_condition: Frodo learns about his destiny before Gandalf’s fall or after
+    s_10 begins.
+- description: From s_10 to s_11, the corrupting influence of the Ring on Boromir
+    becomes apparent leading to his attempt to seize the Ring; the Fellowship's internal
+    trust is compromised.
+  id: c_10
+  satisfaction_condition: Boromir’s betrayal and its impact on the Fellowship are
+    recognized throughout s_10.
+  type: invariant
+  violation_condition: Boromir’s betrayal or Ring influence occurs before s_10 or
+    is ignored by the system during s_10.
+- description: Boromir’s death and the capture of Merry and Pippin at s_11 occur only
+    after the Uruk-hai attack post-Frodo’s escape and Boromir’s betrayal at s_10.
+  id: c_11
+  satisfaction_condition: Sequence of Boromir’s betrayal, Frodo’s escape, Uruk-hai
+    attack, and Boromir’s death follows strictly s_10 then s_11.
+  type: ordering
+  violation_condition: Boromir’s death or capture of Hobbits occurs prior to Boromir’s
+    failed attempt or before Frodo’s escape.
+- description: The narrative must reach the state where Frodo and Sam set out towards
+    Mordor together while Aragorn, Legolas, and Gimli begin the rescue pursuit for
+    Merry and Pippin (endpoint s_12).
+  id: c_12
+  satisfaction_condition: The story achieves s_12 with Frodo and Sam committed to
+    Mordor and Aragorn, Legolas, and Gimli committed to rescuing Merry and Pippin.
+  type: achievement
+  violation_condition: The story ends or diverges before Frodo and Sam's departure
+    and the rescue mission led by Aragorn, Legolas, and Gimli is established.
+initial_facts:
+- content: Gandalf is physically present in Middle-earth during the late Third Age
+    as Sauron's threat rises again.
+  id: f_0
+  negated: false
+- content: The One Ring is lost and has not been rediscovered or reported to Gandalf
+    at this time.
+  id: f_1
+  negated: false
+- content: Gandalf is unaware of the location or possession of the One Ring.
+  id: f_2
+  negated: false
+- content: There is no active open conflict visible to Gandalf at this moment; the
+    environment is tense but peaceful.
+  id: f_3
+  negated: false
+- content: Sauron's life force remains bound to the One Ring, but this fact is not
+    yet confirmed or acted upon by Gandalf.
+  id: f_4
+  negated: false
+- content: Gandalf has no knowledge of Bilbo Baggins or Frodo Baggins's roles related
+    to the One Ring.
+  id: f_5
+  negated: false
+- content: Gandalf's status is free and unrestricted, with no imprisonment occurring
+    at this time.
+  id: f_6
+  negated: false
+- content: All characters involved, including Samwise Gamgee, Boromir, Aragorn, and
+    others, are in their initial status not influenced by the Ring or events triggered
+    later.
+  id: f_7
+  negated: false
+meta:
+  genres: ["Fantasy", "Adventure"]
+  id: movie50
+  player_role: Gandalf
+  title: "The Lord of the Rings——The Fellowship of the Ring"
+synopsis: In the Second Age, the Dark Lord Sauron attempts to conquer Middle-Earth
+  using his One Ring. In battle against the Elves and Men, Prince Isildur cuts the
+  Ring from Sauron's hand, destroying his physical form and vanquishing his army.
+  However, Sauron's "life force" is bound to the Ring, allowing him to survive while
+  the Ring remains. Isildur, corrupted by the Ring's power, refuses to destroy it.
+  When Isildur is killed by Orcs, the Ring is lost in a river for 2,500 years. The
+  Ring is found by Gollum, who possesses it for centuries until it is found by the
+  Hobbit Bilbo Baggins. Sixty years later, Bilbo leaves the Ring to his nephew, Frodo
+  Baggins. Upon learning that the Ring belonged to Sauron, the Wizard Gandalf the
+  Grey warns Frodo that Sauron's forces will come for him. Gandalf catches Frodo's
+  gardener Samwise Gamgee "eavesdropping" underneath a window and sends him with Frodo
+  to leave the Shire. Gandalf rides to Isengard to meet with the head of his order,
+  Saruman the White, who reveals that Sauron's servants, the Nazgûl, have been sent
+  to capture the Ring. Saruman reveals himself to be in service to Sauron, and imprisons
+  Gandalf atop his tower. Saruman commands Sauron's Orcs to construct weapons of war
+  and produce a new breed of Orc fighters——the Uruk-hai. While travelling to Bree,
+  Frodo and Sam are joined by Merry and Pippin, and are nearly captured by the Nazgûl.
+  At the Inn of the Prancing Pony, Frodo meets the mysterious ranger Aragorn, who
+  hides them from their pursuers and agrees to lead them to Rivendell. During the
+  journey they are attacked by the Nazgûl. Aragorn fights off the creatures, but Frodo
+  is wounded by their Morgul blade, which will turn him into a wraith. While chased
+  by the Nazgûl, Frodo is saved by the Elf Arwen who uses her magic to summon a surge
+  of water that sweeps away the pursuing Nazgûl. Arwen takes Frodo to Rivendell where
+  he is healed by her father, Elrond. Gandalf escapes Saruman's tower with the aid
+  of Gwaihir the eagle and travels to Rivendell. Elrond calls a council of the races
+  still loyal to Middle-earth to decide what should be done with the Ring. It is revealed
+  that the Ring can only be destroyed by throwing it into the fires of Mount Doom,
+  where it was forged. Frodo volunteers to take the Ring, accompanied by Sam, Merry,
+  Pippin, Gandalf, and Aragorn. They are joined by the Elf Legolas, the Dwarf Gimli,
+  and Boromir, man of Gondor, to form the Fellowship of the Ring. The Fellowship set
+  out but are hindered by Saruman's magic. They travel through the dwarf Mines of
+  Moria. Inside, they find that Orcs have overrun the mines and slain the Dwarves;
+  they also realise that Gollum is following them, determined to reclaim the Ring.
+  The Fellowship is attacked by Orcs and a Balrog, an ancient demon of fire and shadow.
+  Gandalf confronts the Balrog, allowing the others to escape, but both Gandalf and
+  the Balrog fall into an abyss. Mourning Gandalf's apparent death, the group flees
+  to Lothlórien, where they are sheltered by its rulers, the Elves Galadriel and Celeborn.
+  That night, Galadriel informs Frodo that it is his destiny to destroy the Ring.
+  The Fellowship continue their journey. Meanwhile, Saruman assembles a force of Uruk-hai
+  to hunt the Fellowship. After arriving at Parth Galen, Boromir gives in to the Ring's
+  corruption and tries to take it from Frodo, believing that it is the only way to
+  save his realm. Frodo manages to escape by wearing the Ring and becoming invisible.
+  Boromir realises what he has done, and attempts to find Frodo, who decides to continue
+  his journey alone, heeding Galadriel's warning that the Ring will eventually corrupt
+  the other members of the Fellowship. The Uruk-hai arrive and Aragorn, Legolas, and
+  Gimli attempt to hold them off while Frodo escapes. Merry and Pippin lead the Orcs
+  away from Frodo and are nearly killed. Boromir tries to save them, but in the process
+  is shot fatally by the Uruk-Hai leader, Lurtz. The Uruk-Hai capture Merry and Pippin.
+  Aragorn slays Lurtz and tends to a dying Boromir, and promises him that the world
+  of men will not fall. Boromir dies with Aragorn, Gimli and Legolas by his side.
+  Sam finds Frodo, who reluctantly lets Sam join him. Aragorn, Legolas and Gimli set
+  out to rescue Merry and Pippin. As Frodo and Sam gaze out at the land before them,
+  they grieve over the others. Frodo says that he is glad that Sam is with him and
+  the two Hobbits set off towards Mordor.
+trajectory:
+- description: Gandalf, the Wizard the Grey, resides in Middle-earth during the late
+    Third Age as Sauron's threat rises again. The Dark Lord Sauron's life force is bound
+    to the One Ring, which has been lost for centuries. The environment is tense but
+    peaceful, with no open conflict visible. Gandalf is aware of his role in countering
+    Sauron's growing shadow.
+  id: s_0
+  key_delta: Gandalf gains knowledge that the One Ring has resurfaced and is in the
+    possession of Bilbo Baggins in the Shire, elevating the threat level.
+  trigger_event: Gandalf arrives in the Shire and recognizes that Bilbo still possesses
+    the Ring, bringing its danger back into focus.
+- description: Gandalf travels to the Shire to investigate rumors concerning the Ring.
+    The Shire is peaceful and rural. Gandalf meets Bilbo Baggins to learn about the
+    Ring's history and condition.
+  id: s_1
+  key_delta: The Ring passes from Bilbo to Frodo, making Frodo the new Ring-bearer
+    and Gandalf aware that the Ring is now in potentially vulnerable hands.
+  trigger_event: Gandalf witnesses Bilbo's reluctant departure from the Shire, leaving
+    the Ring behind to Frodo.
+- description: In the Shire, Gandalf observes Frodo with the Ring and notes growing
+    suspicions about its nature. The environment remains deceptively calm but the
+    shadow of Sauron's influence grows.
+  id: s_2
+  key_delta: Samwise becomes a trusted companion to Frodo, expanding the group protecting
+    the Ring, and marking the start of active protective measures.
+  trigger_event: Gandalf catches Frodo's gardener, Samwise Gamgee, eavesdropping under
+    a window and decides to take Sam as a companion for Frodo.
+- description: Gandalf departs the Shire to seek counsel with Saruman in Isengard.
+    The environment shifts to the fortress of Isengard, a center of the White Council's
+    power.
+  id: s_3
+  key_delta: Gandalf is physically confined and stripped of freedom; Saruman's betrayal
+    is revealed, worsening the threat to Middle-earth.
+  trigger_event: Saruman reveals his allegiance to Sauron and imprisons Gandalf atop
+    Orthanc tower.
+- description: Gandalf is imprisoned atop Orthanc tower; the environment is dark,
+    cold, and isolating. Saruman commands the production of Uruk-hai and weapons for
+    war.
+  id: s_4
+  key_delta: Gandalf regains his freedom and mobility, enabling him to warn others
+    and mobilize resistance against Saruman and Sauron.
+  trigger_event: Gandalf is rescued by Gwaihir the eagle and escapes from Orthanc.
+- description: Gandalf travels to Rivendell, a sanctuary for the free peoples of Middle-earth.
+    The environment is serene and protected by Elves.
+  id: s_5
+  key_delta: The formation of the Council of Elrond officially recognizes the threat
+    of the Ring and initiates a coordinated strategy to destroy it.
+  trigger_event: Elrond calls a council of the races of Middle-earth to decide the
+    fate of the Ring.
+- description: At Rivendell, Gandalf participates in the Council where the decision
+    is made to destroy the Ring in Mount Doom. The atmosphere is grave but resolute.
+  id: s_6
+  key_delta: The Fellowship is established, binding representatives of the free peoples
+    to the quest, marking the transition from planning to active journey.
+  trigger_event: Frodo volunteers to carry the Ring to Mordor, and the Fellowship
+    of the Ring is formed.
+- description: The Fellowship sets out on their journey, encountering opposition from
+    Saruman's magic. The environment is increasingly perilous as they travel toward
+    the Mines of Moria.
+  id: s_7
+  key_delta: The Fellowship confronts the reality of the growing enemy forces and
+    the dangers posed to their quest; route is compromised by hostile forces.
+  trigger_event: The Fellowship enters the Mines of Moria and discovers it overrun
+    by Orcs.
+- description: Inside Moria, individuals are alert to lurking dangers; the atmosphere
+    is claustrophobic and grim. Gandalf leads through the dark, facing the unknown.
+  id: s_8
+  key_delta: Gandalf is presumed dead, removing a key leader and protector from the
+    Fellowship and destabilizing the group's morale and strength.
+  trigger_event: Gandalf confronts the Balrog during an Orc attack and falls into
+    an abyss.
+- description: The Fellowship flees Moria mourning Gandalf's fall and seeks refuge
+    in Lothlórien, a mystical forest realm. The atmosphere is one of mourning but
+    also of healing and reflection.
+  id: s_9
+  key_delta: Frodo's path is divinely reinforced, confirming his role and solidifying
+    the group's resolve despite the loss of Gandalf.
+  trigger_event: Galadriel reveals to Frodo his destiny to destroy the Ring.
+- description: The Fellowship continues their journey through dangerous lands. The
+    environment grows darker with Saruman's forces in pursuit and the Ring's influence
+    increasing.
+  id: s_10
+  key_delta: The Fellowship fractures temporarily, exposing internal vulnerability
+    and the Ring's corrupting power within the group.
+  trigger_event: Boromir succumbs to the Ring's corruption and attempts to take it
+    from Frodo.
+- description: Following Boromir’s failed attempt, Frodo escapes alone wearing the
+    Ring to become invisible; the environment is tense and perilous.
+  id: s_11
+  key_delta: Boromir dies, Merry and Pippin are captured, and the Fellowship is split;
+    Frodo and Sam commit to continuing the quest together.
+  trigger_event: The Uruk-hai attack the Fellowship; Boromir is mortally wounded defending
+    Merry and Pippin.
+- description: Aragorn, Legolas, and Gimli prepare to pursue the Orcs who captured
+    Merry and Pippin, while Frodo and Sam commit to journeying toward Mordor alone.
+  id: s_12
+  key_delta: The quest to destroy the Ring continues with Frodo and Sam as a duo;
+    Aragorn, Legolas, and Gimli take up the rescue pursuit for the captured Hobbits,
+    marking new mission branches.
+  trigger_event: After Boromir's death and the Fellowship's rupture, Frodo and Sam
+    set off toward Mordor as Aragorn, Legolas, and Gimli begin the chase.

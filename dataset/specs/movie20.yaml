@@ -1,0 +1,278 @@
+commitments:
+- description: Prevent player from recognizing Kathy's true identity or her relationship
+    with Don before s_0 event introducing Kathy and Lina's romantic misbelief are
+    established.
+  id: c_0
+  satisfaction_condition: Player acknowledgement of Kathy as chorus girl or skeptic
+    of Lina-Don romance only after or at s_0 completion.
+  type: ordering
+  violation_condition: Player prematurely reveals Kathy's true identity or the falsity
+    of Lina and Don's romance before s_0 triggers.
+- description: Between s_0 and s_2, Lina must remain confident in her romantic relationship
+    with Don despite external contradictions or provocations.
+  id: c_1
+  satisfaction_condition: Throughout s_0 to s_2, Lina's player-controlled behavior
+    sustains belief in mutual love with Don and resists conceding otherwise.
+  type: invariant
+  violation_condition: Player causes Lina to openly admit or accept that Don does
+    not love her before or during s_2.
+- description: Don and Kathy's romantic connection cannot begin before s_2 when Don
+    reunites with Kathy under Monumental Pictures production context.
+  id: c_2
+  satisfaction_condition: Any player-led development or narrative progress of Don-Kathy
+    relationship only unfolds at or after s_2.
+  type: ordering
+  violation_condition: Player coerces or reveals Don-Kathy romantic alliance prior
+    to s_2.
+- description: From s_3 to s_5, the production shift to talking pictures and the resultant
+    technical challenges with Lina’s voice must remain active, reflecting Lina's vocal
+    unsuitability for talkies.
+  id: c_3
+  satisfaction_condition: Player inputs or story progression acknowledge keeping Lina’s
+    voice as problematic and no successful talkie production with her intact before
+    s_5.
+  type: invariant
+  violation_condition: Player prematurely bypasses or solves Lina’s vocal problem
+    before s_5, e.g., allowing Lina flawless talkie performance or ignoring technical
+    difficulties.
+- description: The dubbing scheme using Kathy’s voice must be implemented before s_6,
+    establishing the secret cooperation and sidelining Lina’s vocal role.
+  id: c_4
+  satisfaction_condition: Player action or narrative confirms acceptance and enactment
+    of voice dubbing plan at or before s_6.
+  type: achievement
+  violation_condition: Player fails to authorize or triggers reveal of dubbing plan
+    before it is secretly put into place, or enables Lina to continue solo voice acting.
+- description: Post s_6 and until s_8, Lina must actively resist publicity or credit
+    for Kathy as her voice double, using legal or other means to block Kathy’s recognition.
+  id: c_5
+  satisfaction_condition: Player-controlled Lina enforces restrictions on Kathy’s
+    promotion and silences Kathy’s credit as voice double during s_6 to s_8.
+  type: invariant
+  violation_condition: Player permits or endorses Kathy’s public credit or promotion
+    despite Lina’s legal threats before s_8 exposure.
+- description: The staged live lip-sync performance must occur at s_7 only after the
+    film conversion and dubbing is in place; live singing demand and staged performance
+    cannot be presented before s_7.
+  id: c_6
+  satisfaction_condition: Narrative progression waits until s_7 to present public
+    demand for Lina's live singing and subsequent lip-sync reveal preparation.
+  type: ordering
+  violation_condition: Player triggers or acknowledges live singing demand and lip-sync
+    performance before s_7 dubbing scheme is established.
+- description: The public exposure of the dubbing deception and Lina’s humiliation
+    must occur at s_8, shifting public opinion and ending Lina’s star dominance.
+  id: c_7
+  satisfaction_condition: Player or narrative confirms Cosmo reveals the dubbing scheme
+    and Lina flees in embarrassment at or during s_8.
+  type: achievement
+  violation_condition: Player avoids or negates the exposure event, allowing Lina
+    to maintain the illusion beyond s_8.
+- description: The final affirmation of Don and Kathy as the recognized romantic and
+    professional pair must occur at s_9, culminating narrative closure.
+  id: c_8
+  satisfaction_condition: Don and Kathy are publicly acknowledged as couple and stars,
+    confirmed by player or narrative at s_9 final event.
+  type: achievement
+  violation_condition: Player disrupts or reverses public recognition of Don and Kathy
+    as new leads after s_9.
+- description: Throughout narrative progression, Lina’s vocal inadequacy for talkies
+    must remain consistent and never be overcome naturally or honestly by Lina herself.
+  id: c_9
+  satisfaction_condition: At any point from s_4 onwards, Lina’s voice continues to
+    be unsuitable for talkies with no direct correction or accepted improvement.
+  type: invariant
+  violation_condition: Player causes Lina to successfully perform talkie acting and
+    singing by herself, invalidating the dubbing necessity.
+initial_facts:
+- content: Lina Lamont is a celebrated silent film star at Monumental Pictures at
+    time t=0.
+  id: f_0
+  negated: false
+- content: Lina Lamont plays the leading lady opposite Don Lockwood in silent films
+    at Monumental Pictures at time t=0.
+  id: f_1
+  negated: false
+- content: Don Lockwood is publicly linked romantically with Lina Lamont by Monumental
+    Pictures studio promotions at time t=0.
+  id: f_2
+  negated: false
+- content: Lina Lamont believes she is in love with Don Lockwood at time t=0.
+  id: f_3
+  negated: false
+- content: Don Lockwood does not love Lina Lamont at time t=0.
+  id: f_4
+  negated: false
+- content: Lina Lamont is confident in her romantic relationship with Don Lockwood
+    at time t=0.
+  id: f_5
+  negated: false
+- content: The silent film era is currently thriving but facing challenges from emerging
+    sound technology at time t=0.
+  id: f_6
+  negated: false
+- content: Lina Lamont is not aware that Don Lockwood will relate romantically to
+    Kathy Selden in the future at time t=0.
+  id: f_7
+  negated: false
+- content: Lina Lamont is not aware of Kathy Selden’s true occupation as a chorus
+    girl at time t=0.
+  id: f_8
+  negated: false
+- content: Kathy Selden is publicly presented as a stage actress and is currently
+    a stranger to Lina Lamont at time t=0.
+  id: f_9
+  negated: false
+- content: Don Lockwood jumps into a passing car driven by Kathy Selden at the transition
+    from t=0 to after s_0 event.
+  id: f_10
+  negated: false
+- content: No production of talkie films involving Lina Lamont has begun yet at time
+    t=0.
+  id: f_11
+  negated: false
+- content: No problems or attempts related to Lina Lamont’s voice for talkie films
+    have been recognized or started at time t=0.
+  id: f_12
+  negated: false
+- content: Lina Lamont has not yet discovered any dubbing scheme or voice doubling
+    by Kathy Selden at time t=0.
+  id: f_13
+  negated: false
+- content: Lina Lamont has not yet made any legal threats or resistance actions against
+    the studio related to Kathy Selden at time t=0.
+  id: f_14
+  negated: false
+- content: Don Lockwood and Kathy Selden have no romantic relationship or alliance
+    at time t=0.
+  id: f_15
+  negated: false
+- content: There has been no public exposure or awareness of any voice dubbing deception
+    involving Lina Lamont at time t=0.
+  id: f_16
+  negated: false
+meta:
+  genres: ["Musical", "Romance"]
+  id: movie20
+  player_role: Lina Lamont
+  title: "Singin' in the Rain"
+synopsis: Don Lockwood is a popular silent film star with humble roots as a singer,
+  dancer and stunt man. Don barely tolerates his vapid, shallow leading lady, Lina
+  Lamont, though their studio, Monumental Pictures, links them romantically to increase
+  their popularity. Lina herself is convinced they are in love, despite Don's protestations
+  otherwise. One day, to escape from fans, Don jumps into a passing car driven by
+  Kathy Selden. She drops him off, but not before claiming to be a stage actress and
+  sneering at his undignified accomplishments. Later, at a party, the head of Don's
+  studio, R.F. Simpson, shows a short demonstration of a Vitaphone talking picture,
+  but his guests are unimpressed. To Don's amusement and Kathy's embarrassment, she
+  pops out of a mock cake right in front of him as part of the entertainment; Kathy,
+  it turns out, is a chorus girl. Furious at Don's teasing, she throws a real cake
+  at him, only to hit Lina right in the face. Later, after weeks of searching, Don
+  makes up with Kathy after he finds her working in another Monumental Pictures production,
+  and they begin to fall in love. After a rival studio has an enormous hit with its
+  first talking picture, 1927's The Jazz Singer, R.F. decides he has no choice but
+  to convert the new Lockwood and Lamont film, The Dueling Cavalier, into a talkie.
+  The production is beset with difficulties. By far, the worst problem is Lina's grating
+  voice. An exasperated diction coach tried to teach her how to speak properly, but
+  to no avail. A test screening is a disaster. In one scene, Don repeats the line
+  "I love you" to Lina over and over, to the audience's derisive laughter. Then in
+  the middle of the film, the sound goes out of synchronization, with hilarious results.
+  Don's best friend, Cosmo Brown, comes up with the idea to dub Lina's voice with
+  Kathy's, and they persuade R.F. to turn The Dueling Cavalier into a musical called
+  The Dancing Cavalier, complete with a modern musical number called "Broadway Melody".
+  When Lina finds out, she is infuriated and does everything possible to sabotage
+  the romance between Don and Kathy. She becomes even angrier when she discovers that
+  R.F. intends to give Kathy a screen credit and a big publicity promotion. Lina,
+  after consulting lawyers, threatens to sue R.F. unless he cancels Kathy's buildup
+  and orders her to continue working as Lina's voice. R.F. reluctantly agrees to her
+  demands. The premiere of The Dancing Cavalier is a tremendous success. When the
+  audience clamors for Lina to sing live, Don, Cosmo, and R.F. improvise and get her
+  to lip sync into the microphone while Kathy, hidden behind the stage curtain, sings
+  into a second one. While Lina is "singing," Don, Cosmo and R.F. gleefully raise
+  the curtain. When Cosmo replaces Kathy at the microphone, the sham becomes obvious.
+  Lina flees in embarrassment. Kathy tries to run away as well, but Don introduces
+  the audience to "the real star of the film." The final shot shows Kathy and Don
+  kissing in front of a billboard for their new film, Singin' in the Rain.
+trajectory:
+- description: Lina Lamont is a celebrated silent film star at Monumental Pictures,
+    enjoying fame and playing the leading lady opposite Don Lockwood, with the studio
+    promoting them as a romantic couple despite Lina's shallow nature and confidence
+    in their love. The silent film era is thriving but challenged by new sound technology.
+  id: s_0
+  key_delta: Introduction of Kathy Selden as a stage actress who sneers at Don's work,
+    and establishing Lina's misplaced confidence in her romance with Don.
+  trigger_event: Don Lockwood jumps into a passing car driven by Kathy Selden to escape
+    fans.
+- description: At a party hosted by Monumental Pictures’ head R.F. Simpson, guests
+    are unimpressed by a demonstration of a new talking picture system; Kathy Selden,
+    revealed to be a chorus girl, playfully interrupts the event causing a pie to
+    hit Lina in the face.
+  id: s_1
+  key_delta: Exposure of Kathy’s real identity and the development of Lina’s humiliation
+    and anger, highlighting cracks in the studio’s image and Lina’s fragile ego.
+  trigger_event: Kathy is revealed as a chorus girl when she jumps out of a cake,
+    leading to Lina being hit with a pie.
+- description: Weeks later, Lina continues filming at Monumental Pictures; Don Lockwood
+    reunites with Kathy Selden, who is now working under their studio, and their relationship
+    begins to develop.
+  id: s_2
+  key_delta: Formation of an alliance and growing romantic tension between Don and
+    Kathy, which threatens Lina’s perceived romantic position.
+  trigger_event: Don finds Kathy working on another Monumental Pictures production
+    and reconciles with her.
+- description: Following the success of a rival studio’s talking film, The Jazz Singer,
+    Monumental Pictures decides to convert the Don-Lina silent film The Dueling Cavalier
+    into a talkie; production commences with high expectations.
+  id: s_3
+  key_delta: Shift in production approach from silent film to sound film, creating
+    new technical and interpersonal challenges.
+  trigger_event: R.F. Simpson orders The Dueling Cavalier to be converted into a talking
+    picture in response to competitor success.
+- description: Production struggles arise; Lina's voice proves unbearable for sound
+    filming despite diction lessons, causing test screenings to fail miserably, including
+    derisive audience laughter and synchronization errors.
+  id: s_4
+  key_delta: Exposed incompatibility of Lina’s voice with talkies, threatening her
+    star status and the film’s success.
+  trigger_event: The disastrous test screening of The Dueling Cavalier where Lina’s
+    voice and syncing fail.
+- description: Don’s friend Cosmo Brown proposes dubbing Lina’s voice using Kathy’s
+    voice; this plan is approved, leading to the film being renamed and reworked into
+    The Dancing Cavalier, a musical showcasing Kathy’s talent anonymously.
+  id: s_5
+  key_delta: Implementation of the dubbing strategy introduces secret cooperation
+    between Kathy and Don, sidelining Lina’s vocal contribution.
+  trigger_event: Cosmo's idea to dub Lina’s voice with Kathy’s is presented and accepted
+    by R.F. Simpson.
+- description: Lina discovers the voice dubbing scheme and reacts with fury, threatening
+    legal action against R.F. unless Kathy’s publicity is canceled and Kathy remains
+    uncredited as her voice double.
+  id: s_6
+  key_delta: Lina exerts leverage over the studio, forcing constraints on Kathy’s
+    recognition and intensifying internal conflict.
+  trigger_event: Lina consults lawyers and threatens to sue the studio to cancel Kathy’s
+    promotion and enforce confidentiality.
+- description: The Dancing Cavalier premieres to great success; during the premiere,
+    live singing is demanded from Lina, leading to a staged lip-sync performance where
+    Kathy sings hidden behind the curtain.
+  id: s_7
+  key_delta: The studio improvises live dubbing for the premiere, maintaining the
+    illusion of Lina’s singing and concealing Kathy’s involvement.
+  trigger_event: Audience demands Lina sing live at the premiere, initiating a deceptive
+    live performance.
+- description: The live lip-sync ruse is exposed when Cosmo replaces Kathy at the
+    microphone and the curtain is raised, embarrassing Lina and forcing her to flee,
+    while Don publicly acknowledges Kathy as the true star.
+  id: s_8
+  key_delta: Public exposure of Lina’s vocal shortcomings and Kathy’s real talent,
+    leading to Lina’s humiliation and a shift in public perception.
+  trigger_event: Don publicly claims Kathy as his partner and the true voice behind
+    the film.
+- description: The story ends with Don and Kathy publicly recognized as a romantic
+    and professional pair, highlighted by their kiss in front of a billboard for their
+    next film Singin’ in the Rain.
+  id: s_9
+  key_delta: Affirmation of Don and Kathy as the new couple and rising stars, culminating
+    the displacement of Lina’s dominance.
+  trigger_event: Final shot shows Don and Kathy kissing in front of a billboard advertising
+    their new film.

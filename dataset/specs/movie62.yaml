@@ -1,0 +1,309 @@
+commitments:
+- description: The detection of the Rebel base on Hoth and subsequent Imperial assault
+    must occur in strict sequence before the base falls and Rebels escape.
+  id: c_0
+  satisfaction_condition: Node s_0 (probe droid lands on Hoth), then s_1 (Imperial
+    detection of base), then s_2 (AT-AT attack), then s_3 (Luke destroys an AT-AT),
+    then s_4 (Rebel base fall and evacuation) have all occurred in order.
+  type: ordering
+  violation_condition: Allowing s_4 (Rebels evacuate) or any later event to occur
+    before s_0 through s_3 completes, or skipping any of these nodes, breaking logical
+    progression.
+- description: Luke's Jedi training on Dagobah must begin only after his escape from
+    Hoth and arrival on Dagobah.
+  id: c_1
+  satisfaction_condition: Events progress from s_4 (base fall and evacuation) to s_5
+    (Luke arrives on Dagobah and meets Yoda), then s_6 (Luke trains with Yoda) in
+    correct order.
+  type: ordering
+  violation_condition: Triggering training milestones or Jedi power growth (s_6) before
+    Luke escapes Hoth or arrives on Dagobah (s_4, s_5).
+- description: Han and Leia’s escape and hiding in the asteroid field must precede
+    their arrival at Cloud City and subsequent betrayal by Lando.
+  id: c_2
+  satisfaction_condition: The trajectory follows s_4 (escape from Hoth), s_5 (asteroid
+    field hiding), s_7 (Boba Fett tracks falcon), and s_8 (arrival and betrayal at
+    Cloud City) in sequence.
+  type: ordering
+  violation_condition: Bypassing or reordering arrival and betrayal at Cloud City
+    (s_8) before or without prior escape and hiding (s_4 and s_5).
+- description: Han Solo remains captive and frozen in carbonite once Vader’s test
+    is complete, until Rebels mount a rescue mission.
+  id: c_3
+  satisfaction_condition: After s_9 (Han frozen and handed to Boba Fett), Han remains
+    in carbonite captivity during s_10 through s_13 until a rescue attempt is underway.
+  type: invariant
+  violation_condition: Premature release or escape of Han before s_13 rescue mission
+    or logical narrative phase allowing rescue attempts.
+- description: The critical revelation that Darth Vader is Luke’s father must be disclosed
+    during their Cloud City duel before Luke’s escape.
+  id: c_4
+  satisfaction_condition: 'Event s_11 occurs: Vader reveals paternal identity during
+    lightsaber duel with Luke prior to Luke falling down the air shaft.'
+  type: achievement
+  violation_condition: Allowing player or system to reveal Vader’s paternity prematurely
+    (before s_11) or skipping this revelation entirely.
+- description: Luke’s survival and call for help must occur after the duel and reveal,
+    prompting Rebel rescue efforts.
+  id: c_5
+  satisfaction_condition: Event s_12 (Luke escapes fall and telepathically calls Leia)
+    happens strictly after s_11 (duel and revelation).
+  type: ordering
+  violation_condition: Armoring or initiating rescue before Luke’s fall or telepathic
+    call, or triggering rescue without Luke signaling for help.
+- description: The Rebel counter-operation to rescue Han from Boba Fett must be launched
+    before narrative conclusion.
+  id: c_6
+  satisfaction_condition: 'Event s_13 occurs: Lando and Chewbacca depart to rescue
+    Han, marking transition to active recovery phase.'
+  type: achievement
+  violation_condition: Ending or concluding narrative without setting the rescue mission
+    in motion or bypassing this counter-operation entirely.
+- description: Player acting as Darth Vader must not disclose key truths to Luke or
+    other characters before the corresponding narrative nodes unlock their revelation
+    in-story.
+  id: c_7
+  satisfaction_condition: Vader’s paternity is not revealed to Luke or surfaced openly
+    in the narrative before node s_11, even though Vader already knows it.
+  type: invariant
+  violation_condition: Player causes Vader’s paternity or other protected strategic
+    truths to be revealed in-story before s_11 or before the relevant narrative phase.
+- description: Vader’s use of bounty hunters to capture Rebels initiates only after
+    failure to capture them through conventional Imperial means.
+  id: c_8
+  satisfaction_condition: Deployment of bounty hunters (s_7) occurs after Rebel escape
+    from Hoth (s_4) and Falcon’s evasion (s_5).
+  type: ordering
+  violation_condition: Allowing bounty hunters pursuit or capture attempts before
+    Rebels have escaped base or before probe droid reveals Rebel location.
+initial_facts:
+- content: Three years after the Death Star's destruction, the Galactic Empire continues
+    its pursuit of the Rebel Alliance.
+  id: f_0
+  negated: false
+- content: Darth Vader is the player role in this narrative moment.
+  id: f_1
+  negated: false
+- content: Darth Vader has dispatched multiple probe droids across the galaxy to locate
+    Luke Skywalker and Rebel bases.
+  id: f_2
+  negated: false
+- content: Darth Vader's fleet is positioned in space, awaiting intelligence from
+    the probe droids.
+  id: f_3
+  negated: false
+- content: The Rebel Alliance maintains a hidden base on the icy planet of the Hoth
+    system, commanded by Princess Leia.
+  id: f_4
+  negated: false
+- content: Princess Leia leads a contingent that includes Han Solo and Luke Skywalker
+    at the hidden base on Hoth.
+  id: f_5
+  negated: false
+- content: A probe droid has just landed on the icy planet in the Hoth system where
+    the Rebels have established their hidden base.
+  id: f_6
+  negated: false
+- content: The Rebel base on Hoth has not yet been detected by the Galactic Empire.
+  id: f_7
+  negated: false
+- content: Imperial forces have not yet launched an assault on the Rebel base on Hoth.
+  id: f_8
+  negated: false
+- content: Luke Skywalker is at the Rebel base on Hoth and has not yet embarked on
+    his Jedi training.
+  id: f_9
+  negated: false
+- content: The player (Darth Vader) knows that Luke Skywalker is his son, but this
+    truth has not yet been revealed to Luke within the narrative.
+  id: f_10
+  negated: false
+- content: The Rebel base on Hoth is undiscovered by any Imperial forces.
+  id: f_11
+  negated: false
+- content: Bounty hunters including Boba Fett have not yet been deployed by Darth
+    Vader to pursue the Rebels.
+  id: f_12
+  negated: false
+- content: Han Solo is not yet captive or frozen in carbonite.
+  id: f_13
+  negated: false
+- content: The Rebel leadership has not yet evacuated the Hoth system.
+  id: f_14
+  negated: false
+meta:
+  genres: ["Sci-Fi", "Adventure"]
+  id: movie62
+  player_role: Darth Vader
+  title: "Star Wars——The Empire Strikes Back"
+synopsis: The film begins with an opening crawl explaining that three years after
+  destroying the Death Star, the Rebel Alliance has suffered setbacks in their struggle
+  against the Galactic Empire. Princess Leia now leads a contingent that includes
+  Han Solo and Luke Skywalker in a hidden base on an icy planet of the Hoth system.
+  A probe droid, one of many sent by Darth Vader throughout the galaxy in hopes of
+  finding Luke and the other rebels, lands on Hoth. Luke goes to investigate but is
+  ambushed by a monstrous, furry wampa. While Han Solo searches for him, Luke frees
+  himself from the wampa's cave with his lightsaber but soon succumbs to the freezing
+  temperatures of the snowy wasteland. The spirit of his late mentor, Obi-Wan Kenobi,
+  appears before him and instructs him to go to the planet Dagobah to train under
+  Jedi Master Yoda. Han manages to find Luke and uses the warmth of his dead tauntaun
+  mount to keep him alive while they wait to be rescued. Just as Luke recovers, the
+  Imperial fleet, having been alerted to the location of the Rebel base by the probe
+  droid, launches an attack using gigantic AT-AT Walkers. The Rebels mount a strong
+  defense, and Luke brings down a walker single-handedly after his fighter is disabled,
+  but the base is nonetheless captured. Han and Leia escape on the Millennium Falcon
+  with C-3PO and Chewbacca, but their hyperspace drive malfunctions, and they must
+  hide in an asteroid field. Luke escapes with R2-D2 in an X-wing fighter and crash
+  lands on Dagobah. He is soon found by the diminutive Yoda, who at first pretends
+  to be a simple swamp inhabitant in order to test Luke's patience. After conferring
+  with Obi-Wan's spirit, Yoda accepts Luke as his pupil. Han and Leia end their bickering
+  and grow closer, but their courtship is interrupted when they must flee a giant
+  asteroid worm. They avoid capture again by attaching the Millennium Falcon directly
+  to the side of a Star Destroyer in Vader's fleet. Frustrated at having lost them,
+  Vader turns to several notorious bounty hunters, including Boba Fett. Meanwhile,
+  Luke begins a brief period of intensive training, during which his power in the
+  Force grows exponentially. He suffers a setback when he fails a test and sees the
+  vision of his own face inside Darth Vader's helmet. Then he becomes troubled by
+  premonitions of Han and Leia in pain and despite Yoda and Obi-Wan's disapprovals,
+  leaves to save them, promising to return to complete his training. Having escaped
+  detection, Han lets his ship float away with the star destroyer's garbage and sets
+  a course for Cloud City, a floating gas mining colony in the skies of the planet
+  Bespin. Boba Fett secretly follows the Millennium Falcon to the planet Bespin and
+  arrives just before Han and Leia. Bespin is run by Han's old friend Lando Calrissian,
+  but shortly after they arrive he turns them over to Vader to prevent the takeover
+  of his city. Over Lando's objections, Vader uses them as bait to bring Luke into
+  his trap. Vader intends to hold Luke in suspended animation and selects Han as a
+  test subject for the process. Han and Leia profess their love for each other, after
+  which Han is frozen in a block of carbonite. Reneging on his deal with Lando, Vader
+  gives Han's hibernating form to Boba Fett, who plans to present this "prize" to
+  Jabba the Hutt who put a price on Han's head for not paying a debt that he previously
+  owed to Jabba. Lando frees Leia, Chewbacca, and C-3PO, Chewbacca chokes Lando for
+  betraying Han and Leia tells him that they do not need their help, but they are
+  too late to stop Fett from escaping with Han, forcing them to flee in the Millennium
+  Falcon without him. Lando then orders an evacuation of the now taken over city.
+  Meanwhile, Luke has arrived at Cloud City, as Vader planned. Luke and Vader engage
+  in a lightsaber duel that leads them over the central air shaft of Cloud City. Vader
+  severs Luke's right hand, disarming him, and reveals that he did not kill Luke's
+  father, but actually is Luke's father. Horrified by this fact, Luke refuses Vader's
+  offer to rule the galaxy at his side, choosing instead to throw himself down the
+  air shaft. He slides through a tube system and is ejected but catches onto an antenna
+  under the floating city. He makes a desperate telepathic plea to Leia, who senses
+  it and persuades Lando to return for him. When its hyperdrive is finally repaired
+  by R2-D2, the Millennium Falcon escapes. Aboard a Rebel medical frigate, Luke is
+  fitted with an robotic artificial hand. As Luke, Leia, R2-D2, and C-3PO look on
+  from the medical center, Lando and Chewbacca set off in the Millennium Falcon to
+  rescue Han from Boba Fett and Jabba the Hutt.
+trajectory:
+- description: Three years after the Death Star's destruction, the Galactic Empire
+    continues its pursuit of the Rebel Alliance. Darth Vader has dispatched multiple
+    probe droids across the galaxy to locate Luke Skywalker and Rebel bases. Vader's
+    fleet is positioned in space, awaiting intelligence from the probes.
+  id: s_0
+  key_delta: The Rebel base on Hoth is exposed to Imperial surveillance via the newly
+    landed probe droid, initiating a new phase of pursuit.
+  trigger_event: A probe droid lands on the icy planet in the Hoth system where the
+    Rebels have established a hidden base led by Princess Leia.
+- description: The probe droid operates stealthily on the surface of frozen Hoth.
+    The Rebel base maintains defensive readiness. Darth Vader’s fleet moves to intercept
+    once the base location is confirmed.
+  id: s_1
+  key_delta: The Empire has obtained precise coordinates of the Rebel stronghold,
+    enabling them to launch a direct assault.
+  trigger_event: Imperial forces detect the Rebel base on Hoth through the probe droid's
+    transmission.
+- description: Imperial AT-AT Walkers begin their advance on the Rebel base on Hoth.
+    Rebel forces, including Han Solo, Princess Leia, and Luke Skywalker, prepare a
+    desperate defense against the overwhelming Imperial assault.
+  id: s_2
+  key_delta: The Rebel base is under direct, heavy assault threatening its survival;
+    Luke's presence on the battlefield becomes critical.
+  trigger_event: Imperial AT-AT walkers initiate an attack on the Rebel base, engaging
+    ground fortifications and Rebel pilots.
+- description: Luke Skywalker, engaged in the battle defending the base, is forced
+    out of his disabled fighter and confronts an AT-AT walker directly in the icy
+    plains.
+  id: s_3
+  key_delta: Luke deals a significant blow to the Imperial forces, but the base's
+    fall becomes inevitable as the main defense collapses.
+  trigger_event: Luke destroys an Imperial AT-AT walker using his weaponry after exiting
+    his disabled fighter.
+- description: The Rebel base is overrun by Imperial forces. Han Solo and Princess
+    Leia escape aboard the Millennium Falcon along with C-3PO and Chewbacca. Luke
+    evacuates separately in an X-wing starfighter amidst the chaos of defeat.
+  id: s_4
+  key_delta: The Rebels lose their Hoth stronghold, scattering their leadership and
+    forces into separate escape routes.
+  trigger_event: Rebel base is captured, prompting the evacuation and flight of remaining
+    Rebel leaders from Hoth.
+- description: Han Solo, Leia, C-3PO, and Chewbacca navigate the Millennium Falcon
+    into an asteroid field to evade Imperial pursuit. Meanwhile, Luke crash-lands
+    on the swampy planet Dagobah and encounters its native, Yoda.
+  id: s_5
+  key_delta: Luke begins Jedi training under Yoda, initiating his personal transformation;
+    Han and Leia remain pursued but temporarily safe within the asteroid field.
+  trigger_event: Luke arrives on Dagobah and is found by Yoda, who initially conceals
+    his identity.
+- description: Luke undergoes rigorous Jedi training guided by Yoda and Obi-Wan's
+    spirit. Han and Leia's relationship deepens aboard the Falcon, despite persistent
+    threats from Imperial forces and bounty hunters led by Boba Fett.
+  id: s_6
+  key_delta: Luke's understanding of the dark connection to Vader deepens, causing
+    internal conflict and foreshadowing future choices.
+  trigger_event: Luke experiences a vision during his training revealing a face inside
+    Darth Vader’s helmet and fails a test, troubling him.
+- description: Han Solo pilots the Millennium Falcon out of the asteroid field undetected,
+    plotting a course for Cloud City on Bespin. Boba Fett covertly tracks the Falcon
+    to Bespin.
+  id: s_7
+  key_delta: Imperial forces and bounty hunters are poised to capture the Rebels upon
+    their arrival at Cloud City.
+  trigger_event: Boba Fett follows the Millennium Falcon undetected to Cloud City,
+    arriving ahead of Han and Leia.
+- description: Han, Leia, Chewbacca, and C-3PO arrive in Cloud City, greeted by Lando
+    Calrissian who runs the city. Trust is tentative but hopes of refuge exist for
+    the Rebels.
+  id: s_8
+  key_delta: The Rebels fall into an Imperial trap, compromising their safety and
+    enabling Vader to implement plans to capture Luke.
+  trigger_event: Lando Calrissian betrays Han and Leia by turning them over to Darth
+    Vader and Imperial forces.
+- description: Vader sets a trap for Luke using Han and Leia as bait. Han is selected
+    as a test subject for carbonite freezing to test Vader’s suspended animation process.
+    Leia and Han affirm their mutual affection before the freezing begins.
+  id: s_9
+  key_delta: Han Solo is incapacitated and taken captive by bounty hunters, increasing
+    stakes for the remaining Rebels.
+  trigger_event: Han is frozen in carbonite and handed over to Boba Fett as a bounty
+    prize for Jabba the Hutt.
+- description: Leia, Chewbacca, and C-3PO are freed by Lando, but the escape is too
+    late to prevent Boba Fett’s departure with Han. The Millenium Falcon escapes Cloud
+    City without Han on board.
+  id: s_10
+  key_delta: Luke unknowingly enters the trap meant to capture him, escalating confrontation
+    with Vader.
+  trigger_event: Luke arrives at Cloud City, unaware of Han’s fate, stepping into
+    Vader’s prearranged ambush.
+- description: Luke and Darth Vader confront each other in a fierce lightsaber duel
+    above the central air shaft of Cloud City. Vader disables Luke by severing his
+    right hand.
+  id: s_11
+  key_delta: The revelation of Vader’s paternity is unveiled, challenging Luke’s identity
+    and choices irrevocably.
+  trigger_event: Vader reveals to Luke that he is his father, offering him a place
+    at his side to rule the galaxy.
+- description: Luke rejects Vader’s offer and escapes by falling down the air shaft,
+    survives by clinging to an antenna beneath Cloud City. Using the Force, he sends
+    a telepathic call to Leia for help.
+  id: s_12
+  key_delta: Luke’s survival and telepathic plea prompt the Rebels’ decision to rescue
+    him, intensifying Rebel solidarity.
+  trigger_event: Leia senses Luke’s call and convinces Lando to return to rescue him
+    with the repaired Millennium Falcon.
+- description: Luke is recovered and treated aboard a Rebel medical frigate, fitted
+    with a robotic hand replacement. The remaining Rebels prepare to rescue the captured
+    Han from Boba Fett and Jabba the Hutt.
+  id: s_13
+  key_delta: The Rebels transition from escape and survival to initiating a counter-operation
+    to reclaim Han and continue resistance.
+  trigger_event: Lando and Chewbacca depart aboard the Millennium Falcon to execute
+    a mission to retrieve Han Solo.

@@ -1,0 +1,260 @@
+commitments:
+- description: Tony cannot gain knowledge or control over Franky's last known activities
+    before receiving the briefing from Doug and Avi (s_0).
+  id: c_0
+  satisfaction_condition: Player only obtains investigative leads about Franky after
+    s_0 is completed.
+  type: ordering
+  violation_condition: Player acts on or reveals information about Franky's last movements
+    prior to Doug and Avi briefing Tony at s_0.
+- description: Tony must identify the link between Franky, Boris, and Brick Top’s
+    betting operations before narrowing down the investigation to Boris (s_1 before
+    s_3).
+  id: c_1
+  satisfaction_condition: Player uncovers evidence connecting Franky to Brick Top
+    and Boris no earlier than s_1 and only then pursues Boris at or after s_3.
+  type: ordering
+  violation_condition: Player targets or confronts Boris with diamond-related accusations
+    before establishing the gambling link at s_1.
+- description: Franky remains missing and in danger between s_2 and s_7, ensuring
+    Tony’s investigation continuously reflects Franky’s captivity and vulnerability.
+  id: c_2
+  satisfaction_condition: Narrative consistently shows Franky as kidnapped or dead
+    but undiscovered until at least s_7.
+  type: invariant
+  violation_condition: Player discovers Franky is safe or free before security footage/viewing
+    at s_2 or claims Franky’s fate before s_7.
+- description: Tony must apprehend Boris before extracting diamond location information
+    and triggering the pursuit by Vinny, Sol, and Tyrone (s_3 before s_4).
+  id: c_3
+  satisfaction_condition: Boris is held captive prior to players gaining key intelligence
+    leading to pursuit.
+  type: ordering
+  violation_condition: Player obtains diamond location intelligence or initiates pursuit
+    sequences without having captured Boris first.
+- description: The car crash triggered by Tommy spilling milk must occur after Boris’s
+    capture and before the regroup at the pub (between s_4 and s_6), causing casualties
+    and Boris’s escape.
+  id: c_4
+  satisfaction_condition: The crash event happens in sequence after the kidnap of
+    Boris and before Tony confronts Vinny, Sol, and Tyrone at the pub.
+  type: invariant
+  violation_condition: Player prevents or reorders the crash to occur before Boris
+    capture or after the pub confrontation, breaking causal continuity.
+- description: During the pub confrontation (around s_6), Vinny, Sol, and Tyrone carry
+    only fake guns loaded with blanks making Tony realize the threat is a bluff.
+  id: c_5
+  satisfaction_condition: Player learns or discovers the pistols are replicas at or
+    before confrontation, allowing Tony to intimidate instead of shooting.
+  type: invariant
+  violation_condition: Player has Tony shoot or escalate violence against Vinny, Sol
+    and Tyrone before discovering the guns as blanks.
+- description: Boris must be alive and arrive wounded with an assault rifle during
+    the pub confrontation and be killed by Tony there (s_7).
+  id: c_6
+  satisfaction_condition: Boris appears wounded with an assault rifle at or before
+    s_7 and is killed by Tony during the confrontation.
+  type: invariant
+  violation_condition: Player kills Boris before this point or Boris does not arrive
+    wounded with an assault rifle, breaking the narrative escalation.
+- description: Tony must die accidentally by Avi’s gunshot after the diamond is swallowed
+    by the dog, marking the inevitable end of Tony’s active role (s_8).
+  id: c_7
+  satisfaction_condition: Tony’s death occurs only after the diamond is swallowed
+    by the dog and the ensuing panic.
+  type: achievement
+  violation_condition: Player causes Tony’s premature death before the diamond swallowing
+    event or the dog incident occurs.
+- description: The diamond must be lost inside the dog only after Vinny and Sol escape
+    with it and the subsequent confrontation at their pawnshop (s_8).
+  id: c_8
+  satisfaction_condition: Diamond swallowing event and subsequent Tony shooting happen
+    at or after Vinny and Sol’s escape and confrontation.
+  type: ordering
+  violation_condition: Player causes the diamond to be lost or swallowed by the dog
+    prior to Vinny and Sol’s escape or earlier in the sequence.
+initial_facts:
+- content: Bullet Tooth Tony is in London and has just been hired by Doug 'The Head'
+    and Cousin Avi to help find Franky 'Four-Fingers' who has gone missing after the
+    diamond heist.
+  id: f_0
+  negated: false
+- content: Tony does not yet have any investigative leads or knowledge about Franky's
+    last known activities before receiving the briefing from Doug and Avi.
+  id: f_1
+  negated: false
+- content: Franky 'Four-Fingers' is currently missing and his fate is unknown to Tony.
+  id: f_2
+  negated: false
+- content: Tony is not yet aware of any links between Franky, Boris 'The Blade', and
+    Brick Top's betting operations.
+  id: f_3
+  negated: false
+- content: Tony has had no interactions with Boris 'The Blade' and has not yet initiated
+    any investigation or pursuit of him.
+  id: f_4
+  negated: false
+- content: Boris 'The Blade' is alive at this moment with unknown intentions and has
+    not been captured or confronted by Tony.
+  id: f_5
+  negated: false
+- content: Vinny, Sol, and Tyrone have not yet robbed Franky or kidnapped him, and
+    no security footage related to such an event exists to Tony's knowledge.
+  id: f_6
+  negated: false
+- content: The diamond is in possession of Franky and has not yet been lost, stolen,
+    or hidden.
+  id: f_7
+  negated: false
+- content: Tony has not yet experienced or been involved in the car crash caused by
+    Tommy's milk spill.
+  id: f_8
+  negated: false
+- content: Tony has not yet confronted Vinny, Sol, and Tyrone at the pub or learned
+    that their pistols are replicas loaded with blanks.
+  id: f_9
+  negated: false
+- content: Boris has not yet appeared wounded with an assault rifle or been killed
+    by Tony.
+  id: f_10
+  negated: false
+- content: Tony is alive and has all faculties intact; no death or injury has occurred.
+  id: f_11
+  negated: false
+- content: Tony does not know that the diamond will eventually be swallowed by a dog,
+    nor that Avi will accidentally shoot Tony.
+  id: f_12
+  negated: false
+- content: Tony has not yet received any intelligence about the diamond's whereabouts
+    or involved in any pursuit of Vinny, Sol, or Tyrone.
+  id: f_13
+  negated: false
+meta:
+  genres: ["Crime", "Comedy"]
+  id: movie37
+  player_role: Bullet Tooth Tony
+  title: "Snatch"
+synopsis: After stealing an diamond in a heist in Antwerp, Franky "Four-Fingers" goes
+  to London to deliver it to diamond dealer Doug "The Head" on behalf of New York
+  jeweller "Cousin Avi", who bankrolled the theft. One of the other robbers advises
+  Franky to obtain a gun from ex-KGB agent Boris "The Blade". Unbeknownst to Franky,
+  Boris and the robber are brothers and plan to hire a third party to rob him of the
+  diamond. Meanwhile, unlicensed boxing promoter and casino owner Turkish convinces
+  local gangster "Brick Top" to add the matches of boxer "Gorgeous George" to the
+  bets at Brick Top's bookies. However, when Turkish sends his partner Tommy and Gorgeous
+  George to purchase a caravan from a group of pikeys, George gets into an impromptu
+  fight with Mickey O'Neil, a bare-knuckle boxing champ who badly injures George with
+  a single punch. Turkish convinces Mickey to replace George in his upcoming match
+  by agreeing to purchase a new caravan for Mickey's mother. Brick Top agrees to the
+  change on the condition that Mickey throws the fight in the fourth round. Boris
+  gives Franky a gun in exchange for a favour——Franky is to place a bet on Boris'
+  behalf at Brick Top's bookies. Avi learns of this and, knowing Franky has a gambling
+  problem, flies to London with his bodyguard "Rosebud" to claim the diamond. Boris
+  hires Vinny and Sol, two pawnbrokers and small-time crooks, to rob Frankie of the
+  diamond while he is at the bookies. The robbery goes awry and Sol, Vinny, and their
+  driver Tyrone are caught on-camera, but manage to kidnap Franky. Instead of throwing
+  the fight, Mickey knocks his opponent out with a single punch. Infuriated, Brick
+  Top robs Turkish of his savings and demands that Mickey fight again, and lose this
+  time. Meanwhile, Boris retrieves the diamond and executes Franky. As Sol, Vinny,
+  Tyrone, and their accomplice "Bad Boy" Lincoln are puzzling over how to dispose
+  of Franky's body, Brick Top arrives to execute them for robbing his bookies. Sol
+  bargains for their lives by promising Brick Top the stolen diamond, and is given
+  48 hours to retrieve it. Avi and Doug hire "Bullet-Tooth" Tony to help them find
+  Franky. When the trail leads to Boris, they kidnap him and retrieve the gemstone,
+  closely pursued by Sol, Vinnie, and Tyrone. As they are driving, Tommy carelessly
+  throws Turkish's carton of milk out the window of their car; it splashes over Tony's
+  windshield, causing him to crash. Rosebud is killed, and Boris escapes from the
+  wreck only to be hit by Tyrone's car. Tony and Avi regroup at a pub where they are
+  confronted by Sol, Vinny, and Tyrone. Tony quickly realizes that their pistols are
+  replicas loaded with blanks, and intimidates them into leaving him alone. The wounded
+  Boris arrives with an assault rifle and is killed by Tony, but Sol and Vinny escape
+  with the diamond, which Vinnie hides in his pants. When Tony catches up to them,
+  they tell him that the diamond is back at their pawn shop. Once there, they run
+  out of stall tactics and produce the diamond, but it is promptly swallowed by a
+  dog that Vinnie got from the pikeys. Avi fires wildly at the fleeing dog and accidentally
+  kills Tony. He gives up his pursuit and returns to New York. Mickey refuses to fight
+  again unless Turkish buys an even more lavish caravan for his mother, but Turkish
+  has no money left. Furious, Brick Top has his men vandalize Turkish's gambling arcade
+  and burn down Mickey's mother's caravan while she is asleep inside it. Mickey agrees
+  to fight in order to avoid more carnage, but gets so drunk after his mother's wake
+  the night before that Turkish fears he won't even make it to the fourth round. If
+  he fails to go down as agreed, Brick Top's men will execute Turkish, Tommy, Mickey,
+  and the entire campsite of pikeys. Mickey takes a heavy beating but makes it to
+  the fourth round, when he makes a sudden recovery and knocks out his opponent with
+  a powerful blow. As they flee the building, Brick Top is killed by the pikeys, who
+  have turned the tables on him——Mickey had bet on himself to win, and waited until
+  the fourth round to allow the other pikeys time to ambush and kill Brick Top's men
+  at the campsite. The next morning, Turkish and Tommy find the pikey campsite deserted.
+  They are confronted by the police and don't know what to say, until Vinny's dog
+  suddenly arrives and they claim to be walking it. They are released, while Sol and
+  Vinnie are arrested when the police find the corpses of Franky and Tony in their
+  car. Turkish and Tommy take the dog to a veterinarian to extract a squeaky toy that
+  it had swallowed earlier, and discover the diamond in its stomach as well. They
+  consult Doug about selling the diamond, and he calls Avi who returns to London.
+trajectory:
+- description: Bullet Tooth Tony is in London, recently hired by Doug 'The Head' and
+    Cousin Avi to help find Franky 'Four-Fingers', who has gone missing after a diamond
+    heist. The city is tense with underlying criminal scheming involving multiple
+    factions including Boris 'The Blade', Brick Top, and Turkish.
+  id: s_0
+  key_delta: Tony is introduced to the main players and given the mission to locate
+    Franky and recover the diamond, setting Tony’s investigative role and the key
+    conflict in motion.
+  trigger_event: Doug and Avi brief Tony on the disappearance of Franky and the importance
+    of retrieving the stolen diamond.
+- description: Tony begins his investigation and learns that Franky was last seen
+    at Brick Top’s bookies where Boris 'The Blade' gave him a gun in exchange for
+    placing a bet.
+  id: s_1
+  key_delta: Tony establishes the link between Franky, Boris, and Brick Top's gambling
+    operations, focusing the search on gambling circles.
+  trigger_event: Tony visits Brick Top’s betting shop to gather information about
+    Franky’s last movements.
+- description: At the bookies, Tony uncovers that Franky was ambushed and kidnapped
+    by Vinny, Sol, and Tyrone during a robbery meant to steal the diamond.
+  id: s_2
+  key_delta: Tony confirms Franky is in danger and that the diamond is the target
+    of multiple criminal parties including Boris’s hired crooks.
+  trigger_event: Tony reviews security footage and questions witnesses at the bookies.
+- description: Tony tracks leads to Boris, who is suspected of orchestrating the robbery
+    on Franky to get the diamond for himself.
+  id: s_3
+  key_delta: Tony narrows down the investigation to Boris as a major antagonist controlling
+    parts of the diamond’s fate.
+  trigger_event: Tony obtains intel on Boris’s whereabouts and sets out to apprehend
+    him.
+- description: In a confrontation, Tony and Avi kidnap Boris to extract information
+    and locate the diamond, simultaneously pursued by Vinny, Sol, and Tyrone.
+  id: s_4
+  key_delta: Tony gains direct control over Boris and insights into the diamond’s
+    location, escalating the conflict and pursuit dynamics.
+  trigger_event: Tony apprehends Boris during a tense encounter and prepares to transport
+    him for questioning.
+- description: While Tony, Avi, and Boris travel, Tommy accidentally causes a car
+    crash by throwing milk on Tony’s windshield; Rosebud dies and Boris escapes but
+    is wounded by Tyrone’s car.
+  id: s_5
+  key_delta: The crash results in casualties and Boris escapes, increasing chaos and
+    threat to Tony’s mission.
+  trigger_event: Tony’s car crashes due to milk spilled on his windshield during the
+    transit.
+- description: Tony regroups with Avi at a pub where they are confronted by armed
+    Vinny, Sol, and Tyrone, who reveal their pistols are loaded with blanks.
+  id: s_6
+  key_delta: Tony realizes the threat is bluff, uses intimidation to neutralize the
+    crooks temporarily without violence.
+  trigger_event: Vinny, Sol, and Tyrone confront Tony with fake guns to regain leverage.
+- description: The wounded Boris returns with an assault rifle intending to regain
+    the diamond but is killed by Tony in the ensuing clash.
+  id: s_7
+  key_delta: Boris, a key adversary, is eliminated by Tony, removing a major obstacle
+    but not resolving the diamond’s whereabouts.
+  trigger_event: Boris ambushes Tony and Avi at the pub with an assault rifle.
+- description: Vinny and Sol escape with the diamond, but Vinnie hides it in his dog;
+    returning to their pawnshop, the dog swallows the diamond during a confrontation,
+    leading Avi to shoot Tony accidentally.
+  id: s_8
+  key_delta: The diamond goes missing inside the dog; Tony is accidentally shot and
+    killed by Avi during the panic, ending Tony’s active involvement.
+  trigger_event: Vinny and Sol showcase the diamond but it is swallowed by the dog
+    during a struggle.

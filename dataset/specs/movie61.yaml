@@ -1,0 +1,299 @@
+commitments:
+- description: DuPont cannot identify or accuse the traitor within the Grammaton Clerics
+    before receiving intelligence and ordering a mission (s_0) to justify suspicion
+    and covert operations.
+  id: c_0
+  satisfaction_condition: Node s_0 has been triggered establishing DuPont's awareness
+    and initiation of traitor investigation.
+  type: ordering
+  violation_condition: Player triggers traitor identification or accusation events
+    prior to the occurrence of s_0.
+- description: Surveillance and suspicion on Preston must only escalate after DuPont
+    directs Brandt to observe him under the pretext of loyalty tests (from s_1 to
+    s_7).
+  id: c_1
+  satisfaction_condition: Between nodes s_1 and s_7, any observation or interrogation
+    of Preston by Brandt or DuPont aligns with the established surveillance plan.
+  type: invariant
+  violation_condition: Preston is surveilled or confronted without DuPont’s directive
+    or outside the context of Brandt’s involvement before s_1 or after s_7.
+- description: Preston’s emotional instability and deviance must only be officially
+    noted after DuPont receives the relevant reports and orders Preston’s interrogation
+    (triggered at s_2).
+  id: c_2
+  satisfaction_condition: Node s_2 has occurred and Preston’s changed behavior is
+    acknowledged and justified by DuPont.
+  type: ordering
+  violation_condition: Preston’s emotional deviation is acted upon or publicly confronted
+    by DuPont or others before s_2.
+- description: Preston must be detained and interrogated only under DuPont’s direct
+    orders and within the timeframe of s_3 to s_5 to maintain narrative coherence
+    of controlled containment.
+  id: c_3
+  satisfaction_condition: Arrest and interrogation actions against Preston occur exclusively
+    under DuPont’s orders and during nodes s_3 to s_5.
+  type: invariant
+  violation_condition: Preston is detained or interrogated without DuPont’s authorization
+    or outside of the s_3 to s_5 temporal bounds.
+- description: The staging of Brandt’s false arrest and the summoning of Preston to
+    meet ‘Father’ must strictly occur after Preston’s arrest and interrogation (s_4),
+    serving as a narrative trap.
+  id: c_4
+  satisfaction_condition: Node s_4’s trigger event of orchestrating Brandt’s ruse
+    and summoning Preston occurs only after s_3.
+  type: ordering
+  violation_condition: Brandt’s staged arrest or Preston’s meeting with ‘Father’ happen
+    before Preston’s arrest/interrogation has taken place.
+- description: DuPont’s dual identity as ‘Father’ and his secret collection of illicit
+    art and literature must be revealed during the meeting with Preston (s_5) before
+    narrative escalation.
+  id: c_5
+  satisfaction_condition: Node s_5 event of revealing DuPont as Father and exposing
+    his secret defiance has been triggered.
+  type: achievement
+  violation_condition: DuPont’s true identity or secret defiance is revealed to Preston
+    or player before s_5.
+- description: During the confrontation and gun kata combat from s_5 through s_7,
+    Brandt must act as DuPont’s loyal agent, and the full scope of DuPont’s taunting
+    about emotion must be actively present.
+  id: c_6
+  satisfaction_condition: From s_5 to s_7, Brandt’s allegiance remains with DuPont;
+    taunts on emotional cost occur as scripted during combat.
+  type: invariant
+  violation_condition: Brandt betrays DuPont prematurely or emotional taunts are missing
+    or replaced before s_7’s completion.
+- description: DuPont must be killed by Preston only after the full ideological and
+    physical confrontation is realized (s_7), cementing the narrative climax and thematic
+    resolution.
+  id: c_7
+  satisfaction_condition: Node s_7 event of Preston killing DuPont with explicit dialogue
+    referencing emotional cost occurs.
+  type: achievement
+  violation_condition: DuPont is killed or removed from power before the ideological
+    confrontation and taunt exchange of s_7.
+- description: The destruction of propaganda systems and the initiation of the Underground’s
+    uprising must only take place after DuPont’s death at s_7 (trigger s_8), ensuring
+    logical causality in regime collapse.
+  id: c_8
+  satisfaction_condition: Node s_8 triggers the coordinated assault and destruction
+    only after s_7 is complete.
+  type: ordering
+  violation_condition: Resistance uprising and key facility destruction are initiated
+    before DuPont’s death.
+- description: The narrative must conclude with Preston observing the revolution’s
+    unfolding and experiencing emotional awakening (s_9) following the regime’s fall.
+  id: c_9
+  satisfaction_condition: Node s_9 event occurs with Preston holding O’Brien’s ribbon
+    and smiling, symbolizing hope and transformation.
+  type: achievement
+  violation_condition: The narrative ends or transitions without this final reflective
+    moment for Preston and the symbolic closure.
+initial_facts:
+- content: DuPont holds the official role of Vice-Counsel within the Tetragrammaton
+    Council at time t=0.
+  id: f_0
+  negated: false
+- content: The city of Libria is governed by the Tetragrammaton Council.
+  id: f_1
+  negated: false
+- content: The public figurehead known as 'Father' is reclusive and communicates only
+    via giant video screens throughout the city.
+  id: f_2
+  negated: false
+- content: The Grammaton Clerics serve as the elite enforcers of the Tetragrammaton
+    Council and enforce conformity primarily through use of Prozium to suppress emotions.
+  id: f_3
+  negated: false
+- content: The Underground resistance movement exists within Libria but is not yet
+    directly confronted or engaged by DuPont.
+  id: f_4
+  negated: false
+- content: DuPont is not yet aware of the identity of any traitor within the Grammaton
+    Clerics.
+  id: f_5
+  negated: false
+- content: DuPont has not yet ordered any mission targeting a traitor within the Grammaton
+    Clerics.
+  id: f_6
+  negated: false
+- content: There is no current official suspicion or covert observational plan targeting
+    John Preston at t=0.
+  id: f_7
+  negated: false
+- content: DuPont has not yet received any reports or intelligence regarding Preston’s
+    emotional instability or deviance.
+  id: f_8
+  negated: false
+- content: Preston is not currently detained, arrested, or interrogated under DuPont’s
+    orders.
+  id: f_9
+  negated: false
+- content: Brandt has no active surveillance or operatives role involving John Preston
+    assigned by DuPont.
+  id: f_10
+  negated: false
+- content: DuPont’s true identity as 'Father' is not yet revealed or known.
+  id: f_11
+  negated: false
+- content: DuPont’s secret collection of illicit art and literature is hidden and
+    unknown to others including Preston.
+  id: f_12
+  negated: false
+- content: Brandt is not publicly accused or arrested for treason or any disloyalty.
+  id: f_13
+  negated: false
+- content: Preston has not yet experienced or acted upon any emotional deviation from
+    standard protocols.
+  id: f_14
+  negated: false
+- content: No gun kata combat or ideological confrontation involving DuPont, Brandt,
+    or Preston has occurred.
+  id: f_15
+  negated: false
+- content: DuPont is alive and maintains full authority within the Council.
+  id: f_16
+  negated: false
+- content: The propaganda communication control systems and Prozium production facilities
+    are intact and fully operational.
+  id: f_17
+  negated: false
+- content: The Underground has not initiated any coordinated uprising or attack against
+    the Council.
+  id: f_18
+  negated: false
+meta:
+  genres: ["Sci-Fi", "Action"]
+  id: movie61
+  player_role: Dupont
+  title: "Equilibrium"
+synopsis: Libria is governed by the Tetragrammaton Council, which is led by a reclusive
+  figurehead known as "Father". Father never interacts with anyone directly, but he
+  is seen on giant video screens throughout the city. The Tetragrammaton Council uses
+  the police to enforce conformity. At the pinnacle of Librian law enforcement are
+  the Grammaton Clerics, who are trained in the martial art of gun kata. The Clerics
+  raid the "Nether" region outside the city, where they destroy emotionally stimulating
+  materials such as art, books and music, executing the people hiding them. Despite
+  their efforts, a resistance movement, known as the "Underground", has emerged. John
+  Preston is a high ranking Grammaton Cleric and a widower with two children whose
+  wife, Viviana, was executed for "Sense Offense". After a raid, Preston notices his
+  partner, Errol Partridge, taking a book of poems instead of incinerating them. Realizing
+  Partridge is keeping the book, Preston tracks him down and executes him. Before
+  he dies, Partridge says that all the consequences of feeling are a "cost he would
+  pay gladly". The next morning Preston accidentally breaks his daily vial of Prozium,
+  and as he does not have an immediate replacement he begins to experience emotions.
+  Upon gaining replacement vials, he decides against taking them and instead hides
+  them behind the mirror in his bathroom. Preston is partnered with career-conscious
+  Brandt. Together, they arrest Mary O'Brien, for sense offense. Preston's emotional
+  confusion is exacerbated during her interrogation. Without Prozium Preston finds
+  it difficult keeping an emotionless facade in front of his son and his suspicious
+  partner. Preston forges an emotional connection with O'Brien and he feels remorse
+  for killing Partridge, especially after he finds out that Partridge and O'Brien
+  were lovers. He eventually contacts the Resistance and is then summoned before Vice-Counsel
+  DuPont who reveals there is a traitor in the clerics. DuPont tells him to exterminate
+  the Resistance and to find the traitor. The Resistance convinces him to assassinate
+  Father to start a revolution. They plan to disrupt Prozium production which will
+  then lead to an uprising by the populace. After Preston fails to stop Mary O'Brien's
+  execution he is caught having an emotional breakdown by Brandt, who arrests him
+  and brings him before the Vice-Counsel. After tricking DuPont into believing that
+  Brandt is the real traitor, Preston rushes home to destroy the hidden vials of unused
+  Prozium, but finds that his son - who reveals that he stopped taking Prozium after
+  his mother died - has already destroyed the unused vials. As planned, the leaders
+  of the Resistance are captured and Preston is granted an exclusive audience with
+  Father. Father actually turns out to be DuPont, who replaced the original Father
+  after his death. Preston goes on a rampage, fighting his way to DuPont's office,
+  which is filled with artwork and ornate furniture, all illegal items. It is revealed
+  that Brandt was not arrested but was part of a ruse to expose Preston. It also becomes
+  clear that DuPont does not take Prozium and has been reading poetry. DuPont taunts
+  him, asking Preston how it felt to betray the Underground. Preston kills all of
+  DuPont's bodyguards, and defeats Brandt in a katana battle. Preston and DuPont finally
+  fight in a gun kata battle in which Preston wins. DuPont tries to convince Preston
+  to spare him, asking if taking his life is worth the emotion of knowing he killed
+  someone who is "feeling" and knows how beautiful life can be. Preston repeats Partridge's
+  last words and announces that he gladly will pay the cost, shooting DuPont in the
+  chest. He then destroys the propaganda communication control systems, freezing all
+  of the indoctrination propaganda everyone had been subjected to all their lives.
+  The Underground blows up the Prozium manufacturing and storage facilities, while
+  scores of rebels successfully attack key points throughout the city. Preston quietly
+  watches the overthrow of the government from DuPont's office, holding O'Brien's
+  red ribbon and smiling.
+trajectory:
+- description: DuPont operates as Vice-Counsel within the Tetragrammaton Council.
+    The city of Libria is tightly controlled under the Council's rule, with 'Father'
+    as the reclusive figurehead. The Grammaton Clerics enforce law through violent
+    raids, maintaining the use of Prozium to suppress emotions. The underground resistance
+    exists but is not directly confronted by DuPont yet.
+  id: s_0
+  key_delta: DuPont's awareness of internal threats within the enforcement body is
+    established, setting the stage for covert manipulations.
+  trigger_event: DuPont receives intelligence regarding a possible traitor within
+    the Grammaton Clerics and orders a mission to identify and eliminate the threat.
+- description: DuPont organizes a covert plan with Brandt to monitor Preston and
+    expose the true cleric traitor while preserving the appearance of internal loyalty
+    testing. Political intrigue within the Council intensifies.
+  id: s_1
+  key_delta: Surveillance on Preston is escalated, embedding Brandt as a key operative
+    in DuPont's strategy.
+  trigger_event: DuPont directs Brandt to intensify surveillance on John Preston under
+    the guise of loyalty tests.
+- description: DuPont receives reports of Preston’s emotional instability and unexpected
+    resistance to standard protocols after his Prozium supply is interrupted.
+  id: s_2
+  key_delta: Preston's deviation from expected behavior is officially noted, justifying
+    further watchfulness and potential disciplinary actions.
+  trigger_event: DuPont instructs an interrogation of Preston about his loyalty and
+    secret behaviors.
+- description: DuPont presides over Preston’s interrogation, maintaining an authoritative
+    and suspicious demeanor while reviewing Preston’s emotional breakdown captured
+    by Brandt.
+  id: s_3
+  key_delta: Preston is temporarily neutralized as a variable, while DuPont prepares
+    to manipulate the situation to his advantage.
+  trigger_event: DuPont orders the temporary arrest and containment of Preston pending
+    further investigation.
+- description: DuPont executes a ruse by 'arresting' Brandt for treason, concealing
+    Brandt's true role as his loyal agent to further manipulate Preston.
+  id: s_4
+  key_delta: The trap is set with Preston lured into a controlled meeting, consolidating
+    DuPont’s control.
+  trigger_event: DuPont summons Preston under pretext to meet 'Father' for a confidential
+    audience.
+- description: DuPont reveals himself as the true 'Father,' having succeeded the original
+    figurehead. His office is filled with illicit art and forbidden literature, evidencing
+    his secret defiance of Council doctrine.
+  id: s_5
+  key_delta: DuPont’s dual identity as both a political leader and a clandestine figure
+    embracing emotion is exposed; battle erupts signaling the collapse of established
+    order.
+  trigger_event: Preston confronts DuPont/Father, initiating a violent altercation
+    within the office.
+- description: Amidst gun kata combat, DuPont taunts Preston about the 'cost' of emotion.
+    Brandt reappears revealing his true allegiance to DuPont, escalating the fight's
+    intensity.
+  id: s_6
+  key_delta: The last loyal forces to DuPont are eliminated; the ultimate ideological
+    confrontation unfolds.
+  trigger_event: DuPont and Preston engage in a final duel after Brandt’s defeat.
+- description: Preston kills DuPont in gun kata battle, decisively ending DuPont’s
+    reign. DuPont questions if sparing him would mean accepting the emotional weight
+    of killing a 'feeling' man.
+  id: s_7
+  key_delta: DuPont’s death irrevocably ends the Council’s secretive internal rule
+    by the false Father; the emotional revolution is symbolically affirmed.
+  trigger_event: Preston executes DuPont, affirming his commitment to emotional truth.
+- description: With DuPont dead, Preston destroys the propaganda communication systems,
+    halting the city-wide indoctrination. Simultaneously, the Underground initiates
+    a coordinated uprising, including destruction of Prozium facilities and attacks
+    on strategic targets.
+  id: s_8
+  key_delta: The authoritarian regime is dismantled; systemic emotional suppression
+    infrastructure is neutralized.
+  trigger_event: Explosions and rebellions erupt throughout the city as the resistance
+    takes advantage of the power vacuum.
+- description: The city of Libria begins to fall into revolutionary chaos. Preston
+    watches from the former Father’s office, holding O’Brien’s red ribbon and smiling
+    subtly in a moment of emotional awakening and hope.
+  id: s_9
+  key_delta: The legacy of emotional repression is destroyed; a new era of emotional
+    freedom dawns following DuPont’s death and the collapse of the regime.
+  trigger_event: Preston observes the unfolding revolution, signaling the end of his
+    journey and the start of societal transformation.

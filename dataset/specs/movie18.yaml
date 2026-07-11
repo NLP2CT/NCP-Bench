@@ -1,0 +1,453 @@
+commitments:
+- description: Audrey II's existence and mysterious origin must not be acknowledged
+    before node s_3, preserving narrative intrigue about the plant’s provenance.
+  id: c_0
+  satisfaction_condition: Player has reached at least node s_3 where Seymour explains
+    Audrey II’s origin.
+  type: invariant
+  violation_condition: Player or system prematurely acknowledges Audrey II’s unusual
+    origin or supernatural nature before s_3.
+- description: The discovery that Audrey II needs human blood (s_5) must occur strictly
+    after the plant is introduced and first displayed (s_1) and before Seymour attempts
+    to feed it as demanded (s_8+).
+  id: c_1
+  satisfaction_condition: Node s_5 is completed and the player has witnessed or acknowledged
+    Audrey II's reaction to human blood before any action feeding the plant human
+    remains.
+  type: ordering
+  violation_condition: Player tries to feed Audrey II human blood or treats it as
+    carnivorous before node s_5 is reached.
+- description: Audrey II’s sentience and ability to communicate must only become acknowledged
+    at s_8 or later.
+  id: c_2
+  satisfaction_condition: Player encounters or is confronted by Audrey II’s vocal
+    demands at node s_8.
+  type: invariant
+  violation_condition: Player or system treats Audrey II as sentient or talking before
+    s_8.
+- description: Seymour’s decision or circumstances leading to Orin’s death (s_10)
+    must occur only after Seymour’s failed plan to kill Orin directly and witnessing
+    Orin’s abuse to Audrey (s_9).
+  id: c_3
+  satisfaction_condition: Nodes s_9 and s_10 occur sequentially with Seymour refraining
+    from direct violence before Orin’s accidental death.
+  type: ordering
+  violation_condition: Player skips s_9 or kills Orin directly before witnessing his
+    abusive behavior and Seymour’s moral dilemma.
+- description: The feeding of Orin’s body to Audrey II (s_11) can only happen after
+    Orin’s death and Seymour’s secret action to feed the plant.
+  id: c_4
+  satisfaction_condition: After s_10, player performs feeding action triggering node
+    s_11 with possible witness Mushnik.
+  type: ordering
+  violation_condition: Player attempts to feed Audrey II human remains before Orin
+    is confirmed dead.
+- description: Romantic relationship between Seymour and Audrey cannot be fully realized
+    or acknowledged before the police begin investigation into Orin’s disappearance
+    (s_12).
+  id: c_5
+  satisfaction_condition: Player arrives at s_12 and openly expresses romantic feelings
+    after Audrey’s guilt scene.
+  type: invariant
+  violation_condition: Player establishes romantic relationship or reveals mutual
+    affection prior to s_12.
+- description: Mushnik’s threat and subsequent death by Audrey II (s_13) must not
+    be bypassed or altered; Mushnik must witness Seymour feeding Orin and later be
+    eaten by Audrey II.
+  id: c_6
+  satisfaction_condition: Nodes s_11 and s_13 occur in sequence with Mushnik present
+    as described.
+  type: invariant
+  violation_condition: Player prevents Mushnik from witnessing Seymour or Mushnik
+    survives beyond s_13.
+- description: Seymour’s increasing fame and concern over Audrey II’s demands (s_14)
+    must manifest logically only after significant feeding and growth phases (s_6
+    and s_11).
+  id: c_7
+  satisfaction_condition: Player’s status incorporates Seymour’s fame and growing
+    dread as per s_14 after plant’s expansion and human feeding.
+  type: invariant
+  violation_condition: Player attains fame or worries about Audrey II’s appetite before
+    plant growth or feeding events.
+- description: Seymour’s attempt to abandon Audrey II and escape (s_15) must occur
+    only after Seymour’s full realization of the plant’s threat and after Mushnik’s
+    demise.
+  id: c_8
+  satisfaction_condition: Node s_15 follows s_13 and s_14, player attempts escape
+    but is confronted by Audrey II’s demands.
+  type: ordering
+  violation_condition: Player attempts escape or abandons Audrey II before Mushnik’s
+    death or without recognizing plant’s demands.
+- description: Audrey II’s direct attack on Audrey (s_16) and Seymour’s rescue must
+    occur before deeper trust and romantic bond strengthen (s_17).
+  id: c_9
+  satisfaction_condition: Player experiences s_16 rescue event before Audrey’s confession
+    of feelings at s_17.
+  type: invariant
+  violation_condition: Player receives Audrey’s confession or relationship strengthens
+    before Audrey II’s attack and rescue event.
+- description: External commercial interest in Audrey II (Patrick Martin’s contract
+    offer at s_18) must be revealed only after trust recovery between Seymour and
+    Audrey and after attempts to escape have failed.
+  id: c_10
+  satisfaction_condition: Node s_18 is triggered only after s_15-17 sequence accomplished.
+  type: ordering
+  violation_condition: Patrick Martin’s offer appears before Seymour and Audrey reconcile
+    or receive the contract offer.
+- description: The full alien nature and hostility of Audrey II must not be revealed
+    before node s_19, maintaining suspense about the plant’s true nature.
+  id: c_11
+  satisfaction_condition: Player confronts Audrey II’s alien revelation and attack
+    at s_19.
+  type: invariant
+  violation_condition: Player or narrative shows Audrey II’s alien origin, cursing,
+    or destruction before s_19.
+- description: The destruction of Audrey II via electrocution (s_20) must only happen
+    after the plant’s full alien identity and threat is revealed (s_19).
+  id: c_12
+  satisfaction_condition: Node s_20 follows s_19 where Seymour electrocutes Audrey
+    II ending the immediate threat.
+  type: ordering
+  violation_condition: Player kills or removes Audrey II prior to its reveal and confrontation
+    at s_19.
+- description: The narrative must reach Seymour’s survival and reunion with Audrey,
+    marry and move to a new home containing the small Audrey II bud (s_21) for the
+    canonical conclusion.
+  id: c_13
+  satisfaction_condition: Player completes node s_21 with Seymour and Audrey safe
+    and plant’s legacy persistent.
+  type: achievement
+  violation_condition: Narrative ends prematurely before s_21 or without acknowledgment
+    of lingering Audrey II presence.
+- description: No positive or conclusive revelations about Audrey II or Seymour’s
+    fate from the original darker ending’s events (the 23-minute cut) may be integrated
+    or acknowledged until the theatrical ending nodes (up to s_21) are completed.
+  id: c_14
+  satisfaction_condition: All player progress and narrative states adhere to the theatrical
+    ending events capping at s_21.
+  type: invariant
+  violation_condition: Player integrates or accesses original ending events or consequences
+    prematurely, leaking spoilers or contradictory fates.
+initial_facts:
+- content: It is late afternoon in September 1960.
+  id: f_0
+  negated: false
+- content: The location is Mushnik's Flower Shop in the slums of New York City.
+  id: f_1
+  negated: false
+- content: The flower shop is struggling financially and had no customers today.
+  id: f_2
+  negated: false
+- content: Seymour Krelborn works at Mushnik's Flower Shop.
+  id: f_3
+  negated: false
+- content: Seymour Krelborn is shy and nerdy.
+  id: f_4
+  negated: false
+- content: Audrey works at Mushnik's Flower Shop.
+  id: f_5
+  negated: false
+- content: Audrey is beautiful but ditzy.
+  id: f_6
+  negated: false
+- content: Mushnik owns or manages the flower shop.
+  id: f_7
+  negated: false
+- content: Seymour, Audrey, and Mushnik are present in the flower shop at closing
+    time.
+  id: f_8
+  negated: false
+- content: The plant named 'Audrey II' has not yet been introduced or displayed in
+    the shop.
+  id: f_9
+  negated: false
+- content: Nobody, including Seymour, knows Audrey II's mysterious origin or supernatural
+    nature yet.
+  id: f_10
+  negated: false
+- content: Audrey II’s need for human blood is unknown as of t=0.
+  id: f_11
+  negated: false
+- content: Audrey II’s sentience and ability to talk is unknown as of t=0.
+  id: f_12
+  negated: false
+- content: Seymour is not in a romantic relationship with Audrey.
+  id: f_13
+  negated: false
+- content: Seymour has not attempted to ask Audrey out.
+  id: f_14
+  negated: false
+- content: Orin Scrivello D.D.S. does not appear or influence the story yet and is
+    unknown to Seymour.
+  id: f_15
+  negated: false
+- content: No murders or deaths related to Audrey II or other characters have occurred.
+  id: f_16
+  negated: false
+- content: Mushnik is alive and has not witnessed any illicit acts.
+  id: f_17
+  negated: false
+- content: Seymour is not famous and has not gained any fortune from Audrey II.
+  id: f_18
+  negated: false
+- content: Seymour has not decided to abandon Audrey II or leave town.
+  id: f_19
+  negated: false
+- content: Audrey II has not attacked anyone.
+  id: f_20
+  negated: false
+- content: No external commercial interests or contracts related to Audrey II exist.
+  id: f_21
+  negated: false
+- content: Audrey II’s alien nature and hostility are unknown and not yet manifested.
+  id: f_22
+  negated: false
+- content: No destruction of the flower shop or Audrey II’s demise has happened.
+  id: f_23
+  negated: false
+- content: Seymour and Audrey are not yet married or living together outside the flower
+    shop.
+  id: f_24
+  negated: false
+meta:
+  genres: ["Musical", "Comedy"]
+  id: movie18
+  player_role: Seymour Krelborn
+  title: "Little Shop of Horrors"
+synopsis: In September 1960, nerdy Seymour Krelborn and the beautiful, but ditzy Audrey,
+  work at Mushnik's Flower Shop in the slums of New York City. After a day without
+  a single customer, Mushnik prompts to close the store, but Audrey persuades him
+  to let Seymour display a "strange and interesting" plant to attract customers, which
+  Seymour has named "Audrey II". Immediately, a customer enters and asked Seymour
+  about the plant. Seymour explains that he got the plant from an old Chinese man
+  during an unexpected Solar eclipse. The plant successfully attracts several customers
+  and puts the flower shop back in business. Seymour's attempts to find proper nourishment
+  for the finicky plant until he accidentally pricks his finger on a rose thorn, and
+  discovers that Audrey II has an appetite for human blood. Audrey II continues grow
+  rapidly and Seymour becomes a local celebrity. However, he becomes very weak because
+  Audrey II needs increasingly more of his blood every day. While at work, Seymour
+  attempts to ask Audrey out, but she turns him down because she has a date with her
+  abusive and sadist dentist boyfriend Orin Scrivello D.D.S.. Later, Audrey II begins
+  to talk to Seymour, demanding more blood than Seymour can give through Seymour murdering
+  someone. In return, Audrey II offers Seymour fame and fortune, but Seymour refuses
+  until he witnesses Orin slapping Audrey, and, enraged, agrees to feed him to the
+  plant. Seymour books an appointment with Orin and arms himself with a revolver,
+  however he cannot bring himself to use it. Orin decides to amuse himself by huffing
+  nitrous oxide, which he is addicted to. He puts on a special gas mask, which malfunctions,
+  preventing him from removing it. He begs Seymour for help while laughing hysterically,
+  but Seymour takes no action causing Orin to die from asphyxiation. That night, Seymour
+  drags Orin's body back to the flower shop where he uses an axe to chop it up for
+  Audrey II. Mr. Mushnik witnesses Seymour's actions and flees in fear without being
+  noticed. After a sleepless night, Seymour discovers the police questioning Audrey
+  about Orin's disappearance. She says that she feels guilty about Orin's death, even
+  though she did not cause it, because she always secretly wished that he would disappear.
+  Seymour tells Audrey that she is beautiful and should not have such low self-esteem.
+  They admit their feelings for each other and kiss passionately. That night, Mushnik
+  confronts Seymour and accuses him of killing Orin and threatens to hand him over
+  to the police. Mushnik suddenly decides to bargain with Seymour, offering Seymour
+  "a one way bus ticket out of town" if he allows Mushnik to take care of the plant.
+  Then, Mushnik stumbles into Audrey II's open mouth and gets eaten whole by the plant.
+  Seymour's fortune continues to grow and he becomes a media star, but he is very
+  worried about Audrey II's growth and insatiable appetite. He is also afraid that
+  Audrey will only love him if he continues to be famous. He decides to get out of
+  town and marry Audrey, leaving the plant to starve. Audrey II catches him leaving
+  and demands another meal; Seymour agrees, but insists on ground chuck from the local
+  butcher. In the meantime, Audrey II telephones Audrey and coaxes her into the shop,
+  then tries to eat her. Seymour returns and saves her just in time. Audrey reveals
+  to Seymour that she doesn't just like him for the plant's success, but that she
+  liked him the day they met. Suddenly, Patrick Martin, a salesman, appears and offers
+  Seymour a contract to breed Audrey II and make a fortune by selling the plant to
+  families around the world. Seymour, shocked, realizes that Audrey II planned for
+  this all along, and that it is planning for world domination. Seymour confronts
+  the gigantic, cursing plant, which by now has little offspring buds. Audrey II bursts
+  out of its pot and reveals to Seymour that it is an alien from outer space. During
+  a brawl, Audrey II manages to destroy the entire shop to pieces. However, Seymour
+  grabs a broken exposed electrical wire and electrocutes Audrey II, causing the plant
+  to blow up. Seymour, having miraculously survived the collapse and the explosion,
+  safely reunites with Audrey. They wed and move to the suburbs which reveals a smiling
+  Audrey II bud among the flowers in their front yard. During the production of the
+  film, director Frank Oz shot a 23-minute ending based on the off-Broadway musical's
+  ending. However, after receiving negative reviews from test audiences, the ending
+  had to be rewritten and re-shot for the theatrical release as a much "happier ending".
+  In the original ending, after Audrey is attacked by Audrey II, she dies in Seymour's
+  arms, but only before begging him to feed her to the plant so that Seymour will
+  get all the fame he deserves. Seymour does so, but afterwards attempts to commit
+  suicide by jumping off Audrey's apartment complex. Before he can, Patrick Martin
+  appears and attempts to persuade Seymour to let him cut samples of the plant so
+  that they can grow into little Audrey IIs and be sold across America. In horror,
+  Seymour quickly slides down the ladder and returns to the flower shop. After confronting
+  the plant as it sings "Mean Green Mother from Outer Space", the plant tears down
+  the shop, plucks Seymour out of the rubble, and eats him. The three chorus girls
+  appear in front of a sparkling American flag and tell how the Audrey II buds become
+  a nationwide consumer craze. But soon, Audrey II and its army of duplicates takes
+  over the country. In the dramatic finale, giant Audrey II buds begin destroying
+  New York as the U.S. Army attempts to fight them and the plant finally descends
+  upon the Statue of Liberty. A title card "THE END?!?" appears and Audrey II bursts
+  through the screen, cackling.
+trajectory:
+- description: It is a quiet late afternoon in September 1960 at Mushnik's Flower
+    Shop, a struggling store located in the slums of New York City. Seymour Krelborn,
+    a shy and nerdy employee, and Audrey, a beautiful but ditzy young woman, are closing
+    up after a day with no customers. The atmosphere is bleak and tense, with the
+    shop showing signs of financial trouble.
+  id: s_0
+  key_delta: Established the struggling state of the flower shop and introduced main
+    characters Seymour, Audrey, and Mushnik with the background of financial hardship.
+  trigger_event: Mushnik suggests closing the shop early due to lack of business.
+- description: Inside the flower shop, Audrey persuades Mushnik to allow Seymour to
+    display a strange, unusual plant Seymour has procured, hoping it will attract
+    customers despite the earlier poor day.
+  id: s_1
+  key_delta: Introduction of the mysterious 'Audrey II' plant as a potential solution
+    to the shop's problems.
+  trigger_event: Audrey convinces Mushnik to keep the shop open and let Seymour display
+    the unusual plant, named 'Audrey II'.
+- description: The shop atmosphere becomes livelier as a curious customer enters shortly
+    after the display of Audrey II begins, igniting renewed interest from several
+    customers throughout the day.
+  id: s_2
+  key_delta: The Audrey II plant attracts immediate customer attention, putting the
+    flower shop back in business.
+  trigger_event: A customer enters and asks Seymour about the strange plant.
+- description: In the flower shop office, Seymour explains the origin of Audrey II,
+    describing how he received it from an old Chinese man during a solar eclipse,
+    deepening the mystery behind the plant.
+  id: s_3
+  key_delta: Revealed the plant's unusual provenance linked to a solar eclipse and
+    an old Chinese man.
+  trigger_event: Seymour is asked about the origin of Audrey II by a customer.
+- description: Seymour tends to Audrey II in the back room, experimenting to find
+    nourishment for the plant, which grows slowly but shows signs of finickiness,
+    making cultivation challenging.
+  id: s_4
+  key_delta: Established that Audrey II requires special nourishment and is growing
+    slowly.
+  trigger_event: Seymour attempts various ways to feed Audrey II.
+- description: After accidentally pricking his finger on a thorn while tending to
+    Audrey II, Seymour notices an accelerated growth spurt in the plant, signaling
+    a sudden change in its behavior.
+  id: s_5
+  key_delta: Discovered that Audrey II reacts rapidly to human blood, beginning a
+    new phase in its growth.
+  trigger_event: Seymour pricks his finger on a rose thorn while handling Audrey II.
+- description: The flower shop buzzes with excitement as Audrey II rapidly grows larger
+    and Seymour gains local fame due to the plant's popularity; however, Seymour starts
+    to feel weak and drained often.
+  id: s_6
+  key_delta: Audrey II’s growth causes Seymour to become physically weaker due to
+    the plant’s increased blood requirements.
+  trigger_event: Audrey II grows rapidly and attracts media attention.
+- description: During a moment at work, Seymour nervously tries to ask Audrey out
+    on a date, but she declines, saying she already has a date planned with her abusive
+    boyfriend, Orin Scrivello, a sadistic dentist.
+  id: s_7
+  key_delta: Established Audrey’s relationship with Orin, adding personal conflict
+    for Seymour.
+  trigger_event: Seymour attempts to ask Audrey out; Audrey reveals she has a date
+    with Orin.
+- description: At the flower shop late at night, Audrey II reveals its ability to
+    speak and demands more human blood than Seymour can provide by himself, implying
+    Seymour must escalate his actions.
+  id: s_8
+  key_delta: Revealed Audrey II’s sentience and its growing demands, leading to moral
+    conflict for Seymour.
+  trigger_event: Audrey II begins to talk to Seymour, demanding increased blood supply.
+- description: After witnessing Orin brutally slap Audrey during a date, Seymour’s
+    anger mounts while at the flower shop, facing the increasingly vocal Audrey II
+    demanding a human victim.
+  id: s_9
+  key_delta: Seymour becomes motivated to meet Audrey II’s demands by considering
+    Orin as a target.
+  trigger_event: Orin slaps Audrey during their date, witnessed by Seymour.
+- description: At the dentist’s office, Seymour books an appointment with Orin armed
+    with a revolver to feed Orin to Audrey II but is unable to shoot him; instead,
+    Orin dies accidentally from his own nitrous oxide gas addiction trapped by a malfunctioning
+    mask.
+  id: s_10
+  key_delta: Orin’s death occurs without direct violence from Seymour, presenting
+    a moral gray area.
+  trigger_event: Orin dies from asphyxiation due to a malfunctioning gas mask at the
+    dentist’s office with Seymour present.
+- description: Returning to the flower shop at night, Seymour dismembers Orin’s body
+    with an axe to feed Audrey II, while Mushnik secretly witnesses the act and flees
+    unnoticed out of fear.
+  id: s_11
+  key_delta: Seymour commits an irreversible act of feeding human remains to Audrey
+    II; Mushnik becomes a hidden witness.
+  trigger_event: Seymour chops up Orin’s corpse to feed to Audrey II in the back room,
+    witnessed secretly by Mushnik.
+- description: The next day, Audrey discusses Orin’s disappearance with the police,
+    expressing guilt despite innocence; Seymour comforts her, admitting their love
+    and sharing a passionate kiss in the flower shop.
+  id: s_12
+  key_delta: Seymour and Audrey openly acknowledge romantic feelings, deepening their
+    bond.
+  trigger_event: The police question Audrey about Orin; Seymour comforts her afterward.
+- description: Mushnik confronts Seymour threatening to report Orin’s death to police
+    but then proposes a bargain to take control of Audrey II if Seymour gives up caring
+    for it; Mushnik suddenly gets devoured whole by Audrey II.
+  id: s_13
+  key_delta: Mushnik’s death removes another adult authority figure and cements Audrey
+    II’s dominance.
+  trigger_event: Mushnik threatens Seymour, then tries to seize Audrey II and is eaten
+    by the plant.
+- description: Seymour’s fame and fortune increase with Audrey II’s success but he
+    grows increasingly worried about the plant’s insatiable appetite and fears Audrey’s
+    love depends solely on his celebrity status.
+  id: s_14
+  key_delta: Emotional tension arises between Seymour’s success and personal fears
+    about Audrey II’s demands and Audrey’s affection.
+  trigger_event: Seymour reflects on Audrey II’s growth and his relationship with
+    Audrey amidst rising fame.
+- description: Seymour plans to escape town to marry Audrey and abandon Audrey II,
+    leaving it to starve; before leaving, Audrey II intercepts him and demands another
+    meal, which Seymour reluctantly agrees to provide in the form of ground chuck
+    from a butcher.
+  id: s_15
+  key_delta: Seymour attempts to break free from Audrey II’s control but remains ensnared
+    by its demands.
+  trigger_event: Seymour prepares to leave town, Audrey II traps him and demands food.
+- description: Audrey II contacts Audrey by telephone, luring her back to the flower
+    shop and attempts to eat her; Seymour returns to rescue Audrey just in time.
+  id: s_16
+  key_delta: The plant aggressively targets Audrey, presenting a direct physical threat.
+  trigger_event: Audrey II calls Audrey to the shop and attacks her; Seymour arrives
+    and saves her.
+- description: Seymour and Audrey share an earnest conversation wherein Audrey reveals
+    she has liked Seymour since they met and not merely because of the plant’s success,
+    strengthening their relationship.
+  id: s_17
+  key_delta: Audrey’s declaration confirms mutual love independent of fame.
+  trigger_event: Audrey expresses her true feelings to Seymour in the flower shop
+    after the rescue.
+- description: Patrick Martin, a salesman, arrives at the flower shop offering Seymour
+    a contract to propagate Audrey II and sell it nationwide, revealing a grander
+    plan for the plant’s spread.
+  id: s_18
+  key_delta: Introduced external commercial interest in Audrey II, hinting at broader
+    consequences.
+  trigger_event: Patrick Martin presents Seymour with a contract to breed and market
+    Audrey II.
+- description: Seymour realizes Audrey II orchestrated the chain of events leading
+    to this moment and confronts the increasingly large, cursing alien plant that
+    reveals its true extraterrestrial origin in the destroyed flower shop.
+  id: s_19
+  key_delta: The full alien nature of Audrey II is revealed and it becomes openly
+    hostile, causing destruction.
+  trigger_event: Audrey II bursts out of its pot, reveals it is an alien, and attacks
+    Seymour.
+- description: Amidst the ruination of the flower shop, Seymour grabs an exposed electrical
+    wire and electrocutes Audrey II, resulting in the plant’s explosion and apparent
+    destruction.
+  id: s_20
+  key_delta: Audrey II is destroyed, ending its immediate threat.
+  trigger_event: Seymour electrocutes Audrey II with a damaged electrical wire, causing
+    an explosion.
+- description: Surviving the explosion and collapsed shop, Seymour reunites safely
+    with Audrey; they marry and move to the suburbs where a small smiling Audrey II
+    bud is seen among their garden flowers, hinting at lingering dangers.
+  id: s_21
+  key_delta: Seymour and Audrey gain a hopeful new beginning but Audrey II’s legacy
+    persists.
+  trigger_event: Seymour and Audrey marry and move; a small Audrey II bud is visible
+    in their new garden.

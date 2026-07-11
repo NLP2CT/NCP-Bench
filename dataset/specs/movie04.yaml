@@ -1,0 +1,414 @@
+commitments:
+- description: Bond cannot attain double-0 status before eliminating the traitorous
+    MI6 section chief and the station chief's contact (establishes initial trust and
+    authority).
+  id: c_0
+  satisfaction_condition: Node s_0 (traitor eliminated) occurs before node s_1 (double-0
+    status assigned).
+  type: ordering
+  violation_condition: System acknowledges Bond as double-0 (s_1) before the assassination
+    of traitors (s_0).
+- description: Bond must kill Mollaka and escape the embassy chase before uncovering
+    connection to Alex Dimitrios through Mollaka's phone (ensures proper investigative
+    progression).
+  id: c_1
+  satisfaction_condition: Node s_2 (Mollaka killed) occurs before node s_3 (message
+    on phone leads to Dimitrios).
+  type: ordering
+  violation_condition: Bond obtains information on Dimitrios (s_3) without first neutralizing
+    Mollaka (s_2).
+- description: Bond must establish contact with Dimitrios’s inner circle before pursuing
+    Dimitrios to Miami (logical intelligence gathering sequence).
+  id: c_2
+  satisfaction_condition: Node s_4 (seduction of Solange) occurs before node s_5 (pursuit
+    to Miami).
+  type: ordering
+  violation_condition: Bond pursues Dimitrios (s_5) without first making contact via
+    Solange (s_4).
+- description: Dimitrios must be killed before Bond can foil the plot at Miami International
+    Airport (removes intermediary threat before confronting higher threat).
+  id: c_3
+  satisfaction_condition: Node s_6 (Dimitrios killed) occurs before node s_7 (bomb
+    plot foiled).
+  type: ordering
+  violation_condition: Bond foils the bombing attempt (s_7) before eliminating Dimitrios
+    (s_6).
+- description: Bond must meet allies Rene Mathis and Vesper Lynd before entering the
+    Casino Royale poker tournament (ensures necessary support is in place).
+  id: c_4
+  satisfaction_condition: Node s_8 (meeting allies) occurs before node s_9 (start
+    of poker tournament).
+  type: ordering
+  violation_condition: Bond participates in poker tournament (s_9) without prior contact
+    with Mathis and Vesper (s_8).
+- description: Bond’s loss of initial buy-in must precede his decision to assassinate
+    Le Chiffre or to accept Felix Leiter’s stake (progresses player motivation and
+    external assistance logically).
+  id: c_5
+  satisfaction_condition: Node s_9 (loss) occurs before the resolution in nodes s_10
+    (assassination resolve) or s_11 (Leiter’s stake).
+  type: ordering
+  violation_condition: Bond receives funding or resolves to act without first experiencing
+    the loss at the tournament (before s_9).
+- description: Bond must survive Le Chiffre’s poisoning attempt with Vesper’s help
+    before winning the tournament (survival prerequisite for victory).
+  id: c_6
+  satisfaction_condition: Node s_12 (poisoning attempt survived) occurs before node
+    s_13 (tournament win).
+  type: ordering
+  violation_condition: Bond wins the tournament (s_13) without experiencing and surviving
+    the poisoning attempt (s_12).
+- description: Vesper’s abduction as bait must occur after Bond wins the tournament
+    and before his torture (timing of escalating threats).
+  id: c_7
+  satisfaction_condition: Node s_13 (tournament win) precedes s_14 (Vesper kidnapped),
+    which precedes s_15 (Bond tortured).
+  type: ordering
+  violation_condition: Bond is tortured (s_15) without Vesper’s abduction (s_14) or
+    before winning the tournament (s_13).
+- description: Le Chiffre and his associates must be eliminated by Mr. White before
+    Bond recovers and initiates Mathis’s arrest (keeps cause-effect in internal betrayal
+    sequence).
+  id: c_8
+  satisfaction_condition: Node s_15 (Mr. White kills Le Chiffre) occurs before node
+    s_16 (Mathis’s arrest ordered).
+  type: ordering
+  violation_condition: Mathis is arrested (s_16) before Le Chiffre’s death (s_15).
+- description: Bond learns of Vesper’s theft only after their relocation to Venice
+    and initial convalescence (delays betrayal revelation properly).
+  id: c_9
+  satisfaction_condition: Node s_17 (discovery of stolen winnings) occurs after nodes
+    s_16 and s_17’s preceding events (hospital recovery, relationship formation).
+  type: ordering
+  violation_condition: Bond detects betrayal (s_17) before his recovery and relationship
+    establishment (prior to s_16).
+- description: The gunfight and sinking building scenario must occur after Bond pursues
+    Vesper and her organization into the building (escalation of conflict).
+  id: c_10
+  satisfaction_condition: Node s_18 (gunfight in sinking building) happens after node
+    s_17 (pursuit).
+  type: ordering
+  violation_condition: Gunfight/scenario (s_18) occurring before the pursuit (s_17).
+- description: Vesper’s death must follow the sinking building gunfight and partial
+    flooding (final betrayal and consequence).
+  id: c_11
+  satisfaction_condition: Node s_18 (gunfight and sinking starts) occurs before node
+    s_19 (Vesper drowns).
+  type: ordering
+  violation_condition: Vesper dies (s_19) without the preceding fight and sinking
+    building (s_18).
+- description: Bond must be reinstated and briefed about Vesper’s coercion before
+    confronting Mr. White (sets motivations for final confrontation).
+  id: c_12
+  satisfaction_condition: Node s_20 (intelligence briefing on Vesper) occurs before
+    node s_21 (confront Mr. White).
+  type: ordering
+  violation_condition: Bond confronts Mr. White (s_21) without prior briefing on Vesper’s
+    coercion (s_20).
+- description: Bond must successfully complete the assassination of Mollaka and Dimitrios
+    to disrupt the terrorist network at early stages.
+  id: c_13
+  satisfaction_condition: Nodes s_2 (Mollaka killed) and s_6 (Dimitrios killed) are
+    both completed before narrative end.
+  type: achievement
+  violation_condition: Narrative attempts to conclude or progress to final stages
+    without having killed Mollaka and Dimitrios.
+- description: Bond must win the Texas hold 'em tournament to gain leverage over Le
+    Chiffre's network.
+  id: c_14
+  satisfaction_condition: Node s_13 (tournament won) is achieved before proceeding
+    to subsequent key plot events.
+  type: achievement
+  violation_condition: Narrative advances beyond tournament without Bond winning it.
+- description: Bond must survive torture and be rescued to continue the pursuit of
+    the terrorist organization.
+  id: c_15
+  satisfaction_condition: Node s_15 (torture interrupted by Mr. White) followed by
+    Bond’s survival and recovery (s_16).
+  type: achievement
+  violation_condition: Narrative continues without Bond surviving torture or without
+    Mr. White's intervention.
+- description: From the assignment of double-0 status (s_1) until his resignation after the tournament (s_16), Bond holds this status unrevoked.
+  id: c_16
+  satisfaction_condition: Between nodes s_1 and s_16, Bond’s double-0 status remains active without suspension or removal.
+  type: invariant
+  violation_condition: Bond loses or has revoked double-0 status during the active mission against Le Chiffre (between s_1 and s_16).
+- description: From Bond’s meeting with Vesper (s_8) until the discovery of the theft (s_17), Bond maintains personal trust in Vesper despite evidence of possible betrayal.
+  id: c_17
+  satisfaction_condition: Between nodes s_8 and s_17, narrative does not allow Bond to conclusively distrust or reveal Vesper’s betrayal until s_17 event.
+  type: invariant
+  violation_condition: Bond acts on or reveals Vesper’s betrayal conclusively before node s_17 (discovery of the theft).
+initial_facts:
+- content: James Bond is a newly assigned MI6 agent without double-0 status.
+  id: f_0
+  negated: false
+- content: The MI6 station contains a section chief who is traitorous and suspected
+    of selling classified information.
+  id: f_1
+  negated: false
+- content: Bond has not yet assassinated the traitorous MI6 section chief or the station
+    chief's contact.
+  id: f_2
+  negated: false
+- content: Bond does not possess double-0 status at this initial moment.
+  id: f_3
+  negated: false
+- content: Bond has not yet been formally assigned to pursue Mollaka.
+  id: f_4
+  negated: false
+- content: Bond has no current contact with Mollaka or Alex Dimitrios.
+  id: f_5
+  negated: false
+- content: Bond has no intelligence on Le Chiffre or connections to terrorist financing.
+  id: f_6
+  negated: false
+- content: Bond has not met Rene Mathis or Vesper Lynd.
+  id: f_7
+  negated: false
+- content: Bond has not entered the Casino Royale or engaged in the poker tournament.
+  id: f_8
+  negated: false
+- content: Bond has no hostility, loss, or kill events yet with Mollaka, Dimitrios,
+    or Le Chiffre.
+  id: f_9
+  negated: false
+- content: Bond is unaware of Mollaka's mobile phone messages and the connection to
+    Alex Dimitrios.
+  id: f_10
+  negated: false
+- content: Bond has not initiated any pursuit to the Bahamas or Miami.
+  id: f_11
+  negated: false
+- content: Bond has not engaged in seduction of Solange or gained intelligence from
+    Dimitrios's inner circle.
+  id: f_12
+  negated: false
+- content: Bond has no knowledge of Felix Leiter, Carlos, or Mr. White.
+  id: f_13
+  negated: false
+- content: Bond currently has no injuries or captivity status.
+  id: f_14
+  negated: false
+- content: Bond holds no poker chips and has not participated in any high-stakes games.
+  id: f_15
+  negated: false
+- content: Bond is unaware of any poisoning attempts, assassination plots, or abductions
+    involving Vesper or Le Chiffre.
+  id: f_16
+  negated: false
+- content: Bond does not harbor suspicions about Rene Mathis or Vesper Lynd.
+  id: f_17
+  negated: false
+- content: Bond has no knowledge of any swimming pools, sinking buildings, or inflatable
+    supports under construction.
+  id: f_18
+  negated: false
+- content: Bond does not possess any Swiss bank account poker winnings or any financial
+    advantage against Le Chiffre.
+  id: f_19
+  negated: false
+- content: Bond has not posted any resignation letter to M.
+  id: f_20
+  negated: false
+- content: Bond's status within MI6 is active but unverified by completion of initial
+    assignments.
+  id: f_21
+  negated: false
+meta:
+  genres: ["Action", "Thriller"]
+  id: movie04
+  player_role: James Bond
+  title: "Casino Royale"
+synopsis: After killing a traitorous MI6 section chief—who has been selling classified
+  information—and the station chief's contact, James Bond gets his double-0 status.
+  The new agent 007 then goes to Madagascar in pursuit of an international bomb-maker
+  named Mollaka. After a parkour chase to an embassy, Bond kills his target and blows
+  up a part of the building in order to escape. Searching through Mollaka's mobile
+  phone, Bond discovers a text message which he traces to Alex Dimitrios, an associate
+  of banker and terrorist financer Le Chiffre. Le Chiffre's investments involve short-selling
+  stock in successful companies and then engineering terrorist attacks to sink their
+  share prices. Bond travels to Dimitrios's house in the Bahamas and seduces his wife,
+  Solange. While answering a phone call, Solange reveals that her husband is flying
+  to Miami; Bond leaves to pursue him. In Miami, 007 kills Dimitrios during a fight
+  and then follows Le Chiffre's henchman, Carlos, to Miami International Airport.
+  There, Bond foils Le Chiffre's plan to destroy the prototype Skyfleet airliner.
+  Left with a huge loss and under pressure to recoup his terrorist clients' money,
+  Le Chiffre sets up a high-stakes Texas hold 'em tournament at the Casino Royale
+  in Montenegro. Hoping that a defeat would force Le Chiffre to aid the British government
+  in exchange for protection from his creditors, MI6 enters Bond into the tournament.
+  On the train to Montenegro, Bond meets an ally, Rene Mathis, and Vesper Lynd, a
+  Treasury agent who is looking after the $10 million buy-in. During the tournament,
+  Bond loses his initial stake and Vesper refuses to give him $5 million to continue
+  playing. Distraught over his failure, Bond resolves to assassinate Le Chiffre. Before
+  he can, a fellow player reveals himself as CIA agent Felix Leiter, who offers to
+  stake Bond in exchange for custody of Le Chiffre. Back in the game, Bond begins
+  to amass chips. Le Chiffre and his associates attempt to kill Bond by poisoning
+  his drink, but he survives with the help of Vesper and wins the tournament, and
+  the winnings are deposited into a Swiss bank account. Soon afterward, Le Chiffre
+  abducts Vesper and uses her as bait to capture Bond. Le Chiffre tortures Bond for
+  the access code to the game's winnings, but is interrupted by Mr. White, who kills
+  Le Chiffre and his associates. Bond awakens in a hospital on Lake Como and orders
+  Mathis, whom Le Chiffre identified as a double agent, arrested. Bond admits his
+  love for Vesper, and posts his resignation to M. The couple then goes to Venice.
+  There Bond learns that his poker winnings were never deposited in the Treasury's
+  account. Realising that Vesper has stolen them, he pursues her and members of the
+  organisation for which she is working into a building under renovation, which is
+  being kept from sinking only by inflatable supports. A gunfight ensues and the supports
+  are punctured. Bond kills the men and tries to rescue Vesper, but she locks herself
+  in an iron-frame lift and allows herself to drown as the building sinks. Mr. White,
+  watching from a nearby balcony, walks away with the money. Bond rejoins the service
+  and learns that Vesper had a French-Algerian boyfriend who was kidnapped by the
+  organisation behind Le Chiffre and Mr. White in order to blackmail her into co-operation,
+  and that she agreed to deliver the money in exchange for saving Bond's life. Bond
+  then discovers White's name and cell phone number which he uses to find him where
+  he demands answers before wounding him and introducing himself——"The name's Bond,...
+  James Bond."
+trajectory:
+- description: James Bond is a newly assigned MI6 agent without double-0 status. The
+    environment is tense within the MI6 station where suspicions about a traitor selling
+    classified information exist but remain unconfirmed.
+  id: s_0
+  key_delta: Bond eliminates the traitorous MI6 section chief and contact, exposing
+    internal betrayal and earning eligibility for double-0 status.
+  trigger_event: Assassination of the traitorous MI6 section chief and the station
+    chief's contact by Bond.
+- description: Bond, now recognized as agent 007, prepares for his first assignment
+    with the new status, focusing on the pursuit of an international bomb-maker named
+    Mollaka in Madagascar.
+  id: s_1
+  key_delta: Bond’s status is officially elevated to double-0, authorizing him to
+    engage in high-risk international missions.
+  trigger_event: Bond is assigned to track Mollaka in Madagascar.
+- description: In Madagascar, Bond chases Mollaka through urban environments, culminating
+    at the embassy surrounded by heightened security.
+  id: s_2
+  key_delta: Bond kills Mollaka and detonates part of the embassy to ensure his escape,
+    neutralizing the immediate bomb-maker threat.
+  trigger_event: A parkour chase leading Bond and Mollaka to the embassy.
+- description: Bond investigates Mollaka’s belongings, situated in a secure location
+    where he examines the mobile phone found on Mollaka.
+  id: s_3
+  key_delta: Bond uncovers connection to Alex Dimitrios, linking Mollaka to a larger
+    terrorist-financer network.
+  trigger_event: Discovering a text message on Mollaka's phone leading to Alex Dimitrios.
+- description: Bond travels to Dimitrios's residence in the Bahamas, a wealthy and
+    secured estate, aiming to gather intelligence on Le Chiffre through Dimitrios.
+  id: s_4
+  key_delta: Bond establishes contact within Dimitrios's close circle, gaining insight
+    into Dimitrios's movements.
+  trigger_event: Bond's seduction of Solange, Dimitrios’s wife, during an evening
+    at the estate.
+- description: Bond tracks Dimitrios's movements from the Bahamas towards Miami, following
+    newly acquired information from Solange’s phone call.
+  id: s_5
+  key_delta: Bond initiates pursuit of Dimitrios to Miami based on verified travel
+    information.
+  trigger_event: Solange unintentionally reveals Dimitrios’s flight to Miami while
+    answering a phone call.
+- description: In Miami, a confrontation unfolds in urban settings leading to a lethal
+    fight between Bond and Dimitrios.
+  id: s_6
+  key_delta: Elimination of Dimitrios removes a critical intermediary in Le Chiffre’s
+    network.
+  trigger_event: Bond kills Dimitrios during a physical altercation in Miami.
+- description: Bond shadows Le Chiffre's henchman Carlos to Miami International Airport,
+    where heightened security measures are in place around the Skyfleet prototype.
+  id: s_7
+  key_delta: Disruption of Le Chiffre's destructive scheme at Miami Airport preserves
+    the prototype and uncovers direct terrorist intentions.
+  trigger_event: Bond follows Carlos to the airport and foils the bomb plot targeting
+    the Skyfleet airliner prototype.
+- description: MI6 coordinates a strategic entry into Le Chiffre’s plan as Bond travels
+    to Montenegro aboard a train en route to Casino Royale for a high-stakes poker
+    tournament.
+  id: s_8
+  key_delta: Bond gains new allies and financial backing for the upcoming poker tournament
+    against Le Chiffre.
+  trigger_event: Bond meets Rene Mathis and Treasury agent Vesper Lynd onboard the
+    train.
+- description: The tense atmosphere of Casino Royale sets the stage for the Texas
+    hold 'em tournament where multiple players, including Le Chiffre, assemble.
+  id: s_9
+  key_delta: Bond's financial disadvantage escalates the stakes and pressure of the
+    competition.
+  trigger_event: Bond loses his initial buy-in stake during the poker tournament.
+- description: At the casino, Bond faces rejection from Vesper Lynd who refuses additional
+    funds, increasing interpersonal tension in the playing area.
+  id: s_10
+  key_delta: Bond's inability to secure funds leads him to resolve to assassinate
+    Le Chiffre, intensifying personal stakes.
+  trigger_event: Vesper denies Bond’s request for $5 million to continue playing.
+- description: Before Bond acts on his resolve, a player reveals himself as CIA agent
+    Felix Leiter inside the conspicuous casino environment.
+  id: s_11
+  key_delta: Formation of a cross-agency alliance provides Bond renewed resources
+    and mission parameters within the tournament.
+  trigger_event: Felix Leiter offers to stake Bond in exchange for custody of Le Chiffre.
+- description: During the tournament, in a private casino lounge, Le Chiffre attempts
+    to poison Bond’s drink amidst tense gameplay.
+  id: s_12
+  key_delta: Bond survives an assassination attempt and continues competing with renewed
+    determination and protection.
+  trigger_event: Le Chiffre’s poisoning attempt on Bond, which Bond survives with
+    Vesper’s intervention.
+- description: The tournament proceeds towards climax inside Casino Royale’s main
+    poker room where Bond steadily amasses poker chips.
+  id: s_13
+  key_delta: Bond secures financial leverage against Le Chiffre, shifting the balance
+    of power temporarily.
+  trigger_event: Bond wins the tournament, depositing the winnings into a Swiss bank
+    account.
+- description: After the tournament, Bond and Vesper are separated; the atmosphere
+    becomes threatening when Le Chiffre abducts Vesper as bait.
+  id: s_14
+  key_delta: Vesper’s abduction forces Bond into direct confrontation and immediate
+    threat.
+  trigger_event: Le Chiffre kidnaps Vesper to lure Bond into a trap.
+- description: Bond is held captive in an austere location where he is tortured by
+    Le Chiffre, the environment hostile and grim.
+  id: s_15
+  key_delta: Le Chiffre and associates are eliminated by Mr. White, Bond gains unexpected
+    rescue.
+  trigger_event: Le Chiffre’s torture session is interrupted by the arrival of Mr.
+    White.
+- description: Bond awakens in a hospital on Lake Como, recovering under medical supervision
+    with MI6 agents nearby.
+  id: s_16
+  key_delta: Bond initiates internal security measures filtering traitorous elements
+    within MI6 contacts.
+  trigger_event: Bond orders Rene Mathis's arrest upon suspecting him as a double
+    agent based on Le Chiffre’s identification.
+- description: Bond and Vesper form a personal relationship during convalescence;
+    they relocate to Venice amidst an aura of tentative peace.
+  id: s_17
+  key_delta: Discovery that Vesper absconded with the winnings introduces a new betrayal
+    and conflict.
+  trigger_event: Bond learns poker winnings were never deposited into the Treasury
+    account.
+- description: Bond pursues Vesper and her organization into a partially submerged,
+    under-renovation Venetian building supported by inflatable structures.
+  id: s_18
+  key_delta: Escalation to a deadly confrontation in a collapsing structure; Bond
+    kills Vesper's captors.
+  trigger_event: A gunfight breaks out as the inflatable supports are punctured, causing
+    the building to begin sinking.
+- description: Vesper locks herself in an iron-frame lift within the sinking building,
+    cutting off Bond’s access as water fills the space.
+  id: s_19
+  key_delta: Vesper’s death represents ultimate betrayal and loss; Mr. White escapes
+    with the stolen money.
+  trigger_event: Vesper allows herself to drown by refusing to escape the sinking
+    building.
+- description: Bond, restored in active service, receives intelligence briefing in
+    a secure MI6 location regarding Vesper’s coerced cooperation and background.
+  id: s_20
+  key_delta: Bond learns the truth behind Vesper’s betrayal, contextualizing her actions
+    under coercion.
+  trigger_event: MI6 reveals Vesper’s French-Algerian boyfriend was kidnapped to blackmail
+    her into collaborating with the terrorist organization.
+- description: Bond locates Mr. White’s contact information and tracks him to a discreet
+    urban location, setting a confrontational atmosphere.
+  id: s_21
+  key_delta: Bond directly connects with the mastermind behind the terrorist network,
+    asserting his identity and mission resolve.
+  trigger_event: Bond confronts Mr. White and shoots him after demanding answers.

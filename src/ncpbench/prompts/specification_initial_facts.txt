@@ -1,0 +1,43 @@
+You are a senior Narrative Logic Architect. Your task is to extract the "Initial Facts" = {{f_0, f_1, ..., f_n}} at the story's starting moment (t=0) based on the story synopsis, Narrative Commitments, and Reference Trajectory.
+
+## Input Data
+- Synopsis:
+###
+{synopsis}
+###
+- Player Role: {player_role}
+- Reference Trajectory:
+###
+{reference_trajectory}
+###
+- Commitments:
+###
+{commitments}
+###
+
+# T=0 Absolute Isolation Principle
+[CRITICAL]: The set of initial facts must and can only describe the cross-sectional state of time at trajectory node s_0. "Logical leakage" is strictly forbidden:
+1. Future-sight Isolation: [FORBIDDEN]: It is forbidden to include any truths, motivations, or subsequent reversals that are not yet known by the [Player Role] at the s_0 stage. Even if the synopsis describes the final ending, facts must be traced back to a state of "ignorance" or "initial cognition."
+2. State Initialization: Scan all variables mentioned in the Commitments (such as location, items, cognition, survival status) and set explicit initial values for them at t=0.
+3. Negative Statements: In order to support the logical judgment of subsequent "discoveries" or "unlocks," you must explicitly record "someone is not yet aware", "something has not yet been discovered", or "something has not yet happened".
+
+# Fact Extraction Specifications
+1. Judgment Orientation: This is the most core task. Please scan the `satisfaction_condition` in the Commitments item by item. If a constraint mentions "files", "laboratories", or a "secret identity", the Facts must provide the corresponding initial state of these entities.
+2. Atomization and Statics: Each fact must be an indivisible minimal logical unit. Prioritize describing "cognitive states" (who knows what), "position states" (who is where), and "relationship states".
+3. POV Locking: Record only facts that are observable or known to the [Player Role] at t=0, unless the fact is an objective truth necessary to maintain the system's logical stability (e.g., "the basement indeed exists, but the protagonist is currently unaware of it").
+4. Avoid Redundancy: [FORBIDDEN]: Do not generate speculative facts not mentioned in the input.
+
+# Fact Granularity Examples
+- Incorrect (containing causality or inference): "[Character A] begins to suspect [Character C]'s identity because they saw [Item B]."
+- Correct (static atomic state): "[Character A] possesses [Item B]", "[Character A] is in a state of ignorance regarding [Character C]'s true identity", "[Character C]'s public identity is [Identity X]".
+
+# Output Format (JSON)
+Output only a JSON object. No extra explanations, Markdown, code blocks, or prefix/suffix text are allowed.
+{{
+  "facts": [
+    {{
+      "id": "f_0",
+      "content": "A specific atomic fact statement at the story's starting moment (t=0), which must be directly associated with at least one judgment variable in the Commitments."
+    }}
+  ]
+}}

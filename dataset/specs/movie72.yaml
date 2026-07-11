@@ -1,0 +1,270 @@
+commitments:
+- description: Travis must begin his taxi driving routine before he can develop infatuation
+    towards Betsy, to preserve narrative pacing and character development.
+  id: c_0
+  satisfaction_condition: Node s_1 (Travis notices Betsy) occurs only after node s_0
+    (Travis starts night taxi driving).
+  type: ordering
+  violation_condition: Player attempts to initiate interaction or infatuation with
+    Betsy before completing the taxi driving introduction phase (before s_0).
+- description: Travis's infatuation with Betsy and his volunteering must precede his
+    attempt to bond and subsequent offense at the sex film date.
+  id: c_1
+  satisfaction_condition: Node s_2 (coffee date and film watching) occurs only after
+    s_1 (infatuation and volunteering).
+  type: ordering
+  violation_condition: Player triggers Betsy’s offense or rejection scenarios before
+    having established initial infatuation and volunteering context (before s_1).
+- description: Travis’s escalation towards violent thoughts and weapon acquisition
+    must only occur after his social rejection and confiding thoughts to Wizard.
+  id: c_2
+  satisfaction_condition: Node s_4 (training and guns) only occurs after s_3 (confiding
+    violent thoughts after rejection).
+  type: ordering
+  violation_condition: Player equips, trains, or uses weapons prior to experiencing
+    Betsy’s rejection and confiding violent impulses (before s_3).
+- description: Travis’s violent impulses, as expressed and shared to Wizard, must
+    remain dismissed by Wizard until the narrative reaches escalation (after s_3).
+  id: c_3
+  satisfaction_condition: Wizard consistently dismisses Travis’s violent thoughts
+    during and until node s_3.
+  type: invariant
+  violation_condition: Wizard acknowledges or encourages violent actions prior to
+    s_3.
+- description: Travis must cross the threshold from being a passive observer to active
+    participant in violence by shooting the convenience store robber before narrative
+    end.
+  id: c_4
+  satisfaction_condition: Node s_4 (shooting the robber) is triggered and resolves.
+  type: achievement
+  violation_condition: Narrative attempt to progress beyond s_4 without Travis having
+    taken violent action in defense.
+- description: Travis's intervention to help Iris must only initiate following his
+    violent engagement and personal frustration, ensuring logical motivation.
+  id: c_5
+  satisfaction_condition: Node s_5 (Iris encounter and meeting) occurs only following
+    s_4 (shooting the robber).
+  type: ordering
+  violation_condition: Player attempts to meet or intervene with Iris (s_5) before
+    Travis has taken violent action against crime (before s_4).
+- description: Travis’s militant transformation and planning of an assassination attempt
+    must happen only after he commits to helping Iris and shows contemplations of
+    death.
+  id: c_6
+  satisfaction_condition: Node s_6 (mohawk, letter, and rally attendance) occurs only
+    after s_5 and s_6’s persuasion phase.
+  type: ordering
+  violation_condition: Player changes appearance to militant or attempts assassination
+    rally (s_6, s_7) before establishing responsibility for Iris (s_5).
+- description: Assassination attempt on Senator Palantine must precede the personal
+    violent vendetta against Sport and brothel confrontation.
+  id: c_7
+  satisfaction_condition: Node s_7 (assassination attempt) occurs before s_8 (confrontation
+    with Sport and brothel shootout).
+  type: ordering
+  violation_condition: Player attempts to confront Sport or initiate brothel violence
+    (s_8) before the assassination attempt at the rally (s_7).
+- description: The violent climax involving confrontation with Sport, brothel shootout,
+    and Travis being wounded must occur before police arrest and resolution.
+  id: c_8
+  satisfaction_condition: Node s_8 (violent shootout) completes triggering subsequent
+    police arrival.
+  type: achievement
+  violation_condition: Narrative attempts to proceed to interrogation, arrest, or
+    media recognition without full resolution of violent confrontation.
+- description: Travis must signal attempted suicide to police following the violent
+    climax, marking the narrative turning point towards resolution.
+  id: c_9
+  satisfaction_condition: Node s_9 (Travis attempts suicide and is arrested) is triggered
+    and completed.
+  type: achievement
+  violation_condition: Narrative reaches post-violent resolution stages without Travis
+    signaling suicide attempt to authorities.
+- description: Travis denies being a hero despite public/media acclaim, preserving
+    his ambiguous emotional state during the narrative resolution phase.
+  id: c_10
+  satisfaction_condition: During and after s_10, Travis explicitly rejects hero status
+    when confronted by Betsy and media narrative.
+  type: invariant
+  violation_condition: Player forces Travis to accept or affirm hero status post s_9
+    and during s_10 interactions.
+- description: Travis’s internal conflict or anxiety remains observable in his behavior
+    (e.g., anxious glance in rearview mirror) after climax and during resolution.
+  id: c_11
+  satisfaction_condition: At s_10, system marks Travis as exhibiting ongoing internal
+    tension or vigilance (e.g., rearview mirror glance).
+  type: invariant
+  violation_condition: Player causes Travis to exhibit calm, fully resolved emotional
+    state with no hint of anxiety or tension post s_9 events.
+initial_facts:
+- content: Travis Bickle is an honorably discharged U.S. Marine.
+  id: f_0
+  negated: false
+- content: Travis Bickle lives alone in a modest Manhattan apartment.
+  id: f_1
+  negated: false
+- content: Travis Bickle suffers from chronic insomnia.
+  id: f_2
+  negated: false
+- content: Travis begins driving a taxi at night in New York City.
+  id: f_3
+  negated: false
+- content: Travis carries a diary where he writes his thoughts.
+  id: f_4
+  negated: false
+- content: The city of New York is gritty, dark, and filled with crime and seedy elements
+    such as porn theaters.
+  id: f_5
+  negated: false
+- content: Travis is lonely and socially disconnected.
+  id: f_6
+  negated: false
+- content: Travis has not yet noticed Betsy.
+  id: f_7
+  negated: false
+- content: Travis does not yet possess any firearms or custom weapons.
+  id: f_8
+  negated: false
+- content: Travis has not expressed or confided violent thoughts to Wizard.
+  id: f_9
+  negated: false
+- content: Travis has no known social relationships or infatuations.
+  id: f_10
+  negated: false
+- content: Travis has not yet intervened in any criminal activity.
+  id: f_11
+  negated: false
+- content: Travis has had no encounters with Iris or her pimp.
+  id: f_12
+  negated: false
+meta:
+  genres: ["Drama", "Crime"]
+  id: movie72
+  player_role: Travis Bickle
+  title: "Taxi Driver"
+synopsis: Travis Bickle , an honorably discharged U.S. Marine, is a lonely and depressed
+  man living in Manhattan, New York. He becomes a taxi driver in order to cope with
+  chronic insomnia, driving passengers every night around the boroughs of New York
+  City. He also spends time in seedy porn theaters and keeps a diary. Travis becomes
+  infatuated with Betsy , a campaign volunteer for Senator Charles Palantine. After
+  watching her through her office window, interacting with fellow worker Tom, Travis
+  enters to volunteer as a pretext to talk to her and takes her out for coffee. On
+  a later date he takes her to see a sex film, which offends her, so she goes home
+  alone. His attempts at reconciliation by sending flowers are rebuffed so he berates
+  her at the campaign office, before being kicked out by Tom. Travis confides in fellow
+  taxi driver Wizard  about his thoughts, which are beginning to turn violent, but
+  Wizard assures him that he will be fine. Disgusted by the street crime and prostitution
+  that he witnesses through the city, Travis finds a focus for his frustration and
+  begins a program of intense physical training. He buys guns from dealer Easy Andy  and
+  constructs a sleeve gun to attach on his arm with which he practices drawing his
+  weapons. One night, Travis enters a convenience store moments before a man attempts
+  to rob it and shoots the robber. The shop owner  takes responsibility and Travis
+  leaves. On another night, 12-year-old child prostitute Iris  enters Travis's cab,
+  attempting to escape her pimp Matthew "Sport" . Sport drags Iris from the cab and
+  throws Travis a crumpled twenty-dollar bill, which continually reminds him of her.
+  Travis arranges to meet Iris and attempts to persuade her to quit prostitution.
+  They meet again the next day for breakfast and Travis becomes obsessed with helping
+  her return to her parents' home, sending her money to do so and a letter in which
+  he states he will soon be dead. After shaving his head into a mohawk, Travis attends
+  a public rally where he attempts to assassinate Senator Palantine, but Secret Service
+  agents notice him and he flees. He returns to his apartment and then drives to the
+  East Village, where he confronts Sport. Travis shoots him, then walks into Iris’
+  brothel and shoots off the bouncer's fingers. After Sport shoots Travis in the neck,
+  wounding him, Travis shoots him dead. Another thug appears and shoots Travis in
+  the arm, but Travis reveals his sleeve gun and kills the thug. The bouncer continues
+  to harass Travis, causing Travis to shoot him in the head and kill him. As a horrified
+  Iris cries, Travis attempts suicide but, out of ammunition, resigns himself to a
+  sofa until police arrive. When they do, he places his index finger against his temple
+  gesturing the act of shooting himself. Recuperating, Travis receives a letter from
+  Iris's parents who thank him for saving her and the media hail him as a hero. Travis
+  then returns to his job and encounters Betsy as a fare. She discusses his newly
+  found fame, but he denies being a hero and drops her off for free. He glances anxiously
+  at an object in his rear view mirror as he drives away.
+trajectory:
+- description: Travis Bickle, an honorably discharged U.S. Marine, lives alone in
+    a modest Manhattan apartment, struggling with chronic insomnia. The city outside
+    is gritty, dark, and filled with crime and seedy elements like porn theaters.
+    Travis has begun driving a taxi at night to cope with his sleeplessness, carrying
+    a diary where he writes his thoughts.
+  id: s_0
+  key_delta: Travis has engaged in night taxi driving as a coping mechanism for insomnia
+    and initiated his exposure to the nocturnal urban environment.
+  trigger_event: Travis starts his first night shift as a taxi driver in New York
+    City.
+- description: Travis routinely drives passengers across New York City boroughs, frequenting
+    porn theaters and writing in his diary. He is lonely and disconnected, with minimal
+    interaction beyond night rides.
+  id: s_1
+  key_delta: Travis becomes infatuated with Betsy, shifting some of his attention
+    from general alienation to this new focus.
+  trigger_event: Travis notices Betsy, a campaign volunteer for Senator Palantine,
+    through the window of her office while driving by.
+- description: Travis volunteers at the Senator Palantine campaign office to be near
+    Betsy and succeeds in securing a coffee date with her.
+  id: s_2
+  key_delta: Travis’s attempt to bond with Betsy results in offense to her, creating
+    tension between them.
+  trigger_event: Travis takes Betsy to see a sex film at a theater.
+- description: After Betsy leaves offended from the film, Travis tries to reconcile
+    by sending her flowers, which she rejects. At the campaign office, Travis confronts
+    her but is kicked out by her coworker Tom.
+  id: s_3
+  key_delta: Travis shares his emerging violent impulses, showing verbal indication
+    of internal agitation though Wizard dismisses the concern.
+  trigger_event: Travis confides his violent thoughts to fellow taxi driver Wizard
+    during a night shift.
+- description: Disgusted by street crime and prostitution witnessed while driving,
+    Travis commits to intense physical training and begins acquiring firearms, including
+    a custom sleeve gun.
+  id: s_4
+  key_delta: Travis crosses a threshold from observer of crime to active participant
+    by using lethal force in defense.
+  trigger_event: Travis intervenes in a convenience store robbery by shooting the
+    robber before police arrive.
+- description: While working, Travis picks up 12-year-old child prostitute Iris, who
+    tries to escape her pimp Sport but is dragged away. Travis is left with a crumpled
+    twenty-dollar bill Sport throws to him.
+  id: s_5
+  key_delta: Travis takes responsibility for Iris's welfare, initiating direct intervention
+    in her life.
+  trigger_event: Travis arranges a meeting to talk with Iris and attempts to persuade
+    her to quit prostitution.
+- description: Travis and Iris meet for breakfast and have further discussions about
+    her leaving prostitution. Travis sends her money and a letter indicating he plans
+    to die soon.
+  id: s_6
+  key_delta: Travis adopts a militant appearance signaling a shift toward violent
+    action and attends a major political event.
+  trigger_event: Travis shaves his head into a mohawk and attends a public rally for
+    Senator Palantine.
+- description: At the rally, Travis attempts to assassinate Senator Palantine but
+    is spotted by Secret Service agents and flees the scene.
+  id: s_7
+  key_delta: Travis escalates his violence from a political attack to a personal vendetta
+    against crime figures.
+  trigger_event: Travis returns to his apartment and then drives to the East Village
+    to confront Sport.
+- description: Travis shoots Sport and enters the brothel where Iris works, shooting
+    the bouncer's fingers, then is wounded in the neck by Sport before shooting him
+    dead. Additional attackers shoot Travis, but he kills them using his sleeve gun,
+    including the bouncer.
+  id: s_8
+  key_delta: A violent shootout concludes with Travis wounded and multiple deaths,
+    including the pimp and criminal bouncers.
+  trigger_event: Police arrive at the scene after the violent confrontation in the
+    brothel.
+- description: Travis attempts suicide but is out of ammunition and waits on a sofa
+    until police arrest him. He gestures the action of shooting himself to the officers.
+  id: s_9
+  key_delta: Travis gains recognition for his actions from Iris's family and the media,
+    who portray him as a hero.
+  trigger_event: Travis recuperates in hospital and receives a letter from Iris’s
+    parents thanking him for saving her.
+- description: Travis returns to work driving his taxi, where he encounters Betsy
+    again as a passenger. They talk briefly about his newfound fame, which Travis
+    denies, and he drops her off without charging her fare.
+  id: s_10
+  key_delta: Travis maintains ambiguous emotional state and possible ongoing internal
+    conflict after violent events and newfound public perception.
+  trigger_event: Travis glances anxiously at an object in his rearview mirror as he
+    drives away from Betsy.

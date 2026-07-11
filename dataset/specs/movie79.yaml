@@ -1,0 +1,327 @@
+commitments:
+- description: Max Cady must be released from prison before approaching Bowden and
+    initiating the conflict sequence.
+  id: c_0
+  satisfaction_condition: Node s_0 has been reached, indicating Cady's release and
+    intent to confront Bowden.
+  type: ordering
+  violation_condition: Any player action or system state showing Cady interacting
+    with Bowden's family or environment prior to s_0.
+- description: Cady’s initial proximity surveillance (s_1) around Bowden’s home must
+    occur before any direct attacks or threats against family property or members.
+  id: c_1
+  satisfaction_condition: Node s_1 is completed before nodes s_2, s_3, or s_4.
+  type: ordering
+  violation_condition: Player or system acknowledges attacks, home intrusions, or
+    direct contact with family members before s_1.
+- description: No direct evidence allows police to legally detain Cady before the
+    poisoning of the dog and subsequent attacks, maintaining legal impunity at early
+    stages.
+  id: c_2
+  satisfaction_condition: Between nodes s_0 and s_6, Cady remains unarrested due to
+    lack of legal evidence despite suspicious behavior.
+  type: invariant
+  violation_condition: Player or system triggers lawful arrest or prosecution of Cady
+    prior to s_6 based on evidence or witnessed crimes.
+- description: Cady’s assaults on individuals close to Bowden (Lori Davis and Danielle)
+    must precede full escalation and family flight.
+  id: c_3
+  satisfaction_condition: Nodes s_3 and s_4 happen before nodes s_7 and onward.
+  type: invariant
+  violation_condition: Player or system portrays family fleeing or lethal home invasion
+    before these assaults.
+- description: Bowden must confront Cady with a direct warning before Cady uses the
+    recording legally against Bowden.
+  id: c_4
+  satisfaction_condition: Node s_5 (restaurant confrontation and recording) occurs
+    prior to legal actions like restraining orders or Bar complaints in s_6.
+  type: achievement
+  violation_condition: Player or system shows legal repercussions against Bowden before
+    the confrontation and recording happen.
+- description: Physical retaliation by Bowden’s hired men against Cady occurs strictly
+    after the warning confrontation (s_5) and before Cady’s legal counteractions (s_6).
+  id: c_5
+  satisfaction_condition: s_6 follows s_5 where Cady is assaulted and then uses this
+    to file complaints.
+  type: ordering
+  violation_condition: Player acts or system states that the assault happened before
+    warning confrontation or legal counteractions are initiated.
+- description: Cady must not cause lethal violence inside Bowden’s home or kill Kersek
+    before s_7 to preserve narrative escalation integrity.
+  id: c_6
+  satisfaction_condition: From s_0 up to s_6, no lethal attack inside Bowden’s home
+    is acknowledged.
+  type: invariant
+  violation_condition: Player or system recognizes Kersek’s death or lethal home invasion
+    prior to s_7.
+- description: The family flight to the houseboat refuge (s_8) must occur following
+    the home invasion and deaths on the property.
+  id: c_7
+  satisfaction_condition: Node s_8 is triggered after s_7 with no skipped steps.
+  type: achievement
+  violation_condition: Family flees or retreats to the houseboat before lethal home
+    invasion and discovery of bodies.
+- description: The violent assault on the family aboard the houseboat (s_9) with the
+    ensuing burning incident must follow the flight to the houseboat (s_8).
+  id: c_8
+  satisfaction_condition: s_9 occurs only after s_8 has been reached.
+  type: ordering
+  violation_condition: Any player or system state showing assault or fire incident
+    on family before the boat refuge is established.
+- description: Bowden’s admission of hiding the report must happen during the climactic
+    mock trial confrontation (s_10) aboard the houseboat.
+  id: c_9
+  satisfaction_condition: At s_10, Bowden admits to having buried the report before
+    final physical confrontation.
+  type: achievement
+  violation_condition: Admission occurs before s_10 or is omitted from the final confrontation,
+    preventing core psychological conflict.
+- description: Cady must remain physically unrestrained until the storm enables Bowden
+    to shackling him to the boat (s_11).
+  id: c_10
+  satisfaction_condition: Prior to s_11, Cady is not physically restrained by Bowden
+    or others.
+  type: invariant
+  violation_condition: Player or system restrains Cady before s_11, disrupting narrative
+    tension and struggle balance.
+- description: Cady’s removal by river tide tied to debris (s_12) marks the narrative’s
+    resolution with the family safe and threat ended.
+  id: c_11
+  satisfaction_condition: Node s_12 concludes the story arc with Cady swept away and
+    Bowden reunited with family.
+  type: achievement
+  violation_condition: The narrative concludes or Bowden rejoins family without Cady’s
+    removal by the river or equivalent resolution.
+- description: Bowden’s symbolic cleansing of his blood from hands after Cady’s removal
+    acts as final character catharsis and must occur at the narrative end.
+  id: c_12
+  satisfaction_condition: At s_12, Bowden engages in washing his hands before reuniting
+    with Leigh and Dani.
+  type: invariant
+  violation_condition: Ending occurs without the washing scene, omitting final symbolic
+    closure.
+initial_facts:
+- content: Max Cady is recently released from prison at t=0.
+  id: f_0
+  negated: false
+- content: Max Cady is aware that Sam Bowden was his lawyer fourteen years earlier
+    during a rape and battery trial.
+  id: f_1
+  negated: false
+- content: Max Cady knows that Sam Bowden deliberately withheld a report that could
+    have acquitted him at trial.
+  id: f_2
+  negated: false
+- content: Max Cady is physically free and literate at t=0.
+  id: f_3
+  negated: false
+- content: Max Cady is physically capable and intends to confront Sam Bowden.
+  id: f_4
+  negated: false
+- content: Max Cady has not yet approached Sam Bowden or his family.
+  id: f_5
+  negated: false
+- content: Sam Bowden lives in New Essex, North Carolina with his wife Leigh and daughter
+    Danielle.
+  id: f_6
+  negated: false
+- content: At t=0, Bowden is not yet aware of Max Cady's intentions or proximity.
+  id: f_7
+  negated: false
+- content: No attacks or direct threats against Bowden’s family or property have occurred
+    at t=0.
+  id: f_8
+  negated: false
+- content: Max Cady is not under any lawful arrest or prosecution at t=0.
+  id: f_9
+  negated: false
+- content: Max Cady has not yet assaulted anyone connected to Sam Bowden.
+  id: f_10
+  negated: false
+- content: Sam Bowden has not confronted or threatened Max Cady.
+  id: f_11
+  negated: false
+- content: No recordings or legal evidence involving Bowden and Cady exist at t=0.
+  id: f_12
+  negated: false
+- content: Sam Bowden has not hired any private investigators or men to confront Max
+    Cady.
+  id: f_13
+  negated: false
+- content: No lethal violence, home invasions, or killings have occurred involving
+    Max Cady or Sam Bowden.
+  id: f_14
+  negated: false
+- content: Sam Bowden’s family has not fled their home or relocated to the houseboat.
+  id: f_15
+  negated: false
+- content: No physical restraints have been applied to Max Cady by Sam Bowden or others.
+  id: f_16
+  negated: false
+- content: Bowden’s symbolic cleansing of his hands has not occurred.
+  id: f_17
+  negated: false
+meta:
+  genres: ["Thriller", "Crime"]
+  id: movie79
+  player_role: Max Cady
+  title: "Cape Fear"
+synopsis: Sam Bowden is a lawyer in the quiet town of New Essex, North Carolina. Max
+  Cady is a former client whom Bowden had defended fourteen years previously when
+  he was working as a public defender in Atlanta. Cady, who was being tried for the
+  rape and battery of a young woman, was illiterate at the time and unable to read
+  a report Bowden had kept hidden from the court, which revealed that the victim was
+  promiscuous. The report might have lightened Cady's sentence or even acquitted him
+  had Bowden brought it to light. Bowden had kept it hidden because he was appalled
+  by the sheer violence in Cady's crime and wanted him to serve a severe sentence.
+  After his release from prison, Cady tracks down Bowden. The former convict learned
+  to read and studied law in prison, and even assumed his own defense, unsuccessfully
+  appealing his conviction several times. Cady hints strongly that he has learned
+  about Bowden burying the report, stating that the judge and prosecutor in his case
+  did their jobs while Bowden betrayed his own client. Several incidents involving
+  Cady begin to impact the Bowden family, which consists of Bowden's wife Leigh and
+  their teenage daughter Danielle. The family dog, Ben, is mysteriously poisoned.
+  Cady is seen at night perched on the wall just outside the Bowden property limits.
+  Bowden attempts to have Cady arrested, but local police lieutenant Elgart reminds
+  Bowden that there is no evidence Cady has committed any crime. At a bar, Cady meets
+  Lori Davis, a female colleague of Bowden with whom Bowden may or may not be having
+  a love affair. Later at her house, Cady cuffs her hands behind her back, breaks
+  her arm, bites a chunk of flesh from her cheek and brutally rapes her. Lori refuses
+  to press charges against Cady, fearful that she will be publicly questioned about
+  her sexual history. Cady next approaches Danielle at her school by pretending to
+  be her new drama teacher and goes as far as kissing her. Bowden, finally having
+  had enough, hires private investigator Claude Kersek to follow Cady. Bowden also
+  approaches Cady in a restaurant and gives him a firm warning to leave him and his
+  family alone or suffer the consequences. Cady refuses to give in, and he secretly
+  tapes the conversation with a recorder hidden under the table. Kersek eventually
+  persuades Bowden to hire three men to beat Cady in an effort to intimidate him but,
+  as Bowden watches from a hiding place, Cady quickly turns the tide on his attackers
+  and viciously beats them. Cady hears Bowden from behind his hiding spot and steadily
+  approaches him, intimidating him with psychotic ramblings and Biblical passages,
+  but decides to leave. Cady uses the recording of Bowden's threat and an exaggerated
+  display of his own injuries to file for a restraining order against Bowden. Cady's
+  new lawyer, Lee Heller, also files a complaint with the North Carolina State Bar,
+  vowing to have Bowden disbarred from practicing law. Kersek reasons that Cady may
+  try to enter the Bowden house during Bowden's appearance at a bar hearing out of
+  town. They fake Bowden's departure and hide in the house, hoping that Cady will
+  break in so that he can be shot in self-defense. As they wait, Cady, disguised as
+  the maid Graciella, attacks and kills Kersek in the kitchen. Bowden, Leigh, and
+  Dani discover his body, as well as that of Graciella. Horrified, they flee in their
+  car to their house-boat, which is docked upstate along Cape Fear. Cady follows them
+  by tying himself to the chassis of the Bowdens' car. That night, he attacks the
+  family on the boat, beating and tying up Bowden, and prepares to rape both Leigh
+  and Dani while Bowden watches. When Leigh offers herself in Dani's place, Dani sprays
+  Cady with lighter fluid while he lights a cigar, engulfing him in flames and causing
+  him to jump off the boat in order to extinguish the fire. However, Cady clings to
+  a rope tied to the boat and pulls himself back on board. As the boat is rocked by
+  a violent storm, Cady ferociously confronts Bowden with a mock trial. Bowden finally
+  admits to having buried the potentially exculpatory report but counters that the
+  woman's promiscuity was no justification to defend a rape. An enraged Cady prepares
+  to kill Bowden, but the storm and the river's harsh current knocks Cady off his
+  feet, allowing Bowden to gain the upper hand once the women make it to shore. The
+  two men fight furiously, until Bowden finally manages to use Cady's handcuffs to
+  shackle Cady to the boat. When the boat hits a stationary rock and is destroyed,
+  the fight continues on shore. Bowden almost crushes Cady's head with a large stone,
+  however a raging tide carries Cady away, madly screaming in tongues. Bowden watches
+  as the piece of boat sinks to the bottom of the river, taking the still-shackled
+  Cady with it, and then performs a cathartic washing of his blood from his hands
+  before rejoining Leigh and Dani further up the river-bank.
+trajectory:
+- description: Max Cady is recently released from prison. He is aware that his former
+    lawyer, Sam Bowden, had defended him fourteen years ago during a rape and battery
+    trial but had deliberately withheld a report that could have acquitted him. Cady
+    is now outside prison, physically capable and literate, with a plan to confront
+    Bowden in New Essex, North Carolina.
+  id: s_0
+  key_delta: Cady is free, educated, and intends to seek retribution against Bowden
+    for past betrayal.
+  trigger_event: Cady is released from prison and returns to the town of New Essex.
+- description: Cady locates Bowden's home in New Essex. Bowden lives with his wife
+    Leigh and daughter Danielle. The atmosphere is peaceful but underlaid with tension,
+    as Bowden remains unaware of Cady's intentions.
+  id: s_1
+  key_delta: Cady is physically near Bowden’s family and begins to observe them covertly.
+  trigger_event: Cady arrives at Bowden's residence and begins surveillance outside
+    the property.
+- description: Bowden discovers the family dog, Ben, has been poisoned. Cady is seen
+    near the property at night, but no direct confrontation has occurred. Local police
+    refuse to act due to lack of evidence.
+  id: s_2
+  key_delta: An attack on Bowden’s family assets has occurred, escalating the threat
+    with no legal recourse.
+  trigger_event: The dog is found poisoned, and Cady is spotted lurking near the property.
+- description: Cady befriends and assaults Lori Davis, a colleague of Bowden’s. Lori
+    refuses to press charges due to fear of social repercussions. This act amplifies
+    fear and threat against Bowden’s social circle.
+  id: s_3
+  key_delta: Cady has physically harmed someone close to Bowden, intensifying the
+    danger and tension.
+  trigger_event: Cady brutally attacks Lori at her home after meeting her at a bar.
+- description: Cady gains false access to Danielle’s school environment by impersonating
+    her new drama teacher and makes inappropriate advances toward her.
+  id: s_4
+  key_delta: Cady infiltrates Bowden’s family circle directly, threatening his daughter’s
+    safety.
+  trigger_event: Cady approaches Danielle at school and kisses her under the guise
+    of being her teacher.
+- description: Bowden hires private investigator Claude Kersek and confronts Cady
+    publicly, threatening him. Cady secretly records this confrontation, turning Bowden’s
+    warning into legal evidence against him.
+  id: s_5
+  key_delta: Bowden attempts intimidation but inadvertently provides Cady with material
+    to pursue legal actions.
+  trigger_event: Bowden confronts Cady with a threat at a restaurant; Cady records
+    the entire exchange.
+- description: Bowden hires three men to intimidate Cady physically, but Cady fights
+    back fiercely, demonstrating his strength and resolve. Cady uses this to obtain
+    a restraining order against Bowden and initiates a complaint with the State Bar.
+  id: s_6
+  key_delta: Cady legally pressures Bowden while proving he is physically formidable
+    and not easily intimidated.
+  trigger_event: The hired men attack Cady, who reverses the assault and uses the
+    outcome to file legal complaints.
+- description: Kersek and Bowden fake Bowden's absence to lure Cady into breaking
+    into the house, intending to justify self-defense shooting. Cady attacks in disguise,
+    killing Kersek and the maid impersonator.
+  id: s_7
+  key_delta: Cady has escalated to lethal violence inside Bowden's home, resulting
+    in death and direct physical threat.
+  trigger_event: Cady, disguised as the maid Graciella, breaks into Bowden’s house
+    and kills Kersek and the maid.
+- description: Bowden, Leigh, and Danielle flee the house and retreat to their houseboat
+    up the Cape Fear River. Cady unexpectedly follows by hiding under their car chassis.
+  id: s_8
+  key_delta: The threat follows the family to a remote refuge, eliminating safe space.
+  trigger_event: The family escapes to the houseboat; Cady secretly tails them.
+- description: On the houseboat during a violent storm, Cady attacks the family, tying
+    up Bowden and preparing to rape Leigh and Danielle. Leigh offers herself to protect
+    Danielle. Danielle sprays Cady with lighter fluid and ignites it, setting Cady
+    on fire temporarily.
+  id: s_9
+  key_delta: A direct, life-threatening assault on the family occurs; Cady is temporarily
+    incapacitated by fire.
+  trigger_event: Cady attacks the family on the boat, leading to a burning struggle
+    initiated by Danielle.
+- description: Cady, despite burns, pulls himself back onto the boat. In a stormy
+    climactic confrontation, Bowden and Cady engage in a mock trial where Bowden admits
+    to hiding the report but justifies it.
+  id: s_10
+  key_delta: Key admission is made by Bowden; confrontation reaches psychological
+    and physical peak.
+  trigger_event: Cady revives and confronts Bowden in a mock trial during the storm.
+- description: As the storm worsens, the river’s current knocks Cady off balance,
+    allowing Bowden to seize advantage and fight him physically. Bowden shackles Cady
+    to the boat with handcuffs as the boat is destroyed on a rock.
+  id: s_11
+  key_delta: Cady is physically restrained but still alive as the boat wrecks.
+  trigger_event: The storm causes a disruption that allows Bowden to overpower Cady
+    and handcuff him to the boat.
+- description: On shore, the fight continues until a tide carries away the still-shackled
+    Cady, who screams incoherently as he is dragged under the river. Bowden washes
+    blood from his hands and reunites with his wife and daughter, ending the immediate
+    threat.
+  id: s_12
+  key_delta: Cady is removed from immediate danger range, and the family attains physical
+    safety; Bowden performs a symbolic cleansing.
+  trigger_event: Cady is swept away into the river tied to the wreckage, disappearing
+    beneath the water.

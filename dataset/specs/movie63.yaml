@@ -1,0 +1,269 @@
+commitments:
+- description: The Millennium Falcon must agree to transport Obi-Wan Kenobi and Luke
+    Skywalker before arriving at Alderaan or engaging further missions.
+  id: c_0
+  satisfaction_condition: s_0 has been completed before any progress on s_1 or later
+    nodes.
+  type: ordering
+  violation_condition: Player attempts to navigate to or interact with Alderaan (s_1)
+    or beyond without agreeing to transport Obi-Wan and Luke (completing s_0).
+- description: Alderaan remains intact before s_1 and is confirmed destroyed at s_1;
+    it must never be presented as intact after s_1.
+  id: c_1
+  satisfaction_condition: Alderaan is intact before arrival (prior to s_1), and the
+    fact of its destruction is only acknowledged at s_1 and thereafter.
+  type: invariant
+  violation_condition: Player or system asserts Alderaan is intact after s_1 or before
+    arrival, or Alderaan is portrayed destroyed prior to arrival at s_1.
+- description: Obi-Wan Kenobi must leave the Millennium Falcon to disable the tractor
+    beam only after the Falcon is trapped inside the Death Star (s_2).
+  id: c_2
+  satisfaction_condition: Action of Obi-Wan leaving the Falcon to disable the tractor
+    beam occurs strictly at or after s_2.
+  type: ordering
+  violation_condition: Player or system allows Obi-Wan to undertake the disabling
+    mission before the Falcon is caught in the tractor beam at s_2.
+- description: Princess Leia must be found imprisoned within the Death Star and rescued
+    before escape (s_3 completion).
+  id: c_3
+  satisfaction_condition: Leia's imprisonment is discovered and she is rescued on
+    board the Death Star, completing s_3 before any escape attempts.
+  type: achievement
+  violation_condition: Escape attempts or progression beyond s_3 occur without Leia
+    having been found and freed.
+- description: Obi-Wan Kenobi's self-sacrifice in the duel with Darth Vader must occur
+    before the Death Star escape sequence.
+  id: c_4
+  satisfaction_condition: Obi-Wan’s sacrifice event occurs at s_4 prior to any narrative
+    advancement that includes escape from the Death Star.
+  type: ordering
+  violation_condition: Player escapes Death Star or moves narrative beyond s_4 without
+    triggering Obi-Wan’s sacrifice.
+- description: The Millennium Falcon carries a tracking device planted by the Empire
+    after escaping the Death Star, which leads the Empire to the Rebel base (between
+    s_4 and s_5).
+  id: c_5
+  satisfaction_condition: The system acknowledges the tracking device is planted post-s_4
+    and prior to s_5; it remains active and known throughout s_5.
+  type: invariant
+  violation_condition: Tracking device is absent, disabled, or unknown to the Empire
+    after escaping the Death Star (post-s_4, pre-s_5).
+- description: The Rebel Alliance must identify the Death Star’s exhaust port weakness
+    and prepare an assault before the battle (end of s_5).
+  id: c_6
+  satisfaction_condition: The Rebel commanders analyze and confirm the exhaust port
+    vulnerability and launch preparations by s_5 completion.
+  type: achievement
+  violation_condition: Battle engagement or further assault actions occur without
+    the Rebels having identified this critical weakness.
+- description: Han Solo may prepare to leave after collecting his reward during the
+    assault, but the narrative must allow for and acknowledge his return to assist
+    Luke in battle (s_6 to s_7).
+  id: c_7
+  satisfaction_condition: Han Solo collects reward and prepares to leave, then returns
+    in time to engage Imperial fighters at or before s_7.
+  type: invariant
+  violation_condition: Han leaves and does not return during the battle, specifically
+    before s_7’s event where he saves Luke’s ship.
+- description: Han Solo’s return and destruction of pursuing TIE fighters must occur
+    before Luke’s successful destruction of the Death Star (s_7 strictly before s_8).
+  id: c_8
+  satisfaction_condition: Han’s reinforcements arrive and destroy TIE fighters (s_7)
+    prior to Luke firing proton torpedoes and destroying the Death Star (s_8).
+  type: ordering
+  violation_condition: Luke destroys the Death Star (s_8) without Han first returning
+    to save him at s_7.
+- description: At the conclusion, Han Solo must be officially recognized as a hero
+    of the Rebel Alliance with a medal awarded by Leia (s_9).
+  id: c_9
+  satisfaction_condition: Medal awarding ceremony including Han Solo occurs, marking
+    his recognized heroism after the Death Star’s destruction.
+  type: achievement
+  violation_condition: Narrative advances to post-battle closure without Han receiving
+    official recognition and a medal.
+initial_facts:
+- content: Han Solo and Chewbacca are on board the Millennium Falcon, a fast and heavily
+    armed starship.
+  id: f_0
+  negated: false
+- content: The galaxy is engulfed in a civil war between the Rebel Alliance and the
+    Galactic Empire.
+  id: f_1
+  negated: false
+- content: Han Solo and Chewbacca have not yet agreed to transport Obi-Wan Kenobi
+    and Luke Skywalker.
+  id: f_2
+  negated: false
+- content: The Millennium Falcon has not arrived at Alderaan.
+  id: f_3
+  negated: false
+- content: The planet Alderaan exists intact and has not been destroyed.
+  id: f_4
+  negated: false
+- content: Obi-Wan Kenobi is aboard the Millennium Falcon.
+  id: f_5
+  negated: false
+- content: Luke Skywalker is aboard the Millennium Falcon.
+  id: f_6
+  negated: false
+- content: Obi-Wan Kenobi has not left the Millennium Falcon to disable the tractor
+    beam.
+  id: f_7
+  negated: false
+- content: The Millennium Falcon is not trapped inside the Death Star’s tractor beam.
+  id: f_8
+  negated: false
+- content: Princess Leia is not imprisoned aboard the Death Star.
+  id: f_9
+  negated: false
+- content: Princess Leia has not been found or rescued.
+  id: f_10
+  negated: false
+- content: Obi-Wan Kenobi is alive.
+  id: f_11
+  negated: false
+- content: Obi-Wan Kenobi has not sacrificed himself in a duel with Darth Vader.
+  id: f_12
+  negated: false
+- content: The Millennium Falcon has not escaped from the Death Star.
+  id: f_13
+  negated: false
+- content: No tracking device has been planted on the Millennium Falcon.
+  id: f_14
+  negated: false
+- content: The Rebel Alliance has not analyzed the Death Star plans nor identified
+    any vulnerability.
+  id: f_15
+  negated: false
+- content: The Rebel Alliance has not prepared an assault against the Death Star.
+  id: f_16
+  negated: false
+- content: Han Solo has not collected any reward.
+  id: f_17
+  negated: false
+- content: Han Solo has not prepared to leave the Rebel forces.
+  id: f_18
+  negated: false
+- content: Han Solo has not returned to assist Luke in a battle.
+  id: f_19
+  negated: false
+- content: The Death Star remains undestroyed.
+  id: f_20
+  negated: false
+- content: Han Solo has not been officially recognized as a hero of the Rebel Alliance
+    and has not received a medal.
+  id: f_21
+  negated: false
+meta:
+  genres: ["Sci-Fi", "Adventure"]
+  id: movie63
+  player_role: Han Solo
+  title: "Star Wars——A New Hope"
+synopsis: The film begins with an opening crawl explaining that the galaxy is in a
+  state of civil war and that spies for the Rebel Alliance have stolen plans to the
+  Galactic Empire's Death Star, a heavily armed and armored space station capable
+  of annihilating an entire planet. Rebel leader Princess Leia is in possession of
+  the plans, but her ship is captured by Imperial forces under the command of the
+  evil lord Darth Vader. Before she is captured, Leia hides the plans in the memory
+  of an astromech droid called R2-D2, along with a holographic recording. The small
+  droid flees to the surface of the desert planet Tatooine with fellow protocol droid
+  C-3PO. The droids are quickly captured by Jawa traders, who sell the pair to moisture
+  farmers Owen and Beru Lars and their nephew, Luke Skywalker. While Luke is cleaning
+  R2-D2, he accidentally triggers part of Leia's message, in which she requests help
+  from Obi-Wan Kenobi. The only "Kenobi" Luke knows of is an old hermit named Ben
+  Kenobi who lives in the nearby hills. The next morning, upon finding R2-D2 after
+  he escapes to seek Obi-Wan, Luke meets Ben Kenobi, revealing himself to be Obi-Wan.
+  Obi-Wan tells Luke of his days as a Jedi Knight, one of a faction of former galactic
+  peacekeepers who were wiped out by the Empire. Contrary to his uncle's statements,
+  Luke learns that his father Anakin Skywalker fought alongside Obi-Wan as a Jedi
+  Knight before he was betrayed and killed by Vader, Obi-Wan's former pupil who turned
+  to the "dark side of the Force", and gives Luke his father's lightsaber. Obi-Wan
+  views Leia's complete message in which she begs Obi-Wan to take the Death Star plans
+  to her home planet of Alderaan for her father to retrieve and analyze. He then asks
+  Luke to accompany him and learn the ways of the Force. Luke initially refuses, but
+  changes his mind after discovering that Imperial stormtroopers have destroyed his
+  home and killed his aunt and uncle in search of C-3PO and R2-D2. Obi-Wan and Luke
+  hire smuggler Han Solo and his Wookiee first mate Chewbacca to transport them on
+  their ship, the Millennium Falcon. Upon the Falcon's arrival at Alderaan, they find
+  that the planet has been destroyed under the orders of the Death Star's commanding
+  officer Grand Moff Tarkin to demonstrate the Death Star's power. The Falcon is caught
+  by the nearby Death Star's tractor beam and brought into its hangar bay. While Obi-Wan
+  goes off to disable the tractor beam, Luke discovers that Leia is imprisoned on
+  board and, with the help of Han and Chewbacca, rescues her. After several harrowing
+  escapes, they make their way back to the Falcon, but Obi-Wan sacrifices himself
+  in a lightsaber duel with Vader. The Falcon escapes the Death Star but the Empire
+  has placed a tracking device on the ship to follow them to the rebels' hidden base
+  on Yavin IV. The rebels analyze the Death Star plans, disclosing a vulnerable exhaust
+  port leading to the station's main reactor. Luke joins the assault team, but Han
+  collects his reward for the rescue and plans to leave despite Luke asking him to
+  stay. The rebels suffer heavy losses after several failed attack runs, leaving Luke
+  one of the few surviving pilots. Vader and a group of TIE fighters are about to
+  destroy Luke's ship, but Han Solo returns at the last moment and destroys the TIE
+  Fighters and the blast sends Vader spiraling away. Then Luke successfully destroys
+  the Death Star seconds before it can fire on the rebel base. Luke and Han are subsequently
+  awarded medals by Leia for their heroism.
+trajectory:
+- description: Han Solo is aboard the Millennium Falcon, a fast and heavily armed
+    starship, co-piloting alongside his Wookiee first mate Chewbacca, while the galaxy
+    is engulfed in a civil war between the Rebel Alliance and the Galactic Empire.
+  id: s_0
+  key_delta: Han Solo and Chewbacca agree to transport Obi-Wan Kenobi and Luke Skywalker
+    aboard the Millennium Falcon.
+  trigger_event: The Millennium Falcon receives a request for transport from Obi-Wan
+    Kenobi and Luke Skywalker.
+- description: The Millennium Falcon approaches the planet Alderaan, a peaceful world
+    connected to the Rebel Alliance, preparing to deliver the stolen Death Star plans.
+  id: s_1
+  key_delta: Alderaan has been completely destroyed by the Death Star under orders
+    from Grand Moff Tarkin.
+  trigger_event: The ship arrives in orbit around Alderaan but finds the planet has
+    been destroyed.
+- description: The Millennium Falcon is pulled into the Death Star’s hangar bay by
+    a tractor beam, trapped inside the Galactic Empire's massive space station.
+  id: s_2
+  key_delta: The Falcon is immobilized inside the Death Star and Obi-Wan begins a
+    covert mission aboard the station.
+  trigger_event: Obi-Wan Kenobi leaves the ship to disable the tractor beam.
+- description: Han Solo is on the Millennium Falcon inside the Death Star with Luke
+    Skywalker; they discover Princess Leia is imprisoned aboard the station.
+  id: s_3
+  key_delta: Princess Leia is rescued and joins the group aboard the Millennium Falcon.
+  trigger_event: Luke, Han, and Chewbacca find and free Princess Leia from her cell.
+- description: The group prepares to escape the Death Star with the stolen plans after
+    several close calls and confrontations with Imperial forces.
+  id: s_4
+  key_delta: Obi-Wan Kenobi is killed, allowing the others to escape the Death Star.
+  trigger_event: Obi-Wan Kenobi sacrifices himself in a duel with Darth Vader.
+- description: The Millennium Falcon escapes the Death Star but is tracked by an Imperial
+    device planted on the ship, leading the Empire to the Rebel base on Yavin IV.
+  id: s_5
+  key_delta: The Rebel Alliance learns of the Death Star’s exhaust port weakness and
+    prepares an assault.
+  trigger_event: Rebel commanders analyze the stolen Death Star plans, identifying
+    a critical vulnerability.
+- description: Han Solo is with Rebel forces preparing for an attack on the Death
+    Star to prevent it from destroying their base and the Rebel Alliance.
+  id: s_6
+  key_delta: Several Rebel fighters are lost, and Han Solo initially prepares to leave
+    after collecting his reward.
+  trigger_event: Rebel pilots launch an attack run against the Death Star, encountering
+    heavy Imperial resistance.
+- description: During the climactic space battle, Luke’s starfighter is under heavy
+    attack and nearly destroyed by Darth Vader and TIE fighters.
+  id: s_7
+  key_delta: Han Solo’s timely return saves Luke’s ship from destruction.
+  trigger_event: Han Solo returns with reinforcements, attacking and destroying the
+    pursuing TIE fighters.
+- description: The Rebel forces seize the opportunity to concentrate fire on the Death
+    Star, with Luke aiming a precise shot guided by the Force.
+  id: s_8
+  key_delta: The Death Star is destroyed, saving the Rebel base and striking a major
+    blow against the Empire.
+  trigger_event: Luke fires the proton torpedoes into the Death Star’s exhaust port,
+    initiating its destruction.
+- description: After the battle, Han Solo, Luke Skywalker, and Princess Leia stand
+    among Rebel commanders in a celebratory ceremony at the Rebel base.
+  id: s_9
+  key_delta: Han Solo is officially recognized as a hero of the Rebel Alliance.
+  trigger_event: The Rebel leadership awards Han Solo and Luke medals for their heroism
+    and contributions.

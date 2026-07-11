@@ -1,0 +1,330 @@
+commitments:
+- description: Ensure that Algren’s arrival and initial engagement with samurai (s_1)
+    must occur after the introduction of Katsumoto’s samurai rebellion and the recruitment
+    of Algren (s_0) to maintain logical conflict escalation.
+  id: c_0
+  satisfaction_condition: Node s_0 has been triggered before node s_1.
+  type: ordering
+  violation_condition: Node s_1 occurs before node s_0, e.g., Algren fights samurai
+    before the rebellion and recruitment are established.
+- description: Capture of Algren by the samurai (s_1) must precede his cultural integration
+    and recovery in the village (s_2, s_3) to guard against premature acceptance or
+    alliance.
+  id: c_1
+  satisfaction_condition: Algren is captured by the samurai (s_1) before any village
+    integration events (s_2, s_3) trigger.
+  type: ordering
+  violation_condition: Algren demonstrates samurai cultural assimilation or close
+    relations (s_2, s_3) before being captured.
+- description: Between s_2 and s_5, Algren must remain physically and politically
+    inside the samurai sphere, preventing premature betrayal or collaboration with
+    Omura’s forces.
+  id: c_2
+  satisfaction_condition: From s_2 until s_5, Algren consistently acts as a guest
+    or ally to the samurai, does not accept or plot with Omura to betray them.
+  type: invariant
+  violation_condition: Algren accepts Omura’s offer or betrays the samurai before
+    returning to Tokyo and rejecting the command offer (before s_5).
+- description: Algren’s refusal to betray the rebels (s_5) is a pivotal milestone
+    that must be reached to confirm his loyalty shift towards the samurai.
+  id: c_3
+  satisfaction_condition: At node s_5, Algren clearly declines Omura’s command offer
+    to betray the samurai rebellion.
+  type: achievement
+  violation_condition: Algren accepts Omura’s offer to betray the samurai, changing
+    fundamental alliance and breaking narrative loyalty.
+- description: Katsumoto’s arrest for defying sword ban (s_6) must happen before his
+    rescue by Algren and allies, ensuring proper cause and effect for the outlaw status
+    of samurai.
+  id: c_4
+  satisfaction_condition: Node s_6 (arrest) occurs before the rescue operation (still
+    part of s_6).
+  type: ordering
+  violation_condition: Rescue attempts happen before Katsumoto’s arrest is triggered.
+- description: After Katsumoto’s rescue (s_6), the samurai rebellion must be actively
+    reasserted in resistance against the Meiji government up to the final battle (s_8
+    to s_10).
+  id: c_5
+  satisfaction_condition: Between s_6 and s_10, samurai forces prepare and engage
+    in active armed resistance against Imperial forces.
+  type: invariant
+  violation_condition: Rebellion dissolves or surrenders prematurely before the last
+    stand and battle take place.
+- description: Nobutada’s sacrifice and injury (s_7) must be acknowledged to deeply
+    affect Katsumoto and motivate the samurai’s final preparations.
+  id: c_6
+  satisfaction_condition: Node s_7 is triggered with Nobutada’s fatal wounding and
+    Katsumoto’s mourning.
+  type: achievement
+  violation_condition: Nobutada survives or is absent at s_7, removing key emotional
+    stakes for Katsumoto.
+- description: The rallying and symbolic empowerment of Algren and samurai before
+    the battle (s_8) must precede the unfolding large-scale battle (s_9) to maintain
+    narrative buildup.
+  id: c_7
+  satisfaction_condition: Node s_8 happens before node s_9.
+  type: ordering
+  violation_condition: Battle events (s_9) unfold before the samurai rally and Algren’s
+    acceptance of role (s_8).
+- description: During the battle (s_9 to s_10), samurai forces must demonstrate tactical
+    resistance and inflict casualties but ultimately suffer fatal losses due to overwhelming
+    modern weaponry.
+  id: c_8
+  satisfaction_condition: Combat events portray successful samurai resistance initially
+    but end in heavy casualties and defeat by Gatling guns.
+  type: invariant
+  violation_condition: Samurai win outright or are annihilated without resistance;
+    or modern weapons are avoided or irrelevant.
+- description: The killing of Bagley by Algren (s_10) is a narrative milestone confirming
+    personal vengeance and culmination of past conflicts.
+  id: c_9
+  satisfaction_condition: Bagley is fatally wounded by Algren during battle (node
+    s_10).
+  type: achievement
+  violation_condition: Bagley survives or is killed by others before or after this
+    key event.
+- description: Katsumoto’s seppuku ritual (s_11) must be enacted to uphold Bushido
+    honor and symbolize the samurai’s death with dignity.
+  id: c_10
+  satisfaction_condition: Node s_11 occurs with Katsumoto performing seppuku assisted
+    by Algren, witnessed respectfully by Imperial soldiers.
+  type: achievement
+  violation_condition: Katsumoto dies by other means or the ritual is omitted or dishonored.
+- description: The symbolic political shift initiated by Algren at the treaty ceremony
+    (s_12) must follow Katsumoto’s death to show legacy and changing ideology.
+  id: c_11
+  satisfaction_condition: Node s_11 (seppuku) occurs before node s_12 (treaty intervention).
+  type: ordering
+  violation_condition: Algren interferes with treaty signing before Katsumoto’s death.
+- description: Algren’s offering of Katsumoto’s sword to the Emperor (s_12) must occur,
+    marking the reconciliation of tradition and modernization.
+  id: c_12
+  satisfaction_condition: Algren presents Katsumoto’s sword to the Emperor at the
+    treaty event in s_12.
+  type: achievement
+  violation_condition: Sword offering is skipped or replaced; Emperor does not reconsider
+    balance of tradition and reform.
+- description: The story must conclude with peace restored to the samurai village
+    and Algren finding personal peace visiting Taka, preserving the legacy through
+    Graham’s documentation (s_13).
+  id: c_13
+  satisfaction_condition: Node s_13 is triggered; Algren returns to the village and
+    Graham begins chronicling the journal.
+  type: achievement
+  violation_condition: Algren does not return or Graham’s documentation does not commence;
+    unresolved conflict persists.
+initial_facts:
+- content: The year is 1876 in Japan.
+  id: f_0
+  negated: false
+- content: Katsumoto leads a samurai rebellion opposing the Meiji government's Westernization
+    and disarmament policies.
+  id: f_1
+  negated: false
+- content: The atmosphere is tense in the samurai village, resolved to protect their
+    traditions.
+  id: f_2
+  negated: false
+- content: The samurai village has not yet received any news about Captain Nathan
+    Algren's recruitment by the Meiji government.
+  id: f_3
+  negated: false
+- content: Captain Nathan Algren has not yet arrived in Japan.
+  id: f_4
+  negated: false
+- content: Algren has not yet engaged in any battle or interaction with the samurai.
+  id: f_5
+  negated: false
+- content: Katsumoto is free and not under arrest.
+  id: f_6
+  negated: false
+- content: The samurai rebellion has not yet suffered any loss or injury to Nobutada.
+  id: f_7
+  negated: false
+- content: Algren has not yet been captured by the samurai.
+  id: f_8
+  negated: false
+- content: Katsumoto and the samurai have not yet engaged in active battle against
+    the Imperial forces.
+  id: f_9
+  negated: false
+- content: Algren has not yet formed any cultural or personal alliance with the samurai.
+  id: f_10
+  negated: false
+- content: The Meiji government has recruited Captain Nathan Algren to train conscripts
+    against the rebellion.
+  id: f_11
+  negated: false
+- content: Katsumoto is aware of the Westernization and disarmament policies imposed
+    by the Meiji government.
+  id: f_12
+  negated: false
+- content: The samurai village has not yet been attacked or come under direct assault
+    by government forces.
+  id: f_13
+  negated: false
+meta:
+  genres: ["Action", "Drama"]
+  id: movie87
+  player_role: Katsumoto
+  title: "The Last Samurai"
+synopsis: In 1876, Captain Nathan Algren is traumatized by massacring Native Americans
+  in the Indian Wars and has become an alcoholic to stave off the memories. Algren
+  is approached by former colleague Zebulon Gant, who takes him to meet Algren's former
+  Colonel Bagley, whom Algren despises for ordering the massacre. On behalf of businessman
+  Mr. Omura, Bagley offers Algren a job training conscripts of the new Meiji government
+  of Japan to suppress a samurai rebellion that is opposed to Western influence, led
+  by Katsumoto. Despite struggling with the painful memories of having already crushed
+  a tribal rebellion, Algren accepts solely for payment. In Japan he keeps a journal
+  and is accompanied by British translator Simon Graham. Despite Algren's objections,
+  Omura has Bagley order the peasant conscripts to fight early and they are routed
+  when engaging the samurai. Gant is killed and Algren is captured after killing leading
+  samurai warrior Hirotaro. Katsumoto is reminded of a vision of a tiger while watching
+  Algren fight with a tiger-embroidered spear and orders his capture. Taken to the
+  samurai village, Algren is treated by Hirotaro's widow Taka and Katsumoto's son,
+  Nobutada and recovers from his trauma. He begins to converse with Katsumoto, study
+  swordsmanship under warrior Ujio and apologizes to Taka for Hirotaro's death which
+  she accepts because of the honor of battle. Growing closer to her and her children,
+  he later helps defend the village from a night attack by Omura's ninja. In spring,
+  Algren is taken back to Tokyo as promised. The Imperial Japanese army have become
+  better organized with American equipment and Omura offers Algren command if he reveals
+  information on the rebels. Algren declines, so privately Omura orders his death.
+  Katsumoto offers his counsel to the young Emperor, but finds the Emperor's control
+  is weak. When Katsumoto refuses to obey the new law to not display swords, he is
+  arrested. Algren frees Katsumoto with the assistance of Ujio, Nobutada and Graham.
+  Nobutada is severely wounded as they escape, sacrificing himself to slow the guards.
+  Katsumoto mourns, but receives word that a large Imperial Army group led by Omura
+  and Bagley will engage them. Five hundred samurai are rallied as Algren references
+  the Battle of Thermopylae. On the eve of battle, Algren is presented with a katana,
+  kisses Taka and wears Hirotaro's red armor as a symbol of respect to her. In battle,
+  the samurai fall back, preventing the Imperial army from using their full firepower.
+  As they expect, Omura orders the infantry to advance, straight into their fire trap.
+  The samurai then unleash a rain of arrows as a wave of swordsmen, including Katsumoto
+  and Algren, attack. A second Imperial infantry wave advances, only to be countered
+  by Ujio's samurai cavalry; a savage melee ensues, leaving many dead on both sides
+  before the Imperial forces retreat. Realizing that fresh Imperial forces are coming,
+  the samurai resolve to fight to the death in a final charge. Algren hurls his sword
+  at Bagley, fatally wounding his nemesis, but the samurai are finally cut down by
+  Gatling guns. Moved by the sight of his dying countrymen, the Imperial captain stops
+  the fire, defying Omura's orders. Katsumoto, observing Bushido, asks Algren to assist
+  in his seppuku. Katsumoto dies and the Imperial soldiers kneel and bow around the
+  fallen samurai. Later, the American ambassador prepares to have the Emperor sign
+  a treaty but an injured Algren enters and interrupts the proceedings, offering Katsumoto's
+  sword to the Emperor who comes to realize that while Japan must modernize, it must
+  chart its own path and never forget its own history and traditions. The Emperor
+  dismisses the American ambassador and confiscates Omura's fortunes to be given to
+  the people. Graham, who was given Algren's journal to help write a book, states
+  that Algren found peace by returning to Taka and the village.
+trajectory:
+- description: In 1876 Japan, Katsumoto leads a samurai rebellion opposing the Meiji
+    government's Westernization and disarmament policies. The atmosphere is tense,
+    with the samurai village resolved to protect their traditions amidst increasing
+    pressure from the modernizing forces.
+  id: s_0
+  key_delta: Introduction of a key foreign antagonist, Captain Algren, and the escalation
+    of conflict between the samurai and the modern Imperial government.
+  trigger_event: The samurai village receives news that the Meiji government has recruited
+    Captain Nathan Algren, a Western military advisor, to train conscripts against
+    the rebellion.
+- description: Captain Algren arrives and fights in an initial skirmish where the
+    peasant conscripts trained by him are routed by samurai forces. Katsumoto observes
+    Algren’s combat skill and the conscripts' defeat.
+  id: s_1
+  key_delta: Algren is captured, shifting the power dynamic by placing the Western-trained
+    soldier in the samurai’s custody.
+  trigger_event: Algren's conscripts engage the samurai in battle and are defeated,
+    resulting in the death of Zebulon Gant and the capture of Algren.
+- description: Algren is brought to the samurai village, treated by Taka and Katsumoto’s
+    son Nobutada, and begins recovering from his wounds and trauma. Katsumoto watches
+    Algren closely, intrigued by his presence and fighting style.
+  id: s_2
+  key_delta: Algren becomes a guest within the samurai community, initiating direct
+    interaction and cultural exchange.
+  trigger_event: Algren awakens and is cared for by Taka and Nobutada within the village
+    under Katsumoto’s watch.
+- description: Within the village, Algren starts to learn samurai culture and swordsmanship
+    under Ujio, while developing closer relationships with Taka and Katsumoto’s family.
+    The village atmosphere shifts towards cautious acceptance of Algren.
+  id: s_3
+  key_delta: Algren’s attitude and skills begin to shift, incorporating samurai traditions
+    and values.
+  trigger_event: Algren begins training in swordsmanship with Ujio and engaging in
+    conversations with Katsumoto.
+- description: The samurai village repels a surprise night attack by Omura’s ninja.
+    The defenders, including Algren, demonstrate increased readiness and resolve to
+    protect their home.
+  id: s_4
+  key_delta: The village’s defenses and morale are strengthened; Algren firmly integrates
+    as a warrior ally.
+  trigger_event: Omura’s ninja launch a nighttime raid on the village, which is successfully
+    defended by the samurai and Algren.
+- description: Algren is taken back to Tokyo as promised. The imperial army, now better
+    equipped, prepares to attack the samurai. Omura offers Algren command if he betrays
+    the rebels, but Algren declines.
+  id: s_5
+  key_delta: Algren rejects collaboration with Omura’s faction, solidifying his loyalty
+    to the samurai rebellion.
+  trigger_event: Algren meets with Omura in Tokyo and refuses to betray the samurai
+    cause despite the offer of command.
+- description: Katsumoto is arrested for defying the new law banning swords. Algren
+    orchestrates Katsumoto’s daring rescue with the help of Ujio, Nobutada, and Simon
+    Graham.
+  id: s_6
+  key_delta: Katsumoto is freed and the samurai rebellion reasserts active resistance.
+  trigger_event: Imperial guards arrest Katsumoto; Algren and allies launch a rescue
+    operation.
+- description: During the escape from arrest, Nobutada is severely wounded and sacrifices
+    himself to protect the group. Katsumoto mourns but prepares for the impending
+    battle against Omura and Bagley’s forces.
+  id: s_7
+  key_delta: Loss of Nobutada deepens the personal stakes for Katsumoto and the samurai.
+  trigger_event: Nobutada is fatally wounded while helping the group evade capture.
+- description: Katsumoto rallies five hundred samurai to hold a last stand against
+    the approaching Imperial army. The samurai prepare their defenses, with Algren
+    donning Hirotaro's red armor as a symbol of respect.
+  id: s_8
+  key_delta: Mobilization of samurai forces and symbolization of Algren’s full integration
+    into their cause.
+  trigger_event: The gathering and preparation for battle; Algren is presented with
+    a katana and dons the red armor.
+- description: In the battle, samurai tactics effectively blunt the Imperial army’s
+    firepower, using a trap and melees to inflict heavy casualties. However, the arrival
+    of fresh Imperial reinforcements escalates the fight into a final, desperate charge.
+  id: s_9
+  key_delta: High casualties on both sides; samurai showcase effective resistance
+    but face overwhelming odds.
+  trigger_event: The samurai engage in battle with the Imperial army, triggering multiple
+    waves of attack.
+- description: Algren fatally wounds Colonel Bagley in combat, avenging past grievances.
+    Despite their valor, the samurai are ultimately cut down by Gatling guns. The
+    Imperial captain defies orders and halts the firing.
+  id: s_10
+  key_delta: Death of Bagley; display of respect from enemy forces; marks the nearing
+    end of the samurai resistance.
+  trigger_event: Algren kills Bagley; the Gatling gun attack ends when the Imperial
+    captain orders a ceasefire.
+- description: Katsumoto commits seppuku with Algren’s assistance as per Bushido code.
+    The surviving Imperial soldiers kneel and pay respects, symbolizing the samurai’s
+    dignity in defeat.
+  id: s_11
+  key_delta: Honor maintained through ritual suicide; marks the symbolic closure of
+    the samurai rebellion.
+  trigger_event: Katsumoto performs seppuku; Imperial soldiers witness and honor the
+    ritual.
+- description: At the treaty signing ceremony, Algren interrupts and offers Katsumoto's
+    sword to the Emperor, advocating respect for Japan’s traditions alongside modernization.
+    The Emperor dismisses the American ambassador and seizes Omura’s assets for the
+    people.
+  id: s_12
+  key_delta: Emperor receives a new vision balancing tradition and progress; a political
+    shift marginalizing Omura’s influence.
+  trigger_event: The Emperor rejects the treaty path, turns on Omura, and opens the
+    way for peace after seeing Katsumoto's sword.
+- description: Peace is restored to the samurai village. Algren returns to Taka and
+    the community. Simon Graham begins documenting Algren’s journal, sharing the story
+    of his transformation and peace.
+  id: s_13
+  key_delta: Closure of the story with Algren’s personal peace and the preservation
+    of samurai legacy through documentation.
+  trigger_event: Algren returns to the village; Graham starts composing the written
+    account.

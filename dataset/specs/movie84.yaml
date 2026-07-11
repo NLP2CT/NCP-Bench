@@ -1,0 +1,379 @@
+commitments:
+- description: Emperor Marcus Aurelius must be murdered by Commodus only after the
+    decision to appoint Maximus as temporary leader is communicated.
+  id: c_0
+  satisfaction_condition: Node s_0 (Emperor's decision) occurs before or simultaneously
+    with node s_1 (murder of Marcus Aurelius).
+  type: ordering
+  violation_condition: Player causes Marcus Aurelius' murder (s_1) to occur without
+    prior or concurrent disclosure of the leadership decision (s_0).
+- description: Maximus must not fully realize the truth of Marcus Aurelius’ murder
+    until Commodus seizes the throne and orders Maximus’ execution at s_2.
+  id: c_1
+  satisfaction_condition: From s_0 through s_1, Maximus does not yet fully understand
+    Marcus Aurelius’ death circumstances; by s_2, he realizes Commodus’ culpability
+    as the execution order is issued.
+  type: invariant
+  violation_condition: Player action or narrative causes Maximus to fully realize
+    Commodus' guilt before node s_2, or prevents that realization from occurring by
+    the time s_2 unfolds.
+- description: Maximus’ family must be killed by imperial order only after Commodus
+    becomes emperor and orders Maximus' execution.
+  id: c_2
+  satisfaction_condition: Node s_2 (execution order) precedes node s_3 (Maximus’ family
+    killed).
+  type: ordering
+  violation_condition: Player causes Maximus’ family to be killed before Commodus’
+    formal execution order is established in s_2.
+- description: Once Commodus assumes the throne, he commands loyalty of Praetorian
+    guards including General Quintus; orders to execute Maximus are officially sanctioned
+    by Commodus only.
+  id: c_3
+  satisfaction_condition: Between s_1 and s_3, execution orders targeting Maximus
+    originate solely from Commodus' authority.
+  type: invariant
+  violation_condition: Execution or assassination attempts on Maximus are initiated
+    without orders from Commodus during these nodes.
+- description: Maximus must survive the execution attempt but lose his immediate family,
+    resulting in his capture and enslavement.
+  id: c_4
+  satisfaction_condition: By node s_4, Maximus escapes death but is enslaved, and
+    his wife and son are dead.
+  type: achievement
+  violation_condition: Player prevents the death of Maximus' immediate family or Maximus
+    is killed before enslavement at s_4.
+- description: Maximus’ transition from fugitive to gladiator owned by Proximo happens
+    strictly after his escape and family loss.
+  id: c_5
+  satisfaction_condition: Node s_3 (family killed and Maximus escapes) occurs before
+    s_4 (enslavement and purchase by Proximo).
+  type: ordering
+  violation_condition: Player triggers Maximus' gladiator ownership or training (s_4/s_5)
+    before family death and escape (s_3).
+- description: Maximus conceals his identity as a gladiator during initial public
+    arena performances until forced to reveal himself in the Roman Colosseum.
+  id: c_6
+  satisfaction_condition: From s_5 through s_6, Maximus’ identity is unknown to Commodus
+    and the public during arena fights.
+  type: invariant
+  violation_condition: Player exposes Maximus’ true identity to Commodus or crowd
+    before s_7 (forced reveal).
+- description: The public reveal of Maximus’ identity to Commodus and the crowd must
+    occur after his victorious tribute battle at the Colosseum.
+  id: c_7
+  satisfaction_condition: Node s_6 (victory under concealment) precedes node s_7 (forced
+    reveal and crowd vote).
+  type: ordering
+  violation_condition: Player causes public identification of Maximus before his arena
+    victory at s_6.
+- description: Maximus refuses to kill a defeated gladiator on Commodus’ order, thereby
+    earning the crowd’s title 'Maximus the Merciful'.
+  id: c_8
+  satisfaction_condition: At node s_8, Maximus explicitly disobeys Commodus' command
+    to kill, leading to increased public support.
+  type: invariant
+  violation_condition: Player obeys Commodus’ order to kill the defeated gladiator
+    during s_8, negating the 'Merciful' title and popularity boost.
+- description: A conspiracy to overthrow Commodus involving Maximus, Lucilla, and
+    Gracchus must be formed following confirmation of loyal army remnants.
+  id: c_9
+  satisfaction_condition: By node s_9, Maximus, Lucilla, and Gracchus have actively
+    planned rebellion against Commodus.
+  type: achievement
+  violation_condition: Player fails to initiate or confirm conspiracy after s_9 or
+    bypasses this step entirely.
+- description: Commodus must learn of the rebellion plot through coercion of Lucilla
+    only after the conspiracy is established.
+  id: c_10
+  satisfaction_condition: Node s_9 (conspiracy formation) occurs before s_10 (Lucilla’s
+    coerced betrayal).
+  type: ordering
+  violation_condition: Player triggers Commodus discovering plot details before the
+    conspiracy exists at s_9.
+- description: Attack on gladiator school and capture or death of key allies must
+    occur only after Commodus learns of the rebellion and acts.
+  id: c_11
+  satisfaction_condition: From s_10 to s_11, the assault killing Proximo and Hagen
+    and imprisoning survivors happens after knowledge of conspiracy.
+  type: invariant
+  violation_condition: Player arranges attack on gladiator school before s_10’s discovery
+    of the conspiracy.
+- description: Commodus cheats the duel by stabbing Maximus with a concealed weapon
+    prior to their combat in the Colosseum arena.
+  id: c_12
+  satisfaction_condition: At s_12, Maximus is secretly wounded by Commodus before
+    the duel begins.
+  type: invariant
+  violation_condition: Player allows the duel to start at s_12 without Commodus inflicting
+    the hidden stiletto wound.
+- description: Quintus must disobey Commodus to withhold soldiers’ intervention only
+    during the duel, facilitating Maximus’ victory.
+  id: c_13
+  satisfaction_condition: Node s_12 (duel start) and s_13 (Quintus disobedience and
+    duel outcome) occur sequentially without interruption.
+  type: ordering
+  violation_condition: Player causes soldier intervention or suppression of Quintus’
+    disobedience before or during duel at s_13.
+- description: Commodus’ death by Maximus’ hand in the duel must occur as the climax,
+    marking an end to Commodus' reign.
+  id: c_14
+  satisfaction_condition: At s_13, Maximus successfully kills Commodus with the hidden
+    stiletto during the duel.
+  type: achievement
+  violation_condition: Player allows Commodus to survive or kills Maximus first, violating
+    the defined narrative outcome.
+- description: Maximus must issue final commands to restore Senate authority, free
+    slaves, and reinstate Gracchus before his death.
+  id: c_15
+  satisfaction_condition: At s_14, before dying in the arena, Maximus explicitly gives
+    these final instructions.
+  type: invariant
+  violation_condition: Player causes Maximus to die without delivering the final commands
+    at s_14.
+- description: Maximus’ legacy is preserved through Lucilla’s public honoring and
+    Juba’s burial ritual, symbolizing closure and ongoing hope.
+  id: c_16
+  satisfaction_condition: At s_15, Lucilla endorses Maximus’ wishes publicly and Juba
+    buries Maximus’ figurines with a promise of future reunion.
+  type: achievement
+  violation_condition: Player prevents Lucilla’s public recognition or Juba’s burial
+    and promise, undermining narrative closure at s_15.
+initial_facts:
+- content: The year is AD 180.
+  id: f_0
+  negated: false
+- content: Emperor Marcus Aurelius is elderly and ill.
+  id: f_1
+  negated: false
+- content: Emperor Marcus Aurelius is currently residing within the Roman imperial
+    palace.
+  id: f_2
+  negated: false
+- content: General Maximus Decimus Meridius has just achieved a decisive victory at
+    Vindobona.
+  id: f_3
+  negated: false
+- content: Commodus is the son of Emperor Marcus Aurelius.
+  id: f_4
+  negated: false
+- content: Commodus is present at the imperial palace.
+  id: f_5
+  negated: false
+- content: Commodus is aware of his father Marcus Aurelius' declining health.
+  id: f_6
+  negated: false
+- content: Commodus is aware that the ongoing war against Germanic tribes is ending.
+  id: f_7
+  negated: false
+- content: Emperor Marcus Aurelius intends to communicate a decision to grant Maximus
+    temporary leadership, bypassing Commodus.
+  id: f_8
+  negated: false
+- content: Maximus is not yet aware of any decision by Marcus Aurelius regarding the
+    temporary leadership.
+  id: f_9
+  negated: false
+- content: Maximus has not yet fully realized the true circumstances of Marcus Aurelius'
+    death.
+  id: f_10
+  negated: false
+- content: Commodus has not yet murdered Marcus Aurelius.
+  id: f_11
+  negated: false
+- content: No execution order against Maximus has been issued.
+  id: f_12
+  negated: false
+- content: Maximus is currently alive and not a fugitive.
+  id: f_13
+  negated: false
+- content: Maximus' immediate family—wife and son—are alive.
+  id: f_14
+  negated: false
+- content: Maximus is not enslaved or a gladiator.
+  id: f_15
+  negated: false
+- content: Commodus has not assumed the imperial throne.
+  id: f_16
+  negated: false
+- content: The Praetorian guards, including General Quintus, are loyal to Emperor
+    Marcus Aurelius and have not received orders from Commodus.
+  id: f_17
+  negated: false
+- content: Commodus does not yet possess popular approval as emperor.
+  id: f_18
+  negated: false
+- content: Maximus has not participated in any gladiatorial fights.
+  id: f_19
+  negated: false
+- content: Commodus does not yet know of any conspiracy or rebellion.
+  id: f_20
+  negated: false
+- content: Lucilla and Gracchus have not been engaged in any conspiratorial activity
+    against Commodus.
+  id: f_21
+  negated: false
+meta:
+  genres: ["Action", "Drama"]
+  id: movie84
+  player_role: Commodus
+  title: "Gladiator"
+synopsis: In AD 180, General Maximus Decimus Meridius leads the Roman army to a decisive
+  victory against Germanic tribes at Vindobona, ending a long war on the Roman frontier
+  and earning the esteem of the elderly Emperor Marcus Aurelius. Though he has a son,
+  Commodus, the dying emperor wishes to grant temporary leadership to Maximus, hoping
+  eventually to return power to the Roman Senate. When his father tells him of the
+  decision, Commodus, already bitter that Marcus favors Maximus over him, murders
+  his father in a fit of rage and claims the throne. Maximus realizes the truth about
+  Marcus' death, but is betrayed by his friend, General Quintus, who reluctantly instructs
+  the Praetorian guards to carry out Commodus' order to execute Maximus and his wife
+  and son. Maximus manages to escape, but is unable to return in time to save his
+  family. After burying them, Maximus is found unconscious by slave traders and taken
+  to Zucchabar, a Roman city in North Africa. There, he is bought by Proximo, and
+  forced to fight for his life as a gladiator in arena tournaments. During this time,
+  he befriends gladiators Juba, and Hagen. Juba tells Maximus to have faith that he
+  will be reunited with his family in the afterlife. Maximus proves a fierce gladiator;
+  with nothing left to live for, he is fearless in the arena. He ultimately reaches
+  the prestigious Roman Colosseum, where his group is contracted to fight in a tribute
+  to the Battle of Zama. Concealing his identity with a helmet, he skillfully leads
+  a band of gladiators to defeat an opposing chariot and archer force, earning the
+  crowd's praise. Forced to reveal himself to a stunned Commodus in the arena afterward,
+  the crowd votes to spare his life, and Commodus, being obsessed with the people's
+  approval, appeases them by doing so. Maximus later wins against the undefeated gladiator
+  Tigris, as well as tigers released into the arena, yet refuses to obey Commodus'
+  command to perform the coup de grâce. As a result, he is declared "Maximus the Merciful"
+  by the crowd, increasing his popularity and further frustrating Commodus, who cannot
+  kill Maximus without losing favor with the Roman people. Following the fight, Maximus
+  is told by his former servant Cicero that his army is still loyal to him. Maximus
+  then conspires with Commodus' sister Lucilla and the senator Gracchus to rejoin
+  with his army and topple Commodus by force. Commodus, however, suspects his sister
+  of betrayal and forces her to reveal the plot using veiled threats against her young
+  son Lucius. During Maximus's attempted escape, Commodus' guards attack Proximo's
+  gladiator school, killing Hagen and Proximo. Juba and the survivors are imprisoned,
+  but Maximus makes it to the city walls, where he is captured after a failed attempt
+  to save Cicero. Desperate to get Maximus out of the way and prove his own greatness,
+  Commodus arranges a duel with him in the arena. Unknown to the crowd, Commodus stabs
+  a restrained Maximus with a stiletto to gain advantage over him before they enter
+  the arena. During the fight, Maximus manages to disarm Commodus, while Quintus disobeys
+  the emperor's demand for his sword and commands his soldiers to do the same. Commodus
+  then produces the hidden stiletto, but Maximus plunges the blade into Commodus'
+  throat, killing him. With his dying words, Maximus carries out Marcus Aurelius'
+  wishes, calling for Gracchus to be reinstated, the slaves to be freed, and power
+  to be restored to the Senate. As he dies, Maximus reunites with his family in the
+  afterlife. Lucilla then reiterates his wishes and honors his memory. Some time later,
+  Juba buries Maximus' two small figurines of his wife and son in the ground where
+  his friend Maximus died, promising to see him in the afterlife, "but not yet".
+trajectory:
+- description: In AD 180, Emperor Marcus Aurelius is elderly and ill, residing within
+    the Roman imperial palace. General Maximus Decimus Meridius has just achieved
+    a decisive victory over Germanic tribes at Vindobona. Commodus, Marcus Aurelius'
+    son, is present at the palace, aware of his father's declining health and the
+    ongoing war's end.
+  id: s_0
+  key_delta: Marcus Aurelius reveals his plan to appoint Maximus as temporary leader
+    until power is returned to the Senate; Commodus learns he is effectively disinherited.
+  trigger_event: Emperor Marcus Aurelius summons Commodus to disclose his decision
+    to grant Maximus temporary leadership, bypassing Commodus.
+- description: Inside the imperial palace, after hearing the emperor's decision, Commodus
+    is alone with the emperor in a dimly lit chamber.
+  id: s_1
+  key_delta: Marcus Aurelius is dead by Commodus' hand; Commodus immediately claims
+    the imperial throne.
+  trigger_event: Commodus murders Emperor Marcus Aurelius in a sudden violent outburst.
+- description: Commodus, now Emperor, commands loyalty from the Praetorian guards.
+    Maximus is present in the city and comes to realize the true circumstances of
+    Marcus Aurelius' death as Commodus moves against him.
+  id: s_2
+  key_delta: An official order for Maximus’ execution is given; Maximus becomes a
+    target of imperial assassination.
+  trigger_event: Commodus orders Maximus' execution; General Quintus, acting under
+    duress, commands the Praetorian guards to carry out the order.
+- description: At Maximus’ estate, soldiers arrive to arrest him and kill his family.
+    Maximus fights back but is overwhelmed.
+  id: s_3
+  key_delta: Maximus’ immediate family is dead; Maximus survives but is now a hunted
+    fugitive.
+  trigger_event: Maximus escapes execution but finds his wife and son have been killed
+    by the guards.
+- description: Maximus lies unconscious in a rural area and is discovered by slave
+    traders who transport him to Zucchabar in North Africa.
+  id: s_4
+  key_delta: Maximus’ status changes from fugitive general to enslaved gladiator trainee
+    under Proximo’s ownership.
+  trigger_event: Proximo purchases Maximus from the slave traders and brings him to
+    the gladiator school.
+- description: Inside the gladiator school arena in Zucchabar, Maximus trains and
+    fights alongside other gladiators including Juba and Hagen.
+  id: s_5
+  key_delta: Maximus establishes himself as a fierce gladiator and gains alliances
+    with other gladiators like Juba and Hagen.
+  trigger_event: Maximus participates in gladiatorial fights and gains the respect
+    of fellow gladiators and audiences.
+- description: Maximus and his gladiator group arrive at the Roman Colosseum to perform
+    in a tribute to the Battle of Zama. Commodus watches publicly as emperor while
+    Maximus fights masked among the gladiators.
+  id: s_6
+  key_delta: Maximus’ identity remains hidden from Commodus, though he gains public
+    acclaim from the crowd.
+  trigger_event: Maximus fights masked to conceal his identity and leads the gladiators
+    to a notable victory in the arena.
+- description: In the Colosseum arena post-battle, Maximus is forced to reveal his
+    identity to Commodus and the public.
+  id: s_7
+  key_delta: Maximus’ true identity is revealed to Commodus and the people, boosting
+    his popularity; Commodus tolerates Maximus to maintain public favor.
+  trigger_event: The crowd votes to spare Maximus’ life, demonstrating popular support.
+- description: Within the Colosseum, Maximus defeats undefeated gladiator Tigris and
+    wild tigers during a subsequent fight.
+  id: s_8
+  key_delta: Maximus gains the title 'Maximus the Merciful' and further public admiration;
+    Commodus’ frustration grows as he cannot execute Maximus without losing favor.
+  trigger_event: Maximus refuses to kill a defeated gladiator as ordered by Commodus.
+- description: In the city, Maximus meets with his former servant Cicero who informs
+    him that loyal soldiers remain within his army.
+  id: s_9
+  key_delta: A plan for rebellion against Commodus is set in motion involving Maximus,
+    Lucilla, and Gracchus.
+  trigger_event: Maximus and conspirators Lucilla and Gracchus plan to overthrow Commodus
+    and restore the Senate.
+- description: Commodus suspects betrayal from his sister Lucilla and coerces her
+    to disclose the conspiracy details to him at the imperial palace.
+  id: s_10
+  key_delta: The conspiracy is compromised; Commodus gains foreknowledge of Maximus’
+    rebellion.
+  trigger_event: Commodus threatens Lucilla’s son, Lucius, leveraging him to expose
+    the plot.
+- description: At the gladiator school, Commodus’ guards attack, killing Proximo and
+    Hagen, and imprisoning Juba and other gladiators.
+  id: s_11
+  key_delta: Maximus is captured by imperial forces; key allies are killed or imprisoned,
+    weakening the rebellion.
+  trigger_event: Maximus attempts to flee toward the city walls but is captured after
+    a failed attempt to save Cicero.
+- description: In the Colosseum arena, preparations for a duel between Commodus and
+    Maximus take place. Commodus secretly wounds Maximus with a hidden stiletto before
+    the fight.
+  id: s_12
+  key_delta: Maximus enters the duel physically impaired but determined; Commodus
+    cheats by stabbing Maximus before combat.
+  trigger_event: The duel between Commodus and Maximus begins in front of the assembled
+    crowd.
+- description: During the duel, Quintus disobeys Commodus’ orders and commands soldiers
+    not to intervene. Maximus disarms Commodus after fierce combat.
+  id: s_13
+  key_delta: Commodus dies by Maximus’ hand, ending his reign; Quintus switches allegiance
+    implicitly in this moment.
+  trigger_event: Maximus uses the hidden stiletto to fatally wound Commodus.
+- description: As Maximus lies dying in the arena, he speaks final commands to restore
+    the Senate, free the slaves, and reinstate Gracchus.
+  id: s_14
+  key_delta: Power begins to shift according to Marcus Aurelius’ original plan; Maximus’
+    death marks the end of conflict.
+  trigger_event: Maximus dies in the arena; the crowd and Lucilla witness his last
+    wishes.
+- description: Post-battle, Lucilla publicly acknowledges Maximus’ wishes and honors
+    his memory. Juba buries Maximus’ figurines of his wife and son at the site of
+    his death.
+  id: s_15
+  key_delta: Maximus’ legacy is preserved by his allies; a symbolic closure to his
+    story is established.
+  trigger_event: Juba promises to reunite with Maximus in the afterlife in the future.

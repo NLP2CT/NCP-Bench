@@ -1,0 +1,370 @@
+commitments:
+- description: Alice's journey from the real world to Wonderland must follow the sequence
+    of her fleeing the garden party and falling into the rabbit hole to maintain narrative
+    causality.
+  id: c_0
+  satisfaction_condition: Node s_0 through s_2 occur in strict order before any Wonderland
+    events (s_3 and beyond).
+  type: ordering
+  violation_condition: Player action or system response allows Wonderland events (e.g.,
+    Alice meeting Wonderland creatures) prior to or without the garden party escape
+    and rabbit hole fall sequence.
+- description: Alice's recognition as the prophesied 'right Alice' who must slay the
+    Jabberwocky must be introduced before she accesses the Vorpal Sword or engages
+    Red Queen's forces decisively.
+  id: c_1
+  satisfaction_condition: Node s_3 (introduction of Alice's identity and prophecy)
+    occurs before s_9 and s_10 (retrieving the sword and infiltrating Red Queen's
+    castle).
+  type: ordering
+  violation_condition: The system permits Alice to obtain the Vorpal Sword or confront
+    Red Queen's minions before her prophetic identity is revealed or acknowledged.
+- description: Between s_6 and s_7, Mad Hatter is free and actively aiding Alice until
+    he deliberately sacrifices himself by capture to protect her escape.
+  id: c_2
+  satisfaction_condition: Mad Hatter remains uncaptured and cooperative with Alice
+    until s_7 trigger event (his capture) occurs.
+  type: invariant
+  violation_condition: Mad Hatter is captured or incapacitated before s_7 or becomes
+    uncooperative/conflicted against Alice's interest prematurely.
+- description: Alice must secure the Vorpal Sword and deliver it to the White Queen
+    to enable the eventual rebellion and fulfillment of the prophecy.
+  id: c_3
+  satisfaction_condition: Nodes s_10 (retrieving the Vorpal Sword and escaping) and
+    s_11 (delivering the sword to the White Queen) both achieved in order before the
+    final battle (s_14).
+  type: achievement
+  violation_condition: Alice fails or skips retrieval and delivery of the Vorpal Sword
+    before the final confrontation, disabling key rebellion plot progression.
+- description: The rebellion led by the Mad Hatter must be established before the
+    final battle to show escalation of conflict and stakes.
+  id: c_4
+  satisfaction_condition: Node s_12 (rebellion initiation and its defeat) occurs before
+    s_14 (final battle setup).
+  type: ordering
+  violation_condition: Final battle (s_14) commences without rebellion attempt having
+    occurred (s_12 missing or reordered).
+- description: Alice remains uncertain about her role until she consults Absolem,
+    enabling character growth before final decision and battle.
+  id: c_5
+  satisfaction_condition: Between s_12 and s_14, Alice's doubt state persists until
+    s_13, when Absolem's counsel occurs.
+  type: invariant
+  violation_condition: Alice gains full resolve or refuses counsel prematurely before
+    node s_13 or final battle begins without this character development moment.
+- description: The Jabberwocky must be defeated by Alice to conclude the core prophecy
+    and shift power to the White Queen.
+  id: c_6
+  satisfaction_condition: Node s_15 (Alice kills the Jabberwocky) achieved before
+    resolving the fate of Wonderland and concluding the conflict.
+  type: achievement
+  violation_condition: The story advances past s_15 or final resolutions without Alice
+    successfully killing the Jabberwocky.
+- description: The banishment of the Red Queen and Knave, and gift of the Jabberwocky's
+    blood to Alice, must occur only after the Jabberwocky's defeat.
+  id: c_7
+  satisfaction_condition: Node s_16 (banishment and gifting vial) occurs strictly
+    after node s_15 (Jabberwocky’s defeat).
+  type: ordering
+  violation_condition: Red Queen and Knave are banished or Alice receives the Jabberwocky's
+    blood before the Jabberwocky is killed.
+- description: While Alice chooses to return home, the Mad Hatter remains in Wonderland
+    preparing ongoing rebellion efforts, maintaining separation of their paths.
+  id: c_8
+  satisfaction_condition: From s_16 through s_18, Alice departs Wonderland while Mad
+    Hatter remains; no scenario contradicts this divergence.
+  type: invariant
+  violation_condition: The system implies or enacts Mad Hatter accompanying Alice
+    back home or abandoning resistance concurrently with Alice's departure.
+- description: Alice’s return to the real world and assertion of independence is necessary
+    to demonstrate her character arc completion.
+  id: c_9
+  satisfaction_condition: Node s_17 (Alice confronting family and pledging independence)
+    is reached before story closure at s_18.
+  type: achievement
+  violation_condition: Narrative ends without Alice's return and standing up to her
+    family, or player bypasses this scene entirely.
+- description: The symbolic presence and recognition of Absolem as a butterfly on
+    Alice’s shoulder must occur as closure to maintain Wonderland’s ongoing influence
+    and thematic consistency.
+  id: c_10
+  satisfaction_condition: At s_18, Absolem, now a butterfly, lands on Alice’s shoulder
+    and is recognized by her.
+  type: invariant
+  violation_condition: Absolem’s transformation or presence as butterfly at s_18 is
+    omitted or the interaction with Alice is skipped or contradicted.
+initial_facts:
+- content: Alice Kingsleigh is nineteen years old.
+  id: f_0
+  negated: false
+- content: Alice Kingsleigh is at Lord Ascot's estate garden party.
+  id: f_1
+  negated: false
+- content: Alice Kingsleigh is mourning the loss of her father.
+  id: f_2
+  negated: false
+- content: Alice Kingsleigh is troubled by a strange recurring dream.
+  id: f_3
+  negated: false
+- content: The atmosphere at the garden party is formal, stifling, and filled with
+    societal expectations.
+  id: f_4
+  negated: false
+- content: Alice Kingsleigh is under pressure from societal expectations that cause
+    her visible distress.
+  id: f_5
+  negated: false
+- content: The Mad Hatter is present at the garden party.
+  id: f_6
+  negated: false
+- content: The Mad Hatter observes the tense social environment and Alice's discomfort.
+  id: f_7
+  negated: false
+- content: Alice Kingsleigh has not fled the garden party yet.
+  id: f_8
+  negated: false
+- content: Alice Kingsleigh has not encountered Wonderland creatures.
+  id: f_9
+  negated: false
+- content: Alice Kingsleigh is unaware of her foretold destiny as the 'right Alice'
+    destined to slay the Jabberwocky.
+  id: f_10
+  negated: false
+- content: Alice Kingsleigh does not possess the Vorpal Sword.
+  id: f_11
+  negated: false
+- content: The Mad Hatter is free and un-captured.
+  id: f_12
+  negated: false
+- content: The Mad Hatter is cooperative and aligned with Alice's interests.
+  id: f_13
+  negated: false
+- content: No rebellion against the Red Queen has been initiated.
+  id: f_14
+  negated: false
+- content: Alice Kingsleigh is uncertain about her role but has not yet sought counsel
+    from Absolem.
+  id: f_15
+  negated: false
+- content: The Jabberwocky has not been confronted or defeated by Alice Kingsleigh.
+  id: f_16
+  negated: false
+- content: The Red Queen and the Knave of Hearts have not been banished.
+  id: f_17
+  negated: false
+- content: Alice Kingsleigh has not received the vial of the Jabberwocky's blood.
+  id: f_18
+  negated: false
+- content: Alice Kingsleigh is at the garden party location, part of the real world,
+    not in Wonderland.
+  id: f_19
+  negated: false
+- content: Absolem the Caterpillar is not present with Alice Kingsleigh at the garden
+    party.
+  id: f_20
+  negated: false
+- content: Lord Ascot’s apprenticeship offer to Alice has not yet occurred.
+  id: f_21
+  negated: false
+meta:
+  genres: ["Fantasy", "Adventure"]
+  id: movie54
+  player_role: Mad Hatter
+  title: "Alice in Wonderland"
+synopsis: Troubled by a strange recurring dream and mourning the loss of her beloved
+  father, nineteen-year-old Alice Kingsleigh attends a garden party at Lord Ascot's
+  estate, where she is confronted by an unwanted marriage proposal and the stifling
+  expectations of the society in which she lives. Unsure of how to reply, and increasingly
+  confused, she runs away to chase after a rabbit in a blue waistcoat, and accidentally
+  falls into a large rabbit hole. She is transported to a world called Wonderland,
+  where she is greeted by the White Rabbit, the Dormouse, the Dodo, and Tweedledum
+  and Tweedledee. They argue over her identity as "the right Alice", who it is foretold
+  will slay the Red Queen's Jabberwocky on the Frabjous Day and restore the White
+  Queen to power. The group is then ambushed by the Bandersnatch and a group of playing-card
+  soldiers led by the Knave of Hearts. Alice escapes and flees into the woods. The
+  Knave informs the Red Queen that Alice has returned and threatens her reign, and
+  the soldiers are ordered to find Alice immediately. Meanwhile, the wandering Alice
+  encounters the Cheshire Cat, who takes her to the March Hare and the Hatter. On
+  the way to the White Queen's castle, Hatter relates the terror of the Red Queen's
+  reign, and comments that Alice is not the same as she once was. The Hatter helps
+  Alice avoid capture by allowing himself to be seized instead. Later, Alice is found
+  by Bayard the Bloodhound, who wishes to take her to the White Queen, but Alice insists
+  upon helping the Hatter, so they go to the Red Queen's castle. The Red Queen is
+  unaware of Alice's true identity and therefore welcomes her as a guest. Alice learns
+  that the Vorpal Sword is locked away in a case inside the Bandersnatch's den. The
+  Knave crudely attempts to seduce Alice, but she rebuffs him. She later manages to
+  retrieve the sword and befriend the Bandersnatch. The Knave finds her with the sword
+  and attempts to arrest her. Alice escapes on the back of the Bandersnatch and delivers
+  the sword to the White Queen. The Cheshire Cat saves the Hatter from execution,
+  and the Hatter calls for rebellion against the Red Queen. The rebellion is quickly
+  put down by the Jubjub bird. The resistance flees to the White Queen's castle, and
+  both armies prepare for battle. Alice remains unsure about the expectation for her
+  to champion the White Queen, and meets with Absolem the Caterpillar. He reminds
+  Alice of her past visit to Underland thirteen years earlier, and helps give her
+  the courage to fight the Jabberwocky and accomplish "What she must to do", while
+  he becomes a pupa. When the Frabjous Day arrives, both the White and Red Queens
+  gather their armies on a chessboard-like battlefield and send forth their chosen
+  champions to decide the fate of Underland. Encouraging herself with the words of
+  her late father, Alice manages to kill the Jabberwocky. The White Queen then banishes
+  the Red Queen and the Knave to the Outlands, and gives Alice a vial of the Jabberwocky's
+  blood, which will take her home. The Hatter suggests that she could stay in Underland,
+  but she decides that she must go back and promises that she will return. Alice returns
+  home, where she stands up to her family and pledges to live life on her own terms.
+  Impressed, Lord Ascot takes her in as his apprentice, with the idea of establishing
+  oceanic trade routes to China. As the story closes, Alice prepares to set off on
+  a trading ship. Absolem, now a butterfly, lands on her shoulder. Alice recognizes
+  him and greets him before he flutters away.
+trajectory:
+- description: At Lord Ascot's estate garden party, nineteen-year-old Alice Kingsleigh
+    is present among guests, burdened by a strange recurring dream and mourning her
+    late father. The atmosphere is formal and stifling, with societal expectations
+    pressing on her. The Mad Hatter, present at the party, observes the tense social
+    environment and Alice's discomfort.
+  id: s_0
+  key_delta: Alice's conflict with societal expectations and personal grief is established;
+    the pressure leading to her eventual escape is planted.
+  trigger_event: Alice receives an unwanted marriage proposal at the garden party,
+    causing visible distress.
+- description: Alice, confused and overwhelmed, suddenly notices a rabbit in a blue
+    waistcoat moving through the garden. The Mad Hatter notices her quick departure
+    from the party grounds as she chases after the rabbit.
+  id: s_1
+  key_delta: Alice physically removes herself from the oppressive social setting,
+    initiating her journey into Wonderland.
+  trigger_event: Alice runs away from the party after seeing the rabbit in the blue
+    waistcoat.
+- description: In an outdoor wooded area near the estate, Alice pursues the rabbit
+    and falls into a large rabbit hole. The Mad Hatter remains unaware of her fate
+    but senses disruption in the social order.
+  id: s_2
+  key_delta: Alice is transported from the real world into the fantastical realm of
+    Wonderland.
+  trigger_event: Alice lands in Wonderland and is immediately surrounded by its arguing
+    creatures.
+- description: Alice finds herself in Wonderland and is greeted by the White Rabbit,
+    Dormouse, Dodo, Tweedledum, and Tweedledee, engaged in an argument about her identity
+    as 'the right Alice' prophesied to slay the Jabberwocky. The Mad Hatter is nearby
+    but not yet encountered by Alice.
+  id: s_3
+  key_delta: Alice's foretold destiny as champion against the Red Queen's tyranny
+    is introduced and debated, expanding the narrative stakes.
+  trigger_event: The Red Queen's forces attack, and Alice flees into the dark woods.
+- description: The group is attacked by the Bandersnatch and the Knave of Hearts'
+    playing-card soldiers. Alice narrowly escapes into the dark woods. The Mad Hatter
+    hears news of the attack and Alice's flight.
+  id: s_4
+  key_delta: The immediate physical threat from the Red Queen's forces is established,
+    and Alice becomes a target.
+  trigger_event: The Bandersnatch and playing-card soldiers ambush the group, causing
+    Alice to flee.
+- description: In the Wonderland woods, Alice encounters the Cheshire Cat, who guides
+    her toward the March Hare and the Mad Hatter. The Mad Hatter prepares to meet
+    Alice.
+  id: s_5
+  key_delta: Alice connects with the Mad Hatter, an important ally, marking the start
+    of their direct interaction.
+  trigger_event: Alice meets the Cheshire Cat and, directed by him, finds the Mad
+    Hatter's location.
+- description: Alice and the Mad Hatter are traveling toward the White Queen's castle.
+    The Mad Hatter shares his fears about the Red Queen's reign and observes that
+    Alice is changed from before. The atmosphere is tense and secretive.
+  id: s_6
+  key_delta: The oppressive control of the Red Queen and the necessity of rebellion
+    are clarified; Alice's transformation is noted.
+  trigger_event: While traveling, the Mad Hatter speaks to Alice about the Red Queen's
+    terror and Alice's altered nature.
+- description: To protect Alice, the Mad Hatter allows himself to be captured by the
+    Red Queen's soldiers, enabling her to escape deeper into Wonderland. The Mad Hatter
+    is taken to the Red Queen's castle.
+  id: s_7
+  key_delta: The Mad Hatter becomes a prisoner, setting the stage for resistance and
+    signaling Alice's continued freedom and mission.
+  trigger_event: The Mad Hatter deliberately sacrifices his freedom by submitting
+    to capture to enable Alice's escape.
+- description: At the Red Queen's castle, Alice is found by Bayard the Bloodhound.
+    She refuses Bayard's offer to bring her to the White Queen, insisting instead
+    on rescuing the Mad Hatter. The atmosphere is dangerous but determined.
+  id: s_8
+  key_delta: Alice takes an active role to save her ally, shifting her trajectory
+    toward confrontation with the Red Queen.
+  trigger_event: Bayard finds Alice and offers aid; Alice decides to go to the Red
+    Queen's castle to help the Mad Hatter.
+- description: Inside the Red Queen's castle, Alice is welcomed as a guest since her
+    true identity is unknown. She discovers that the Vorpal Sword is locked inside
+    the Bandersnatch's den. The Knave of Hearts makes unwanted advances, which Alice
+    rebuffs.
+  id: s_9
+  key_delta: Alice gains critical intelligence on the sword and establishes boundaries
+    with hostile characters, asserting her agency.
+  trigger_event: Alice interacts with the Red Queen and Knave, learning about the
+    Vorpal Sword's location and resisting the Knave's seduction attempt.
+- description: Alice successfully retrieves the Vorpal Sword from the Bandersnatch's
+    den and befriends the Bandersnatch. The Knave finds her with the sword and tries
+    to arrest her, but Alice escapes riding on the Bandersnatch's back.
+  id: s_10
+  key_delta: Alice secures the powerful weapon essential for the prophecy and evades
+    capture, gaining a formidable ally.
+  trigger_event: Alice retrieves the Vorpal Sword, befriends the Bandersnatch, and
+    flees from the Knave's arrest attempt.
+- description: Alice delivers the Vorpal Sword to the White Queen. The Mad Hatter
+    is saved from execution by the Cheshire Cat and joins the White Queen's forces
+    to lead a rebellion. The atmosphere is charged with hope and tension.
+  id: s_11
+  key_delta: The resistance against the Red Queen consolidates, with Mad Hatter reinstated
+    and armed with hope and weaponry.
+  trigger_event: Alice hands over the sword to the White Queen, and the Cheshire Cat
+    rescues the Mad Hatter from execution.
+- description: The rebellion begins with the Mad Hatter calling for revolt against
+    the Red Queen. However, the uprising is quickly crushed by the Jubjub bird. The
+    resistance retreats to the White Queen's castle to regroup.
+  id: s_12
+  key_delta: The resistance suffers a setback, forcing a tactical retreat and highlighting
+    the strength of the Red Queen.
+  trigger_event: The Mad Hatter leads the rebellion which is swiftly defeated by the
+    Red Queen's forces.
+- description: On the White Queen's castle grounds, Alice remains uncertain about
+    her role, seeking counsel from Absolem the Caterpillar, who reminds her of a past
+    visit and encourages her resolve. The Caterpillar begins its transformation into
+    a pupa.
+  id: s_13
+  key_delta: Alice gains renewed courage and clarity for her upcoming trial; Absolem
+    transitions to a new form, symbolizing change.
+  trigger_event: Alice meets with Absolem, who shares wisdom and begins metamorphosis.
+- description: On Frabjous Day, the White and Red Queens assemble their armies on
+    a chessboard-like battlefield, each sending forth champions for the decisive combat.
+    The Mad Hatter commands the rebellion forces with renewed vigor.
+  id: s_14
+  key_delta: The armies are in place, and Alice stands as the White Queen's chosen
+    champion against the Jabberwocky.
+  trigger_event: Both queens mobilize their armies and champions for the final battle.
+- description: Alice battles and kills the Jabberwocky, inspired by the final encouragement
+    from her late father. The Mad Hatter and others witness the turning point on the
+    battlefield.
+  id: s_15
+  key_delta: The prophesied act is fulfilled; the Red Queen's power is fundamentally
+    broken.
+  trigger_event: Alice kills the Jabberwocky in combat on the battlefield.
+- description: The White Queen banishes the Red Queen and the Knave to the Outlands.
+    She gives Alice a vial of the Jabberwocky's blood, which has the power to send
+    her home. The Mad Hatter proposes that Alice might stay in Wonderland, but she
+    chooses to return home.
+  id: s_16
+  key_delta: The power structures in Wonderland shift; Alice is granted means to leave,
+    and decisions about her future solidify.
+  trigger_event: The White Queen distributes rewards and announces the banishment
+    of her foes; Alice receives the vial.
+- description: Back in the real world, Alice confronts her family and asserts her
+    independence, with the Mad Hatter's support implied though he remains in Wonderland
+    preparing for further endeavors.
+  id: s_17
+  key_delta: Alice's personal transformation manifests in her real-world relationships;
+    she claims autonomy.
+  trigger_event: Alice returns home and stands up to her family.
+- description: Lord Ascot accepts Alice as his apprentice to pioneer oceanic trade
+    routes to China, signaling new opportunities ahead. Absolem, now a butterfly,
+    lands on Alice's shoulder as she prepares to board a trading ship.
+  id: s_18
+  key_delta: Alice embarks on a new chapter, symbolizing growth and ongoing connection
+    to Wonderland through Absolem.
+  trigger_event: Alice prepares to depart on a trading expedition, greeted by the
+    butterfly Absolem.

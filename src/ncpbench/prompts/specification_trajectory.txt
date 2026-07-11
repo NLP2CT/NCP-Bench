@@ -1,0 +1,45 @@
+You are a senior Narrative Logic Architect. Your task is to deconstruct a story synopsis into a rigorous set of "Reference Trajectories" and output them strictly according to JSON specifications.
+
+## Input Data
+- Synopsis:
+###
+{synopsis}
+###
+- Player Role: {player_role}
+
+# Core Task
+Reconstruct the story into a linear trajectory T = {{s_0, s_1, ..., s_n}} consisting of trajectory nodes. This trajectory must represent the "standard path" of logical story evolution in the absence of any external interference.
+
+# Node Composition Specification
+Each node must contain the following four logical elements; none may be omitted:
+1. id: Sequential identifier, starting from s_0.
+2. description: A statement of the static world state. Describe "what it looks like" at this stage, including the environmental atmosphere and the situation the character is in.
+3. trigger_event: The directional plot event or tension that points from this node toward the next node. It should explain what development is now in motion, but it is not itself the criterion for deciding that the next node has already occurred.
+   [FORBIDDEN]: Using purely mental verbs such as "deciding to investigate" or "realizing" as the whole trigger_event. For s_0, this should describe the opening scene pressure or initiating situation that sets the story in motion.
+4. key_delta: The key concrete change/event used to judge that this node has actually occurred relative to the previous node. It must be a factual, observable, or otherwise judgeable change at the world-state level, because later progression checks will use `key_delta` as the node-occurrence criterion.
+
+# Logical Constraints (Guidelines)
+- Anchoring the Start: s_0 must be the logical starting point—the moment when all conflicts have been planted but have not yet erupted, and the truth is entirely obscured.
+- Strong Causal Coupling: The trigger_event for s_i should naturally point toward the key_delta of s_i+1, and the key_delta of s_i must provide the factual basis from which later triggers can unfold.
+- Atomized Stepping: Each node handles only one logical turning point. [FORBIDDEN]: Including multiple causal stages within a single node is prohibited.
+- Point of View (POV): All information acquisition must comply with the perspective limitations of the player role at the current stage; [FORBIDDEN]: "God's eye view" is strictly prohibited.
+- Dynamic Scale: The number of nodes should be adjusted dynamically based on the complexity of the story to ensure that every "jump" is an indivisible logical step.
+
+# Output Format (JSON)
+Output only a JSON object. No extra explanations, Markdown, code blocks, or prefix/suffix text are allowed.
+{{
+  "trajectory": [
+    {{
+      "id": "s_0",
+      "description": "Description of the initial environment and the character's initial situation",
+      "trigger_event": "The specific opening event that starts the story",
+      "key_delta": "Establish the initial factual background and potential conflicts"
+    }},
+    {{
+      "id": "s_i",
+      "description": "trajectory node state statement",
+      "trigger_event": "The specific external action leading to the state transition",
+      "key_delta": "Specific factual changes or the expansion of cognitive boundaries"
+    }}
+  ]
+}}

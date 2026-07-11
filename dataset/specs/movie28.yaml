@@ -1,0 +1,277 @@
+commitments:
+- description: The trio must experience memory loss and discover the suite in disarray
+    before investigating the missing Doug and the strange circumstances of the previous
+    night.
+  id: c_0
+  satisfaction_condition: Node s_0 occurs before node s_1.
+  type: ordering
+  violation_condition: Player gains knowledge of Doug's disappearance or suite disorder
+    before the trio wakes up with memory loss in s_0.
+- description: The trio must learn they were drugged and brought to a chapel before
+    knowing about Stu's unintended marriage and Jade's parenthood of the baby.
+  id: c_1
+  satisfaction_condition: Node s_2 occurs before node s_3.
+  type: ordering
+  violation_condition: Player uncovers the marriage or Jade as mother before the hospital
+    revelation of drugging and chapel arrival.
+- description: The trio remains unaware of the source of drugging until Alan confesses
+    his mistake with rohypnol.
+  id: c_2
+  satisfaction_condition: The system never confirms Alan’s drugging confession (s_4)
+    before it occurs.
+  type: invariant
+  violation_condition: System or player reveals Alan’s mistake before s_4 event triggers.
+- description: The trio must meet Mike Tyson and receive instructions about the tiger
+    before attempting to return it to Tyson’s mansion.
+  id: c_3
+  satisfaction_condition: Node s_5 occurs before the tiger return attempt in s_6.
+  type: ordering
+  violation_condition: Player returns tiger or interacts with tiger's aftermath before
+    meeting Tyson.
+- description: The confrontation with gangsters and Leslie Chow (including car collision)
+    must happen before the resolution involving Blackjack winnings and money exchange.
+  id: c_4
+  satisfaction_condition: Node s_6 occurs before node s_7.
+  type: ordering
+  violation_condition: Money exchange or clearing of Chow's debt happens before the
+    gangster confrontation in s_6.
+- description: Stu and the trio must fail to find Doug and be informed of his true
+    location by 'Black Doug' before finding Doug on the hotel roof.
+  id: c_5
+  satisfaction_condition: Node s_8 occurs after the conversation with 'Black Doug'
+    and repositioning events.
+  type: ordering
+  violation_condition: Player locates Doug on the roof before the 'Black Doug' conversation
+    or prior investigative steps.
+- description: Doug and Tracy’s wedding must occur on time despite the chaotic events
+    and near-misses before the narrative ends.
+  id: c_6
+  satisfaction_condition: Node s_9 triggers with successful wedding occurring regardless
+    of delays.
+  type: achievement
+  violation_condition: Wedding fails to proceed due to absence of Doug or other unresolved
+    logistical obstacles.
+- description: The photographic evidence of the blackout night remains undisclosed
+    and unshared publicly until the end of the narrative where it is reviewed and
+    then deleted.
+  id: c_7
+  satisfaction_condition: Camera pictures are only reviewed at node s_10 and are deleted
+    thereafter; no premature sharing or exposure occurs prior.
+  type: invariant
+  violation_condition: Pictures or memory evidence are revealed or used before node
+    s_10 review and deletion.
+- description: Stu’s relationship status with Melissa remains unchanged until after
+    the wedding reception where he chooses to break up with her.
+  id: c_8
+  satisfaction_condition: Stu remains in relationship with Melissa up to and including
+    node s_9; breakup only acknowledged at node s_10.
+  type: invariant
+  violation_condition: Player induces breakup or status change prior to node s_10.
+initial_facts:
+- content: Stu Price is in the hotel suite at Caesars Palace, Las Vegas.
+  id: f_0
+  negated: false
+- content: Phil Wenneck is in the hotel suite at Caesars Palace, Las Vegas.
+  id: f_1
+  negated: false
+- content: Alan Garner is in the hotel suite at Caesars Palace, Las Vegas.
+  id: f_2
+  negated: false
+- content: Doug Billings is in the hotel suite at Caesars Palace, Las Vegas.
+  id: f_3
+  negated: false
+- content: The hotel suite at Caesars Palace is orderly and undisturbed.
+  id: f_4
+  negated: false
+- content: Stu Price, Phil Wenneck, and Alan Garner have no memory loss or unusual
+    condition.
+  id: f_5
+  negated: false
+- content: Doug Billings is present with Stu Price, Phil Wenneck, and Alan Garner.
+  id: f_6
+  negated: false
+- content: Stu Price is unaware of any memory loss or blackout.
+  id: f_7
+  negated: false
+- content: Stu Price is unaware that Doug Billings will go missing later.
+  id: f_8
+  negated: false
+- content: Stu Price is unaware of any disorder or disarray in the hotel suite.
+  id: f_9
+  negated: false
+- content: Stu Price is in a committed relationship with Melissa.
+  id: f_10
+  negated: false
+- content: Stu Price has not married Jade or anyone else.
+  id: f_11
+  negated: false
+- content: Stu Price is unaware of any baby in the hotel suite.
+  id: f_12
+  negated: false
+- content: Stu Price is unaware of any tiger in the hotel suite bathroom.
+  id: f_13
+  negated: false
+- content: Stu Price is unaware of any rohypnol or drugging incidents.
+  id: f_14
+  negated: false
+- content: Stu Price is unaware that Alan Garner has drugged any drinks.
+  id: f_15
+  negated: false
+- content: Stu Price is unaware of any conflict with gangsters or Leslie Chow.
+  id: f_16
+  negated: false
+- content: Stu Price is unaware of Mike Tyson's involvement or demands.
+  id: f_17
+  negated: false
+- content: Stu Price is unaware of any missing money or gambling-related debt.
+  id: f_18
+  negated: false
+- content: Stu Price is unaware of Doug's true location if missing.
+  id: f_19
+  negated: false
+- content: Stu Price is unaware of Leslie Chow's identity or appearance.
+  id: f_20
+  negated: false
+- content: No photographic evidence of the blackout or chaotic night exists in Stu
+    Price's knowledge.
+  id: f_21
+  negated: false
+- content: Stu Price, Phil Wenneck, and Alan Garner are currently unaware of subsequent
+    events that will unfold after this starting moment.
+  id: f_22
+  negated: false
+meta:
+  genres: ["Comedy", "Adventure"]
+  id: movie28
+  player_role: Stu Price
+  title: "The Hangover"
+synopsis: Celebrating his impending marriage to Tracy Garner, Doug Billings and his
+  friends Phil Wenneck, Stu Price, and Tracy's brother Alan travel to Las Vegas for
+  a bachelor party, staying at Caesars Palace. The next morning, Phil, Stu and Alan
+  awaken to find they have no memory of the previous night and Doug is nowhere to
+  be found. Stu is missing a tooth, their hotel suite is in disarray, a tiger is in
+  their bathroom, and a baby is in the closet. They find Doug's mattress impaled on
+  a statue outside of their hotel and when they ask for their Mercedes, the valet
+  delivers a police cruiser. Following clues to their steps, the trio travel to a
+  hospital where they discover they were drugged with rohypnol, causing their memory
+  loss, and that they came to the hospital from a chapel. At the chapel they learn
+  that Stu married a stripper, Jade, despite having a long-term relationship with
+  his mean-spirited girlfriend, Melissa. Outside the chapel, the trio are attacked
+  by gangsters saying they are looking for someone. They flee and visit Jade, discovering
+  that she is the mother of the baby, before being arrested by the police. Having
+  been told that the Mercedes has been impounded, the trio is released when they volunteer
+  to be targets for a taser demonstration. While driving the Mercedes, they discover
+  a naked man in the trunk who attacks them and flees. Alan confesses that he drugged
+  their drinks to ensure they had a good night, thinking the drug to be ecstasy. Returning
+  to their villa, they find Mike Tyson, who orders the trio to return the tiger to
+  his mansion immediately. Stu drugs the tiger with the remaining rohypnol and they
+  drive towards Tyson's home in the Mercedes, but the tiger attacks them and damages
+  the car's interior. After pushing the car the rest of the way to avoid the tiger,
+  Tyson shows the trio footage of them stealing the tiger to help them locate Doug.
+  While driving, their car is struck by another vehicle intentionally; the passengers
+  are revealed to be the gangsters from the chapel and their boss, Leslie Chow – the
+  naked man from their trunk – who accuses the trio of stealing $80,000 of his money
+  and kidnapping him. Chow says he has their friend, and threatens to kill him if
+  his money is not returned. Unaware of the location of Chow's $80,000, Alan, with
+  help from Stu and Jade, uses his knowledge of card counting to win $82,400 playing
+  Blackjack. They meet with Chow and exchange the money, only to find that "Doug"
+  is the drug dealer who inadvertently sold Alan the roofies. With the wedding occurring
+  in hours, Phil tells Tracy they cannot find Doug. Following a conversation with
+  "Black Doug", Stu realizes where Doug is. The trio travel back to their hotel where
+  they find Doug on the roof, moved there on his mattress while he was asleep, as
+  a practical joke by Stu, Phil and Alan. Before leaving, Stu makes arrangements to
+  go on a date with Jade the following week. With less than four hours before the
+  wedding and with no flights available, the foursome race home, with Doug revealing
+  he has possession of Chow's original $80,000. Despite their late arrival, Doug and
+  Tracy are married and Stu breaks up with Melissa after having grown tired of her
+  controlling his life. As the reception ends, Alan finds Stu's digital camera detailing
+  the events they cannot remember and the four agree to look at the pictures together
+  before deleting the evidence of their exploits.
+trajectory:
+- description: Stu Price is in a hotel suite at Caesars Palace, Las Vegas, with friends
+    Phil Wenneck, Alan Garner, and the groom-to-be Doug Billings. They have arrived
+    for Doug's bachelor party, the suite is orderly, and the group is looking forward
+    to festivities without any memory loss or unusual events.
+  id: s_0
+  key_delta: The characters experience memory loss of the previous night; Doug is
+    missing; physical state of the suite is disordered; a tiger occupies the bathroom,
+    a baby is found in the closet, and Stu is missing a tooth.
+  trigger_event: Stu, Phil, and Alan wake up in the suite the morning after the party.
+- description: Stu, Phil, and Alan examine the hotel suite in disarray with the tiger
+    in the bathroom and a baby in the closet. They find Doug's mattress impaled on
+    a statue outside and request their Mercedes from the valet, who brings a police
+    cruiser instead.
+  id: s_1
+  key_delta: The trio initiates an investigation by seeking tangible evidence and
+    exploring the consequences of their blackout night.
+  trigger_event: The trio decides to follow clues to trace their lost memories and
+    track Doug's whereabouts.
+- description: Stu, Phil, and Alan arrive at a hospital and learn from staff that
+    they were drugged with rohypnol, which caused their memory loss, and that they
+    were brought to the hospital from a wedding chapel.
+  id: s_2
+  key_delta: It is revealed Stu married a stripper, Jade, at the chapel despite being
+    in a relationship with Melissa, expanding the factual complexity of the night’s
+    events.
+  trigger_event: The trio travels to the chapel to learn more about what happened
+    there during the missing night.
+- description: Outside the chapel, Stu, Phil, and Alan are confronted and attacked
+    by gangsters searching for someone. The trio escapes and visits Jade, learning
+    she is the mother of the baby found earlier.
+  id: s_3
+  key_delta: The trio is detained by authorities; their actions have drawn law enforcement
+    attention, indicating escalating external conflict.
+  trigger_event: The trio is arrested by police shortly after visiting Jade.
+- description: After volunteering as taser demonstration subjects, Stu, Phil, and
+    Alan are released. While driving, they discover a naked man in the Mercedes trunk
+    who attacks them and flees.
+  id: s_4
+  key_delta: The source of the drugging causing their blackout is revealed as Alan’s
+    mistake with rohypnol.
+  trigger_event: Alan confesses to drugging their drinks mistakenly with rohypnol
+    instead of ecstasy.
+- description: Back at the villa, Stu, Phil, and Alan find Mike Tyson, who directs
+    them to return the tiger to his mansion immediately.
+  id: s_5
+  key_delta: The tiger is incapacitated with rohypnol; the trio begins returning it,
+    advancing responsibility for prior chaos.
+  trigger_event: The trio drugs the tiger with the remaining rohypnol and drive toward
+    Tyson’s home in the Mercedes.
+- description: During their journey, the tiger awakens, attacks, and damages the car
+    interior. The trio pushes the car the rest of the way to Tyson’s mansion where
+    he shows them footage of them stealing the tiger.
+  id: s_6
+  key_delta: Physical confrontation with gangsters escalates; Leslie Chow is identified
+    as the naked man and antagonist; stakes rise with threats against Doug.
+  trigger_event: While driving, the gangsters and their boss Leslie Chow intentionally
+    hit their car and confront them over stolen money and kidnapping accusations.
+- description: Alan, with help from Stu and Jade, uses card counting to win $82,400
+    playing Blackjack to cover Chow’s $80,000 lost money. The trio exchanges the money
+    with Chow.
+  id: s_7
+  key_delta: Real identity of 'Doug' as a drug dealer is revealed, separating him
+    from their missing friend; financial debt toward Chow is cleared.
+  trigger_event: After money exchange, Trio discovers that 'Doug' is actually a drug
+    dealer who sold Alan the rohypnol unintentionally.
+- description: With the wedding hours away, Phil informs Tracy that Doug is missing.
+    Attempts to find Doug stall until Stu recalls Doug's location after speaking with
+    'Black Doug'.
+  id: s_8
+  key_delta: Doug’s true location is uncovered; the confusion about his disappearance
+    is resolved.
+  trigger_event: The trio returns to the hotel and finds Doug asleep on a mattress
+    on the roof, placed there as a prank by Stu, Phil, and Alan.
+- description: With less than four hours before the wedding and no flights available,
+    Stu, Phil, Alan, and Doug race home. Stu arranges a date with Jade for after the
+    wedding.
+  id: s_9
+  key_delta: Doug's timely return enables the wedding to proceed; Stu’s future relationship
+    with Jade is established.
+  trigger_event: Despite their late arrival, Doug and Tracy get married on time.
+- description: The wedding reception concludes. Stu breaks up with controlling girlfriend
+    Melissa. Alan finds Stu’s digital camera documenting their missing night events.
+  id: s_10
+  key_delta: The friends recover photographic proof of the blackout and agree to
+    erase it together before moving on.
+  trigger_event: The four friends agree to review the camera's pictures together and
+    then delete them to erase evidence of their chaotic exploits.

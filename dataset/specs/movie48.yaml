@@ -1,0 +1,282 @@
+commitments:
+- description: Lucy’s severe memory loss condition (Goldfield Syndrome) must be revealed
+    to Henry only after he initially meets her and attempts contact; this prevents
+    premature player knowledge of Lucy’s amnesia.
+  id: c_0
+  satisfaction_condition: Node s_3 is reached, where Sue explains Lucy’s condition
+    to Henry.
+  type: ordering
+  violation_condition: Player gains knowledge or system acknowledges Lucy’s amnesia
+    before s_3, bypassing initial meeting and confusion at s_2.
+- description: Lucy must not remember Henry on any given morning unless triggered
+    by the coping mechanisms or the video intervention, maintaining the narrative
+    integrity of her anterograde amnesia until the proper healing progression.
+  id: c_1
+  satisfaction_condition: From s_2 to s_11 inclusive, Lucy’s memory resets daily and
+    she does not recall Henry unless exposed to the video or other designed narrative
+    triggers.
+  type: invariant
+  violation_condition: Lucy recalls Henry spontaneously or acknowledges him as familiar
+    outside of controlled narrative elements before s_11.
+- description: Henry’s attempts to pursue Lucy persistently must be discovered by
+    her family before their direct confrontation and warning scene, ensuring narrative
+    cause and effect in relationship escalation.
+  id: c_2
+  satisfaction_condition: Node s_5 is reached, where Marlin and Doug recognize Henry’s
+    contrived encounters.
+  type: ordering
+  violation_condition: Player or system advances to s_6 or later interactions with
+    Lucy as if family discovery of Henry’s schemes never occurred.
+- description: Lucy must learn and comprehend her accident and amnesia through medical
+    explanation before she can request deeper understanding and visit Dr. Keats.
+  id: c_3
+  satisfaction_condition: Node s_7 is reached where Lucy asks to see Dr. Keats and
+    views Ten-Second Tom.
+  type: ordering
+  violation_condition: Player or system provides Lucy with this medical insight or
+    visitation before Henry has conversed with her family or she has been exposed
+    to the accident explanation.
+- description: The use of the video to extend Lucy’s memory and allow her to temporarily
+    move past the fixed memory date is required, establishing a new narrative coping
+    mechanism before relationship progression.
+  id: c_4
+  satisfaction_condition: Node s_8 is reached where Henry creates and Lucy watches
+    the video, enabling her to spend the day beyond October 13.
+  type: achievement
+  violation_condition: Progression or relationship deepening attempts occur before
+    the creation and viewing of the video intervention.
+- description: Lucy must choose to erase Henry from her life after learning of his
+    reluctance to leave for the walrus study trip, marking a critical emotional turning
+    point.
+  id: c_5
+  satisfaction_condition: Node s_9, where Lucy requests to destroy journal entries
+    and cut ties with Henry, occurs only after the video coping mechanism is established.
+  type: ordering
+  violation_condition: Player forces or system acknowledges Lucy’s rejection of Henry
+    before s_8 (video coping mechanism) is achieved.
+- description: Henry’s departure preparation and Marlin’s disclosure of Lucy’s changed
+    status must precede Henry’s emotional realization triggered by the Beach Boys
+    CD and his decision to return.
+  id: c_6
+  satisfaction_condition: Node s_10 precedes s_11, reflecting informed emotional recommitment
+    based on new insight.
+  type: ordering
+  violation_condition: Henry acts on emotional realization (s_11) or returns prematurely
+    without Marlin’s information from s_10.
+- description: Lucy claims to not consciously remember Henry during their reunion
+    despite emotional or subconscious connections, preserving the complexity of amnesia
+    versus emotional memory distinction.
+  id: c_7
+  satisfaction_condition: From s_11 to s_12, Lucy verbally denies memory while showing
+    signs of dreaming and painting Henry.
+  type: invariant
+  violation_condition: Lucy explicitly remembers or recognizes Henry consciously during
+    reunion before the final resolution.
+- description: The narrative must reach a stable integrated family state where Lucy,
+    Henry, and their daughter Nicole live together, marking resolution of memory and
+    relational conflicts.
+  id: c_8
+  satisfaction_condition: Node s_13 is reached, depicting Lucy awakening on Henry’s
+    boat in Alaska with their family present.
+  type: achievement
+  violation_condition: Narrative attempts to conclude or define resolution without
+    reaching this integrated family scene.
+initial_facts:
+- content: Henry Roth works as a veterinarian at Sea Life Park on Oahu.
+  id: f_0
+  negated: false
+- content: Henry Roth is known for womanizing female tourists.
+  id: f_1
+  negated: false
+- content: Henry Roth shows no interest in committing to a serious relationship.
+  id: f_2
+  negated: false
+- content: Henry Roth's closest friends are Ula, Alexa, and Willy.
+  id: f_3
+  negated: false
+- content: Ula is a marijuana-smoking Islander.
+  id: f_4
+  negated: false
+- content: Alexa is Henry's assistant whose sexuality is unclear.
+  id: f_5
+  negated: false
+- content: Willy is Henry's pet African penguin.
+  id: f_6
+  negated: false
+- content: Henry owns a boat named The Sea Serpent.
+  id: f_7
+  negated: false
+- content: Henry's boat The Sea Serpent is sailing around Oahu.
+  id: f_8
+  negated: false
+- content: Henry is unaware of Lucy Goldfield Syndrome or her amnesia condition.
+  id: f_9
+  negated: false
+- content: Henry does not know Lucy prior to the initial meeting at the Hukilau Café.
+  id: f_10
+  negated: false
+- content: Henry is currently not in a serious relationship with Lucy or anyone else.
+  id: f_11
+  negated: false
+- content: Lucy has not been introduced or encountered by Henry at this time.
+  id: f_12
+  negated: false
+meta:
+  genres: ["Romance", "Comedy"]
+  id: movie48
+  player_role: Henry Roth
+  title: "50 First Dates"
+synopsis: Henry Roth is a veterinarian at Sea Life Park on the island of Oahu who
+  has a reputation of womanizing female tourists. He shows no interest in committing
+  to a serious relationship and his closest friends are Ula, a marijuana-smoking Islander;
+  his assistant Alexa, whose sexuality is unclear; and Willy, his pet African penguin.
+  One day Henry’s boat The Sea Serpent, breaks down while he is sailing around Oahu.
+  He goes to the Hukilau Café to wait for the coastguard. There, he sees Lucy, a pretty
+  girl who makes architectural art with her waffles. Henry assumes she is a local,
+  which prevents him from introducing himself but the next day he comes back. Lucy
+  and he hit if off instantly and she asks him to meet her again tomorrow morning.
+  When Henry goes back to the café, Lucy shows no recollection of ever meeting him.
+  The restaurant owner Sue explains to Henry that a year ago Lucy and her father Marlin
+  went up to the North Shore to pick a pineapple for his birthday. On the way back,
+  they got into a serious car accident that left Lucy with Goldfield Syndrome, a type
+  of antegorade amnesia. She wakes up every morning thinking it is Sunday October
+  13 of last year. To save her the heartbreak of reliving the accident everyday, Marlin
+  and Doug, Lucy’s lisping steroid-addicted brother, relive everyday by doing numerous
+  tasks, including putting out October 13th’s newspaper, watching the same Vikings
+  game, and refilling Lucy’s shampoo bottles. Despite Sue’s warning that Nick, the
+  Hukilau Café’s chef, will come at him with a meat cleaver, Henry decided to try
+  and get Lucy to have breakfast with him. Eventually he does, but it ends poorly
+  when Henry accidentally hurts Lucy’s feelings. He follows her home to apologize
+  where Marlin and Doug instruct Henry to leave Lucy alone. Henry begins concocting
+  ways to run into Lucy such as pretending to have car trouble, creating a fake road
+  block and by having Ula beat him up. Eventually, Marlin and Doug figure this out
+  due to Lucy singing The Beach Boys "Wouldn't It Be Nice" on the days when she meets
+  Henry. The next day, Henry asks to sit with Lucy at breakfast but she declines and
+  says she has a boyfriend named Ringo McCartney before a police officer gives Lucy
+  a ticket for her expired plates. Lucy learns about her accident and requests to
+  be taken to Dr. Keats. Dr. Keats introduces Lucy to Ten-Second Tom, a patient whose
+  memory only lasts for 10 seconds to prove to Lucy how much worse her condition could
+  be. Henry comes up with an idea to make a video explaining to Lucy her accident
+  and their relationship and play it every morning for her. She watched the tape and
+  is hurt, but eventually comes to her senses and she is able to spend the day by
+  picking up where the tape says she left off. She spends more time with Henry and
+  goes to see some of her old friends. Lucy decides to erase Henry completely from
+  her life after learning of his decision to not take a sailing trip to Bristol Bay
+  to study walruses, something that has been in planning mode for the past 10 years.
+  He feels he cannot leave Lucy for the year it will take him. Henry reluctantly helps
+  her destroy her journal entries of their relationship. A few weeks later, Henry
+  is preparing to leave for his sailing trip. Before he goes, Marlin tells him that
+  Lucy is now living at the brain institute and teaching an art class. He also tells
+  him that she sings. Then he gives Henry a Beach Boys CD. Listening to the CD, Henry
+  becomes emotional and curses Marlin for giving him the CD and making him feel so
+  emotional. He then remembers that Marlin once told him that Lucy always sings after
+  she meets him. He then realizes that Lucy remembers him and turns around to go home.
+  She says she does not remember, but that she dreams about him every night and paints
+  pictures of him. They reconcile. Some time later, Lucy wakes up and plays the tape
+  marked “Good Morning Lucy”. It again reminds her of her accident, but ends with
+  her and Henry’s wedding. From the tape, Henry says to put a jacket on and come have
+  breakfast when she is ready. Lucy then sees that she is on Henry’s boat, which finally
+  made it to Alaska. She goes up on deck and meets Henry and their daughter, Nicole,
+  as well as her dad.
+trajectory:
+- description: Henry Roth works as a veterinarian at Sea Life Park on Oahu, known
+    for womanizing tourists and avoiding serious relationships. His social circle
+    includes Ula, a marijuana-smoking Islander friend; Alexa, his assistant of ambiguous
+    sexuality; and Willy, his pet African penguin. Henry owns a boat named The Sea
+    Serpent.
+  id: s_0
+  key_delta: Henry is now stranded and must seek shelter or assistance after his boat
+    breaks down.
+  trigger_event: Henry's boat The Sea Serpent breaks down while sailing around Oahu.
+- description: Henry is at the Hukilau Café on Oahu, waiting for the coastguard to
+    rescue him after the boat malfunction.
+  id: s_1
+  key_delta: Henry becomes aware of Lucy but holds back from initiating contact due
+    to mistaken assumptions.
+  trigger_event: Henry notices Lucy creating waffle art at the café but assumes she
+    is a local and refrains from introducing himself.
+- description: Henry returns to the Hukilau Café the next day to meet Lucy, who greets
+    him warmly and asks for a meeting the following morning.
+  id: s_2
+  key_delta: Henry discovers that Lucy experiences severe memory loss, indicating
+    an unusual condition affecting her recollection.
+  trigger_event: Lucy unexpectedly shows no memory of having met Henry when he returns
+    the next day.
+- description: At the café, Sue, the owner, explains to Henry that Lucy suffers from
+    Goldfield Syndrome, which causes her to wake every day believing it is October
+    13 of the previous year due to a car accident.
+  id: s_3
+  key_delta: Henry understands the nature of Lucy's condition and the family’s coping
+    mechanisms.
+  trigger_event: Sue details the daily rituals Lucy's family undertakes to maintain
+    her illusion of continuity.
+- description: Henry attempts to have breakfast with Lucy despite warnings from Sue
+    that Nick, the café's chef, may become hostile.
+  id: s_4
+  key_delta: Henry crosses a boundary into Lucy’s personal life and meets Marlin and
+    Doug, who warn him to keep away.
+  trigger_event: Henry’s breakfast meeting with Lucy and subsequent apology attempt
+    at her home.
+- description: Henry plans to encounter Lucy repeatedly by staging various contrived
+    incidents.
+  id: s_5
+  key_delta: Henry’s attempts to persistently engage Lucy are discovered by her family,
+    escalating the tension around their interactions.
+  trigger_event: Marlin and Doug recognize that Henry is deliberately trying to meet
+    Lucy, noticing she sings a specific Beach Boys song after these encounters.
+- description: Henry asks Lucy to sit with him again at breakfast, but she declines
+    and claims to have a boyfriend named Ringo McCartney.
+  id: s_6
+  key_delta: Henry witnesses Lucy’s everyday challenges and learns about her assertion
+    of a boyfriend, complicating their relationship.
+  trigger_event: Lucy gets a traffic ticket for expired plates from a police officer
+    while at the café.
+- description: Lucy learns about her car accident and her memory loss condition from
+    Marlin and Doug, and requests a visit to Dr. Keats.
+  id: s_7
+  key_delta: Lucy gains insight into the severity and nature of her memory condition
+    through a medical frame of reference.
+  trigger_event: Dr. Keats introduces Lucy to Ten-Second Tom, a patient with extremely
+    short memory, to help her understand her own condition.
+- description: Henry creates a video explaining the accident and their relationship
+    for Lucy to watch each morning.
+  id: s_8
+  key_delta: A new coping mechanism involving the video is introduced, allowing Lucy
+    to extend her remembered experience beyond the fixed date.
+  trigger_event: Lucy watches the video and experiences emotional pain but eventually
+    starts to spend days passing where the video left off.
+- description: Lucy spends more time with Henry and old friends but ultimately decides
+    to erase Henry from her life upon learning he is reluctant to take a planned walrus
+    study trip in Bristol Bay.
+  id: s_9
+  key_delta: Lucy takes active steps to remove Henry from her memory and life as a
+    consequence of his choices.
+  trigger_event: Lucy asks Henry to help destroy her journal entries about their relationship.
+- description: Henry prepares to leave for his long-planned sailing trip to Bristol
+    Bay, with Lucy now living at the brain institute and teaching art, according to
+    Marlin.
+  id: s_10
+  key_delta: Henry acquires new information suggesting Lucy’s memory or feelings for
+    him might persist despite her amnesia.
+  trigger_event: Marlin gives Henry a Beach Boys CD and tells him Lucy sings, alluding
+    to her possible remembrance.
+- description: Listening to the Beach Boys CD, Henry becomes emotional, realizes Lucy
+    remembers him because of her singing, and decides to return home instead of leaving.
+  id: s_11
+  key_delta: Henry recommits to their relationship based on new evidence of Lucy’s
+    memory and feelings.
+  trigger_event: Henry abruptly turns back from his trip to return to Lucy.
+- description: Henry and Lucy reunite; Lucy claims not to remember Henry but says
+    she dreams of him and paints pictures of him; they reconcile.
+  id: s_12
+  key_delta: The couple reestablishes a bond, blending memory and emotion despite
+    cognitive barriers.
+  trigger_event: Henry and Lucy meet again and reconnect emotionally despite her amnesia.
+- description: Some time later, Lucy watches a tape labeled 'Good Morning Lucy' that
+    ends with images of their wedding; she is now aboard Henry's boat which has reached
+    Alaska.
+  id: s_13
+  key_delta: Lucy’s narrative has progressed to a stable, integrated family life reflecting
+    healing and continuity beyond her memory condition.
+  trigger_event: View of Lucy awakening, watching the tape, and stepping out onto
+    the deck to meet Henry and their daughter Nicole, as well as her father.

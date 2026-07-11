@@ -1,0 +1,382 @@
+commitments:
+- description: The armored car heist (s_0) must occur before the crew can regroup
+    and experience rising internal tension due to Waingro's betrayal (s_1).
+  id: c_0
+  satisfaction_condition: Node s_0 completed before s_1 is acknowledged.
+  type: ordering
+  violation_condition: Player attempts to activate or resolve s_1 events without completion
+    of s_0.
+- description: Waingro remains a rogue and external threat from s_1 until McCauley
+    eliminates him at s_12; Waingro may not be reintegrated into the crew or cleared
+    prematurely.
+  id: c_1
+  satisfaction_condition: Waingro status marked rogue and threat in all states s_1
+    through s_11, resolved only after s_12.
+  type: invariant
+  violation_condition: Player actions or narrative attempts to reconcile Waingro as
+    crew member, or nullify his betrayal before s_12.
+- description: The ambush ordered by Van Zant at s_2 must be acknowledged and survived
+    by McCauley and his crew before the police begin direct investigation and surveillance
+    (s_3).
+  id: c_2
+  satisfaction_condition: s_2 completed before recognition of s_3.
+  type: ordering
+  violation_condition: Player tries to trigger police surveillance (s_3) prior to
+    the ambush event at s_2.
+- description: McCauley and Hanna mutually recognize each other face-to-face at s_5
+    and maintain a relationship of mutual respect mixed with lethal readiness thereafter.
+  id: c_3
+  satisfaction_condition: Characters meet at s_5 and maintain mutual respect with
+    acknowledged lethal intent for all subsequent states s_5 to s_14.
+  type: invariant
+  violation_condition: Player bypasses meeting at s_5 or alters interaction to eliminate
+    their adversarial respect or lethal readiness.
+- description: The aborted precious metals depository raid (s_4) must occur before
+    the planned larger bank robbery (s_5 onwards) begins.
+  id: c_4
+  satisfaction_condition: Abort of precious metals heist confirmed at s_4 before bank
+    robbery planning at s_5.
+  type: ordering
+  violation_condition: Bank robbery events or heist at s_5 triggered without prior
+    abort and surveillance at s_4.
+- description: The recruitment of new getaway driver Donald Breeden (s_6) must occur
+    before the bank robbery attempt (s_7).
+  id: c_5
+  satisfaction_condition: Donald Breeden is onboard by s_6 and confirmed before bank
+    robbery start at s_7.
+  type: ordering
+  violation_condition: Bank robbery attempted at s_7 without confirmation of new driver
+    recruitment at s_6.
+- description: After the police ambush during the bank robbery (s_7), the crew must
+    suffer substantial losses and McCauley must escape with injured Chris; this state
+    holds until injured Chris is treated and Trejo's betrayal is revealed (s_8).
+  id: c_6
+  satisfaction_condition: Crew casualties confirmed and McCauley escapes with wounded
+    Chris between s_7 and s_8.
+  type: invariant
+  violation_condition: Player prevents crew casualties or McCauley escaping with injured
+    Chris, or alters key aftermath events before s_8.
+- description: Trejo's betrayal revelation and subsequent killing by McCauley (s_8)
+    must precede Van Zant's killing and plans to flee (s_9).
+  id: c_7
+  satisfaction_condition: Trejo's death by McCauley confirmed at s_8 before Van Zant
+    is killed at s_9.
+  type: ordering
+  violation_condition: Player kills Van Zant or initiates escape plans (s_9) before
+    Trejo betrayal and death at s_8.
+- description: While McCauley plans departure (s_9), Waingro's exposed location is
+    used by police as bait, maintaining police pressure until McCauley engages at
+    s_11-12.
+  id: c_8
+  satisfaction_condition: Waingro remains exposed and used as bait by police from
+    s_9 through s_11, unresolved until McCauley kills Waingro at s_12.
+  type: invariant
+  violation_condition: Waingro disappears or is neutralized by any other means before
+    s_12; police bait strategy ignored or nullified before s_11.
+- description: Charlene's tentative betrayal and final warning to Chris (s_10) must
+    occur before the intensified police pursuit and crew shrinkage is fully realized.
+  id: c_9
+  satisfaction_condition: Charlene's betrayal attempt and warning occur at s_10 prior
+    to subsequent pursuit states s_11+.
+  type: ordering
+  violation_condition: Player bypasses Charlene's betrayal-witness or alters crew
+    betrayal dynamics before s_10.
+- description: Hanna's stepdaughter's suicide attempt (s_10) and resulting emotional
+    crisis must happen before the final confrontation at LAX begins (s_13).
+  id: c_10
+  satisfaction_condition: Stepdaughter's suicide attempt resolved at s_10 before chase
+    and confrontation at s_13.
+  type: ordering
+  violation_condition: Player initiates final chase or confrontation (s_13) without
+    progression through Hanna's personal crisis state s_10.
+- description: McCauley's detour to kill Waingro at s_11-12 breaks his earlier disciplined
+    avoidance of unnecessary risk, marking a key character inflection that occurs
+    once and must be preserved.
+  id: c_11
+  satisfaction_condition: From s_0 through s_10, McCauley avoids personal vengeance
+    risks; from s_11, this changes with Waingro pursuit and killing.
+  type: invariant
+  violation_condition: Player causes McCauley to pursue Waingro or act on personal
+    vengeance before s_11, violating character discipline logic.
+- description: The killing of Waingro at s_12 must precede McCauley's final confrontation
+    and mortal wounding by Hanna at s_13.
+  id: c_12
+  satisfaction_condition: Waingro confirmed killed at s_12 before chase and shooting
+    at s_13.
+  type: ordering
+  violation_condition: Player triggers confrontation at s_13 without prior resolution
+    of Waingro at s_12.
+- description: The final chase and mortal shooting of McCauley by Hanna (s_13) must
+    precede McCauley's death and closure between them at s_14.
+  id: c_13
+  satisfaction_condition: McCauley mortally wounded at s_13 prior to death and final
+    hand-holding scene at s_14.
+  type: ordering
+  violation_condition: Player attempts to resolve McCauley's death or narrative closure
+    (s_14) without passage through mortal confrontation (s_13).
+- description: McCauley must die from his wounds after being shot by Hanna, concluding
+    his narrative arc and closing the story.
+  id: c_14
+  satisfaction_condition: McCauley's death after mortal wounding (s_14) is recognized,
+    ending story arc.
+  type: achievement
+  violation_condition: Player prevents McCauley’s death after mortal wounding or alters
+    ending to avoid closure.
+initial_facts:
+- content: Neil McCauley and his crew—Chris Shiherlis, Michael Cheritto, Trejo, and
+    new member Waingro—are assembled and preparing for an armored car heist targeting
+    Roger Van Zant's money laundering operation.
+  id: f_0
+  negated: false
+- content: The crew currently possesses no stolen bearer bonds.
+  id: f_1
+  negated: false
+- content: Waingro is an active member of McCauley's crew and has not yet betrayed
+    or acted impulsively.
+  id: f_2
+  negated: false
+- content: McCauley is aware of the planned armored car heist and is leading the planning.
+  id: f_3
+  negated: false
+- content: The armored car heist has not yet been executed.
+  id: f_4
+  negated: false
+- content: Roger Van Zant is the target of the imminent armored car heist, serving
+    as a money launderer.
+  id: f_5
+  negated: false
+- content: No ambush or police surveillance operations related to McCauley's crew
+    are currently active.
+  id: f_6
+  negated: false
+- content: Lieutenant Vincent Hanna of the LAPD is not yet aware of McCauley's crew
+    or their activities.
+  id: f_7
+  negated: false
+- content: McCauley's personal relationships, including with girlfriend Eady and crew
+    dynamics related to Chris and Charlene, have not yet experienced strain or significant
+    tension.
+  id: f_8
+  negated: false
+- content: McCauley has not yet met or interacted face-to-face with Lieutenant Vincent
+    Hanna.
+  id: f_9
+  negated: false
+- content: The crew has not yet planned or considered subsequent heists such as the
+    precious metals depository or the larger bank robbery.
+  id: f_10
+  negated: false
+- content: Trejo is currently a healthy and trusted member of McCauley's crew with
+    no known compromise.
+  id: f_11
+  negated: false
+- content: Donald Breeden is not yet recruited or involved with McCauley's crew.
+  id: f_12
+  negated: false
+- content: There are no active police informants or confidential informants alerting
+    on McCauley's crew.
+  id: f_13
+  negated: false
+- content: Waingro is not recognized by McCauley or the crew as a rogue or threat.
+  id: f_14
+  negated: false
+- content: No casualties or injuries have occurred among crew members or police related
+    to McCauley's operations.
+  id: f_15
+  negated: false
+- content: McCauley has no current knowledge of any betrayal or treachery within his
+    crew.
+  id: f_16
+  negated: false
+- content: McCauley's goal is to successfully complete the armored car heist with
+    strict planning and mobility.
+  id: f_17
+  negated: false
+- content: McCauley has not yet experienced any personal vengeance crises or lapses
+    in discipline.
+  id: f_18
+  negated: false
+- content: McCauley and Hanna have a status of non-recognition; neither is aware of
+    the other.
+  id: f_19
+  negated: false
+- content: No crew members have been exposed to police bait tactics or surveillance
+    related to Waingro.
+  id: f_20
+  negated: false
+- content: Charlene Shiherlis is currently with Chris and not involved in any betrayal
+    or cooperation with police.
+  id: f_21
+  negated: false
+- content: No family or personal crises involving Hanna’s stepdaughter or wife have
+    occurred.
+  id: f_22
+  negated: false
+meta:
+  genres: ["Crime", "Thriller"]
+  id: movie34
+  player_role: Neil McCauley
+  title: "Heat"
+synopsis: Career criminal Neil McCauley and his crew—Chris Shiherlis, Michael Cheritto,
+  Trejo, and new member Waingro—perpetrate an armored car heist, stealing $1.6 million
+  in bearer bonds from money launderer Roger Van Zant. During the heist, Waingro impulsively
+  kills one of the guards, forcing the crew to eliminate the remaining two guards
+  out of necessity. An infuriated McCauley tries to kill Waingro afterwards, but he
+  escapes. McCauley's fence Nate sets up a meeting with Van Zant to sell the bonds
+  back. Van Zant ostensibly agrees but instructs his men to kill McCauley as a warning
+  to other thieves. With backup from his crew, McCauley thwarts the ambush and vows
+  revenge. Lieutenant Vincent Hanna of the LAPD Robbery-Homicide Division heads the
+  investigation of the armored car heist and learns McCauley's crew plans to rob a
+  precious metals depository next. Hanna and his unit stake out the depository, but
+  when an officer inadvertently makes a noise, McCauley is tipped off, and the crew
+  abandons the robbery. Despite the police surveillance, McCauley and his crew decide
+  to go through with a bank holdup with an estimated $12 million payoff. Waingro is
+  revealed to be a serial killer of prostitutes, with his latest victim falling under
+  Hanna's jurisdiction. Hanna discovers that his wife Justine is having an affair
+  and moves to a hotel, and McCauley catches Charlene Shiherlis cheating on Chris
+  with Alan Marciano, a Las Vegas liquor salesman with a criminal past. Hanna deliberately
+  intercepts McCauley during a surveillance operation and invites him to coffee, where
+  he concedes the problems of his personal life; his concern for his depressed stepdaughter
+  Lauren and the failure of his third marriage due to his obsession with work. Likewise,
+  McCauley confesses that life as a criminal forbids attachments and stresses mobility,
+  making his relationship with his girlfriend Eady tenuous. Having met face to face,
+  Hanna and McCauley share a mutual respect but readily admit that neither will hesitate
+  to kill the other if the circumstances demand it. Trejo is compromised just hours
+  before the bank robbery. In need of a new getaway driver, McCauley recruits Donald
+  Breeden, an ex-convict frustrated with his demoralizing position as a short order
+  cook at a diner. Hanna's unit is alerted to the robbery in-progress by a confidential
+  informant and surprises McCauley's crew as they exit the bank. Cheritto, Breeden,
+  and several police officers, including Detective Bosko, are killed in the ensuing
+  shootout. McCauley narrowly escapes with an injured Chris, who had been shot in
+  the shoulder by Detective Cassals, and leaves him with a doctor to treat his wounds.
+  He tracks down Trejo, whom he finds at his home beaten to a bloody pulp. Trejo admits
+  that Van Zant's men called in the tip on the robbery from information Waingro provided.
+  McCauley finishes off Trejo at his own request, then hunts down and kills Van Zant.
+  He makes new arrangements to flee to New Zealand with Eady, who is now fully aware
+  of his criminal activities. The police surveil Waingro in a hotel near Los Angeles
+  International Airport, and Hanna attempts to bait McCauley into coming out of hiding
+  by releasing Waingro's whereabouts to the network of bookies, bail bondsmen, and
+  snitches he hopes will spread the word. Charlene leaves Chris and goes with Marciano
+  to a police safe house, where Sergeant Drucker threatens to charge her as an accomplice
+  and to send her son to a foster home if she does not betray Chris to the police.
+  Charlene initially agrees, but, when Chris shows up in disguise, she surreptitiously
+  warns him about the police presence, and he slips through the dragnet. Hanna finds
+  Lauren unconscious in his hotel room from a suicide attempt and rushes her to the
+  hospital. As he and Justine wait in the lobby for the news of her recovery, they
+  admit their marriage will never work. McCauley and Eady are en route to the airport
+  when Nate calls with Waingro's location, and the temptation proves to be too much
+  for the normally disciplined McCauley, who risks his assured freedom by detouring
+  to exact his revenge. McCauley infiltrates the hotel, creates a distraction by pulling
+  a fire alarm, and kills Waingro. Moments away from escape, he is forced to abandon
+  Eady when he spots Hanna approaching in the crowd. Hanna chases McCauley into a
+  field outside the LAX freight terminal, and mortally wounds him. He then holds McCauley's
+  hand as he dies.
+trajectory:
+- description: Neil McCauley and his crew—Chris Shiherlis, Michael Cheritto, Trejo,
+    and new member Waingro—are assembled and preparing for an armored car heist against
+    Roger Van Zant's operation, in an environment of tense anticipation and strict
+    planning.
+  id: s_0
+  key_delta: The crew successfully steals $1.6 million in bearer bonds, but Waingro
+    impulsively kills one of the guards, forcing the crew to kill the remaining guards.
+  trigger_event: Waingro's reckless killing of a guard turns the robbery into a bloody
+    job and ruptures the crew.
+- description: After the heist, the crew is regrouping with the stolen bonds; McCauley
+    is angry about Waingro's actions, while Waingro has disappeared into the background
+    of the crew's dynamics.
+  id: s_1
+  key_delta: Waingro is now a rogue element, no longer part of the controlled crew
+    dynamic; tension within the crew rises.
+  trigger_event: McCauley attempts to kill Waingro for jeopardizing the crew, but
+    Waingro escapes.
+- description: McCauley's fence Nate arranges a meeting with Van Zant to negotiate
+    selling the bonds back, with the crew cautiously preparing for the transaction.
+  id: s_2
+  key_delta: McCauley and his crew survive the ambush and vow revenge against Van
+    Zant.
+  trigger_event: At the meeting, Van Zant pretends to agree to buy back the bonds
+    but orders an ambush on McCauley.
+- description: Lieutenant Vincent Hanna is assigned to the LAPD investigation of the
+    armored car heist and begins monitoring McCauley’s crew, anticipating their next
+    move.
+  id: s_3
+  key_delta: Police surveillance of the depository is initiated, putting pressure
+    on McCauley’s plans.
+  trigger_event: Hanna learns that McCauley's crew plans to rob a precious metals
+    depository.
+- description: Under police stakeout, McCauley's crew halts the precious metals depository
+    robbery after the police presence is revealed, maintaining their operational secrecy.
+  id: s_4
+  key_delta: The crew shifts target from the depository to planning a high-stakes
+    bank robbery.
+  trigger_event: Despite the aborted heist, McCauley’s crew decide to pursue a bank
+    holdup with a much larger payoff.
+- description: 'McCauley’s personal life shows strain: his girlfriend Eady is aware
+    but distant, and Chris’s partner Charlene is cheating on him, creating internal
+    crew tensions.'
+  id: s_5
+  key_delta: Hanna and McCauley meet face to face, sharing a mutual understanding
+    and respect but recognizing they are adversaries.
+  trigger_event: Hanna discovers his own personal troubles as well, leading to a moment
+    where he intercepts McCauley during surveillance and invites him to coffee.
+- description: Hours before the bank robbery, Trejo is compromised and incapacitated,
+    leaving the crew short a getaway driver amid growing vulnerability.
+  id: s_6
+  key_delta: The crew adapts to personnel changes, maintaining readiness for the bank
+    heist.
+  trigger_event: McCauley recruits Donald Breeden as the new getaway driver.
+- description: During the bank robbery, police are alerted by a confidential informant
+    and ambush McCauley’s crew as they exit the bank, resulting in a violent shootout.
+  id: s_7
+  key_delta: Significant casualties reduce the crew’s strength; Chris is wounded and
+    requires medical care; McCauley becomes a fugitive under intense police pressure.
+  trigger_event: Several crew members, including Cheritto and Breeden, and multiple
+    officers are killed; McCauley and injured Chris narrowly escape.
+- description: McCauley visits Trejo at his home, finding him severely beaten; Trejo
+    admits the robbery tip came from Waingro’s betrayal.
+  id: s_8
+  key_delta: Betrayal within the crew is confirmed; Trejo’s death closes that breach;
+    McCauley targets Van Zant for retribution.
+  trigger_event: At Trejo’s request, McCauley kills him to end his suffering and prevent
+    further compromise.
+- description: McCauley tracks and kills Van Zant, then prepares to flee to New Zealand
+    with Eady, who now fully understands his criminal life and choices.
+  id: s_9
+  key_delta: Hanna uses Waingro’s exposure to lure McCauley out of hiding, increasing
+    tension and risk for McCauley’s planned escape.
+  trigger_event: Police surveillance closes in on Waingro at a hotel near LAX, and
+    Hanna announces Waingro’s location to criminal informants as bait.
+- description: Charlene, under police pressure, initially agrees to betray Chris but
+    ultimately warns him, allowing him to evade capture as police tighten the net.
+  id: s_10
+  key_delta: Hanna is emotionally compromised; police pressure on the crew intensifies
+    while McCauley’s network shrinks.
+  trigger_event: Hanna’s stepdaughter attempts suicide, bringing his personal struggles
+    to a crisis point while the investigation intensifies.
+- description: McCauley and Eady are en route to the airport to escape, moving through
+    a city saturated with police and informants watching Waingro’s hideout.
+  id: s_11
+  key_delta: McCauley’s disciplined detachment breaks down; he prioritizes vengeance
+    over freedom, risking capture.
+  trigger_event: McCauley receives Waingro’s location from Nate and chooses to abandon
+    his escape plan to seek revenge.
+- description: McCauley infiltrates the hotel where Waingro is hiding; after setting
+    off a fire alarm as a distraction, he kills Waingro.
+  id: s_12
+  key_delta: McCauley’s position is compromised in a public space, forcing immediate
+    flight without Eady.
+  trigger_event: McCauley is spotted by Hanna approaching in the crowded hotel lobby
+    following Waingro’s death.
+- description: Outside the LAX freight terminal at night, Hanna chases McCauley through
+    an empty field under tense and dangerous conditions.
+  id: s_13
+  key_delta: McCauley is grievously injured and his criminal career is effectively
+    ended.
+  trigger_event: Hanna shoots and mortally wounds McCauley during the final confrontation.
+- description: As McCauley lies dying, Hanna holds his hand in a moment of mutual
+    respect and closure; the atmosphere is somber and final.
+  id: s_14
+  key_delta: The central conflict resolves with McCauley’s death, closing the narrative
+    trajectory.
+  trigger_event: McCauley dies from his wounds, concluding the pursuit and ending
+    the story arc.

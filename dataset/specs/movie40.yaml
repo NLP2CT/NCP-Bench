@@ -1,0 +1,310 @@
+commitments:
+- description: Eve's introduction and acceptance into Margo's circle (s_0) must precede
+    any plotting or scheming to supplant Margo (s_2), preventing premature exposure
+    or role usurpation.
+  id: c_0
+  satisfaction_condition: Node s_0 occurs before s_2 in narrative progress, ensuring
+    Eve is first accepted backstage before any sabotage attempts.
+  type: ordering
+  violation_condition: Player actions or system responses allow Eve to scheme or take
+    over Margo's role prior to being introduced and accepted by Margo and her close
+    group.
+- description: From s_0 to s_2, Eve must maintain an outward appearance of humility
+    and devotion to Margo while secretly scheming.
+  id: c_1
+  satisfaction_condition: Between s_0 and s_2, Eve's outward humility is consistently
+    perceived by NPCs like Margo, Karen, and Bill, despite behind-the-scenes scheming
+    progressing.
+  type: invariant
+  violation_condition: Eve is openly revealed as scheming or disloyal before s_2,
+    breaking the façade of humility and causing NPCs to react accordingly.
+- description: Margo's missed performance caused by Eve and Karen's collusion (triggering
+    s_2) must occur before critics attend and recognize Eve's breakthrough performance.
+  id: c_2
+  satisfaction_condition: Documentation of the sabotaged show causing Margo's absence
+    is established before the critics' triumphant response to Eve's appearance.
+  type: ordering
+  violation_condition: Critical acclaim for Eve's performance is acknowledged without
+    preceding evidence or gameplay involving Margo missing her performance due to
+    sabotage.
+- description: Until s_6, Eve's backstory and identity (war widow, devoted fan) must
+    be accepted as true by the majority of characters and not disclosed as false.
+  id: c_3
+  satisfaction_condition: From s_0 through s_5 inclusive, NPCs including Margo, Karen,
+    and Bill believe Eve's fabricated backstory and treat her accordingly.
+  type: invariant
+  violation_condition: Addison or any character reveals Eve's true identity and fabrication
+    before node s_6, collapsing the staged deception prematurely.
+- description: The truthful exposure of Eve's fabricated identity and blackmail agreement
+    with Addison must occur by node s_6, establishing a narrative turning point.
+  id: c_4
+  satisfaction_condition: Node s_6 is triggered where Addison confronts Eve with the
+    truth and imposes his control via blackmail.
+  type: achievement
+  violation_condition: Eve reaches the final award ceremony (s_7) or later without
+    Addison having revealed her true identity and established blackmail.
+- description: Eve can only secure the role of Cora after Margo voluntarily relinquishes
+    it (s_4), preserving the logic of role succession.
+  id: c_5
+  satisfaction_condition: Node s_4 occurs with Margo declining the role of Cora, and
+    subsequently Eve officially acquires the role.
+  type: ordering
+  violation_condition: Eve obtains or is assigned the role of Cora before Margo's
+    announcement in s_4 that she will not play it.
+- description: Margo and Bill's reconciliation and decision to marry (s_3) must precede
+    Eve’s blackmailing of Karen for the Cora role, establishing the stabilized relational
+    backdrop.
+  id: c_6
+  satisfaction_condition: Node s_3 is completed before triggers leading to Eve's blackmail
+    of Karen occur.
+  type: ordering
+  violation_condition: Eve blackmails Karen or attempts to secure the role before
+    Margo and Bill have reconciled and announced engagement.
+- description: The blackmail agreement between Addison and Eve (s_6) must be in place
+    before Eve attains peak public success and receives the Sarah Siddons Award (s_7),
+    reflecting loss of autonomy despite success.
+  id: c_7
+  satisfaction_condition: Node s_6 is completed prior to s_7, ensuring Addison controls
+    Eve before the awards ceremony and public triumph.
+  type: ordering
+  violation_condition: Eve achieves the award or public climax without prior blackmail
+    or control established by Addison.
+- description: At the awards ceremony (s_7), Eve must be publicly celebrated while
+    simultaneously alienated by key figures (Margo, Bill, Lloyd, Karen), preserving
+    tone of lonely triumph.
+  id: c_8
+  satisfaction_condition: During s_7, Eve delivers an effusive speech and is met with
+    cold stares from her former peers unmistakably reflecting alienation.
+  type: invariant
+  violation_condition: Eve is warmly embraced or forgiven at the ceremony, contradicting
+    established alienation from her inner circle.
+- description: Introduction and establishment of Phoebe as a new aspiring follower
+    entering Eve’s life must occur by s_8 and s_9 to structurally foreshadow cycle
+    repetition.
+  id: c_9
+  satisfaction_condition: Nodes s_8 and s_9 occur, marking Phoebe’s intrusion into
+    Eve’s life and symbolic assumption of Eve’s role.
+  type: achievement
+  violation_condition: Phoebe’s appearance and ceremonial pose as Eve’s successor
+    is skipped or denied past the awards event.
+- description: Until the final scenes (s_9), no prior character other than Addison
+    reveals Eve's true identity or controls her, maintaining Addison's unique leverage
+    exclusivity.
+  id: c_10
+  satisfaction_condition: Only Addison is aware and exercises control over Eve’s true
+    identity and fate until s_9.
+  type: invariant
+  violation_condition: Any NPC other than Addison reveals or exploits Eve’s real identity
+    before node s_9, undermining Addison’s narrative role.
+initial_facts:
+- content: Margo Channing is backstage in her dressing room after a Broadway performance
+    at s_0.
+  id: f_0
+  negated: false
+- content: Margo Channing has recently turned forty years old and is worried about
+    aging.
+  id: f_1
+  negated: false
+- content: Karen Richards, Lloyd Richards, Bill Sampson, and maid Birdie are present
+    with Margo in the dressing room at s_0.
+  id: f_2
+  negated: false
+- content: Karen Richards encounters Eve Harrington in the cold alley outside the
+    stage door after the performance.
+  id: f_3
+  negated: false
+- content: Eve Harrington is recognized by Karen Richards from passing her many times
+    in the alley.
+  id: f_4
+  negated: false
+- content: Eve Harrington is introduced to Margo Channing and the group backstage
+    at s_0.
+  id: f_5
+  negated: false
+- content: Eve Harrington presents herself with an outward appearance of humility
+    and devotion towards Margo.
+  id: f_6
+  negated: false
+- content: Margo Channing and the group at s_0 accept Eve Harrington as a humble and
+    flattering aspiring follower.
+  id: f_7
+  negated: false
+- content: Birdie, Margo’s maid, instinctively dislikes Eve Harrington at s_0.
+  id: f_8
+  negated: false
+- content: At s_0, no character other than Eve herself, if any, knows about Eve’s
+    true identity or fabricated background.
+  id: f_9
+  negated: false
+- content: Addison DeWitt and other critics are not present backstage at s_0 and have
+    not yet learned of Eve’s arrival or ambitions.
+  id: f_10
+  negated: false
+- content: At s_0, Eve Harrington has not yet schemed or begun any plots against Margo
+    Channing.
+  id: f_11
+  negated: false
+- content: Eve’s fabricated backstory (war widow, devoted fan) is accepted by Margo,
+    Karen, Lloyd, and Bill as true at s_0.
+  id: f_12
+  negated: false
+- content: At s_0, Margo Channing is unaware of any plans by Eve to supplant her or
+    any sabotage.
+  id: f_13
+  negated: false
+- content: Margo Channing and Bill Sampson are in a romantic relationship but have
+    not yet reconciled or decided to marry.
+  id: f_14
+  negated: false
+- content: Eve Harrington is not yet cast in the role of Cora at s_0.
+  id: f_15
+  negated: false
+- content: Margo Channing plans to continue performing and has not yet relinquished
+    the role of Cora at s_0.
+  id: f_16
+  negated: false
+- content: Addison DeWitt has not yet confronted Eve or discovered her true identity
+    at s_0.
+  id: f_17
+  negated: false
+- content: Eve Harrington does not have any blackmail leverage over Karen Richards
+    at s_0.
+  id: f_18
+  negated: false
+- content: Phoebe, the young fan who later infiltrates Eve’s life, has not yet appeared
+    or been introduced at s_0.
+  id: f_19
+  negated: false
+meta:
+  genres: ["Drama", "Thriller"]
+  id: movie40
+  player_role: Margo Channing
+  title: "All About Eve"
+synopsis: At an awards dinner, Eve Harrington — the newest and brightest star on Broadway
+  — is being presented the Sarah Siddons Award for her breakout performance as Cora
+  in Footsteps on the Ceiling. Theatre critic Addison DeWitt observes the proceedings
+  and, in a sardonic voiceover, recalls how Eve's star rose as quickly as it did.
+  The film flashes back a year. Margo Channing is one of the biggest stars on Broadway,
+  but despite her success she is bemoaning her age, having just turned forty and knowing
+  what that will mean for her career. After a performance one night, Margo's close
+  friend Karen Richards, wife of the play's author Lloyd Richards, meets besotted
+  fan Eve Harrington in the cold alley outside the stage door. Recognizing her from
+  having passed her many times in the alley, Karen takes her backstage to meet Margo.
+  Eve tells the group gathered in Margo's dressing room — Karen and Lloyd, Margo's
+  boyfriend Bill Sampson, a director who is eight years her junior, and Margo's maid
+  Birdie — that she followed Margo's last theatrical tour to New York after seeing
+  her in a play in San Francisco. She tells a moving and involving story of a difficult
+  life, including losing her young husband in the recent war. She is becomingly humble
+  and flattering in her idolization of Margo. In response, Margo quickly befriends
+  Eve, moves her into her home, and takes her on as her assistant, leaving Birdie,
+  who instinctively dislikes Eve, feeling put out. While maintaining a seamless outward
+  appearance of humility and of a desire only to serve, Eve is gradually shown to
+  be working to supplant Margo, scheming to become her understudy behind her back
+  and conspiring with an unsuspecting Karen to cause Margo to miss a performance.
+  Eve, knowing in advance that she will be the one appearing that night, invites the
+  city's theatre critics to attend that evening's performance, which is a triumph
+  for her. Eve tries to seduce Bill, but he rejects her. Following a scathing newspaper
+  column by Addison, Margo and Bill reconcile, dine with the Richardses, and decide
+  to marry. That same night at the restaurant, Eve blackmails Karen into telling Lloyd
+  to give her the part of Cora, by threatening to tell Margo of Karen's role in Margo's
+  missed performance. Before Karen can talk with Lloyd, Margo announces to everyone's
+  surprise that she does not wish to play Cora and would prefer to continue in Aged
+  in Wood. Eve secures the role and attempts to climb higher by using Addison, who
+  is beginning to doubt her. Just before the premiere of her play at the Shubert in
+  New Haven, Eve presents Addison with her next plan——to marry Lloyd, who, she claims,
+  has come to her professing his love and his eagerness to leave his wife for her.
+  Now, Eve exults, Lloyd will write brilliant plays showcasing her. Addison is infuriated
+  that Eve has attempted to use him and reveals that he knows that her back story
+  is all lies. Her real name is Gertrude Slojinski, and she is no war widow, no orphan,
+  no follower of Margo's tour. Before meeting Margo, she had been paid to leave town
+  over her affair with her boss, a brewer in Wisconsin. Addison blackmails Eve, informing
+  her that she will not be marrying Lloyd or anyone else; in exchange for Addison's
+  silence, she now "belongs" to him. The film returns to the opening scene in which
+  Eve, now a shining Broadway star headed for Hollywood, is presented with her award.
+  In her speech, she thanks Margo and Bill and Lloyd and Karen with characteristic
+  effusion, while all four stare back at her coldly. After the awards ceremony, Eve
+  hands her award to Addison, skips a party in her honor, and returns home alone,
+  where she encounters a young fan—a high-school girl—who has slipped into her apartment
+  and fallen asleep. The young girl professes her adoration and begins at once to
+  insinuate herself into Eve's life, offering to pack Eve's trunk for Hollywood and
+  being accepted. "Phoebe", as she calls herself, answers the door to find Addison
+  returning with Eve's award. In a revealing moment, the young girl flirts daringly
+  with the older man. Addison hands over the award to Phoebe and leaves without entering.
+  Phoebe then lies to Eve, telling her it was only a cab driver who dropped off the
+  award. While Eve rests in the other room, Phoebe dons Eve's elegant costume robe
+  and poses in front of a multi-paned mirror, holding the award as if it were a crown.
+  The mirrors transform Phoebe into multiple images of herself, and she bows regally,
+  as if accepting the award to thunderous applause, while triumphant music plays.
+trajectory:
+- description: Backstage in Margo Channing's dressing room after a Broadway performance;
+    Margo, recently turned forty and worried about aging, is surrounded by her close
+    circle including Karen Richards, Lloyd Richards, Bill Sampson, and maid Birdie,
+    preparing to leave the theatre.
+  id: s_0
+  key_delta: Introduction of Eve Harrington into Margo's inner circle; Karen brings
+    Eve backstage to meet Margo.
+  trigger_event: Karen Richards encounters Eve Harrington outside the stage door alley
+    after the performance.
+- description: Margo's dressing room, with the group assembled; Eve shares a humble
+    and flattering story of her difficult past, idolizing Margo and expressing a desire
+    to serve her.
+  id: s_1
+  key_delta: Margo sympathizes with Eve, rapidly befriends her, takes her into her
+    home, and hires her as a personal assistant, causing Birdie to feel displaced.
+  trigger_event: Eve tells her life story and devotion to Margo to the gathered group.
+- description: Margo's home and theatre environment; Eve maintains an outward appearance
+    of humility and service while secretly plotting to usurp Margo's place.
+  id: s_2
+  key_delta: Eve successfully causes Margo to miss a show and appears in her place,
+    impressing critics and advancing her standing.
+  trigger_event: Karen strands Margo away from the theater, letting Eve go on in her
+    place.
+- description: After the sabotaged performance, tension between Margo and Karen and
+    among other characters; Margo and Bill reconcile and decide to marry following
+    critical remarks by Addison.
+  id: s_3
+  key_delta: Margo's personal life stabilizes with Bill, setting up relational stakes
+    as Eve blackmails Karen for the role of Cora.
+  trigger_event: Margo and Bill reconcile and announce their engagement at a dinner
+    with the Richardses.
+- description: Drama company setting; Karen reluctantly complies with Eve's blackmail
+    to persuade Lloyd to give Eve the role of Cora after Margo unexpectedly declines
+    the part.
+  id: s_4
+  key_delta: Eve officially secures the role of Cora, further displacing Margo professionally.
+  trigger_event: Margo announces she will not play Cora, choosing to continue in her
+    current role.
+- description: Before the premiere in New Haven's Shubert Theatre; Eve reveals to
+    Addison her plan to marry Lloyd for career advancement.
+  id: s_5
+  key_delta: Addison distrusts Eve, recognizing her manipulations and falsehoods about
+    her background.
+  trigger_event: Eve presents Addison with her marriage plan involving Lloyd.
+- description: Private confrontation setting; Addison reveals to Eve that her entire
+    back story is fabricated and exposes her real identity.
+  id: s_6
+  key_delta: Eve becomes entangled in a blackmail agreement with Addison, losing autonomy
+    as she is forced into his control.
+  trigger_event: Addison confronts Eve with knowledge that she is Gertrude Slojinski,
+    not a war widow or devoted fan, and threatens to expose her.
+- description: Awards dinner ceremony with Margo, Bill, Lloyd, and Karen present;
+    Eve receives the Sarah Siddons Award amidst cold stares from her peers.
+  id: s_7
+  key_delta: Eve attains peak public success but alienates her former friends, revealing
+    a lonely triumph.
+  trigger_event: Eve delivers an effusive acceptance speech thanking all the key figures
+    including Margo and Bill.
+- description: Eve's apartment post-awards; a young fan named Phoebe intrudes and
+    begins ingratiating herself into Eve's life.
+  id: s_8
+  key_delta: Introduction of a new aspiring follower poised to replicate Eve's pattern
+    of obsession and ambition.
+  trigger_event: Phoebe slips into Eve's apartment, sleeps there, and offers to pack
+    for Eve's move to Hollywood.
+- description: Eve's apartment; Phoebe alone wearing Eve's costume robe and holding
+    the award, transformed by reflections and music into multiple regal images.
+  id: s_9
+  key_delta: Symbolic passing of the torch as Phoebe imagines her own future rise,
+    foreshadowing repetition of Eve's trajectory.
+  trigger_event: Phoebe dons Eve's robe and poses in front of the multi-paned mirror
+    while Eve is resting.

@@ -1,0 +1,448 @@
+commitments:
+- description: The Persian demand at Sparta (s_0) must occur before Leonidas rejects
+    it by kicking the messenger into the well (s_1), establishing the external threat
+    prior to conflict escalation.
+  id: c_0
+  satisfaction_condition: Node s_0 event (Persian messenger demand) is triggered before
+    node s_1 event (Leonidas kicks messenger).
+  type: ordering
+  violation_condition: Player triggers Leonidas rejecting the demand (s_1) before
+    the Persian messenger arrives and delivers ultimatum (s_0).
+- description: Leonidas must secure Ephors’ consultation (s_2) and receive the Oracle
+    decree (s_3) prior to proceeding with war preparations or troop deployment.
+  id: c_1
+  satisfaction_condition: Node s_2 and s_3 complete before Leonidas sets out with
+    300 soldiers (s_5).
+  type: ordering
+  violation_condition: Leonidas departs with personal guards (s_5) before obtaining
+    Ephors' input and Oracle decree (s_2 and s_3).
+- description: The Oracle's decree forbidding official war during Carnea (s_3) remains
+    valid as long as official council authorization has not been bypassed or overturned.
+  id: c_2
+  satisfaction_condition: Between s_3 and s_5, no official Spartan wide-scale war
+    declaration is enacted and the Oracle’s command is recognized as binding.
+  type: invariant
+  violation_condition: Player achieves official council war authorization or large-scale
+    war actions during the Carnea festival before the Oracle decree is respected.
+- description: Bribery and corruption of Ephors by Persian agents (s_4) must occur
+    or be acknowledged before any meaningful weakening or treasonous influence within
+    Sparta is recognized.
+  id: c_3
+  satisfaction_condition: Node s_4 event happens and is confirmed before Theron’s
+    later betrayal (s_18) or council conflict.
+  type: ordering
+  violation_condition: Council or narrative accepts Theron’s treachery or undermines
+    Spartan unity without prior reference to Ephors’ bribery (s_4).
+- description: Leonidas’ departure with 300 soldiers (s_5) must follow the loss or
+    refusal of official approval and is a deliberately limited force mission, preserving
+    the political context of limited sanction.
+  id: c_4
+  satisfaction_condition: Node s_5 occurs after Ephors’ input and Oracle decree (s_2,
+    s_3) and before any official council reinforcement.
+  type: ordering
+  violation_condition: Leonidas leads a full sanctioned Spartan army or large reinforcements
+    to Thermopylae prior to s_5 or without it occurring.
+- description: Ephialtes’ knowledge of the secret goat path and request to join the
+    battle (s_7) remains exclusive and unresolved until the betrayal unfolds, maintaining
+    suspense around the flank threat.
+  id: c_5
+  satisfaction_condition: Ephialtes’ offer is declined (s_8) and secret path threat
+    is unknown to Persians until he defects (s_15).
+  type: invariant
+  violation_condition: Player obtains or reveals secret path or Ephialtes’ role prior
+    to s_7 and s_8 or prematurely betrays Spartans before s_15 event.
+- description: Spartan rejection of surrender demands (s_9) and subsequent defensive
+    successes (s_10, s_12, s_13) lead sequentially to escalated Persian attacks and
+    failed attempts to break Spartan formation.
+  id: c_6
+  satisfaction_condition: Persian assaults and Spartan repulses (nodes s_9 through
+    s_13) occur in order before the outflanking phase begins (s_15 onwards).
+  type: ordering
+  violation_condition: Persians use secret path or escalate to flank phase (s_15)
+    before initial frontal assault phases and Spartan resistance are established.
+- description: Leonidas’ refusal of Xerxes’ offers of wealth and power (s_11) remains
+    firm throughout the battle, reflecting his unwavering defiance.
+  id: c_7
+  satisfaction_condition: All gestures of surrender or allegiance to Xerxes by Leonidas
+    between s_11 and s_23 are rejected or feigned only tactically without true submission.
+  type: invariant
+  violation_condition: Player accepts Xerxes’ offers authentically or surrenders Sparta’s
+    independence before or during the battle phases.
+- description: The betrayal by Ephialtes (s_15) must occur before the Spartan force
+    is finally outflanked and overwhelming assault ordered (s_20 to s_23).
+  id: c_8
+  satisfaction_condition: Ephialtes defecting and revealing the secret path (s_15)
+    precedes any Persian successful flanking movements and final attacks.
+  type: ordering
+  violation_condition: Persians outflank Spartans (s_20) or achieve tactical victory
+    without the prior confirmed betrayal and secret path exposure (s_15).
+- description: Dilios’ dispatch back to Sparta (s_16, s_17) and arrival must occur
+    before Spartan council unites and counteracts Persian influence, culminating in
+    Theron’s exposure and death (s_18, s_19).
+  id: c_9
+  satisfaction_condition: Dilios departs battlefield with news (s_17) before council’s
+    confrontation with Theron’s betrayal (s_18, s_19).
+  type: ordering
+  violation_condition: Council political resolution or exposure of Theron’s treason
+    occurs before Dilios returns with battlefield news.
+- description: Theron's role as a Persian agent inside Sparta and the subsequent political
+    betrayal must be directly connected and provable only upon the xiphē killing incident
+    (s_19).
+  id: c_10
+  satisfaction_condition: Theron’s accusation against Gorgo (s_18) is immediately
+    followed by his death revealing Persian coins, cementing his traitor status.
+  type: invariant
+  violation_condition: Theron is exposed or eliminated without connection to bribery
+    evidence or prior accusation sequence.
+- description: Leonidas’ strategic battle climax actions—feigning surrender, Stelios
+    killing Persian general (s_21), and Leonidas wounding Xerxes (s_22)—occur in strict
+    sequence before Spartans' final stand and death (s_23).
+  id: c_11
+  satisfaction_condition: Nodes s_21 and s_22 events occur consecutively before the
+    final Persian arrow barrage and Spartan sacrifice (s_23).
+  type: ordering
+  violation_condition: Final Spartan deaths (s_23) happen before Leonidas’ spear wound
+    to Xerxes or before the killing of the Persian general by Stelios.
+- description: Leonidas’ heroic death and pledge of undying love to Queen Gorgo (s_23)
+    must be achieved, marking the culmination of Spartan sacrifice and motivating
+    the Greek resistance.
+  id: c_12
+  satisfaction_condition: Node s_23 combat and death scene, including Leonidas’ love
+    pledge to Gorgo, is properly triggered and completed.
+  type: achievement
+  violation_condition: Leonidas survives the final assault without pledging his love,
+    or Spartan forces survive beyond the intended sacrificial defeat.
+- description: Dilios’ narration to Greek allies (s_24) and subsequent leadership
+    of the united Greek forces (s_25) must occur after Thermopylae's events (s_23),
+    reflecting the inspirational legacy of Spartan sacrifice.
+  id: c_13
+  satisfaction_condition: Dilios’ speech (s_24) and alliance charge (s_25) are triggered
+    only after the full Spartan defeat at Thermopylae (s_23) is acknowledged.
+  type: ordering
+  violation_condition: Greek unity or charge against Persians (s_24, s_25) happens
+    before Spartan sacrifice at Thermopylae (s_23) or in absence of Dilios’ narrative.
+- description: The narrative must culminate in the Greek coalition preparing to battle
+    Persia at Plataea (s_25), ensuring that Spartan sacrifice leads to tangible Greek
+    unity and resistance success.
+  id: c_14
+  satisfaction_condition: Node s_25 event of leading 40,000 Greek forces charging
+    Persians is triggered before narrative conclusion.
+  type: invariant
+  violation_condition: Narrative ends or diverges before united Greek army charge
+    is deployed or without reference to Spartan-inspired alliance.
+initial_facts:
+- content: Dilios is among the Spartan citizens present as Leonidas recounts his early
+    life and rise to kingship at Sparta.
+  id: f_0
+  negated: false
+- content: The city of Sparta is in a state of relative peace but is calm with an
+    undercurrent of impending conflict.
+  id: f_1
+  negated: false
+- content: A Persian messenger has arrived at the gates of Sparta and is about to
+    deliver a demand for Spartan submission to King Xerxes.
+  id: f_2
+  negated: false
+- content: At t=0, the Persian messenger has not yet been rejected or harmed by Leonidas
+    or anyone else.
+  id: f_3
+  negated: false
+- content: Leonidas has not yet taken any action to reject or respond to the Persian
+    messenger's demand.
+  id: f_4
+  negated: false
+- content: Leonidas has not yet consulted the Ephors regarding war preparations.
+  id: f_5
+  negated: false
+- content: The Oracle's decree forbidding war during the Carnea festival has not yet
+    been delivered or acknowledged.
+  id: f_6
+  negated: false
+- content: No bribery or corruption of the Ephors by Persian agents has taken place
+    or been acknowledged.
+  id: f_7
+  negated: false
+- content: Leonidas has not yet assembled his 300 personal guard soldiers or departed
+    Sparta for Thermopylae.
+  id: f_8
+  negated: false
+- content: The secret goat path accessible to the Persians is not yet known to any
+    Spartan, including Leonidas.
+  id: f_9
+  negated: false
+- content: Ephialtes has not yet approached Leonidas or offered to join the fight.
+  id: f_10
+  negated: false
+- content: Spartans have not yet been confronted with a Persian surrender demand on
+    the battlefield.
+  id: f_11
+  negated: false
+- content: Xerxes has not yet personally communicated with Leonidas.
+  id: f_12
+  negated: false
+- content: The elite Persian guard, the Immortals, have not yet been unleashed or
+    engaged in battle with the Spartans.
+  id: f_13
+  negated: false
+- content: No Persian use of exotic weapons such as black powder bombs or war elephants
+    has yet occurred.
+  id: f_14
+  negated: false
+- content: Astinos, son of Captain Artemis, is alive and has not yet been killed in
+    combat.
+  id: f_15
+  negated: false
+- content: Ephialtes has not yet defected to the Persians nor betrayed the Spartans
+    by revealing the secret path.
+  id: f_16
+  negated: false
+- content: The Arcadians have not yet joined the Spartan force at Thermopylae.
+  id: f_17
+  negated: false
+- content: Dilios has not yet been injured or sent back to Sparta as a messenger.
+  id: f_18
+  negated: false
+- content: Queen Gorgo has not yet been assaulted or betrayed by Theron.
+  id: f_19
+  negated: false
+- content: No political betrayal or council conflict involving Theron or Spartan council
+    members has yet occurred.
+  id: f_20
+  negated: false
+- content: Spartans have not yet begun the final stand or been outflanked by Persian
+    forces.
+  id: f_21
+  negated: false
+- content: Dilios, as the player role, is presently unaware of any future events such
+    as Ephialtes' betrayal, Leonidas' death, or the ultimate outcome of the war.
+  id: f_22
+  negated: false
+meta:
+  genres: ["Action", "War"]
+  id: movie85
+  player_role: Dilios
+  title: "300"
+synopsis: Dilios, a Spartan soldier, narrates the story of Leonidas from his boyhood
+  to becoming a king of Sparta. Years later, a Persian messenger arrives at the gates
+  of Sparta, demanding the submission of Sparta to King Xerxes. In response to this
+  demand, Leonidas kicks the messenger into a large well. Knowing this will prompt
+  a Persian attack, Leonidas visits the Ephors—ancient leprosy-ridden priests whose
+  blessing he needs before the Spartan council will authorize going to war. He proposes
+  they repel the numerically superior Persians by using the terrain of Thermopylae
+  and funneling the Persians into a narrow pass between the rocks and the sea. The
+  Ephors consult the Oracle, who decrees that Sparta must not go to war during their
+  religious festival Carnea. As Leonidas departs, two agents of Xerxes appear—one
+  of them, Theron, a Spartan—who bribe the Ephors with concubines and money. Leonidas
+  follows his plan anyway, setting out with only 300 soldiers, whom he calls his personal
+  guards to avoid needing the council's permission. Though he regards the mission
+  as certain suicide, he hopes the sacrifice will spur the council to unite against
+  Persia. On the way to Thermopylae, Arcadians join the Spartans. At Thermopylae they
+  construct a wall to contain the approaching Persians. As construction goes on, Leonidas
+  meets Ephialtes, a hunchbacked Spartan in exile whose parents fled Sparta to spare
+  him certain infanticide. Wanting to redeem his father's name, Ephialtes asks to
+  join the fight; he warns Leonidas of a secret path the Persians could use to outflank
+  and surround them. Though Leonidas sympathizes with Ephialtes's will to fight, he
+  turns him down, as Ephialtes cannot properly hold a shield——this would compromise
+  the Spartans' phalanx formation. Before the battle, the Persian Captain demands
+  that the Spartans lay down their weapons. Leonidas refuses, and with their tightly-knit
+  phalanx formation, the Spartans use the narrow terrain to repeatedly rebuff the
+  advancing Persian army. Xerxes personally parleys with Leonidas, offering him wealth
+  and power in exchange for his loyalty and surrender. Leonidas declines, and Xerxes
+  sends his elite guard, the formidable Immortals, to attack, but the Spartans successfully
+  dispatch them, suffering a few casualties of their own. Xerxes then sends a number
+  of exotic weapons at the Spartans, including black powder bombs and war elephants,
+  but all of these attacks fail. During these attacks, Astinos is killed, which drives
+  his father Captain Artemis into a fit of rage. Angered by Leonidas's rejection,
+  Ephialtes defects to the Persians and informs them of the secret path. When they
+  realize Ephialtes's treachery, the Arcadians retreat, and Leonidas orders Dilios
+  to return to Sparta to tell the Council of their sacrifice. Though Dilios had recently
+  injured his left eye in combat, he is still fit for battle, but Leonidas decides
+  to use Dilios's gift for storytelling to appeal to the Spartan council. Though reluctant
+  to leave his brothers behind, Dilios leaves with the Arcadians. In Sparta, Queen
+  Gorgo is raped by Theron, before which he promises his help in persuading the Spartan
+  council to send reinforcements to Leonidas. However, following her address to the
+  Council, Theron publicly betrays the Queen by accusing her of adultery, prompting
+  the councilmen to cry out in outrage and Gorgo to kill him in a fit of anger. The
+  xiphē that Gorgo uses to kill Theron pierces his purse, spilling Persian coins from
+  his robe, revealing his role as traitor, and the Council agrees to unite against
+  Persia. At Thermopylae, the Persians use the goat path to outflank the Spartans.
+  Xerxes's general demands their surrender, again offering Leonidas titles and prestige.
+  Leonidas seemingly bows in submission, allowing Stelios to leap over him and kill
+  the general instead. Furious, Xerxes orders his troops to attack. Leonidas rises
+  and hurls his spear at Xerxes, cutting the King on the cheek, thus fulfilling an
+  earlier promise to "make the God-King bleed". Visibly disturbed by this reminder
+  of his mortality, Xerxes watches as a massive barrage of arrows kills all the Spartans.
+  Moments before his death, Leonidas pledges his undying love to Gorgo. Concluding
+  his tale before an audience of Spartans on the edge of the battlefield a year after
+  Thermopylae, Dilios relates how the Persian army has suffered desertions, out of
+  fear and the heavy casualties they suffered at the hands of a mere 300 Spartans.
+  Word of their valiant resistance spread across Greece, inspiring the different city-states
+  to unite against the Persians. Now, the Persians face 10,000 Spartans leading 30,000
+  free Greeks. Although still outnumbered three to one, Dilios declares that the Greeks
+  shall be victorious and praises the sacrifice of the 300. He then leads the Greeks
+  in a charge against the Persian army at the Battle of Plataea, the battle that would
+  end Persia's invasion of Greece.
+trajectory:
+- description: Dilios stands among the Spartan citizens as Leonidas recounts his early
+    life and rise to kingship, in a time of relative peace before Persian demands.
+    The city of Sparta is calm but tense, with an undercurrent of impending conflict.
+  id: s_0
+  key_delta: Presence of Persian demand introduces the external threat and potential
+    for war against Persia.
+  trigger_event: A Persian messenger arrives at the gates of Sparta, demanding submission
+    to King Xerxes.
+- description: The Persian messenger stands at the gates, making the ultimatum clear
+    to Spartan guards and citizens, including Dilios and Leonidas.
+  id: s_1
+  key_delta: Sparta openly rejects the Persian demands, solidifying the conflict and
+    guaranteeing Persian retaliation.
+  trigger_event: Leonidas forcibly kicks the Persian messenger into a large well at
+    the city gate.
+- description: Leonidas visits the Ephors, the leprosy-ridden Spartan priests, in
+    their chamber seeking their blessing and permission for war preparations.
+  id: s_2
+  key_delta: Leonidas presents a strategic defense plan contingent on Ephors' approval
+    and the Oracle's decree.
+  trigger_event: Leonidas proposes to repel the Persians by using the terrain of Thermopylae
+    to narrow the battlefield.
+- description: The Ephors and Leonidas assemble as the Oracle delivers her decree
+    forbidding war during the religious festival Carnea.
+  id: s_3
+  key_delta: Sparta is restricted from official war authorization during Carnea, impeding
+    immediate large-scale action.
+  trigger_event: The Ephors inform Leonidas of the Oracle's mandate and deliberate
+    on war timing.
+- description: As Leonidas departs from the Ephors' chambers, two Persian agents,
+    one being Theron a Spartan, bribe the Ephors with concubines and money.
+  id: s_4
+  key_delta: Ephors are compromised by Persian bribery, introducing internal betrayal
+    within Sparta.
+  trigger_event: The bribery transaction between Persian agents and Ephors is completed.
+- description: Leonidas assembles 300 soldiers, his personal guards, preparing to
+    head to Thermopylae without official council sanction, to execute his plan.
+  id: s_5
+  key_delta: Leonidas commits to a limited force strategy, initiating the defensive
+    operation independently.
+  trigger_event: Leonidas departs Sparta with 300 Spartans and some Arcadian allies
+    towards Thermopylae.
+- description: At Thermopylae, Spartans and Arcadians begin constructing defensive
+    walls in the narrow mountain pass between rocks and sea.
+  id: s_6
+  key_delta: Fortifications are established to channel and contain the approaching
+    Persian forces.
+  trigger_event: Construction of defensive walls at the pass begins under Spartan
+    oversight.
+- description: Leonidas meets Ephialtes, the hunchbacked Spartan exile who offers
+    to fight and reveals knowledge of a secret path around the pass.
+  id: s_7
+  key_delta: Introduction of threat to Spartan flank via secret route; Ephialtes'
+    presence signals potential risk.
+  trigger_event: Ephialtes requests to join the battle and warns Leonidas of the secret
+    goat path.
+- description: Leonidas declines Ephialtes' offer, citing his inability to properly
+    hold a shield which would compromise the phalanx formation.
+  id: s_8
+  key_delta: Spartan defensive integrity is preserved, leaving Ephialtes outside the
+    main force and the secret path threat unresolved.
+  trigger_event: Leonidas refuses Ephialtes' participation in the battle.
+- description: Persian Captain demands Spartans lay down their weapons at the battlefield
+    edge; Spartans form their tightly-knit phalanx in refusal.
+  id: s_9
+  key_delta: Open hostilities begin with Spartan collective resistance using terrain
+    and phalanx tactics.
+  trigger_event: Persian Captain makes his surrender demand at the battlefield.
+- description: Spartans successfully repel repeated Persian frontal assaults in the
+    narrow pass, inflicting heavy casualties despite being outnumbered.
+  id: s_10
+  key_delta: Persian force loses men and momentum, validating Spartan strategy and
+    terrain advantage.
+  trigger_event: Persian repeated assaults are repressed by Spartan defense.
+- description: Xerxes personally meets Leonidas, offering wealth and power for loyalty;
+    Leonidas declines supreme offers.
+  id: s_11
+  key_delta: Leonidas' defiance is reaffirmed, escalating Xerxes' resolve for total
+    conquest.
+  trigger_event: Xerxes conducts personal parley with Leonidas on the battlefield.
+- description: Xerxes unleashes his elite guard, the Immortals, who are met and defeated
+    by the Spartans with limited Spartan casualties.
+  id: s_12
+  key_delta: Elite Persian unit is rendered ineffective; Spartan morale and tactical
+    superiority confirmed.
+  trigger_event: Immortals launch assault and are defeated by Spartans.
+- description: Xerxes deploys exotic warfare, including black powder bombs and elephants,
+    in attempts to break Spartan defenses.
+  id: s_13
+  key_delta: All attempts fail against Spartan formation; Persian offensive technology
+    is neutralized.
+  trigger_event: Persian use of new war machines and animals against Spartans.
+- description: Astinos, son of Captain Artemis, is killed in battle, inciting rage
+    in his father.
+  id: s_14
+  key_delta: Loss of a key Spartan warrior heightens emotional stakes and warrior
+    fury.
+  trigger_event: Astinos falls during combat against the Persians.
+- description: Ephialtes defects to Persia, betraying Spartans by revealing the secret
+    goat path to Xerxes' forces.
+  id: s_15
+  key_delta: Persians gain strategic advantage enabling outflanking of Spartan defensive
+    position.
+  trigger_event: Ephialtes physically approaches Persian camp and shares the secret
+    route.
+- description: On discovery of Ephialtes' betrayal, Arcadians retreat; Leonidas orders
+    Dilios to return to Sparta and inform the council.
+  id: s_16
+  key_delta: Spartan force diminished; intelligence sent to Sparta leading to potential
+    political ramifications.
+  trigger_event: Arcadian withdrawal and Leonidas' dispatch of Dilios as messenger.
+- description: Dilios, recently injured but alive, departs Thermopylae with Arcadians
+    to deliver Leonidas' message to the Spartan council.
+  id: s_17
+  key_delta: Communication channel established between battlefield and Spartan political
+    leadership.
+  trigger_event: Dilios leaves the battlefield carrying the story of Spartan sacrifice.
+- description: In Sparta, Queen Gorgo is assaulted by Theron, who promises to support
+    her but later betrays her before the council.
+  id: s_18
+  key_delta: Political betrayal revealed; Gorgo's honor challenged and Persian influence
+    within Sparta exposed.
+  trigger_event: Theron publicly accuses Queen Gorgo of adultery during the council
+    assembly.
+- description: Gorgo, enraged, kills Theron with a xiphē during the council session,
+    exposing Persian coins spilled from his robe indicating treason.
+  id: s_19
+  key_delta: Traitor identified and eliminated; council unites against Persia with
+    renewed resolve.
+  trigger_event: Theron is killed by Gorgo; Persian bribery evidence revealed.
+- description: Back at Thermopylae, Persians use the goat path to outflank Spartans;
+    Xerxes' general demands Spartan surrender with offers of titles.
+  id: s_20
+  key_delta: Spartan position compromised strategically; psychological pressure renewed.
+  trigger_event: Persians appear behind Spartan lines via secret path and demand surrender.
+- description: Leonidas feigns submission, allowing Stelios to kill the Persian general
+    in a surprise move; Xerxes enraged orders full attack.
+  id: s_21
+  key_delta: Persian leadership loses a key commander; battle escalates to final confrontation.
+  trigger_event: Leonidas bows while Stelios kills the general; Xerxes orders all-out
+    assault.
+- description: Leonidas throws a spear that wounds Xerxes on the cheek, fulfilling
+    his vow to make the God-King bleed as Spartans brace for the final wave.
+  id: s_22
+  key_delta: Xerxes' perceived invincibility challenged; battle morale impacted on
+    both sides.
+  trigger_event: Leonidas hurls spear hitting Xerxes visibly.
+- description: Massive Persian arrow barrage overwhelms Spartans; all 300 Spartans
+    fall in combat, Leonidas pledges undying love to Queen Gorgo before dying.
+  id: s_23
+  key_delta: Spartan heroic sacrifice completed; physical forces lost but legacy preserved.
+  trigger_event: Final Persian assault kills the Spartans; Leonidas dies on battlefield.
+- description: One year later, Dilios narrates to assembled Greeks near battlefield
+    how 300 Spartans' sacrifice inspired Greek city-states to unite against Persia.
+  id: s_24
+  key_delta: Spartan sacrifice elevates to symbol of Greek unity and resistance.
+  trigger_event: Dilios addresses and rallies Greeks on the battlefield edge.
+- description: Greek coalition under Spartans now number 40,000 and prepare to charge
+    against Persian army at the decisive Battle of Plataea.
+  id: s_25
+  key_delta: Greek united front formed, setting stage for turning the tide against
+    Persia.
+  trigger_event: Dilios leads charge of allied Greek forces against Persians.

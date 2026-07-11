@@ -1,0 +1,299 @@
+commitments:
+- description: The narrative must establish the vacancy and audition process for the
+    Swan Queen role before Nina is cast or begins hallucinating.
+  id: c_0
+  satisfaction_condition: Node s_0 (announcement of auditions and vacancy) occurs
+    before any casting decisions or hallucination events (from s_1 onward).
+  type: ordering
+  violation_condition: Casting Nina as Swan Queen or hallucinations related to Lily
+    or others occur before the audition announcement in s_0.
+- description: Nina must react with some defiant or spirited behavior during or immediately
+    after Thomas's forced kiss to qualify for the role.
+  id: c_1
+  satisfaction_condition: At node s_1, Nina bites Thomas or otherwise shows spirit
+    after the forced kiss, leading to her casting.
+  type: invariant
+  violation_condition: Nina is cast or acknowledged as Swan Queen without showing
+    any defiant/spirit response to Thomas's forced kiss at s_1.
+- description: Beth’s injury and subsequent incapacitation must occur before Lily
+    assumes the understudy role and Nina’s hallucinations begin.
+  id: c_2
+  satisfaction_condition: Node s_2 (Beth injury and start of Nina's strange experiences)
+    occurs before s_3 and beyond where Lily's role and Nina’s mental instability start.
+  type: ordering
+  violation_condition: Lily acts as understudy or Nina hallucinates about events before
+    Beth is injured and incapacitated.
+- description: Nina’s mother (Erica) must oppose Nina’s nightlife engagement and be
+    a source of conflict concerning Nina’s mental health through the middle to late
+    phase of the story.
+  id: c_3
+  satisfaction_condition: From s_3 to s_7, Erica consistently opposes Nina’s nightclub
+    attendance and attempts to control or restrict her activities.
+  type: invariant
+  violation_condition: Erica encourages or is neutral about Nina’s nightlife or discontinues
+    opposition before s_7.
+- description: Nina’s ingestion of ecstasy is hidden from her at the time of consumption
+    to catalyze her hallucinations.
+  id: c_4
+  satisfaction_condition: At s_4, Nina refuses ecstasy when offered but unknowingly
+    ingests it later when Lily slips it into her drink.
+  type: invariant
+  violation_condition: Nina consensually ingests ecstasy knowingly from the start
+    or does not ingest ecstasy before hallucinations begin.
+- description: Nina must realize that her intimate encounter with Lily was a hallucination
+    before major narrative escalations.
+  id: c_5
+  satisfaction_condition: At s_5, Nina explicitly recognizes that the prior night's
+    encounter with Lily was imagined.
+  type: achievement
+  violation_condition: The narrative advances past s_5 without Nina realizing the
+    hallucination, undermining subsequent mental instability logic.
+- description: Nina’s hallucinations and deteriorating mental state must escalate
+    after s_5 and before her forced confrontation with her mother and collapse.
+  id: c_6
+  satisfaction_condition: Between s_6 and s_7, Nina experiences intensified hallucinations
+    and erratic behavior including self-harm visions.
+  type: invariant
+  violation_condition: Nina’s hallucinations do not intensify or mental instability
+    is portrayed as static or reduced before s_7.
+- description: Erica’s attempt to prevent Nina from performing on opening night must
+    occur before Nina asserts control and insists on performing.
+  id: c_7
+  satisfaction_condition: At s_7, Erica tries to stop Nina which prompts Nina to leave
+    and override the planned understudy replacement.
+  type: ordering
+  violation_condition: Nina insists on performing or takes the stage without Erica’s
+    prevention attempt happening.
+- description: Nina’s hallucinations during the opening act cause a physical disruption
+    resulting in a fall before she confronts Lily backstage.
+  id: c_8
+  satisfaction_condition: At s_8, Nina falls during the lift due to hallucination
+    distraction and immediately afterwards confronts Lily backstage.
+  type: invariant
+  violation_condition: Nina performs the first act flawlessly without hallucination-related
+    impairment, or confronts Lily without the fall event.
+- description: Nina must physically enact the hallucinated violent act of stabbing
+    her double (Lily), which is later revealed to be self-inflicted.
+  id: c_9
+  satisfaction_condition: At s_9 and s_10, Nina stabs her double, sees the body transform
+    back into Lily, and later finds out she stabbed herself.
+  type: achievement
+  violation_condition: Nina’s stabbing act or acknowledgment of self-infliction does
+    not occur before the narrative proceeds to climax.
+- description: The final dual performance involving the transformation into the Black
+    Swan and death scene must culminate with Nina’s severe physical injury and the
+    audience’s applause.
+  id: c_10
+  satisfaction_condition: At s_11, Nina completes the performance with the Black Swan
+    transformation and death scene, is severely bleeding, and the audience applauds.
+  type: invariant
+  violation_condition: Nina’s final act lacks the transformative elements, physical
+    injury, or public reception (applause) as described.
+- description: Nina’s psychological breakdown, hallucinations, and violent acts must
+    precede her final artistic transformation and death scene.
+  id: c_11
+  satisfaction_condition: All nodes from s_4 through s_10 occur before or leading
+    into s_11.
+  type: ordering
+  violation_condition: The final artistic transformation, death scene, or physical
+    injury happens before Nina’s hallucinations and stabbing act (s_4–s_10).
+initial_facts:
+- content: Nina Sayers is a young dancer living with her mother Erica in New York
+    City.
+  id: f_0
+  negated: false
+- content: Erica Sayers is a former dancer.
+  id: f_1
+  negated: false
+- content: Nina is part of a prestigious New York City ballet company preparing to
+    open the new season with Swan Lake.
+  id: f_2
+  negated: false
+- content: Beth Macintyre, the previous Swan Queen, has been forced into retirement
+    leaving a vacancy for the dual role of White Swan and Black Swan.
+  id: f_3
+  negated: false
+- content: Thomas Leroy is the director of the ballet company responsible for casting
+    the new Swan Queen role.
+  id: f_4
+  negated: false
+- content: Director Thomas Leroy has announced auditions to cast the new Swan Queen
+    role for the upcoming season.
+  id: f_5
+  negated: false
+- content: Nina is unaware of future casting decisions and hallucinations that have
+    not yet occurred.
+  id: f_6
+  negated: false
+- content: Beth Macintyre is currently healthy and has not been injured or incapacitated.
+  id: f_7
+  negated: false
+- content: Lily is another dancer in the company but has no special role or involvement
+    as understudy at this time.
+  id: f_8
+  negated: false
+- content: Nina’s relationship with her mother Erica is normal; Erica has not yet
+    opposed any nightlife activities or exerted control over Nina's lifestyle.
+  id: f_9
+  negated: false
+- content: Nina has not experienced any hallucinations or mental instability.
+  id: f_10
+  negated: false
+- content: Nina has not ingested ecstasy and is unaware of any future drug ingestion.
+  id: f_11
+  negated: false
+- content: Nina has not experienced any violence, self-harm, or hallucinated encounters.
+  id: f_12
+  negated: false
+- content: Nina has not had any confrontations with Lily or Thomas of the nature described
+    later in the story.
+  id: f_13
+  negated: false
+- content: The casting for the Swan Queen role is not yet decided; Nina has not yet
+    auditioned.
+  id: f_14
+  negated: false
+meta:
+  genres: ["Thriller", "Drama"]
+  id: movie73
+  player_role: Nina Sayers
+  title: "Black Swan"
+synopsis: Nina Sayers, a young dancer with a prestigious New York City ballet company,
+  lives with her mother, Erica, a former dancer. The company is preparing to open
+  the season with Swan Lake. The director, Thomas Leroy, has to cast a new principal
+  dancer after forcing Beth Macintyre into retirement. Leroy wants the same ballerina
+  to portray both the innocent, fragile White Swan and her dark, sensual twin, the
+  Black Swan. Nina competes for the part. Although her audition goes badly, she asks
+  Thomas to reconsider. He tells her she is ideal for the White Swan but lacks the
+  passion necessary for the Black Swan. When he forcibly kisses her, she shows some
+  spirit and bites him, and lands the part. An intoxicated Beth angrily confronts
+  Thomas and Nina. She is later hit by a car and seriously injured in what Thomas
+  suspects was a suicide attempt. Nina begins to witness strange happenings. Thomas,
+  meanwhile, becomes increasingly critical of her "frigid" dancing and advises her
+  to stop being a perfectionist and lose herself in the role. Thomas points to Lily,
+  another dancer in the company, whom he describes as lacking Nina's flawless technique
+  but possessing an uninhibited quality that Nina has not shown. The relationship
+  between the two dancers is cool because of Lily's indiscretions, but Lily invites
+  Nina to a night out. Nina is hesitant at first but decides to go against her mother's
+  wishes. At a restaurant that evening, Lily offers Nina a capsule of ecstasy to help
+  her loosen up. Though reassured its effects will only last a few hours, Nina turns
+  it down. Lily later slips it into her drink at a nightclub while she is absent.
+  Nina returns home late, fights with her mother, barricades herself in her room,
+  and finds herself having sex with Lily. Next morning, Nina wakes up alone and late
+  for rehearsal. When she arrives at the studio, she finds Lily dancing as the Swan
+  Queen. Furious, she confronts Lily and asks her why she did not wake her up that
+  morning. After Lily tells her she spent the night with a man whom she met at the
+  club, Nina realizes she imagined the encounter. Nina's hallucinations become stronger
+  as she sees Thomas and Lily have sex in a backstage area and Beth stabbing herself
+  in the face at the hospital with a nail filer which Nina drops bloodied in the elevator.
+  She has a violent argument with her mother, after which Nina passes out. Concerned
+  about Nina's erratic behavior, her mother tries to prevent her from performing on
+  opening night; enraged, Nina stands up to her mother and forces her way out of the
+  apartment. Since her mother had called to say Nina was sick, Thomas assigned understudy
+  Lily to take over, but reluctantly gives way when Nina insists on performing. The
+  first act goes well, until Nina is distracted by a hallucination during a lift,
+  causing her partner, playing the Prince, to drop her. Distraught, she returns to
+  her dressing room and finds Lily there. As Lily announces she is to play the Black
+  Swan, she transforms into Nina's double. Nina shoves her into a mirror, shattering
+  it. She grabs a shard of glass and stabs her rival in the stomach, killing her.
+  The corpse transforms back into Lily. Nina hides the body and returns to the stage
+  to dance with passion and sensuality. Sprouting feathers, her arms become black
+  wings as she finally loses herself and is transformed into a black swan. At the
+  end of the act, she receives a standing ovation. Offstage, Thomas and the rest of
+  the cast congratulate her on her stunning performance. Nina takes Thomas by surprise
+  and kisses him. Back in her dressing room before the final act, Nina is congratulated
+  by Lily, showing that their fight was imaginary. The mirror, however, is still shattered.
+  She removes a shard from her own body and realizes she had stabbed herself. Dancing
+  the last scene, in which the White Swan throws herself off a cliff, Nina spots her
+  mother weeping in the audience. As Nina falls backward onto a hidden mattress, the
+  theater erupts in thunderous applause. Thomas and the cast gather to congratulate
+  her—only to find that she is severely bleeding. As the white ceiling lights envelop
+  her, she whispers, "I felt it. Perfect. It was perfect."
+trajectory:
+- description: Nina Sayers, a young dancer living with her former dancer mother Erica,
+    is part of a prestigious New York City ballet company preparing for the new season's
+    opening with Swan Lake. The company faces a vacancy for the dual lead role of
+    the White Swan and Black Swan after the forced retirement of Beth Macintyre.
+  id: s_0
+  key_delta: The central conflict for the dual role casting is established, along
+    with Nina's ambition and the company's pressures.
+  trigger_event: Director Thomas Leroy announces auditions to cast the new Swan Queen
+    role.
+- description: Nina attends her audition for the Swan Queen role. Her performance
+    lacks passion, especially for the Black Swan part.
+  id: s_1
+  key_delta: Nina reacts defiantly by biting Thomas, demonstrating hidden spirit;
+    she is cast as the Swan Queen for the White Swan role.
+  trigger_event: Thomas Leroy forces a kiss on Nina during the audition to provoke
+    a reaction.
+- description: Nina is cast as the White Swan. Tension rises following Beth Macintyre's
+    public confrontation with Thomas and Nina, ending with Beth’s severe injury after
+    being hit by a car.
+  id: s_2
+  key_delta: Beth is incapacitated, making Lily the likely understudy; Nina’s perception
+    of reality begins to destabilize.
+  trigger_event: Nina witnesses strange happenings beginning to occur around her.
+- description: Thomas criticizes Nina’s 'frigid' dancing and advises her to lose herself
+    in the role, highlighting Lily’s uninhibited qualities as a contrast.
+  id: s_3
+  key_delta: Nina breaks from her routine, engaging with the nightlife and beginning
+    to confront personal and artistic inhibitions.
+  trigger_event: Lily invites Nina to go out to a nightclub against her mother’s wishes.
+- description: At the nightclub, Nina unknowingly ingests ecstasy slipped into her
+    drink by Lily, affecting her perception and behavior into the night.
+  id: s_4
+  key_delta: Nina’s boundaries collapse as she hallucinates and imagines intimate
+    encounters with Lily.
+  trigger_event: Nina returns home late, argues with her mother, and barricades herself
+    in her room.
+- description: The next morning, Nina wakes late for rehearsal and finds Lily dancing
+    as the Swan Queen.
+  id: s_5
+  key_delta: Nina confirms that her previous night's events involving Lily were hallucinations,
+    intensifying her mental instability.
+  trigger_event: Nina confronts Lily about not waking her; Lily reveals she spent
+    the night elsewhere, making Nina realize her night was hallucinated.
+- description: Nina’s hallucinations intensify, involving visions of Thomas and Lily
+    having sex and Beth self-harming in the hospital.
+  id: s_6
+  key_delta: Nina’s erratic and unstable mental state causes concern for those around
+    her, especially Erica.
+  trigger_event: Nina has a violent argument with her mother and subsequently passes
+    out.
+- description: Erica tries to prevent Nina from performing on opening night due to
+    her condition, leading to conflict.
+  id: s_7
+  key_delta: Nina asserts control over her career, insisting on performing despite
+    concerns and the understudy being set to replace her.
+  trigger_event: Nina forcibly leaves the apartment against her mother’s wishes.
+- description: On opening night, Nina begins performing as the White Swan. The first
+    act proceeds well until she is distracted by hallucinations during a lift, causing
+    a fall.
+  id: s_8
+  key_delta: Nina’s growing paranoia culminates in a confrontation with Lily, blurring
+    the lines between reality and imagination.
+  trigger_event: Nina returns to her dressing room to find Lily there, who announces
+    she will play the Black Swan.
+- description: Nina shoves Lily into a mirror, shattering it, and stabs her rival,
+    who transforms back into Lily.
+  id: s_9
+  key_delta: Nina kills the hallucinated double of Lily and achieves a dramatic transformation
+    into the Black Swan onstage.
+  trigger_event: Nina hides the body and returns to the stage, performing with unprecedented
+    passion and sensuality.
+- description: After her stunning performance, Nina is congratulated backstage, kisses
+    Thomas, and then returns to the dressing room where Lily appears again, revealing
+    the fight was imagined.
+  id: s_10
+  key_delta: Nina realizes the violent act was self-inflicted, confirming her unstable
+    mental state and the unreality of prior events.
+  trigger_event: Nina observes the shattered mirror and discovers she has stabbed
+    herself.
+- description: During the final act, Nina performs the White Swan’s death scene, falling
+    backward onto a hidden mattress as the audience applauds wildly.
+  id: s_11
+  key_delta: Nina completes her ultimate artistic transformation at the cost of grievous
+    physical injury, embodying the tragic culmination of her psychological and physical
+    journey.
+  trigger_event: Nina’s severe bleeding is noticed by Thomas and the cast as white
+    ceiling lights envelop her while she whispers 'It was perfect.'

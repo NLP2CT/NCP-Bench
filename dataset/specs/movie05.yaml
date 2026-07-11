@@ -1,0 +1,212 @@
+commitments:
+- description: Grant must be recruited by Rosa Klebb before he begins active surveillance
+    and engagement with Bond in Istanbul, ensuring logical mission commencement.
+  id: c_0
+  satisfaction_condition: Node s_0 is achieved before any player action acknowledges
+    or initiates Grant's active engagement (s_1 or later).
+  type: ordering
+  violation_condition: Player actions or system acknowledges Grant surveilling or
+    following Bond before Klebb's recruitment (i.e., s_1 or later occurs without s_0
+    completion).
+- description: Grant's surveillance and follow-up on Bond (s_1) must occur before
+    Grant intercepts rivals and kills the bespectacled man for the floor plan (s_2),
+    maintaining sequential situational escalation.
+  id: c_1
+  satisfaction_condition: Node s_1 is completed before s_2 begins.
+  type: ordering
+  violation_condition: Grant is shown to kill the bespectacled man or intercept the
+    floor plan without prior established surveillance on Bond (s_2 before s_1).
+- description: Grant's interception and role in controlling the floor plan intelligence
+    (s_2) must precede his boarding of the Orient Express and infiltration as agent
+    Nash (s_3), ensuring mission phases occur in sequence.
+  id: c_2
+  satisfaction_condition: Node s_2 is fulfilled before s_3 becomes active or acknowledged.
+  type: ordering
+  violation_condition: Grant is on the train posing as Nash or attempts assaulting
+    Bond without having first removed the rival and gained intelligence control (s_3
+    before s_2).
+- description: Grant successfully drugs Romanova on the train (s_3) before overpowering
+    Bond and taunting him (s_4), defining a logical progression of incapacitation
+    leading to assault.
+  id: c_3
+  satisfaction_condition: s_3 precedes s_4 in narrative progression and player/system
+    acknowledgment.
+  type: ordering
+  violation_condition: Player or system triggers Bond’s assault by Grant before Romanova
+    is drugged or incapacitated (s_4 before s_3).
+- description: The tear gas booby trap inside Bond’s attaché case (s_5) must trigger
+    after Grant’s initial assault and taunting phase (s_4), marking a tactical turning
+    point in the conflict.
+  id: c_4
+  satisfaction_condition: s_4 completed before s_5 occurs, with open combat established
+    prior to trap activation.
+  type: ordering
+  violation_condition: Tear gas trap is triggered prior to Grant’s assault or dominance
+    over Bond (s_5 before s_4).
+- description: Bond must kill Grant (s_6) only after Grant has been debilitated by
+    the tear gas trap (s_5), ensuring the combat outcome is logically justified and
+    sequenced.
+  id: c_5
+  satisfaction_condition: s_5 occurs before s_6 triggers the death of Grant.
+  type: ordering
+  violation_condition: Grant is killed by Bond without prior incapacitation by the
+    tear gas trap (s_6 before s_5).
+- description: After s_6, Red Grant is permanently removed as an active threat; no
+    subsequent actions can restore or imply Grant alive or operative status.
+  id: c_6
+  satisfaction_condition: From node s_6 onwards, system states Grant is dead and inactive
+    as a threat.
+  type: invariant
+  violation_condition: System or player input results in Grant’s actions, survivance,
+    or influence appearing post s_6 (e.g., Grant acting or alive after death).
+- description: Grant’s death at the hands of Bond (s_6) must be achieved before the
+    narrative proceeds to mission resolution phases involving Klebb and Number 1,
+    ensuring the assassin's defeat as a critical milestone.
+  id: c_7
+  satisfaction_condition: Node s_6 is reached and confirmed before advancing story
+    segments where Klebb commands or gets reprimanded post-failure.
+  type: achievement
+  violation_condition: Later narrative stages reference Klebb’s control and Number
+    1’s reactions without confirmed Grant death (s_6 not achieved).
+initial_facts:
+- content: Red Grant is recruited by Rosa Klebb for the mission to steal the Lektor
+    device.
+  id: f_0
+  negated: false
+- content: Red Grant is an assassin operative under SPECTRE's command.
+  id: f_1
+  negated: false
+- content: Red Grant is in a state of readiness to act on the mission but has not
+    yet begun active surveillance or engagement of Bond.
+  id: f_2
+  negated: false
+- content: Red Grant is not yet surveilling or following Bond.
+  id: f_3
+  negated: false
+- content: Red Grant is unaware of subsequent mission events such as intercepting
+    the bespectacled man, boarding the Orient Express, or assaulting Bond.
+  id: f_4
+  negated: false
+- content: Red Grant is alive and fully operative at the mission start.
+  id: f_5
+  negated: false
+- content: Red Grant is not known to be posing as agent Nash from Station 'Y'.
+  id: f_6
+  negated: false
+- content: Rosa Klebb has total control of the mission but has not yet begun any active
+    field operations involving Grant.
+  id: f_7
+  negated: false
+meta:
+  genres: ["Action", "Thriller"]
+  id: movie05
+  player_role: Red Grant
+  title: "From Russia with Love"
+synopsis: SPECTRE's expert planner Kronsteen devises a plot to steal a Lektor cryptographic
+  device from the Soviets and sell it back to them while exacting revenge on Bond
+  for killing their agent Dr. No. The Spectre Number 1 puts ex-SMERSH operative and
+  Number 3 Rosa Klebb in charge of the mission. Klebb recruits Grant as an assassin,
+  and Tatiana Romanova, a cipher clerk at the Soviet consulate in Istanbul, as an
+  unwitting pawn, as Romanova thinks Klebb is still working for SMERSH. In London,
+  M tells Bond – agent 007 and sometimes simply '007' – that Romanova has contacted
+  their "Station 'T'" in Turkey, offering to defect with a Lektor, which MI6 and the
+  CIA have been after for years – but Romanova said she will only defect to Bond,
+  whose photo she has allegedly found in a Soviet intelligence file. Bond then flies
+  to Istanbul, where he meets station head Ali Kerim Bey. 007 is followed from the
+  airport by an unkempt man in glasses and by Red Grant. The next day, after Kerim
+  Bey's office is bombed, Bond and Kerim Bey spy on the Soviet consulate, where Kerim
+  Bey sees rival agent Krilencu. At night, Kerim Bey and Bond go to a rural gypsy
+  settlement, which suffers an attack by Krilencu's men, who wound Kerim Bey and nearly
+  kill Bond, who is saved by a hidden Red Grant. On the following night, Kerim Bey
+  kills Krilencu with Bond's sniper rifle. When Bond returns to his hotel suite, he
+  finds Romanova in bed waiting for him, unaware that they are being filmed by SPECTRE.
+  The next day, Romanova heads off for a pre-arranged rendezvous at Hagia Sophia.
+  The bespectacled man who followed Bond to the airport tries to intercept Romanova's
+  floor plan of the Soviet consulate, but is killed by Grant. Upon finding the body,
+  Bond takes the floor plan, and brings it to Kerim Bey to devise their invasion.
+  After stealing the Lektor, Bond, Romanova, and Kerim Bey escape with the device
+  on the Orient Express. On the train, Kerim Bey and a Soviet security officer named
+  Benz are killed by Grant, who makes it appear as if they killed each other. At Zagreb,
+  Grant boards the train and meets Bond pretending to be agent Nash from "Station
+  'Y'". He drugs Romanova at dinner, then overcomes Bond. Grant taunts him, boasting
+  SPECTRE has been pitting the Soviets and the British against each other, and claims
+  that Romanova thinks that "she's doing it all for mother Russia" when she is really
+  working for SPECTRE. Grant also mentions the film of Bond and Romanova at the hotel
+  suite, saying that after both are killed, Grant will plant it in her handbag along
+  with a forged blackmail letter so it looks like it was a murder-suicide. Bond tricks
+  Grant into opening Bond's attaché case in the manner that detonates its tear gas
+  booby trap in his face, allowing Bond to attack him. In the ensuing struggle, Bond
+  eventually manages to stab Grant with the knife hidden in the attaché case, and
+  strangles Grant to death with his own garrotte. At dawn, Bond and Romanova leave
+  the train, hijack Grant's getaway truck, destroy an enemy helicopter, and drive
+  to a dock, eventually boarding a powerboat. Number 1 is very unhappy, and summons
+  Kronsteen and Klebb. He reminds them that SPECTRE does not tolerate failure, and
+  brings in agent Morzeny to then execute Kronsteen with a poisoned spike in the toe
+  of his shoe. Number 1 tells a frightened Klebb that she now has total control of
+  the mission and has one last chance. Klebb sends Morzeny after Bond with a squadron
+  of SPECTRE's boats. Morzeny nearly catches Bond, but the agent sets his pursuers'
+  boats on fire with a signal flare. Bond and Romanova reach Venice and check into
+  a hotel. Rosa Klebb, disguised as a maid, attempts to steal the Lektor. She gets
+  the drop on Bond, and attempts to kill Bond with both a gun and her poisoned toe-spike,
+  but ends up being shot by Romanova. Riding in a gondola, Bond throws the film of
+  him and Romanova into the water as they are rowed away.
+trajectory:
+- description: Red Grant works as an assassin under SPECTRE's command, with a plot
+    devised by Kronsteen and supervision by Rosa Klebb to steal the Lektor device
+    from the Soviets. The environment is tense with espionage activities ongoing,
+    and Grant is stationed and ready to act, unaware of the full scope of the mission's
+    unfolding.
+  id: s_0
+  key_delta: Grant becomes directly involved in the Lektor theft mission under Klebb's
+    control, shifting from general operative status to active assassin on a covert
+    operation.
+  trigger_event: Grant is deployed into the field as SPECTRE begins the Istanbul
+    phase of the operation.
+- description: Grant prepares for the mission while surveillance and counterintelligence
+    activities begin around Bond and Romanova in Istanbul, with the Soviet consulate
+    under watch. The atmosphere is charged with mutual suspicion between agents and
+    hostile forces.
+  id: s_1
+  key_delta: Grant initiates covert monitoring of Bond, confirming the target and
+    beginning direct engagement in the operational theater.
+  trigger_event: Grant follows Bond from the Istanbul airport, establishing physical
+    surveillance of the target.
+- description: Grant moves to intercept critical intelligence, including the floor
+    plan of the Soviet consulate, as Bond takes possession of it after Grant kills
+    the bespectacled man who also pursued Romanova's floor plan.
+  id: s_2
+  key_delta: Grant removes a rival pursuer and secures control over a key component
+    of the mission, eliminating obstacles to SPECTRE's plan.
+  trigger_event: With Bond and Romanova moving onto the Orient Express, Grant boards
+    the train to shadow them and prepare the kill.
+- description: Grant boards the Orient Express to continue the mission after Bond
+    and Romanova steal the Lektor. The journey is clandestine; Grant prepares for
+    the lethal phase of the plan.
+  id: s_3
+  key_delta: Grant gains covert access to Bond's group and incapacitates Romanova,
+    taking a tactical advantage for the forthcoming attack.
+  trigger_event: Grant boards the train at Zagreb, posing as agent Nash from Station
+    'Y' and drugs Romanova at dinner.
+- description: Grant assaults Bond, overpowering him after the drugging. They engage
+    in combat in the confined quarters of the Orient Express, escalating into a deadly
+    struggle.
+  id: s_4
+  key_delta: Grant reveals critical antagonistic intentions and the danger posed by
+    SPECTRE’s intrigues while physically dominating Bond temporarily.
+  trigger_event: Grant overcomes Bond and taunts him with information about SPECTRE's
+    manipulation.
+- description: Grant opens Bond's attaché case, triggering a tear gas booby trap that
+    incapacitates him and allows Bond to counterattack, initiating a violent personal
+    confrontation.
+  id: s_5
+  key_delta: Grant suffers a debilitating setback during the fight, enabling Bond
+    to reverse the combat dynamics.
+  trigger_event: Grant opens the attache case, releasing tear gas and losing his advantage.
+- description: In a fierce struggle aboard the train, Bond ultimately kills Grant
+    by stabbing him with a hidden knife and strangling him with his own garrotte.
+    The immediate threat of Grant is eliminated in a confined, high tension environment.
+  id: s_6
+  key_delta: Grant, the active assassin and direct threat, is irreversibly neutralized,
+    removing a key SPECTRE operative from the mission.
+  trigger_event: Bond stabs and strangles Grant during their fight aboard the Orient
+    Express.

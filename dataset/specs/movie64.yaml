@@ -1,0 +1,311 @@
+commitments:
+- description: The mission assignment from Saito (s_0) must occur before entering
+    Fischer's subconscious dream (s_1), ensuring the narrative progresses logically
+    from preparation to execution.
+  id: c_0
+  satisfaction_condition: Node s_0 is completed before s_1 begins, with the team having
+    received and acknowledged Saito's assignment.
+  type: ordering
+  violation_condition: Player attempts to enter or act within Fischer’s subconscious
+    (s_1) before receiving the assignment (s_0).
+- description: While inside the dream layers (from s_1 through s_8), death of a dreamer
+    causes that dream layer to collapse unless it results in entering limbo if death
+    occurs at the deepest level or from sedation effects.
+  id: c_1
+  satisfaction_condition: During dream-layered infiltration phases (s_1–s_8), death
+    of non-Cobb dreamers triggers the collapse of that dream layer’s dreamscape; death
+    of key characters (Cobb or Saito) at deep layers leads to limbo (s_5 onwards)
+    without immediate collapse.
+  type: invariant
+  violation_condition: Player causes death of a dreamer within a dream layer without
+    triggering the corresponding dream collapse or fails to respond to collapse rules,
+    leading to inconsistent narrative states.
+- description: Extraction or inception efforts cannot succeed or advance before overcoming
+    subconscious security projections controlling the dream defenses at each layer
+    (starting s_2).
+  id: c_2
+  satisfaction_condition: Subconscious projections opposing the team’s mission have
+    been effectively neutralized or distracted before moving deeper or influencing
+    Fischer’s thoughts (achieved by s_3).
+  type: invariant
+  violation_condition: Player obtains key information or inception success without
+    engaging or handling subconscious projections, violating the logical defense mechanisms.
+- description: Ariadne’s architectural design and understanding (introduced by s_3)
+    must be established before Cobb and the team enter and manipulate limbo spaces
+    (from s_5 onward) to prevent unstructured dream chaos.
+  id: c_3
+  satisfaction_condition: Node s_3 (Ariadne joins and designs dreams) occurs before
+    s_5 (entry into limbo), implying knowledge of dream construction precedes entrance
+    to limbo.
+  type: ordering
+  violation_condition: Player enters limbo (s_5) without previously having Ariadne’s
+    involvement and dream architectural support (no completion of s_3).
+- description: The inception must be successfully implanted into Robert Fischer’s
+    subconscious before the team begins synchronized kicks to awaken (node s_7), defining
+    mission success milestone.
+  id: c_4
+  satisfaction_condition: Fischer fully accepts the planted idea in the safe room
+    during s_7, prior to team members initiating synchronized kicks back to reality.
+  type: achievement
+  violation_condition: Player attempts to exit or wake from dream layers (initiate
+    kicks) before the inception is accepted by Fischer, or Fischer rejects the idea.
+- description: The sequence of synchronized kicks from deepest dream layer to waking
+    reality must maintain strict timing coordination to prevent dream collapse or
+    becoming trapped in limbo (s_6 to s_9).
+  id: c_5
+  satisfaction_condition: All team members (except Cobb and Saito initially) successfully
+    execute their respective kicks in proper order and timing resulting in layer-by-layer
+    awakening (from s_6 through s_9).
+  type: invariant
+  violation_condition: Player desynchronizes or mistimes kicks causing premature dream
+    collapse or failure to ascend dream layers, leading to logical narrative deadlock.
+- description: Cobb’s cathartic confession and acceptance of responsibility for Mal’s
+    death (s_6) must occur before he chooses to leave limbo and complete the mission
+    (s_8), ensuring proper psychological resolution.
+  id: c_6
+  satisfaction_condition: Node s_6 is fully completed, with Cobb confronting Mal’s
+    projection and confessing, before node s_8 (awakening from limbo) is triggered.
+  type: ordering
+  violation_condition: Player attempts to trigger awakening from limbo or mission
+    completion (s_8) without Cobb’s confession and emotional resolution (s_6).
+- description: Cobb must return to outer-world reality and reunite with his children
+    (s_9) as the final narrative milestone, after passing through customs following
+    successful inception and awakening.
+  id: c_7
+  satisfaction_condition: Node s_9 occurs upon airplane landing, Cobb’s clearance
+    through customs, and reunion with children, marking mission closure.
+  type: achievement
+  violation_condition: Player fails to trigger return to reality and Cobb’s reunion
+    after mission completion, causing the narrative to remain in dream or limbo indefinitely.
+- description: Cobb’s totem behavior remains a reliable indicator of being in dream
+    or reality from s_0 through s_9; top spinning forever only occurs inside dreams,
+    spinning top falling occurs only in reality.
+  id: c_8
+  satisfaction_condition: The spinning top perpetually spins during all dream layers
+    and stops spinning (falls over) upon waking in reality (noted by interaction events
+    across s_0–s_9).
+  type: invariant
+  violation_condition: Player observes spinning top behavior inconsistent with the
+    dream or reality status, such as top falling in dream or spinning infinitely in
+    reality, violating internal logic.
+initial_facts:
+- content: Dominick Cobb and Arthur are in a modest hotel room at the start of the
+    mission.
+  id: f_0
+  negated: false
+- content: Dominick Cobb holds his spinning top totem.
+  id: f_1
+  negated: false
+- content: The experimental military-developed dream machine is present on the table.
+  id: f_2
+  negated: false
+- content: Dominick Cobb and Arthur have not yet entered Fischer's subconscious dream.
+  id: f_3
+  negated: false
+- content: Dominick Cobb and Arthur have not yet received Saito's assignment to perform
+    inception on Robert Fischer.
+  id: f_4
+  negated: false
+- content: Dominick Cobb is aware of the mission objective to perform corporate
+    espionage using dream infiltration technology.
+  id: f_5
+  negated: false
+- content: Dominick Cobb knows that each team member carries a personalized totem
+    to identify dream state versus reality.
+  id: f_6
+  negated: false
+- content: Dominick Cobb's totem is a spinning top that spins perpetually in dream
+    state.
+  id: f_7
+  negated: false
+- content: Dominick Cobb is not aware of any inception plan or the involvement of
+    Robert Fischer at this time.
+  id: f_8
+  negated: false
+- content: Dominick Cobb has no knowledge of Ariadne, Eames, or Yusuf, nor is he
+    aware that Mal's projection will interfere with the upcoming mission.
+  id: f_9
+  negated: false
+- content: Dominick Cobb has not confessed or resolved any psychological conflicts
+    related to Mal.
+  id: f_10
+  negated: false
+- content: Dominick Cobb has not yet begun executing any synchronized kicks or dream
+    layer transitions.
+  id: f_11
+  negated: false
+- content: Dominick Cobb is legally barred from entering the U.S., pending resolution
+    of a murder charge.
+  id: f_12
+  negated: false
+- content: Dominick Cobb is not aware whether Saito will accompany the mission.
+  id: f_13
+  negated: false
+meta:
+  genres: ["Sci-Fi", "Thriller"]
+  id: movie64
+  player_role: Cobb
+  title: "Inception"
+synopsis: Former dream architect Dominick "Dom" Cobb and business partner Arthur perform
+  corporate espionage by using an experimental military-developed machine to infiltrate
+  the subconscious of their targets and extract information while dreaming, their
+  latest target being powerful Japanese businessman Saito. Tiered dream within a dream
+  strategies are used and dreamers awaken by a sudden kick or by dying in the dream.
+  However, if the dreamer is the one who dies, the dream "collapses". Each extractor
+  carries a totem, a personalized small object whose behavior is only predictable
+  to its owner, that serves the purpose of identifying dream-state or reality. Cobb's
+  totem is a spinning top that perpetually spins in the dream state. The extraction
+  fails due to Mallorie "Mal" Cobb, Cobb's deceased wife, whose memory projection
+  sabotages the mission. Saito later reveals, after Cobb's and Arthur's associate
+  sells them out, that he was in fact auditioning the team to perform the difficult
+  act of inception——implanting an idea or thought into a person's subconscious while
+  they are asleep. Saito wishes to break up the energy conglomerate of his ailing
+  competitor Maurice Fischer, by planting this idea in his son and heir Robert Fischer
+  to disintegrate his father's company. Should Cobb succeed, Saito would use his influence
+  to clear a murder charge against him, so he can return to the U.S. and his children.
+  Cobb accepts the offer and assembles his team——Eames, a conman and identity forger;
+  Yusuf, a chemist who concocts the powerful sedative for a stable dream within a
+  dream strategy; Ariadne, a young architecture student tasked with designing the
+  labyrinth of the dream landscapes; and Arthur. Saito accompanies so that he knows
+  whether or not Cobb and his team succeeded in their mission. When the elder Fischer
+  dies in Sydney and his body is flown back to Los Angeles, the team share the flight
+  with Robert Fischer and Cobb sedates him, bringing him into the shared dream. At
+  each stage, the member of the team generating the dream stays behind to initiate
+  the kick, while the other members sleep within the dream to travel a level deeper.
+  In the first level, Yusuf's rainy downtown dream, the team abducts Fischer. However
+  Fischer's antibody-like trained subconscious projections attack and severely wound
+  Saito. Eames temporarily takes the appearance of Fischer's godfather, Peter Browning,
+  to suggest Fischer reconsider his father's will. Yusuf drives the team in a van
+  as they are sedated into Arthur's dream, a hotel, where the team recruit Fischer,
+  convincing him his kidnapping was orchestrated by Browning. In the third dream level,
+  a snowy mountain fortress dreamed by Eames, Fischer is told they are in Browning's
+  subconscious, but they are, in fact, really going deeper into Fischer's. Yusuf,
+  under assault by trained projections, initiates his kick too soon by driving off
+  a bridge, sending Arthur's dream world into zero-gravity and causing an avalanche
+  in Eames' dream. Arthur is forced to improvise a new kick using an elevator that
+  will be synchronized with the van hitting the water, while the team in Eames' dream
+  races to finish the job before the new round of kicks. Unbeknownst to the rest of
+  the team, due to the effects of heavy sedation and multi-layered dreaming, death
+  during this mission will result in entering Limbo, unconstructed dream space where
+  the dreamer could be trapped indefinitely. Elapsed time in each dream level is,
+  on average, roughly twenty times greater than in the level above it; in Limbo, the
+  deepest level of all, 24 hours of outer-world time would be experienced as about
+  half a century there. Cobb reveals to Ariadne that he spent "50 years" with Mal
+  in Limbo constructing a world out of their shared memories whilst seemingly growing
+  old together. After waking back into our outermost world, however, Mal remained
+  convinced she was still dreaming and committed suicide, trying to persuade Cobb
+  to do so by retroactively incriminating him in her death. He subsequently fled the
+  U.S. and left his children behind, ostensibly in the care of his father-in-law.
+  Saito finally succumbs to his wounds, and Cobb's projection of Mal sabotages the
+  plan by killing Fischer, sending them both into limbo. Cobb and Ariadne enter limbo
+  to find Fischer and Saito, while Eames remains on his dream level to set up a kick
+  by rigging the fortress with explosives. Cobb confronts his projection of Mal, who
+  tries to convince him to stay in limbo. Cobb refuses and confesses that he was responsible
+  for Mal's suicide——having convinced her to leave limbo by using inception to plant
+  the idea in her mind that the world they had been living in for 50 years was not
+  real, and hence the need to kill themselves in order to return to the real world,
+  once back in the real world she continued to believe dying would wake her. Mal attacks
+  Cobb but Ariadne shoots her. Through his confession, Cobb attains catharsis and
+  chooses to remain in limbo to search for Saito. Ariadne kicks Fischer off a balcony,
+  bringing him back up to the mountain fortress, where he enters a safe room to discover
+  and accept the planted idea——that his father wishes him to be his own man and, accordingly,
+  that splitting up the conglomerate might not be such a radical notion after all.
+  All of the team members except Cobb and Saito ride the synchronized kicks back up
+  to reality——Ariadne jumps off a balcony in limbo, Eames detonates the explosives
+  in the fortress, Arthur blasts an elevator containing the team's sleeping bodies
+  up an elevator shaft, and the van in Yusuf's dream hits the water. Saito, who is
+  slowly dying on each level from the initial gun-shot wound, enters Limbo. Cobb eventually
+  finds an aged Saito and the two remember their arrangement, presumably killing themselves
+  and awakening to outer-world reality on the airplane. Saito honors the arrangement
+  and Cobb passes through U.S. customs once the plane lands in Los Angeles. Just before
+  reuniting with his children, Cobb tests reality with his spinning top, but he turns
+  away to greet his children before observing the results. As he plays with his children
+  the camera pans to the spinning top for the final shot, at which point the film
+  abruptly ends.
+trajectory:
+- description: Dominick Cobb and Arthur sit in a modest hotel room discussing a corporate
+    espionage job; an experimental military-developed dream machine lies on the table,
+    and Cobb holds his spinning top totem. The atmosphere is tense with anticipation,
+    and the team prepares to infiltrate Fischer's subconscious to perform inception.
+  id: s_0
+  key_delta: The team's mission to perform a corporate espionage inception using
+    dream infiltration technology is established, along with introduction of key equipment
+    (dream machine) and totems.
+  trigger_event: Cobb and Arthur receive Saito's assignment to perform inception on Robert Fischer.
+- description: Cobb and Arthur enter Fischer's subconscious using the dream machine;
+    inside the first dream layer, they attempt inception amidst a rainy downtown
+    setting, creating a palpable sense of urgency and danger.
+  id: s_1
+  key_delta: Initiation of the layered dream infiltration with Yusuf's dream as the
+    first level; inception attempt begins in the subconscious environment.
+  trigger_event: Fischer's armed subconscious projections attack the team inside the
+    first dream layer, forcing the operation into crisis.
+- description: Within the first dream level, the team is attacked by Fischer's subconscious
+    projections, severely wounding Saito; Eames impersonates Peter Browning to influence
+    Fischer's thoughts in the dream.
+  id: s_2
+  key_delta: Extraction is impeded by defensive subconscious projections; introduction
+    of identity forging within the dream to manipulate Fischer's perception.
+  trigger_event: Subconscious security projections assault the team during the initial
+    extraction attempt.
+- description: The team descends into Arthur's dream level, a hotel environment designed
+    by Ariadne; Fischer is convinced his kidnapping was orchestrated by Browning,
+    creating a new psychological scenario within the dream.
+  id: s_3
+  key_delta: Progression deeper into the dream layers; recruitment and manipulation
+    of Fischer begins; Ariadne’s architectural designs shape the dream space.
+  trigger_event: The team initiates sedation and connects to the second dream level
+    following Yusuf's dream kick.
+- description: Team transitions into Eames’ snowy mountain fortress dream level; tension
+    rises as they present themselves as invading Fischer’s subconscious to complete
+    the inception, with precarious environmental controls and zero gravity incidents.
+  id: s_4
+  key_delta: Unplanned triggering of kicks creates instability in adjacent dreams;
+    team must improvise new kick synchronization; the dreamscape environments become
+    hostile and unstable.
+  trigger_event: Yusuf prematurely initiates the kick by driving off a bridge, triggering
+    a zero-gravity event in Arthur’s hotel dream and an avalanche in the mountain
+    fortress dream.
+- description: In limbo, the deepest dream level, Cobb confronts projections of his
+    deceased wife Mal amid a vast, constructed memory world; Ariadne accompanies him,
+    and the atmosphere is surreal and emotionally charged.
+  id: s_5
+  key_delta: Exposure to unconstructed dream space where time is vastly dilated; Cobb
+    reveals backstory relating to Mal and his psychological burden.
+  trigger_event: Cobb and Ariadne enter limbo after both Fischer and Saito die within
+    the dream layers and collapse the current dream levels.
+- description: Cobb confronts Mal's projection who attempts to persuade him to remain
+    in limbo; Ariadne shoots Mal to protect Cobb. Outside of limbo, Eames sets explosives
+    to initiate the mountain fortress kick, while other team members prepare synchronized
+    kicks on their respective levels.
+  id: s_6
+  key_delta: Resolution of Cobb’s internal conflict with Mal’s projection; execution
+    of coordinated kicks required to exit layered dream states.
+  trigger_event: Mal attacks Cobb in limbo, leading Ariadne to shoot her; team members
+    execute synchronized kicks in their dreams.
+- description: Robert Fischer accepts the implanted idea in the safe room of the mountain
+    fortress dream; team members except Cobb and Saito begin their return ascent through
+    synchronized kicks across dream levels leading back to reality.
+  id: s_7
+  key_delta: Successful completion of inception as Fischer adopts the implanted idea;
+    the majority of the team starts awakening through synchronized kicks.
+  trigger_event: Fischer is kicked off a balcony by Ariadne, triggering the return
+    ascent from the deepest dream layers to the waking world.
+- description: Saito, seriously wounded, enters limbo where he reunites with Cobb;
+    after recalling their agreement, both presumably wake up on the airplane from
+    limbo with the mission complete. The environment aboard the airplane is calm but
+    tense with anticipation.
+  id: s_8
+  key_delta: Both Cobb and Saito escape limbo and return to waking reality, indicating
+    the completion of inception and all dream layers.
+  trigger_event: Cobb finds the aged Saito in limbo and they both 'die' there to awaken
+    in reality.
+- description: Cobb arrives in Los Angeles and reunites with his children; in a quiet
+    domestic scene, he spins his totem on a table but looks away before seeing its
+    outcome as he embraces his children.
+  id: s_9
+  key_delta: Cobb is legally cleared to return to the US; the narrative closes on
+    an ambiguous note with the spinning top left unresolved, signaling the story's
+    end.
+  trigger_event: The airplane lands and Cobb passes through customs, returning home
+    to his family.

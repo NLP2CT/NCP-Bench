@@ -1,0 +1,336 @@
+commitments:
+- description: The crew cannot become aware of or investigate the unknown transmission
+    before the ship receives the signal at s_0.
+  id: c_0
+  satisfaction_condition: Player acknowledges and reacts to the transmission only
+    after node s_0 is reached.
+  type: ordering
+  violation_condition: Player attempts to investigate or take action on the transmission
+    before s_0, implying knowledge of it too early.
+- description: The crew must detach the Nostromo from the refinery and land on the
+    planetoid before exploring the derelict alien spacecraft at s_2.
+  id: c_1
+  satisfaction_condition: Exploration of the derelict ship only occurs after successful
+    detachment and landing at s_1.
+  type: ordering
+  violation_condition: Player attempts to access the alien ship or its contents without
+    prior detachment and landing in s_1.
+- description: Before the crew discovers the derelict spacecraft and signal origin
+    at s_2, it remains unknown and unexplored.
+  id: c_2
+  satisfaction_condition: No narrative confirmation or player access to alien ship
+    or signal content before s_2.
+  type: invariant
+  violation_condition: Allowing knowledge or interaction with alien ship or signal
+    prior to s_2 constitutes logical violation.
+- description: Quarantine protocol forbids allowing Kane or infected personnel inside
+    Nostromo until explicitly overridden by Ash at s_4.
+  id: c_3
+  satisfaction_condition: Kane is only brought inside the ship against quarantine
+    orders at s_4, after the facehugger attaches.
+  type: invariant
+  violation_condition: Kane or any infected crew member is permitted inside the ship
+    before s_4 or outside of Ash's override.
+- description: The alien organism must initially infect Kane by attaching to his face
+    to trigger the ensuing threat dynamic.
+  id: c_4
+  satisfaction_condition: Player encounters facehugger attachment on Kane as event
+    in s_3.
+  type: achievement
+  violation_condition: Alien infection occurs bypassing the facehugger attachment
+    event or is skipped entirely.
+- description: The alien creature must burst from Kane’s chest after the apparent
+    neutralization of the facehugger to progress the threat into the ship.
+  id: c_5
+  satisfaction_condition: Event of alien bursting from Kane’s chest occurs at s_5.
+  type: achievement
+  violation_condition: Alien emerges without prior facehugger event or failure to
+    trigger this milestone results in story deadlock.
+- description: The revelation of Ash’s secret corporate orders and android identity
+    must occur only after the Alien has emerged and killed at least one crew member
+    (i.e., after or at s_8).
+  id: c_6
+  satisfaction_condition: Ash’s true nature and orders are revealed at s_8-s_9, following
+    Alien attacks s_5 to s_7.
+  type: ordering
+  violation_condition: Ash’s betrayal is exposed before the Alien threat is detected
+    or before any crew deaths caused by the alien.
+- description: Ripley remains a living crew member only while other crew members such
+    as Parker and Lambert are alive during preparation to arm self-destruct, i.e.,
+    before s_10.
+  id: c_7
+  satisfaction_condition: Parker and Lambert alive during self-destruct planning in
+    s_10; Ripley remains alive through their deaths progressively.
+  type: invariant
+  violation_condition: Ripley is killed or removed before or during events of s_10
+    leading to untenable narrative continuation.
+- description: Ripley must initiate the Nostromo's self-destruct sequence as a critical
+    turning point before final escape.
+  id: c_8
+  satisfaction_condition: Self-destruct sequence is started by Ripley at s_11.
+  type: achievement
+  violation_condition: Escape occurs without initiation of self-destruct sequence,
+    or player disables/removes this milestone.
+- description: Ripley’s final confrontation and expulsion of the Alien from the shuttle
+    must occur only after the shuttle launch and detection of the Alien aboard, ensuring
+    escalating threat progression.
+  id: c_9
+  satisfaction_condition: Ripley encounters Alien aboard shuttle at s_12 and proceeds
+    through decompression and ejection at s_13 and s_14.
+  type: ordering
+  violation_condition: Player confronts or expels Alien before shuttle launch or prior
+    to Alien boarding shuttle detected.
+- description: Ripley must successfully secure herself and the cat in stasis for the
+    return trip, marking narrative resolution and survival.
+  id: c_10
+  satisfaction_condition: Ripley and cat enter stasis in s_15 after Alien is expelled.
+  type: achievement
+  violation_condition: Narrative ends without Ripley entering stasis or with Alien
+    threat unresolved aboard shuttle.
+initial_facts:
+- content: The commercial towing spaceship Nostromo is traveling back from Thedus
+    to Earth.
+  id: f_0
+  negated: false
+- content: Nostromo is hauling a refinery and twenty million tons of mineral ore.
+  id: f_1
+  negated: false
+- content: The seven-member crew of Nostromo—Dallas, Kane, Lambert, Ripley, Ash, Brett,
+    and Parker—are in stasis.
+  id: f_2
+  negated: false
+- content: The ship's atmosphere is quiet and stable.
+  id: f_3
+  negated: false
+- content: The ship Nostromo is automated and not under direct manual control from
+    the crew.
+  id: f_4
+  negated: false
+- content: The crew members are unconscious and unaware of any transmissions.
+  id: f_5
+  negated: false
+- content: The crew has no knowledge about any unknown transmission or signal before
+    receipt at s_0.
+  id: f_6
+  negated: false
+- content: The Nostromo is currently attached to the refinery.
+  id: f_7
+  negated: false
+- content: Nostromo has not detached from the refinery.
+  id: f_8
+  negated: false
+- content: The derelict alien spacecraft and any associated signals are unknown and
+    unexplored by the crew at t=0.
+  id: f_9
+  negated: false
+- content: The quarantine protocol forbidding infected personnel inside the ship is
+    in place and has not been overridden.
+  id: f_10
+  negated: false
+- content: No crew member, including Kane, is infected by any alien organism at t=0.
+  id: f_11
+  negated: false
+- content: Ash’s true nature as an android and any secret corporate orders are unknown
+    to the crew.
+  id: f_12
+  negated: false
+- content: There have been no deaths or attacks by any alien creature onboard or nearby
+    the Nostromo.
+  id: f_13
+  negated: false
+- content: Ripley is alive and in stasis with the rest of the crew.
+  id: f_14
+  negated: false
+- content: Parker and Lambert are alive and in stasis.
+  id: f_15
+  negated: false
+- content: The Nostromo’s self-destruct sequence has not been initiated.
+  id: f_16
+  negated: false
+- content: The shuttle is attached to the Nostromo and has not been launched.
+  id: f_17
+  negated: false
+- content: The alien lifeform has not emerged, attacked, or boarded the ship or shuttle.
+  id: f_18
+  negated: false
+- content: Ripley has not secured herself or the cat in stasis for return trip; all
+    remain in stasis within the ship.
+  id: f_19
+  negated: false
+meta:
+  genres: ["Sci-Fi", "Horror"]
+  id: movie12
+  player_role: Ellen Ripley
+  title: "Alien"
+synopsis: The commercial towing spaceship Nostromo is on a return trip from Thedus
+  to Earth, hauling a refinery and twenty million tons of mineral ore, and carrying
+  its seven-member crew in stasis. Upon receiving a transmission of unknown origin
+  from a nearby planetoid, the ship's computer awakens the crew. Acting on standing
+  orders from their corporate employers, the crew detaches the Nostromo from the refinery
+  and lands on the planetoid, resulting in some damage to the ship. Captain Dallas
+  , Executive Officer Kane , and Navigator Lambert  set out to investigate the signal's
+  source while Warrant Officer Ripley , Science Officer Ash , and Engineers Brett  and
+  Parker  stay behind to monitor their progress and make repairs. Dallas, Kane, and
+  Lambert discover that the signal is coming from a derelict alien spacecraft. Inside
+  it they find the remains of a large alien creature whose ribs appear to have been
+  forced outward from the inside. Meanwhile, the Nostromo's computer partially deciphers
+  the signal transmission, which Ripley determines to be some type of warning. Kane
+  discovers a vast chamber containing numerous eggs, one of which releases a creature
+  that attaches itself to his face. Dallas and Lambert carry the unconscious Kane
+  back to the Nostromo, where Ash allows them inside against Ripley's orders to follow
+  the ship's quarantine protocol. They unsuccessfully attempt to remove the creature
+  from Kane's face, discovering that its blood is an extremely corrosive acid. Eventually
+  the creature detaches on its own and is found dead. With the ship repaired, the
+  crew resume their trip back to Earth. Kane awakens seemingly unharmed, but during
+  a meal before re-entering stasis he begins to choke and convulse until an alien
+  creature bursts from his chest, killing him and escaping into the ship. Lacking
+  conventional weapons, the crew attempt to locate and capture the creature by fashioning
+  motion trackers, electric prods, and flamethrowers. Brett follows the crew's cat
+  into a large room where the now-fully-grown Alien attacks him and disappears with
+  his body into the ship's air shafts. Dallas enters the shafts intending to force
+  the Alien into an airlock where it can be expelled into space, but it ambushes him.
+  Lambert implores the remaining crew members to escape in the ship's shuttle, but
+  Ripley, now in command, explains that the shuttle will not support four people.
+  Accessing the ship's computer, Ripley discovers that Ash has been ordered to return
+  the Alien to the Nostromo's corporate employers even at the expense of the crew's
+  lives. Ash attacks her, but Parker intervenes and decapitates him with a blow from
+  a fire extinguisher, revealing Ash to be an android. Before Parker incinerates him,
+  Ash predicts that the other crew members will not survive. The remaining three crew
+  members plan to arm the Nostromo's self-destruct mechanism and escape in the shuttle,
+  but Parker and Lambert are killed by the Alien while gathering the necessary supplies.
+  Ripley initiates the self-destruct sequence and heads for the shuttle with the cat,
+  but finds the Alien blocking her way. She unsuccessfully attempts to abort the self-destruct,
+  then returns to find the Alien gone and narrowly escapes in the shuttle as the Nostromo
+  explodes. As she prepares to enter stasis, Ripley discovers that the Alien is aboard
+  the shuttle. She puts on a space suit and opens the hatch, causing explosive decompression
+  which forces the Alien to the open doorway. She shoots it with a grappling gun which
+  propels it out, but the gun is yanked from her hands and catches in the closing
+  door, tethering the Alien to the shuttle. It attempts to crawl into one of the engines,
+  but Ripley activates them and blasts the Alien into space. She then puts herself
+  and the cat into stasis for the return trip to Earth.
+trajectory:
+- description: The commercial towing spaceship Nostromo is traveling back from Thedus
+    to Earth with seven crew members in stasis. The ship is hauling a refinery and
+    twenty million tons of mineral ore. The onboard atmosphere is quiet and stable,
+    with the crew unconscious and the ship automated.
+  id: s_0
+  key_delta: The crew is awakened from stasis by the ship's computer in response to
+    the received transmission, introducing an external unknown signal into the mission.
+  trigger_event: The ship receives a transmission of unknown origin from a nearby
+    planetoid.
+- description: The seven crew members are awake and aboard the Nostromo, which is
+    now detached from the refinery. The ship has sustained some damage from the detachment.
+    The crew is preparing to investigate the source of the transmission on a nearby
+    planetoid.
+  id: s_1
+  key_delta: The Nostromo is landed on the planetoid, and the team to investigate
+    is formed, leaving Ripley, Ash, Brett, and Parker aboard to monitor and repair.
+  trigger_event: Captain Dallas, Executive Officer Kane, and Navigator Lambert prepare
+    to land on the planetoid to investigate the source of the signal.
+- description: Dallas, Kane, and Lambert have landed on the planetoid and are exploring
+    a derelict alien spacecraft. The atmosphere inside is eerie, with alien remains
+    present. Meanwhile, the rest of the crew remain aboard the Nostromo performing
+    repairs.
+  id: s_2
+  key_delta: The team identifies the signal origin as a warning emanating from a derelict
+    alien vessel containing the remains of a large alien creature.
+  trigger_event: The investigation team discovers the source of the signal is emanating
+    from inside the derelict alien spacecraft.
+- description: Kane discovers a vast chamber inside the alien ship containing numerous
+    eggs. The environment is alien and foreboding. Ripley and the rest of the crew
+    aboard Nostromo have partially deciphered the signal as a warning.
+  id: s_3
+  key_delta: Kane is infected by an unknown alien organism that latches onto his face,
+    initiating the alien threat onboard.
+  trigger_event: One of the eggs releases a creature that attaches itself to Kane’s
+    face.
+- description: Kane is unconscious aboard Nostromo with the alien creature attached
+    to his face. Ripley orders quarantine protocols which are overridden by Ash who
+    allows the team to bring Kane inside. The atmosphere is tense and cautious within
+    the ship.
+  id: s_4
+  key_delta: The immediate external physical threat seems resolved as the facehugger
+    detaches and dies, and Kane appears unharmed after removal of the alien parasite.
+  trigger_event: The alien creature detaches itself from Kane’s face and is found
+    dead, seemingly neutralized.
+- description: The crew have repaired the Nostromo and resumed their journey back
+    to Earth. Kane is awake and eating with the others before returning to stasis.
+    The atmosphere is calm but cautiously optimistic.
+  id: s_5
+  key_delta: A new and lethal alien creature is introduced, having emerged from inside
+    Kane, which immediately kills him and escapes into the ship.
+  trigger_event: During the meal, Kane begins convulsing and an alien creature bursts
+    violently from his chest.
+- description: The crew is on high alert inside Nostromo, attempting to detect and
+    capture the alien creature. They improvise weapons including motion trackers,
+    electric prods, and flamethrowers. The environment is tense and dangerous.
+  id: s_6
+  key_delta: The alien has killed a crew member and remains at large inside the ship,
+    escalating the lethal threat level.
+  trigger_event: Brett follows the ship's cat into a large room where the fully-grown
+    Alien attacks and kills him, then disappears into the air shafts.
+- description: Dallas enters the air shafts intending to trap and expel the Alien
+    into space. The remaining crew - Ripley, Ash, and Parker - remain on the Nostromo.
+    The environment is claustrophobic and fraught with danger.
+  id: s_7
+  key_delta: Another crew member is incapacitated by the Alien, heightening the crew’s
+    peril and diminishing their ability to confront the threat.
+  trigger_event: Dallas is ambushed and attacked by the Alien inside the air shafts.
+- description: Ripley, Ash, and Parker discuss escape options. Ripley learns the ship’s
+    shuttle cannot support all survivors. The ship’s computer is accessed, and Ash’s
+    secret orders are revealed. Suspicion grows amid tension.
+  id: s_8
+  key_delta: Ash’s true objective is revealed, exposing internal corporate betrayal
+    and premeditated risk to the crew.
+  trigger_event: Ripley discovers Ash’s directive to bring the Alien back to the company
+    at the expense of the crew’s lives.
+- description: Ash attacks Ripley but is stopped and decapitated by Parker with a
+    fire extinguisher, revealing him as an android. The remaining crew are left grappling
+    with this revelation amid the deadly threat.
+  id: s_9
+  key_delta: Ash is revealed and neutralized as an android carrying covert corporate
+    orders; trust within the crew is fractured.
+  trigger_event: Parker destroys Ash’s head, ending Ash’s attack.
+- description: Ripley, Parker, and Lambert plan to arm the Nostromo’s self-destruct
+    sequence and escape in the shuttle. The ship remains tense and dangerous. They
+    prepare to gather supplies.
+  id: s_10
+  key_delta: The alien kills two more crew members, leaving Ripley as the sole survivor,
+    increasing the stakes and urgency.
+  trigger_event: While gathering supplies, Parker and Lambert are killed by the Alien.
+- description: Ripley initiates the ship’s self-destruct sequence and makes a desperate
+    escape attempt to the shuttle with the cat. The environment is critical with countdown
+    alarms and imminent destruction.
+  id: s_11
+  key_delta: The alien confronts Ripley directly but vanishes, allowing her to proceed,
+    heightening the suspense and uncertainty.
+  trigger_event: The Alien blocks Ripley’s path; she attempts unsuccessfully to abort
+    the self-destruct and then finds the Alien gone.
+- description: Ripley escapes in the shuttle with the cat as Nostromo explodes. The
+    shuttle is quiet and isolated in space. Ripley prepares for stasis but senses
+    continued danger.
+  id: s_12
+  key_delta: The Alien survives the Nostromo’s destruction and is now aboard the shuttle,
+    renewing immediate danger.
+  trigger_event: Ripley discovers the Alien aboard the shuttle with her after explosion.
+- description: Ripley dons a space suit aboard the shuttle to confront the Alien.
+    The cockpit atmosphere is tense and contains the threat within tight quarters.
+  id: s_13
+  key_delta: Ripley uses decompression to maneuver the Alien near the exit, gaining
+    tactical advantage.
+  trigger_event: Ripley opens the hatch, causing explosive decompression that forces
+    the Alien toward the shuttle’s open doorway.
+- description: Outside the shuttle doorway, Ripley shoots the Alien with a grappling
+    gun which propels it out into space but the gun is caught in the door, tethering
+    the Alien to the ship.
+  id: s_14
+  key_delta: The Alien is forcibly expelled into open space, neutralizing the threat
+    outside the shuttle.
+  trigger_event: The Alien attempts to crawl into an engine but Ripley activates engines
+    and blasts the Alien into space.
+- description: Ripley and the cat settle inside the shuttle’s stasis chambers, the
+    ship en route back to Earth. The atmosphere is quiet and secure for the moment.
+  id: s_15
+  key_delta: The immediate threat is eliminated, and Ripley prepares for a safe return
+    journey in stasis.
+  trigger_event: Ripley secures herself and the cat into stasis for the return trip.

@@ -1,0 +1,345 @@
+commitments:
+- description: Ensure Mary Swanson is introduced via Lloyd's limo pickup before any
+    knowledge or action related to her or the briefcase occurs.
+  id: c_0
+  satisfaction_condition: Node s_0 (Lloyd picks up Mary) must occur before any player
+    or system acknowledgement of Mary or the briefcase.
+  type: ordering
+  violation_condition: Player attempts to act on or reference Mary or the briefcase
+    prior to completion of s_0.
+- description: Lloyd and Harry lose their jobs only after the respective failing actions
+    at the airport and dog grooming job; unemployment status remains true from s_2
+    onward until new employment or story end.
+  id: c_1
+  satisfaction_condition: After s_2, both Lloyd and Harry are unemployed and this
+    state remains until the story resolves or they seek new work.
+  type: invariant
+  violation_condition: Player circumvents or negates losing of either job before s_2,
+    or regains employment without narrative justification before story end.
+- description: The decision to move to Aspen (s_4) must logically follow the loss
+    of jobs and robbery (s_2 and s_3), preserving narrative causal progression.
+  id: c_2
+  satisfaction_condition: Nodes s_2 (both unemployed) and s_3 (robbery) occur before
+    s_4 (decision to leave Providence).
+  type: ordering
+  violation_condition: Player triggers decision to leave Providence before jobs are
+    lost and money is stolen.
+- description: By s_5, the kidnappers have identified the briefcase as ransom money
+    and retaliated against Harry and Lloyd, while Harry and Lloyd themselves remain
+    unaware of the briefcase's true contents until Aspen.
+  id: c_3
+  satisfaction_condition: After s_5, the kidnappers' retaliation and Petey's death
+    are established, but Harry and Lloyd do not discover the briefcase contains ransom
+    money until s_11.
+  type: invariant
+  violation_condition: Player causes Harry and Lloyd to discover the ransom money
+    before s_11, causes kidnappers' retaliation before s_5, or negates Petey's death
+    after s_5.
+- description: Travel encounters and related events occur in correct sequence (picking
+    up Mental and family at s_6, Mental's incapacitation and death at s_7, rest stop
+    chaos at s_8, navigation error at s_9 and transport trade at s_10).
+  id: c_4
+  satisfaction_condition: Series of nodes s_6 through s_10 occur strictly in ascending
+    order with no skips or reversals.
+  type: ordering
+  violation_condition: Player attempts to access later events (e.g., minibike trip)
+    without prior encounters or causes logical contradiction in event order.
+- description: Arrival in Aspen with ransom money and spending of it must occur (s_11)
+    before relational and social interactions with Mary (s_12 and beyond).
+  id: c_5
+  satisfaction_condition: Node s_11 is reached and ransom money is spent before Harry's
+    accidental charm and meeting Mary transitions the relationship status.
+  type: achievement
+  violation_condition: Player tries to initiate relationship developments or luxury
+    spending without the arrival and acquisition of ransom money.
+- description: Harry's accidental romantic involvement with Mary and Lloyd's jealousy
+    must remain logically consistent from s_12 through s_13, with Lloyd sabotaging
+    Harry's date.
+  id: c_6
+  satisfaction_condition: Harry's charming Mary and arranging a date without Lloyd's
+    knowledge is accepted as true during s_12 and s_13; Lloyd sabotages the date as
+    per s_13.
+  type: invariant
+  violation_condition: Player negates Harry's charm or date arrangement, or bypasses
+    Lloyd's sabotage causing a contradictory relationship state.
+- description: Nicholas's hostage taking and the subsequent events (s_14 and s_15)
+    must occur after expenditure of ransom money and interpersonal conflicts (s_11
+    to s_13).
+  id: c_7
+  satisfaction_condition: Order of nodes s_11 through s_15 is preserved, with hostage
+    taking and rescue following the lavish spending and interpersonal conflict.
+  type: ordering
+  violation_condition: Player jumps to hostage event before ransom money spending
+    or relationship events occur, or resolves hostage crisis prematurely.
+- description: Harry is apparently shot but regains consciousness in s_15 facilitating
+    Nicholas's capture and hostage rescue; this critical event must hold true when
+    s_15 triggers.
+  id: c_8
+  satisfaction_condition: At s_15, Harry's apparent death and revival are both consistently
+    established in narrative and player knowledge.
+  type: invariant
+  violation_condition: Player circumvents or contradicts Harry’s apparent shooting
+    or prevents his timely revival during s_15.
+- description: The FBI confiscates ransom money and Harry and Lloyd must lose their
+    lavish lifestyle by s_16; subsequent impoverished departure from Aspen is mandatory.
+  id: c_9
+  satisfaction_condition: After s_16, Harry and Lloyd no longer possess ransom money
+    or lavish assets and depart Aspen on foot.
+  type: invariant
+  violation_condition: Player retains or gains ransom money or lavish assets after
+    s_16, or avoids leaving Aspen on foot post-confiscation.
+- description: The encounter with Hawaiian Tropic models (s_17) and the missed opportunity
+    occurs strictly after the loss of wealth and departure on foot (s_16).
+  id: c_10
+  satisfaction_condition: Node s_17 occurs after s_16 with no bypassing or reordering.
+  type: ordering
+  violation_condition: Player encounters or capitalizes on models before losing money
+    or departing Aspen.
+- description: Harry and Lloyd remain best friends and optimistic throughout all story
+    progression nodes from start to end (s_0 to s_18).
+  id: c_11
+  satisfaction_condition: At any node between s_0 and s_18, Harry and Lloyd maintain
+    their friendship and good-natured spirit without betrayal or permanent schism.
+  type: invariant
+  violation_condition: Player triggers a permanent rupture or enmity between Harry
+    and Lloyd violating their core relationship.
+initial_facts:
+- content: Harry Dunne shares an apartment in Providence with his best friend Lloyd
+    Christmas at time t=0.
+  id: f_0
+  negated: false
+- content: Harry Dunne is employed as a dog groomer at time t=0.
+  id: f_1
+  negated: false
+- content: Lloyd Christmas is employed as a limo driver at time t=0.
+  id: f_2
+  negated: false
+- content: Harry Dunne and Lloyd Christmas live a simple, modest life with limited
+    means but maintain good-natured spirits at time t=0.
+  id: f_3
+  negated: false
+- content: Harry Dunne is not aware of Mary Swanson at time t=0.
+  id: f_4
+  negated: false
+- content: Harry Dunne is not aware of the existence or significance of the briefcase
+    that Mary Swanson will leave behind at the airport at time t=0.
+  id: f_5
+  negated: false
+- content: Harry Dunne has no knowledge of the kidnapping or ransom situation involving
+    Mary Swanson's husband at time t=0.
+  id: f_6
+  negated: false
+- content: Harry Dunne has no knowledge of later events including job losses, robbery,
+    decisions to move, or encounters on the road at time t=0.
+  id: f_7
+  negated: false
+- content: Harry Dunne is currently unaware of any interpersonal conflicts, relationship
+    dynamics involving Mary Swanson, or any hostage situations at time t=0.
+  id: f_8
+  negated: false
+- content: Harry Dunne is unaware of any incidents involving Mental, the family of
+    Hispanic travelers, or other travel-related mishaps at time t=0.
+  id: f_9
+  negated: false
+- content: Harry Dunne is unaware of any future loss of money or lavish lifestyle
+    changes related to ransom money at time t=0.
+  id: f_10
+  negated: false
+- content: Harry Dunne and Lloyd Christmas maintain a strong, good-natured friendship
+    at time t=0.
+  id: f_11
+  negated: false
+- content: Harry Dunne is located in Providence at time t=0.
+  id: f_12
+  negated: false
+meta:
+  genres: ["Comedy", "Adventure"]
+  id: movie29
+  player_role: Harry Dunne
+  title: "Dumb and Dumber"
+synopsis: Lloyd Christmas and Harry Dunne are two good natured, though incredibly
+  inept best friends and roommates who share an apartment in Providence. One day while
+  Lloyd is working as a limo driver, he picks up Mary Swanson who is on her way to
+  the airport. When inquired where she is going, she mentions she is flying to Aspen
+  and Lloyd immediately develops a crush on her. After dropping her off, he notices
+  her leaving a briefcase in the airport terminal and rushes to return it only to
+  fail and to lose his job in the process. Meanwhile, Harry, who is a dog groomer
+  loses his job when he feeds a caravan of animals junk food on their way to a Dog
+  Show. Later that night, after he is robbed of their food and remaining money by
+  a little old lady, Lloyd suggests they leave Providence and start a new life in
+  Aspen, while hesitant to the idea, Harry sees how deeply interested Lloyd is in
+  doing this and agrees. Unbeknownst to the pair, however, Mary Swanson's husband
+  had been kidnapped the suitcase Lloyd has contains ransom money, the kidnappers
+  receive word that Lloyd and Harry have the money and kill Harry's bird Petey in
+  retaliation. As they are leaving, Lloyd scores a little extra cash by selling some
+  of their things including Petey to a blind kid who is convinced that the dead bird
+  is very quiet, much to Harry's horror and amusement. Enroute to Aspen, Harry and
+  Lloyd pick up one of the kidnappers, Mental, posing as a hitchhiker as well as a
+  family of hispanic travelers who drive him crazy singing Mockingbird non-stop until
+  they arrive at a gas station. Learning Mental has a penchant for avoiding spicy
+  foods, Harry and Lloyd spike his food with hot peppers until he collapses from his
+  sensitivity, inadvertently giving him Rat Poison pills intended for them instead
+  of his heart medication and killing him. Later, Lloyd manages to trick a bullying
+  trucker into paying for their meals at a rest stop, and innocently allow a police
+  officer to drink urine from an open container of beer that Lloyd had to pee in when
+  Harry refused to stop. Lloyd accidentally gets turned on the incorrect route while
+  Harry is asleep, which infuriates him when they arrive in Nebraska instead of Colorado.
+  But Lloyd redeems himself by trading in Harry's van for a minibike which takes them
+  all the way to Aspen. Lloyd recognizes Mary in a newspaper promoting a fundraiser
+  dinner, and the two find the suitcase has a lot of money in it, and immediately
+  spend it lavishly. Renting a massive suite at the hotel, buying expensive cars and
+  clothes including a pair of candy-colored outfits to wear to the formal. Lloyd is
+  too nervous however to approach Mary and asks Harry to introduce them, but he unintentionally
+  charms Mary who mistakes Harry's stupidity for intentional humor and they arrange
+  a date to go skiing without Lloyd's knowledge. When Lloyd discovers that he's been
+  stood up and his best friend is dating Mary he sabotages Harry's dinner date with
+  her and goes in her place. When Nicholas, a family friend of the Swansons and secret
+  mastermind behind Bobby's kidnapping discovers Harry and Lloyd spent all of his
+  ransom money, he holds Lloyd and Mary hostage. Harry arrives and is apparently shot
+  dead by him, but as he is about to kill Lloyd, Harry regains consciousness and helps
+  send Nicholas into the hands of the authorities as part of a sting operation. Mary
+  and Bobby are reunited and they give Lloyd and Harry special thanks for helping
+  them. However, their lavish lifestyle is taken away from them, as Harry and Lloyd
+  had spent the FBI's money and they leave Aspen on foot. Eventually coming across
+  a bus load of Hawaiian Tropic bikini models looking for two towel boys to hire.
+  Oblivious to the possibilities, Harry and Lloyd direct them to the nearest town,
+  exclaiming how lucky two guys are going to be to have that opportunity as they continue
+  on toward the horizon.
+trajectory:
+- description: Harry Dunne shares an apartment in Providence with his best friend
+    Lloyd Christmas. Harry works as a dog groomer, and Lloyd works as a limo driver.
+    They live a simple, modest life with limited means but good natured spirits.
+  id: s_0
+  key_delta: Introduction of Mary Swanson into their environment and Lloyd's immediate
+    crush establishing a new personal interest.
+  trigger_event: Lloyd picks up Mary Swanson as a limo passenger heading to the airport.
+- description: Harry is at his dog grooming job managing a caravan of animals going
+    to a Dog Show. Lloyd has just dropped Mary at the airport and notices she left
+    a briefcase behind.
+  id: s_1
+  key_delta: Lloyd loses his job due to his failed attempt to return the briefcase;
+    Harry is still employed but close to trouble.
+  trigger_event: Lloyd attempts to return Mary's briefcase at the airport but fails
+    and loses his job.
+- description: Harry at his dog grooming job feeds the animals junk food and is about
+    to face consequences. Lloyd has lost his limo driver job and is at home with Harry.
+  id: s_2
+  key_delta: Both Harry and Lloyd are now unemployed, increasing the urgency of their
+    situation.
+  trigger_event: With both men now jobless, Harry and Lloyd return home to figure
+    out what to do next.
+- description: Harry and Lloyd are at home late at night, having lost their jobs and
+    with little money left. They are discussing their next steps.
+  id: s_3
+  key_delta: Harry and Lloyd are left with no money and food, heightening their desperation
+    and vulnerability.
+  trigger_event: A little old lady robs Harry and Lloyd of their food and remaining
+    money.
+- description: Harry and Lloyd are still at their apartment in Providence after being
+    robbed, feeling dejected but planning ahead.
+  id: s_4
+  key_delta: Decision made to leave Providence and head to Aspen, setting the direction
+    of their journey.
+  trigger_event: Lloyd suggests leaving Providence and moving to Aspen to start anew;
+    Harry agrees hesitantly.
+- description: Harry and Lloyd prepare to leave Providence while still unaware that
+    the briefcase contains ransom money tied to Mary's kidnapped husband.
+  id: s_5
+  key_delta: The kidnappers realize Harry and Lloyd have the ransom briefcase and
+    retaliate by killing Petey, escalating danger even though Harry and Lloyd still
+    do not understand the suitcase's significance.
+  trigger_event: The kidnappers track the briefcase to Harry and Lloyd and kill Harry's
+    bird Petey in retaliation as the pair leave Providence.
+- description: Harry and Lloyd start their journey from Providence to Aspen, having
+    sold belongings, including Petey, to raise cash. They are traveling in Harry’s
+    van.
+  id: s_6
+  key_delta: Mental is now traveling in the van with Harry and Lloyd, turning the
+    road trip into a direct encounter with the kidnappers.
+  trigger_event: They pick up hitchhiker Mental (one of the kidnappers) and a family
+    of Hispanic travelers while en route to Aspen.
+- description: Harry and Lloyd are on the road with Mental and the traveling family.
+    Mental is sensitive to spicy food and becomes incapacitated after they spike his
+    meal with hot peppers.
+  id: s_7
+  key_delta: Mental is accidentally killed by rat poison after being incapacitated,
+    removing one antagonist but complicating their situation.
+  trigger_event: Mental collapses from the spicy food; the ingestion of rat poison
+    pills intended for Harry and Lloyd kills Mental.
+- description: Harry and Lloyd continue their journey alone after the death of Mental.
+    They stop at a rest stop where Lloyd tricks a trucker into paying for their meals.
+  id: s_8
+  key_delta: After the stop, they are back on the road with no progress made, leaving
+    Lloyd alone at the wheel long enough to misroute them into Nebraska.
+  trigger_event: Police officer drinks urine from an open beer container accidently
+    left by Lloyd; Harry refuses to stop the van during a bathroom break leading to
+    this incident.
+- description: Harry is asleep in the van while Lloyd drives, mistakenly taking the
+    wrong route and leading them into Nebraska instead of Colorado.
+  id: s_9
+  key_delta: Navigation mistake causes delay and frustration but no major harm.
+  trigger_event: They arrive in Nebraska, causing Harry to be infuriated by the navigation
+    error.
+- description: Harry and Lloyd are in Nebraska with the van. To continue their trip,
+    Lloyd trades in Harry’s van for a minibike.
+  id: s_10
+  key_delta: Transport mode changes from van to minibike allowing progress to Aspen
+    despite setbacks.
+  trigger_event: Lloyd successfully trades the van for a minibike which ultimately
+    carries them all the way to Aspen.
+- description: Harry and Lloyd arrive in Aspen. Lloyd spots Mary Swanson in a newspaper
+    promoting a fundraiser dinner. They have the ransom suitcase with a lot of money.
+  id: s_11
+  key_delta: They adopt a lavish lifestyle funded by ransom money, altering their
+    social and financial status.
+  trigger_event: Harry and Lloyd lavishly spend the ransom money, renting a large
+    hotel suite and buying expensive clothes and cars.
+- description: Harry and Lloyd are settled in their Aspen suite. Lloyd is too nervous
+    to approach Mary, asking Harry instead to introduce them.
+  id: s_12
+  key_delta: Mary’s interest shifts to Harry, causing tension as Harry unwittingly
+    becomes closer to her than Lloyd.
+  trigger_event: Harry inadvertently charms Mary, who mistakes his stupidity for humor;
+    Mary and Harry arrange a ski date without Lloyd’s knowledge.
+- description: Lloyd discovers Harry's date with Mary after being stood up himself.
+    He feels betrayed and plans to intervene.
+  id: s_13
+  key_delta: Lloyd disrupts Harry and Mary’s growing relationship, replacing Harry
+    at the date and escalating interpersonal conflict.
+  trigger_event: Lloyd sabotages Harry’s dinner date with Mary and attends in Harry’s
+    place.
+- description: Nicholas, family friend and secret mastermind behind the kidnapping,
+    discovers Harry and Lloyd have spent the ransom money. Lloyd and Mary are held
+    hostage by him.
+  id: s_14
+  key_delta: Hostage crisis initiated; personal danger escalates with Harry apparently
+    shot and both Lloyd and Mary captured.
+  trigger_event: Harry arrives during the hostage situation and is apparently shot
+    by Nicholas.
+- description: Nicholas is about to kill Lloyd when Harry unexpectedly regains consciousness
+    and intervenes.
+  id: s_15
+  key_delta: Nicholas is arrested; Bobby is rescued; hostage situation resolved through
+    Harry’s intervention.
+  trigger_event: Harry helps subdue Nicholas, leading to his capture by authorities
+    as part of a sting operation.
+- description: Mary and her husband Bobby are reunited and thank Harry and Lloyd.
+    The lavish lifestyle funded by ransom money is now revoked by the authorities.
+  id: s_16
+  key_delta: Loss of wealth and status; Harry and Lloyd become impoverished again
+    and start departure on foot.
+  trigger_event: Harry and Lloyd must leave Aspen on foot as all the money was spent
+    and the FBI confiscates the ransom funds.
+- description: Harry and Lloyd are traveling on foot out of Aspen, exhausted and lacking
+    clear direction.
+  id: s_17
+  key_delta: Potential new opportunity presents itself, but Harry and Lloyd miss the
+    chance by directing the models to the nearest town.
+  trigger_event: They encounter a bus full of Hawaiian Tropic bikini models looking
+    for two towel boys to hire.
+- description: Harry and Lloyd continue walking towards the horizon, unaware of missed
+    opportunities ahead but optimistic about future prospects.
+  id: s_18
+  key_delta: Harry and Lloyd remain together and keep drifting forward despite missing
+    another opportunity.
+  trigger_event: Harry and Lloyd keep walking after missing the models' offer.

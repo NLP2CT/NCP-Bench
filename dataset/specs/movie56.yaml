@@ -1,0 +1,250 @@
+commitments:
+- description: Inigo must not confirm Westley's imprisonment or apparent death before
+    reaching state s_4, where he follows cries of anguish to discover what has happened
+    to the man in black.
+  id: c_0
+  satisfaction_condition: Player only confirms Westley's imprisonment and apparent
+    death at node s_4 after tracking the cries.
+  type: ordering
+  violation_condition: Player conclusively learns Westley's imprisoned or apparently
+    dead condition before node s_4 is reached.
+- description: Inigo remains incapacitated and uninvolved after his duel defeat until
+    he regains consciousness at s_2, preventing premature influence on events while
+    unconscious.
+  id: c_1
+  satisfaction_condition: Inigo is unable to perform or influence actions between
+    s_1 and s_2 due to unconsciousness.
+  type: invariant
+  violation_condition: Player input results in Inigo taking actions or influencing
+    events logically before regaining consciousness (before s_2).
+- description: Inigo must achieve the duel victory over Count Rugen as a climactic
+    milestone to complete his vendetta and personal narrative arc.
+  id: c_2
+  satisfaction_condition: Node s_7 is reached with Inigo defeating and killing Count
+    Rugen.
+  type: achievement
+  violation_condition: The narrative ends or progresses to escape without Inigo having
+    slain Count Rugen.
+- description: The joint castle assault (s_5) involving Inigo, Fezzik, and Westley
+    must occur before Inigo can confront and duel Rugen (s_6), ensuring logical progression
+    of the conflict.
+  id: c_3
+  satisfaction_condition: Player triggers assault and infiltration event at s_5 before
+    initiating duel with Rugen at s_6.
+  type: ordering
+  violation_condition: Player initiates or resolves duel with Rugen at s_6 or s_7
+    before the assault event s_5 is triggered.
+- description: The specific identity of Inigo's six-fingered target as Count Rugen
+    must remain unknown to him until Fezzik informs him at s_3.
+  id: c_4
+  satisfaction_condition: Inigo knows he seeks the six-fingered man from the outset,
+    but only learns at s_3 that this man is Count Rugen.
+  type: invariant
+  violation_condition: Player identifies Count Rugen as the six-fingered man prior
+    to node s_3.
+- description: Buttercup remains captive under Vizzini's group from s_0 until the
+    man in black captures her at s_2, preventing early escape or rescue events.
+  id: c_5
+  satisfaction_condition: Buttercup remains under outlaw control during s_0 to s_2;
+    her capture by the man in black triggers event at s_2.
+  type: invariant
+  violation_condition: Buttercup is freed or taken from Vizzini’s control before the
+    event triggering s_2.
+- description: The final escape from Florin castle on four white horses must occur
+    after the defeat of Humperdinck and the safe securing of Buttercup (s_9), marking
+    conflict resolution.
+  id: c_6
+  satisfaction_condition: Player achieves node s_9 with successful escape following
+    Humperdinck’s defeat at s_8.
+  type: achievement
+  violation_condition: Player escapes or concludes the narrative before defeating
+    Humperdinck or securing Buttercup’s safety.
+- description: Inigo and Fezzik’s reunion and revelation about Rugen at s_3 must occur before they infiltrate the torture chamber at s_4.
+  id: c_7
+  satisfaction_condition: Player experiences reunion at s_3 prior to discovering Westley at s_4.
+  type: ordering
+  violation_condition: Player discovers Westley at s_4 without the prior reunion and revelation at s_3.
+- description: Westley’s revival by Miracle Max must occur before initiating the final
+    castle assault (s_5) involving Inigo and Fezzik, ensuring Westley’s participation
+    is logically consistent.
+  id: c_8
+  satisfaction_condition: Player triggers Westley’s revival event at or before s_5;
+    no assault occurs without Westley revived.
+  type: invariant
+  violation_condition: Player initiates castle assault involving Westley before triggering
+    his revival by Miracle Max.
+- description: Inigo’s duel with Rugen (s_6 and s_7) follows his sustained injury
+    but persistence, ensuring narrative focus on his commitment despite adversity.
+  id: c_9
+  satisfaction_condition: During duel stages s_6 and s_7, Inigo is injured but continues
+    the fight, culminating with slaying Rugen at s_7.
+  type: invariant
+  violation_condition: Inigo avoids injury or prematurely ends duel without progression
+    through his vow and struggle.
+initial_facts:
+- content: Inigo Montoya is located with Vizzini and Fezzik near the farm and forests
+    bordering Florin at the start of the kidnapping plan.
+  id: f_0
+  negated: false
+- content: Buttercup is captive under the control of Vizzini's outlaw group at the
+    initial state.
+  id: f_1
+  negated: false
+- content: Inigo Montoya has not yet confirmed Westley's fate or imprisonment and
+    does not yet know that Count Rugen is the six-fingered man he seeks.
+  id: f_2
+  negated: false
+- content: Inigo Montoya is actively seeking revenge against the six-fingered man who killed his father, but does not yet know his identity or location.
+  id: f_3
+  negated: false
+- content: Inigo Montoya is conscious and active at t=0 and has not suffered the duel
+    defeat by the man in black.
+  id: f_4
+  negated: false
+- content: Fezzik is present and active alongside Inigo and Vizzini at the initial
+    location.
+  id: f_5
+  negated: false
+- content: Westley is not currently in the scene with Inigo and does not participate
+    in the outlaw kidnapping plan.
+  id: f_6
+  negated: false
+- content: No assault on the Florin castle has occurred, and no interaction with Count
+    Rugen or Westley's torture chamber has happened.
+  id: f_7
+  negated: false
+- content: Inigo and Fezzik have not been captured by Florin’s soldiers and remain
+    free at t=0.
+  id: f_8
+  negated: false
+- content: The player (Inigo Montoya) has no knowledge of Westley's revival or any
+    events tied to Miracle Max.
+  id: f_9
+  negated: false
+- content: Buttercup has not escaped from outlaw captivity and remains in Vizzini's
+    control.
+  id: f_10
+  negated: false
+meta:
+  genres: ["Fantasy", "Adventure"]
+  id: movie56
+  player_role: Inigo Montoya
+  title: "The Princess Bride"
+synopsis: The film is an enactment of the following story read by the grandfather
+  of a sick boy as the boy sits in bed listening, framed and occasionally interrupted
+  by scenes of the reading. A young woman named Buttercup lives on a farm in the fictional
+  country of Florin. Whenever she gives her farmhand Westley an order, he answers
+  "as you wish," and happily complies. Eventually she realizes he loves her and admits
+  her love for him. Westley leaves to seek his fortune so they can marry, but his
+  ship is attacked by the Dread Pirate Roberts, who has a reputation for never leaving
+  anyone alive. Five years later, believing Westley dead, Buttercup reluctantly agrees
+  to marry Prince Humperdinck, heir to the throne of Florin. Before the wedding, she
+  is kidnapped by three outlaws——an extremely short Sicilian boss named Vizzini, a
+  Turkish giant that Vizzini discovered in Greenland named Fezzik, and a Spanish master
+  fencer named Inigo Montoya, who seeks revenge against the six-fingered man who killed
+  his father. The outlaws are pursued by Prince Humperdinck with a complement of soldiers,
+  and also by a masked man in black. The man in black catches up to the outlaws at
+  the top of the Cliffs of Insanity, where he first defeats Inigo in a duel before
+  knocking him unconscious. He then defeats Fezzik in hand-to-hand combat by choking
+  him from behind until he blacks out. Finally, he defeats Vizzini in a battle of
+  the wits by tricking him into drinking from a poisoned chalice, and so captures
+  Buttercup. When he tells her he is Roberts, she becomes enraged at him for killing
+  Westley and shoves him into a gorge after telling him that he should die too, but
+  she realizes he is Westley himself when he replies "As you wish!" She dives into
+  the gorge after him, and they flee through the dangerous Fire Swamp where they navigate
+  past the R.O.U.S., fire spouts, and lightning sand. When they are captured on the
+  other side by Humperdinck and his sadistic six-fingered vizier Count Rugen, Buttercup
+  agrees to return with Humperdinck in exchange for Westley's release, but Humperdinck
+  secretly has Rugen imprison and torture Westley. When Buttercup expresses unhappiness
+  at marrying Humperdinck, he promises to search for Westley, but his real plan is
+  to start a war with the neighboring country of Guilder by killing Buttercup and
+  framing them for her death. After Buttercup realises that Humperdinck has no intention
+  of finding Westley, she taunts his cowardice and feelings of inferiority towards
+  his romantic rival. Enraged, Humperdinck tortures Westley to his apparent death.
+  Meanwhile, Inigo and Fezzik meet when Humperdinck orders a gang of goons to arrest
+  the thieves in a nearby forest, and Fezzik informs Inigo of Rugen's existence. Inigo
+  decides that they need the man in black's help to get into the castle, and when
+  he hears cries of anguish he decides that they must be from the man in black and
+  follows them. Inigo and Fezzik arrive in Rugen's torture chamber to find Westley
+  dead, but bring him to a miracle man named Miracle Max who explains that Westley
+  is "only mostly dead," reviving him to a state of heavy paralysis. Westley, Inigo,
+  and Fezzik invade the castle, prompting Humperdinck to order a drastically-abridged
+  version of the wedding ceremony, rushing Buttercup to her chambers. Inigo finds
+  and duels with Rugen, and despite incurring heavy blood loss from a stab wound in
+  the opening moments of the battle, he is able to maintain his focus by repeatedly
+  reciting his long-rehearsed greeting of vengeance and eventually manages to slay
+  his nemesis. Westley finds Buttercup, who is about to commit suicide, and assures
+  her that her marriage is invalid because she never said "I do." When confronted
+  by Humperdinck, Westley bluffs his way out of a duel and manages to have Humperdinck
+  tied to a chair, left to contemplate his cowardice. Triumphant, he then rides away
+  with Buttercup, Inigo, and Fezzik on four white horses that Fezzik conveniently
+  discovers. The story ends with Westley and Buttercup sharing a very passionate kiss.
+  The grandfather then closes the book and prepares to leave, but the boy asks him
+  to read the story again the next day. The grandfather smiles and replies, "As you
+  wish."
+trajectory:
+- description: Inigo Montoya is living as a Spanish master swordsman under the employ
+    of the Sicilian boss Vizzini, along with the Turkish giant Fezzik, plotting in
+    the surroundings of Florin to kidnap Buttercup before her wedding to Prince Humperdinck.
+    The atmosphere is tense, with the outlaws preparing their plan near the farm and
+    forests bordering Florin.
+  id: s_0
+  key_delta: Buttercup has been taken captive by Vizzini's group, marking the start
+    of the mission; Inigo begins active pursuit by Florin's forces and an unknown
+    masked man.
+  trigger_event: The outlaws successfully kidnap Buttercup from the farm.
+- description: Inigo Montoya is accompanying Vizzini and Fezzik while fleeing with
+    Buttercup. The group's tension rises as they head toward the Cliffs of Insanity,
+    aware they are being pursued. Inigo is vigilant and prepared for combat amid uncertain
+    terrain.
+  id: s_1
+  key_delta: Inigo engages in a direct duel with the man in black and suffers defeat
+    and unconsciousness, removing him temporarily from the active scenario.
+  trigger_event: They are confronted at the Cliffs of Insanity by the masked man in
+    black who challenges Inigo to a duel.
+- description: Inigo Montoya lies unconscious after his duel and defeat; Vizzini is dead, and Fezzik is knocked out elsewhere. The man in black captures Buttercup, changing the power dynamics of the pursuit. The atmosphere is uncertain and chaotic.
+  id: s_2
+  key_delta: Inigo recovers from his incapacitation and must figure out his next move now that he is separated from his former group.
+  trigger_event: Fezzik finds Inigo in the forest and reveals Count Rugen's identity.
+- description: Inigo and Fezzik reunite in a forest near Florin. Fezzik informs Inigo that the six-fingered man is Count Rugen. Inigo realizes they need the man in black's help to breach the castle.
+  id: s_3
+  key_delta: Inigo learns his revenge target's identity and decides to seek the man in black's assistance.
+  trigger_event: Inigo and Fezzik track down the man in black and discover Westley's body in the torture chamber.
+- description: Hearing agonizing cries, Inigo and Fezzik follow the sound and infiltrate Rugen's torture chamber, hoping to find the man in black. The atmosphere is grim as they discover the aftermath of Humperdinck's wrath.
+  id: s_4
+  key_delta: Inigo discovers the man in black (Westley) dead, prompting the critical decision to seek a miracle to revive him.
+  trigger_event: Inigo and Fezzik seek Miracle Max, whose revival of Westley allows the rescue alliance to form.
+- description: Having brought Westley's lifeless body to Miracle Max, Inigo and Fezzik successfully have him revived. With Westley now "mostly alive," the trio plans to infiltrate the castle to stop Rugen and rescue Buttercup. The atmosphere shifts to one of strategy and anticipation.
+  id: s_5
+  key_delta: The alliance is officially formed and actively plans the castle invasion, marking the transition from despair to direct confrontation.
+  trigger_event: The revived trio launch the castle assault, allowing Inigo to confront Count Rugen inside.
+- description: Inigo navigates through the castle during the chaotic assault, seeking
+    Rugen. The atmosphere is urgent and violent. Inigo sustains a stab wound early
+    in an upcoming duel but persists to maintain focus on his lifelong vendetta.
+  id: s_6
+  key_delta: Inigo engages in a pivotal face-to-face combat with the six-fingered
+    man responsible for his father’s death, bringing his personal quest to a climax.
+  trigger_event: Inigo encounters and begins a duel with Count Rugen in a torture
+    chamber within the castle.
+- description: Inigo, despite severe blood loss, continues to fight Rugen fiercely
+    in the castle, reciting his famous revenge speech. The atmosphere is intense and
+    focused on justice and vengeance.
+  id: s_7
+  key_delta: Inigo achieves the irreversible completion of his revenge by killing
+    Rugen, removing the primary antagonist of his personal arc.
+  trigger_event: Inigo slays Count Rugen after a prolonged duel.
+- description: Having defeated Rugen, Inigo waits in the castle as Westley confronts
+    Prince Humperdinck. The atmosphere is one of relief and triumph. Inigo prepares
+    for the next stage of escape and reunion.
+  id: s_8
+  key_delta: The primary antagonistic forces within the castle are subdued, allowing
+    Inigo and his allies to escape.
+  trigger_event: Westley secures Buttercup’s safety and neutralizes Humperdinck’s
+    threat.
+- description: Inigo joins Westley, Buttercup, and Fezzik as they escape Florin on
+    four white horses. The atmosphere is victorious and hopeful, with the future open
+    and free from immediate threat.
+  id: s_9
+  key_delta: The successful escape marks the resolution of the conflict and the beginning
+    of a new, peaceful chapter.
+  trigger_event: The group rides away from Florin castle toward freedom.

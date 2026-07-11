@@ -1,0 +1,307 @@
+commitments:
+- description: Leonard must not acknowledge or act upon knowledge of Teddy as 'John
+    G' or the second attacker before obtaining the driver's license identifying 'John
+    Edward Gammell' (node s_12).
+  id: c_0
+  satisfaction_condition: Player only gains and acts on Teddy’s identity as 'John
+    G' after event s_12.
+  type: invariant
+  violation_condition: Player attempts to confront or accuse Teddy as 'John G' or
+    tattoo his license plate before s_12.
+- description: Leonard’s encounter and killing of Jimmy Grantz (node s_2) must occur
+    before he meets Teddy to learn that Jimmy was 'John G' (node s_5).
+  id: c_1
+  satisfaction_condition: s_2 occurs before s_5.
+  type: ordering
+  violation_condition: Player obtains Teddy’s revelation from s_5 before killing Jimmy
+    at s_2.
+- description: Leonard’s condition of anterograde amnesia and the use of notes, Polaroids,
+    and tattoos as memory aids remain a constant throughout the narrative from s_0
+    to s_14.
+  id: c_2
+  satisfaction_condition: At all nodes s_0 through s_14, the player must demonstrate
+    Leonard’s memory impairment and reliance on external cues.
+  type: invariant
+  violation_condition: Player behaves with intact short-term memory for more than
+    a single scene or ignores all memory aids contradicting Leonard’s condition.
+- description: Leonard must obtain and process the caller’s prompt at s_0 before meeting
+    Teddy in the motel lobby at s_1.
+  id: c_3
+  satisfaction_condition: s_0 precedes s_1 without skipping the initial phone call
+    and Leonard’s established investigation state.
+  type: ordering
+  violation_condition: Player attempts to meet Teddy or access information only available
+    from s_0 prior to completing s_0.
+- description: Leonard must kill Jimmy (node s_2) and create physical evidence (Polaroid
+    photo developing at s_3) to solidify his belief before progressing to suspect
+    Teddy as the second attacker.
+  id: c_4
+  satisfaction_condition: Both s_2 (killing Jimmy) and s_3 (photo developing) occur
+    before s_8 (tattooing Teddy’s plate) or confronting Teddy at s_14.
+  type: achievement
+  violation_condition: Player accepts Teddy as the attacker or tattoos Teddy’s plate
+    before completing both s_2 and s_3.
+- description: Leonard’s meeting with Natalie and utilizing her assistance (s_9 and
+    s_10) must occur before uncovering Teddy’s full identity via the driver’s license
+    at s_12.
+  id: c_5
+  satisfaction_condition: s_9 and s_10 precede s_12 in the narrative flow without
+    skipping.
+  type: ordering
+  violation_condition: Player accesses or acts on Teddy’s identity information (s_12)
+    without first collaborating with Natalie (s_9/s_10).
+- description: Leonard’s distrust of Teddy, marked by the photo with ‘Do not trust’
+    (node s_11), remains valid after meeting Teddy until Teddy’s death at s_14.
+  id: c_6
+  satisfaction_condition: Between s_11 and s_14, Leonard’s system recognizes mistrust
+    toward Teddy and forbids cooperation beyond investigative pragmatism.
+  type: invariant
+  violation_condition: Player trusts Teddy fully or reverses mistrust before s_14
+    in contradiction to documented notes and narrative logic.
+- description: Leonard must complete the killing of Teddy (s_14) to conclusively resolve
+    the pursuit of the second attacker and close the narrative loop.
+  id: c_7
+  satisfaction_condition: Event s_14 (Teddy’s death) is achieved as the final narrative
+    milestone.
+  type: achievement
+  violation_condition: Player ends or attempts to finalize the narrative without Teddy’s
+    killing that matches the established causal chain.
+- description: Leonard’s burning of Jimmy’s Polaroid photo (s_7) must occur after
+    the confrontation and revelations involving Teddy (s_5 and s_6), symbolizing rejection
+    of the false ‘John G’ identity.
+  id: c_8
+  satisfaction_condition: Events s_5 and s_6 occur before s_7 in proper sequence.
+  type: ordering
+  violation_condition: Player burns Jimmy’s photo prematurely before Teddy’s exposition
+    or before understanding the false narrative.
+initial_facts:
+- content: Leonard Shelby is located in a sparse, dimly lit motel room at time t=0.
+  id: f_0
+  negated: false
+- content: Leonard Shelby is answering a phone call from an unnamed caller at time
+    t=0.
+  id: f_1
+  negated: false
+- content: Leonard Shelby suffers from anterograde amnesia impairing formation of
+    new memories at time t=0.
+  id: f_2
+  negated: false
+- content: Leonard Shelby relies on external memory aids including personal notes,
+    Polaroid photos, and tattoos on his body at time t=0.
+  id: f_3
+  negated: false
+- content: Leonard Shelby is actively conducting an investigation to find a man named
+    'John G' at time t=0.
+  id: f_4
+  negated: false
+- content: Leonard Shelby does not yet know or acknowledge that Teddy is 'John G'
+    or the identity of the second attacker at time t=0.
+  id: f_5
+  negated: false
+- content: Leonard Shelby has not yet met Teddy face-to-face in the motel lobby at
+    time t=0.
+  id: f_6
+  negated: false
+- content: Leonard Shelby has not yet killed Jimmy Grantz or encountered him at time
+    t=0.
+  id: f_7
+  negated: false
+- content: Leonard Shelby has not yet received Teddy's revelation about Jimmy being
+    'John G' or about the real attacker at time t=0.
+  id: f_8
+  negated: false
+- content: Leonard Shelby has not yet developed a Polaroid photo documenting a killed
+    suspect at time t=0.
+  id: f_9
+  negated: false
+- content: Leonard Shelby has not yet met Natalie, the bartender, nor gained her assistance
+    at time t=0.
+  id: f_10
+  negated: false
+- content: Leonard Shelby's distrust toward Teddy is not actively documented with
+    notes or photos at time t=0.
+  id: f_11
+  negated: false
+- content: Leonard Shelby has not yet obtained the driver's license identifying 'John
+    Edward Gammell' at time t=0.
+  id: f_12
+  negated: false
+- content: Leonard Shelby has not tattooed Teddy's license plate number on his body
+    at time t=0.
+  id: f_13
+  negated: false
+- content: Leonard Shelby has not yet killed Teddy or confronted him outside of the
+    motel at time t=0.
+  id: f_14
+  negated: false
+meta:
+  genres: ["Mystery", "Thriller"]
+  id: movie74
+  player_role: Leonard Shelby
+  title: "Memento"
+synopsis: A backwards sequence is shown. It starts with the Polaroid photograph of
+  a dead man. As the sequence plays backwards the photo reverts to its undeveloped
+  state, entering the camera before the man is shot in the head. This is followed
+  by interspersed black-and-white and color sequences, with the black-and-white sequences
+  taking place chronologically before the color sequences. The black-and-white sequences
+  begin with Leonard Shelby in a motel room speaking to an unnamed caller. Leonard
+  has anterograde amnesia and is unable to store recent memories, the result of an
+  attack by two men. Leonard killed the attacker who raped and strangled his wife,
+  but a second clubbed him and escaped. The police did not accept there was a second
+  attacker, but Leonard believes he is called John with a last name starting with
+  G. Leonard conducts his own investigation using a system of notes, Polaroid photos,
+  and tattoos. As an insurance investigator, Leonard recalls one Sammy Jankis, also
+  diagnosed with the same condition. Sammy's diabetic wife repeatedly requested insulin
+  injections to try to trigger his memory, hoping Sammy would remember the previous
+  dose. He did not and as a result she fell into a coma and died. The color sequences
+  are shown in reverse chronological order. Leonard gets a tattoo, based on instructions
+  to himself, of the license plate of John G. Finding a note in his clothes, he meets
+  Natalie, a bartender who resents Leonard as he wears the clothes and drives the
+  car of her boyfriend, Jimmy. After understanding his condition, she uses it to get
+  Leonard to drive a man named Dodd out of town and offers to run the license plate
+  to help his investigation. Meanwhile, Leonard meets with a contact, Teddy. Teddy
+  helps with Dodd, but warns him about Natalie; however, Leonard has written on a
+  photo of Teddy to not trust him. Natalie provides Leonard the driver's license,
+  which shows a John Edward Gammell, Teddy's full name. Confirming Leonard's information
+  on "John G" and his warnings, Leonard meets Teddy and drives him to an abandoned
+  building, killing him as shown in the opening. In the final black-and-white sequence,
+  prompted by the caller, Leonard meets Teddy in the motel lobby. Teddy is an undercover
+  officer and has found Leonard's "John G", Natalie’s boyfriend Jimmy Grantz, and
+  directs Leonard to the same abandoned building outside of town. When Jimmy arrives,
+  Leonard strangles him and takes a photo of the body. As it develops the black-and-white
+  transitions to color, thus beginning the color sequences. Leonard swaps clothes
+  with Jimmy, hearing Jimmy whisper "Sammy". As Leonard has only told the story of
+  Sammy to those he has met, he doubts Jimmy is the attacker. Teddy arrives and asserts
+  that Jimmy was John G but when Leonard is not convinced, Teddy reveals that together
+  they had already found and Leonard had killed the real attacker over a year ago.
+  Teddy claims that Leonard confused elements of his life with that of Sammy, who
+  was a con man with no wife. Leonard's wife was diabetic, had survived the attack
+  and was the one who died in the insulin overdose. Teddy accuses Leonard of creating
+  an unsolvable puzzle to give himself purpose and since "John G" is a common name,
+  he will continually forget, beginning his search again and that even Teddy himself
+  has a "John G" name. After hearing Teddy's exposition, Leonard consciously burns
+  the photograph of Jimmy's body, drives off in Jimmy's car and has Teddy's license
+  plate number tattooed on himself as the one of the second attacker, which will lead
+  to the events of Teddy's death.
+trajectory:
+- description: Leonard Shelby is in a motel room, answering a phone call from an unnamed
+    caller. The room is sparse, lit dimly, with personal notes, Polaroid photos, and
+    tattooed reminders on Leonard's body. Leonard, suffering from anterograde amnesia
+    after an attack, obsessively attempts to track a man named 'John G'.
+  id: s_0
+  key_delta: Leonard's ongoing investigation is confirmed; his memory condition and
+    his fixation on 'John G' are established along with the existence of the caller
+    setting up a meeting.
+  trigger_event: Receiving a phone call from an unknown caller prompting Leonard to
+    meet at the motel lobby.
+- description: Leonard meets Teddy, an undercover officer, in the motel lobby. Teddy
+    reveals that he has found Leonard's 'John G', identifying him as Jimmy Grantz,
+    Natalie's boyfriend, and directs Leonard to an abandoned building outside of town.
+  id: s_1
+  key_delta: Leonard gains new information about 'John G' being Jimmy Grantz and receives
+    directions to the abandoned building, setting up progression toward confrontation.
+  trigger_event: Meeting Teddy face-to-face in the motel lobby after responding to
+    the caller.
+- description: Leonard waits at the abandoned building outside town. The environment
+    is tense and bleak. Jimmy arrives and confronts Leonard, who then strangles Jimmy
+    and takes a Polaroid photo of his dead body.
+  id: s_2
+  key_delta: Jimmy Grantz, the suspected 'John G', is killed by Leonard and documented
+    with a photo, deepening Leonard’s belief and creating physical evidence.
+  trigger_event: Jimmy Grantz arriving at the abandoned building as directed by Teddy.
+- description: Leonard photographs Jimmy's body and the photo begins developing in
+    Polaroid form. The surroundings shift from black-and-white to color as the scene
+    marks a transition.
+  id: s_3
+  key_delta: The photographic evidence of Jimmy's death is formed, linking Leonard’s
+    act of murder to a concrete piece of proof; transitions the story’s visual style
+    symbolizing chronological progression.
+  trigger_event: The Polaroid photo of Jimmy’s corpse starts developing under Leonard’s
+    observation.
+- description: Leonard swaps clothes with the dead Jimmy, hears Jimmy whisper the
+    name 'Sammy', and begins to doubt Jimmy is the attacker he seeks. The motel environment
+    returns.
+  id: s_4
+  key_delta: Leonard’s suspicion about Jimmy’s identity as 'John G' surfaces, initiating
+    internal conflict grounded in sensory input and ambiguous external evidence.
+  trigger_event: Leonard putting on Jimmy's clothes and overhearing Jimmy’s whispered
+    name upon the body.
+- description: Leonard meets Teddy again, who insists that Jimmy was indeed 'John
+    G'. Teddy reveals that Leonard had already killed the real attacker over a year
+    ago and provides dissonant facts about Leonard’s memories and Sammy Jankis.
+  id: s_5
+  key_delta: Contradictory information about the timeline and identity of ‘John G’
+    and the real attacker is introduced, undermining Leonard’s narrative and presenting
+    new perspectives.
+  trigger_event: Arrival of Teddy at the motel for a confrontation with Leonard.
+- description: Teddy explains Leonard's memory confusion, revealing that Leonard’s
+    wife survived the attack but later died from insulin overdose, and Sammy was a
+    con man unrelated to Leonard's story. Teddy accuses Leonard of creating a never-ending
+    search due to his amnesia.
+  id: s_6
+  key_delta: The foundational beliefs of Leonard's motive and his system are challenged,
+    introducing the concept that Leonard’s search for 'John G' is circular and self-perpetuating.
+  trigger_event: Teddy’s detailed exposition about Leonard's true past and the constructed
+    nature of his investigation.
+- description: Leonard consciously burns the Polaroid photo of Jimmy's dead body in
+    the motel room, symbolically severing ties with the false narrative about Jimmy.
+    He changes out of Jimmy’s clothes and leaves.
+  id: s_7
+  key_delta: Symbolic renunciation of Jimmy as ‘John G’; sets up Leonard’s acceptance
+    of a new target and directs future actions away from the false trail.
+  trigger_event: Leonard burning the photograph of Jimmy’s corpse in the motel room.
+- description: Leonard tattoos Teddy’s license plate number on himself, marking it
+    as the identity of the second attacker. He drives off in Jimmy’s car, preparing
+    to continue his investigation along this new trail.
+  id: s_8
+  key_delta: A new factual trail is established by physically marking Teddy as the
+    next ‘John G’, resetting Leonard’s investigative path toward the second attacker.
+  trigger_event: Leonard inking the tattoo of Teddy’s license plate on his body and
+    leaving the motel in Jimmy’s car.
+- description: Leonard conducts his self-directed investigation using notes, Polaroid
+    photos, and tattoos as guides. He visits a bartender named Natalie, who resents
+    him for wearing her boyfriend Jimmy's clothes and drives his car.
+  id: s_9
+  key_delta: Introduction of Natalie as a key character allied with Leonard’s investigation;
+    further solidifies Leonard’s methodology of using external aids to compensate
+    for memory loss.
+  trigger_event: Leonard meeting Natalie at her workplace after initiating the new
+    investigation path.
+- description: Natalie uses Leonard's condition to manipulate him into driving a man
+    named Dodd out of town. She offers to help Leonard by running the license plate
+    data relevant to his investigation.
+  id: s_10
+  key_delta: Natalie becomes an active participant, providing practical support and
+    influencing Leonard’s actions, thereby advancing the investigation logistics.
+  trigger_event: Natalie persuading Leonard to drive Dodd away and offering assistance
+    with license plate information.
+- description: Leonard meets with Teddy again, who assists in handling Dodd but warns
+    Leonard about Natalie’s intentions. Leonard has written on a photo not to trust
+    Teddy, revealing growing mistrust.
+  id: s_11
+  key_delta: Trust dynamics shift; Leonard’s mistrust toward Teddy is explicitly documented,
+    complicating ally relationships.
+  trigger_event: Encounter between Leonard and Teddy related to Dodd’s removal and
+    the unveiling of suspicions.
+- description: Natalie provides Leonard with a driver's license from 'John Edward
+    Gammell', confirming the earlier partial identity 'John G'. The setting is tense
+    as Leonard absorbs this confirmation.
+  id: s_12
+  key_delta: Concrete identification of ‘John G’ as Teddy’s full name is obtained,
+    providing a key piece of evidence linking individuals and motivating subsequent
+    confrontation.
+  trigger_event: Now that Teddy matches John Edward Gammell, Leonard decides to set
+    Teddy up as his next John G and lure him to the abandoned building.
+- description: Leonard sets the trap at the abandoned building and drives Teddy there
+    under pretense. The atmosphere is charged with suspicion and tension.
+  id: s_13
+  key_delta: Leonard initiates the final confrontation by arranging to meet the new
+    ‘John G’ at a secluded location.
+  trigger_event: Leonard arriving and driving Teddy to the abandoned building.
+- description: Leonard kills Teddy in the abandoned building, completing his mission
+    against the second attacker. This event mirrors the opening scene where the Polaroid
+    photo begins to be taken.
+  id: s_14
+  key_delta: The second attacker, Teddy/'John G', is eliminated; cyclicality of events
+    is established with the opening Polaroid scene, closing the narrative loop.
+  trigger_event: Killing of Teddy by Leonard at the abandoned building.

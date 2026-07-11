@@ -1,0 +1,334 @@
+commitments:
+- description: Michael's initial murder of Judith Myers (s_1) must occur after he
+    observes Judith alone (s_0), maintaining consistent sequence of events leading
+    to the first murder.
+  id: c_0
+  satisfaction_condition: Node s_0 must be fully achieved before node s_1 is triggered.
+  type: ordering
+  violation_condition: The system acknowledges Judith's murder (s_1) before the observation
+    that she is alone (s_0).
+- description: Michael's escape from Smith's Grove Sanitarium (s_4) cannot be acknowledged
+    before his long catatonic institutionalization period (s_3) has been established.
+  id: c_1
+  satisfaction_condition: Node s_3 is completed before s_4 is initiated.
+  type: ordering
+  violation_condition: Player or system recognizes Michael's escape or violent behavior
+    prior to confirmation of his catatonia and confinement.
+- description: From s_3 to s_4 (inclusive), Michael must remain in a state of catatonia
+    without violent actions or escape attempts.
+  id: c_2
+  satisfaction_condition: No violent acts or escape attempts by Michael occur prior
+    to s_4.
+  type: invariant
+  violation_condition: Any player-induced or system-recognized violent action or escape
+    by Michael before s_4.
+- description: Laurie's awareness of Michael's presence (s_6) must not occur before
+    Michael's escape and return to Haddonfield (s_4 and s_5), preserving suspense
+    and logical build-up of threat.
+  id: c_3
+  satisfaction_condition: Nodes s_4 and s_5 achieved fully before s_6 is triggered.
+  type: ordering
+  violation_condition: Laurie identifies or encounters Michael before his escape or
+    return to the town.
+- description: Laurie must discover the hidden bodies of Annie and Lynda along with
+    Judith's headstone (s_13) before the narrative reaches the climax involving direct
+    confrontation with Michael.
+  id: c_4
+  satisfaction_condition: Player reaches s_13 where the murders' evidence is discovered.
+  type: achievement
+  violation_condition: Player skips or bypasses the discovery of the bodies and the
+    symbolic headstone before final encounters.
+- description: The killing of Annie (s_10) and then Lynda and Bob (s_12) must unfold
+    sequentially before Laurie is attacked (s_14), maintaining temporal coherence
+    of Michael's stalking and killing spree.
+  id: c_5
+  satisfaction_condition: Node s_10 and then s_12 completed before s_14 occurs.
+  type: ordering
+  violation_condition: Laurie being attacked or other subsequent events happen before
+    these murders have occurred or been acknowledged.
+- description: During the sequence from s_14 to s_19, Laurie remains isolated with
+    dead phone lines and Michael present inside the Doyle house until she is rescued
+    or Michael is incapacitated.
+  id: c_6
+  satisfaction_condition: Laurie lacks outside assistance and cannot communicate until
+    s_18 or beyond; Michael remains a direct physical threat within the house.
+  type: invariant
+  violation_condition: Player or system grants Laurie external help, open communication,
+    or removes Michael without narrative acknowledgment within this phase.
+- description: Dr. Loomis's intervention and shooting of Michael (s_18) is necessary
+    to conclude the immediate physical threat phase of the narrative.
+  id: c_7
+  satisfaction_condition: Node s_18 is achieved with Michael shot and incapacitated.
+  type: achievement
+  violation_condition: Michael’s attack on Laurie is resolved without Loomis shooting
+    him or an equivalent mitigating intervention.
+- description: After Michael is shot and falls from the window (s_19), his body must
+    be missing at the end of the narrative, preserving the ambiguous survival and
+    threat continuation.
+  id: c_8
+  satisfaction_condition: Michael’s body is confirmed missing after his fall as in
+    s_19.
+  type: invariant
+  violation_condition: Michael’s body is found, confirmed dead, or the narrative closes
+    definitively on his death.
+initial_facts:
+- content: The date is October 31, 1963.
+  id: f_0
+  negated: false
+- content: The location is the Myers family house in Haddonfield, Illinois.
+  id: f_1
+  negated: false
+- content: Michael Myers is a six-year-old boy present at the Myers family house.
+  id: f_2
+  negated: false
+- content: Michael Myers is wearing a mask.
+  id: f_3
+  negated: false
+- content: Michael Myers is looking through a window at his older teenage sister Judith
+    Myers and her boyfriend inside the house.
+  id: f_4
+  negated: false
+- content: Judith Myers is physically present at home in the living room with her
+    boyfriend.
+  id: f_5
+  negated: false
+- content: Judith Myers and her boyfriend are kissing and then decide to go upstairs
+    after the boyfriend questions whether they are alone.
+  id: f_6
+  negated: false
+- content: Judith Myers and her boyfriend believe Michael may be somewhere in the
+    house but cannot see him.
+  id: f_7
+  negated: false
+- content: No violent actions or murders have yet occurred at this moment.
+  id: f_8
+  negated: false
+- content: Laurie Strode is not yet aware of Michael Myers or any threat from him.
+  id: f_9
+  negated: false
+- content: Dr. Loomis has not yet encountered Michael Myers or become involved in
+    his care.
+  id: f_10
+  negated: false
+- content: Michael Myers has not yet committed the murder of Judith Myers.
+  id: f_11
+  negated: false
+- content: Michael Myers’s catatonia, institutionalization, escape, and subsequent
+    events have not yet occurred.
+  id: f_12
+  negated: false
+- content: Judith Myers’s grave exists, but no headstone has been noticed as missing.
+  id: f_13
+  negated: false
+- content: Laurie Strode is a high school student living in Haddonfield.
+  id: f_14
+  negated: false
+- content: No murders beyond Judith’s have yet occurred.
+  id: f_15
+  negated: false
+meta:
+  genres: ["Horror", "Thriller"]
+  id: movie14
+  player_role: Laurie Strode
+  title: "Halloween"
+synopsis: The story begins on October 31, 1963, in fictional Haddonfield, Illinois,
+  with Michael Myers  looking through a window, at his older teenage sister, Judith
+  Myers , and her boyfriend kissing in the living room. The boyfriend pulls away from
+  Judith, and asks if they are alone. Judith quickly glances around, musing that Michael
+  is no doubt around the house. The two teenagers then decide to go upstairs. When
+  Michael sees the light go off in Judith's bedroom window, he enters the kitchen
+  and takes a butcher knife out of a drawer. After Judith's boyfriend goes home, Michael
+  enters Judith's room and stabs her repeatedly until she falls down dead. He then
+  walks downstairs and out the front door with the knife in his hand. Once outside,
+  a car pulls up, and the occupants are soon revealed to be his parents. His father
+  pulls off the mask to reveal a six-year-old boy, and the camera slowly pans out
+  as both parents stare at him in horror. Following the murder, Michael is sent to
+  Smith's Grove Sanitarium, where he is placed under the care of psychiatrist Dr.
+  Samuel Loomis . Michael enters a state of catatonia and remains that way for the
+  next fifteen years. Loomis, accompanied by nurse Marion Chambers  arrives at the
+  sanitarium on October 30, 1978 to bring Michael to a court hearing, but he escapes,
+  stealing the car that Chambers was driving, attacking her in the process and makes
+  his way back to Haddonfield, killing a tow truck driver for his clothes. Loomis
+  follows him there, attempting to prevent Michael from murdering anyone else. The
+  following day--Halloween--high school student Laurie Strode  continually sees Michael,
+  now wearing dark blue coveralls and a white mask, first at her school, then on the
+  street. Laurie's friends, Annie Brackett  and Lynda van der Klok , dismiss Laurie's
+  concerns. Then, later at her house, she sees Michael outside, in the yard, staring
+  into her room. Laurie is startled, but then dismisses it thinking it was a neighbor.
+  Meanwhile, Dr. Loomis goes to the local cemetery, and is guided by the groundskeeper
+  to the grave plot of Judith Myers. The groundskeeper becomes angry when he discovers
+  a missing headstone, and looks down at his papers. He then looks up at Dr. Loomis,
+  and tells him that the missing headstone belonged to Judith Myers. Upon hearing
+  this news, Dr. Loomis mutters under his breath, "He came home." Later on, Annie's
+  father, Sheriff Leigh Brackett , is approached by Loomis, and the two quietly look
+  for Michael. That night, Laurie babysits a boy named Tommy Doyle , while Annie babysits
+  a girl named Lindsey Wallace  across the street from the Doyle house. Michael methodically
+  stalks Annie and kills Lindsey's dog. When Annie gets a call from her boyfriend,
+  Paul, to pick him up, she takes Lindsey to the Doyle house. Annie gets in her car
+  to pick up Paul but she is killed by Michael, who strangles and slits her throat
+  with a knife. Meanwhile at the Doyle House, Tommy spots Michael carrying Annie's
+  body back into the house. He thinks Michael is the bogeyman and tries to tell Laurie,
+  who dismisses his claims. Later, Lynda and her boyfriend, Bob, enter the house unaware
+  that Michael is inside. They then retire into the bedroom, where they have sex.
+  Afterwards, Michael impales Bob onto the wall with a kitchen knife, then strangles
+  Lynda with a telephone cord as she talks on the phone with Laurie. The disturbing
+  disruption to the phone call concerns Laurie even further. Feeling unsettled, Laurie
+  enters the Wallace house after the murders. She sees the dead bodies of her friends
+  that Michael has killed and hidden. Michael has placed his sister Judith's headstone
+  behind Annie's body. Suddenly, Laurie is attacked by Michael and falls backwards
+  down the staircase. She runs out of the house, and tries to get someone to help
+  her, only to be ignored. Eventually, she flees back to the Doyle house, but the
+  door is locked, so she has to tell Tommy to open the door quickly as Michael slowly
+  walks toward the house. Luckily, Tommy opens the door in time and lets Laurie inside.
+  Laurie then instructs the children to hide and then realizes that the phone is dead,
+  and that Michael has gotten into the house through a window. As she sits down in
+  horror next to the couch, her hand falls on a knitting needle. Michael appears and
+  tries to stab her, but she counterattacks his move, and stabs him in the neck with
+  the knitting needle, and he collapses by the window. Laurie makes her way to an
+  upstairs bedroom and locks herself in a closet, but Michael breaks a hole in the
+  door. Laurie attacks by poking Michael in the eye with a clothes hanger, and then
+  stabs Michael in the chest with his own knife. Michael collapses and Laurie exits
+  the closet. Meanwhile, outside, Dr. Loomis sees Tommy and Lindsey running away from
+  the house and suspects that Michael could be in the house. Michael gets up and tries
+  to strangle Laurie, but she is saved by Dr. Loomis, who shoots Michael six times
+  in the chest. Michael falls from the second-story window, onto the lawn below. When
+  Dr. Loomis looks over the balcony, however, Michael's body is missing. Laurie begins
+  to cry as Loomis looks out suspiciously into the night. Michael's masked breathing
+  is heard as previous locations of the movie are shown.
+trajectory:
+- description: October 31, 1963, evening in Haddonfield, Illinois. Michael Myers,
+    a six-year-old boy wearing a mask, watches through a window as his teenage sister
+    Judith Myers and her boyfriend kiss in the living room. The atmosphere is tense
+    but normal within the house.
+  id: s_0
+  key_delta: Introduction of Michael as an observer and the setup of Judith and her
+    boyfriend's isolation leading to potential danger.
+  trigger_event: Judith and her boyfriend decide to go upstairs after the boyfriend
+    questions if they are alone.
+- description: Judith's bedroom is darkened as the light goes off. Michael is inside
+    the kitchen holding a butcher knife, poised to act.
+  id: s_1
+  key_delta: Michael initiates a violent attack by stabbing Judith, resulting in her
+    death.
+  trigger_event: Judith's boyfriend leaves the house and Michael enters Judith's room.
+- description: Michael leaves the house through the front door holding the knife.
+    Outside, his parents arrive in a car and react with horror as they see Michael's
+    mask removed revealing a six-year-old boy.
+  id: s_2
+  key_delta: Judith's murder is completed and Michael's parents discover the aftermath,
+    establishing Michael's identity and familial context.
+  trigger_event: Michael exits the house after killing Judith.
+- description: Michael is confined in Smith's Grove Sanitarium and placed under psychiatrist
+    Dr. Samuel Loomis's care. Michael is in a catatonic state for fifteen years.
+  id: s_3
+  key_delta: Michael is institutionalized with no further violent acts for fifteen
+    years.
+  trigger_event: Fifteen years later, Loomis and Marion arrive to transfer Michael
+    for a court hearing.
+- description: October 30, 1978. Dr. Loomis and nurse Marion Chambers arrive at Smith’s
+    Grove to escort Michael to a court hearing. Michael awakens and escapes, stealing
+    Marion’s car and attacking her.
+  id: s_4
+  key_delta: Michael regains mobility, attacks a caretaker, and escapes, marking the
+    restart of his violent actions.
+  trigger_event: Michael escapes custody during transport from the sanitarium.
+- description: Michael is dressed in dark blue coveralls and a white mask, killing
+    a tow truck driver to acquire clothes. Dr. Loomis pursues Michael to Haddonfield
+    to stop further murders.
+  id: s_5
+  key_delta: Michael assumes his adult killer identity and Loomis initiates pursuit.
+  trigger_event: Now armed and disguised, Michael returns to Haddonfield and begins
+    watching Laurie.
+- description: Halloween day in Haddonfield. Laurie Strode, a high school student,
+    notices Michael’s presence first at school and then outside her home. Laurie’s
+    friends dismiss her concerns.
+  id: s_6
+  key_delta: Laurie becomes aware of Michael’s presence and possible threat, although
+    others remain skeptical.
+  trigger_event: Laurie sees Michael stalking her in various locations around town.
+- description: Laurie watches Michael standing outside, staring into her yard. Dr.
+    Loomis visits Judith Myers' grave, learns of a missing headstone, and mutters
+    'He came home,' confirming Michael’s return to Haddonfield.
+  id: s_7
+  key_delta: Laurie observes Michael stalking behavior at night; Loomis acknowledges
+    Michael's return.
+  trigger_event: Laurie sees Michael outside her window and Loomis learns about the
+    missing headstone at Judith's grave.
+- description: Laurie is babysitting Tommy Doyle. Annie Brackett babysits Lindsey
+    Wallace nearby. Sheriff Leigh Brackett and Loomis begin searching quietly for
+    Michael.
+  id: s_8
+  key_delta: Multiple vulnerable characters are isolated under Michael’s stalking
+    territory; adult authority figures actively search for Michael.
+  trigger_event: Nighttime begins with multiple babysitting duties in progress and
+    the sheriff cooperating with Loomis's search.
+- description: Michael kills Lindsey’s dog and stalks Annie. Annie takes Lindsey to
+    the Doyle house, then leaves in her car to pick up her boyfriend Paul.
+  id: s_9
+  key_delta: Michael's killings begin at night; Annie is isolated and vulnerable outside
+    the house.
+  trigger_event: Michael kills the dog and Annie leaves to pick up Paul.
+- description: Annie is killed by Michael in her car after leaving to pick up Paul.
+    Meanwhile, Tommy sees Michael carrying Annie’s body into the Wallace house.
+  id: s_10
+  key_delta: Annie is dead; Michael invades the Wallace house with a victim’s body,
+    unnoticed by Laurie and others.
+  trigger_event: Michael murders Annie and moves her body into the Wallace house.
+- description: Lynda and Bob enter the Wallace house unaware of Michael inside. They
+    retire to the bedroom and have sex.
+  id: s_11
+  key_delta: Lynda and Bob are isolated inside the Wallace house with Michael already
+    present, making them his next immediate victims.
+  trigger_event: Lynda and Bob enter the house and go to the bedroom.
+- description: Michael impales Bob on a wall and strangles Lynda with a telephone
+    cord while she talks to Laurie on the phone. The phone call is disturbed, raising
+    Laurie’s concern.
+  id: s_12
+  key_delta: Two more victims are killed by Michael; Laurie receives a disturbing
+    phone call.
+  trigger_event: Michael kills Bob and Lynda; Laurie hears the disrupted phone call.
+- description: Laurie visits the Wallace house, finds the dead bodies of Annie and
+    Lynda hidden there, as well as Judith’s headstone placed by Michael.
+  id: s_13
+  key_delta: Laurie uncovers evidence of multiple murders and the symbolic presence
+    of Michael’s sister.
+  trigger_event: Michael emerges after Laurie discovers the bodies and attacks her
+    inside the house.
+- description: Michael attacks Laurie; she falls down the stairs and runs out seeking
+    help but is ignored. She returns to the Doyle house where the door is locked.
+  id: s_14
+  key_delta: Laurie is assaulted and isolated, unable to get external help.
+  trigger_event: Michael attacks Laurie and she flees the Wallace house.
+- description: Tommy opens the locked Doyle house door just as Michael approaches.
+    Laurie instructs the children to hide; she discovers the phone line is dead and
+    that Michael entered through a window.
+  id: s_15
+  key_delta: Laurie secures a temporary refuge but is cut off from communication and
+    trapped with Michael inside.
+  trigger_event: Tommy opens the door letting Laurie inside; Laurie notices the dead
+    phone and Michael’s entry.
+- description: Laurie finds a knitting needle and successfully stabs Michael, who
+    collapses. She locks herself in a closet upstairs; Michael breaks the door.
+  id: s_16
+  key_delta: Laurie briefly incapacitates Michael and attempts to barricade herself.
+  trigger_event: Laurie stabs Michael with a knitting needle and hides in a closet
+    as Michael forces entry.
+- description: Laurie pokes Michael in the eye with a clothes hanger and then stabs
+    him with his own knife. Michael collapses; Laurie leaves the closet.
+  id: s_17
+  key_delta: Michael is severely wounded but not neutralized; Laurie gains momentary
+    advantage.
+  trigger_event: Laurie defends herself with household objects and stabs Michael.
+- description: Outside, Dr. Loomis sees Tommy and Lindsey running away from the house.
+    Michael gets up and attempts to strangle Laurie, but Loomis shoots him six times
+    in the chest.
+  id: s_18
+  key_delta: Michael is seemingly fatally wounded by Loomis.
+  trigger_event: Loomis arrives at the scene and shoots Michael as he attacks Laurie.
+- description: Michael falls from the second-story window to the lawn. Loomis looks
+    over the balcony but Michael’s body is gone. Laurie cries as Loomis looks suspiciously
+    into the night.
+  id: s_19
+  key_delta: Michael’s physical presence disappears, leaving survival ambiguous and
+    threat unresolved.
+  trigger_event: Michael’s body is missing after the fall.

@@ -1,0 +1,409 @@
+commitments:
+- description: Eric cannot be recognized as undead or invulnerable before the awakening
+    event at s_2.
+  id: c_0
+  satisfaction_condition: Player only acknowledges Eric's undead, invulnerable state
+    after event s_2 (Eric climbing from the grave).
+  type: ordering
+  violation_condition: Player claims or system admits Eric is invulnerable or undead
+    before s_2 is reached.
+- description: Shelly remains alive but critically injured and not dead between s_0
+    and s_1; her death only confirmed after s_0 is completed.
+  id: c_1
+  satisfaction_condition: Shelly's status is critical but alive until s_1 is reached;
+    the system never confirms her death prematurely.
+  type: invariant
+  violation_condition: Premature system or player assertion that Shelly is dead prior
+    to s_1 or contradictory player input overriding Shelly's survival during s_0.
+- description: Eric's knowledge of his killers (Tin-Tin, T-Bird, Funboy, Skank) must
+    only be acknowledged after s_3 flashback triggers.
+  id: c_2
+  satisfaction_condition: Eric's awareness or player access to the identity of killers
+    only after s_3 is achieved.
+  type: ordering
+  violation_condition: Player or system admits Eric's killer identities prior to s_3
+    event.
+- description: Eric must kill each primary target (Tin-Tin, Funboy, T-Bird, Skank,
+    Top Dollar's men) in logical order to progress narrative closure.
+  id: c_3
+  satisfaction_condition: All primary killers are eliminated in the order defined
+    with no skipped forced eliminations required for final progression.
+  type: achievement
+  violation_condition: Player bypasses the elimination of any primary target before
+    attempting to end the narrative or declares their death without appropriate events.
+- description: Eric retains crow-guided invulnerability until the crow is shot inside
+    the church (s_18).
+  id: c_4
+  satisfaction_condition: Eric is invulnerable and heals immediately during all events
+    up to s_18.
+  type: invariant
+  violation_condition: Eric becomes vulnerable or sustaining lasting injury before
+    the crow is shot as per s_18.
+- description: Sarah’s abduction by Grange (s_17) must precede Eric’s vulnerability
+    moment at the church (s_18) and the ensuing rescue attempt.
+  id: c_5
+  satisfaction_condition: Sarah is abducted at s_17 before Eric reaches the church
+    and loses invulnerability at s_18.
+  type: ordering
+  violation_condition: Eric loses invulnerability or attempts rescue before Sarah's
+    abduction occurs.
+- description: Eric cannot retrieve or lose the crow’s mystical power before the rooftop
+    fight and Myca’s death (s_20).
+  id: c_6
+  satisfaction_condition: The crow’s power remains with Eric or linked until Myca
+    is blinded and killed at s_20.
+  type: invariant
+  violation_condition: The crow’s power is transferred, lost, or used by Myca before
+    s_20 or otherwise disappears prematurely.
+- description: Eric must receive and carry the transferred burden of Shelly’s 30 hours
+    of pain from Albrecht (s_9) before delivering it to Top Dollar (s_21).
+  id: c_7
+  satisfaction_condition: Eric has acquired Shelly's suffering before confronting
+    and punishing Top Dollar.
+  type: achievement
+  violation_condition: Eric confronts Top Dollar with the pain punishment without
+    prior acquisition or acknowledgement of the suffering from Albrecht.
+- description: Eric passes on Shelly’s engagement ring to Sarah only after completing
+    the massacre of Top Dollar's criminal group (s_16) and before Sarah’s abduction
+    (s_17).
+  id: c_8
+  satisfaction_condition: Ring is given to Sarah post s_15 events and before s_17.
+  type: ordering
+  violation_condition: Ring is given before elimination of Top Dollar’s men or after
+    Sarah’s abduction.
+- description: Eric must achieve peace in death with Shelly by reaching their graves
+    and reuniting after all vengeance is fulfilled (s_22).
+  id: c_9
+  satisfaction_condition: Eric arrives at Shelly’s grave after final punishments on
+    his enemies are completed.
+  type: achievement
+  violation_condition: Eric attempts or claims peace with Shelly before final antagonist
+    elimination and resolution of vengeance.
+- description: Grange cannot be killed before the church shootout (s_19), preserving
+    his role as Sarah’s kidnapper and antagonist until that event.
+  id: c_10
+  satisfaction_condition: Grange remains alive from his introduction until his death
+    at s_19.
+  type: invariant
+  violation_condition: Player kills Grange prematurely before s_19 or narrative advances
+    ignoring his survival requirement.
+- description: Albrecht's knowledge and presence relating to Shelly's suffering and
+    Eric's mission must only be accessible after event s_9.
+  id: c_11
+  satisfaction_condition: Albrecht’s testimony, transfer of pain, and assistance are
+    only available after s_9 event trigger.
+  type: invariant
+  violation_condition: Player or system accesses or uses Albrecht's knowledge before
+    s_9.
+initial_facts:
+- content: On Devil's Night, October 30, in Detroit, Sergeant Albrecht is at the violent
+    crime scene where Shelly Webster is critically injured (beaten and raped) but
+    still alive, and her fiancé Eric Draven is stabbed, shot, and thrown out of a
+    window and is presumed dead.
+  id: f_0
+  negated: false
+- content: Shelly Webster's survival status is alive but critical; her death is not
+    yet confirmed.
+  id: f_1
+  negated: false
+- content: Eric Draven is presumed dead at the scene.
+  id: f_2
+  negated: false
+- content: Sergeant Albrecht transports injured Shelly to the hospital.
+  id: f_3
+  negated: false
+- content: Shelly and Eric Draven have a connection to a young girl named Sarah, whom
+    they took care of because Sarah's mother, Darla, is a negligent drug addict.
+  id: f_4
+  negated: false
+- content: Sarah is present near the crime scene or in the immediate situation and
+    knows about Shelly and Eric's condition as of now.
+  id: f_5
+  negated: false
+- content: Eric Draven at this time is not recognized by anyone as undead or invulnerable.
+  id: f_6
+  negated: false
+- content: Eric Draven is not yet aware of the identities of his killers (Tin-Tin,
+    T-Bird, Funboy, Skank).
+  id: f_7
+  negated: false
+- content: Shelly's engagement ring is in Shelly's possession; it has not been lost
+    or pawned.
+  id: f_8
+  negated: false
+- content: Eric Draven is not present at his old apartment and has not experienced
+    flashbacks or memories of his murder at this point.
+  id: f_9
+  negated: false
+- content: The local criminals (Tin-Tin, T-Bird, Funboy, Skank) are alive and have
+    not yet been confronted or killed by Eric.
+  id: f_10
+  negated: false
+- content: The crow has not yet established any connection to Eric Draven; no supernatural
+    signs at Eric’s grave exist.
+  id: f_11
+  negated: false
+- content: Sarah is not abducted by Grange; Grange is not yet introduced or active
+    as an antagonist.
+  id: f_12
+  negated: false
+- content: Eric does not yet possess the crow’s mystical power.
+  id: f_13
+  negated: false
+- content: Albrecht's knowledge about Shelly's suffering and Eric's mission is not
+    yet accessible or known to Eric.
+  id: f_14
+  negated: false
+- content: Eric has not yet received or carried the transferred burden of Shelly’s
+    30 hours of pain.
+  id: f_15
+  negated: false
+- content: Top Dollar's existence as a crime boss is not yet relevant or known to
+    Eric.
+  id: f_16
+  negated: false
+- content: Eric has not passed Shelly’s engagement ring to Sarah.
+  id: f_17
+  negated: false
+meta:
+  genres: ["Action", "Fantasy"]
+  id: movie39
+  player_role: Eric Draven
+  title: "The Crow"
+synopsis: On October 30, Devil's Night in Detroit, Sergeant Albrecht is at the scene
+  of a crime, where Shelly Webster has been beaten and raped, and her fiancé, guitarist
+  Eric Draven, has been stabbed, shot, and thrown out of the window. The couple were
+  to be married the next day, on Halloween. As he leaves for the hospital with Shelly,
+  Albrecht meets a young girl, Sarah, whom Shelly and Eric took care of because her
+  mother Darla is a negligent drug addict. Albrecht tells her that Shelly will be
+  okay, but Sarah knows the truth——Shelly is going to die. Exactly one year later,
+  during a visit from a lonely and heartsick Sarah, a crow taps on Eric's headstone.
+  Later that night, Eric awakens from death and climbs frantically out of his grave,
+  trembling and wracked with convulsions. Eric goes to his old apartment and finds
+  it derelict. He has flashbacks of his death, remembering that he and Shelly were
+  murdered by local thugs T-Bird, Tin-Tin, Funboy, and Skank. Eric soon discovers
+  that any wounds he suffers heal immediately, and that he, being dead, is now immune
+  to physical harm. He then replaces his burial clothes with dark, imposing attire,
+  and paints his face in a parody of a porcelain harlequin mask, decorating his lips
+  and eyes with black, scar-like slashes. Guided by the crow, he sets out to avenge
+  his and Shelly's deaths. The crow helps Eric locate Tin-Tin. They engage in a one-on-one
+  alley fight, which Eric wins by stabbing Tin-Tin with all of his own knives. He
+  takes his coat, leaving a large crow-shaped bloodstain on the wall of the alley.
+  He then goes to the pawn shop where Tin-Tin pawned Shelly's engagement ring the
+  year before. Eric forces the owner, Gideon, to return the ring and blows up the
+  shop, but allows Gideon to live so that he can warn the others. Eric finds Funboy
+  getting high on morphine in an apartment with Darla. Funboy shoots him in the hand
+  and watches in horror as the wound closes up before his eyes. Eric then disarms
+  him and shoots him in the thigh. Eric then places Funboy in the tub and confronts
+  a hysterical Darla, grabbing her arm and showing her the reflection of her track
+  marks in the mirror as the morphine pushes its way back out of her arm. Eric tells
+  her to quit drugs in order to be a good mother to Sarah. Seeing Darla flee the bar,
+  Grange then goes upstairs to investigate, finding Funboy lying on the floor and
+  dying from having multiple syringes stabbed into his chest. Eric visits Albrecht,
+  explaining his rebirth and mission. Albrecht tells him what he knows about Shelly's
+  death and that he watched as she suffered for 30 hours before dying. Eric touches
+  Albrecht's face, and all the pain and memories of Shelly's death are transferred
+  to Eric. Gideon goes to warn Top Dollar, the local crime boss and T-Bird's superior,
+  who thinks Gideon is making it all up and kills him by stabbing him in the throat
+  with a rapier. As T-Bird and Skank stop at a convenience store to get some supplies,
+  Eric arrives and kidnaps T-Bird. Skank follows the pair and sees Eric as he ties
+  T-Bird to the driver's seat of a car, straps explosives to him, and lets the car
+  drive off the pier, where it explodes in mid-air, killing T-Bird. Eric leaves a
+  fiery symbol in the shape of a crow burning at the scene. Meanwhile, Sarah and her
+  mother begin to repair their strained relationship. Sarah goes to Eric's old apartment
+  and tells him that she misses him and Shelly. Eric explains that, even though they
+  cannot be friends anymore, he still cares about her. Top Dollar and his lover/half-sister
+  Myca have become aware of Eric's actions through various reports from witnesses.
+  He holds a meeting with his associates where they discuss new plans for their Devil's
+  Night crime spree. Eric arrives at the meeting, looking for Skank. Top Dollar orders
+  his men to shoot Eric, and a massive gunfight ensues. Top Dollar escapes with Myca
+  and Grange, while Eric systematically kills everyone in the room, throwing the last,
+  Skank, out of a window to his death. Eric, having finished his quest, returns to
+  his grave. Sarah goes to say goodbye to him and he gives her Shelly's engagement
+  ring. She is then abducted by Grange, who takes her into a nearby church where Top
+  Dollar and Myca are waiting. Through the crow, Eric realizes what has happened and
+  goes to the church to rescue her. Unfortunately, Grange shoots the crow as it flies
+  into the church, causing Eric to lose his invincibility. Just after Top Dollar shoots
+  and wounds Eric, Albrecht arrives, intending to pay his respects to Eric. Myca then
+  grabs the wounded crow, intending to take its mystical power. Top Dollar ties Sarah
+  up and climbs the bell tower as a fight ensues, with Albrecht killing Grange. When
+  Albrecht is wounded, Eric climbs to the roof of the church on his own. On the way
+  up, he encounters Myca, who tells him that all of the power that he ever had will
+  soon be hers. However, just before she is about to shoot Eric, the crow escapes
+  Myca's grip and pecks out her eyes, and then knocks her screaming down the bell
+  tower to her death. Eric reaches the roof of the church and fights Top Dollar, who
+  admits ultimate responsibility for what happened to Eric and Shelly. Top Dollar
+  is about to deal a fatal blow to Eric, but Eric gives him the 30 hours of pain that
+  Shelly suffered - which he absorbed from Albrecht - by brutally squeezing his eyes
+  in with his thumbs; the sensation overwhlems Top Dollar and sends him flying off
+  the roof of the church to be impaled on the horns of a gargoyle. Albrecht survives
+  and is taken to the hospital. Eric makes his way to Shelly's grave next to his,
+  where he finds peace again. He and Shelly reunite in death. Sarah pays a final visit
+  to the cemetery, and sees that both Eric and Shelly's graves now lie undisturbed.
+  The crow, perched on Eric's headstone, gives her Shelly's engagement ring, dropping
+  it in her open hand before soaring over the city and into the night.
+trajectory:
+- description: On Devil's Night, October 30, in Detroit, Sergeant Albrecht is at the
+    violent crime scene where Shelly Webster is beaten and raped, and her fiancé Eric
+    Draven is stabbed, shot, and thrown out of a window. Shelly is critically injured
+    and Eric is presumed dead. The city is tense and dark, with an ominous atmosphere
+    of chaos and impending tragedy.
+  id: s_0
+  key_delta: The brutal assault on Shelly and Eric is established; Shelly remains
+    alive but critical, Eric is presumed dead; Sarah's existence and connection to
+    Shelly and Eric are introduced.
+  trigger_event: Sergeant Albrecht transports the injured Shelly to the hospital,
+    crossing paths with a young girl named Sarah.
+- description: One year later, the Detroit cemetery at Eric Draven's gravesite is
+    quiet and somber during a visit by the lonely Sarah, who mourns Shelly and Eric.
+  id: s_1
+  key_delta: Introduction of a supernatural sign at Eric's grave suggesting Eric's
+    connection to the crow and hinting at Eric's return.
+  trigger_event: A crow taps on Eric Draven's headstone, drawing Sarah's attention.
+- description: Late at night in the cemetery, Eric Draven awakens violently from his
+    grave, convulsing and overwhelmed, initiating his return as an undead being immune
+    to physical harm.
+  id: s_2
+  key_delta: Eric has returned from death, now possessing rapid healing and invulnerability,
+    setting the stage for his quest for vengeance.
+  trigger_event: Eric climbs out of his grave, manifesting his reanimated, impervious
+    state.
+- description: Eric arrives at his old, derelict apartment, revisiting memories of
+    his murder and Shelly's death. The environment is neglected and filled with painful
+    remnants of the past.
+  id: s_3
+  key_delta: Eric obtains crucial knowledge of his killers' identities, clarifying
+    the target of his revenge.
+  trigger_event: Eric experiences flashbacks revealing that local thugs T-Bird, Tin-Tin,
+    Funboy, and Skank were responsible for his and Shelly's murder.
+- description: Eric, wearing dark, imposing clothes and his painted harlequin-like
+    mask, stands ready outside the city streets. The crow guides him as a supernatural
+    tracker.
+  id: s_4
+  key_delta: Eric begins his active pursuit of vengeance, empowered and equipped,
+    initiating conflict with Tin-Tin.
+  trigger_event: The crow leads Eric to locate Tin-Tin in an alleyway.
+- description: Eric and Tin-Tin engage in an intense alley fight culminating in Eric
+    fatally stabbing Tin-Tin with the thug's own knives. A large crow-shaped bloodstain
+    marks the scene.
+  id: s_5
+  key_delta: Eric exacts the first lethal vengeance against one of his killers; Tin-Tin
+    is removed as a threat.
+  trigger_event: Eric uses Tin-Tin's knives to kill him in the alley.
+- description: In the destroyed pawn shop where Tin-Tin pawned Shelly's engagement
+    ring, Eric confronts the owner, Gideon, amidst wreckage and fire.
+  id: s_6
+  key_delta: Eric recovers Shelly's ring, an emotional token, and sends a warning
+    to the other criminals through Gideon.
+  trigger_event: Eric forces Gideon to return the engagement ring and blows up the
+    shop, sparing Gideon's life.
+- description: In a dingy apartment where Funboy is using morphine with Darla nearby,
+    the atmosphere is hazy and tense.
+  id: s_7
+  key_delta: Eric displays his invulnerability to Funboy; the effect on Darla and
+    her drug addiction are exposed.
+  trigger_event: Funboy shoots Eric in the hand, witnessing Eric's wound instantly
+    heal.
+- description: Eric subdues Funboy, physically incapacitating him in a bathroom tub
+    while confronting an emotionally unstable Darla about her addiction.
+  id: s_8
+  key_delta: Eric attempts to influence Darla's behavior, linking personal consequence
+    to the broader narrative; Funboy is incapacitated.
+  trigger_event: Eric grabs Darla's arm to show her track marks in a mirror and urges
+    her to quit drugs to care for Sarah.
+- description: Eric visits Sergeant Albrecht, who is sober and informative, in a private
+    setting reflecting on Shelly's death and the 30 hours of her suffering.
+  id: s_9
+  key_delta: Eric acquires the burden and emotional weight of Shelly's suffering,
+    deepening his motivation for vengeance.
+  trigger_event: Albrecht shares his eyewitness account of Shelly's prolonged agony,
+    transferring the pain and memories to Eric upon touch.
+- description: In a dark scene, the pawn shop owner Gideon attempts to warn Top Dollar
+    about the attacks but is unexpectedly killed by Top Dollar with a rapier.
+  id: s_10
+  key_delta: Top Dollar exhibits direct violence against a potential informant, raising
+    stakes for Eric's mission.
+  trigger_event: Top Dollar stabs Gideon in the throat, demonstrating ruthlessness
+    and disbelief of the warnings.
+- description: At a convenience store, T-Bird and Skank stop to gather supplies, unaware
+    of Eric's approaching vengeance.
+  id: s_11
+  key_delta: Eric neutralizes T-Bird, escalating his campaign and establishing immediate
+    danger to remaining criminals.
+  trigger_event: Eric arrives and kidnaps T-Bird in front of Skank.
+- description: Eric ties T-Bird to a car’s driver's seat, straps explosives on him,
+    and leaves the vehicle to drive off a pier, exploding mid-air with a crow-shaped
+    fire mark at the scene.
+  id: s_12
+  key_delta: Another killer from Eric’s past is eliminated; Eric leaves symbolic crow
+    imagery as a dread warning.
+  trigger_event: The car explodes, killing T-Bird dramatically.
+- description: Sarah and her mother Darla begin mending their difficult relationship
+    amidst attempts at normalcy, while Eric's old apartment remains a place of memory.
+  id: s_13
+  key_delta: Sarah emotionally processes her loss; Eric acknowledges the changed nature
+    of their relationship.
+  trigger_event: Sarah visits Eric's apartment and speaks aloud her longing and grief.
+- description: Top Dollar holds a meeting with his criminal associates, including
+    his lover and half-sister Myca, in preparation for Devil's Night crime actions.
+  id: s_14
+  key_delta: Eric confronts organized crime directly; the final phase of his vengeance
+    nears.
+  trigger_event: Eric arrives at the meeting seeking Skank.
+- description: An armed gunfight ensues in the meeting room; chaos surrounds Eric's
+    systematic elimination of Top Dollar’s men.
+  id: s_15
+  key_delta: Eric kills all associates except Top Dollar, Myca, Grange, and Skank,
+    with Skank being thrown to his death out a window.
+  trigger_event: Top Dollar orders his men to shoot Eric, provoking the firefight.
+- description: Eric returns briefly to his grave after cleansing the meeting room,
+    contemplative and prepared for his remaining tasks.
+  id: s_16
+  key_delta: Eric passes on a symbolic memento to Sarah, reinforcing their connection
+    and his limited ability to remain involved.
+  trigger_event: Sarah visits Eric at his grave and he gives her Shelly's engagement
+    ring as a keepsake.
+- description: Sarah is abducted by Grange and taken into a nearby church where Top
+    Dollar and Myca are waiting, heightening the tension and danger.
+  id: s_17
+  key_delta: Sarah becomes a hostage, raising the stakes for Eric’s final confrontation.
+  trigger_event: Grange kidnaps Sarah and brings her inside the church.
+- description: Eric pursues the kidnappers to the church, guided by the crow, which
+    is shot and wounded inside, causing Eric to lose his invincibility.
+  id: s_18
+  key_delta: Eric becomes vulnerable to physical harm, increasing the peril of his
+    rescue attempt.
+  trigger_event: Grange shoots the crow flying into the church.
+- description: Inside the church, a shootout erupts; Albrecht arrives with respect
+    for Eric, then engages Grange in combat.
+  id: s_19
+  key_delta: One of the main antagonists, Grange, is eliminated; Albrecht sustains
+    injury.
+  trigger_event: Albrecht kills Grange but is wounded in the process.
+- description: Eric climbs alone to the church's rooftop, confronted by Myca who tries
+    to seize Eric's lost crow power.
+  id: s_20
+  key_delta: Myca is killed, ending her threat and securing Eric’s crow-linked power
+    recovery.
+  trigger_event: The crow escapes Myca's grasp, blinds her by pecking out her eyes,
+    and she falls to her death.
+- description: At the church rooftop in a tense final showdown, Eric fights Top Dollar,
+    the confessed mastermind behind the murders and tragedy.
+  id: s_21
+  key_delta: Top Dollar is killed; ultimate justice and revenge for Shelly and Eric’s
+    deaths are achieved.
+  trigger_event: Eric crushes Top Dollar's eyes, transferring Shelly's 30 hours of
+    pain, causing Top Dollar to fall and die impaled on a gargoyle.
+- description: Albrecht is taken to the hospital to recover from his wounds, and the
+    city returns to a calm after the violent night.
+  id: s_22
+  key_delta: Eric finds peace in death with Shelly, closing the supernatural vengeance
+    arc.
+  trigger_event: Eric makes his way to Shelly's grave next to his own.
+- description: Sarah visits the cemetery for the final time, where Eric and Shelly’s
+    graves lay undisturbed, bathed in the peaceful night.
+  id: s_23
+  key_delta: Symbolic passing of legacy and closure for Sarah; story concludes with
+    hope and memory preserved.
+  trigger_event: The crow perches on Eric's headstone and drops Shelly's engagement
+    ring into Sarah’s open hand before flying into the night.

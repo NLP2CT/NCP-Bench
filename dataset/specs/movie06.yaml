@@ -1,0 +1,435 @@
+commitments:
+- description: Jake's first major boxing defeat (s_1) must occur before any Mafia
+    involvement concerning his career (s_2) is acknowledged, preventing premature
+    recognition of external influences.
+  id: c_0
+  satisfaction_condition: The narrative node s_1 is completed before node s_2 is acknowledged
+    or any related information is revealed.
+  type: ordering
+  violation_condition: Any implication or direct acknowledgment of Mafia control or
+    involvement (s_2) happens before Jake's initial defeat at s_1.
+- description: Jake’s romantic interest in Vickie (s_3, s_4) must be introduced only
+    after Mafia involvement in his career (s_2), ensuring personal and professional
+    plotlines develop sequentially.
+  id: c_1
+  satisfaction_condition: Narrative nodes s_2 and earlier have been completed before
+    the system reveals Jake’s noticing and courting Vickie (s_3, s_4).
+  type: ordering
+  violation_condition: Player prompts or system reveals Jake's relationship with Vickie
+    before Mafia influences on his career are established.
+- description: Jake’s consecutive victories and controversial judges’ decision in
+    fights with Sugar Ray Robinson (s_5, s_6) must occur before his stable marriage
+    with Vickie is presented (s_7).
+  id: c_2
+  satisfaction_condition: Nodes s_5 and s_6 precede the depiction of Jake being married
+    to Vickie in s_7.
+  type: ordering
+  violation_condition: Narrative presents Jake married to Vickie and domestic jealousy
+    (s_7) prior to completing the relevant fight outcomes (s_5, s_6).
+- description: Between s_3 and s_7, Jake’s marital status must remain that he is married
+    only once; no acknowledgment of Vickie as his wife before s_7, and no acknowledgment
+    of divorce or separation before s_19.
+  id: c_3
+  satisfaction_condition: From node s_3 through s_7 to s_18, Jake is acknowledged
+    as married to Vickie without separation; divorce is not acknowledged until s_19.
+  type: invariant
+  violation_condition: Narrative or player input suggests Jake is married to Vickie
+    before s_7 or separated/divorced before s_19.
+- description: The escalation of jealousy and conflicts over Vickie involving Joey
+    and Salvy (s_9, s_10) must follow Jake's established suspicion and tension regarding
+    Vickie (s_7, s_8).
+  id: c_4
+  satisfaction_condition: Narrative nodes s_7 and s_8 are complete before presenting
+    the club confrontation at s_9 and subsequent Mob enforcement at s_10.
+  type: ordering
+  violation_condition: Player actions or system responses enable the conflict between
+    Joey and Salvy or Mob coercion before Jake’s initial jealousy scenes are established.
+- description: From s_10 to s_12, it must be true that Jake has agreed or been coerced
+    to throw a fight (s_11), which directly leads to his suspension, before he can
+    legitimately win the middleweight title (s_12).
+  id: c_5
+  satisfaction_condition: System confirms Jake’s throwing the fight (s_11) before
+    or simultaneously with his suspension and before displaying victory in s_12.
+  type: invariant
+  violation_condition: Jake is shown winning the middleweight championship (s_12)
+    without prior confirmation or occurrence of the fight-throwing event and suspension
+    (s_11).
+- description: The confrontation and familial estrangement between Jake and Joey,
+    including violent assault (s_13, s_14), must occur only after Jake's stable married
+    life with Vickie is established (s_7) and after Jake’s middleweight title is won
+    (s_12).
+  id: c_6
+  satisfaction_condition: Nodes s_7 and s_12 precede s_13 and s_14 in all narrative
+    progressions.
+  type: ordering
+  violation_condition: Any family violence or accusations involving Joey and Jake
+    occur before Jake is married to Vickie or holds the title.
+- description: Jake’s championship defense (s_15) and attempt at reconciliation with
+    Joey (s_16) must happen after Jake violently assaults Joey (s_14) and prior to
+    the final decline of his career (s_17).
+  id: c_7
+  satisfaction_condition: Narrative node s_14 completes before s_15 and s_16, and
+    s_17 occurs after these reunion attempts.
+  type: ordering
+  violation_condition: Reconciliation attempts at s_16 or title defense s_15 occur
+    prior to s_14, or career decline s_17 happens before or between these without
+    prior events.
+- description: Between s_17 and s_20, Jake’s career decline must be matched by increasing
+    personal and legal troubles culminating in his arrest (s_20); the narrative must
+    not acknowledge legal consequences prior to career decline (s_17).
+  id: c_8
+  satisfaction_condition: Jake’s losing the title (s_17) happens before or concurrent
+    with growing personal instability leading up to arrest (s_20).
+  type: invariant
+  violation_condition: Legal arrest events or jail sentence (s_20) are revealed or
+    acknowledged before or without Jake’s career decline (s_17).
+- description: Jake’s jail time and emotional despair (s_20, s_21) must precede his
+    release and tentative reconciliation with Joey (s_22).
+  id: c_9
+  satisfaction_condition: Narrative node s_21 (despair in jail) is completed before
+    the reunion at s_22 occurs.
+  type: ordering
+  violation_condition: Reconciliation with Joey (s_22) or freedom occurs before depiction
+    of jail time and despair (s_20, s_21).
+- description: Before the narrative ends at s_24, Jake must have moved through a reflective
+    process (s_23) that references his past regrets and self-forgiveness, essential
+    for his final affirmation of identity.
+  id: c_10
+  satisfaction_condition: Node s_23 is triggered and completed before reaching final
+    scene s_24.
+  type: achievement
+  violation_condition: The narrative concludes at s_24 without passing through s_23’s
+    reflective sequence.
+- description: Throughout the entire trajectory, Jake’s relationship truth about Vickie’s
+    infidelity and Joey’s possible affair must remain uncertain and ambiguous until
+    node s_14, at which point explicit family conflict reveals this rupture; no premature
+    certainty or confirmation is allowed.
+  id: c_11
+  satisfaction_condition: The system does not confirm or grant player insight into
+    Vickie’s affair or Joey’s involvement prior to s_14.
+  type: invariant
+  violation_condition: Player or narrative confirms or exposes the infidelity or affair
+    subplot before the violent confrontation at s_14.
+- description: Jake’s public recognition as a former boxer turned entertainer on stage
+    (s_0) must bracket the entire narrative as the opening and closing context, preventing
+    disjointed non-linear reveals about his status.
+  id: c_12
+  satisfaction_condition: Narrative begins with s_0 and ends with s_24, with no backtracking
+    to reveal s_0 elements at later points out of order.
+  type: ordering
+  violation_condition: Any narrative element of Jake practicing comedy routine or
+    recognition of faded glory occurs after key flashbacks or out of sequence with
+    s_0 as initial context.
+initial_facts:
+- content: At time t=0 (trajectory node s_0), Jake LaMotta is alive.
+  id: f_0
+  negated: false
+- content: At time t=0, Jake LaMotta is physically aging.
+  id: f_1
+  negated: false
+- content: At time t=0, Jake LaMotta is overweight.
+  id: f_2
+  negated: false
+- content: At time t=0, Jake LaMotta identifies as an Italian American.
+  id: f_3
+  negated: false
+- content: At time t=0, Jake LaMotta is practicing a comedy routine onstage in an
+    auditorium.
+  id: f_4
+  negated: false
+- content: At time t=0, the auditorium where Jake rehearses is crowded.
+  id: f_5
+  negated: false
+- content: At time t=0, Jake LaMotta is aware he is a former boxer now turned entertainer.
+  id: f_6
+  negated: false
+- content: At time t=0, Jake LaMotta has a conflicted sense of past glory and current
+    obscurity.
+  id: f_7
+  negated: false
+- content: At time t=0, Jake LaMotta already carries the memory and consequences of
+    Mafia involvement in his boxing career, though the flashback narrative has not
+    yet revisited those events.
+  id: f_8
+  negated: false
+- content: At time t=0, Jake LaMotta already knows of his past relationship with Vickie,
+    though the framing scene has not yet returned to the earlier period when that
+    relationship began.
+  id: f_9
+  negated: false
+- content: At time t=0, Jake LaMotta remembers his first major boxing defeat as part
+    of the life now weighing on him, even though that defeat has not yet been shown
+    in the flashback sequence.
+  id: f_10
+  negated: false
+- content: At time t=0, Jake LaMotta is no longer in a stable marriage with Vickie;
+    their relationship belongs to his past rather than his present stage life.
+  id: f_11
+  negated: false
+- content: At time t=0, Jake LaMotta already bears the memory of domestic conflict
+    involving Vickie and the family tensions that followed.
+  id: f_12
+  negated: false
+- content: At time t=0, Jake LaMotta is aware of the past compromise of throwing a
+    fight and the damage it caused to his career and conscience.
+  id: f_13
+  negated: false
+- content: At time t=0, Jake LaMotta has already lived through estrangement and violent
+    conflict with his brother Joey, and those memories inform his reflective state.
+  id: f_14
+  negated: false
+- content: At time t=0, Jake LaMotta is living after his career decline and loss of
+    title, fully aware of them as part of his past.
+  id: f_15
+  negated: false
+- content: At time t=0, Jake LaMotta already knows of his past legal troubles and
+    arrest, which belong to the life he is now reflecting upon.
+  id: f_16
+  negated: false
+- content: At time t=0, Jake LaMotta remembers his imprisonment and emotional despair
+    in jail as part of the history underlying the framing scene.
+  id: f_17
+  negated: false
+- content: At time t=0, Jake LaMotta has already experienced the later, incomplete
+    reconciliation with Joey, though it has not yet been revisited in the flashback
+    structure.
+  id: f_18
+  negated: false
+- content: At time t=0, Jake LaMotta is already engaged in reflection on his past
+    regrets, a process embodied by the 1964 stage framing and later intensified by
+    the flashback structure.
+  id: f_19
+  negated: false
+meta:
+  genres: ["Biography", "Sport"]
+  id: movie06
+  player_role: Jake LaMotta
+  title: "Raging Bull"
+synopsis: 'In 1964, an aging, overweight Italian American Jake LaMotta practices a
+  comedy routine. A flashback to 1941 shows his first loss in a major boxing match,
+  against Jimmy Reeves. Jake''s brother Joey LaMotta later discusses a potential shot
+  for the middleweight title with one of his Mafia connections, Salvy Batts. Some
+  time thereafter, Jake spots a 15-year-old girl named Vickie at an open-air swimming
+  pool in his Bronx neighborhood. He eventually pursues a relationship with her, even
+  though he is already married. Jake defeats Sugar Ray Robinson once in 1943 and has
+  another win three weeks later. Despite the fact that Jake dominated Robinson during
+  the bout, the judges surprisingly rule in favor of Robinson and Joey feels he won
+  only because he was enlisting into the US Army the following week. Jake is married
+  to Vickie by 1947. As Jake''s fears grow about Vickie having feelings for other
+  men, particularly Tony Janiro, the opponent for his forthcoming fight, he shows
+  off his sexual jealousy when he defeats Janiro in front of the local Mob boss, Tommy
+  Como and Vickie. As Joey discusses the victory with journalists at the Copacabana,
+  he is distracted by seeing Vickie approach a table with Salvy and his crew. Joey
+  speaks with Vickie, who says she is giving up on his brother. Blaming Salvy, Joey
+  viciously attacks him in a fight that spills outside of the club. Como later orders
+  them to apologize, and has Joey tell Jake that if he wants a chance at the championship
+  title, which he has control over, he will have to take a dive first. In a match
+  against Billy Fox, Jake does not even bother to put up a fight. He is suspended
+  shortly thereafter from the board on suspicion of throwing the fight, though he
+  realizes the error of his judgment when it is too late. Despite the suspension,
+  he eventually wins the middleweight championship title against Marcel Cerdan in
+  1949. A year later, Jake asks Joey if he fought with Salvy at the Copacabana because
+  of Vickie. Jake then asks if Joey had an affair with her; Joey refuses to answer,
+  insults Jake, and decides to leave. Jake directly asks Vickie about the affair and
+  she sarcastically states that she had sex with the entire neighborhood after he
+  breaks down the bathroom door where she briefly hides from him. Jake angrily walks
+  to Joey''s house and brutally beats him up in front of Vickie and Joey''s wife and
+  children. After defending his championship belt in a brutal fifteen round bout against
+  Laurent Dauthuille in 1950, he makes a call to his brother after the fight, but
+  when Joey assumes Salvy is on the other end and starts insulting and cursing at
+  him, Jake says nothing and hangs up. Estranged from Joey, Jake''s career begins
+  to decline slowly and he eventually loses his title to Sugar Ray Robinson in their
+  final encounter in 1951. By 1956, Jake and his family have moved to Miami. After
+  staying out all night at his new nightclub there, Vickie tells him she wants a divorce.
+  He is later arrested for introducing under-age girls to men and serves a jail sentence
+  in 1957 after failing to raise enough bribe money by taking the jewels out of his
+  championship belt instead of selling the belt itself. In his jail cell, Jake pounds
+  the walls, sorrowfully questioning his misfortune and crying in despair. Upon returning
+  to New York City in 1958, he happens upon his estranged brother Joey, who forgives
+  him but is elusive. Going back to the beginning sequence, Jake refers to the "I
+  coulda been a contender" scene from the 1954 movie On the Waterfront starring Marlon
+  Brando complaining that his brother should have been there for him but is also keen
+  enough to give himself some slack. After a stage hand informs him that the auditorium
+  where he is about to perform is crowded, Jake starts to chant "I''m the boss" while
+  shadowboxing. The film ends with a Biblical quote. This quote was a reference to
+  Martin Scorsese''s film professor, Haig Manoogian to whom the film is dedicated
+  as he died just before it was released. Scorsese credits Manoogian with helping
+  him "to see"——"So, for the second time, [the Pharisees] summoned the man who had
+  been blind and said: ''Speak the truth before God. We know this fellow is a sinner.''
+  ''Whether or not he is a sinner, I do not know.'' the man replied. ''All I know
+  is this——once I was blind and now I can see.'' John IX. 24-26 the New English Bible"'
+trajectory:
+- description: In 1964, Jake LaMotta, an aging and overweight Italian American, is
+    rehearsing a comedy routine on a stage in an auditorium, reflecting a faded glory
+    atmosphere mixing hope and regret.
+  id: s_0
+  key_delta: Jake is established as a former boxer now turned entertainer, with a
+    conflicted sense of past glory and current obscurity.
+  trigger_event: Jake begins practicing his comedic boxing routine onstage while an
+    attendant informs him that the auditorium is crowded.
+- description: 'Flashback to 1941: Young Jake LaMotta suffers his first major defeat
+    via a boxing loss to Jimmy Reeves; the environment is tense and charged with the
+    realities of boxing life.'
+  id: s_1
+  key_delta: Jake's vulnerability and status as an up-and-coming boxer are introduced
+    along with a significant professional setback.
+  trigger_event: The scene shifts abruptly to the boxing arena where Jake loses to
+    Jimmy Reeves.
+- description: Backstage after the fight, Jake's brother Joey speaks with Salvy Batts,
+    a Mafia contact, discussing a prospective middleweight title opportunity, creating
+    an undercurrent of organized crime influence.
+  id: s_2
+  key_delta: Introduction of Mafia involvement in Jake's boxing career and plotline,
+    foreshadowing external pressures on Jake.
+  trigger_event: Joey approaches and converses with Salvy Batts about Jake's fight
+    prospects.
+- description: Jake notices a young 15-year-old girl, Vickie, at a Bronx open-air
+    swimming pool, setting a neighborhood social scene with youthful innocence contrasting
+    Jake's adult world.
+  id: s_3
+  key_delta: Jake’s initial emotional and eventual personal connection to Vickie is
+    established, creating a personal relationship subplot.
+  trigger_event: Jake spots Vickie at the pool and takes interest in her.
+- description: Jake pursues Vickie, notwithstanding his existing marriage, placing
+    him in a morally conflicted domestic situation within the Bronx neighborhood.
+  id: s_4
+  key_delta: Jake's romantic life becomes complicated and raises tension between personal
+    desires and marital fidelity.
+  trigger_event: Jake begins courting Vickie despite his marriage.
+- description: In 1943, Jake defeats Sugar Ray Robinson once, and again three weeks
+    later, in a high-energy boxing environment marked by strong crowd reactions.
+  id: s_5
+  key_delta: Jake's boxing credibility and reputation ascend, marking career peaks
+    despite controversial judging.
+  trigger_event: Jake wins two consecutive bouts against Sugar Ray Robinson.
+- description: The judges controversially award the second fight to Robinson; Joey
+    suspects it was due to Robinson’s impending military enlistment amid wartime tensions.
+  id: s_6
+  key_delta: Institutional interference and potential corruption within boxing outcomes
+    are revealed to Jake’s close circle.
+  trigger_event: Judges announce a surprising decision favoring Robinson after their
+    rematch.
+- description: By 1947, Jake is married to Vickie, with their domestic setting reflecting
+    growing unease due to Jake's suspicions and jealousy over Vickie's attentions
+    to other men like Tony Janiro.
+  id: s_7
+  key_delta: Jake's personal insecurities and jealousy start affecting relationships
+    and mindset.
+  trigger_event: Jake and Vickie are shown married and tensions arise around Janiro's
+    challenge to Jake.
+- description: Jake defeats Tony Janiro in a fight attended by local Mob boss Tommy
+    Como and Vickie, demonstrating physical dominance in a charged atmosphere bound
+    by criminal oversight.
+  id: s_8
+  key_delta: Jake asserts superiority both in the ring and socially, intensifying
+    personal and criminal power dynamics.
+  trigger_event: Jake wins the bout against Tony Janiro in front of Como and Vickie.
+- description: At the Copacabana club, Joey observes Vickie conversing with Salvy
+    and his crew, raising tensions in the social milieu of organized crime and family
+    relations.
+  id: s_9
+  key_delta: Jealousy and mistrust are inflamed between Joey, Vickie, and the Mob
+    associates, igniting internal family conflict.
+  trigger_event: Joey sees Vickie meeting with Salvy at the club and confronts her.
+- description: After a violent fight with Salvy outside the club, Tommy Como intervenes,
+    ordering an apology and coercing Joey to deliver a message to Jake tying his championship
+    prospects to Mob demands.
+  id: s_10
+  key_delta: Explicit threat and control by the Mob over Jake's boxing career are
+    established.
+  trigger_event: Como imposes a truce and dictates conditions to Joey regarding Jake’s
+    upcoming fights.
+- description: In a bout against Billy Fox, Jake throws the fight by not resisting,
+    revealing a critical turning point marked by overt boxing corruption under external
+    pressure.
+  id: s_11
+  key_delta: Jake compromises his integrity and professional record, leading to suspension
+    and suspicion.
+  trigger_event: Jake fails to fight in the Billy Fox match as anticipated by the
+    Mob’s demands.
+- description: Following the suspension, Jake secures the middleweight championship
+    by defeating Marcel Cerdan in a celebratory boxing venue filled with supporters.
+  id: s_12
+  key_delta: Jake achieves professional success despite previous setbacks and under
+    a cloud of potential wrongdoing.
+  trigger_event: Jake wins the middleweight title fight against Marcel Cerdan.
+- description: Jake confronts Joey about the past altercation with Salvy and the possibility
+    of an affair with Vickie, precipitating familial upheaval in a private domestic
+    setting.
+  id: s_13
+  key_delta: Family trust irreparably fractures, estrangement deepens between brothers.
+  trigger_event: Jake directly questions Joey about his involvement with Vickie after
+    the fight.
+- description: Jake violently assaults Joey before Vickie and Joey’s family after
+    she sarcastically admits to promiscuity, escalating domestic and relational chaos
+    in their household.
+  id: s_14
+  key_delta: Physical abuse irreversibly damages family bonds and personal relationships.
+  trigger_event: Jake attacks Joey after confronting Vickie and discovering her evasive
+    response.
+- description: Jake successfully defends his championship belt against Laurent Dauthuille
+    in a brutal fifteen-round match, reinforcing his status in a physically punishing
+    boxing arena.
+  id: s_15
+  key_delta: Jake maintains his professional title amid ongoing personal turmoil.
+  trigger_event: Jake completes the hard-fought victory over Dauthuille.
+- description: Jake attempts to reconcile by calling Joey after the fight, but Joey
+    misconstrues the caller as Salvy and verbally abuses him; Jake silently hangs
+    up in silence, highlighting their fractured relationship.
+  id: s_16
+  key_delta: Communication breakdown deepens estrangement between the brothers.
+  trigger_event: Jake phones Joey and receives hostility, causing Jake to disconnect
+    the call.
+- description: Jake’s boxing career declines as he loses the middleweight title back
+    to Sugar Ray Robinson in 1951 amidst a tense arena atmosphere laden with disappointment.
+  id: s_17
+  key_delta: Jake's professional peak ends, marking the beginning of his career downfall.
+  trigger_event: Jake loses the final title fight to Robinson.
+- description: By 1956, Jake and his family have relocated to Miami, where he owns
+    a nightclub; the environment reflects a shift from boxing to nightlife with undercurrents
+    of instability.
+  id: s_18
+  key_delta: Jake transitions from boxing to nightclub ownership, altering his social
+    and economic landscape.
+  trigger_event: The family moves to Miami and Jake runs a nightclub.
+- description: After Jake stays out all night at the nightclub, Vickie demands a divorce,
+    creating a personal crisis within the domestic atmosphere.
+  id: s_19
+  key_delta: Domestic dissolution begins, signaling deep personal and familial breakdown.
+  trigger_event: Vickie informs Jake she wants a divorce following his late night
+    absence.
+- description: Jake is arrested for introducing underage girls to men, leading to
+    incarceration in 1957, a dismal jail environment marked by despair and isolation.
+  id: s_20
+  key_delta: Jake faces legal consequences that drastically alter his freedom and
+    status.
+  trigger_event: Jake is taken into custody on charges related to underage girls and
+    jailed.
+- description: In jail, Jake pounds the walls sorrowfully, expressing profound despair
+    and guilt while confined to a bleak cell.
+  id: s_21
+  key_delta: An expression of personal anguish and recognition of misfortune is made
+    concrete in confinement.
+  trigger_event: Jake reacts violently to his incarceration by pounding jail walls.
+- description: Upon release in 1958, Jake returns to New York City and encounters
+    Joey, who offers distant forgiveness, creating a cold but tentative family reconnection
+    in a public street setting.
+  id: s_22
+  key_delta: Familial reconciliation begins cautiously after prolonged estrangement.
+  trigger_event: Jake meets Joey on the streets after being released from jail.
+- description: Jake reflects on his life referencing the 'I coulda been a contender'
+    scene from On the Waterfront, invoking cinematic imagery in his dressing room
+    preparation to perform, contemplating his past regret and self-forgiveness.
+  id: s_23
+  key_delta: Jake’s internal struggle with regret and self-understanding becomes framed
+    through cultural reference and self-performance.
+  trigger_event: Jake rehearses dialogue and boxing moves, mentally invoking a famous
+    movie scene.
+- description: The film closes with Jake chanting 'I'm the boss' while shadowboxing
+    onstage, amid a packed auditorium, ending with a Biblical quote invoking vision
+    and redemption.
+  id: s_24
+  key_delta: Final affirmation of identity and symbolic spiritual insight closes the
+    narrative.
+  trigger_event: Jake executes a chant and shadowboxing routine in front of a full
+    audience, concluding with the Biblical passage.

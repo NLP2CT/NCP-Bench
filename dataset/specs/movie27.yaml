@@ -1,0 +1,314 @@
+commitments:
+- description: Troy must meet Gabriella at the New Year's Eve party before recognizing
+    her as a new student at East High to ensure the initial mutual interest and subsequent
+    acquaintance are logically consistent.
+  id: c_0
+  satisfaction_condition: Node s_0 (meeting at party) occurs before node s_1 (Gabriella's
+    introduction at school).
+  type: ordering
+  violation_condition: Any system state where Troy acknowledges Gabriella as a new
+    student at East High (s_1) without previously meeting her at the party (s_0).
+- description: Sharpay's suspicion and competitive reaction can only arise after Troy
+    and Gabriella pause in front of the musical audition sign-up sheet, signaling
+    the potential challenge to Sharpay's lead role.
+  id: c_1
+  satisfaction_condition: Node s_2 (pausing by musical sign-up) occurs before any
+    hostility or maneuvering by Sharpay.
+  type: ordering
+  violation_condition: Sharpay initiates investigation or interference before Troy
+    and Gabriella demonstrate interest by pausing at the sign-up sheet (s_2).
+- description: Troy experiences distraction during basketball practice due to his
+    growing interest in singing only after meeting Gabriella and becoming aware of
+    the musical auditions.
+  id: c_2
+  satisfaction_condition: Between nodes s_2 and s_3, Troy’s distraction is linked
+    explicitly to Gabriella and musical interests.
+  type: invariant
+  violation_condition: Player input causes Troy to exhibit distraction during basketball
+    unrelated to Gabriella or singing prior to establishing those connections.
+- description: Troy and Gabriella must first attempt to audition and be initially
+    rejected due to lateness before receiving a callback opportunity, preserving the
+    logical flow of barriers and opportunities.
+  id: c_3
+  satisfaction_condition: Node s_4 (initial failed audition) occurs before node s_5
+    (callback granted after informal performance).
+  type: ordering
+  violation_condition: Troy and Gabriella receive a callback audition before attempting
+    and being rejected at the initial audition stage.
+- description: Troy and Gabriella must achieve a callback audition status to formally
+    enter the musical competition, transforming social dynamics and escalating tension.
+  id: c_4
+  satisfaction_condition: Node s_6 (callback list posted with Troy and Gabriella included)
+    is achieved.
+  type: achievement
+  violation_condition: The story attempts to conclude or escalate the musical competition
+    subplot without Troy and Gabriella securing a callback.
+- description: Troy and Gabriella must face social pressure to prioritize basketball
+    and scholastic decathlon over the musical, representing midpoint conflict tension.
+  id: c_5
+  satisfaction_condition: Between nodes s_6 and s_8, teammates Chad and Taylor express
+    concern and apply pressure regarding focus on competitions.
+  type: invariant
+  violation_condition: The characters ignore or override social pressure prior to
+    its introduction at s_7, removing a key internal and external conflict.
+- description: Troy’s insult toward Gabriella and her subsequent withdrawal from auditions
+    must be a direct consequence of Chad and the basketball team's trick played while
+    she watches remotely, ensuring causality.
+  id: c_6
+  satisfaction_condition: Node s_8 (the trick and Gabriella's hurt reaction) follows
+    node s_7 (pressure expressed by teammates).
+  type: ordering
+  violation_condition: Gabriella withdraws from auditions or conflict arises without
+    the prior deception event by Chad and team (s_8).
+- description: The truth about Chad and Taylor's deception must be confessed to Troy
+    before he attempts to reconcile with Gabriella, preserving narrative cause-effect.
+  id: c_7
+  satisfaction_condition: Node s_9 (confession) occurs before node s_10 (reconciliation).
+  type: ordering
+  violation_condition: Troy reconciles with Gabriella without first knowing about
+    the deception from Chad and Taylor.
+- description: Sharpay’s scheduling manipulation aiming to preclude Troy and Gabriella
+    from callbacks can only occur after they decide to reengage with musical auditions,
+    maintaining antagonistic reaction timing.
+  id: c_8
+  satisfaction_condition: Between nodes s_10 and s_11, Sharpay learns about renewed
+    audition efforts and manipulates schedules accordingly.
+  type: invariant
+  violation_condition: Scheduling conflicts are introduced before Troy and Gabriella’s
+    reconciliation and renewed commitment to auditioning.
+- description: The basketball and scholastic decathlon teams must collaborate to delay
+    overlapping competitions before Troy and Gabriella can attend the new callback
+    audition time.
+  id: c_9
+  satisfaction_condition: Node s_12 (delays caused) occurs before node s_13 (callback
+    auditions attended).
+  type: ordering
+  violation_condition: Callbacks occur without prior intervention to delay conflicting
+    competitions, making attendance logically impossible.
+- description: Troy and Gabriella must be awarded the lead roles in the musical during
+    the callback auditions, altering the hierarchy and fulfilling the artistic success
+    arc.
+  id: c_10
+  satisfaction_condition: Node s_13 (Ms. Darbus assigning lead roles to Troy and Gabriella)
+    is achieved.
+  type: achievement
+  violation_condition: Callbacks conclude without Troy and Gabriella receiving lead
+    roles, contradicting established story outcomes.
+- description: Troy and Gabriella win their respective competitions (basketball and
+    scholastic decathlon), culminating the story’s dual success theme and culminating
+    celebration.
+  id: c_11
+  satisfaction_condition: Node s_14 (victory announcements and school-wide celebration)
+    is reached.
+  type: achievement
+  violation_condition: The story ends or transitions without both Troy and Gabriella
+    winning their competitions and receiving public recognition.
+initial_facts:
+- content: Troy Bolton is at a ski lodge during winter break.
+  id: f_0
+  negated: false
+- content: Troy Bolton is attending a New Year's Eve party with other teenagers.
+  id: f_1
+  negated: false
+- content: Gabriella is present at the same New Year's Eve party attended by Troy.
+  id: f_2
+  negated: false
+- content: Troy Bolton and Gabriella have not yet met or interacted before this party.
+  id: f_3
+  negated: false
+- content: Sharpay Evans has not yet formed any suspicions or competitive feelings
+    toward Gabriella.
+  id: f_4
+  negated: false
+- content: Troy Bolton is not yet aware of Gabriella transferring to East High.
+  id: f_5
+  negated: false
+- content: Troy Bolton has not yet experienced any distraction during basketball practice
+    related to Gabriella or singing.
+  id: f_6
+  negated: false
+- content: Troy Bolton and Gabriella have not auditioned or received callbacks for
+    the school musical.
+  id: f_7
+  negated: false
+- content: No social pressures or conflicts regarding the musical versus basketball
+    or decathlon have yet arisen.
+  id: f_8
+  negated: false
+- content: Troy Bolton has no knowledge of any deception or trickery related to Gabriella
+    at this time.
+  id: f_9
+  negated: false
+- content: Troy Bolton has not yet reconciled with Gabriella after any conflict.
+  id: f_10
+  negated: false
+- content: Sharpay Evans has not yet manipulated callback audition scheduling.
+  id: f_11
+  negated: false
+- content: The basketball and scholastic decathlon teams have not yet planned or executed
+    any collaboration to delay competitions.
+  id: f_12
+  negated: false
+- content: Troy Bolton and Gabriella have not yet auditioned for lead roles nor been
+    awarded such roles.
+  id: f_13
+  negated: false
+- content: Troy Bolton and Gabriella have not yet won their respective basketball
+    and scholastic decathlon competitions.
+  id: f_14
+  negated: false
+meta:
+  genres: ["Musical", "Romance"]
+  id: movie27
+  player_role: Troy Bolton
+  title: "High School Musical"
+synopsis: Troy Bolton and Gabriella meet at a New Year's Eve party while both teenagers
+  are at a ski lodge during winter break. At the party, the two are called upon to
+  sing karaoke together. They seem to be attracted to each other, and exchange numbers
+  before parting. After Christmas break, Troy sees Gabriella in his homeroom, and
+  she explains that she just moved from Albuquerque, New Mexico and transferred to
+  East High over break. Troy shows Gabriella around the school, and they pause in
+  front of the sign-up sheet for the winter musical auditions. This alarms Drama Club
+  president Sharpay Evans, who assumes that Gabriella is interested in auditioning.
+  Wanting to eliminate competition, Sharpay investigates the new girl and arranges
+  for the scholastic decathlon captain, Taylor McKessie, to find out about Gabriella's
+  past academic achievements. During basketball practice, Troy has trouble focusing
+  because his thoughts are on Gabriella and the idea that he might enjoy singing more.
+  Gabriella and Troy both go to the musical auditions where Sharpay and her twin brother
+  Ryan perform but both are too shy to audition. When Gabriella finally summons the
+  courage to step forward, Troy offers to sing with her, but Ms. Darbus tells them
+  that they are too late. After Ms. Darbus apparently leaves, Kelsi Nielson, the composer
+  of the musical, trips and drops her things. Troy and Gabriella rush to help her,
+  and they sing together as Kelsi plays piano (What I've Been Looking For). Ms. Darbus
+  overhears them and gives them a callback audition. When the callback list is posted,
+  Sharpay is furious to learn that she has competition for the lead in the musical,
+  and the rest of the Wildcats are shocked that Troy and Gabriella have auditioned
+  for a musical. Other students confess their own secret passions and talents, alarming
+  both Taylor and Troy's friend Chad Danforth. Since Gabriella has agreed to join
+  the scholastic decathlon team, both Taylor and Chad want their teammates to focus
+  on their upcoming competitions rather than the musical. To help Troy and Gabriella
+  return to normal, Chad and the basketball team trick Troy into saying that Gabriella
+  is not important while she watches through a wi-fi link that the scholastic decathlon
+  team has set up. Gabriella is hurt, she refuses to talk to Troy and decides not
+  to audition for the musical. Chad and Taylor feel guilty for ruining Troy and Gabriella's
+  relationship, and decide to tell them the truth. After Chad and the basketball team
+  tell Troy what they did and offer to support him in callbacks, Troy goes to Gabriella's
+  house and they make up. Intimidated after overhearing Gabriella and Troy practicing,
+  Sharpay convinces Ms. Darbus to change the callback time to coincide with both the
+  basketball championship and the scholastic decathlon, so that Gabriella and Troy
+  cannot participate. Kelsi overhears the conversation and the basketball team and
+  the decathlon team work together to come up with a plan. On the day of the competitions,
+  Taylor and Gabriella use the school's computers to cause a series of mishaps that
+  delay the big game and the decathlon. With both competitions delayed, Troy and Gabriella
+  rush to the auditorium, and Sharpay and Ryan finish performing their song, confident
+  that their plan worked. Troy and Gabriella then audition and Ms. Darbus gives Troy
+  and Gabriella the lead roles, making Sharpay and Ryan understudies. Troy and Gabriella
+  both win their respective competitions, and the film ends when the entire school
+  gathers in the gym to celebrate. A short scene after the credits show Zeke pacing
+  alone in the gym as Sharpay comes running in declaring the cookies she rejected
+  from him earlier "genius!". She then hugs him and he says he'll make her a creme
+  brulee.
+trajectory:
+- description: Troy Bolton is at a ski lodge during winter break, attending a New
+    Year's Eve party with other teenagers in a festive winter atmosphere.
+  id: s_0
+  key_delta: Troy meets Gabriella for the first time and they exchange phone numbers,
+    establishing an initial mutual interest.
+  trigger_event: Troy and Gabriella are called upon to sing karaoke together at the
+    party.
+- description: Troy returns to East High after Christmas break and is in his homeroom
+    where Gabriella is also a new student who just transferred from Albuquerque, New
+    Mexico.
+  id: s_1
+  key_delta: Troy becomes aware that Gabriella is now a classmate, enabling further
+    interaction and acquaintance.
+  trigger_event: Gabriella explains to Troy that she has just moved and joined the
+    school over the break.
+- description: Troy shows Gabriella around the school; they stand in front of the
+    sign-up sheet for winter musical auditions in the school hallway.
+  id: s_2
+  key_delta: Sharpay Evans becomes alarmed, suspecting Gabriella may audition, introducing
+    the competitive drama club conflict.
+  trigger_event: Troy and Gabriella pause by the musical audition sign-up sheet.
+- description: During basketball practice at school gym, Troy is physically present
+    with his teammates.
+  id: s_3
+  key_delta: Troy's internal conflict between basketball and singing ambitions begins
+    to manifest in observable distraction.
+  trigger_event: Troy experiences difficulty concentrating during practice as his
+    thoughts linger on Gabriella and singing.
+- description: School auditorium during the musical auditions with Sharpay and Ryan
+    performing.
+  id: s_4
+  key_delta: Gabriella and Troy attempt to join the musical but face rejection due
+    to timing, showing initial barrier to participation.
+  trigger_event: Gabriella finally gathers courage to audition; Troy offers to sing
+    with her but Ms. Darbus says they are too late.
+- description: Auditorium, immediately after Ms. Darbus leaves the audition area;
+    Kelsi Nielson trips and drops her music materials.
+  id: s_5
+  key_delta: Ms. Darbus overhears the informal performance and grants Troy and Gabriella
+    a callback audition opportunity.
+  trigger_event: Troy and Gabriella help Kelsi and sing together as she plays piano.
+- description: School hallway after the callback list is posted, where students gather
+    and react.
+  id: s_6
+  key_delta: Troy and Gabriella officially enter the musical competition, altering
+    social dynamics and creating new tensions.
+  trigger_event: Troy and Gabriella discover they have been called back, surprising
+    the Wildcats.
+- description: School sports and academic team meeting areas during preparation for
+    upcoming competitions.
+  id: s_7
+  key_delta: Social pressure mounts on Troy and Gabriella to choose priorities, intensifying
+    their internal and external conflicts.
+  trigger_event: Chad and Taylor express concern about Troy and Gabriella focusing
+    on the musical rather than basketball and scholastic decathlon.
+- description: Troy's home or neutral setting with Troy and Gabriella communicating
+    remotely.
+  id: s_8
+  key_delta: Gabriella is emotionally hurt and decides to withdraw from the musical
+    auditions, leading to a rift between the protagonists.
+  trigger_event: Chad and the basketball team trick Troy into dismissing Gabriella's
+    importance while she watches via a wi-fi link.
+- description: School or neutral setting where Chad and Taylor choose to confess their
+    manipulations.
+  id: s_9
+  key_delta: Troy becomes aware of the deception and seeks to repair his relationship
+    with Gabriella.
+  trigger_event: Chad and Taylor tell Troy the truth about their trick and offer support
+    for the callbacks.
+- description: Gabriella's house where Troy comes to reconcile with her.
+  id: s_10
+  key_delta: Gabriella reenthusiastically commits to auditioning for the musical alongside
+    Troy.
+  trigger_event: Troy visits Gabriella and they reconcile, restoring their communication
+    and relationship.
+- description: School auditorium and administrative offices where Ms. Darbus and Sharpay
+    discuss callback scheduling.
+  id: s_11
+  key_delta: An obstacle is placed to prevent Troy and Gabriella from attending callbacks
+    due to scheduling conflicts.
+  trigger_event: Sharpay convinces Ms. Darbus to schedule callbacks to conflict with
+    basketball championship and scholastic decathlon.
+- description: School computer lab and planning areas where the basketball and decathlon
+    teams collaborate.
+  id: s_12
+  key_delta: The scheduling conflict is neutralized, allowing Troy and Gabriella to
+    attend the callbacks.
+  trigger_event: Taylor and Gabriella use computers to cause delays to the basketball
+    game and decathlon competitions.
+- description: School auditorium during callbacks following the delayed basketball
+    game and decathlon.
+  id: s_13
+  key_delta: Ms. Darbus awards lead roles to Troy and Gabriella, shifting the musical
+    roles hierarchy.
+  trigger_event: Troy and Gabriella arrive and audition for the musical after Sharpay
+    and Ryan perform.
+- description: School gymnasium filled with students celebrating various victories
+    and achievements.
+  id: s_14
+  key_delta: Troy and Gabriella are publicly celebrated at East High for their wins
+    and performance.
+  trigger_event: Troy and Gabriella win their respective competitions and join the
+    school's celebratory gathering.

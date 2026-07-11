@@ -1,0 +1,368 @@
+commitments:
+- description: Deckard must be reintroduced to the Blade Runner role and learn that
+    replicants have escaped before accepting the mission to retire them.
+  id: c_0
+  satisfaction_condition: Node s_0 is completed before node s_2 is initiated.
+  type: ordering
+  violation_condition: Player attempts to accept or act on the mission to retire replicants
+    before witnessing the briefing about escaped replicants at s_0.
+- description: Deckard must watch the Voight-Kampff test video demonstrating the test
+    and threat level of replicants before resuming active duty.
+  id: c_1
+  satisfaction_condition: Node s_1 is completed before node s_2.
+  type: ordering
+  violation_condition: Deckard resumes Blade Runner duties at s_2 without having observed
+    s_1 video and understood test dangers.
+- description: Deckard must discover that Rachael is an experimental replicant with
+    implanted memories during his meeting and testing of her at s_3, before the later
+    emotional fallout at s_5.
+  id: c_2
+  satisfaction_condition: At s_3, Deckard learns that Rachael is a replicant with
+    implanted memories; s_5 then deepens the emotional consequences of that knowledge
+    rather than introducing it for the first time.
+  type: invariant
+  violation_condition: Player identifies Rachael’s replicant nature and implanted
+    memories before s_3, or prevents Deckard from learning those facts during s_3.
+- description: Roy and Leon must discover J.F. Sebastian’s identity by coercing Chew
+    before Pris is traced through Sebastian’s connection.
+  id: c_3
+  satisfaction_condition: Node s_4 occurs before s_6.
+  type: ordering
+  violation_condition: Player progresses to Pris establishing contact with Sebastian
+    at s_6 without first establishing Roy and Leon's Chew-to-Sebastian lead at s_4.
+- description: Deckard must locate Zhora via evidence found in Leon’s apartment before
+    confronting and retiring her.
+  id: c_4
+  satisfaction_condition: Node s_7 is completed before node s_8 starts.
+  type: ordering
+  violation_condition: Player attempts to confront or retire Zhora at s_8 without
+    investigating and finding evidence at s_7.
+- description: Deckard must accept the increased mission scope to include Rachael
+    after Bryant orders her added to the retirement list, prior to attempting to find
+    or confront her.
+  id: c_5
+  satisfaction_condition: Node s_9 is realized before s_10 and s_11 where Rachael
+    is encountered.
+  type: ordering
+  violation_condition: Player pursues or judges Rachael before Bryant’s formal order
+    at s_9.
+- description: Deckard must remain disarmed and incapacitated by Leon during the attack
+    to ensure Rachael’s intervention and alliance formation.
+  id: c_6
+  satisfaction_condition: At s_10, Deckard is disarmed and attacked by Leon and cannot
+    defeat him alone.
+  type: invariant
+  violation_condition: Player has Deckard defeat or evade Leon without Rachael’s intervention
+    before s_11 occurs.
+- description: Deckard and Rachael must first share an intimate and emotional bonding
+    moment to establish their alliance before leaving together.
+  id: c_7
+  satisfaction_condition: Node s_12 is fulfilled before s_20 and s_21 where they depart
+    jointly.
+  type: ordering
+  violation_condition: Player attempts to have Deckard and Rachael leave or form a
+    joint front without experiencing their intimate interaction at s_12.
+- description: Roy and Sebastian’s confrontation with Tyrell must be preceded by Roy
+    informing Pris and Sebastian revealing his condition, to establish motivation
+    and stakes.
+  id: c_8
+  satisfaction_condition: Node s_13 occurs before s_14 and s_15 where they confront
+    Tyrell.
+  type: ordering
+  violation_condition: Player skips informing Pris or Sebastian’s reveal and proceeds
+    directly to Tyrell confrontation.
+- description: Tyrell’s denial of Roy’s request and refusal to extend replicant lifespan
+    must precede Roy killing Tyrell.
+  id: c_9
+  satisfaction_condition: Node s_15 is completed before s_16.
+  type: ordering
+  violation_condition: Roy kills Tyrell before Tyrell denies the lifespan extension
+    request at s_15.
+- description: Deckard must have killed Pris before confronting Roy, ensuring Pris’
+    elimination precedes final confrontation.
+  id: c_10
+  satisfaction_condition: Node s_17 occurs before s_18.
+  type: ordering
+  violation_condition: Player attempts to confront or fight Roy without having neutralized
+    Pris at s_17.
+- description: Roy fights Deckard with measured force, restraining lethal power to
+    give Deckard insight and culminating in saving Deckard’s life before dying.
+  id: c_11
+  satisfaction_condition: At s_18 and s_19, Roy restrains his strength, leaving Deckard
+    alive and ultimately rescuing him from falling.
+  type: invariant
+  violation_condition: Player causes Roy to kill or permanently injure Deckard during
+    the final fight contradicting Roy’s measured restraint and rescue.
+- description: Roy’s death and final monologue about memories and mortality must occur
+    to close the replicant threat and thematically conclude the narrative.
+  id: c_12
+  satisfaction_condition: Node s_19 is achieved prior to narrative closure.
+  type: achievement
+  violation_condition: Player actions or narrative progress prevent Roy’s death or
+    silence his final reflections.
+- description: Deckard finds Rachael alive in his apartment after the final confrontation,
+    establishing their alliance and ambiguous hopeful future.
+  id: c_13
+  satisfaction_condition: Node s_20 is triggered with Deckard discovering Rachael
+    asleep in his bed.
+  type: achievement
+  violation_condition: Player causes Rachael’s death or absence from Deckard’s apartment
+    at the narrative’s final phase.
+- description: The origami unicorn left by Gaff must be found by Deckard after the
+    final confrontation to symbolize narrative ambiguity and thematic closure.
+  id: c_14
+  satisfaction_condition: At s_21, Deckard discovers the origami unicorn before departing
+    with Rachael.
+  type: invariant
+  violation_condition: Player leaves or advances narrative without Deckard encountering
+    Gaff’s unicorn token.
+initial_facts:
+- content: Rick Deckard is located at a Los Angeles police office at November 2019.
+  id: f_0
+  negated: false
+- content: Rick Deckard is retired and not currently active as a Blade Runner.
+  id: f_1
+  negated: false
+- content: Rick Deckard is detained by officer Gaff and brought to meet his former
+    supervisor, Bryant.
+  id: f_2
+  negated: false
+- content: Rick Deckard has not yet been briefed about replicants having escaped to
+    Earth.
+  id: f_3
+  negated: false
+- content: Rick Deckard has no knowledge of the Voight-Kampff test or its application
+    at this moment.
+  id: f_4
+  negated: false
+- content: Rick Deckard has not accepted or resumed his Blade Runner duties.
+  id: f_5
+  negated: false
+- content: Rick Deckard does not know the identity of J.F. Sebastian or his connection
+    to Tyrell Corporation.
+  id: f_6
+  negated: false
+- content: Rick Deckard has not yet discovered any evidence of replicants such as
+    Zhora or Leon.
+  id: f_7
+  negated: false
+- content: Rick Deckard has not met or encountered Rachael.
+  id: f_8
+  negated: false
+- content: Rick Deckard is unaware of Rachael's nature as an experimental replicant
+    with implanted memories.
+  id: f_9
+  negated: false
+- content: Rick Deckard has not located or been assigned any replicants to retire.
+  id: f_10
+  negated: false
+- content: Rick Deckard has no knowledge of Pris, Roy Batty, or Leon's whereabouts
+    or activities.
+  id: f_11
+  negated: false
+- content: Tyrell Corporation exists and operates with Tyrell as the founder.
+  id: f_12
+  negated: false
+- content: Rick Deckard's current cognitive state includes ignorance of the future
+    revelations concerning replicants and their lifespan limits.
+  id: f_13
+  negated: false
+meta:
+  genres: ["Sci-Fi", "Thriller"]
+  id: movie60
+  player_role: Rick Deckard
+  title: "Blade Runner"
+synopsis: In Los Angeles, November 2019, retired police officer Rick Deckard is detained
+  by officer Gaff and brought to meet with his former supervisor, Bryant. Deckard,
+  whose job as a "Blade Runner" was to track down bioengineered beings known as replicants
+  and "retire" them, is told by Bryant that several have escaped and come to Earth
+  illegally. As Tyrell Corporation Nexus-6 models, they have only a four-year lifespan,
+  and may have come to Earth to try to extend their lives. Deckard watches a video
+  of another Blade Runner named Holden administering a "Voight-Kampff" test designed
+  to distinguish replicants from humans based on their empathic response to questions.
+  The subject of the test, Leon, shoots Holden. Bryant wants Deckard to return to
+  work to retire Leon and three other replicants—Roy Batty, Zhora and Pris. Deckard
+  refuses, but after Bryant makes an overt threat, he reluctantly agrees. Sent to
+  the Tyrell Corporation to ensure that the test works on Nexus-6 models, Deckard
+  discovers that Tyrell's assistant Rachael is an experimental replicant who believes
+  herself to be human; Rachael's consciousness has been enhanced with false memories
+  to provide an "emotional cushion". As a result, a more extensive test is required
+  to determine if she is a replicant. Trying to find a way to meet with Tyrell, Roy
+  and Leon go to the eye-manufacturing laboratory of Chew, forcing him to divulge
+  the identity of J.F. Sebastian, a gifted designer who works closely with Tyrell.
+  Rachael visits Deckard at his apartment to prove her humanity by showing him a family
+  photo. Dropping the photo to the floor, Rachael leaves in tears after Deckard tells
+  her that her memories are only implants taken from a real person. Sent by Roy, Pris
+  meets and gains the confidence of Sebastian at his apartment, where he lives with
+  manufactured companions. While searching Leon's apartment, Deckard finds a photo
+  of Zhora, and a synthetic snake scale that leads him to a strip club where Zhora
+  works. Deckard retires Zhora, and shortly after is told by Bryant to add Rachael,
+  who has disappeared from the Tyrell Corporation headquarters, to his list of retirements.
+  Deckard spots Rachael in a crowd but is disarmed and attacked by Leon, who saw him
+  kill Zhora. Rachael kills Leon using Deckard's gun, and the two return to Deckard's
+  apartment, where he promises not to hunt her. Later they share an intimate moment;
+  Rachael then tries to leave, but Deckard seduces her. Arriving at Sebastian's apartment,
+  Roy tells Pris the others are dead. Sympathetic to their plight, Sebastian reveals
+  that because of a genetic disorder that accelerates his aging, his life will also
+  be cut short. Under a pretext, Sebastian and Roy gain entrance into Tyrell's secure
+  penthouse, where Roy demands more life from his maker. Told that this has proved
+  to be impossible, Roy confesses that he has done "questionable things". Tyrell dismisses
+  Roy's guilt, praising Roy's advanced design and his accomplishments. Responding
+  "Nothing the god of biomechanics wouldn't let you into heaven for", Roy kisses Tyrell,
+  then kills him. Sebastian runs for the elevator followed by Roy, who rides the elevator
+  down alone. Upon entering Sebastian's apartment, Deckard is ambushed by Pris, but
+  manages to kill her just as Roy returns. Roy fights Deckard without using his full
+  strength against him. Eventually Deckard is hanging from a rooftop. Just as he is
+  about to fall, Roy saves him. His life ending, Roy delivers a monologue on how his
+  memories are about to be lost and dies in front of Deckard, who watches silently.
+  Gaff arrives and, referring to Rachael, shouts to Deckard "It's too bad she won't
+  live, but then again, who does?" Deckard returns to his apartment to find Rachael
+  alive and sleeping in his bed; as they leave, Deckard finds a small tin-foil unicorn,
+  a calling card left by his origami-making partner Gaff. Depending on the version,
+  Deckard and Rachael either leave the apartment block to an uncertain future, or
+  drive through an idyllic pastoral landscape.
+trajectory:
+- description: In a Los Angeles police office, retired Blade Runner Rick Deckard is
+    detained by officer Gaff and brought to meet his former supervisor, Bryant. The
+    atmosphere is tense and bureaucratic, with an undercurrent of urgency about replicants
+    having escaped to Earth.
+  id: s_0
+  key_delta: Deckard is reintroduced to the Blade Runner role and learns that Nexus-6
+    replicants have escaped and need to be 'retired'.
+  trigger_event: Deckard is summoned by Bryant and shown a briefing about replicants
+    having come illegally to Earth.
+- description: Bryant shows Deckard a video of Holden administering a Voight-Kampff
+    empathy test to Leon, which ends with Leon shooting Holden. The office is charged
+    with the demonstration of the test's dangers and necessity.
+  id: s_1
+  key_delta: Deckard understands the ruthless reality of dealing with replicants and
+    the use of the empathy test as a detection tool.
+  trigger_event: Bryant threatens Deckard and orders him back into service to retire
+    the escaped replicants.
+- description: Back in Bryant's office, Deckard reluctantly agrees to return to active
+    duty to retire Leon, Roy Batty, Zhora, and Pris after Bryant threatens him.
+  id: s_2
+  key_delta: Deckard officially resumes his Blade Runner duties, committing to hunt
+    down the four replicants.
+  trigger_event: Bryant's overt threat persuades Deckard to accept the assignment
+    despite his refusal.
+- description: At the Tyrell Corporation headquarters, Deckard meets Rachael, Tyrell's
+    assistant, in a sterile and high-tech environment. She demonstrates ambiguous
+    human traits, challenging Deckard's assumptions.
+  id: s_3
+  key_delta: Deckard realizes Rachael is a replicant with false memories, complicating
+    the Blade Runner empathy test process.
+  trigger_event: Deckard meets Rachael and learns she is an experimental replicant
+    with implanted memories.
+- description: Roy and Leon visit Chew's eye lab and force him to reveal the identity
+    of J.F. Sebastian, a genetically afflicted designer who works closely with Tyrell.
+  id: s_4
+  key_delta: Roy and Leon gain a new lead toward Tyrell through Sebastian, preparing
+    the route that later connects Pris to him.
+  trigger_event: The narrative focus then shifts back to Deckard when Rachael comes
+    to his apartment and challenges what he has learned about her memories.
+- description: Rachael visits Deckard’s apartment and shows him a family photo as
+    proof of her humanity. The atmosphere is private and emotionally charged.
+  id: s_5
+  key_delta: Deckard confirms Rachael’s implanted memories are not real, deepening
+    his understanding of her condition.
+  trigger_event: Rachael displays the family photo to Deckard before leaving upset
+    upon his revelation.
+- description: Pris meets and gains the trust of Sebastian at his cluttered and lonely
+    apartment filled with artificial companions, seeking a safe place.
+  id: s_6
+  key_delta: Pris secures an ally and refuge in Sebastian, linking replicants directly
+    to Tyrell’s designer.
+  trigger_event: Pris approaches Sebastian and forms a bond with him.
+- description: Deckard searches Leon's apartment, finding a photo of Zhora and evidence
+    leading him to her workplace in a bustling strip club environment.
+  id: s_7
+  key_delta: Deckard locates Zhora's whereabouts, advancing his hunt.
+  trigger_event: Deckard discovers a synthetic snake scale and photo in Leon's apartment,
+    leading to Zhora.
+- description: Deckard confronts and retires Zhora in the strip club amid hostile
+    and chaotic surroundings.
+  id: s_8
+  key_delta: One replicant, Zhora, is eliminated, narrowing the targets.
+  trigger_event: Deckard engages Zhora and successfully retires her.
+- description: Bryant orders Deckard to add Rachael, who has disappeared from Tyrell,
+    to his retirement list, increasing pressure in a tense office environment.
+  id: s_9
+  key_delta: Deckard is tasked with retiring an experimental replicant who has fled,
+    heightening the mission’s complexity.
+  trigger_event: Bryant directs Deckard to pursue Rachael after her disappearance.
+- description: Deckard spots Rachael in a crowded urban area but is unexpectedly attacked
+    and disarmed by Leon, escalating danger in a public setting.
+  id: s_10
+  key_delta: Deckard is incapacitated by Leon, demonstrating replicants’ aggressiveness
+    and threat level.
+  trigger_event: Leon assaults Deckard after recognizing him from the Zhora incident.
+- description: Rachael retrieves Deckard's gun and kills Leon, then they retreat to
+    Deckard's apartment, sharing a fragile and complex alliance.
+  id: s_11
+  key_delta: Deckard and Rachael form an uneasy partnership after Leon's death.
+  trigger_event: After Leon's death, Deckard and Rachael return to his apartment
+    and are left alone together.
+- description: Deckard and Rachael share an intimate moment in his apartment reflecting
+    trust and vulnerability; Rachael attempts to leave but is persuaded to stay.
+  id: s_12
+  key_delta: A personal and emotional bond is established between Deckard and Rachael.
+  trigger_event: Deckard seduces Rachael, preventing her departure from his apartment.
+- description: At Sebastian's apartment filled with synthetic companions, Roy informs
+    Pris of the deaths, and Sebastian reveals his own limited lifespan due to genetic
+    disease.
+  id: s_13
+  key_delta: Sebastian’s role as a sympathetic insider with a fatal condition is revealed,
+    linking replicants’ desperation for life extension.
+  trigger_event: Roy arrives at Sebastian's apartment and discusses recent events
+    with Pris.
+- description: Roy and Sebastian gain entrance to Tyrell's secure penthouse under
+    a pretext in a high-security corporate setting.
+  id: s_14
+  key_delta: Roy confronts Tyrell directly, escalating the conflict to its source.
+  trigger_event: Roy confronts Tyrell face to face and demands more life.
+- description: Roy demands more life from Tyrell, who reveals the impossibility of
+    extending replicants’ lifespans, dismissing Roy's guilt.
+  id: s_15
+  key_delta: The fundamental limitation of replicants’ lifespan is confirmed, intensifying
+    Roy's desperation.
+  trigger_event: Tyrell denies Roy’s request to extend his life.
+- description: Roy kills Tyrell in the penthouse, a violent and climactic act amid
+    the cold corporate environment.
+  id: s_16
+  key_delta: The Tyrell Corporation’s founder is dead, removing the creator figure
+    from the narrative.
+  trigger_event: Roy murders Tyrell after their confrontation.
+- description: Deckard returns to Sebastian's apartment and is ambushed by Pris, but
+    manages to kill her just as Roy returns, setting a tense and dangerous confrontation
+    scene.
+  id: s_17
+  key_delta: Pris is eliminated, leaving Roy as the last replicant target.
+  trigger_event: Pris attacks Deckard, who kills her in self-defense.
+- description: Roy fights Deckard using measured force, ultimately leaving him hanging
+    from a rooftop in a life-threatening situation.
+  id: s_18
+  key_delta: Deckard’s life is at risk, demonstrating Roy’s superior strength tempered
+    with restraint.
+  trigger_event: Roy subdues Deckard and leaves him dangling from a ledge.
+- description: At the rooftop, Roy saves Deckard from falling, delivers a monologue
+    about memories and mortality, and dies peacefully as dawn breaks over the cityscape.
+  id: s_19
+  key_delta: Roy’s death marks the end of the replicant threat; his final reflections
+    highlight themes of memory and mortality.
+  trigger_event: Roy rescues Deckard and then dies from his failing body.
+- description: Gaff arrives at the scene, cryptically mentioning Rachael's uncertain
+    fate. Deckard returns to his apartment, finding Rachael alive, resting in his
+    bed as dawn light filters in.
+  id: s_20
+  key_delta: Deckard and Rachael form a united front, suggesting hope for their ambiguous
+    future together.
+  trigger_event: Deckard returns home to find Rachael sleeping in his bed.
+- description: Deckard discovers Gaff’s origami unicorn, a symbolic and mysterious
+    token left at his apartment as he and Rachael depart together. The environment
+    transitions from urban to open pastoral scenery depending on the narrative version.
+  id: s_21
+  key_delta: Deckard leaves with Rachael after finding Gaff's unicorn, carrying the
+    unresolved question of what Gaff knows about them.
+  trigger_event: Deckard finds a tin-foil unicorn left by Gaff before leaving with
+    Rachael.

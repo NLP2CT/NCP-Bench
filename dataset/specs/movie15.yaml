@@ -1,0 +1,320 @@
+commitments:
+- description: The narrative must establish Tina’s initial nightmare and corresponding
+    physical injuries as the first reveal of the killer’s existence before any other
+    character knowledge or action.
+  id: c_0
+  satisfaction_condition: Node s_0 is completed before allowing acknowledgement or
+    discovery of the killer by other characters.
+  type: ordering
+  violation_condition: Player reveals Freddy’s identity, history, or physical evidence
+    before s_0 (before Tina’s nightmare and slashes) occur.
+- description: Characters must discuss and connect their nightmares and suspicions
+    only after Tina’s nightmare is physically validated, to prevent premature acceptance
+    of the threat.
+  id: c_1
+  satisfaction_condition: Node s_1 follows s_0, where the characters collectively
+    recognize a shared fear originating from Tina’s nightmare evidence.
+  type: ordering
+  violation_condition: Shared fear or group recognition of the killer happens before
+    Tina’s nightmare and evidence at s_0.
+- description: Nancy’s discovery of Freddy and her investigation must only progress
+    after witnessing Tina’s murder and Rod’s arrest, to maintain logical tension and
+    suspicion.
+  id: c_2
+  satisfaction_condition: Node s_4 (Rod’s arrest and Nancy’s nightmare) occurs after
+    Tina’s death in s_3.
+  type: ordering
+  violation_condition: Nancy directly identifies Freddy or Rod’s innocence before
+    Tina’s death and Rod’s arrest.
+- description: Rod Lane remains innocent of Tina’s murder until the narrative conclusively
+    proves otherwise by his arrest and subsequent death.
+  id: c_3
+  satisfaction_condition: From s_3 to s_6, Rod is always suspected but never confirmed
+    guilty by player or system; only suspicion and investigation occur.
+  type: invariant
+  violation_condition: Player or system states Rod’s guilt as fact before s_6 or Rod’s
+    death is confirmed.
+- description: Nancy must develop the critical insight that Freddy Krueger is a supernatural
+    killer able to murder through dreams, connecting the dream and waking worlds meaningfully.
+  id: c_4
+  satisfaction_condition: Node s_8 is reached where Marge reveals Freddy’s origin,
+    and Nancy possesses the hat from the dream world.
+  type: achievement
+  violation_condition: Player never obtains Freddy’s real identity and backstory before
+    the narrative advances beyond s_8.
+- description: Glen's death must occur only after Freddy's backstory and his true nature are established.
+  id: c_5
+  satisfaction_condition: Glen’s death at s_10 follows Rod's death at s_6 and the revealed backstory at s_8.
+  type: ordering
+  violation_condition: Player or system allows Glen's death before the backstory and evidence of Freddy's powers are established.
+- description: Nancy’s fear is the source of Freddy’s power, and losing this fear
+    is the necessary condition for his temporary neutralization.
+  id: c_6
+  satisfaction_condition: From s_13 onward, Nancy’s explicit declaration of fearlessness
+    causes Freddy to lose power and disappear.
+  type: invariant
+  violation_condition: Freddy retains power after Nancy declares no fear, or the narrative
+    skips Nancy’s fear confrontation.
+- description: Nancy must physically confront and subdue Freddy in the waking world by pulling him out of a dream, demonstrating her agency and resistance.
+  id: c_7
+  satisfaction_condition: Node s_11 is completed where Nancy pulls Freddy into reality, then traps and burns him in the basement.
+  type: achievement
+  violation_condition: Narrative ends or progresses without Nancy actively pulling Freddy into the waking world and confronting him.
+- description: The narrative must not allow Nancy to claim definitive victory or security
+    over Freddy until after both her confrontation and the subsequent attack on her
+    mother occur.
+  id: c_8
+  satisfaction_condition: Node s_12 (Freddy attacking Marge) follows Nancy’s real-world
+    confrontation in s_11 before s_13 (fearlessness).
+  type: ordering
+  violation_condition: Nancy’s feeling of security or resolution regarding Freddy
+    happens before the attack on Marge is witnessed.
+- description: Freddy’s supernatural influence persists beyond his apparent defeat,
+    ensuring the threat endures beyond the narrative’s apparent resolution.
+  id: c_9
+  satisfaction_condition: After s_13, the final scene in s_14 demonstrates Freddy’s
+    ongoing threat despite Nancy leaving the room fearlessly.
+  type: invariant
+  violation_condition: The narrative allows Freddy’s defeat to be absolute with no
+    indication of lingering threat.
+- description: Discovery and acceptance of Freddy’s identity and history must precede
+    any attempts by Nancy to actively confront or trap him.
+  id: c_10
+  satisfaction_condition: Node s_8 (knowledge revelation) is reached before Nancy’s
+    plan and execution in s_11.
+  type: ordering
+  violation_condition: Nancy tries to trap, attack, or confront Freddy without prior
+    knowledge of his identity and backstory.
+initial_facts:
+- content: Tina Gray is asleep in her bedroom and experiencing a nightmare involving
+    a figure wearing a glove embedded with razor-sharp knives.
+  id: f_0
+  negated: false
+- content: An unknown person is in a dark boiler room crafting a glove with razor-sharp
+    knives embedded in the fingers.
+  id: f_1
+  negated: false
+- content: Tina Gray is not yet aware of Freddy Krueger's identity, history, or supernatural
+    nature.
+  id: f_2
+  negated: false
+- content: Nancy Thompson is not yet aware of the existence of the bladed glove figure
+    stalking Tina or the nightmare's physical manifestation.
+  id: f_3
+  negated: false
+- content: Rod Lane, Glen Lantz, Nancy Thompson, and other friends have not yet discussed
+    or connected their nightmares or suspicions.
+  id: f_4
+  negated: false
+- content: Rod Lane has not yet been suspected or accused of any crime related to
+    Tina Gray.
+  id: f_5
+  negated: false
+- content: Tina Gray's nightgown does not yet have any slash marks from the nightmare
+    experience.
+  id: f_6
+  negated: false
+- content: Nancy Thompson has not yet experienced any nightmares related to the bladed
+    glove figure.
+  id: f_7
+  negated: false
+- content: The player role Nancy Thompson is currently ignorant of Freddy Krueger's
+    existence, the danger he poses, and his ability to kill in or through dreams.
+  id: f_8
+  negated: false
+- content: The boiler room exists as a location but Nancy Thompson has no knowledge
+    of it or its association with the nightmare figure.
+  id: f_9
+  negated: false
+- content: No murders or physical attacks by the glove figure have yet occurred in
+    the waking world.
+  id: f_10
+  negated: false
+meta:
+  genres: ["Horror", "Thriller"]
+  id: movie15
+  player_role: Nancy Thompson
+  title: "A Nightmare on Elm Street"
+synopsis: As the film begins, we see an unknown person in a dark boiler room create
+  a glove with razor-sharp knives embedded in the fingers. High school student Tina
+  Gray has a disturbing nightmare in which she is stalked through the boiler room
+  by a severely burned figure with the bladed glove on his right hand. When he finally
+  catches her, she awakens screaming in her own bed. However her nightgown has four
+  slashes in it, identical to the ones given to her in the dream by the unknown man's
+  razors, and is less than convinced it was just a nightmare. The next day, Nancy
+  Thompson recalls a nursery rhyme from Tina's description when they meet up with
+  Nancy's boyfriend, Glen Lantz. Tina's boyfriend Rod Lane shows up as well. Nancy
+  admits she also had a bad dream and all of them dismiss the topic of the nightmare,
+  though Tina is visibly disturbed. That night, Nancy and Glen go to Tina's house
+  because her mother is out of town and Tina is still troubled by her nightmare. Tina
+  describes the killer in her dream, which intrigues Nancy who adds to the description
+  having seen the same killer herself, also getting Glen's silent attention. Rod crashes
+  the party and he and Tina have sex while Glen and Nancy sleep in adjoining rooms.
+  Rod also tells Tina he's been having nightmares, but neither of them think about
+  it and go to sleep. Once asleep, Tina is once again stalked by the hideous figure,
+  who taunts her repeatedly before attacking. This time, he catches and murders her.
+  Her struggles awaken Rod who watches Tina get slashed by the glove and dragged up
+  the wall and across the ceiling, screaming his name and alerting the others before
+  she falls dead onto the bed. Because Rod was the only one in the same room as Tina,
+  he is suspected of the murder and is arrested the next day. While at school, Nancy
+  has a terrifying nightmare in class where she is attacked by the same figure that
+  killed Tina. Nancy leaves the school early and goes to the jail to talk to Rod,
+  who describes what he saw the night Tina was killed, which reminded him of his own
+  nightmares where he was also stalked by the figure wearing the glove. To her shock,
+  Nancy realizes that Rod did not kill Tina and leaves. Later, she begs Glen to watch
+  her while she sleeps so she can investigate her dreams further. Glen hesitates,
+  but accepts. When Nancy goes to sleep, she sees the killer enter Rod's jail cell
+  and suspects that Rod is in danger. When she wakes up, she and Glen rush to the
+  police station only to find Rod dead, hung by his own bed sheets. Everybody, except
+  Nancy, believes that he committed suicide. At Rod's funeral, Nancy's mother, Marge
+  Thompson insists on getting her psychiatric help. But while at the clinic to evaluate
+  her dreams, she has a violent encounter and awakens with a streak of white in her
+  hair. Much to her horror, she also pulls the killer's battered hat out of the dream
+  with her, which she recognizes. Marge begins to drink heavily and installs security
+  bars on all the windows and the door. She reveals to Nancy that the owner of the
+  hat and the burned figure from her nightmares is a man named Freddy Krueger. Years
+  ago, he was arrested after murdering 20 children, but due to a technicality, he
+  was released. Soon after, the enraged parents of the murdered children took the
+  law into their hands by burning Freddy alive. It now appears that he is exacting
+  revenge against the parents that killed him from beyond the grave by killing their
+  children from within their dreams. Nancy tells this to Glen, who advises her to
+  turn her back on her fear and to take the energy of the killer away from him, but
+  she plans to pull Freddy from the dreamworld where she and Glen can gang up on him
+  and surrender him to the authorities. However, both Glen and Nancy's parents lock
+  them inside their respective houses, keeping them from meeting. Glen later falls
+  asleep and is killed when Freddy pulls him into his bed and he is regurgitated as
+  a geyser of blood. Nancy then receives a phone call from Freddy, who tells her——"I'm
+  your boyfriend now, Nancy.", indicating that he has killed Glen. Still unable to
+  get her father to believe her, she tells Don to break down the door of her house
+  in 20 minutes and then goes to sleep to hunt down Freddy. She finds him in her last
+  few minutes of sleep and gets hold of him when her alarm goes off. When she doesn't
+  see him at first, she thinks she's gone crazy, but Freddy eventually appears, and
+  the two face-off. Nancy proves to be a match for him, setting up several booby traps
+  and making him fall into every one, then lighting him on fire and trapping him in
+  the basement to call her father. Don and his department arrive to put out the fires.
+  He and Nancy then follow a trail of footsteps up to Marge's room and discover Freddy
+  smothering her with his flaming body. They knock him out but he disappears, leaving
+  the body of Marge Thompson vanishing slowly into the bed. Nancy sends her father
+  from the room and turns her back as Freddy rises from the bed. She proclaims she
+  is no longer afraid of him, causing him to lose his powers. Freddy lunges forward
+  as she walks out of the room and vanishes. Nancy steps out into daylight from her
+  front door and her mother appears well and sober, promising to stop drinking as
+  her friends pull up in Glen's car. Suddenly, the roof clamps shut; the material
+  an exact match to Freddy's sweater; and the car starts moving of its own accord.
+  The film ends with Nancy screaming as she is driven off with her friends and we
+  see Freddy pull Marge through the front door's window.
+trajectory:
+- description: In a dark boiler room, an unknown person crafts a glove embedded with
+    razor-sharp knives on the fingers. High school student Tina Gray sleeps fitfully
+    in her bedroom, haunted by a nightmare in which the figure with the bladed glove
+    stalks her through the boiler room.
+  id: s_0
+  key_delta: The existence of a threatening figure wearing a bladed glove is established
+    along with Tina's vivid nightmare that manifests in reality as four identical
+    slashes appear on her nightgown.
+  trigger_event: Tina abruptly awakens from her nightmare, screaming in her bed.
+- description: Tina meets with Nancy Thompson, Nancy's boyfriend Glen Lantz, and Tina's
+    boyfriend Rod Lane at school the next day. They discuss Tina's nightmare and its
+    details, including the nursery rhyme recalled by Nancy.
+  id: s_1
+  key_delta: The awareness of a shared fear related to the bladed figure is introduced
+    among Tina, Nancy, and indirectly Rod; connections begin forming around the identity
+    of the killer.
+  trigger_event: The friends gather at school and talk about their recent nightmares.
+- description: Nancy and Glen visit Tina's house at night while Tina and Rod are present.
+    Tina describes the killer in detail, and Nancy adds her own similar experience.
+    Rod stays despite tensions and later has sex with Tina.
+  id: s_2
+  key_delta: Nancy learns more about the killer’s appearance, aligning with her own
+    dreams; the characters' relationships tighten around the shared nightmare figure.
+  trigger_event: Night falls and the group assembles at Tina's house with Nancy and
+    Glen arriving.
+- description: Tina falls asleep again in her room with Rod nearby. The burned figure
+    with the bladed glove stalks and attacks Tina, ultimately killing her by slashing
+    and dragging her across the ceiling. Rod witnesses the murder and screams.
+  id: s_3
+  key_delta: Tina becomes the first confirmed victim of the threat. Rod becomes a
+    suspect after being the only witness present during the murder.
+  trigger_event: Tina is attacked and killed in her bedroom during the night.
+- description: Rod is arrested for Tina's murder. Nancy experiences a nightmare at
+    school where the same figure attacks her. Nancy leaves school early and visits
+    Rod in jail.
+  id: s_4
+  key_delta: Suspicion focuses on Rod for Tina’s death. Nancy gains firsthand knowledge
+    of Rod’s own nightmares and fear of the figure, suggesting his innocence.
+  trigger_event: Nancy has a nightmare in class and decides to visit Rod in jail afterward.
+- description: After her visit, Nancy suspects Rod is innocent. She asks Glen to watch
+    over her while she sleeps to investigate further. That night, Nancy dreams the
+    figure entering Rod's jail cell.
+  id: s_5
+  key_delta: Nancy's dream gives her a vision of Rod’s vulnerability in jail, implying
+    Rod is in danger and possibly not responsible for Tina’s murder.
+  trigger_event: Nancy falls asleep with Glen watching and dreams of the killer approaching
+    Rod's jail cell.
+- description: Nancy and Glen rush to the jail after Nancy awakes, only to find Rod
+    dead, apparently by suicide via hanging with his bed sheets. The authorities and
+    others believe he killed himself.
+  id: s_6
+  key_delta: Rod's death removes a potential suspect. The killer's threat escalates,
+    now demonstrating the ability to kill beyond the dream world.
+  trigger_event: Nancy and Glen arrive at the jail and discover Rod's body hanging.
+- description: At Rod's funeral, Nancy's mother Marge insists Nancy get psychiatric
+    help. At a clinic evaluation, Nancy violently encounters the killer in a dream
+    and awakens with a white streak in her hair and possession of the killer's battered
+    hat.
+  id: s_7
+  key_delta: The killer's dream influence manifests physically on Nancy; possession
+    of the hat links the dream world with reality.
+  trigger_event: Nancy undergoes psychiatric evaluation and has a violent dream encounter
+    with the figure.
+- description: 'Marge installs security bars on the house and begins drinking heavily.
+    She reveals Freddy Krueger''s backstory to Nancy: murderer of 20 children, released
+    on a technicality, then burned alive by vengeful parents; Freddy now kills their
+    children through dreams.'
+  id: s_8
+  key_delta: Nancy gains critical factual knowledge about Freddy’s real identity,
+    past crimes, and supernatural revenge motive.
+  trigger_event: Marge confides Freddy Krueger's identity and history to Nancy.
+- description: Nancy tells Glen about Freddy and plans to trap him by pulling him
+    from the dreamworld to surrender him to authorities. Glen and Nancy’s parents
+    lock them separately inside their houses to prevent them from meeting.
+  id: s_9
+  key_delta: Nancy is physically isolated despite plans to confront Freddy; cooperation
+    with Glen is blocked.
+  trigger_event: The adults confine Nancy and Glen to prevent their contact.
+- description: Glen falls asleep and is killed by Freddy, who violently drags him
+    into bed and kills him. Nancy receives a phone call from Freddy, claiming to be
+    her new boyfriend, confirming Glen’s death.
+  id: s_10
+  key_delta: Freddy’s threat intensifies by killing Glen and taunting Nancy directly,
+    raising personal stakes.
+  trigger_event: Nancy receives Freddy’s chilling phone call after Glen dies.
+- description: Nancy instructs Don to break down her door in 20 minutes and prepares
+    to sleep in order to hunt Freddy. She finds him in the dreamworld, grabs him when her alarm goes off, and pulls him into the waking world where she successfully traps and burns him in the basement.
+  id: s_11
+  key_delta: Nancy actively confronts and physically subdues Freddy in the real world,
+    demonstrating agency and resistance.
+  trigger_event: Freddy's apparent defeat draws Don and the police upstairs, where Marge becomes his next target.
+- description: Don and the police arrive to extinguish fires in Nancy’s house. Nancy
+    and Don find Freddy smothering Marge with flames upstairs. They knock Freddy unconscious
+    but he vanishes as Marge’s body slowly disappears into the bed.
+  id: s_12
+  key_delta: Freddy is proven to physically manifest and harm people in the waking
+    world; Marge’s life is endangered; Freddy escapes capture.
+  trigger_event: They confront Freddy smothering Marge and witness his disappearance.
+- description: Nancy turns away from Freddy as he rises from the bed and declares
+    her lack of fear, causing him to lose powers. Freddy lunges but Nancy walks out,
+    and Freddy vanishes. Nancy steps outside to bright daylight.
+  id: s_13
+  key_delta: Nancy’s fearlessness weakens Freddy’s power and temporarily neutralizes
+    the threat.
+  trigger_event: Nancy faces Freddy without fear and exits the room confidently.
+- description: Outside, Nancy’s mother appears sober and well, promising to stop drinking.
+    Friends arrive in Glen’s car. Suddenly, the roof clamps shut with a material matching
+    Freddy’s sweater, the car starts moving on its own, and Nancy screams as the scene
+    cuts.
+  id: s_14
+  key_delta: Despite apparent victory, Freddy’s influence endures; Nancy and friends
+    are captured as Freddy pulls Marge through the window, signaling ongoing threat.
+  trigger_event: The roof closes ominously and the car moves autonomously, surrounding
+    Nancy and her friends.

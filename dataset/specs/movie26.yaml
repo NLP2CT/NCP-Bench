@@ -1,0 +1,200 @@
+commitments:
+- description: Detention must be officially assigned by Richard Vernon before any
+    group interaction or personal revelations occur.
+  id: c_0
+  satisfaction_condition: Node s_0 is completed before any nodes s_3 or later are
+    initiated.
+  type: ordering
+  violation_condition: Player attempts to trigger student interactions, dialogues,
+    or revelations before Vernon has assigned detention and the essay (before s_0).
+- description: Students remain silent, seated, and separated under Vernon's supervision
+    before Bender first openly defies the rules.
+  id: c_1
+  satisfaction_condition: From s_0 up to but not including s_1, no student initiates
+    communication or moves from their seat.
+  type: invariant
+  violation_condition: Any student speaks, moves, or interacts before Bender's first
+    defiance (before s_1).
+- description: Richard Vernon maintains strict external control by periodically checking
+    on the students throughout the detention prior to breakdown of silence.
+  id: c_2
+  satisfaction_condition: Between s_1 and s_3, Vernon intermittently enters/checks
+    on the library group at least once and students remain under surveillance.
+  type: invariant
+  violation_condition: Vernon fails to supervise at all during this interval or players
+    cause the system to skip Vernon's monitoring during this period.
+- description: The students begin dialogue and share personal secrets only after Bender's
+    provocations and Vernon's continued supervision have established tensions.
+  id: c_3
+  satisfaction_condition: Node s_3 occurs only after nodes s_1 and s_2 are completed.
+  type: ordering
+  violation_condition: Player instigates student bonding, confessions, or sharing
+    before the escalation of tensions and Vernon's supervision (before s_3).
+- description: The students must reach consensus to delegate Brian to write the essay
+    challenging Vernon before the essay is physically submitted.
+  id: c_4
+  satisfaction_condition: At or before s_5, players achieve or trigger the group consensus
+    at s_4 authorizing Brian to write the essay.
+  type: achievement
+  violation_condition: Player bypasses group agreement or Brian submitting the essay
+    without prior consensus event (s_4) is triggered.
+- description: Brian's essay must fundamentally challenge Vernon's judgments and reject
+    imposed labels, not comply with the original imposed essay topic.
+  id: c_5
+  satisfaction_condition: At s_5, the essay left behind is explicitly a defiant letter
+    signed 'The Breakfast Club' rejecting Vernon's assumptions.
+  type: invariant
+  violation_condition: Player causes Brian to write an essay that complies with Vernon's
+    assigned topic or accepts Vernon's imposed labels.
+- description: Physical intimacy and symbolic gestures indicating changed relationships
+    among students must only occur after the essay submission and nearing end of detention.
+  id: c_6
+  satisfaction_condition: Node s_6 occurs strictly after node s_5 has concluded.
+  type: ordering
+  violation_condition: Player initiates student kisses, gift exchanges, or emotional
+    bonding before the completion of the essay challenge (before s_5).
+initial_facts:
+- content: Richard Vernon is the assistant principal at Shermer High School.
+  id: f_0
+  negated: false
+- content: 'Five students: Allison Reynolds, Andrew Clark, John Bender, Brian Johnson,
+    and Claire Standish, arrive separately at Shermer High School on March 24, 1984
+    for Saturday morning detention.'
+  id: f_1
+  negated: false
+- content: All five students are physically present in the Shermer High School library
+    at t=0.
+  id: f_2
+  negated: false
+- content: Each student belongs to a different social clique and they appear to have
+    little in common.
+  id: f_3
+  negated: false
+- content: Richard Vernon has not yet assigned detention rules or given the 1000-word
+    essay to the students.
+  id: f_4
+  negated: false
+- content: The students are seated silently and separately without speaking or moving
+    at t=0.
+  id: f_5
+  negated: false
+- content: The library atmosphere is tense and quiet with underlying social divisions
+    but no overt conflict or communication has yet occurred between students.
+  id: f_6
+  negated: false
+- content: Richard Vernon has not yet interacted with the students or enforced any
+    rules.
+  id: f_7
+  negated: false
+- content: At t=0, Richard Vernon is unaware of any future conversations, rule-breaking,
+    personal revelations, or evolving relationships among the students.
+  id: f_8
+  negated: false
+- content: At t=0, the students have not yet bonded, shared personal secrets, or formed
+    any group consensus.
+  id: f_9
+  negated: false
+- content: At t=0, no essay has been assigned or written.
+  id: f_10
+  negated: false
+- content: At t=0, no student has broken rules by speaking, moving, or interacting.
+  id: f_11
+  negated: false
+- content: At t=0, there is no physical intimacy or symbolic gestures exchanged among
+    students.
+  id: f_12
+  negated: false
+meta:
+  genres: ["Drama", "Comedy"]
+  id: movie26
+  player_role: Richard Vernon
+  title: "The Breakfast Club"
+synopsis: Five students — Allison Reynolds, Andrew Clark, John Bender, Brian Johnson,
+  and Claire Standish — report for Saturday morning detention on March 24, 1984 at
+  Shermer High School in the Chicago suburb of Shermer, Illinois. While not complete
+  strangers, each of them comes from a different clique, and seem to have nothing
+  in common. They gather in the high school library, where they are ordered not to
+  speak or move from their seats or sleep by the assistant principal, Richard Vernon.
+  They are to remain for a period of eight hours, fifty-four minutes. He assigns a
+  1000-word essay, and then leaves, returning occasionally to check on them. Bender,
+  who has a particularly negative relationship with Mr. Vernon, disregards the rules
+  and riles the other students, mocking Brian and Andrew, and harassing Claire. Allison
+  remains oddly quiet except for the occasional random outburst. The students pass
+  the hours in a variety of ways. Gradually they open up to each other and reveal
+  their inner secrets. They also discover that they all have strained relationships
+  with their parents and are afraid of making the same mistakes as the adults around
+  them. However, despite these developing friendships the students are afraid that
+  once the detention is over, they will return to their very different cliques and
+  never speak to each other again. At the request and consensus of the students, Brian
+  is asked to write the essay Mr. Vernon assigned earlier, which challenges Mr. Vernon
+  and his preconceived judgments about all of them. Brian does so, but instead of
+  writing about the assigned topic, he writes a letter to the teacher objecting to
+  his request to describe to him who they are, and stating to him that he already
+  has judged who they are, and that he will not accept any different accounts from
+  them about who they are. He signs the essay as "The Breakfast Club" and leaves it
+  at the table for Mr. Vernon to read when they leave. Before leaving, Claire and
+  Bender kiss in the closet, then the students are walking down the hallway to leave
+  the school. Outside, Allison and Andrew are seen kissing. Claire gives Bender her
+  earring, which he puts on after she leaves.
+trajectory:
+- description: Five students — Allison Reynolds, Andrew Clark, John Bender, Brian
+    Johnson, and Claire Standish — arrive separately and report for Saturday morning
+    detention in the Shermer High School library. The atmosphere is tense and silent;
+    the students sit apart and belong to different social cliques. The room is orderly
+    but charged with underlying personal conflicts and social divisions.
+  id: s_0
+  key_delta: All five students are gathered and formally assigned to detention with
+    explicit behavioral rules and an essay task; the initial conditions for the conflict
+    are fully established.
+  trigger_event: Assistant Principal Richard Vernon enters the library and orders
+    the students to remain seated silently for eight hours and assigns a 1000-word
+    essay.
+- description: The students sit under strict supervision, each trying to maintain
+    the silence and the imposed separation. Richard Vernon occasionally checks on
+    them to enforce compliance. The students exhibit guarded behavior, maintaining
+    distance and observing the no communication rule.
+  id: s_1
+  key_delta: Bender’s rule-breaking escalates tension; the students’ individual personalities
+    become more visible and disrupt the initial silence.
+  trigger_event: John Bender openly defies the rules by mocking Brian and Andrew and
+    harassing Claire.
+- description: 'The library atmosphere grows more charged with conflict as Bender’s
+    provocations continue. The other students react unevenly: some are irritated or
+    defensive, while Allison remains mostly withdrawn but unpredictable in outbursts.'
+  id: s_2
+  key_delta: Vernon’s periodic supervision maintains external control but does not
+    resolve mounting interpersonal tensions among students.
+  trigger_event: The assistant principal Vernon re-enters the room intermittently
+    to monitor the students.
+- description: Despite Bender’s provocations and the initial tension, the students
+    begin to lower their defenses and start interacting, cautiously opening up from
+    their respective cliques.
+  id: s_3
+  key_delta: Breakdown of silence and social barriers; students begin exchanging personal
+    information, exposing vulnerabilities and shared fears.
+  trigger_event: The students start to talk to each other and reveal personal secrets
+    and struggles.
+- description: The five students share their difficult relationships with parents
+    and their fear of repeating the mistakes of the adults. A tentative group solidarity
+    forms beneath their previously rigid social roles.
+  id: s_4
+  key_delta: Group consensus to collaborate challenges Vernon’s control over the task;
+    the students take initiative over how to respond to Vernon's assignment.
+  trigger_event: The students collectively decide that Brian should write the essay
+    assigned by Vernon.
+- description: Brian composes the essay, which is not the assigned topic but rather
+    a letter directly challenging Vernon’s judgments and assumptions about them as
+    individuals.
+  id: s_5
+  key_delta: Formal written defiance against Vernon’s authority is enacted; the students
+    collectively reject the imposed labels.
+  trigger_event: Brian finishes writing and leaves the essay signed as 'The Breakfast
+    Club' on the table.
+- description: As detention ends, the students prepare to leave the library, having
+    formed unexpected bonds. The atmosphere shifts from tense to more emotionally
+    connected as intimate interactions occur.
+  id: s_6
+  key_delta: The students physically express their newfound relationships and break
+    previous social boundaries, indicating lasting change beyond detention.
+  trigger_event: Claire and Bender kiss in the closet; Allison and Andrew are seen
+    kissing outside; Claire gives Bender her earring, which he puts on.

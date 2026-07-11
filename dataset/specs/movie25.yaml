@@ -1,0 +1,322 @@
+commitments:
+- description: Sidney's employment at Sharps magazine (s_1) cannot occur before the
+    pig incident at the party (s_0) which triggers his job offer.
+  id: c_0
+  satisfaction_condition: Node s_0 is completed before node s_1 is initiated.
+  type: ordering
+  violation_condition: Sidney begins working at Sharps (s_1) without the pig incident
+    (s_0) having occurred.
+- description: Sidney’s hostile relationships with Alison and Lawrence (s_2) must
+    persist at least until after his initial workplace interactions to maintain interpersonal
+    tension.
+  id: c_1
+  satisfaction_condition: During nodes s_2 through s_5, Sidney’s relationship with
+    Alison and Lawrence is characterized as strained or tense.
+  type: invariant
+  violation_condition: Sidney achieves positive or cooperative relationships with
+    Alison and/or Lawrence before s_5 triggers.
+- description: Sidney must meet Sophie Maes and be warned by Lawrence not to talk
+    to her (s_4) before any significant interaction or romance with Sophie occurs.
+  id: c_2
+  satisfaction_condition: Node s_4 is completed before any romance-related events
+    with Sophie (e.g., s_10, s_11) happen.
+  type: ordering
+  violation_condition: Romantic developments with Sophie occur prior to Sidney receiving
+    Lawrence’s prohibition in s_4.
+- description: The secret that Sidney killed Sophie’s dog and Alison’s cover up (s_5)
+    must be established before Sidney’s reputation begins to rise and romantic tensions
+    increase.
+  id: c_3
+  satisfaction_condition: Node s_5 is reached and the secret is formed before Sidney
+    gains promotion or romantic attention (s_9, s_10).
+  type: achievement
+  violation_condition: Sidney’s romantic success or promotion occurs without the dog
+    death event and cover up having been previously concealed.
+- description: Sidney’s promotion at work (s_9) cannot happen before Alison and Lawrence
+    have left Sharps as revealed by Clayton.
+  id: c_4
+  satisfaction_condition: Node s_9 occurs only after nodes s_7 and s_8 (Alison and
+    Lawrence’s departure) are completed.
+  type: ordering
+  violation_condition: Sidney is promoted at Sharps before Alison and Lawrence quit.
+- description: The affair history and breakups between Alison, Lawrence, and Sidney
+    must remain consistent during the interpersonal social events between s_6 and
+    s_13.
+  id: c_5
+  satisfaction_condition: During nodes s_6 through s_13, Alison reveals breakup with
+    Lawrence, Lawrence leaves wife for Alison, then later Alison leaves Lawrence because
+    she loves Sidney.
+  type: invariant
+  violation_condition: Player input contradicts or rewrites these romantic statuses
+    before s_13 concludes.
+- description: Sidney’s romantic conflict culminating in confrontation with Sophie
+    and revelation of the dog’s death (s_13) must occur to trigger his narrative downward
+    spiral.
+  id: c_6
+  satisfaction_condition: Node s_13 is triggered with Sidney asking for his ring back
+    and revealing the dog death to Sophie.
+  type: achievement
+  violation_condition: Sidney bypasses the revelation of the dog’s death or avoids
+    conflict with Sophie before story end.
+- description: Sidney must quit his job and leave Sharps (s_14) after the fight with
+    Sophie at the awards ceremony and before reuniting peacefully with Alison.
+  id: c_7
+  satisfaction_condition: Node s_14 occurs immediately after s_13 and before s_15.
+  type: ordering
+  violation_condition: Sidney meets Alison peacefully (s_15) before quitting Sharps
+    and leaving town (s_14).
+- description: Sidney and Alison must reconcile and become a couple by the end of
+    the narrative, symbolized by giving Alison the late mother’s ring (s_16).
+  id: c_8
+  satisfaction_condition: Node s_16 occurs, establishing Sidney-and-Alison couple
+    status and the ring transfer.
+  type: achievement
+  violation_condition: The story ends without Sidney and Alison’s romantic union and
+    the ring exchange.
+- description: Sidney’s mother’s ring functions as a key emotional token, involved
+    in pivotal romantic agreements with both Sophie (s_11) and Alison (s_16), and
+    must be consistently linked to these events.
+  id: c_9
+  satisfaction_condition: Between s_11 and s_16, the ring’s conditional and final
+    transfers occur as described, never bypassed or substituted.
+  type: invariant
+  violation_condition: The ring’s significance or transfer is omitted, replaced, or
+    reversed outside of nodes s_11 or s_16 narrative triggers.
+- description: The story’s final lighthearted moment (s_17) with Sidney protecting
+    Alison’s book must occur after their reconciliation (s_16) to reinforce growth
+    and emotional connection.
+  id: c_10
+  satisfaction_condition: Node s_17 happens subsequent to and only after s_16.
+  type: ordering
+  violation_condition: The final playful incident occurs before Sidney and Alison
+    become a couple.
+initial_facts:
+- content: Sidney Young is a smalltime aspiring British journalist working for a left-wing
+    radical magazine.
+  id: f_0
+  negated: false
+- content: Sidney Young is attending a lively house party among acquaintances and
+    peers from his magazine circle.
+  id: f_1
+  negated: false
+- content: Sidney Young has not yet accidentally let a pig loose at the party.
+  id: f_2
+  negated: false
+- content: Sidney Young is not yet employed by Sharps magazine.
+  id: f_3
+  negated: false
+- content: Sidney Young has not yet met Clayton Harding or started work in New York.
+  id: f_4
+  negated: false
+- content: Sidney Young’s relationships with Alison Olsen and Lawrence Maddox are
+    not yet established at Sharps and recollecting from his radical magazine circle,
+    Alison and Lawrence are not yet involved or antagonistic with Sidney.
+  id: f_5
+  negated: false
+- content: Sidney Young has had no interaction with Eleanor Johnson or her clients.
+  id: f_6
+  negated: false
+- content: Sidney Young is unaware of Sophie Maes.
+  id: f_7
+  negated: false
+- content: Sidney Young has not caused the death of Sophie’s dog, and no secret involving
+    this exists.
+  id: f_8
+  negated: false
+- content: Sidney Young has not yet been promoted at Sharps.
+  id: f_9
+  negated: false
+- content: Sidney Young has not yet experienced any romantic developments with Sophie
+    or Alison.
+  id: f_10
+  negated: false
+- content: Sidney Young is unaware of any affairs or breakup statuses involving Alison
+    and Lawrence.
+  id: f_11
+  negated: false
+- content: Sidney Young possesses no knowledge of any future confrontations, dog death
+    revelations, or conflicts.
+  id: f_12
+  negated: false
+- content: Sidney Young is physically present at the party location and has not yet
+    left or moved to any other location such as Sharps magazine office or New York.
+  id: f_13
+  negated: false
+- content: Sidney Young possesses no significant romantic tokens or emotional attachments
+    such as his late mother’s ring currently committed to any individual.
+  id: f_14
+  negated: false
+meta:
+  genres: ["Comedy", "Romance"]
+  id: movie25
+  player_role: Sidney Young
+  title: "How to Lose Friends & Alienate People"
+synopsis: Sidney Young is a smalltime, aspiring British journalist who works for a
+  left-wing radical magazine. Following an incident at a party where Sidney accidentally
+  lets a pig loose he is hired to work for an upscale magazine in New York City. He
+  is hired by Clayton Harding, editor of Sharps magazine, a man Sidney had previously
+  lampooned in his own magazine. Sidney annoys the staff he works with, first Alison
+  Olsen, who is only there to pay the bills whilst she finishes her book, then his
+  boss Lawrence Maddox. He also dares to target the star clients of power publicist
+  Eleanor Johnson. He then meets new rising star Sophie Maes; however, he is told
+  by Lawrence not to talk to her. Sidney makes it his mission to become something
+  within the business; however, it is almost ruined when he accidentally kills Sophie's
+  dog, as he was able to stop the dog from going out the window but unfortunately
+  could not stop a vase from falling onto the dog. Luckily, Alison covers for him
+  and nobody else finds out it was him. At a party, Alison and Sidney's relationship
+  grows when she reveals she has just ended an affair with Lawrence. Sidney stops
+  her from driving home drunk, causing him to miss his opportunity to sleep with Sophie.
+  At a later party, however, just when Sidney was about to ask her out, it is revealed
+  Lawrence has left his wife and that he and Alison are officially together. In a
+  desperate attempt to up his career, he begs Eleanor to publish a piece on Vincent,
+  a director he truly hates. The next day at work Clayton reveals that both Alison
+  and Lawrence have left, and he promotes Sidney. Sidney finally becomes successful,
+  getting all the girls that were disgusted by him before and even catching the eye
+  of Sophie. The night before the awards ceremony she stated that if he gave her his
+  late mother's ring and she won best actress, she would have sex with him. Going
+  to the ceremony the next day he sees Lawrence, now being someone he used to be,
+  stating that he and Alison split as she was in love with him. When the winner is
+  revealed, as she is going to get her award, he realizes he does not really love
+  her and asks for his ring back, then, after a heated exchange, he steals back the
+  ring from Sophie, and inadvertently reveals that he killed Cuba. An enraged Sophie
+  attacks him and a huge fight ensues then after the fight, Sidney leaves, quitting
+  his job at Sharps and heading to New York. He meets Alison in the park, where they
+  were showing her favourite movie, La Dolce Vita. She has finished her book and the
+  two finally get together, with him giving her his mother's ring. The movie ends
+  with him accidentally throwing the book onto a candle and jumping for it to stop
+  it from going into flames.
+trajectory:
+- description: Sidney Young is a smalltime aspiring British journalist working for
+    a left-wing radical magazine. He attends a lively house party where the atmosphere
+    is casual but edgy, surrounded by acquaintances and peers from his magazine circle.
+  id: s_0
+  key_delta: Sidney's accidental release of the pig causes a commotion that draws
+    attention to him and leads to an unexpected job offer.
+  trigger_event: Sidney accidentally lets a pig loose at the party.
+- description: Sidney begins working for Sharps magazine in New York City, employed
+    by Clayton Harding, the editor he previously lampooned. The office environment
+    is upscale and competitive.
+  id: s_1
+  key_delta: Sidney’s employment at Sharps is established despite past tensions with
+    Clayton, setting up new workplace conflicts.
+  trigger_event: Sidney arrives at Sharps and meets Clayton Harding for the first
+    time.
+- description: Sidney interacts with the Sharps staff, including Alison Olsen and
+    Lawrence Maddox. Alison is indifferent, working to pay bills while finishing her
+    book; Lawrence is Sidney’s boss who is increasingly annoyed by him.
+  id: s_2
+  key_delta: Sidney’s relationship with colleagues begins strained, planting seeds
+    for interpersonal conflict.
+  trigger_event: Sidney irritates Alison and Lawrence during his initial days working
+    together.
+- description: Sidney targets Eleanor Johnson’s star publicist clients, disrupting
+    their relationships. Eleanor supervises high-profile clients and exerts significant
+    workplace influence.
+  id: s_3
+  key_delta: Sidney has alienated Eleanor's clients, weakening his standing inside
+    the office power structure.
+  trigger_event: Sidney meets Sophie Maes, and Lawrence immediately warns him to
+    stay away from her.
+- description: Sidney meets Sophie Maes, a rising star in the business. Lawrence explicitly
+    instructs Sidney not to speak to her. The office atmosphere deepens with underlying
+    social tensions.
+  id: s_4
+  key_delta: Sidney receives a direct prohibition about Sophie, increasing narrative
+    tension around this character.
+  trigger_event: Sidney encounters Sophie and is warned by Lawrence not to engage
+    with her.
+- description: Sidney accidentally kills Sophie’s dog during an incident involving
+    a falling vase in the Sharps office. Alison covers for him so the truth remains
+    unknown to others.
+  id: s_5
+  key_delta: A serious secret is formed between Sidney and Alison, binding them in
+    a covert alliance.
+  trigger_event: Sidney inadvertently causes the death of Sophie’s dog and Alison
+    intervenes to hide his responsibility.
+- description: At a party, Sidney and Alison’s relationship deepens when Alison reveals
+    her recent breakup with Lawrence. The mood is tense and intimate.
+  id: s_6
+  key_delta: An emotional connection develops between Sidney and Alison, while Sidney
+    misses a chance with Sophie.
+  trigger_event: Sidney prevents Alison from driving drunk after she discloses her
+    affair with Lawrence has ended.
+- description: At a later party, Lawrence announces he has left his wife and is now
+    officially with Alison. Sidney’s hopes with Sophie are dashed amid escalating
+    personal dynamics.
+  id: s_7
+  key_delta: Sidney faces emotional setbacks as Alison and Lawrence solidify their
+    bond, complicating his personal and professional aspirations.
+  trigger_event: Lawrence and Alison reveal their relationship status at the party.
+- description: Sidney tries to advance his career by convincing Eleanor Johnson to
+    publish a critical piece on Vincent, a director Sidney dislikes.
+  id: s_8
+  key_delta: Sidney’s proactive career maneuver increases his visibility but may increase
+    risks with industry figures.
+  trigger_event: Sidney persuades Eleanor to run an article on Vincent.
+- description: The day after the article’s publication, Clayton informs Sidney that
+    Alison and Lawrence have quit, and Sidney is promoted.
+  id: s_9
+  key_delta: Sidney moves up professionally, gaining authority and recognition at
+    Sharps.
+  trigger_event: Clayton announces Alison and Lawrence’s departure and Sidney’s promotion
+    at work.
+- description: Sidney gains popularity and romantic attention from women previously
+    repulsed by him, including regaining Sophie’s interest. The office atmosphere
+    becomes more favorable to Sidney.
+  id: s_10
+  key_delta: Sidney’s social and romantic status elevates, culminating in a key wager
+    for intimacy linked to his late mother’s ring.
+  trigger_event: Sophie signals romantic interest in Sidney and discusses terms involving
+    his late mother's ring before an awards ceremony.
+- description: On the night before the awards ceremony, Sophie proposes that if she
+    wins best actress, Sidney must give her his late mother’s ring in exchange for
+    sex.
+  id: s_11
+  key_delta: Sidney commits emotionally and materially to Sophie under contested terms,
+    heightening tension.
+  trigger_event: Sophie makes the conditional proposition to Sidney regarding the
+    ring and the awards outcome.
+- description: At the awards ceremony, Sidney sees Lawrence, who informs him that
+    Alison left him because she was actually in love with Sidney. Sophie is about
+    to receive her award amid growing drama.
+  id: s_12
+  key_delta: Sidney gains new insight into Alison’s feelings, complicating his relationship
+    with Sophie and Lawrence.
+  trigger_event: Lawrence shares his breakup with Alison and her feelings for Sidney
+    during the ceremony.
+- description: Sidney realizes he does not truly love Sophie, asks for his ring back,
+    and in the confrontation, reveals that he caused the death of Sophie’s dog, Cuba.
+    Sophie becomes enraged and attacks him, leading to a physical fight.
+  id: s_13
+  key_delta: Sidney’s secret is exposed, relationships collapse, and physical conflict
+    erupts, irreversibly damaging his standing with Sophie.
+  trigger_event: Sidney attempts to reclaim his ring and reveals his secret, sparking
+    a violent altercation with Sophie.
+- description: After the fight, Sidney leaves the ceremony, quits his job at Sharps,
+    and heads out into New York City. The social and professional climate is hostile
+    and tumultuous.
+  id: s_14
+  key_delta: Sidney breaks from his professional life and previous connections, entering
+    a period of isolation and reflection.
+  trigger_event: Sidney exits Sharps and departs New York City streets alone.
+- description: Sidney meets Alison in a park where her favorite movie, La Dolce Vita,
+    is being screened outdoors. Alison has finished her book, and a peaceful atmosphere
+    contrasts previous tensions.
+  id: s_15
+  key_delta: Sidney reconnects with Alison in a sincere, calm environment, setting
+    the foundation for renewed partnership.
+  trigger_event: Sidney encounters Alison at the park during the outdoor movie screening.
+- description: Sidney and Alison become a couple, symbolized by Sidney giving Alison
+    his late mother’s ring. They share a tender moment as the evening ends.
+  id: s_16
+  key_delta: Sidney and Alison are now openly together, with his mother's ring passed
+    to Alison as a lasting commitment.
+  trigger_event: Their intimacy settles into a playful, comfortable rhythm by the
+    end of the evening.
+- description: The movie ends with Sidney accidentally throwing Alison’s book onto
+    a candle’s flame and jumping to stop it from burning, showing a renewed playfulness
+    and care in their relationship.
+  id: s_17
+  key_delta: Sidney and Alison end the story in a playful, secure relationship.
+  trigger_event: Sidney knocks Alison’s book towards a candle and scrambles to save
+    it from fire.

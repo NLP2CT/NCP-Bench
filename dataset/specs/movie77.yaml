@@ -1,0 +1,298 @@
+commitments:
+- description: Danielle cannot openly accuse Robie of theft before Jessie reports
+    the jewels missing and Francie’s public accusation at s_4, preserving narrative
+    causality of suspicion
+  id: c_0
+  satisfaction_condition: Node s_4 occurs before any player-triggered accusation by
+    Danielle regarding Robie’s theft
+  type: ordering
+  violation_condition: Danielle makes an accusation of Robie’s theft prior to s_4
+    occurring
+- description: Robie’s escape at the restaurant (s_1) must precede any formation of
+    rivalry or jealousy between Danielle and Francie, maintaining logical sequence
+    of events
+  id: c_1
+  satisfaction_condition: Node s_1 is completed before nodes s_2 and s_3 are acknowledged
+    by the system
+  type: ordering
+  violation_condition: Danielle’s jealousy or observation of Robie’s interactions
+    with Francie is acknowledged before s_1
+- description: From s_5 to s_6, Danielle’s father Foussard is deceased and publicly
+    presumed to be the cat burglar until challenged by Robie
+  id: c_2
+  satisfaction_condition: Between nodes s_5 and s_6, Foussard’s death and public designation
+    as the thief remain uncontested in player and system knowledge
+  type: invariant
+  violation_condition: Player inputs or system updates reveal or deny Foussard’s death
+    or thief status before s_6
+- description: Robie’s public presentation of Foussard’s physical impossibility to
+    be the thief (s_6) must occur before Danielle’s open accusation of Robie at funeral
+    (s_6)
+  id: c_3
+  satisfaction_condition: Robie’s logical argument about Foussard precedes Danielle’s
+    accusation in the system progression at s_6
+  type: ordering
+  violation_condition: Danielle’s accusation occurs without the prior presentation
+    of Foussard’s speculation rebuttal by Robie
+- description: Francie’s apology and confession of love to Robie (s_7) must happen
+    after Danielle’s accusation at the funeral (s_6) to maintain hidden alliance development
+  id: c_4
+  satisfaction_condition: Node s_7 occurs strictly after s_6 in system acknowledged
+    sequence
+  type: ordering
+  violation_condition: Francie’s approach to Robie happens before Danielle’s funeral
+    confrontation
+- description: Throughout preparation and event of the masquerade ball (s_8 to s_9),
+    Danielle must maintain her covert identity as the cat burglar without detection
+    by others including police
+  id: c_5
+  satisfaction_condition: During nodes s_8 and s_9, Danielle’s identity as the thief
+    remains unknown to the police and other NPCs except Robie
+  type: invariant
+  violation_condition: Danielle’s identity as the cat burglar is revealed to police
+    or NPCs before or during s_9
+- description: The identity switch between Robie and Hughson (s_10) enabling Robie’s
+    escape depends on Danielle’s active cat burglar heist during the masquerade ball
+    (s_9)
+  id: c_6
+  satisfaction_condition: The system only acknowledges s_10 after successful enactment
+    of s_9
+  type: ordering
+  violation_condition: The identity switch at s_10 is acknowledged or enabled prior
+    to Danielle’s heist at s_9
+- description: Danielle’s unmasking as the cat burglar during rooftop confrontation
+    at s_11 must be achieved before narrative finale
+  id: c_7
+  satisfaction_condition: Node s_11 occurs, confirming Danielle’s confession and true
+    role in the thefts publicly to Robie
+  type: achievement
+  violation_condition: Narrative attempts to conclude before Danielle’s identity confession
+    at s_11
+- description: From s_11 onward, Danielle’s loyalty to her father and Bertani in orchestrating
+    the thefts is accepted as a known fact with no contradictions allowed
+  id: c_8
+  satisfaction_condition: After s_11, all system and player knowledge reflect Danielle’s
+    complicity and allegiance accurately
+  type: invariant
+  violation_condition: Any attempt to negate or contradict Danielle’s accomplice status
+    or her father’s involvement post s_11
+- description: Robie’s flight to his vineyard (s_12) must strictly follow Danielle’s
+    rooftop confession (s_11), preserving narrative cause-effect clarity
+  id: c_9
+  satisfaction_condition: s_12 occurs only after s_11 is completed
+  type: ordering
+  violation_condition: Robie flees to vineyard or narrative advances to s_12 state
+    without Danielle’s confession at s_11
+initial_facts:
+- content: Danielle Foussard is present at her father Foussard’s restaurant at the
+    moment police arrive to arrest John Robie.
+  id: f_0
+  negated: false
+- content: John Robie is suspected by police of returning to jewel theft based on
+    a series of robberies.
+  id: f_1
+  negated: false
+- content: John Robie is at large, attempting to evade arrest at the restaurant.
+  id: f_2
+  negated: false
+- content: The group of old French Resistance comrades, including Bertani and Foussard,
+    is gathered at the restaurant and is under suspicion due to Robie being at large.
+  id: f_3
+  negated: false
+- content: Danielle Foussard witnesses the rising conflict and tension as police search
+    for Robie, but she has not yet taken any action.
+  id: f_4
+  negated: false
+- content: Danielle Foussard is not yet aware of any accusations or rivalry involving
+    Robie and Francie Stevens.
+  id: f_5
+  negated: false
+- content: Jessie Stevens and Francie Stevens are known by Danielle only as wealthy
+    social acquaintances; their jewels have not yet been reported stolen.
+  id: f_6
+  negated: false
+- content: No public accusation of theft by Francie against Robie has yet occurred.
+  id: f_7
+  negated: false
+- content: Foussard, Danielle’s father, is alive and present at the restaurant.
+  id: f_8
+  negated: false
+- content: Robie has not yet disclosed or presented any logic or evidence regarding
+    Foussard's physical condition or innocence.
+  id: f_9
+  negated: false
+- content: Danielle Foussard has not yet made any open accusations against John Robie.
+  id: f_10
+  negated: false
+- content: Danielle is not aware of any alliance or romantic involvement between Francie
+    and Robie.
+  id: f_11
+  negated: false
+- content: Danielle’s identity as a cat burglar is unknown to police, Bertani, and
+    others at this time.
+  id: f_12
+  negated: false
+- content: No masquerade ball preparations or heist have yet occurred.
+  id: f_13
+  negated: false
+- content: Robie and Hughson have not performed any identity switch.
+  id: f_14
+  negated: false
+- content: Danielle’s allegiance to her father and Bertani’s plans, as well as her
+    cat burglar role, are not yet known or revealed.
+  id: f_15
+  negated: false
+meta:
+  genres: ["Thriller", "Romance"]
+  id: movie77
+  player_role: Danielle Foussard
+  title: "To Catch a Thief"
+synopsis: John Robie is a notorious but retired jewel thief or "cat burglar," nicknamed
+  "The Cat," who now tends to his vineyards in the French Riviera. A series of robberies
+  that closely resemble his in style leads the police to believe that the Cat is up
+  to his old tricks again. They come to arrest him, and he adeptly gives them the
+  slip. He immediately seeks refuge with his old gang from his days in the French
+  Resistance, a group of ex-cons whose patriotic work led to grants of parole that
+  depend on them keeping their noses clean. Bertani, Foussard, and the others are
+  all under a cloud while the Cat is at large, and they blame Robie. Still, when the
+  police arrive at Bertani’s restaurant, Foussard’s daughter Danielle spirits her
+  old flame to safety. Robie's plan is to prove his innocence by catching the new
+  cat burglar in the act, so he enlists the aid of an insurance man of Bertani's acquaintance,
+  H. H. Hughson, an Englishman who reluctantly obtains a list of the most expensive
+  jewels currently on the Riviera. The first owners listed are Jessie Stevens and
+  her daughter Francie. Robie strikes up an acquaintance with them — delighting Jessie
+  even as Francie offers a pretense of modesty, while Danielle bares her jealous claws.
+  Francie is not afraid of a little fun. Although she sees through Robie’s cover as
+  an American industrialist, the considerable charms of this thief are worth catching.
+  She dangles before him her jewels, teases him with steamy tales of rooftop escapades,
+  exposes herself as a feline of a special breed——an accomplice who might share his
+  passion and be available to his sordid desires. Fireworks fill the night and can
+  even be seen in the sky. The next morning, Jessie discovers her jewels are stolen,
+  and Francie suddenly feels that Robie has taken advantage of her. She accuses him
+  of using her to steal her mother's jewelry. The police are called and he is back
+  on the lam. To catch the new burglar Robie stakes out an estate at night and finds
+  himself struggling with an attacker who loses his footing and tumbles over a cliff.
+  It is Foussard, who dies in the fall. The police chief publicly announces that Foussard
+  was the jewel thief, but, as Robie points out to him in the presence of the abashed
+  Hughson, this would have been impossible——Foussard had a prosthetic leg and could
+  not possibly climb on rooftops. Robie's quiet attendance at Foussard’s funeral is
+  marred by Danielle's open accusation that he is responsible for her father's death.
+  Outside the graveyard, Francie apologizes to Robie and confesses her love for him.
+  She arranges to help him attend a masquerade ball the coming weekend. At the ball,
+  Francie is resplendent in a gold gown, Robie unrecognizable behind the mask of a
+  Moor. The police hover nearby. Upstairs, the cat burglar silently cleans out several
+  jewel boxes. When Jessie asks the Moor to go get her "heart pills," Robie’s voice
+  tips off his identity to the authorities. Upon his return the police wait out Francie
+  and the Moor as they dance the night away. Finally, Francie and the Moor go to her
+  room, and the mask is removed——it is Hughson, switched to conceal Robie’s exit.
+  On the rooftop Robie lurks. His patience is finally rewarded when he is joined by
+  another figure in black. But just as his pursuit begins, the police throw a spotlight
+  on him. Again he flees and shots ring out, but he manages to corner his foe with
+  jewels in hand. Unmasked, his nemesis turns out not to be a man after all. Danielle
+  is "The Cat," and she confesses that she has been working for her father and Bertani.
+  Robie speeds back to his vineyard and Francie races after to convince him that she
+  has a place in his life. He agrees, but seems less than thrilled about the arrangement
+  including her mother.
+trajectory:
+- description: Danielle Foussard is at her father Foussard’s restaurant where tension
+    is high as the police arrive to arrest John Robie, suspected of returning to jewel
+    theft. The group of old resistance comrades, including Bertani and Foussard, is
+    under pressure, and Danielle is witnessing the rising conflict as Robie evades
+    capture.
+  id: s_0
+  key_delta: Robie escapes arrest, the old gang is blamed and placed under suspicion,
+    and Danielle begins to feel conflicted loyalty toward Robie and her father.
+  trigger_event: The police arrive at Bertani’s restaurant to arrest John Robie.
+- description: Danielle manages to spirit John Robie to safety from the police at
+    the restaurant, demonstrating her protective and defiant stance amidst the tense
+    atmosphere.
+  id: s_1
+  key_delta: Robie is hidden and safe for now; Danielle openly sides with him against
+    the police and her father’s associates.
+  trigger_event: Danielle secretly escorts Robie out of the restaurant to avoid police
+    detection.
+- description: Danielle observes Robie forming an acquaintance with Jessie Stevens
+    and her daughter Francie, whose jewels are identified as potential targets. She
+    watches Robie’s interactions with them, noting especially the jealousy Danielle
+    feels toward Francie.
+  id: s_2
+  key_delta: Robie infiltrates the wealthy social circle, increasing Danielle’s jealousy
+    and suspicion toward Francie.
+  trigger_event: Robie meets Jessie and Francie Stevens and begins courting them.
+- description: Danielle notices Robie and Francie’s flirtatious interaction where
+    Francie teases him with her jewels and stories of theft escapades; a rivalry forms
+    between Danielle and Francie.
+  id: s_3
+  key_delta: Danielle’s jealousy intensifies, and Francie’s role as a potential accomplice
+    or rival is highlighted.
+  trigger_event: At a social gathering, Francie flaunts her jewels and challenges
+    Robie with stories and temptation.
+- description: The next morning, Jessie discovers jewels stolen from her possession
+    and Francie blames Robie publicly, accusing him of betrayal and theft during their
+    acquaintance.
+  id: s_4
+  key_delta: Robie is forced to flee again, public suspicion against him increases,
+    and Danielle’s father remains implicated by association.
+  trigger_event: That night, Foussard joins the rooftop pursuit and confronts the
+    burglar above the cliffs.
+- description: Danielle learns that during a stakeout, Foussard, her father, confronts
+    an attacker at night, struggles with them, and falls to his death over a cliff,
+    shocking Danielle deeply.
+  id: s_5
+  key_delta: Danielle loses her father; official narrative brands Foussard as the
+    thief; Danielle’s grief and anger towards Robie begin to deepen.
+  trigger_event: Foussard falls to his death after a rooftop struggle caught during
+    Robie’s stakeout.
+- description: At Foussard’s funeral, Danielle openly accuses Robie of being responsible
+    for her father's death, fueling community tension. Danielle’s hostility toward
+    Robie is fully expressed.
+  id: s_6
+  key_delta: Hostile relationship between Danielle and Robie is cemented; Danielle’s
+    personal vendetta is clear.
+  trigger_event: Danielle confronts Robie with accusations at the funeral procession.
+- description: Outside the graveyard, Danielle is unaware as Francie privately apologizes
+    to Robie and declares her love, setting up alliance and romantic tension away
+    from Danielle’s view.
+  id: s_7
+  key_delta: Francie joins Robie’s cause; romantic subplot begins unbeknownst to Danielle.
+  trigger_event: Francie approaches Robie to express regret and affection shortly
+    after the funeral.
+- description: Danielle prepares for a masquerade ball where police presence is high,
+    watching over the wealthy guests and anticipating the cat burglar’s next move
+    in the charged atmosphere.
+  id: s_8
+  key_delta: Danielle positions herself strategically as a key figure in protection
+    and surveillance at the event.
+  trigger_event: Danielle participates in the preparations and security for the masquerade
+    ball.
+- description: During the ball, Danielle, disguised and in collaboration with Bertani,
+    operates covertly as the new cat burglar, stealing precious jewels amid the crowd
+    while police watch closely.
+  id: s_9
+  key_delta: Danielle’s identity as the new cat burglar is revealed through her actions,
+    confirming her role in the ongoing burglaries.
+  trigger_event: Danielle executes a jewel theft at the masquerade ball while masked
+    and unrecognized.
+- description: Robie is trapped by police inside the ball but escapes through a planned
+    switch of identities with Hughson, supported unknowingly by Danielle’s actions
+    as the cat burglar on the rooftop.
+  id: s_10
+  key_delta: Robie remains free; Danielle’s heists continue to complicate the manhunt
+    and deepen the conflict.
+  trigger_event: Robie and Hughson exchange identities under police observation, allowing
+    Robie to evade capture.
+- description: Robie confronts Danielle on the rooftop after a dramatic chase with
+    police in pursuit; during the confrontation, Danielle confesses her working with
+    her father and Bertani, revealing her motivations.
+  id: s_11
+  key_delta: Danielle’s true allegiance is publicly revealed to Robie; the betrayal
+    within the resistance group is exposed.
+  trigger_event: Robie corners Danielle on a rooftop, and she admits her complicity
+    in the thefts for her father’s cause.
+- description: After the rooftop confrontation, Danielle watches as Robie flees to
+    his vineyard, aware that her actions have driven a wedge between old loyalties
+    and new alliances, with unresolved tensions lingering.
+  id: s_12
+  key_delta: Danielle is left isolated in her stance, and the fractured relationships
+    among the characters reach a new low.
+  trigger_event: Robie escapes to his vineyard following the confrontation.

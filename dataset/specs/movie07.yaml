@@ -1,0 +1,259 @@
+commitments:
+- description: Apollo Creed's original opponent's injury and withdrawal (s_0) must
+    be acknowledged before official announcement of Rocky as Creed's opponent (s_1)
+    to avoid logical gaps in opponent selection.
+  id: c_0
+  satisfaction_condition: Node s_0 event has been triggered and acknowledged before
+    node s_1 can occur.
+  type: ordering
+  violation_condition: Apollo Creed's opponent replacement (s_1) is announced before
+    recognition of original opponent's injury and withdrawal (s_0).
+- description: Rocky starting rigorous training with Mickey Goldmill (s_2) must occur
+    after Rocky is officially selected as Creed’s opponent (s_1) to maintain logical
+    preparation sequence.
+  id: c_1
+  satisfaction_condition: Node s_1 is completed before node s_2 is initiated or acknowledged.
+  type: ordering
+  violation_condition: Rocky’s training with Mickey (s_2) begins before the official
+    selection of Rocky as opponent (s_1).
+- description: Apollo Creed must remain confident and underestimate Rocky up to the
+    start of the fight and during early rounds (s_1 through s_5) to preserve narrative
+    tension and character portrayal.
+  id: c_2
+  satisfaction_condition: Throughout nodes s_1 to s_5, Apollo Creed's attitude toward
+    Rocky is confident and underestimating, as indicated by NPC dialogue and player
+    status.
+  type: invariant
+  violation_condition: Player or system reflects Apollo Creed showing serious respect
+    or fear of Rocky before or during early fight rounds (prior to s_5).
+- description: The official announcement by Apollo Creed proclaiming 'Apollo Creed
+    Meets The Italian Stallion' (s_1) must occur before the fight preparation progresses
+    to Rocky’s training (s_2) or the fight itself (s_4).
+  id: c_3
+  satisfaction_condition: Public proclamation event (s_1) has occurred before any
+    fight preparation or competition phases.
+  type: achievement
+  violation_condition: Fight preparation stages or the fight itself progress without
+    the official proclamation event (s_1) having been triggered.
+- description: The fight start (s_4) must occur only after Rocky's training (s_2)
+    and psychological development including Adrian relationship (s_3) are established,
+    ensuring correct narrative flow of preparation then competition.
+  id: c_4
+  satisfaction_condition: Nodes s_2 and s_3 are both completed before s_4 begins.
+  type: ordering
+  violation_condition: The fight start (s_4) initiates before Rocky’s training or
+    relationship development nodes (s_2, s_3) are completed.
+- description: Once the fight begins (from s_4 onwards), Apollo Creed must not underestimate
+    Rocky to the extent that he concedes defeat prematurely before sustained rounds
+    and injury exchanges occur (s_5 to s_6).
+  id: c_5
+  satisfaction_condition: During s_4 to s_6, Apollo Creed competes seriously, does
+    not concede prematurely, and continues competing until the final round.
+  type: invariant
+  violation_condition: Apollo Creed or system triggers concession or surrender before
+    the fight progresses through multiple brutal rounds (before s_6).
+- description: The fight must last the full 15 rounds and end with both fighters exhausted
+    and physically damaged (s_6), reflecting the core theme of endurance and mutual
+    respect.
+  id: c_6
+  satisfaction_condition: Node s_6 event (final bell after 15 rounds with exhausted
+    fighters) has been reached before the match ends.
+  type: achievement
+  violation_condition: Fight ends before 15 rounds due to knockout or surrender, or
+    fighters lack injuries or exhaustion consistent with s_6.
+- description: The official decision favoring Apollo Creed (s_7) must be announced
+    only after the completion of the full 15-round fight (s_6) to preserve narrative
+    integrity of match outcome.
+  id: c_7
+  satisfaction_condition: Node s_7 announcement occurs only after node s_6 fight completion
+    is conclusively reached.
+  type: ordering
+  violation_condition: The result announcement (s_7) happens before fight duration
+    and conditions meeting s_6 occur.
+- description: Apollo Creed must retain the heavyweight championship title at the
+    end of the narrative (post s_7), preserving the canonical outcome despite the
+    fight's difficulty.
+  id: c_8
+  satisfaction_condition: At narrative end (post s_7), Apollo Creed is declared and
+    acknowledged champion by split decision, with the system enforcing title retention.
+  type: invariant
+  violation_condition: Apollo Creed is declared to have lost the championship or title
+    changes hands before narrative conclusion.
+- description: The player role of Apollo Creed must experience the shift from confident
+    underestimator to respect for Rocky’s resilience during the fight progression
+    (between s_5 and s_6), reflecting Creed’s character arc.
+  id: c_9
+  satisfaction_condition: Between s_5 and s_6, indications (dialogue, system states)
+    show Creed’s initial underestimation challenged and evolving to grudging respect.
+  type: achievement
+  violation_condition: Apollo Creed never changes attitude and maintains underestimate
+    throughout fight or prematurely concedes respect before s_5.
+- description: The romantic reconciliation between Rocky and Adrian (within s_7) must
+    occur only after the fight has officially ended and the decision announced, to
+    maintain correct narrative closure.
+  id: c_10
+  satisfaction_condition: Adrian enters ring and embraces Rocky only after announcement
+    of fight result at s_7.
+  type: ordering
+  violation_condition: Romantic reconciliation event occurs before fight conclusion
+    or result announcement.
+initial_facts:
+- content: The date is November 25, 1975.
+  id: f_0
+  negated: false
+- content: The location is Philadelphia's Kensington neighborhood.
+  id: f_1
+  negated: false
+- content: Rocky Balboa is a small-time boxer.
+  id: f_2
+  negated: false
+- content: Rocky Balboa works as a debt collector for loan shark Anthony Gazzo.
+  id: f_3
+  negated: false
+- content: Apollo Creed is the undefeated World Heavyweight Champion.
+  id: f_4
+  negated: false
+- content: Apollo Creed's next World Heavyweight Championship bout is scheduled for
+    New Year's Day 1976, the United States Bicentennial year.
+  id: f_5
+  negated: false
+- content: Apollo Creed's scheduled opponent for the championship bout is injured
+    and has withdrawn.
+  id: f_6
+  negated: false
+- content: Apollo Creed is preparing to defend his title.
+  id: f_7
+  negated: false
+- content: Apollo Creed's attitude is confident and he underestimates all potential
+    opponents at this stage, including Rocky Balboa.
+  id: f_8
+  negated: false
+- content: Apollo Creed and his team have not yet announced a replacement opponent.
+  id: f_9
+  negated: false
+- content: Rocky Balboa has not yet been officially selected as Apollo Creed's opponent.
+  id: f_10
+  negated: false
+- content: Rocky Balboa has not yet started rigorous training under Mickey Goldmill.
+  id: f_11
+  negated: false
+- content: The official public announcement 'Apollo Creed Meets The Italian Stallion'
+    has not yet occurred.
+  id: f_12
+  negated: false
+- content: The boxing match between Apollo Creed and any opponent has not yet begun.
+  id: f_13
+  negated: false
+- content: Rocky Balboa's relationship with Adrian is not yet initiated or developed.
+  id: f_14
+  negated: false
+meta:
+  genres: ["Sport", "Drama"]
+  id: movie07
+  player_role: Apollo Creed
+  title: "Rocky"
+synopsis: On November 25, 1975, Rocky Balboa is introduced as a small-time boxer and
+  collector for Anthony Gazzo, a loan shark, living in the Kensington neighborhood
+  of Philadelphia. The World Heavyweight Championship bout is scheduled for New Year's
+  Day 1976, the year of the United States Bicentennial. When the opponent of undefeated
+  heavyweight champion Apollo Creed is injured, Creed comes up with the idea of giving
+  a local underdog a shot at the title and, because he likes Rocky's nickname "The
+  Italian Stallion," he selects the relatively unknown fighter. He puts it in lights
+  by proclaiming "Apollo Creed Meets The Italian Stallion." The fight promoter George
+  Jergens says the decision is "very American"; but Creed says, rather, that it is
+  "very smart." To prepare for the fight Rocky trains with a 1920s-era ex-bantamweight
+  fighter and gym owner, Mickey Goldmill. Mickey always considered Rocky's potential
+  to be better than his effort—telling him he had heart but also calling him a "tomato"
+  and "leg breaker for some cheap second-rate loan shark" among other endearments,
+  and putting Rocky out of his gym locker preceding the "freak luck" opportunity that
+  comes Rocky's way, and Rocky is initially skeptical of Mickey's motives and timing
+  for wanting to train Rocky for the big fight. Rocky's good friend Paulie, a meat-packing-plant
+  worker, lets him practice his punches on the carcasses hanging in the freezers.
+  A significant and prominent sub-plot has Rocky courting and eventually dating Paulie's
+  shy, quiet, ostensibly librarian-like and potentially spinster sister, Adrian, who
+  works as a clerk in a local pet store. He draws Adrian out of her shell and, as
+  Rocky's girlfriend, she begins to transform into a womanly, wifely figure. The night
+  before the fight Rocky confides to Adrian that he does not expect to beat Creed,
+  and that all he wants is to go the distance. On New Year's Day the climactic boxing
+  match begins. Apollo Creed does not initially take the fight seriously, and Rocky
+  unexpectedly knocks him down in the first round, embarrassing Creed, and the match
+  turns intense. The fight indeed lasts 15 rounds, with both fighters sustaining many
+  injuries; Rocky suffers his first broken nose and debilitating trauma around the
+  eye, and Creed sustains brutal blows to his ribs with substantial internal bleeding.
+  As the match progresses, Creed's superior skill is countered by Rocky's apparently
+  unlimited ability to absorb punishment, and his dogged refusal to be knocked out.
+  As the final round bell sounds, with both fighters locked in each other's arms,
+  an exhausted Creed vows "Ain't gonna be no re-match," to which an equally spent
+  Rocky replies "Don't want one." After the fight, there is a din wherein multiple
+  layers of drama are played out——sportscasters and audience are going wild; the promoter
+  George Jergens announces over the loudspeaker that the match was "the greatest exhibition
+  of boxing stamina in the history of the ring"; Rocky calls out repeatedly for Adrian,
+  who runs down and comes into the ring as Paulie distracts the security personnel.
+  As the ring announcer declares the fight for Apollo Creed by virtue of a split decision,
+  Adrian and Rocky embrace while they profess their love to one another, not caring
+  about the result of the fight.
+trajectory:
+- description: November 25, 1975, in Philadelphia's Kensington neighborhood; Rocky
+    Balboa is known as a small-time boxer and debt collector for loan shark Anthony
+    Gazzo; undefeated heavyweight champion Apollo Creed is preparing to defend his
+    title scheduled for New Year's Day 1976, the US Bicentennial year.
+  id: s_0
+  key_delta: Apollo Creed’s team must find a replacement opponent for the title fight
+    on New Year's Day.
+  trigger_event: Apollo Creed’s scheduled opponent is injured and withdraws from the
+    World Heavyweight Championship bout.
+- description: Apollo Creed and his promoters decide to give a local underdog a chance
+    at the title; Creed selects Rocky Balboa because he likes the nickname 'The Italian
+    Stallion.' The fight promoter, George Jergens, announces it as 'very American.'
+  id: s_1
+  key_delta: Rocky is officially selected as Creed’s opponent, altering the upcoming
+    championship fight dynamics.
+  trigger_event: Creed publicly proclaims 'Apollo Creed Meets The Italian Stallion'
+    to promote the fight.
+- description: Apollo Creed observes Rocky's status as relatively unknown and underdog;
+    preparations for the fight begin, including Rocky starting to train under ex-bantamweight
+    Mickey Goldmill, despite Rocky’s initial skepticism.
+  id: s_2
+  key_delta: Rocky's training regimen intensifies under Mickey’s guidance, setting
+    Rocky's physical and strategic preparation for the fight.
+  trigger_event: Rocky begins rigorous training with Mickey Goldmill as his coach
+    and mentor.
+- description: In the days leading to the match, Rocky grows his relationship with
+    Adrian, Paulie’s sister, gradually transforming her into his supportive partner;
+    meanwhile, Apollo Creed prepares with confidence and underestimates Rocky.
+  id: s_3
+  key_delta: Rocky’s personal support system strengthens, and Creed remains confident,
+    setting psychological states before the fight.
+  trigger_event: Rocky confides in Adrian, expressing that his goal is to go the distance
+    rather than necessarily win.
+- description: 'New Year’s Day at the arena: the atmosphere is charged with excitement;
+    Apollo Creed, the undefeated champion, begins the fight underestimating Rocky
+    Balboa.'
+  id: s_4
+  key_delta: The fight commences, shifting the scene from preparation to active competition.
+  trigger_event: The first bell rings to start the heavyweight championship fight
+    between Apollo Creed and Rocky Balboa.
+- description: Apollo Creed is knocked down unexpectedly by Rocky in the first round,
+    resulting in an intense and brutal fight; the match continues through multiple
+    rounds with both fighters sustaining severe injuries.
+  id: s_5
+  key_delta: The fight tone changes from a likely easy win for Creed to a fiercely
+    contested duel; Creed’s underestimation is challenged.
+  trigger_event: The knockdown forces Creed to take Rocky seriously, and the bout
+    settles into a punishing multi-round fight.
+- description: Throughout fifteen grueling rounds, Apollo Creed demonstrates superior
+    skill but suffers increasing physical trauma; Rocky’s resilience and refusal to
+    be knocked out frustrate Creed and extend the fight.
+  id: s_6
+  key_delta: The fight duration and intensity confirm both fighters’ stamina and heart,
+    with no clear decisive knockout victory.
+  trigger_event: The fifteenth and final round bell sounds with both fighters exhausted
+    and locked in each other’s embrace.
+- description: After the match, the ring announcer declares Apollo Creed the winner
+    by split decision amid a chaotic and ecstatic crowd; Rocky searches for Adrian,
+    who enters the ring to embrace and profess love with him.
+  id: s_7
+  key_delta: Apollo Creed retains the heavyweight championship title, while Rocky
+    gains respect and establishes a romantic relationship with Adrian.
+  trigger_event: The official decision is announced favoring Apollo Creed by split
+    decision.

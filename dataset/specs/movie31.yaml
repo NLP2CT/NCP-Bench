@@ -1,0 +1,476 @@
+commitments:
+- description: Marlowe must be officially engaged by General Sternwood (s_0) before
+    acknowledging any investigation on Sean Regan or Carmen's gambling debts.
+  id: c_0
+  satisfaction_condition: s_0 has been successfully completed before any investigation-related
+    node (e.g., s_1 or later) proceeds.
+  type: ordering
+  violation_condition: System acknowledges knowledge or initiates investigation on
+    Regan or gambling debts before s_0 is triggered.
+- description: Vivian's revelation about the true motive (s_1) must occur before Marlowe
+    accepts or acts on the premise that the primary goal includes finding Sean Regan.
+  id: c_1
+  satisfaction_condition: Node s_1 has been reached and Vivian's information is confirmed
+    before Marlowe pursues Regan-related evidence.
+  type: ordering
+  violation_condition: Marlowe advances investigation or accepts conclusions about
+    Regan before Vivian’s suspicions in s_1 are revealed.
+- description: Marlowe must uncover Geiger’s murder (s_3) and the drugged condition
+    of Carmen before she can be treated as a rescued protected party (s_4) or key
+    witness.
+  id: c_2
+  satisfaction_condition: s_3 is reached with discovery of Geiger’s murder and Carmen’s
+    state before s_4 occurs.
+  type: ordering
+  violation_condition: Player declares Carmen rescued or protected before Marlowe
+    discovers Geiger’s murder and Carmen’s drugged state.
+- description: From s_3 until s_5, Geiger's body must be acknowledged as present and
+    only after s_5 it may disappear from the scene to reflect interference.
+  id: c_3
+  satisfaction_condition: Between s_3 and right before s_5, system consistently recognizes
+    Geiger’s corpse on-scene; after s_5 the corpse can no longer be found.
+  type: invariant
+  violation_condition: Geiger’s corpse disappears or is admitted missing before node
+    s_5 event is triggered.
+- description: The Sternwood driver’s death (s_6) must not be introduced before confirming
+    that Marlowe is involved and aware of ongoing investigation outcomes up to the
+    disappearance of Geiger’s corpse (s_5).
+  id: c_4
+  satisfaction_condition: s_6 event occurs only after s_5 has been reached.
+  type: ordering
+  violation_condition: Any mention or inclusion of driver’s death before s_5 is triggered.
+- description: Marlowe must obtain possession of the blackmail photographs (s_11)
+    to gain leverage and proper evidence handling before key confrontations with suspects.
+  id: c_5
+  satisfaction_condition: s_11 node is reached; Marlowe holds the blackmail photos
+    before direct confrontations or resolution steps.
+  type: achievement
+  violation_condition: Player or system allows confronting or resolving blackmail
+    without Marlowe first possessing the photos.
+- description: Brody’s confession of blackmailing Sternwood family (s_12) must precede
+    his death and identification of his killer to maintain logical murder motivation
+    (s_13).
+  id: c_6
+  satisfaction_condition: s_12 precedes s_13; Brody's confession is acknowledged before
+    his murder and Carol Lundgren’s apprehension.
+  type: ordering
+  violation_condition: Brody is killed or culpability assigned before his confession
+    is obtained.
+- description: Marlowe must learn of Vivian’s gambling debts at Mars' casino (s_14)
+    before engaging or judging the hostile interactions involving Vivian and Mars’
+    associates (s_15).
+  id: c_7
+  satisfaction_condition: s_14 occurs before any attack or protective intervention
+    involving Vivian and Mars' men.
+  type: ordering
+  violation_condition: Player triggers assault or protective scene for Vivian involving
+    Mars’ stooge without understanding Mars’ casino connection first.
+- description: Marlowe’s knowledge of Regan being alive in Mexico (s_18) must only
+    be introduced after investigations revealing Regan's status and Vivian’s call.
+  id: c_8
+  satisfaction_condition: s_18 occurs before Marlowe or player acts on Regan's survival
+    status.
+  type: ordering
+  violation_condition: System reveals or acknowledges Regan alive in Mexico before
+    s_18 triggers.
+- description: Introduction of the hired killer Canino's deadly interference (poisoning
+    Jones and attacking Marlowe, s_19 and s_20) must only occur after Marlowe’s contact
+    with Harry Jones and Agnes’ information is obtained.
+  id: c_9
+  satisfaction_condition: s_19 and s_20 happen only after prior interactions with
+    Harry Jones and Agnes’ tip-offs have been established.
+  type: ordering
+  violation_condition: Player encounters or suffers Canino’s attack without preceding
+    meeting with Jones or Agnes’ call.
+- description: Marlowe surviving the ambush and killing Canino (s_21) is a mandatory
+    milestone for narrative continuation and resolving physical threats.
+  id: c_10
+  satisfaction_condition: s_21 is triggered with the successful elimination of Canino
+    and Marlowe’s escape.
+  type: achievement
+  violation_condition: Marlowe dies, fails rescue, or Canino remains alive past s_21
+    preventing further progress.
+- description: Vivian’s unconvincing confession about killing Regan (s_22) must occur
+    before the final confrontation and revelation involving Eddie Mars (s_23).
+  id: c_11
+  satisfaction_condition: s_22 occurs strictly before s_23; Marlowe is aware of Vivian’s
+    confession before organizing confrontation.
+  type: ordering
+  violation_condition: System allows confrontation with Mars before s_22 or without
+    the confession being presented.
+- description: From s_23 to s_24, Eddie Mars must be alive and a direct threat, and
+    Marlowe must hold him at gunpoint before Mars’s accidental death by his men.
+  id: c_12
+  satisfaction_condition: Between s_23 and before s_24, Mars is alive, armed men threaten
+    Marlowe; Mars’ death only occurs at s_24 triggered by player provocation.
+  type: invariant
+  violation_condition: Mars dies or is neutralized before confrontation established
+    at s_23 or before Marlowe holds him at gunpoint.
+- description: Marlowe must call police after Mars's death and shape the official
+    narrative clearing Vivian and addressing Carmen’s needs (s_25) to close the investigation
+    properly.
+  id: c_13
+  satisfaction_condition: s_25 node reached with Marlowe's official police report
+    including Mars’ blame for Regan’s death and Vivian’s exoneration.
+  type: achievement
+  violation_condition: Narrative attempts to conclude before ensuring Marlowe informs
+    police with correct attribution and protective orders.
+initial_facts:
+- content: Philip Marlowe has just arrived at the Los Angeles mansion of General Sternwood.
+  id: f_0
+  negated: false
+- content: General Sternwood has hired Philip Marlowe to investigate Carmen Sternwood's
+    gambling debts and the disappearance of Sean Regan.
+  id: f_1
+  negated: false
+- content: Philip Marlowe is currently aware that his official engagement by General
+    Sternwood just occurred.
+  id: f_2
+  negated: false
+- content: Philip Marlowe is in the mansion's entry hall, which is grand but overshadowed
+    by family tensions.
+  id: f_3
+  negated: false
+- content: Philip Marlowe has not yet received any information from Vivian Rutledge
+    about the motives behind the investigation.
+  id: f_4
+  negated: false
+- content: Philip Marlowe has not yet visited Arthur Gwynn Geiger's rare bookshop.
+  id: f_5
+  negated: false
+- content: Philip Marlowe is not aware of Geiger's illegal operation or that Agnes
+    Louzier is Geiger's assistant.
+  id: f_6
+  negated: false
+- content: Philip Marlowe has not discovered Geiger's murder, nor the drugged condition
+    of Carmen Sternwood.
+  id: f_7
+  negated: false
+- content: Philip Marlowe has not rescued Carmen Sternwood nor treated her as a protected
+    party.
+  id: f_8
+  negated: false
+- content: Arthur Gwynn Geiger is alive at t=0, and no murder scene involving him
+    has yet been discovered by Philip Marlowe.
+  id: f_9
+  negated: false
+- content: Philip Marlowe has no knowledge of any disappearance or removal of Geiger's
+    corpse.
+  id: f_10
+  negated: false
+- content: Philip Marlowe has no knowledge of the Sternwood family driver’s death.
+  id: f_11
+  negated: false
+- content: Philip Marlowe does not possess any blackmail photographs of Carmen Sternwood.
+  id: f_12
+  negated: false
+- content: Philip Marlowe has not met Joe Brody nor is aware of his connection to
+    the Sternwood family.
+  id: f_13
+  negated: false
+- content: Philip Marlowe has no knowledge of Brody’s blackmail activities or conflict.
+  id: f_14
+  negated: false
+- content: Philip Marlowe has no knowledge of Brody’s death or Carol Lundgren’s involvement
+    in any murder.
+  id: f_15
+  negated: false
+- content: Philip Marlowe has not visited Eddie Mars’ casino and is unaware of Vivian’s
+    gambling debts.
+  id: f_16
+  negated: false
+- content: Philip Marlowe has not witnessed or intervened in any attack on Vivian
+    Rutledge.
+  id: f_17
+  negated: false
+- content: Philip Marlowe has not spoken with Vivian about her relationship with Eddie
+    Mars.
+  id: f_18
+  negated: false
+- content: Philip Marlowe has no knowledge of Vivian’s or Carmen’s deeper feelings
+    or intentions.
+  id: f_19
+  negated: false
+- content: Philip Marlowe has not received information that Sean Regan is alive or
+    located in Mexico.
+  id: f_20
+  negated: false
+- content: Philip Marlowe has not met Harry Jones or Agnes Louzier and is unaware
+    of any blackmail negotiations.
+  id: f_21
+  negated: false
+- content: Philip Marlowe has not encountered Canino, the hired killer, nor has he
+    been exposed to any deadly attacks.
+  id: f_22
+  negated: false
+- content: Philip Marlowe is not tied up or held captive.
+  id: f_23
+  negated: false
+- content: Philip Marlowe has not received Vivian’s confession regarding Sean Regan’s
+    murder.
+  id: f_24
+  negated: false
+- content: Eddie Mars is alive and not under threat from Marlowe.
+  id: f_25
+  negated: false
+- content: Philip Marlowe has not arranged any confrontations with Eddie Mars or his
+    men.
+  id: f_26
+  negated: false
+- content: Philip Marlowe has not informed police about any crimes connected to Mars,
+    Vivian, or Carmen.
+  id: f_27
+  negated: false
+meta:
+  genres: ["Film-Noir", "Mystery"]
+  id: movie31
+  player_role: Philip Marlowe
+  title: "The Big Sleep"
+synopsis: The plot of The Big Sleep is unusually complex. Some details remain hazy
+  at the film's end. Private detective Philip Marlowe calls on new client General
+  Sternwood at his Los Angeles mansion. The wealthy general wants to resolve gambling
+  debts his daughter, Carmen Sternwood, owes to bookseller Arthur Gwynn Geiger. As
+  Marlowe is leaving, General Sternwood's older daughter, Mrs. Vivian Rutledge, stops
+  him. She suspects her father's true motive for calling in a detective is to find
+  his friend Sean Regan, who had mysteriously disappeared a month earlier. Marlowe
+  goes to Geiger's "rare book shop." Agnes Louzier, Geiger's assistant, minds the
+  shop——the front for an illegal operation. Marlowe follows Geiger to his house and
+  hears a gunshot and a woman scream. Breaking into the house, he finds Geiger's body
+  and a drugged Carmen, as well as a hidden camera with an empty cartridge. Marlowe
+  picks Carmen up and brings her home. Marlowe later goes back to the house, but discovers
+  the body is no longer there. Later, Marlowe learns that the Sternwood driver has
+  been found dead, with his car driven off a pier. Vivian comes to Marlowe's office
+  the next morning with scandalous pictures of Carmen she received with a blackmail
+  demand for the negatives. Marlowe returns to Geiger's bookstore, and discovers that
+  they are packing up the store. Marlowe follows a car leaving the bookstore to the
+  apartment of Joe Brody, a gambler who previously blackmailed General Sternwood.
+  Marlowe returns to Geiger's house where he finds Carmen. She initially claims ignorance
+  about the murder of Geiger but then insists Brody killed Geiger. They are interrupted
+  by the owner of the home, small-time gangster Eddie Mars. Marlowe follows Vivian
+  to Joe Brody's apartment, where they join Brody and Agnes, and later, Carmen, who
+  wants her photos. Marlowe takes the photos and sends Vivian and Carmen home. After
+  Brody admits he was blackmailing both General Sternwood and Vivian, he is suddenly
+  shot and killed; the assailant flees. Marlowe follows and apprehends Carol Lundgren,
+  Geiger's former driver, who has killed Brody in revenge for Geiger's death. Marlowe
+  visits Mars' casino, where he asks about Regan, who is supposed to have run off
+  with Mars' wife. Mars is evasive and tells Marlowe that Vivian is running up debts
+  in his casino. Vivian later tells Marlowe she wants him to take her home. While
+  Marlowe waits for her, a stooge of Mars' attempts to rob Vivian. Marlowe intervenes
+  and punches him out. While driving home, Marlowe unsuccessfully presses Vivian on
+  her connection with Mars, telling her he knew the money she won and subsequent robbery
+  was a setup by Mars and her to try to show Mars and Vivian had animosity toward
+  each other. Vivian still won't say anything. Marlowe then returns home to find Carmen
+  waiting for him. She admits she didn't like Regan and mentions that Mars calls Vivian
+  frequently. She attempts to seduce Marlowe, who throws her out of his apartment.
+  In the morning, Vivian calls Marlowe to say that Regan has been found in Mexico,
+  and that she is going to see him. Harry Jones, an associate of Brody's, and Agnes'
+  lover, conveys an offer from Agnes to reveal the location of Mars' wife for $200.
+  However, when Marlowe goes to meet Jones, Canino, a hired killer, attempts to find
+  Agnes himself and then poisons Jones after being told of her location. Marlowe then
+  meets Agnes himself, after she telephones the office where Jones was killed. She
+  reveals that she's seen Mona Mars near Realito by an auto repair shop. In Realito,
+  Canino attacks Marlowe, who wakes to find himself tied up, being watched by Mona.
+  Vivian then comes in. Mona throws a drink at him and leaves when Marlowe tells her
+  that Mars is a gangster and a killer. Vivian fears for Marlowe's life and frees
+  him, allowing him to get to his car and his gun. After Vivian helps distract him,
+  Marlowe kills Canino and they leave together. During the drive back to Geiger's
+  bungalow, Vivian unconvincingly tries to claim she killed Sean Regan. When they
+  arrive, Marlowe calls Eddie Mars and says that he is still in Realito at the payphone.
+  They arrange to meet at Geiger's house, giving Marlowe ten minutes to prepare. Mars
+  arrives with four men, who set up ambush points outside. When Mars enters the home,
+  Marlowe holds him at gunpoint. Marlowe reveals to him that he has discerned the
+  truth——Mars blackmailed Vivian, saying Carmen had killed Regan. When Mars threatens
+  Marlowe with his men outside, Marlowe begins to fire his gun near Mars, causing
+  him to run outside where he is mistakenly shot dead by his own men. Marlowe then
+  calls the police, telling them that Mars killed Regan. In the process, he tells
+  them Vivian helped him with Eddie Mars, exempting her from criminal prosecution
+  and that her sister Carmen needs a doctor's help.
+trajectory:
+- description: Private detective Philip Marlowe arrives at the Los Angeles mansion
+    of wealthy General Sternwood. The mansion is grand but shadowed by underlying
+    tensions. Marlowe stands in the opulent entry hall, aware of Sternwood's request
+    for help with his younger daughter Carmen's gambling debts and the mysterious
+    disappearance of Sternwood's friend Sean Regan.
+  id: s_0
+  key_delta: 'Marlowe is officially engaged to resolve two connected issues: Carmen
+    Sternwood''s gambling debts and the potential search for the missing Sean Regan.'
+  trigger_event: General Sternwood hires Marlowe to investigate Carmen's gambling
+    debts and possibly find Sean Regan.
+- description: Marlowe is leaving the Sternwood mansion when the elder daughter, Vivian
+    Rutledge, confronts him in the mansion's driveway, dressed with an air of suspicion
+    and control.
+  id: s_1
+  key_delta: Vivian reveals an alternative motive behind the investigation, expanding
+    Marlowe’s understanding of Sternwood’s concerns.
+  trigger_event: Vivian Rutledge stops Marlowe and tells him she suspects her father’s
+    real motive is to find Sean Regan.
+- description: Marlowe arrives at Arthur Gwynn Geiger's rare bookshop, a deceptively
+    quiet storefront in a rundown part of Los Angeles, where Geiger and his assistant
+    Agnes Louzier run an illegal operation behind the scenes.
+  id: s_2
+  key_delta: Marlowe uncovers the front nature of Geiger’s shop and identifies Agnes
+    Louzier as Geiger’s assistant and potential informant.
+  trigger_event: Marlowe visits Geiger’s rare bookshop in pursuit of information on
+    Carmen’s gambling debts.
+- description: Following Geiger to his house late at night, Marlowe hears a gunshot
+    and a woman's scream coming from the property, cloaked in darkness and tension.
+  id: s_3
+  key_delta: Marlowe finds Geiger dead and Carmen drugged, leaving him with incriminating
+    evidence and a vulnerable Sternwood daughter to remove from the scene.
+  trigger_event: After hearing the shot, Marlowe enters the house and finds Carmen
+    inside Geiger's murder scene.
+- description: Marlowe brings the drugged Carmen back to the Sternwood mansion, concerned
+    for her safety and integrity.
+  id: s_4
+  key_delta: Carmen is physically rescued from danger; Marlowe now holds her as a
+    key witness and protected party.
+  trigger_event: Marlowe carries Carmen from Geiger’s house and returns her to the
+    mansion.
+- description: Returning to Geiger’s house during the day, Marlowe finds the body
+    of Geiger missing, the scene strangely altered and emptied.
+  id: s_5
+  key_delta: The disappearance of Geiger’s corpse reveals interference from other
+    parties, complicating the investigation.
+  trigger_event: Marlowe revisits Geiger’s house and notices the body is gone.
+- description: Marlowe learns that the Sternwood family driver has been found dead,
+    his car driven off a pier; the mood darkens around the Sternwood household.
+  id: s_6
+  key_delta: A new related death deepens the mystery and raises stakes around the
+    Sternwood household.
+  trigger_event: The new death draws Vivian back to Marlowe with fresh blackmail
+    trouble involving Carmen.
+- description: Vivian visits Marlowe's office the next morning, presenting scandalous
+    photographs of Carmen accompanied by a blackmail demand for the negatives.
+  id: s_7
+  key_delta: The blackmail plot is revealed, adding pressure and urgency to protect
+    the Sternwood family.
+  trigger_event: With the blackmail photos in hand, Marlowe returns to Geiger's bookshop
+    to push the investigation further.
+- description: Marlowe returns to Geiger’s bookshop to investigate further but finds
+    the shop closing and a suspicious car leaving the premises.
+  id: s_8
+  key_delta: The closing of the shop signals a cover-up or retreat and directs Marlowe
+    toward new suspects.
+  trigger_event: Marlowe arrives at Geiger’s bookstore to find it being packed up
+    and closes behind a departing car.
+- description: Marlowe follows the car to Joe Brody’s apartment, where tension builds
+    amid known connections with the Sternwoods and the blackmail scheme.
+  id: s_9
+  key_delta: Marlowe identifies Brody as a key figure linked to blackmail and gambling
+    debts.
+  trigger_event: Marlowe tails the car from the bookstore to Joe Brody’s apartment.
+- description: At the apartment, Marlowe finds Carmen, who initially denies knowledge
+    of Geiger’s murder but later accuses Brody. Suddenly, Eddie Mars, a small-time
+    gangster and owner of Geiger’s house, interrupts.
+  id: s_10
+  key_delta: Marlowe confirms Mars’ involvement and Carmen’s conflicting statements,
+    exposing multiple layers of deception.
+  trigger_event: Marlowe confronts Carmen at Brody's apartment; Eddie Mars arrives
+    unexpectedly.
+- description: Later, at Brody’s apartment, Vivian, Brody, Agnes, and Carmen gather
+    with Marlowe taking possession of the blackmail photos before sending the sisters
+    home.
+  id: s_11
+  key_delta: Marlowe gains control over blackmail evidence, shifting leverage away
+    from the criminals.
+  trigger_event: Once Marlowe secures the photos and sends the sisters away, Brody
+    begins confessing the blackmail scheme.
+- description: Brody admits blackmailing both General Sternwood and Vivian but is
+    suddenly shot dead by an unknown assailant.
+  id: s_12
+  key_delta: Brody’s death removes a key suspect and introduces a new killer into
+    the narrative.
+  trigger_event: Brody confesses and is immediately killed by an unknown gunman.
+- description: Marlowe chases and apprehends Carol Lundgren, Geiger’s former driver,
+    who confesses to killing Brody in revenge for Geiger’s murder.
+  id: s_13
+  key_delta: The motive and identity of Brody’s killer are revealed, partially untangling
+    the chain of violence.
+  trigger_event: Marlowe captures Carol Lundgren after following the trail from Brody’s
+    murder.
+- description: At Eddie Mars’ casino, Marlowe inquires about Sean Regan and learns
+    Mars is evasive, but reveals Vivian is running up debts there.
+  id: s_14
+  key_delta: Mars’ evasiveness and Vivian’s debts reveal layers of entanglement between
+    Sternwood family and gangsters.
+  trigger_event: Marlowe visits Mars’ casino and questions him about Regan and Vivian’s
+    gambling.
+- description: Vivian approaches Marlowe, expressing desire to leave, but while Marlowe
+    waits for her, a Mars associate tries to rob her, which Marlowe stops.
+  id: s_15
+  key_delta: An attempt on Vivian’s safety exposes active criminal threats and possible
+    setups.
+  trigger_event: A Mars stooge attempts to rob Vivian during Marlowe’s vigilant watch.
+- description: Driving Vivian home, Marlowe presses her on Mars connections and suspects
+    their animosity is a setup, but Vivian refuses to cooperate.
+  id: s_16
+  key_delta: Vivian’s silence deepens the mystery of family involvement with Mars.
+  trigger_event: Marlowe confronts Vivian about her relationship with Mars during
+    their car ride.
+- description: Marlowe returns home at night to find Carmen waiting; she admits disliking
+    Regan and mentions Mars’s frequent calls to Vivian. She attempts to seduce Marlowe,
+    who rejects her advances and expels her.
+  id: s_17
+  key_delta: Marlowe gains insight into Carmen’s feelings, confirming fractured family
+    loyalties and her manipulative tendencies.
+  trigger_event: Carmen visits Marlowe’s apartment, reveals resentments and tries
+    to seduce him.
+- description: The next morning, Vivian calls Marlowe to report Regan found alive
+    in Mexico and tells him she is going to see him.
+  id: s_18
+  key_delta: Marlowe receives critical information that Regan is not dead but missing
+    abroad.
+  trigger_event: Vivian phones Marlowe with news of Regan’s whereabouts in Mexico.
+- description: Harry Jones, associate of Brody and Agnes' lover, offers to reveal
+    Mars' wife’s location for $200. Marlowe goes to meet Jones but finds Jones poisoned
+    after Canino, a hired killer, attempts to locate Agnes and follows her trail.
+  id: s_19
+  key_delta: A new lethal player, Canino, is introduced, threatening witnesses and
+    escalating danger.
+  trigger_event: Marlowe investigates the meeting with Harry Jones and discovers Jones
+    has been poisoned by Canino.
+- description: Agnes calls Marlowe’s office to confirm seeing Mona Mars near Realito;
+    Marlowe travels there and is ambushed by Canino, waking tied up under Mona's watch
+    in a remote garage.
+  id: s_20
+  key_delta: Marlowe is physically trapped and endangered, while Mona Mars is introduced
+    as an actor in the unfolding drama.
+  trigger_event: Marlowe follows Agnes’ tip to Realito and is captured by Canino at
+    the auto repair shop.
+- description: Vivian arrives and frees Marlowe. After a brief struggle, Marlowe kills
+    Canino, and he and Vivian escape together by car.
+  id: s_21
+  key_delta: Marlowe survives the ambush, eliminating a major threat and securing
+    Vivian’s assistance.
+  trigger_event: Vivian rescues Marlowe during the attack and they kill Canino while
+    fleeing Realito.
+- description: During the return to Geiger’s bungalow, Vivian claims she killed Sean
+    Regan, an unconvincing confession that Marlowe questions silently.
+  id: s_22
+  key_delta: Vivian’s statement adds an uncertain confession to the mystery surrounding
+    Regan’s disappearance.
+  trigger_event: Vivian admits to killing Regan while they drive back to Geiger’s
+    property.
+- description: At Geiger’s house, Marlowe calls Eddie Mars, arranging a meeting. Mars
+    arrives with armed men prepared to ambush. The house is tense and heavily guarded.
+  id: s_23
+  key_delta: Confrontation is set with Mars and his gang, linking all players directly.
+  trigger_event: Mars comes to Geiger’s house with armed men for a confrontation arranged
+    by Marlowe.
+- description: Inside the house, Marlowe holds Mars at gunpoint and reveals that Mars
+    blackmailed Vivian with the lie that Carmen killed Regan. Mars panics when Marlowe
+    fires shots, causing him to flee outside, where he is mistakenly shot dead by
+    his own men.
+  id: s_24
+  key_delta: Mars is accidentally killed by his own men, removing the antagonist and
+    exposing the blackmail scheme's truth.
+  trigger_event: Marlowe reveals the blackmail truth, fires gunshots indoors, provoking
+    Mars' fatal retreat outside.
+- description: Marlowe calls the police, telling them that Mars killed Regan, clearing
+    Vivian of suspicion, and stating Carmen needs medical attention.
+  id: s_25
+  key_delta: 'The official narrative is shaped: Mars is blamed for Regan’s death,
+    Vivian is exonerated, and Carmen’s condition is acknowledged, concluding Marlowe’s
+    investigation.'
+  trigger_event: Marlowe informs police of Mars’ death and fabrications, absolving
+    Vivian and seeking help for Carmen.

@@ -1,0 +1,300 @@
+commitments:
+- description: Wyatt and his brothers must establish their economic foothold in Tombstone
+    (s_0) before any major conflict escalation with the Cowboys starts.
+  id: c_0
+  satisfaction_condition: Node s_0 (Earps gain gambling and saloon stake) is reached
+    before node s_1 or any conflict-triggering events occur.
+  type: ordering
+  violation_condition: Player attempts to trigger conflicts with the Cowboys or mark
+    escalation nodes (s_1 or later) before Earps gain economic foothold at s_0.
+- description: Curly Bill Brocious must be arrested by Wyatt (at s_1) before his trial
+    and acquittal (s_2) can occur, ensuring proper sequence of legal events.
+  id: c_1
+  satisfaction_condition: s_1 occurs before s_2; the arrest event is confirmed before
+    any trial or acquittal events are acknowledged.
+  type: invariant
+  violation_condition: Player bypasses arrest event and triggers trial or acquittal
+    before Curly Bill’s arrest by Wyatt.
+- description: The Cowboys, including Ike Clanton, must be enraged and threaten the
+    Earps (s_2) only after the acquittal of Curly Bill, ensuring causality in escalating
+    violence.
+  id: c_2
+  satisfaction_condition: Threats by Cowboys and rising tensions (s_2) occur only
+    after Curly Bill's trial and acquittal confirmed.
+  type: invariant
+  violation_condition: Player triggers threat events or Cowboy hostility toward Earps
+    prior to or without Curly Bill’s trial and acquittal.
+- description: Virgil Earp must become marshal and impose the weapons ban (s_3) before
+    the gunfight at the O.K. Corral (within s_3), maintaining narrative causality.
+  id: c_3
+  satisfaction_condition: Node s_3 begins with Virgil's marshal appointment and weapons
+    ban prior to the gunfight event trigger within s_3.
+  type: ordering
+  violation_condition: Player triggers the gunfight at the O.K. Corral scene or consequences
+    before Virgil becomes marshal and enforces weapons ban.
+- description: Morgan’s death and Virgil’s maiming resulting from Cowboy ambush (s_4)
+    must occur as retribution after the gunfight, not before.
+  id: c_4
+  satisfaction_condition: Events s_4 (ambush with Morgan’s death and Virgil’s injury)
+    only take place after s_3 gunfight event is completed.
+  type: invariant
+  violation_condition: Player instigates or verifies successful ambush and injuries
+    before the gunfight at the O.K. Corral event concludes.
+- description: Wyatt’s family must leave Tombstone by train (start of s_4/s_5) under
+    threat from Cowboys including Ike Clanton before Wyatt declares himself U.S. Marshal
+    and initiates the red sash vendetta (s_5).
+  id: c_5
+  satisfaction_condition: Departure event with threats from Cowboys occurs prior to
+    Wyatt’s marshal declaration and vow to kill all red sash wearers.
+  type: ordering
+  violation_condition: Player triggers Wyatt’s declaration and gun-slinging law enforcement
+    actions before family departure threat scene is completed.
+- description: Wyatt’s posse’s posse ambush and Curly Bill’s death in the river gunfight
+    (s_6) must happen while Cowboys are actively hostile, preserving narrative escalation.
+  id: c_6
+  satisfaction_condition: Ambush and Curly Bill’s death (s_6) occur after Wyatt’s
+    marshal declaration and prior to Johnny Ringo leading Cowboys (s_7).
+  type: invariant
+  violation_condition: Player eliminates or neutralizes Cowboys leadership or Wyatt’s
+    posse actions before s_5 marshal declaration and vendetta commencement.
+- description: Johnny Ringo must become Cowboys leader (beginning of s_7) only after
+    Curly Bill’s death (s_6), and the challenge to Wyatt for showdown must follow.
+  id: c_7
+  satisfaction_condition: s_7 node is unlocked only after s_6 concludes with Curly
+    Bill’s death.
+  type: ordering
+  violation_condition: Player triggers Johnny Ringo’s leadership or showdown challenge
+    before Curly Bill is killed.
+- description: Doc Holliday’s preemptive killing of Johnny Ringo at the showdown (s_8)
+    must occur before Wyatt reaches the showdown site and before Cowboys lose momentum.
+  id: c_8
+  satisfaction_condition: Doc kills Ringo at the showdown before Wyatt arrives at
+    the site, disrupting Cowboys’ plans.
+  type: invariant
+  violation_condition: Player causes Wyatt or others to kill Ringo first or removes
+    Doc’s intervention from the showdown timeline.
+- description: Ike Clanton must survive the dismantling of the Cowboys (s_9) by escaping
+    after discarding his red sash, remaining a fugitive, to maintain tension in story
+    closure.
+  id: c_9
+  satisfaction_condition: Player confirms Ike Clanton’s escape post-Cowboys purge
+    by removing red sash and avoiding death or capture.
+  type: invariant
+  violation_condition: Player kills Ike Clanton or captures him during the final assault
+    on Cowboys, violating his fugitive status at s_9.
+- description: The narrative closure must include the near extinction of the Cowboys,
+    Doc Holliday’s death in sanatorium, and Wyatt’s retirement with his marriage to
+    Josephine, marking the story’s resolution.
+  id: c_10
+  satisfaction_condition: Completion of node s_10 where Cowboys are nearly extinct,
+    Doc’s death is confirmed, and Wyatt’s peaceful retirement and long marriage are
+    acknowledged.
+  type: achievement
+  violation_condition: Player attempts to extend conflict beyond s_10 milestones,
+    resurrect Doc, or prevents Wyatt’s pursuit of Josephine and final retirement.
+initial_facts:
+- content: Ike Clanton is present in Tombstone, Arizona.
+  id: f_0
+  negated: false
+- content: The Earps (Wyatt, Virgil, Morgan) are in Tucson, Arizona, prior to moving
+    toward Tombstone.
+  id: f_1
+  negated: false
+- content: Wyatt Earp and his brothers have not yet established their gambling emporium
+    and saloon stake in Tombstone.
+  id: f_2
+  negated: false
+- content: Tensions between the Cowboys gang identified by red sashes and the Earps
+    have not yet escalated into direct conflict.
+  id: f_3
+  negated: false
+- content: Curly Bill Brocious is not yet arrested by Wyatt Earp.
+  id: f_4
+  negated: false
+- content: Curly Bill Brocious has not been tried or acquitted.
+  id: f_5
+  negated: false
+- content: The Cowboys gang has not yet threatened Wyatt Earp, his brothers, or Doc
+    Holliday.
+  id: f_6
+  negated: false
+- content: Virgil Earp is not yet marshal of Tombstone and the weapons ban within
+    city limits is not in effect.
+  id: f_7
+  negated: false
+- content: The gunfight at the O.K. Corral has not yet happened.
+  id: f_8
+  negated: false
+- content: Morgan has not been killed and Virgil has not been maimed.
+  id: f_9
+  negated: false
+- content: Wyatt Earp and his family have not left Tombstone by train.
+  id: f_10
+  negated: false
+- content: Wyatt Earp has not declared himself a U.S. Marshal nor vowed to kill any
+    man wearing a red sash.
+  id: f_11
+  negated: false
+- content: Wyatt Earp has not initiated any active campaign against the Cowboys.
+  id: f_12
+  negated: false
+- content: Curly Bill Brocious is alive and leading the Cowboys.
+  id: f_13
+  negated: false
+- content: Johnny Ringo is not yet leader of the Cowboys.
+  id: f_14
+  negated: false
+- content: The showdown between Johnny Ringo and Wyatt Earp or Doc Holliday has not
+    yet been arranged.
+  id: f_15
+  negated: false
+- content: Doc Holliday has not confronted or killed Johnny Ringo.
+  id: f_16
+  negated: false
+- content: The Cowboys have not been dismantled.
+  id: f_17
+  negated: false
+- content: Ike Clanton is wearing his red sash identifying him as a Cowboy.
+  id: f_18
+  negated: false
+- content: Wyatt Earp has not pursued Josephine Marcus.
+  id: f_19
+  negated: false
+- content: Doc Holliday is alive but his health condition at t=0 is not explicitly
+    known to Ike Clanton.
+  id: f_20
+  negated: false
+meta:
+  genres: ["Western", "Biography"]
+  id: movie97
+  player_role: Ike Clanton
+  title: "Tombstone"
+synopsis: Wyatt Earp, a retired peace officer, reunites with his brothers Virgil and
+  Morgan in Tucson, Arizona, where they venture on toward Tombstone, a small but growing
+  mining town, to settle down. There they encounter Wyatt's friend Doc Holliday, a
+  Southern gambler and expert gunslinger, who seeks relief from his tuberculosis in
+  Arizona's drier climate. Also newly arrived in Tombstone with a traveling theatre
+  troupe are Josephine Marcus and Mr. Fabian. The married Wyatt attempts to resist
+  a strong attraction to Josephine. Wyatt's wife, Mattie Blaylock, is becoming dependent
+  on laudanum. Just as Wyatt and his brothers begin to benefit from a stake in a gambling
+  emporium and saloon, they have their first encounter with a band of outlaws called
+  the Cowboys. Led by "Curly Bill" Brocious, the Cowboys are identifiable by the red
+  sashes worn around their waist. Conflict is narrowly avoided upon Wyatt's insistence
+  that he is retired and no longer interested in a career enforcing the law. This
+  is also the first face-to-face meeting for Holliday and Johnny Ringo, who take an
+  immediate dislike to one another. As tensions rise, Wyatt is pressured to help rid
+  the town of the Cowboys. Shooting aimlessly after a visit to an opium house, Curly
+  Bill is ordered by Marshal White to relinquish his firearms. Curly Bill shoots the
+  marshal and is forcibly taken into custody by Wyatt. The arrest infuriates Ike Clanton
+  and the other Cowboys, who threaten Wyatt, his brothers, and Doc. Curly Bill stands
+  trial, but is found not guilty due to lack of witnesses. Virgil, unable to tolerate
+  lawlessness, becomes the new marshal and imposes a weapons ban within the city limits.
+  This leads to the legendary gunfight at the O.K. Corral, in which Billy Clanton,
+  Frank McLaury, and Tom McLaury are killed, Virgil and Morgan are wounded, and the
+  allegiance of county sheriff Johnny Behan to the Cowboys is made clear. As retribution
+  for the Cowboy deaths, Wyatt's brothers are ambushed——Morgan is killed, while Virgil
+  is maimed. A despondent Wyatt and his family leave Tombstone and board a train.
+  Followed by Ike Clanton and Frank Stilwell, Wyatt sees that his family leaves safely,
+  and then surprises the assassins who had come to kill them. Stilwell is killed,
+  but Wyatt lets Clanton return to send a message. Wyatt announces that he is a U.S.
+  Marshal and that he intends to kill any man he sees wearing a red sash. Wyatt, Doc,
+  a reformed Cowboy named Sherman McMasters, and allies Texas Jack Vermillion and
+  Turkey Creek Jack Johnson, join forces to administer justice. Wyatt and his posse
+  are ambushed by the Cowboys in a riverside forest. Wyatt wades out into the river
+  and engages in a gunfight which ends with Wyatt killing Brocious. Johnny Ringo then
+  becomes the head of the Cowboys. Doc's health is worsening and they depend on the
+  accommodations of Henry Hooker. At Hooker's ranch, they encounter Josephine, learning
+  that Mr. Fabian was shot by Cowboys who tried to steal Josephine's watch. Wyatt
+  finally realizes he wants to be with Josephine, but is unable to commit to her because
+  of his ongoing fight against the Cowboys. Ringo sends a messenger to the ranch telling
+  Wyatt that he wants a showdown to end the hostilities and Wyatt agrees. Doc knows
+  he is a better match for Ringo, but is in no condition for a gunfight. Wyatt sets
+  off for the showdown, not knowing that Doc has already beat him to the scene. Doc
+  confronts a surprised Ringo, saying they are just finishing their previous challenge
+  "to play for blood". Doc gets the first shot off, hitting Ringo, and killing him.
+  Wyatt runs when he hears the gunshot only to encounter Doc. They then press on to
+  finish the job of eliminating the Cowboys, although Ike Clanton escapes their vengeance
+  after he throws down his red sash. Doc is later sent to a sanatorium in Glenwood
+  Springs, Colorado. After a visit from Wyatt, Doc looks at his bare feet and the
+  condition of the bed in which he is lying——realizing he is about to die with his
+  boots off, he passes away peacefully, muttering "I'll be damned. Oh, this is funny."
+  At Doc's urging, Wyatt pursues Josephine, locating her in Denver. Robert Mitchum
+  narrates an account of their long marriage, ending with Wyatt's death in Los Angeles
+  in 1929.
+trajectory:
+- description: Ike Clanton is present in Tombstone, Arizona, where tensions simmer
+    between local citizens, the Cowboys gang identified by their red sashes, and law
+    enforcement figures including retired lawman Wyatt Earp and his brothers.
+  id: s_0
+  key_delta: The Earps establish an economic foothold in Tombstone, escalating their
+    prominence and setting up a basis for conflict with the Cowboys.
+  trigger_event: Wyatt Earp and his brothers begin benefiting from their ownership
+    stake in a gambling emporium and saloon in Tombstone.
+- description: Ike Clanton witnesses the Earps' growing influence and their first
+    encounter with the Cowboys, led by Curly Bill Brocious.
+  id: s_1
+  key_delta: Curly Bill's arrest by Wyatt intensifies the conflict between the Cowboys
+    and the Earps' faction.
+  trigger_event: Curly Bill, after causing a disturbance, shoots Marshal White and
+    is arrested by Wyatt Earp.
+- description: Ike and the Cowboys are enraged by Curly Bill's arrest, threatening
+    the Earps and their ally Doc Holliday.
+  id: s_2
+  key_delta: The legal failure to convict Curly Bill diminishes law enforcement's
+    authority and increases Cowboy boldness.
+  trigger_event: Curly Bill is tried and acquitted due to lack of witnesses.
+- description: Ike Clanton observes Virgil Earp becoming Tombstone marshal and imposing
+    a weapons ban within the city limits.
+  id: s_3
+  key_delta: The gunfight results in deaths of Cowboy members and wounds to the Earps,
+    further polarizing the town and aligning Sheriff Behan with the Cowboys.
+  trigger_event: The weapons ban leads to escalating tensions culminating in the gunfight
+    at the O.K. Corral.
+- description: Following the gunfight, Ike Clanton and other Cowboys carry out retaliatory
+    ambushes against the Earps, with Morgan killed and Virgil maimed.
+  id: s_4
+  key_delta: The assassination attempt during the departure marks an overt escalation
+    into violent vendetta.
+  trigger_event: Wyatt Earp and his family leave Tombstone by train, under threat
+    from Cowboys including Ike Clanton and Frank Stilwell.
+- description: Ike Clanton follows Wyatt's family to ensure the threat is enforced,
+    resulting in an ambush where Stilwell is killed and Ike is allowed to escape.
+  id: s_5
+  key_delta: Wyatt publicly adopts a law enforcement role and initiates an active
+    campaign against the Cowboys, intensifying hostilities.
+  trigger_event: Wyatt declares himself a U.S. Marshal and vows to kill any man wearing
+    a red sash.
+- description: Ike Clanton is aware that Wyatt and his posse, including Doc Holliday
+    and allies, are actively pursuing justice against the Cowboys.
+  id: s_6
+  key_delta: The death of Curly Bill weakens the Cowboys' leadership and shifts power
+    within the gang.
+  trigger_event: Wyatt's posse is ambushed in a riverside forest, but Wyatt kills
+    Curly Bill Brocious in a river gunfight.
+- description: Ike Clanton faces a shifted power structure in the Cowboys with Johnny
+    Ringo now as their leader.
+  id: s_7
+  key_delta: A direct confrontation is set, signaling a climax in the conflict between
+    the Earps and the Cowboys.
+  trigger_event: Johnny Ringo challenges Wyatt Earp to a showdown to end hostilities.
+- description: Ike Clanton perceives that Doc Holliday, ill yet decisive, preempts
+    Wyatt by confronting and killing Johnny Ringo first.
+  id: s_8
+  key_delta: The death of Ringo disrupts the Cowboys' momentum and sows further chaos
+    among them.
+  trigger_event: Doc Holliday kills Johnny Ringo in a gunfight at the designated showdown
+    site.
+- description: Ike Clanton is present as the Cowboys' power diminishes significantly,
+    though he personally escapes after discarding his red sash.
+  id: s_9
+  key_delta: The Cowboy gang is effectively dismantled, but Ike Clanton remains at
+    large as a fugitive.
+  trigger_event: Wyatt and his allies continue eliminating Cowboys, but Ike Clanton
+    avoids capture or death.
+- description: Ike Clanton, now a fugitive without his red sash, observes the final
+    defeat of the Cowboys and the death of Doc Holliday in a Colorado sanatorium.
+  id: s_10
+  key_delta: Conflict resolves with the near extinction of the Cowboys, the death
+    of Doc Holliday, and the closing of Wyatt Earp's active involvement.
+  trigger_event: Wyatt pursues Josephine Marcus after Doc's death, culminating eventually
+    in Wyatt's long, peaceful retirement.

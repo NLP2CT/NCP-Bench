@@ -1,0 +1,290 @@
+commitments:
+- description: The ED-209 malfunction (s_0) must occur before the approval of the
+    RoboCop program (s_1), preventing premature shift in corporate focus.
+  id: c_0
+  satisfaction_condition: Node s_0 is reached before node s_1.
+  type: ordering
+  violation_condition: Node s_1 is triggered before s_0, allowing the RoboCop program
+    to begin despite the ED-209 malfunction being unaddressed.
+- description: Murphy’s death (s_2) must occur after RoboCop program approval (s_1)
+    and before RoboCop’s operational crime-fighting success (s_3), securing the causal
+    link from human officer to cyborg.
+  id: c_1
+  satisfaction_condition: Node s_1 precedes s_2, and s_2 precedes s_3 in narrative
+    progression.
+  type: ordering
+  violation_condition: RoboCop’s success (s_3) occurs without Murphy’s death/conversion
+    (s_2) or before program approval (s_1).
+- description: Throughout the RoboCop operational phase (s_3 to s_9), RoboCop retains
+    latent memories and mannerisms of Murphy, forming the persistent human identity
+    core that motivates narrative events.
+  id: c_2
+  satisfaction_condition: RoboCop exhibits recognizably Murphy’s mannerisms and memories
+    during phases s_3 through s_9.
+  type: invariant
+  violation_condition: At any point in s_3 to s_9, RoboCop fully loses Murphy’s memories
+    or mannerisms, eliminating the human link.
+- description: Morton’s murder by Boddicker on Jones’ secret orders (s_4) must occur
+    only after RoboCop’s operational success (s_3) elevates Morton’s status, establishing
+    motive and consequence.
+  id: c_3
+  satisfaction_condition: Node s_3 precedes node s_4 in linear progression.
+  type: ordering
+  violation_condition: Morton’s murder (s_4) occurs before RoboCop’s success and Morton’s
+    rise (s_3).
+- description: Evidence linking Jones to Morton’s murder must be obtained and presented
+    to the OCP chairman (s_9) before Jones’ confrontation and demise (s_10), enabling
+    narrative resolution.
+  id: c_4
+  satisfaction_condition: Node s_9 is reached and evidence is presented to the chairman
+    prior to node s_10.
+  type: achievement
+  violation_condition: Jones is confronted or defeated (s_10) without RoboCop presenting
+    incriminating evidence (s_9).
+- description: RoboCop’s fourth directive blocking harm/arrest of senior OCP executives
+    must be active and disable him during Jones’ attempt to arrest (s_6 and s_10),
+    preserving corporate safeguards logically within the plot.
+  id: c_5
+  satisfaction_condition: At encounters s_6 and s_10, RoboCop is incapacitated/prevented
+    from harming Jones by his fourth directive.
+  type: invariant
+  violation_condition: RoboCop harms or arrests Jones at s_6 or during s_10 confrontation
+    without activation of the fourth directive safeguard.
+- description: Jones’ ordering of Boddicker to kill Morton (s_4) must precede Boddicker’s
+    arrest by RoboCop (s_5), establishing Jones’ indirect exposure through criminal
+    association.
+  id: c_6
+  satisfaction_condition: Node s_4 occurs before s_5 in sequence.
+  type: ordering
+  violation_condition: Boddicker is arrested (s_5) before Morton is murdered under
+    Jones’ orders (s_4).
+- description: The failure of ED-209 to kill RoboCop due to inability to descend stairs
+    (s_6) must occur before RoboCop’s rescue by Anne Lewis after police SWAT attack
+    (s_7), preventing premature RoboCop destruction.
+  id: c_7
+  satisfaction_condition: Event s_6 (ED-209 attack and RoboCop escape) occurs before
+    s_7 (SWAT attack and rescue).
+  type: ordering
+  violation_condition: RoboCop is destroyed or rescued (s_7) before surviving the
+    ED-209 attack (s_6).
+- description: Jones covertly collaborates with Boddicker, providing him with resources
+    to attack RoboCop (s_8), maintaining the narrative of Jones orchestrating open
+    assaults to eliminate threats.
+  id: c_8
+  satisfaction_condition: During s_8, Boddicker’s gang is armed and directed by Jones
+    to attack RoboCop.
+  type: invariant
+  violation_condition: Boddicker attacks RoboCop without evidence or implication of
+    Jones’ sponsorship.
+- description: Jones’ death (s_10) must occur only after presentation of conclusive
+    evidence (s_9) and loss of corporate protection from the chairman, preventing
+    premature narrative resolution.
+  id: c_9
+  satisfaction_condition: Node s_9 (evidence presentation) is followed by s_10 (Jones’
+    confrontation and death).
+  type: ordering
+  violation_condition: Jones dies or is neutralized (s_10) before RoboCop presents
+    definitive evidence to the chairman (s_9).
+- description: RoboCop must declare his identity as 'Murphy' after Jones’ death and
+    OCP’s stabilization (s_11), closing the narrative arc on human-machine identity
+    fusion.
+  id: c_10
+  satisfaction_condition: Node s_11 occurs with RoboCop affirming the name 'Murphy'.
+  type: achievement
+  violation_condition: The story ends or RoboCop is recognized without the identity
+    declaration 'Murphy' in s_11.
+initial_facts:
+- content: Dick Jones is the senior president at Omni Consumer Products (OCP).
+  id: f_0
+  negated: false
+- content: Detroit, Michigan is currently suffering from financial ruin and uncontrolled
+    crime.
+  id: f_1
+  negated: false
+- content: OCP holds a contract with the city government of Detroit to run the police
+    force.
+  id: f_2
+  negated: false
+- content: OCP is developing robotic law enforcement programs including the ED-209
+    enforcement droid.
+  id: f_3
+  negated: false
+- content: Dick Jones operates from a corporate office overlooking Detroit.
+  id: f_4
+  negated: false
+- content: At this stage, the ED-209 program has not yet malfunctioned.
+  id: f_5
+  negated: false
+- content: RoboCop program has not yet been approved by the OCP Chairman.
+  id: f_6
+  negated: false
+- content: Bob Morton has not yet announced or initiated the RoboCop cybernetic police
+    program.
+  id: f_7
+  negated: false
+- content: Alex Murphy is not yet transferred to the Old Detroit precinct.
+  id: f_8
+  negated: false
+- content: Dick Jones is unaware of any malfunction of the ED-209 droid.
+  id: f_9
+  negated: false
+- content: Dick Jones is unaware of any RoboCop program developments or any existence
+    of RoboCop.
+  id: f_10
+  negated: false
+- content: Dick Jones has not yet formed any covert relationship with Clarence Boddicker.
+  id: f_11
+  negated: false
+- content: Morton is not yet promoted or targeted by Dick Jones.
+  id: f_12
+  negated: false
+- content: No murders or major violence related to the OCP executives have yet occurred.
+  id: f_13
+  negated: false
+- content: RoboCop does not yet exist and thus exhibits no memories or mannerisms
+    of Alex Murphy.
+  id: f_14
+  negated: false
+- content: The fourth directive preventing RoboCop from harming OCP senior executives
+    is not yet activated or installed.
+  id: f_15
+  negated: false
+meta:
+  genres: ["Sci-Fi", "Action"]
+  id: movie67
+  player_role: Dick Jones
+  title: "RoboCop"
+synopsis: In the near future, Detroit, Michigan is on the verge of collapse due to
+  financial ruin and unchecked crime. The mega-corporation Omni Consumer Products
+  enters into a contract with the city to run the police force. OCP plans to destroy
+  "Old Detroit" and replace it with the utopia of "Delta City". Recognizing that human
+  law enforcers are insufficient to stop the crime spree, OCP runs several programs
+  to find robotic replacements. One program, the ED-209 enforcement droid, headed
+  by senior president Dick Jones, malfunctions and kills a junior executive during
+  its demonstration. As a result, the OCP Chairman opts for a cyborg program helmed
+  by middle-ranking executive Bob Morton, named "RoboCop". Veteran police officer
+  Alex Murphy is transferred to a new precinct in Old Detroit and is partnered with
+  Anne Lewis. On their first patrol, they chase down a team of criminals led by crime
+  boss Clarence Boddicker to an abandoned steel mill. Lewis is later rendered unconscious
+  by one of the gang, while the rest of Boddicker's men corner Murphy and brutally
+  murder him. Murphy is pronounced dead at the hospital and OCP subsequently takes
+  his body and utilizes parts of the remains in the construction of the first RoboCop.
+  RoboCop is able to single-handedly deal with much of the violent crime in the city,
+  causing the rest of the police force to become worried they may be replaced. Unbeknownst
+  to his human monitors, RoboCop still retains memories of his life as Murphy, including
+  brief glimpses of his wife and son, and the action of spinning his gun before holstering
+  it, a trick Murphy had done for his son. Lewis recognizes these elements from Murphy's
+  mannerisms, and tries to learn more from RoboCop, but he remains silent on the issues.
+  Because of RoboCop's success, Morton is promoted to become one of OCP's vice-presidents.
+  Morton's success and arrogance leads Jones to have Boddicker, secretly in his employ,
+  kill the young executive. Meanwhile, an armed gas station holdup by one of Boddicker's
+  men allows RoboCop to track down Boddicker to a cocaine bunker. RoboCop bursts into
+  the facility and Boddicker reveals his alliance with Dick Jones. Boddicker is arrested
+  and RoboCop visits Jones at his offices at OCP, intending to arrest him as well.
+  During the confrontation, RoboCop's previously unknown fourth directive, preventing
+  him from arresting or harming any senior executive of OCP, activates and incapacitates
+  him. Jones sends an ED-209 against RoboCop. The ED-209 proves incapable of descending
+  a stairway, making it possible for RoboCop to escape. When RoboCop enters the parking
+  complex of the building, a police SWAT team is waiting for him with orders to destroy
+  him. The hail of bullets severely damages RoboCop's armor, but Lewis saves him.
+  Meanwhile, the police launch their long-threatened strike, sending the city into
+  chaos. Jones arranges for Boddicker and his men to be released from prison and provides
+  them with weaponry capable of puncturing RoboCop's heavy armor. Using a tracking
+  device provided by Jones, Boddicker's team converges on the steel mill where RoboCop
+  was recovering from his injuries. RoboCop and Lewis defend themselves and kill the
+  entire gang. Lewis is wounded but survives. RoboCop returns to OCP headquarters
+  and presents evidence of Jones' role in Morton's death to the OCP chairman. Jones
+  quickly grabs a gun and takes the chairman hostage. The chairman, after being told
+  about the Fourth Directive by RoboCop, fires Jones, allowing RoboCop to shoot him.
+  Jones then crashes through the window and falls to his death. The chairman commends
+  RoboCop for his skill and asks for his name, to which RoboCop replies——"Murphy".
+trajectory:
+- description: Dick Jones is senior president at OCP, situated in a corporate office
+    overlooking Detroit, a city rife with financial ruin and uncontrolled crime. OCP
+    is in contract with the city government to run the police force and is developing
+    robotic law enforcement programs including the ED-209 droid.
+  id: s_0
+  key_delta: The failure of the ED-209 program removes it as the primary solution
+    for robotic law enforcement, exposing flaws in OCP’s technology and leadership.
+  trigger_event: During a public demonstration, the ED-209 malfunctions and kills
+    a junior OCP executive.
+- description: The OCP Chairman, in response to the ED-209 incident, approves the
+    cybernetic police program led by Bob Morton, moving focus to the RoboCop project.
+  id: s_1
+  key_delta: The RoboCop program gains official approval and motivation; a potential
+    new crime-fighting approach is initiated under Morton’s leadership.
+  trigger_event: Bob Morton announces the initiation of the RoboCop program and transfers
+    Alex Murphy to Old Detroit precinct.
+- description: Dick Jones is aware of the RoboCop project advancing and its threat
+    to existing OCP power dynamics as veteran officer Murphy is now the core of this
+    new program.
+  id: s_2
+  key_delta: Murphy’s death enables OCP to construct RoboCop; Jones perceives a rising
+    competitor in Morton through the RoboCop initiative.
+  trigger_event: Murphy is brutally murdered by Clarence Boddicker’s gang during a
+    patrol, and OCP receives his body for robotic conversion.
+- description: RoboCop is operational and begins heavily impacting violent crime in
+    Detroit, exhibiting unexpected recovered memories and mannerisms of Alex Murphy,
+    which stir uncertainty among human staff.
+  id: s_3
+  key_delta: RoboCop’s success challenges the status quo, elevating Morton’s status
+    and causing friction within OCP leadership including Jones.
+  trigger_event: RoboCop’s growing effectiveness causes concern within the police
+    force and executive ranks at OCP.
+- description: Dick Jones, growing wary of Morton’s rising influence, secretly enlists
+    Clarence Boddicker to undermine and eliminate Morton.
+  id: s_4
+  key_delta: Morton’s death consolidates Jones’ power within OCP and removes his rival,
+    altering the corporate power dynamics.
+  trigger_event: Boddicker murders Bob Morton on Jones’ covert orders.
+- description: RoboCop independently tracks Boddicker to a cocaine bunker, confronting
+    the crime boss who reveals his partnership with Dick Jones.
+  id: s_5
+  key_delta: Jones’ complicity in criminal activities is indirectly exposed through
+    Boddicker’s arrest by RoboCop.
+  trigger_event: RoboCop arrests Boddicker, confirming his alliance with Jones.
+- description: Jones meets RoboCop at OCP headquarters intending to neutralize him
+    and protect his interests; RoboCop encounters his fourth directive preventing
+    harm to OCP senior executives.
+  id: s_6
+  key_delta: RoboCop is incapacitated by corporate safeguards and attacked by ED-209
+    but escapes due to ED-209’s limitations; Jones shows willingness to deploy lethal
+    force against RoboCop.
+  trigger_event: Jones orders an ED-209 attack on RoboCop inside the OCP building.
+- description: OCP police, influenced by corporate tensions, ambush RoboCop in the
+    parking complex while Jones maneuvers to eliminate him politically and physically.
+  id: s_7
+  key_delta: RoboCop suffers substantial damage but is rescued, exposing internal
+    conflict and corporate sabotage within OCP’s law enforcement division.
+  trigger_event: A SWAT team opens fire on RoboCop; Anne Lewis intervenes to save
+    him.
+- description: As the city descends into chaos due to a police strike, Jones frees
+    Boddicker and arms his gang to directly confront RoboCop.
+  id: s_8
+  key_delta: Jones escalates his attempt to eliminate RoboCop by deploying heavily
+    armed criminals, escalating the conflict from covert sabotage to open assault.
+  trigger_event: Boddicker’s gang attacks RoboCop at the steel mill using weaponry
+    capable of penetrating his armor.
+- description: RoboCop and Anne Lewis survive the gang attack; Lewis is wounded but
+    alive, and RoboCop is operational despite injuries.
+  id: s_9
+  key_delta: RoboCop gains incriminating proof directly implicating Jones, shifting
+    the conflict toward exposure and corporate accountability.
+  trigger_event: RoboCop returns to OCP headquarters carrying evidence linking Jones
+    to Morton’s murder.
+- description: Jones attempts desperate hostage-taking of the OCP chairman to regain
+    control but activates RoboCop’s fourth directive to prevent his own arrest or
+    harm.
+  id: s_10
+  key_delta: Jones is neutralized through lethal force after losing corporate protection
+    and political power, culminating in his fatal fall from OCP headquarters.
+  trigger_event: During the confrontation, Jones draws a gun on the chairman; RoboCop
+    shoots Jones after the chairman fires him.
+- description: With Jones dead and OCP stabilized, RoboCop earns commendation from
+    the chairman and asserts his identity as Murphy, symbolizing the fusion of man
+    and machine.
+  id: s_11
+  key_delta: RoboCop is publicly recognized as Murphy after Jones's fall, confirming
+    that his human identity has survived inside the machine.
+  trigger_event: The chairman formally acknowledges RoboCop’s service and asks for
+    his name; RoboCop replies 'Murphy.'

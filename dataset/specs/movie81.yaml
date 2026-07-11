@@ -1,0 +1,285 @@
+commitments:
+- description: Willard must receive his mission orders (s_0) before proceeding to
+    join the PBR crew and start the river journey (s_1), preventing premature action
+    without mission authorization.
+  id: c_0
+  satisfaction_condition: Narrative only advances to s_1 after s_0 is achieved, ensuring
+    Willard has accepted the assignment to find and kill Kurtz.
+  type: ordering
+  violation_condition: Player attempts to engage upstream river patrol or gather Kurtz
+    intelligence before s_0 completion, breaking the required mission reception sequence.
+- description: Between s_1 and s_3, Willard’s knowledge of Kurtz’s profile is incomplete
+    until he reviews military files upstream at s_2; the system must prevent any possession
+    or revelation of Kurtz's background prior.
+  id: c_1
+  satisfaction_condition: Player gains Kurtz’s dossier and learns his prior status
+    only at or after s_2, no earlier acknowledgement permitted.
+  type: invariant
+  violation_condition: Player acts or reveals Kurtz’s status as a model officer or
+    potential general before s_2 node interaction.
+- description: The violent encounter with the sampan civilians and subsequent crew
+    killings (s_3) must occur before the crew's trust and cohesion begins to fray
+    under ambush and casualties (s_4); ensures realistic escalation.
+  id: c_2
+  satisfaction_condition: 'Narrative progression from innocent patrols to fatal violence
+    occurs strictly in order: s_3 precedes s_4.'
+  type: ordering
+  violation_condition: Player triggers crew hostility, distrust, or deaths from ambush
+    (s_4 content) before engaging or resolving the sampan civilian encounter (s_3).
+- description: From s_4 through s_5, crew must display increasing casualty and mistrust
+    dynamics, with no restoration of full crew health or unwavering loyalty until
+    Kurtz confrontation.
+  id: c_3
+  satisfaction_condition: Between s_4 and s_5, at least one crew member is dead or
+    fatally wounded, and trust among survivors is deteriorated as displayed by Chief's
+    hostility and ultimate death.
+  type: invariant
+  violation_condition: Player heals or restores crew full strength, or prematurely
+    reestablishes full cohesion/trust during this phase, contradicting established
+    fatal attrition.
+- description: Willard must fully brief Chef and Lance on the mission only after Chief’s
+    death and before proceeding to Kurtz’s outpost (transition from s_5 to s_6), ensuring
+    informed companions during final approach.
+  id: c_4
+  satisfaction_condition: Mission details explicitly shared with remaining crew at
+    or after s_5 and before arrival at Kurtz’s village (s_6).
+  type: ordering
+  violation_condition: Player advances upriver or interacts with Kurtz’s compound
+    without having disclosed mission info to Chef and Lance.
+- description: At s_6 and s_7, exposure to Kurtz’s ideological influence and compound
+    environment must precede Willard’s direct confrontation with Kurtz to preserve
+    narrative impact and logical immersion.
+  id: c_5
+  satisfaction_condition: Player experiences Kurtz’s followers’ fanaticism and compound
+    atmosphere (including meeting photographer and Colby) before any direct meeting
+    with Kurtz (s_7).
+  type: invariant
+  violation_condition: Willard encounters Kurtz prior to meeting key environmental
+    and narrative elements confirming Kurtz’s control and influence.
+- description: Chef’s kidnapping and death (s_8) is a pivotal emotional and narrative
+    milestone that must occur only after Willard’s meeting with Kurtz; it anchors
+    Willard’s captivity and tension escalation.
+  id: c_6
+  satisfaction_condition: Chef is abducted and killed only at or after s_7’s direct
+    encounter with Kurtz and before Willard’s release in s_8.
+  type: ordering
+  violation_condition: Player witnesses or triggers Chef’s death prior to Kurtz meeting
+    or before Willard’s binding and captivity.
+- description: During s_8 and s_9, Willard remains under constrained freedom inside
+    Kurtz’s compound and must endure Kurtz’s philosophical indoctrination; no escape
+    or mission completion is logically admitted prior to this phase conclusion.
+  id: c_7
+  satisfaction_condition: Willard is bound or confined, subsequently granted conditional
+    freedom within the compound while receiving Kurtz’s lectures before any assassination
+    attempt.
+  type: invariant
+  violation_condition: Player escapes compound or kills Kurtz without first undergoing
+    the binding, CCTV lectures, and psycho-philosophical immersion phases.
+- description: The narrative succeeds only if Willard executes the assassination of
+    Kurtz within the compound (s_10), marking the mission’s climax and symbolic resolution.
+  id: c_8
+  satisfaction_condition: Willard attacks and mortally wounds Kurtz, culminating in
+    Kurtz’s final words and the collapse of his leadership.
+  type: achievement
+  violation_condition: Player fails to confront or kill Kurtz before mission end,
+    or Kurtz survives beyond designated climax event.
+- description: Willard’s departure from the compound with Lance (s_11) must only happen
+    post-Kurtz’s death and the ritualized surrender of the villagers; prevents premature
+    mission conclusion.
+  id: c_9
+  satisfaction_condition: Willard departs downstream with Lance only following Kurtz’s
+    death and visible submission by villagers.
+  type: ordering
+  violation_condition: Player removes Willard and/or Lance from the compound prior
+    to the death of Kurtz or without villagers’ submission.
+initial_facts:
+- content: Captain Benjamin L. Willard is in Saigon, recently returned from combat
+    duty.
+  id: f_0
+  negated: false
+- content: Captain Benjamin L. Willard is staying in a hotel room.
+  id: f_1
+  negated: false
+- content: Captain Benjamin L. Willard is drinking heavily and exhibiting self-destructive
+    behavior.
+  id: f_2
+  negated: false
+- content: Lieutenant General Corman and Colonel Lucas have not yet approached Willard
+    with the mission orders.
+  id: f_3
+  negated: false
+- content: Captain Benjamin L. Willard does not yet know about Colonel Walter E. Kurtz
+    or his mission.
+  id: f_4
+  negated: false
+- content: Captain Benjamin L. Willard has not joined any Navy PBR crew.
+  id: f_5
+  negated: false
+- content: Captain Benjamin L. Willard does not possess any files or detailed knowledge
+    about Colonel Walter E. Kurtz.
+  id: f_6
+  negated: false
+- content: No violent incidents involving the sampan or crew have occurred.
+  id: f_7
+  negated: false
+- content: All crew members (Chief Petty Officer Phillips, Lance Johnson, Jay 'Chef'
+    Hicks, and Tyrone 'Mr. Clean' Miller) are alive and not hostile.
+  id: f_8
+  negated: false
+- content: Captain Benjamin L. Willard is unaware of Captain Colby's status or fate.
+  id: f_9
+  negated: false
+- content: Captain Benjamin L. Willard has no knowledge of Lieutenant Colonel Bill
+    Kilgore or his helicopter squadron.
+  id: f_10
+  negated: false
+- content: The mission to travel upriver, meet enemy forces, or encounter Kurtz's
+    compound has not yet begun.
+  id: f_11
+  negated: false
+meta:
+  genres: ["War", "Drama"]
+  id: movie81
+  player_role: Captain Benjamin L. Willard
+  title: "Apocalypse Now"
+synopsis: U.S. Army Captain and special operations veteran Benjamin L. Willard has
+  returned from action to Saigon where he drinks heavily and destroys his hotel room.
+  Intelligence officers Lieutenant General Corman and Colonel Lucas approach him with
+  an assignment——Willard must follow the Nung River into the remote Cambodian jungle,
+  find rogue U.S. Army Special Forces Colonel Walter E. Kurtz and kill him. Kurtz
+  apparently went insane and now commands his own Montagnard troops inside neutral
+  Cambodia. Willard joins a U.S. Navy PBR commanded by Chief Petty Officer George
+  "Chief" Phillips and crewmen Lance Johnson, Jay "Chef" Hicks and Tyrone "Mr. Clean"
+  Miller. For escort they rendezvous with reckless Lieutenant Colonel Bill Kilgore,
+  who commands a squadron of attack helicopters. Initially scoffing at them, Kilgore
+  befriends Johnson as both are keen surfers. When Willard suggests the Viet Cong-filled
+  coastal mouth of the Nung River, Kilgore accepts due to the surfing conditions there.
+  After napalm strikes and Ride of the Valkyries playing over the chopper loudspeakers,
+  the beach is taken and Kilgore orders others to surf it amid enemy fire. While Kilgore
+  nostalgically regales everyone about a previous strike, Willard gathers his men
+  to the PBR, which had been transported from a helicopter. Willard sifts through
+  files of Kurtz, learning he was a model officer and possible future general, a top
+  soldier in the field. Navigating upstream, the crew encounters a tiger and later
+  visit a supply depot USO show featuring Playboy Playmates. The crew search a civilian
+  sampan they come across, but Mr. Clean snaps and kills almost all on board, while
+  Willard coldly shoots an injured survivor to prevent any delay of his mission. On
+  reaching a US outpost at a bridge under constant attack, Willard is informed that
+  a Captain Colby was sent to find Kurtz, but is now missing. Lance and Chef are continually
+  under the influence of drugs and Lance becomes withdrawn, smearing his face with
+  camouflage paint. The next day the boat is fired upon by an unseen enemy in the
+  trees, killing Mr. Clean and turning Chief hostile toward Willard. Later, they are
+  ambushed again, by Montagnard warriors. They return fire and Chief is impaled with
+  a spear, who then tries to kill Willard by pulling him onto it, but dies from his
+  wound. Afterwards, Willard confides in the remaining Chef and Lance about his mission,
+  and they reluctantly agree to continue upriver where they see the coastline is littered
+  with bodies. Arriving at Kurtz's outpost, Willard takes Lance with him to the village,
+  leaving Chef behind with orders to call an airstrike on the village if he does not
+  return. In the camp, the two men are met by a manic freelance photographer, who
+  explains that Kurtz's great philosophical skills inspire his people to follow him.
+  As they proceed, they see bodies and severed heads scattered about the nearby temple
+  that serves as Kurtz's living quarters, and encounter the missing Captain Colby,
+  who is nearly catatonic. Willard is brought before Kurtz in the darkened temple,
+  where Kurtz derides him as an errand boy. Meanwhile Chef calls in the airstrike
+  but is kidnapped. Bound to a post, Willard screams helplessly as Kurtz drops Chef's
+  severed head into his lap. After some time, Willard is released and given the freedom
+  of the compound. Kurtz lectures him on his theories of war, humanity and civilization
+  while praising the ruthlessness and dedication of the Viet Cong. He asks Willard
+  to tell his son everything about him in the event of his death. That night, as the
+  villagers ceremonially slaughter a water buffalo, Willard enters Kurtz's chamber
+  as Kurtz is making a recording, and attacks him with a machete. Lying mortally wounded
+  on the ground, Kurtz whispers his final words "The horror ... the horror ..." before
+  dying. Willard descends the stairs from Kurtz's chamber and drops his weapon. The
+  villagers do likewise and allow Willard to take Lance by the hand and lead him to
+  the boat. The two of them sail away as airstrikes are launched on the village and
+  Kurtz's final words echo. In some, but not all, prints of the film, the closing
+  credits play over footage of Kurtz's temple-base exploding; some viewers interpreted
+  this as an air strike called in by Willard. Because this was not Coppola's intention,
+  after the film's original general release he replaced this footage with a plain
+  black screen.
+trajectory:
+- description: Captain Benjamin L. Willard is in Saigon, recently returned from combat
+    duty, staying in a hotel room where he is drinking heavily and exhibiting self-destructive
+    behavior.
+  id: s_0
+  key_delta: Willard receives orders to find and kill rogue Colonel Walter E. Kurtz
+    in Cambodia.
+  trigger_event: Lieutenant General Corman and Colonel Lucas approach Willard with
+    a new assignment.
+- description: Willard joins a Navy PBR crew consisting of Chief Petty Officer Phillips,
+    Lance Johnson, Jay 'Chef' Hicks, and Tyrone 'Mr. Clean' Miller preparing to navigate
+    the Nung River into Cambodia.
+  id: s_1
+  key_delta: Kilgore engages with the PBR crew and chooses to support an assault near
+    the river mouth due to his interest in surfing there.
+  trigger_event: Lieutenant Colonel Bill Kilgore and his attack helicopter squadron
+    rendezvous with the PBR flotilla for escort.
+- description: Kilgore leads an intense helicopter assault on the Viet Cong-controlled
+    coastal mouth of the Nung River with napalm and loud music while the PBR crew
+    prepares to move upriver.
+  id: s_2
+  key_delta: Willard learns Kurtz was a decorated officer and potential general before
+    going rogue.
+  trigger_event: Willard gathers his men to the PBR and reviews Kurtz's military files.
+- description: The PBR crew travels upstream encountering jungle wildlife and a USO
+    show at a supply depot, maintaining military patrol operations.
+  id: s_3
+  key_delta: Violent escalation on the river with crew killing civilians to maintain
+    mission secrecy and progress.
+  trigger_event: The crew inspects a civilian sampan, leading to Mr. Clean killing
+    the occupants and Willard executing a wounded survivor.
+- description: The crew arrives at a US outpost under siege; informed about missing
+    Captain Colby sent to find Kurtz; Lance and Chef display drug-induced altered
+    behaviors.
+  id: s_4
+  key_delta: Casualty inflicted on crew; deteriorating trust and cohesion among remaining
+    members.
+  trigger_event: The PBR boat is ambushed from the trees, killing Mr. Clean and turning
+    Chief hostile towards Willard.
+- description: After a Montagnard warrior ambush, Chief is fatally speared and dies
+    attempting to kill Willard; Willard shares mission details with Chef and Lance,
+    who reluctantly agree to continue.
+  id: s_5
+  key_delta: Crew is reduced and committed to advancing toward Kurtz’s location with
+    greater awareness of the mission's deadly stakes.
+  trigger_event: The crew observes a coastline littered with bodies as they proceed
+    upriver.
+- description: Willard and Lance arrive at Kurtz’s jungle outpost; Chef remains at
+    the boat with orders to call an airstrike if Willard does not return.
+  id: s_6
+  key_delta: Introduction to Kurtz's ideological and charismatic hold on his Montagnard
+    troops and the dangerous environment surrounding the compound.
+  trigger_event: Inside the village, they meet a manic freelance photographer who
+    explains Kurtz’s influence over his followers.
+- description: Willard and Lance traverse Kurtz's compound filled with scattered bodies
+    and severed heads; they find the catatonic Captain Colby.
+  id: s_7
+  key_delta: Willard is now inside Kurtz's compound and under his direct power, with
+    the remaining boat crew exposed outside.
+  trigger_event: Willard is brought before Colonel Kurtz in a darkened temple room.
+- description: Chef calls in an airstrike from the boat but is suddenly kidnapped;
+    Willard is bound yet witnesses Chef's severed head dropped in his lap by Kurtz.
+  id: s_8
+  key_delta: Heightened danger with the loss of Chef and explicit threat from Kurtz
+    toward Willard.
+  trigger_event: Willard is released and given freedom within the compound.
+- description: Willard roams Kurtz’s compound, listening to Kurtz’s lectures on war
+    and humanity while Kurtz praises Viet Cong determination.
+  id: s_9
+  key_delta: Psychological and ideological immersion into Kurtz's worldview and community
+    rituals.
+  trigger_event: Nightfall; villagers perform a water buffalo slaughter ceremony while
+    Kurtz records philosophical thoughts in his chamber.
+- description: Willard attacks mortally wounded Kurtz with a machete inside the temple
+    chamber; Kurtz dies uttering 'The horror... the horror...'.
+  id: s_10
+  key_delta: End of Kurtz’s leadership and symbolic collapse of his cult; Willard
+    assumes control of the survivors.
+  trigger_event: Willard descends the stairs, disarms himself, and villagers show
+    submission, allowing him to take Lance and leave.
+- description: Willard and Lance sail away from the village as distant airstrikes
+    commence on the compound; Kurtz’s final words echo.
+  id: s_11
+  key_delta: Mission effectively concluded; departure from the conflict zone with
+    ambiguous consequences.
+  trigger_event: The boat moves downstream accompanied by the closing sounds of destruction
+    and silence.

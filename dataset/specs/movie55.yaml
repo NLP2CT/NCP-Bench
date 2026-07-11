@@ -1,0 +1,355 @@
+commitments:
+- description: Ensures that Nuada's return from exile and commitment to war (s_0)
+    must occur before he can attack the auction and acquire the first crown piece
+    (s_1), preventing premature violent acts.
+  id: c_0
+  satisfaction_condition: Node s_0 has been reached and acknowledged as complete before
+    node s_1 begins.
+  type: ordering
+  violation_condition: Player triggers or system acknowledges the seizure of the first
+    crown piece (s_1) before Nuada returns from exile (s_0).
+- description: Mandates that Nuada must secure the first piece of the crown (s_1)
+    before he can kill King Balor for the second piece (s_2), preserving the narrative's
+    logical progression of crown acquisition.
+  id: c_1
+  satisfaction_condition: Node s_1 completed prior to node s_2 execution.
+  type: ordering
+  violation_condition: Node s_2 actions occur before completion of node s_1.
+- description: Requires Princess Nuala's escape with the final crown piece (s_3) precedes
+    Nuada's tracking of her (s_4), preventing her location from being revealed before
+    she flees.
+  id: c_2
+  satisfaction_condition: Node s_3 is completed before node s_4 is triggered.
+  type: ordering
+  violation_condition: Player or system proceeds to Nuada tracking Nuala (s_4) without
+    Nuala having escaped with the crown piece (s_3).
+- description: Maintains that the Golden Army's crown remains broken into three parts
+    and unassembled from s_0 up to s_9 (before full crown restoration), preventing
+    premature control of the army.
+  id: c_3
+  satisfaction_condition: Throughout nodes s_0 to s_8, the crown pieces are separated;
+    no full crown reassembled before s_9.
+  type: invariant
+  violation_condition: Full crown is assembled or the Golden Army is activated before
+    node s_9 is reached.
+- description: Prevents Nuada from kidnapping Nuala and wounding Hellboy (s_6) before
+    he has tracked her location (s_4) and she has hidden the map and crown piece (s_5),
+    ensuring logical cause-effect continuity.
+  id: c_4
+  satisfaction_condition: Nodes s_4 and s_5 are completed before node s_6 starts.
+  type: ordering
+  violation_condition: Node s_6 triggered before completion of s_4 and s_5.
+- description: Requires the B.P.R.D. team must reach the Golden Army’s location and
+    meet the Angel of Death (s_7) before Hellboy can be healed by the Angel (s_8),
+    establishing proper narrative sequence.
+  id: c_5
+  satisfaction_condition: Node s_7 complete before node s_8.
+  type: ordering
+  violation_condition: Node s_8 occurs without prior completion of s_7.
+- description: Ensures Hellboy is healed and given renewed purpose by Liz's revelation
+    of pregnancy before the final battle, providing necessary emotional strength for
+    the climax (node s_8 must occur before s_10).
+  id: c_6
+  satisfaction_condition: Node s_8 is completed successfully before node s_10 initiates.
+  type: achievement
+  violation_condition: Player or system initiates the Golden Army battle (s_10) without
+    Hellboy having been healed and emotionally reinforced (s_8).
+- description: Forces the full assembly of the crown through the surrender of the
+    final piece by Abe (s_9) before Nuada commands the Golden Army to fight (s_10),
+    avoiding premature activation.
+  id: c_7
+  satisfaction_condition: Node s_9 fully completed before the triggering of s_10.
+  type: ordering
+  violation_condition: Golden Army is commanded or battle starts (s_10) without crown
+    being complete (s_9).
+- description: Restricts the personal duel challenge between Hellboy and Nuada (s_10)
+    to occur only after the Golden Army battle has rendered the team unable to defeat
+    the army, preserving cause-effect reason for duel.
+  id: c_8
+  satisfaction_condition: The failed battle with the Golden Army (s_10 initial conflict)
+    precedes the formal duel for crown control (within s_10).
+  type: ordering
+  violation_condition: Duel between Hellboy and Nuada takes place before the initial
+    battle with the Golden Army.
+- description: The fraternal conflict concludes with Nuala’s sacrifice (s_11) to prevent
+    Nuada from killing Hellboy, marking an irreversible narrative milestone in the
+    story's tragic resolution phase.
+  id: c_9
+  satisfaction_condition: Node s_11 occurrence confirmed – Nuala commits suicide to
+    stop Nuada's fatal attack.
+  type: achievement
+  violation_condition: The story progresses beyond the duel without Nuala’s sacrifice,
+    or Nuada kills Hellboy.
+- description: After s_11 and before the story conclusion (s_12,s_13), the Golden
+    Army remains active until Liz melts the crown, ensuring that the army is neutralized
+    only by her decisive action.
+  id: c_10
+  satisfaction_condition: From s_11 until s_12, the Golden Army remains active; deactivation
+    only occurs upon Liz melting the crown in s_12.
+  type: invariant
+  violation_condition: The Golden Army is deactivated or ceases functioning prematurely
+    before Liz melts the crown.
+- description: Enforces that the B.P.R.D. team’s resignation (s_13) happens only after
+    the Golden Army is shut down (s_12), linking resolution of the conflict to the
+    characters' personal decisions.
+  id: c_11
+  satisfaction_condition: Node s_12 completed before node s_13 occurs.
+  type: ordering
+  violation_condition: Team resigns (s_13) before the Golden Army is neutralized (s_12).
+- description: Hellboy and Liz’s parenthood revelation (expecting twins) must be disclosed
+    before the narrative ends, marking a critical personal milestone and closure for
+    character arcs (revealed in s_13).
+  id: c_12
+  satisfaction_condition: Player reaches node s_13 with Liz’s pregnancy of twins revealed.
+  type: achievement
+  violation_condition: Narrative ends or skips s_13 without revealing Liz’s twin pregnancy
+    to Hellboy.
+initial_facts:
+- content: Prince Nuada is currently in self-imposed exile from the elven kingdom.
+  id: f_0
+  negated: false
+- content: King Balor, the one-armed king of the elves, presides over the elven realm.
+  id: f_1
+  negated: false
+- content: A fragile truce exists between humans and magical creatures, maintained
+    by King Balor.
+  id: f_2
+  negated: false
+- content: The Golden Army, an indestructible mechanical army protected by a magical
+    crown broken into three pieces, remains dormant.
+  id: f_3
+  negated: false
+- content: 'The three crown pieces are distributed: one with humans, two retained
+    by elves, none assembled.'
+  id: f_4
+  negated: false
+- content: Prince Nuada has not yet decided to return from exile or to initiate war.
+  id: f_5
+  negated: false
+- content: Prince Nuada is discontent with the truce but has not expressed active
+    hostility or taken violent actions.
+  id: f_6
+  negated: false
+- content: Princess Nuala, Prince Nuada's twin sister, resides separate from Nuada
+    and the crown pieces.
+  id: f_7
+  negated: false
+- content: Prince Nuada does not yet possess any piece of the crown.
+  id: f_8
+  negated: false
+- content: No massacre, seizure of crown pieces, or direct violence by Prince Nuada
+    has occurred.
+  id: f_9
+  negated: false
+- content: Hellboy, Liz, Abe Sapien, and Johann Krauss have not been involved in the
+    conflict surrounding Nuada or the crown yet.
+  id: f_10
+  negated: false
+- content: The B.P.R.D. remains operational, maintaining its undercover status.
+  id: f_11
+  negated: false
+- content: Princess Nuala is unaware of any pursuit or tracking by Prince Nuada.
+  id: f_12
+  negated: false
+- content: The map to the Golden Army's resting place is intact and undisclosed.
+  id: f_13
+  negated: false
+- content: The crown pieces are unassembled and no full crown restoration has occurred.
+  id: f_14
+  negated: false
+- content: No confrontation, kidnapping, or wounding involving Nuada, Nuala, or Hellboy
+    has taken place.
+  id: f_15
+  negated: false
+- content: Hellboy has not been wounded or healed; no interaction with the Angel of
+    Death has occurred.
+  id: f_16
+  negated: false
+- content: The Golden Army remains inactive and has not been commanded.
+  id: f_17
+  negated: false
+- content: No battle involving the Golden Army or a personal duel between Hellboy
+    and Nuada has taken place.
+  id: f_18
+  negated: false
+- content: Nuala has not committed suicide; no fraternal conflict resolution has occurred.
+  id: f_19
+  negated: false
+- content: The crown has not been melted; the Golden Army remains fully capable.
+  id: f_20
+  negated: false
+- content: Hellboy, Liz, Abe, and Johann Krauss continue their roles within the B.P.R.D.
+  id: f_21
+  negated: false
+- content: No revelations about Liz’s pregnancy or parenthood have been revealed to
+    Hellboy.
+  id: f_22
+  negated: false
+meta:
+  genres: ["Fantasy", "Action"]
+  id: movie55
+  player_role: Prince Nuada
+  title: "Hellboy II——The Golden Army"
+synopsis: In Christmas of 1955, a young Hellboy is told a bedtime story by his adoptive
+  father, Trevor Broom, involving an ancient war between man and magical creatures,
+  started by man's greed. After years of battle and defeat of the magical creatures'
+  forces, the master of the goblin blacksmiths offers to build an indestructible golden
+  mechanical army for King Balor, the one-armed king of the elves. Influenced by his
+  son Prince Nuada, Balor orders the building of this Golden Army. Soon the humans
+  attack again but the Golden Army devastates them; Balor creates a truce with the
+  humans to stop the bloodshed——Man will keep his cities and the magical creatures
+  will keep their forests. Nuada does not agree with the truce, and leaves in exile.
+  The magical crown controlling the army is broken into three pieces, one piece going
+  to the humans and the other two kept by the elves, so the Golden Army can never
+  be used again. In the present, Nuada declares war on the humans. He collects the
+  first piece of the crown from an auction, massacring everyone at the site by unleashing
+  tooth fairies, and kills his father for the second piece of the crown. His twin
+  sister, Princess Nuala, escapes with the final piece. Meanwhile, Hellboy is having
+  issues with his girlfriend Liz, and trouble accepting that their organization, the
+  B.P.R.D., must remain undercover. While investigating the massacre at the auction,
+  Hellboy allows himself to be revealed to the world. In the commotion, Abe Sapien
+  discovers that Liz is pregnant. Furious about the public unveiling, the Bureau's
+  superiors send a new B.P.R.D. agent, the ectoplasmic medium Johann Krauss, to take
+  command. With Krauss in charge, the team tracks the tooth fairies to the troll market,
+  an enormous merchant city hidden under the Brooklyn Bridge, to search for clues.
+  Abe stumbles onto Nuala, who has obtained a map leading to the Golden Army, and
+  quickly falls in love with her. She is brought under B.P.R.D. protection following
+  an attack by Nuada's sidekick, the troll Wink, and an elemental forest god, both
+  of which Hellboy kills. During the elemental fight, Hellboy is questioned by Nuada
+  whether it is right to fight for the humans when he too is considered a monster.
+  Nuada tracks his sister to B.P.R.D. headquarters using their magical bond, which
+  causes them to share wounds and read each other's thoughts to an extent. Nuala,
+  sensing her brother's arrival, throws the map, along with the canister in which
+  it came, into a fire and hides the final piece of the crown within one of Abe's
+  books. However, the real map is on the canister. Nuada kidnaps his sister and critically
+  wounds Hellboy with his spear. Unable to remove the spear shard, Liz, Abe and Krauss
+  take Hellboy to the location of the Golden Army in The Giants Causeway County Antrim,
+  Northern Ireland. They encounter a Bethmoora goblin, and he brings them before the
+  Angel of Death, who has been awaiting their arrival. Though warned that Hellboy
+  will doom humanity if he lives, and that she will suffer the most from it, Liz pleads
+  for Hellboy's life. The Angel removes the shard from Hellboy's chest and tells Liz
+  to give him a reason to live. She reveals to Hellboy that he is going to be a father,
+  and he recovers. The goblin leads the team to the resting place of the Golden Army,
+  where Nuada awaits them. In exchange for Nuala, Abe gives him the last piece of
+  the crown. With the crown reformed, Nuada awakens the Golden Army, ordering them
+  to kill the team. The group is unable to defeat the soldiers as they magically repair
+  themselves. Hellboy challenges Nuada for the right to the crown, and Nuada is forced
+  to accept, since Hellboy's father was a Prince of Sheol. Hellboy defeats Nuada and
+  spares his life, but Nuada tries stabbing him. Nuala commits suicide to stop her
+  brother——the dying Nuada tells Hellboy he will have to choose whether humanity or
+  the magical beings must die. Abe psychically tells Nuala his feelings for her before
+  she and her brother die. Liz melts the crown, shutting down the Golden Army. As
+  the team leaves the underground compound, Tom Manning reprimands them. Hellboy,
+  Liz, Abe and Krauss resign from the B.P.R.D. Hellboy contemplates his future life
+  with Liz and their baby. Liz corrects him, saying "babies", surprising him with
+  the fact that she is pregnant with twins.
+trajectory:
+- description: In the realm of the elves, King Balor, the one-armed king, presides
+    over a fragile truce with humans following a devastating war involving magical
+    creatures and men. The Golden Army, an indestructible mechanical force built to
+    protect the magical creatures' forests, remains dormant, its controlling crown
+    broken into three pieces distributed between humans and elves. Prince Nuada, discontent
+    with the truce, has exiled himself from the elven kingdom, harboring resentment
+    and plotting for war.
+  id: s_0
+  key_delta: Prince Nuada abandons exile and commits to restarting the conflict by
+    seeking the crown pieces that control the Golden Army.
+  trigger_event: Prince Nuada decides to return from exile and initiate war against
+    the humans by reclaiming the crown pieces.
+- description: Nuada returns to the human world and infiltrates an auction event where
+    one piece of the crown is held, surrounded by humans unaware of his intent.
+  id: s_1
+  key_delta: Nuada seizes the first crown piece by violent means, demonstrating his
+    willingness to reignite hostilities with humans.
+  trigger_event: Nuada massacres the auction attendees and retrieves the first piece
+    of the crown, unleashing tooth fairies as weapons of assault.
+- description: King Balor remains in the elven kingdom, while Prince Nuada confronts
+    him with his opposition to the truce and his desire to reclaim the crown fully.
+  id: s_2
+  key_delta: Nuada obtains the second crown piece through patricide, solidifying his
+    control over the Golden Army's power sources.
+  trigger_event: Nuada kills his father, King Balor, to obtain the second piece of
+    the crown.
+- description: Princess Nuala, Nuada's twin sister, escapes the conflict with the
+    final piece of the crown, seeking refuge away from her brother's war aims.
+  id: s_3
+  key_delta: The last crown piece remains out of Nuada’s possession, protected by
+    Nuala's escape.
+  trigger_event: Nuala flees with the last crown piece, evading Nuada’s forces.
+- description: Nuada begins his quest to find his sister and reunite the three pieces
+    of the crown to awaken the Golden Army, moving closer to his goal of war against
+    mankind.
+  id: s_4
+  key_delta: Nuada identifies Nuala’s location through their shared magical link,
+    enabling pursuit.
+  trigger_event: Nuada uses the magical bond shared with Nuala to track her location,
+    revealing her presence.
+- description: Nuala, aware of Nuada’s tracking, destroys the map leading to the Golden
+    Army’s resting place and hides the final crown piece inside an innocuous book
+    to thwart capture.
+  id: s_5
+  key_delta: The map to the Golden Army is hidden and destroyed, and the final crown
+    piece is secreted away, complicating Nuada's efforts.
+  trigger_event: Nuala throws the map and its canister into a fire and conceals the
+    crown piece within one of Abe Sapien's books.
+- description: Nuada forcibly abducts Nuala and confronts the protagonists guarding
+    her, including Hellboy and the B.P.R.D. team, escalating the conflict at the location
+    of the Golden Army.
+  id: s_6
+  key_delta: Nuala is captured by Nuada, and Hellboy is critically injured, heightening
+    the stakes for the magical conflict.
+  trigger_event: Nuada kidnaps Nuala and wounds Hellboy with a spear during the confrontation
+    at B.P.R.D. headquarters.
+- description: Hellboy, Liz, Abe Sapien, and Johann Krauss travel to the Golden Army’s
+    resting place in Northern Ireland to rescue Nuala and prevent Nuada's plans from
+    succeeding.
+  id: s_7
+  key_delta: The team reaches the Golden Army’s location and gains access to supernatural
+    guidance from the Angel of Death.
+  trigger_event: The group arrives at the Giants Causeway and encounters the Bethmoora
+    goblin who brings them to the Angel of Death.
+- description: At the Golden Army’s site, Hellboy is healed by the Angel of Death
+    after Liz pleads for his life, bolstered by the revelation that he is to be a
+    father.
+  id: s_8
+  key_delta: Hellboy is physically restored and emotionally strengthened to confront
+    the impending battle.
+  trigger_event: The Angel of Death removes the spear shard from Hellboy’s chest,
+    saving his life.
+- description: The B.P.R.D. team follows the goblin to the resting place of the Golden
+    Army, where Nuada awaits with the full crown reassembled and the Golden Army ready
+    to be awakened.
+  id: s_9
+  key_delta: The magical crown is fully restored under Nuada’s control, enabling him
+    to activate the Golden Army.
+  trigger_event: Nuada receives the final crown piece surrendered by Abe Sapien in
+    exchange for Nuala, completing the crown.
+- description: Nuada commands the Golden Army to attack, and Hellboy and his allies
+    engage in an intense battle with the self-repairing mechanical soldiers.
+  id: s_10
+  key_delta: The conflict shifts to a personal duel, determining who will control
+    the fate of the Golden Army.
+  trigger_event: Hellboy challenges Nuada to a duel for the crown’s control after
+    the Golden Army overwhelms the team.
+- description: During the duel, Hellboy prevails over Nuada, sparing his life. However,
+    Nuada attempts a last stab which is stopped by Nuala’s sacrifice.
+  id: s_11
+  key_delta: Nuala’s death terminates the fraternal conflict and prevents Nuada’s
+    fatal attack on Hellboy.
+  trigger_event: Nuala commits suicide to prevent Nuada from killing Hellboy, ending
+    their conflict in tragedy.
+- description: Liz melts the crown, causing the Golden Army to be permanently shut
+    down, while the surviving team members leave the underground compound amidst reprimands.
+  id: s_12
+  key_delta: The Golden Army is neutralized, ending the immediate military threat
+    to both humans and magical creatures.
+  trigger_event: Liz uses heat to melt the Golden Army’s crown, disabling the mechanical
+    army.
+- description: Hellboy, Liz, Abe, and Johann resign from the B.P.R.D., contemplating
+    their futures with the knowledge of forthcoming parenthood as Liz reveals she
+    is pregnant with twins.
+  id: s_13
+  key_delta: The team relinquishes their official roles, and Hellboy embraces a new
+    personal chapter, balancing his monstrous and human sides with fatherhood.
+  trigger_event: Hellboy and Liz discuss their family future after resigning from
+    the B.P.R.D., with Liz revealing she is expecting twins.

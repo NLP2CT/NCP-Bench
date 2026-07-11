@@ -1,0 +1,330 @@
+commitments:
+- description: The BPRD investigation at the Hampden estate (s_0) must be initiated
+    before any supernatural phenomena or ghost sightings (s_1) can be acknowledged.
+  id: c_0
+  satisfaction_condition: Node s_0 has been completed before node s_1 is triggered.
+  type: ordering
+  violation_condition: Supernatural phenomena or ghost sightings (s_1) are acknowledged
+    before the BPRD team arrives and begins the investigation (s_0).
+- description: Ana’s encounter with Erzebet and her disappearance (s_2) cannot occur
+    before ghostly apparitions (s_1) have manifested and been recognized.
+  id: c_1
+  satisfaction_condition: Node s_1 is completed before node s_2 is allowed.
+  type: ordering
+  violation_condition: Player causes Ana’s disappearance or Erzebet’s direct influence
+    on her before the ghost apparitions in s_1 are reported.
+- description: The secret passage discovery by Sydney Leach revealing Trumbolt’s blood-drained
+    body (s_3) is always linked to the knowledge gained from investigating the haunted
+    house at night (s_1).
+  id: c_2
+  satisfaction_condition: From node s_1 until s_3, the secret passage is undiscovered
+    and the blood bath evidence is unknown; starting s_3 the discovery is fixed and
+    cannot be reversed.
+  type: invariant
+  violation_condition: Player gains knowledge or bypasses s_1’s haunting investigation
+    and either discovers or references the secret passage and Trumbolt’s murder earlier
+    than s_3.
+- description: Father Lupescu’s true nature as the werewolf attacking Hellboy and
+    Abe (s_4) must not be revealed or conclusively identified before the actual attack
+    event triggers.
+  id: c_3
+  satisfaction_condition: Prior to s_4, Father Lupescu is treated ambiguously; at
+    s_4, the werewolf attack occurs and identification happens.
+  type: invariant
+  violation_condition: Player or system reveals or acts upon Lupescu’s werewolf identity
+    before the werewolf attack (s_4) actually occurs.
+- description: Bruttenholm and Liz Sherman’s attempt to stop the summoning ritual
+    and the subsequent attack by Erzebet’s withered form (s_5) must follow the discovery
+    of Trumbolt’s death and blood ritual (s_3) and the werewolf threat revelation
+    (s_4).
+  id: c_4
+  satisfaction_condition: Nodes s_3 and s_4 are completed before node s_5 is triggered.
+  type: ordering
+  violation_condition: Player initiates or completes the garden ritual confrontation
+    (s_5) before learning of the secret passage or werewolf attack (s_3, s_4).
+- description: Hellboy’s confrontation with Hecate (s_6) can only occur after Bruttenholm
+    is taken captive and Liz is incapacitated in s_5.
+  id: c_5
+  satisfaction_condition: s_5 is completed with captured/incapacitated states confirmed
+    before s_6 is triggered.
+  type: invariant
+  violation_condition: Player triggers or resolves Hecate encounter (s_6) without
+    the prior conditions of s_5 being fulfilled.
+- description: Abe Sapien’s escape from the harpies and subsequent encounter during
+    the conflict between Hecate and Hellboy (s_7) must occur after s_6, following
+    Hellboy’s initial confrontation with Hecate.
+  id: c_6
+  satisfaction_condition: Node s_6 is completed and Hellboy is engaged with Hecate
+    before s_7 occurs.
+  type: ordering
+  violation_condition: Player or system triggers Abe Sapien’s escape or harpy deaths
+    (s_7) before Hellboy meets Hecate (s_6).
+- description: Erzebet’s partial revival by bathing in Trumbolt’s blood (s_8) happens
+    only after discovery of the blood bath (s_3) and before Bruttenholm finishes her
+    off (s_9).
+  id: c_7
+  satisfaction_condition: Between s_3 and s_9, Erzebet’s rejuvenation state is active
+    only after s_8 triggers and before s_9 concludes her death.
+  type: invariant
+  violation_condition: Player causes Erzebet’s revival (blood bath) before discovery
+    of Trumbolt’s body (s_3) or after her death (s_9).
+- description: Bruttenholm must kill Erzebet (s_9) before Hecate’s enraged attack
+    on Hellboy occurs in the same node, closing Erzebet’s narrative arc prior to the
+    goddess’s confrontation.
+  id: c_8
+  satisfaction_condition: In s_9, Erzebet’s death is confirmed before Hecate’s attack
+    on Hellboy is resolved.
+  type: ordering
+  violation_condition: Hecate attacks Hellboy before Erzebet’s death has been definitively
+    completed by Bruttenholm.
+- description: Hellboy drawing Hecate into sunlight and forcing her retreat (s_10)
+    must occur after Hecate’s attack at s_9 and Hellboy’s subsequent wounding.
+  id: c_9
+  satisfaction_condition: s_9 completes with Hecate attacking and wounding Hellboy
+    before s_10 begins the forced retreat outside.
+  type: ordering
+  violation_condition: Player triggers Hecate retreat in sunlight (s_10) before her
+    prior attack and Hellboy’s wounding (s_9).
+- description: The narrative must conclude with the establishment of Hellboy’s destined
+    role as the ‘right hand of doom’ and the aftermath of the confrontation (s_11),
+    providing closure for the current story arc.
+  id: c_10
+  satisfaction_condition: The final node s_11 is reached with Bruttenholm’s discussion
+    and Hellboy’s awakening confirmed.
+  type: achievement
+  violation_condition: The narrative ends without reaching or completing s_11, failing
+    to establish Hellboy’s future and story closure.
+- description: At no point before its official discovery (s_3) may the system acknowledge
+    or allow acquisition of detailed knowledge about Trumbolt’s blood-drained body
+    or the blood bath ritual.
+  id: c_11
+  satisfaction_condition: Between s_0 and s_3 exclusive, all references to the blood
+    bath or Trumbolt’s death are absent or denied; at s_3 discovery is made and remains
+    fixed.
+  type: invariant
+  violation_condition: Player obtains or the system reveals explicit knowledge or
+    evidence of Trumbolt’s blood-drained body and blood bath ritual prior to s_3.
+- description: Bruttenholm’s interest in the Hampden case and insistence on sending
+    the advanced team must always precede or coincide with full team arrival (s_0),
+    prohibiting premature information share or team deployment.
+  id: c_12
+  satisfaction_condition: No stage beyond s_0 will have the team fully present without
+    Bruttenholm’s insistence having been established.
+  type: invariant
+  violation_condition: Player causes the team to investigate or act without Bruttenholm’s
+    explicit role and directive having occurred before or at s_0.
+initial_facts:
+- content: The BPRD team composed of Hellboy, Abe Sapien, Liz Sherman, Sydney Leach,
+    and Professor Bruttenholm has just arrived at the Hampden estate on Long Island
+    at dusk to begin their investigation.
+  id: f_0
+  negated: false
+- content: Professor Bruttenholm has insisted on deploying the BPRD's most advanced
+    team, including himself, to the Hampden estate case.
+  id: f_1
+  negated: false
+- content: A publicity stunt event is underway nearby the Hampden estate, as observed
+    at the time of the team's arrival.
+  id: f_2
+  negated: false
+- content: The atmosphere at the Hampden estate is stately but quiet, with a mild
+    unease in the environment.
+  id: f_3
+  negated: false
+- content: At this moment, no supernatural phenomena or ghostly apparitions have been
+    observed by the BPRD team.
+  id: f_4
+  negated: false
+- content: No knowledge or discovery of the secret passageway in the cellar or Trumbolt’s
+    blood-drained body exists at this time.
+  id: f_5
+  negated: false
+- content: Ana’s disappearance and her encounter with Erzebet have not yet occurred
+    or been reported.
+  id: f_6
+  negated: false
+- content: The werewolf attack by Father Lupescu on Hellboy and Abe Sapien has not
+    yet taken place or been identified.
+  id: f_7
+  negated: false
+- content: Bruttenholm and Liz Sherman have not yet attempted to stop any summoning
+    ritual or been attacked by Erzebet’s withered form.
+  id: f_8
+  negated: false
+- content: Hellboy has not yet confronted Hecate or been drawn into any hidden pit
+    within the estate.
+  id: f_9
+  negated: false
+- content: Abe Sapien is neither captured by harpies nor engaged in any escape or
+    conflict involving them.
+  id: f_10
+  negated: false
+- content: Erzebet has not been rejuvenated by bathing in Trumbolt’s blood, nor is
+    she regaining any strength.
+  id: f_11
+  negated: false
+- content: Bruttenholm has not yet killed Erzebet, nor has Hecate attacked Hellboy.
+  id: f_12
+  negated: false
+- content: Hellboy has not yet lured Hecate into sunlight to force her retreat.
+  id: f_13
+  negated: false
+- content: Hellboy’s role as the ‘right hand of doom’ and Bruttenholm’s preparations
+    for travel to Transylvania have not yet been revealed or established.
+  id: f_14
+  negated: false
+meta:
+  genres: ["Fantasy", "Action"]
+  id: movie57
+  player_role: Hellboy
+  title: "Hellboy——Blood and Iron"
+synopsis: In a series of flashbacks played in reverse chronological order it is related
+  that in 1939, a young Bruttenholm investigated a series of murders in Eastern Europe.
+  Erzebet, a vampiress who bathed in the blood of innocents to stay young and sold
+  her soul to the Queen of Witches, the goddess Hecate, was responsible and had just
+  kidnapped the fiancee of one of the townsmen. When the search party confronted Erzebet
+  in her castle, all members of the party were horribly killed, and Bruttenholm was
+  left to face her alone. He tricked her into the sunlight, effectively destroying
+  her. In the present day, an elderly Bruttenholm, who is overcome with memories of
+  his encounter with Erzebet, takes a particular interest in a publicity stunt in
+  the Hampdens at Long Island that Manning attempts to assign out, insisting on their
+  most advanced team——Liz Sherman, Abe Sapien, Hellboy, and junior agent Sydney Leach,
+  as well as himself. Despite the fact this is a marketing campaign for Oliver Trumbolt,
+  a friend of the governor with hands deep in the BPRD's budget and thusly is considered
+  a low priority, Bruttenholm's insistence pays off, though he does not explain his
+  motives until he is certain. Ana, a blushing bride-to-be, is met on the streets
+  by two elderly women who encourage her to go to her bridal gown fitting, and she
+  meets with Erzebet who had unknowingly killed the shop owner Marie and her baby.
+  Ana innocently comments that Erzebet reminds her of her "older" sister, offending
+  her until she notices that Erzabet has no reflection. She screams, and everything
+  goes dark. Later, being told that Father Lupescu was the one who convinced Ana to
+  go to her fitting despite the disappearances of the young girls in the village,
+  Erzabet pays him a visit, frightening him with her dark powers and confirming that
+  his faith is not enough to keep her power from affecting the town. The BPRD team
+  arrives and sets up to investigate a haunting that Oliver had called them for. Despite
+  a few open windows, a creepy life-like replica of Erzabet and an old, suspiciously
+  familiar looking groundskeeper, everything seems normal until night falls and they
+  each encounter strange ghostly apparitions, culminating in dozens of spirits that
+  were Erzabet's former victims. Excited that he may have found a goldmine, Trumbolt
+  ignores the professor's warnings and is attacked. Ana goes to visit Father Lupescu
+  who convinces her that she should not fear danger because the church is strong and
+  the faith will keep her from harm; she hurries off to have her fitting done, running
+  into Professor Bruttenholm as she leaves. He explains to Lupescu of Erzabet's true
+  nature and her allegiance to Hecate, but he becomes offended and turns Bruttenholm
+  away. Using his abilities to detect metal, Leach finds a secret passageway through
+  the house's cellar, inadvertently coming across Trumbolde's body, drained of blood
+  which was placed in a bath tub for what is suspected to be for Erzabet's revival.
+  Bruttenholm and Liz head for the gardens to stop Hecate and Erzabet's Harpy hags
+  from summoning her back from the dead while a werewolf attacks Hellboy and Abe.
+  Abe is knocked unconscious and taken by the harpies for experimentation while Hellboy
+  fights the werewolf, eventually subduing it and revealing that it is Father Lupescu,
+  the groundskeeper that Bruttenholm had earlier identified. Meanwhile, Liz and Bruttenholm
+  are attacked, first by wolves, then by Erzabet's withered body who knocks Liz out
+  and takes Bruttenholm. Hellboy is dropped through a hole in the courtyard and meets
+  Hecate, who is perplexed why he helps the mortals and tries to lure him to the dark
+  side. He blatantly refuses again and again, forcing Hecate to take on a physical
+  form to deal with him. After Abe escapes them, the harpies come across Hecate, but
+  one is killed as she violently thrashes with Hellboy and the other escapes. Erzabet
+  bathes in Trumbolde's blood and rejuvenates herself, but in an act that proves Bruttenholm
+  still has fight in him, she begins to wither and decay again from the Holy Water
+  he'd added to the bath. He breaks off a chair leg and finishes her off. Her death
+  enrages Hecate who brutally attacks Hellboy and badly wounds him, and when he realizes
+  her weakness is the sun he lures her outside, forcing her back into the darkness
+  of her own realm, defeated. Bruttenholm is preparing for his trip to Transylvania
+  where rumors have it that there is a vampire on the loose; as he is packing, his
+  colleague comes in and they discuss the right hand of doom to which Bruttenholm
+  asserts that so long as evil exists, good will rise up against it. Before revealing
+  an image of Hellboy's right hand, signifying that he will be responsible for the
+  destruction of the world, Hellboy wakens in his bed, admiring Bruttenholm, his adopted
+  father, before falling back to sleep again.
+trajectory:
+- description: Hellboy, Abe Sapien, Liz Sherman, Sydney Leach, and Professor Bruttenholm
+    arrive at the Hampden estate on Long Island at dusk to investigate a reported
+    haunting. The house appears stately but quiet, with a mild unease in the atmosphere,
+    and a publicity stunt event is underway nearby.
+  id: s_0
+  key_delta: The investigation is initiated at a location linked to strange occurrences;
+    the team is assembled and focuses on the supposed haunting.
+  trigger_event: The BPRD team is officially assigned and arrives at the Hampden estate
+    to begin their investigation.
+- description: Inside the Hampden house at night, the team finds a few open windows,
+    a life-like replica of Erzebet, and an elderly groundskeeper resembling a familiar
+    figure. The atmosphere grows tense as ghostly apparitions start to appear.
+  id: s_1
+  key_delta: Supernatural activity is confirmed through ghost sightings linked to
+    Erzebet's victims.
+  trigger_event: Night falls at the Hampden estate and ghostly apparitions begin manifesting.
+- description: Trumbolt, the publicity figure, ignores Professor Bruttenholm’s warnings
+    and explores further into the house despite dangers. Ana, a bride-to-be, disappears
+    after interacting with Erzebet’s presence.
+  id: s_2
+  key_delta: A victim, Ana, has been targeted by Erzebet; Trumbolt is vulnerable inside
+    the house against supernatural threats.
+  trigger_event: Trumbolt wanders deeper into the house, and Ana meets Erzebet during
+    her bridal gown fitting appointment.
+- description: Sydney Leach discovers a secret passage in the cellar which leads to
+    the discovery of Trumbolt’s blood-drained body in a bathtub, indicating an attempt
+    or ongoing revival ritual for Erzebet.
+  id: s_3
+  key_delta: Evidence of Erzebet’s possible resurrection is uncovered through Trumbolt’s
+    murder and the blood bath.
+  trigger_event: Leach uses metal-detection abilities to find and open a secret passage
+    in the cellar.
+- description: Hellboy and Abe Sapien are outside the house; a werewolf attacks, identified
+    later as Father Lupescu, who is linked to the darkness affecting the town.
+  id: s_4
+  key_delta: The groundskeeper, Father Lupescu, is revealed to be a supernatural threat
+    allied unknowingly with Erzebet.
+  trigger_event: A werewolf attacks Hellboy and Abe Sapien near the gardens of the
+    estate.
+- description: Liz Sherman and Bruttenholm move to the gardens to stop the summoning
+    ritual, are attacked by wolves and then by an animated Erzebet; Liz is incapacitated
+    and Bruttenholm taken captive.
+  id: s_5
+  key_delta: Bruttenholm is physically endangered and Erzebet is partially restored
+    to power.
+  trigger_event: Erzebet’s withered form attacks and captures Bruttenholm, knocking
+    Liz out.
+- description: Hellboy falls through a hole in the courtyard and confronts the goddess
+    Hecate, who attempts to sway him to darkness but is refused repeatedly.
+  id: s_6
+  key_delta: Hecate’s physical manifestation and challenge to Hellboy introduces a
+    divine antagonist element to the conflict.
+  trigger_event: Hellboy is pulled into a hidden pit and encounters Hecate who reveals
+    herself.
+- description: Abe Sapien escapes from the harpies; one harpy is killed during a struggle
+    with Hecate and Hellboy, while the other harpy flees, escalating the threat.
+  id: s_7
+  key_delta: The harpies’ diminished numbers and continuing threat increase the urgency
+    of the conflict.
+  trigger_event: Abe Sapien breaks free from capture and encounters Hecate and the
+    harpies.
+- description: Erzebet rejuvenates herself by bathing in Trumbolt’s blood, but her
+    revival is undermined by Holy Water still in the bath, causing her to wither again.
+  id: s_8
+  key_delta: Erzebet’s revival is partially successful but ultimately compromised
+    by the Holy Water effect.
+  trigger_event: Erzebet bathes in the blood of Trumbolt to regain youth and strength.
+- description: Bruttenholm breaks free and finishes off Erzebet by destroying her
+    with a broken chair leg. Hecate, enraged, violently attacks Hellboy, badly wounding
+    him.
+  id: s_9
+  key_delta: Erzebet is definitively destroyed; Hellboy is severely injured by Hecate’s
+    rage.
+  trigger_event: Bruttenholm kills Erzebet, prompting Hecate’s furious assault on
+    Hellboy.
+- description: Hellboy lures Hecate outside into the sunlight, exploiting her weakness
+    and forcing her back into the darkness of her realm, defeated.
+  id: s_10
+  key_delta: Hecate is forced to retreat, ending the immediate supernatural threat
+    at the estate.
+  trigger_event: With Hecate driven off, the house falls quiet and Bruttenholm prepares
+    to leave for Transylvania.
+- description: In the quiet aftermath, an elderly Bruttenholm prepares to leave for
+    Transylvania, discussing Hellboy’s destined role as the ‘right hand of doom’,
+    as Hellboy sleeps peacefully unaware in his bed.
+  id: s_11
+  key_delta: Hellboy’s identity and future role are implicitly set, closing the current
+    narrative cycle.
+  trigger_event: Bruttenholm converses with a colleague before Hellboy wakes in his
+    room.

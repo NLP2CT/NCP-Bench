@@ -1,0 +1,392 @@
+commitments:
+- description: The execution of Brett (s_1) must occur after arrival at Brett's apartment
+    (s_0), to prevent precedence of a criminal act before confrontation.
+  id: c_0
+  satisfaction_condition: Node s_0 is achieved before node s_1 is triggered.
+  type: ordering
+  violation_condition: Any attempt to perform Brett's execution (s_1) before arriving
+    at his apartment (s_0).
+- description: The shootout with the unknown attacker (s_2) only happens after Brett's
+    execution is complete (s_1) to maintain narrative causality in escalation.
+  id: c_1
+  satisfaction_condition: Node s_1 occurs prior to node s_2.
+  type: ordering
+  violation_condition: Player triggers the shootout event (s_2) without Brett having
+    been executed (s_1).
+- description: Vincent remains alive before the moment he is killed by Butch in the
+    apartment (s_11), ensuring player control continuity in relevant prior scenes.
+  id: c_2
+  satisfaction_condition: Up to node s_10 inclusive, Vincent is alive; only at s_11
+    is Vincent killed.
+  type: invariant
+  violation_condition: Vincent is killed or removed from play before the scene s_11
+    occurs.
+- description: Vincent's death by Butch (s_11) must occur after Butch returns to his
+    apartment (s_10), preserving logical incentive and risk structure.
+  id: c_3
+  satisfaction_condition: Node s_10 is completed before node s_11 is triggered.
+  type: ordering
+  violation_condition: Vincent is killed at s_11 before Butch returns to get the watch
+    at s_10.
+- description: The shootout with the unknown attacker in Brett's apartment (s_2) must
+    precede the accidental shooting of Marvin (s_3), preventing temporal inversion
+    of crisis events.
+  id: c_4
+  satisfaction_condition: Node s_2 happens before s_3.
+  type: ordering
+  violation_condition: Player triggers accidental shooting of Marvin (s_3) before
+    the shootout (s_2).
+- description: Jimmie must be contacted (s_3) before Winston Wolf arrives (s_4), enabling
+    a logical progression in crisis management.
+  id: c_5
+  satisfaction_condition: Node s_3 is achieved prior to s_4.
+  type: ordering
+  violation_condition: Winston Wolf arrives (s_4) before Jimmie is requested for aid
+    (s_3).
+- description: The retrieval of the briefcase from Brett resulting in Brett's execution
+    (s_1) must be accomplished before subsequent mission progress, marking core mission
+    success.
+  id: c_6
+  satisfaction_condition: Node s_1 is triggered showing Brett's execution with briefcase
+    retrieval.
+  type: achievement
+  violation_condition: The story concludes or progresses to later key events without
+    the completion of Brett's execution and briefcase retrieval (s_1).
+- description: Jules' decision to retire (s_5) must only occur after surviving the
+    'miracle' shootout and cleanup (s_2 through s_4) establishing his internal turning
+    point.
+  id: c_7
+  satisfaction_condition: Nodes s_2, s_3, s_4 are completed before Jules announces
+    retirement (s_5).
+  type: ordering
+  violation_condition: Jules announces retirement (s_5) before the miraculous shootout
+    and cleanup events (s_2 to s_4).
+- description: Vincent must escort Mia for the evening out (s_6), initiating social
+    interaction before the heroin overdose incident (s_7) to maintain sequence integrity.
+  id: c_8
+  satisfaction_condition: Vincent and Mia's evening outing (s_6) happens before the
+    overdose event (s_7).
+  type: invariant
+  violation_condition: The overdose incident (s_7) occurs before Vincent escorts Mia
+    out (s_6).
+- description: Butch's acceptance of the fixed fight (s_8) precedes his betrayal by
+    winning the fight (s_9), maintaining logical cause and effect on the conflict
+    with Marsellus.
+  id: c_9
+  satisfaction_condition: Node s_8 is completed prior to node s_9.
+  type: ordering
+  violation_condition: Butch wins the fight (s_9) without previously agreeing to throw
+    it (s_8).
+- description: Butch must recognize he forgot the watch and decide to return (s_10)
+    before the confrontation with Vincent and subsequent killing (s_11).
+  id: c_10
+  satisfaction_condition: Node s_10 happens before s_11.
+  type: ordering
+  violation_condition: Vincent's death (s_11) occurs without Butch returning to retrieve
+    the watch (s_10).
+- description: The pawnshop capture (s_12) must occur after Vincent's death (s_11)
+    and Butch's escape from the apartment.
+  id: c_11
+  satisfaction_condition: Node s_11 is completed before s_12.
+  type: ordering
+  violation_condition: Butch and Marsellus are captured (s_12) before Vincent is killed
+    (s_11).
+- description: Butch rescues Marsellus from Maynard and Zed (s_13), creating a key
+    shift in their adversarial relationship that must be achieved.
+  id: c_12
+  satisfaction_condition: Node s_13, Butch's intervention and killing Maynard, is
+    triggered.
+  type: achievement
+  violation_condition: Story progresses beyond the pawnshop capture without Butch
+    intervening and rescuing Marsellus (s_13).
+- description: The truce between Marsellus and Butch (s_14) resolving their conflict
+    must be reached to close their narrative arc.
+  id: c_13
+  satisfaction_condition: Node s_14 where Marsellus grants safe passage is achieved.
+  type: achievement
+  violation_condition: The story ends or progresses without Marsellus and Butch settling
+    their conflict with the truce (s_14).
+- description: The narrative return to the diner hold-up and Mexican standoff (closing
+    scene) must occur after Jules and Vincent survive their earlier ordeals and before
+    final resolution.
+  id: c_14
+  satisfaction_condition: All prior scenes up to s_5 completed before the diner hold-up
+    final sequence.
+  type: ordering
+  violation_condition: Diner hold-up scene occurs out of narrative sync before characters
+    survive earlier key events.
+- description: Jules must allow Pumpkin and Honey Bunny to leave with the money without
+    violence at the diner hold-up, signaling his moral transformation, which remains
+    consistent once decided.
+  id: c_15
+  satisfaction_condition: Upon arriving at the standoff, Jules allows robbers to leave
+    with money and retains Marsellus’s briefcase.
+  type: invariant
+  violation_condition: Jules kills or refuses to let Pumpkin and Honey Bunny leave
+    during the diner hold-up.
+initial_facts:
+- content: Vincent Vega is alive at the starting moment.
+  id: f_0
+  negated: false
+- content: Vincent Vega is in a car with Jules Winnfield.
+  id: f_1
+  negated: false
+- content: Vincent Vega and Jules Winnfield are wearing dress suits.
+  id: f_2
+  negated: false
+- content: Vincent Vega and Jules Winnfield are en route to Brett's apartment.
+  id: f_3
+  negated: false
+- content: Vincent Vega has recently returned from Europe.
+  id: f_4
+  negated: false
+- content: Vincent Vega is unaware of any future events such as Brett's execution,
+    the shootout, or his own death.
+  id: f_5
+  negated: false
+- content: Jules Winnfield is alive at the starting moment.
+  id: f_6
+  negated: false
+- content: Marsellus Wallace is alive but is not present with Vincent and Jules at
+    this time.
+  id: f_7
+  negated: false
+- content: Brett is alive and located in his apartment.
+  id: f_8
+  negated: false
+- content: Vincent Vega does not yet possess the briefcase to be retrieved from Brett.
+  id: f_9
+  negated: false
+- content: The diner hold-up by Pumpkin and Honey Bunny has not yet occurred.
+  id: f_10
+  negated: false
+- content: Vincent Vega is unaware of the upcoming heroin overdose incident involving
+    Mia Wallace.
+  id: f_11
+  negated: false
+- content: Butch Coolidge is not currently involved in events with Vincent and Jules,
+    and is not known to Vincent at this moment.
+  id: f_12
+  negated: false
+- content: The pawnshop, Maynard, Zed, and the gimp exist as external facts but Vincent
+    is unaware of their roles or existence at this time.
+  id: f_13
+  negated: false
+- content: Winston Wolf has not yet been contacted by Jules or Vincent.
+  id: f_14
+  negated: false
+- content: Jimmie and Bonnie exist but have not yet been involved or contacted by
+    Vincent or Jules.
+  id: f_15
+  negated: false
+- content: Vincent Vega has not yet engaged in escorting Mia Wallace.
+  id: f_16
+  negated: false
+- content: Vincent Vega has not yet visited Lance's house or purchased heroin.
+  id: f_17
+  negated: false
+meta:
+  genres: ["Crime", "Drama"]
+  id: movie36
+  player_role: Vincent Vega
+  title: "Pulp Fiction"
+synopsis: Pumpkin and Honey Bunny are having breakfast in a diner. They decide to
+  rob it after realizing they could make money off the customers as well as the business,
+  as they did during their previous heist. Moments after they initiate the hold-up,
+  the scene breaks off and the title credits roll. As Jules Winnfield drives, Vincent
+  Vega talks about his experiences in Europe, from where he has just returned——the
+  hash bars in Amsterdam, the French McDonald's and its "Royale with Cheese". The
+  pair—both wearing dress suits—are on their way to retrieve a briefcase from Brett,
+  who has transgressed against their boss, gangster Marsellus Wallace. Jules tells
+  Vincent that Marsellus had someone thrown off a fourth-floor balcony for giving
+  his wife a foot massage. Vincent says that Marsellus has asked him to escort his
+  wife while Marsellus is out of town. They conclude their banter and "get into character",
+  which soon involves executing Brett in dramatic fashion after Jules recites a baleful
+  "biblical" pronouncement. In a virtually empty cocktail lounge, aging prizefighter
+  Butch Coolidge accepts a large sum of money from mobster Marsellus Wallace, agreeing
+  to take a dive in his upcoming match. Vincent and Jules—now dressed in T-shirts
+  and shorts—arrive to deliver the briefcase, and Butch and Vincent briefly cross
+  paths. The next day, Vincent drops by the house of Lance and his wife Jody to purchase
+  high-grade heroin. He shoots up before driving over to meet Mrs. Mia Wallace and
+  take her out. They head to Jack Rabbit Slim's, a 1950s-themed restaurant staffed
+  by lookalikes of the decade's pop icons. Mia recounts her experience acting in a
+  failed television pilot, "Fox Force Five". After participating in a twist contest,
+  they return to the Wallace house with the trophy. While Vincent is in the bathroom,
+  Mia finds his stash of heroin in his coat pocket. Mistaking it for cocaine, she
+  snorts it and overdoses. Vincent rushes her to Lance's house for help. Together,
+  they administer an adrenaline shot to Mia's heart, reviving her. Before parting
+  ways, Mia and Vincent agree not to tell Marsellus of the incident. Television time
+  for young Butch is interrupted by the arrival of Vietnam veteran Captain Koons.
+  Koons explains that he has brought a gold watch, passed down through generations
+  of Coolidge men since World War I. Butch's father died of dysentery while in a POW
+  camp, and at his dying request Koons hid the watch in his rectum for two years in
+  order to deliver it to Butch. A bell rings, startling the adult Butch out of this
+  reverie. He is in his boxing colors—it is time for the fight he has been paid to
+  throw. Butch flees the arena, having won the bout. Making his getaway by taxi, he
+  learns from the death-obsessed driver, Esmarelda Villalobos, that he killed the
+  opposing fighter. Butch has double-crossed Marsellus, betting his payoff on himself
+  at very favorable odds. The next morning, at the motel where he and his girlfriend,
+  Fabienne, are lying low, Butch discovers that she has been forgotten to pack the
+  irreplaceable watch. He returns to his apartment to retrieve it, although Marsellus's
+  men are almost certainly looking for him. Butch finds the watch quickly, but thinking
+  he is alone, pauses for a snack. Only then does he notice a machine pistol on the
+  kitchen counter. Hearing the toilet flush, Butch readies the gun in time to kill
+  a startled Vincent Vega exiting the bathroom. Butch drives away but while waiting
+  at a traffic light, Marsellus walks by and recognizes him. Butch rams Marsellus
+  with the car, then another automobile collides with his. After a foot chase the
+  two men land in a pawnshop. The shopowner, Maynard, captures them at gunpoint and
+  ties them up in a half-basement area. Maynard is joined by Zed; they take Marsellus
+  to another room to rape him, leaving a silent masked figure referred to as "the
+  gimp" to watch a tied-up Butch. Butch breaks loose and knocks out the gimp. He is
+  about to flee when he decides to save Marsellus. As Zed is sodomizing Marsellus
+  on a pommel horse, Butch kills Maynard with a katana. Marsellus retrieves Maynard's
+  shotgun and shoots Zed in the groin. Marsellus informs Butch that they are even
+  with respect to the botched fight fix, so long as he never tells anyone about the
+  rape and departs Los Angeles forever. Butch agrees and returns to pick up Fabienne
+  on Zed's chopper. The story returns to Vincent and Jules at Brett's. After they
+  execute him, another man bursts out of the bathroom and shoots wildly at them, missing
+  every time before an astonished Jules and Vincent return fire. Jules decides this
+  is a miracle and a sign from God for him to retire as a hitman. They drive off with
+  one of Brett's associates, Marvin, their informant. Vincent asks Marvin for his
+  opinion about the "miracle", and accidentally shoots him in the face. Forced to
+  remove their bloodied car from the road, Jules calls upon the house of his friend
+  Jimmie. Jimmie's wife, Bonnie, is due back from work soon and he is very anxious
+  that she not encounter the scene. At Jules's request, Marsellus arranges for the
+  help of Winston Wolf. "The Wolf" takes charge of the situation, ordering Jules and
+  Vincent to clean the car, hide the body in the trunk, dispose of their own bloody
+  clothes, and change into T-shirts and shorts provided by Jimmie. They drive the
+  car to a junkyard, from where Wolf and the owner's daughter, Raquel, head off to
+  breakfast and Jules and Vincent decide to do the same. As Jules and Vincent eat
+  breakfast in a coffee shop the discussion returns to Jules's decision to retire.
+  In a brief cutaway, we see "Pumpkin" and "Honey Bunny" shortly before they initiate
+  the hold-up from the movie's first scene. While Vincent is in the bathroom, the
+  hold-up commences. "Pumpkin" demands all of the patrons' valuables, including Jules's
+  mysterious case. Jules surprises "Pumpkin", holding him at gunpoint. "Honey Bunny",
+  hysterical, trains her gun on Jules. Vincent emerges from the restroom with his
+  gun trained on her, creating a Mexican standoff. Reprising his pseudo-biblical passage,
+  Jules expresses his ambivalence about his life of crime. As his first act of redemption,
+  he allows the two robbers to take the cash they have stolen and leave, pondering
+  how they were spared and leaving the briefcase to be returned to Marsellus, finishing
+  the hitman's final job for his boss.
+trajectory:
+- description: Vincent Vega and Jules Winnfield are driving in a car wearing dress
+    suits, en route to Brett's apartment to retrieve a briefcase on behalf of their
+    boss Marsellus Wallace. Vincent talks about his recent return from Europe, sharing
+    mundane observations about Amsterdam and France.
+  id: s_0
+  key_delta: Arrival at the conflict site where an execution mission on Brett is about
+    to be carried out under Marsellus Wallace's orders.
+  trigger_event: Arriving at Brett's apartment and entering the premises.
+- description: Inside Brett's apartment, Vincent and Jules confront Brett regarding
+    the briefcase. The apartment is tense, nearly empty, with Brett and a couple of
+    associates present.
+  id: s_1
+  key_delta: Brett is killed; the business of retrieving the briefcase has been executed,
+    escalating violence within Marsellus's sphere.
+  trigger_event: Jules recites a baleful passage and executes Brett.
+- description: While cleaning up the aftermath of the shooting, another man suddenly
+    emerges from the bathroom, shooting wildly at Vincent and Jules, initiating a
+    chaotic gunfight inside Brett's apartment.
+  id: s_2
+  key_delta: The shootout results in the death of the unknown attacker; peril escalates
+    significantly and a miraculous escape occurs.
+  trigger_event: The attacker fires wildly at Vincent and Jules; they return fire.
+- description: The shooting incident leaves Marvin, an associate of Brett's, accidentally
+    shot and dead in the car; Vincent and Jules are forced to deal with the bloody
+    mess in a residential neighborhood.
+  id: s_3
+  key_delta: The accidental death of Marvin introduces an urgent crisis, requiring
+    quick cleanup and disposal of evidence.
+  trigger_event: Jules calls Jimmie to help hide the evidence before his wife arrives
+    home.
+- description: At Jimmie's house, Vincent and Jules prepare to conceal the dead body
+    and clean the car before Bonnie returns from work; Marsellus arranges for Winston
+    Wolf, an expert fixer, to take charge of the situation.
+  id: s_4
+  key_delta: The intervention of Winston Wolf stabilizes the crisis, enabling Vincent
+    and Jules to avoid immediate police detection.
+  trigger_event: Winston Wolf arrives and takes command of the cleanup and disposal
+    operation.
+- description: The bloody car is cleaned and hidden in a junkyard; Vincent, Jules,
+    Wolf, and the junkyard owner's daughter depart the scene, while Jules reflects
+    on the recent 'miracle' during breakfast with Vincent.
+  id: s_5
+  key_delta: Jules resolves to leave his violent life behind, marking a significant
+    internal turning point.
+  trigger_event: Jules announces his decision to retire as a hitman inspired by the
+    miraculous survival.
+- description: Vincent drops by Lance's house to buy heroin, injures himself injecting,
+    then goes to pick up Mrs. Mia Wallace for an evening out at Jack Rabbit Slim's—a
+    themed restaurant filled with nostalgic 1950s ambiance.
+  id: s_6
+  key_delta: Vincent and Mia spend time together socially, displaying a shift from
+    violent activities to more ordinary social engagements.
+  trigger_event: Vincent takes Mia out to Jack Rabbit Slim's restaurant for dinner
+    and a dance contest.
+- description: At the Wallace house after the night out, Mia finds heroin in Vincent's
+    coat, mistakenly snorts it, overdosing. Vincent rushes her to Lance’s house for
+    emergency aid.
+  id: s_7
+  key_delta: Mia is saved from overdose; a serious near-death event occurs which could
+    have severe consequences for Vincent and Marsellus.
+  trigger_event: Mia overdoses, and Vincent administers adrenaline to her heart, reviving
+    her.
+- description: The next morning, Butch Coolidge, a prizefighter, receives a gold watch
+    from Captain Koons, who explains its traumatic history in Butch's family. Butch
+    prepares to throw a fight as contracted by Marsellus Wallace.
+  id: s_8
+  key_delta: Butch is officially committed to throwing the fight, setting the groundwork
+    for his betrayal.
+  trigger_event: Butch enters the ring for the fixed fight.
+- description: During the fight, Butch defies the agreement by winning decisively,
+    fleeing the arena while taxi driver Esmarelda Villalobos informs him that the
+    opponent died from the knockout.
+  id: s_9
+  key_delta: Butch betrays Marsellus by winning, making him a target for retribution.
+  trigger_event: Butch escapes the arena after winning the fight he was supposed to
+    throw.
+- description: Hiding out at a motel with his girlfriend Fabienne, Butch realizes
+    he forgot his gold watch at his apartment, which is likely being watched by Marsellus's
+    men.
+  id: s_10
+  key_delta: Butch risks capture or death attempting to recover the important family
+    heirloom.
+  trigger_event: Butch decides to return to his apartment to retrieve the watch.
+- description: Inside his apartment, Butch discovers a machine pistol on the counter,
+    and moments later Vincent emerges from the bathroom, surprised and unarmed initially.
+  id: s_11
+  key_delta: Vincent is killed, removing him from Marsellus's service and altering
+    power dynamics.
+  trigger_event: Butch shoots and kills Vincent in self-defense.
+- description: Fleeing the scene, Butch encounters Marsellus Wallace on the street;
+    a violent confrontation ensues involving a car crash and a foot chase ending in
+    their capture by pawnbroker Maynard.
+  id: s_12
+  key_delta: Both men are imprisoned, shifting the struggle from street confrontation
+    to captivity.
+  trigger_event: Maynard captures Butch and Marsellus and locks them in a basement
+    area.
+- description: In the pawnshop basement, Butch breaks free, incapacitates the gimp
+    guarding him but discovers Marsellus is being brutally raped by Maynard and Zed
+    in another room.
+  id: s_13
+  key_delta: Butch rescues Marsellus, creating a debt and shifting their adversarial
+    relationship.
+  trigger_event: Butch intervenes and kills Maynard with a katana, disrupting the
+    assault.
+- description: Marsellus shoots Zed and, acknowledging their mutual violation of agreements,
+    grants Butch safe passage out of Los Angeles as long as the incident remains secret.
+  id: s_14
+  key_delta: A truce is established between Marsellus and Butch, ending their immediate
+    conflict.
+  trigger_event: Marsellus and Butch make a pact; Butch leaves to pick up Fabienne
+    on Zed's chopper.
+- description: Back at the diner, Pumpkin and Honey Bunny attempt a robbery while
+    Jules and Vincent are eating breakfast. Jules holds Pumpkin at gunpoint, Vincent
+    covers Honey Bunny, and a Mexican standoff erupts before Jules chooses mercy.
+  id: s_15
+  key_delta: Jules completes his moral transformation by sparing the robbers, allowing
+    them to leave with the cash while preserving the briefcase and ending his final
+    job without further bloodshed.
+  trigger_event: Jules de-escalates the diner standoff and lets Pumpkin and Honey
+    Bunny leave.

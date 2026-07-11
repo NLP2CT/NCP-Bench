@@ -1,0 +1,328 @@
+commitments:
+- description: Cole and Hitch must be officially hired and given full authority over
+    Appaloosa by the town council before enforcing law in the town.
+  id: c_0
+  satisfaction_condition: Node s_0 is triggered, indicating formal hiring and authority
+    transfer has occurred.
+  type: achievement
+  violation_condition: Any attempt to exercise law enforcement powers or gain full
+    control over Appaloosa before s_0 is reached and authority granted.
+- description: The confrontation with the four of Bragg’s men in the saloon (s_1)
+    must occur only after Cole and Hitch are formally hired and empowered (s_0).
+  id: c_1
+  satisfaction_condition: Node s_1 occurs strictly after s_0 in the narrative timeline.
+  type: ordering
+  violation_condition: Confrontation or lethal actions against Bragg’s men take place
+    before s_0 is reached.
+- description: After the saloon confrontation at s_1 and before Bragg’s trial at s_4,
+    hostility between the factions remains high and no peaceful resolution is accepted.
+  id: c_2
+  satisfaction_condition: Between s_1 and s_4 (inclusive), no negotiation reduces
+    the conflict to anything less than mutual hostility as established at s_2.
+  type: invariant
+  violation_condition: Player actions or narrative states induce reconciliation or
+    peace agreements between Cole/Hitch and Bragg’s faction before the trial testimony
+    at s_4.
+- description: Bragg must be officially found guilty through the testimony of his
+    own man prior to any attempt to carry out his sentence or transfer custody.
+  id: c_3
+  satisfaction_condition: 'Node s_4 triggered: Testimony and verdict of guilty established.'
+  type: achievement
+  violation_condition: Bragg is taken into custody, sentenced, or actions to execute
+    him initiated before the court trial and guilty verdict at s_4.
+- description: Bragg's escape by the Shelton brothers (s_5) can only occur after his
+    official conviction (s_4).
+  id: c_4
+  satisfaction_condition: s_5 occurs strictly after s_4.
+  type: ordering
+  violation_condition: Bragg escapes from custody or is freed without having been
+    found guilty in s_4.
+- description: Allie French's allegiance cannot be assumed as purely a hostage until
+    after the encounter at the stream (s_6) reveals her complicity with the Sheltons.
+  id: c_5
+  satisfaction_condition: Between s_5 and s_6, Allie is treated as a hostage; at s_6
+    the new information alters this assumption.
+  type: invariant
+  violation_condition: Player or system treats Allie as knowingly allied with Sheltons
+    before s_6 is achieved and observed frolicking scene is recognized.
+- description: Bragg must be delivered into Beauville sheriff Russell’s custody before
+    the Sheltons intervene and free him.
+  id: c_6
+  satisfaction_condition: 'Node s_7 triggered: Bragg transferred to Beauville Sheriff''s
+    control.'
+  type: achievement
+  violation_condition: Bragg is freed or challenged before lawful delivery to Beauville
+    sheriff Russell.
+- description: Sheriff Russell’s corruption and kinship to Sheltons must remain unknown
+    to Cole and Hitch until Bragg’s escape and the gunfight occur.
+  id: c_7
+  satisfaction_condition: Between s_7 and s_8, no knowledge or suspicion of Russell's
+    collusion is revealed or acted upon by the player character.
+  type: invariant
+  violation_condition: Player uncovers or acts on Russell’s relationship to Sheltons
+    before s_8 is triggered.
+- description: The gunfight with the Shelton brothers and Russell (s_8) must precede
+    the return to Appaloosa with Allie (s_9).
+  id: c_8
+  satisfaction_condition: s_8 occurs strictly before s_9.
+  type: ordering
+  violation_condition: Return to Appaloosa with Allie happens without prior confrontation
+    with Sheltons and Russell.
+- description: Bragg’s return under presidential pardon (s_10) must only occur after
+    he has escaped custody and survived the gunfight.
+  id: c_9
+  satisfaction_condition: s_10 triggered only after s_8 (gunfight) and s_9 (return)
+    have been completed.
+  type: achievement
+  violation_condition: Bragg’s pardon and reestablishment in town occurs before he
+    escapes and survives the prior conflicts.
+- description: Hitch’s knowledge of Bragg’s illegal activities and secret relationship
+    with Allie cannot develop before Bragg’s reappearance in Appaloosa at s_10.
+  id: c_10
+  satisfaction_condition: Between s_10 and s_11, Hitch uncovers this information;
+    before s_10, no such knowledge exists.
+  type: invariant
+  violation_condition: Player gains or acts upon evidence of Bragg’s secret dealings
+    or Allie’s betrayal before s_10.
+- description: Hitch’s resignation and duel challenge to Bragg (s_12) must occur after
+    uncovering Bragg’s deception and the secret relationship (s_11).
+  id: c_11
+  satisfaction_condition: s_12 occurs strictly after s_11.
+  type: ordering
+  violation_condition: Hitch resigns or challenges Bragg without prior discovery of
+    Bragg’s illegal activities or Allie’s involvement.
+- description: Bragg must be killed by Hitch in a duel for the narrative to reach
+    resolution of the primary conflict.
+  id: c_12
+  satisfaction_condition: At s_12, Bragg is killed by Hitch in the duel.
+  type: achievement
+  violation_condition: The narrative ends or progresses without Bragg’s death occurring
+    through Hitch’s public duel.
+- description: Hitch’s departure from Appaloosa (s_13) must follow his duel with and
+    killing of Bragg (s_12).
+  id: c_13
+  satisfaction_condition: s_13 happens strictly after s_12.
+  type: ordering
+  violation_condition: Hitch leaves the town prior to completing the duel and killing
+    Bragg.
+initial_facts:
+- content: The town council of Appaloosa has formally hired Virgil Cole as lawman
+    and Everett Hitch as deputy and given them full authority over the town.
+  id: f_0
+  negated: false
+- content: Appaloosa is under violent terror by Randall Bragg, who has killed Marshal
+    Jack Bell and two deputies.
+  id: f_1
+  negated: false
+- content: Virgil Cole and Everett Hitch are present in Appaloosa prepared to exercise
+    their duties as lawman and deputy.
+  id: f_2
+  negated: false
+- content: Virgil Cole and Everett Hitch have not yet confronted any of Bragg's men
+    or taken any law enforcement action within the town.
+  id: f_3
+  negated: false
+- content: The town council members have not yet lost control; authority over law
+    enforcement has been given away to Cole and Hitch, thereby shifting power from
+    local authorities to them.
+  id: f_4
+  negated: false
+- content: Everett Hitch is not aware of any secret relationship between Randall Bragg
+    and Allie French.
+  id: f_5
+  negated: false
+- content: Everett Hitch does not know that Bragg is guilty of murdering the marshal
+    as no testimony or trial has yet occurred.
+  id: f_6
+  negated: false
+- content: Randall Bragg has not been tried or found legally guilty of any crime at
+    this point.
+  id: f_7
+  negated: false
+- content: Bragg has not escaped custody or been rescued by the Shelton brothers because
+    no arrest, trial, or transport has yet happened.
+  id: f_8
+  negated: false
+- content: Allie French has just arrived in Appaloosa and has not yet been involved
+    with Cole, Hitch, or Bragg in any relationship context known to Everett Hitch.
+  id: f_9
+  negated: false
+- content: The hostility between Cole/Hitch and Bragg's faction is tense and unresolved;
+    no negotiation reducing conflict to peace has occurred.
+  id: f_10
+  negated: false
+- content: The sheriff of Beauville, Russell, has not been introduced or involved
+    in any custody matters regarding Bragg.
+  id: f_11
+  negated: false
+- content: Everett Hitch has no knowledge of Sheriff Russell’s kinship or corruption
+    relating to the Shelton brothers or Bragg.
+  id: f_12
+  negated: false
+- content: No gunfights involving Cole, Hitch, and Shelton brothers have occurred
+    at this initial moment.
+  id: f_13
+  negated: false
+- content: No presidential pardons or legal pardons involving Bragg exist or have
+    been granted.
+  id: f_14
+  negated: false
+- content: Everett Hitch has no knowledge of any illegal activities or robbery plans
+    by Randall Bragg.
+  id: f_15
+  negated: false
+- content: Everett Hitch has not resigned as deputy and continues his role officially.
+  id: f_16
+  negated: false
+- content: Randall Bragg is alive and present in or near Appaloosa at t=0.
+  id: f_17
+  negated: false
+meta:
+  genres: ["Western", "Drama"]
+  id: movie99
+  player_role: Everett Hitch
+  title: "Appaloosa"
+synopsis: In 1882, the small western town of Appaloosa, New Mexico, is being terrorized
+  by local rancher Randall Bragg, who killed Marshal Jack Bell and two of his deputies
+  in cold blood when they came to his ranch to arrest two of Bragg's ranch hands.
+  The town decides to hire lawman and town-tamer Virgil Cole and his deputy, Everett
+  Hitch, to protect and regain control of the town. The council members agree to give
+  complete control to Cole and Hitch. They begin taking control by confronting four
+  of Bragg's men who are causing a disturbance in the saloon. Three men refuse to
+  allow themselves to be arrested and Cole kills two of them while Hitch kills the
+  third with his weapon of choice——an eight-gauge shotgun. The survivor surrenders
+  his weapon to Hitch and leaves the saloon. Bragg has a meeting with Cole and Hitch
+  and neither side will cede an inch to the other. Cole meets a new arrival to the
+  town, recently widowed Allie French, and starts a relationship with her. When one
+  of Bragg's men tells Cole and Hitch he will testify that his boss killed the marshall,
+  Bragg is tried and found guilty. En route via train to his execution, Bragg is rescued
+  by gunfighter brothers Ring and Mackie Shelton, old acquaintances of Cole, who have
+  captured Allie and bring her along as a bargaining chip. Cole and Hitch catch up
+  with the outlaws and discover that Allie is not a hostage when they see her and
+  Ring Shelton frolicking naked together in a stream. After a brief fight with Indians,
+  they turn Bragg in to the sheriff of Beauville, the nearest town. Unbeknownst to
+  Cole, Sheriff Russell is a cousin of the Shelton brothers. Knowing that Cole is
+  determined to bring Bragg back to hang, Ring and Mackie free Bragg and challenge
+  Cole and Hitch to a gunfight. Both lawmen are wounded but manage to kill Ring, Mackie,
+  and Russell. Cole and Hitch are unable to prevent Bragg from escaping on horseback,
+  and they return to Appaloosa with Allie. Some time later, Bragg is granted a full
+  pardon by President Chester A. Arthur and returns to Appaloosa in an attempt to
+  publicly reform himself. He buys the hotel and ingratiates himself with the locals.
+  Cole and Hitch suspect Bragg is using his claims of a silver strike to cover up
+  illegal activity; specifically, a robbery of a gold shipment in Mexico. Hitch also
+  discovers that Bragg is in a secret relationship with Allie. Unable to deal with
+  Bragg legally, and wanting Allie to be with Cole, he quits as deputy and successfully
+  challenges Bragg to a duel in front of Cole. He kills Bragg, and then leaves town;
+  his parting words express his hope that Cole can find happiness with the fickle
+  Allie.
+trajectory:
+- description: In 1882, the small western town of Appaloosa, New Mexico, is tense
+    and fearful under the violent reign of rancher Randall Bragg, who has recently
+    killed Marshal Jack Bell and two deputies in cold blood. The local town council,
+    desperate for order, is contemplating hiring outside lawmen to restore peace,
+    while Everett Hitch is present as deputy to newly arrived Virgil Cole, prepared
+    to take on the challenge.
+  id: s_0
+  key_delta: The authority to enforce law and order in Appaloosa is formally given
+    to Cole and Hitch, shifting power away from the locals and setting them as central
+    agents against Bragg's terror.
+  trigger_event: Town council members convene and officially hire Virgil Cole and
+    Everett Hitch as lawman and deputy with full control of the town.
+- description: Cole and Hitch enter the saloon where four of Bragg's men are causing
+    disturbances, signaling the beginning of their active enforcement to regain control
+    of the town.
+  id: s_1
+  key_delta: 'Confrontation escalates to violence: Cole kills two men; Hitch kills
+    a third with his eight-gauge shotgun, and the fourth surrenders and leaves, demonstrating
+    Cole and Hitch''s lethal effectiveness and marking their first direct clash with
+    Bragg''s men.'
+  trigger_event: Cole and Hitch confront the four disruptive men inside the saloon.
+- description: Following the saloon confrontation, Bragg arranges a face-to-face meeting
+    with Cole and Hitch where tensions remain high and neither side shows willingness
+    to yield.
+  id: s_2
+  key_delta: Mutual hostility is cemented, confirming that no peaceful resolution
+    is forthcoming and that the conflict will escalate.
+  trigger_event: Randall Bragg holds a tense negotiation meeting with Cole and Hitch,
+    refusing to compromise.
+- description: Virgil Cole meets Allie French, a recently widowed woman newly arrived
+    in Appaloosa, beginning a personal connection amidst the town’s ongoing turmoil.
+  id: s_3
+  key_delta: Introduction of Allie French into Cole’s life, establishing the beginnings
+    of a relationship that will later impact both lawmen's dynamics.
+  trigger_event: Cole encounters Allie French and initiates contact with her.
+- description: Bragg’s control weakens as one of his own men offers to testify to
+    Bragg’s role in the marshal’s murder, leading to a formal trial.
+  id: s_4
+  key_delta: Bragg is officially charged and found guilty of murdering the marshal,
+    marking a major legal victory for Cole and Hitch.
+  trigger_event: Bragg’s man comes forward to testify against him.
+- description: En route on a train to execution, Bragg is rescued by gunfighter brothers
+    Ring and Mackie Shelton, former acquaintances of Cole, who unexpectedly bring
+    Allie French along as leverage.
+  id: s_5
+  key_delta: Bragg escapes custody; Allie is forcibly taken along, complicating loyalties
+    and introducing the Sheltons as significant new antagonists.
+  trigger_event: Ring and Mackie Shelton intercept the train, free Bragg, and capture
+    Allie French.
+- description: Cole and Hitch catch up with the Shelton brothers after noticing Allie
+    and Ring Shelton apparently intimately involved in a stream, revealing Allie is
+    not their hostage but complicit with them.
+  id: s_6
+  key_delta: New understanding that Allie may be allied with the Sheltons, challenging
+    Hitch’s and Cole’s assumptions about her role.
+  trigger_event: Cole and Hitch observe Allie French and Ring Shelton frolicking naked
+    together at a stream.
+- description: After an encounter with hostile Indians, Cole and Hitch successfully
+    turn Bragg in to the sheriff of Beauville, the nearest town, expecting lawful
+    custody to hold.
+  id: s_7
+  key_delta: Bragg is out of Appaloosa custody, placed under Beauville law enforcement,
+    with Russell's role as Sheriff established.
+  trigger_event: Cole and Hitch deliver Bragg to Beauville's sheriff, Russell.
+- description: Unbeknownst to Cole and Hitch, Sheriff Russell is a cousin of the Shelton
+    brothers who then orchestrate Bragg’s release and directly challenge Cole and
+    Hitch to a gunfight.
+  id: s_8
+  key_delta: Trusted law enforcement is revealed compromised; Cole and Hitch are wounded
+    but kill Ring, Mackie, and Russell; however, Bragg escapes, prolonging the conflict.
+  trigger_event: Shelton brothers free Bragg from Sheriff Russell’s custody and confront
+    Cole and Hitch in a gunfight.
+- description: Cole and Hitch return to Appaloosa with Allie, recovering from their
+    wounds and regrouping, as Bragg remains at large and dangerous.
+  id: s_9
+  key_delta: Crisis moment resolved with enemies neutralized but key antagonist Bragg
+    still free, and presence of Allie integrated back into Appaloosa.
+  trigger_event: Cole and Hitch come back to Appaloosa after the gunfight, bringing
+    Allie with them.
+- description: Months later, Bragg returns to Appaloosa under a full pardon from President
+    Chester A. Arthur, publicly seeking to reform by buying the hotel and ingratiating
+    himself with the townspeople.
+  id: s_10
+  key_delta: Bragg regains official social standing and economic foothold within the
+    town, creating new tensions and suspicion.
+  trigger_event: Bragg reappears in Appaloosa, announcing his pardon and reform efforts.
+- description: Cole and Hitch grow wary of Bragg’s purported silver strike, suspecting
+    it is a cover for illegal gold shipment robbery in Mexico; additionally, Hitch
+    discovers Bragg is secretly involved with Allie.
+  id: s_11
+  key_delta: Hitch obtains critical knowledge of Bragg’s continued illegal operations
+    and Allie’s betrayal, intensifying personal and professional conflicts.
+  trigger_event: Hitch uncovers evidence suggesting Bragg’s criminal activities and
+    secret relationship with Allie.
+- description: Unable to legally confront Bragg and wishing Allie to be free of him,
+    Hitch resigns as deputy, challenges Bragg to a duel in front of Cole, and kills
+    him.
+  id: s_12
+  key_delta: Bragg is killed by Hitch in a duel; Hitch severs official ties to the
+    town and sets the stage for his departure.
+  trigger_event: Hitch formally quits his deputy role and engages Bragg in a public
+    duel.
+- description: Following the duel, Hitch departs from Appaloosa, expressing hope for
+    Cole to find happiness with the complex Allie as he leaves the town’s uncertain
+    future behind.
+  id: s_13
+  key_delta: Hitch’s exit concludes his involvement in Appaloosa’s affairs, transferring
+    the responsibility for the town and Allie’s fate fully to Cole.
+  trigger_event: Hitch leaves Appaloosa after the duel, parting words directed toward
+    Cole.

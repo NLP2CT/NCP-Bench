@@ -1,0 +1,291 @@
+commitments:
+- description: The Schofield Kid's visit to recruit Munny (s_0) must occur before
+    Munny commits to pursuing the assassination mission (s_1), ensuring the recruitment
+    precedes engagement.
+  id: c_0
+  satisfaction_condition: Node s_0 is achieved before s_1 begins.
+  type: ordering
+  violation_condition: Munny commits to the mission (s_1) before or without the Kid's
+    recruitment visit (s_0) occurring.
+- description: Munny's recruitment of Ned Logan (s_2) must occur after Munny has committed
+    to the mission (s_1), preserving logical team formation order.
+  id: c_1
+  satisfaction_condition: Node s_1 is completed prior to the initiation of s_2.
+  type: ordering
+  violation_condition: Recruitment of Ned Logan (s_2) occurs before Munny’s mission
+    commitment (s_1).
+- description: Between arrival in Big Whiskey and initial confrontation (s_3) to recovery
+    at the barn (s_4), Munny must remain physically identifiable as a threat to Little
+    Bill’s law enforcement, i.e., he remains disarmed, beaten, and ejected, preventing
+    unnoticed entry or status.
+  id: c_2
+  satisfaction_condition: During [s_3, s_4], Munny is found and beaten by Little Bill’s
+    deputies, disarmed through their lawful action in town.
+  type: invariant
+  violation_condition: Munny manages to remain armed, unrecognized, or not confronted
+    by Little Bill’s law enforcement during this phase.
+- description: The first target of the assassination mission, Davey-Boy Bunting, must
+    be killed (s_5) before any subsequent assassinations or final conflict proceeds.
+  id: c_3
+  satisfaction_condition: Node s_5 is completed with Bunting confirmed killed.
+  type: achievement
+  violation_condition: Any narrative progression attempting to kill Quick Mike (s_7)
+    or begin final confrontations before Bunting is killed (s_5) is disallowed.
+- description: Logan must decide to leave the assassination team (s_6) after the killing
+    of Bunting (s_5) but before the killing of Quick Mike (s_7), ensuring proper team
+    dynamics and character exit.
+  id: c_4
+  satisfaction_condition: Node s_6 occurs strictly after s_5 and prior to s_7.
+  type: ordering
+  violation_condition: Logan leaves before Bunting is killed (s_5) or after Quick
+    Mike is killed (s_7).
+- description: Between the killing of Quick Mike (s_7) and the Kid’s confession (s_8),
+    the Kid must not renounce the gunfighter lifestyle or confess prior to the killing,
+    maintaining causal consistency.
+  id: c_5
+  satisfaction_condition: The Kid’s confession in s_8 occurs only after Quick Mike's
+    killing in s_7.
+  type: invariant
+  violation_condition: The Kid confesses to renouncing violence before or during s_7,
+    prior to Quick Mike's death.
+- description: The revelation of Logan’s capture and death by Little Bill’s men (s_9)
+    must occur before the Kid departs alone for Kansas (s_10), maintaining proper
+    exposure of danger and motivation for Munny’s retaliation.
+  id: c_6
+  satisfaction_condition: Node s_9, including the revelation of Logan's death and
+    exposure of identities, precedes s_10.
+  type: achievement
+  violation_condition: The Kid departs for Kansas (s_10) without the group having
+    learned of Logan’s fate (s_9).
+- description: Munny must consciously revert to violent behavior (s_10) by drinking
+    whiskey before returning to Big Whiskey for the final violent confrontation (s_11),
+    preserving narrative of character relapse.
+  id: c_7
+  satisfaction_condition: Munny’s drinking and preparatory actions in s_10 occur before
+    s_11’s violent entrance.
+  type: ordering
+  violation_condition: Munny initiates violent confrontation (s_11) without prior
+    drinking or preparatory relapse (s_10).
+- description: The final confrontation and elimination of Little Bill (s_13) must
+    occur before the departure scene (s_14), establishing resolution of conflict before
+    withdrawal.
+  id: c_8
+  satisfaction_condition: Node s_13 with Bill’s death completes before s_14 begins.
+  type: achievement
+  violation_condition: Munny departs or issues warnings (s_14) without having killed
+    Little Bill (s_13).
+- description: After killing Little Bill (s_13) and issuing threats (s_14), Munny
+    must leave town without instigating further violent conflict immediately, preserving
+    narrative closure on the immediate violent episode.
+  id: c_9
+  satisfaction_condition: During s_14, no new violent acts commence after threats
+    prior to Munny leaving town.
+  type: invariant
+  violation_condition: Munny initiates or escalates additional violence in Big Whiskey
+    after s_14’s warnings but before departure.
+- description: Munny’s personal arc ends with his return to a peaceful life, confirmed
+    by his visit to his wife’s grave and epilogue (s_15), marking narrative closure.
+  id: c_10
+  satisfaction_condition: Node s_15, showing Munny’s peaceful resolution and family
+    prosperity, completes the narrative arc.
+  type: achievement
+  violation_condition: Munny fails to return to his farm or the narrative closes without
+    establishing his peaceful future (s_15).
+initial_facts:
+- content: William Munny is located on his pig farm in Kansas.
+  id: f_0
+  negated: false
+- content: William Munny is a repentant widower who has sworn off alcohol.
+  id: f_1
+  negated: false
+- content: William Munny is raising two children.
+  id: f_2
+  negated: false
+- content: William Munny's pig farm is failing financially.
+  id: f_3
+  negated: false
+- content: The Schofield Kid arrives at William Munny's pig farm seeking to recruit
+    him.
+  id: f_4
+  negated: false
+- content: William Munny has not yet committed to pursuing any assassination mission.
+  id: f_5
+  negated: false
+- content: William Munny is not yet aware of any specific plans or rewards related
+    to killing Quick Mike or Davey-Boy Bunting.
+  id: f_6
+  negated: false
+- content: Ned Logan is not yet recruited by William Munny.
+  id: f_7
+  negated: false
+- content: William Munny has not yet traveled to Big Whiskey, Wyoming.
+  id: f_8
+  negated: false
+- content: William Munny is currently not armed or engaged in violent activity.
+  id: f_9
+  negated: false
+- content: William Munny does not know that Davey-Boy Bunting and Quick Mike have
+    disfigured Delilah Fitzgerald.
+  id: f_10
+  negated: false
+- content: William Munny is not yet aware of Sheriff Little Bill Daggett's views on
+    guns or criminals in Big Whiskey.
+  id: f_11
+  negated: false
+- content: William Munny does not know that a $1,000 reward has been offered by prostitutes
+    in Big Whiskey for killing Quick Mike and Davey-Boy Bunting.
+  id: f_12
+  negated: false
+meta:
+  genres: ["Western", "Drama"]
+  id: movie92
+  player_role: William Munny
+  title: "Unforgiven"
+synopsis: A group of prostitutes in Big Whiskey, Wyoming, led by Strawberry Alice,
+  offers a $1,000 reward to whomever can kill Quick Mike and "Davey-Boy" Bunting,
+  two cowboys who disfigured Delilah Fitzgerald, one of their own. This upsets the
+  local sheriff, Little Bill Daggett, a former gunfighter and now an obsessive keeper
+  of the peace who does not allow guns or criminals in his town. Little Bill had given
+  the two men leniency, despite their crime. Miles away in Kansas, the Schofield Kid,
+  a boastful young man, visits the pig farm of William Munny, seeking to recruit him
+  to kill the cowboys. In his youth, Munny was a bandit who was notorious for being
+  a vicious, cold-blooded murderer, but he is now a repentant widower raising two
+  children and has sworn off alcohol. Though Munny initially refuses to help with
+  the assassination, his farm is failing, putting his children's future in jeopardy.
+  Munny reconsiders a few days later and sets off to catch up with the Kid. On his
+  way, Munny recruits Ned Logan, another retired gunfighter who reluctantly leaves
+  his wife to go along. Back in Wyoming, gunfighter English Bob and his biographer,
+  W. W. Beauchamp, arrive in Big Whiskey, also seeking the reward. Little Bill and
+  his deputies disarm Bob, and Bill beats him savagely, hoping to set an example for
+  other would-be assassins. The next morning Bob is ejected from town, but Beauchamp
+  decides to stay and write about Bill, who has impressed him with his tales of old
+  gunfights and seeming knowledge of the inner workings of a gunfighter's psyche.
+  Munny, Logan and the Kid arrive later amid a rain storm and go to the saloon/whorehouse
+  to discover the cowboys' location. Munny has a bad fever after riding in the rain,
+  and is sitting alone in the saloon when Little Bill and his deputies arrive to confront
+  him. Little Bill has no idea who Munny is, and after finding a pistol on him he
+  beats him brutally and kicks him out onto the street. Logan and the Kid, upstairs
+  getting "advances" on their payment from the prostitutes, escape out a back window.
+  The three regroup at a barn outside of town, where they nurse Munny back to health.
+  Three days later, they ambush a group of cowboys and kill Bunting – although it
+  becomes apparent that Logan and Munny no longer have much stomach for murder. Logan
+  decides to return home while Munny and the Kid head to the cowboys' ranch, where
+  the Kid ambushes Quick Mike in an outhouse and kills him. After they escape, a very
+  distraught Kid confesses he had never killed anyone before, and renounces the gunfighter
+  lifestyle. When Little Sue meets the two men to give them the reward, they learn
+  that Logan was captured by Little Bill's men and tortured to death, but not before
+  giving up the identities of his two accomplices. The Kid heads back to Kansas to
+  deliver the reward money to Munny and Logan's families, while Munny drinks half
+  a bottle of whisky and heads into town to take revenge on Bill. That night, Logan's
+  corpse is displayed in a coffin outside the saloon. Inside, Little Bill has assembled
+  a posse to pursue Munny and the Kid. Munny walks in alone and promptly kills Skinny
+  Dubois (Anthony James), the saloon owner and pimp. After some tense dialogue, a
+  gunfight ensues, leaving Bill wounded and several of his deputies dead. Munny orders
+  everyone out before stopping Little Bill from reaching for his pistol. Bill curses
+  Munny before the latter finishes him with a final gunshot. Munny then threatens
+  the townsfolk before finally leaving town, warning that he will return if Logan
+  is not buried properly or if any prostitutes are further harmed. The final scene
+  is a bookend shot of Munny's farm, and of Munny paying a final visit to his wife's
+  grave. The epilogue text that follows reads that Munny and his family were rumored
+  to have moved to San Francisco and "prospered in dry goods".
+trajectory:
+- description: William Munny is living on his failing pig farm in Kansas, a repentant
+    widower and former notorious bandit, having sworn off alcohol and raising two
+    children.
+  id: s_0
+  key_delta: Introduction of the threat posed by the cowboys and the offer of a reward
+    for their killing; Munny's initial refusal amid his current peaceful, struggling
+    life.
+  trigger_event: The Schofield Kid visits Munny's pig farm seeking to recruit him
+    to kill Quick Mike and Davey-Boy Bunting.
+- description: Munny remains on his farm, troubled by its failing condition and the
+    future of his children.
+  id: s_1
+  key_delta: Munny reverses his initial refusal and commits to pursuing the bounty
+    hunt, abandoning his peaceful stance.
+  trigger_event: Several days after the Kid's visit, Munny decides to join the assassination
+    mission and sets off to catch up with the Kid.
+- description: Munny is traveling from his farm to join the Schofield Kid.
+  id: s_2
+  key_delta: Formation of an assassination team consisting of Munny and Ned Logan.
+  trigger_event: On the way, Munny recruits Ned Logan, another retired gunfighter,
+    to accompany him.
+- description: Munny, Logan, and the Kid have arrived in Big Whiskey, Wyoming, and
+    are seeking information in the town's saloon/whorehouse amid a rainstorm.
+  id: s_3
+  key_delta: Munny becomes physically marked by the town’s strict law enforcement
+    and is identified as a threat despite his anonymity.
+  trigger_event: Little Bill and his deputies arrive and confront Munny, disarming
+    and brutally beating him before ejecting him from the saloon.
+- description: Munny has been thrown out into the street bruised and sick; Logan and
+    the Kid have escaped from the saloon via a back window.
+  id: s_4
+  key_delta: The team survives the initial confrontation and regroups safely out of
+    town, allowing Munny to recover.
+  trigger_event: The three regroup at a barn outside town to recover Munny’s health.
+- description: Munny, Logan, and the Kid are hiding outside town as Munny recovers
+    from his fever.
+  id: s_5
+  key_delta: Execution of the first act of revenge, killing one of the targeted cowboys.
+  trigger_event: They ambush a group of cowboys and kill Davey-Boy Bunting.
+- description: Following the ambush, Logan’s resolve weakens and he decides to return
+    home.
+  id: s_6
+  key_delta: Reduction of the assassination team from three to two due to Logan’s
+    withdrawal.
+  trigger_event: Logan departs from the group, leaving Munny and the Kid to continue
+    their mission.
+- description: Munny and the Kid have reached the cowboys' ranch.
+  id: s_7
+  key_delta: The second target is eliminated, completing their revenge objective.
+  trigger_event: The Kid ambushes and kills Quick Mike in an outhouse.
+- description: Munny and the Kid have escaped the ranch following the killing of Quick
+    Mike.
+  id: s_8
+  key_delta: Revealed the Kid's personal transformation and rejection of violence
+    after his first kill.
+  trigger_event: The Kid confesses to Munny that this was his first killing and renounces
+    the gunfighter lifestyle.
+- description: Munny and the Kid learn from Little Sue that Logan was captured and
+    tortured to death by Little Bill’s men, who now know their identities.
+  id: s_9
+  key_delta: The death of Logan and the exposure of Munny and the Kid to danger in
+    Big Whiskey is confirmed.
+  trigger_event: Little Sue meets Munny and the Kid to give them the reward money
+    and reveals Logan’s fate.
+- description: The Kid departs for Kansas to deliver the reward money to Munny and
+    Logan’s families, leaving Munny alone.
+  id: s_10
+  key_delta: Munny consciously reverts to his violent past and commits to retaliatory
+    action against Little Bill.
+  trigger_event: Munny drinks whisky and prepares to return to Big Whiskey alone to
+    confront Little Bill.
+- description: Munny arrives in Big Whiskey alone, with tensions high following Logan’s
+    death and the posse’s formation.
+  id: s_11
+  key_delta: Munny initiates violent confrontation with the town’s power structure.
+  trigger_event: Munny enters the saloon and kills Skinny Dubois, the saloon owner
+    and pimp.
+- description: A posse gathered by Little Bill confronts Munny inside the saloon,
+    resulting in a gunfight.
+  id: s_12
+  key_delta: Decimation of Little Bill’s posse and severe injury to Little Bill himself.
+  trigger_event: The gunfight concludes with Little Bill wounded and several deputies
+    dead.
+- description: Munny faces Little Bill alone inside the saloon after the gunfight.
+  id: s_13
+  key_delta: The death of Little Bill and the fall of the town’s law enforcement authority.
+  trigger_event: Munny prevents Little Bill from reaching his pistol and kills him
+    with a final gunshot.
+- description: Munny warns the townsfolk against disrespecting Logan’s burial or harming
+    the prostitutes, then leaves Big Whiskey.
+  id: s_14
+  key_delta: Ending of immediate violent conflict and Munny’s departure from the town.
+  trigger_event: Munny departs the town after delivering his final threats and warnings.
+- description: Munny has returned to his farm, where he pays a final visit to his
+    late wife’s grave.
+  id: s_15
+  key_delta: Munny leaves Big Whiskey behind, returns to his family life, and later
+    establishes a prosperous future in San Francisco.
+  trigger_event: After riding out of town, Munny returns to his farm and pays one
+    last visit to Claudia's grave.

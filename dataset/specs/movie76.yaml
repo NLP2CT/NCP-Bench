@@ -1,0 +1,318 @@
+commitments:
+- description: The discovery of Margot’s affair through Mark's love letter (s_0) must
+    precede all planning and blackmail actions towards Swann (s_1 and beyond).
+  id: c_0
+  satisfaction_condition: Node s_0 has occurred before any blackmail or murder planning
+    event (s_1 or later) is acknowledged by the system.
+  type: ordering
+  violation_condition: Player’s input leads to blackmailing or murder plans occurring
+    or being acknowledged before Tony has discovered the affair evidence (before s_0).
+- description: Swann remains coerced and bound by blackmail into agreeing to kill
+    Margot from s_1 through s_5; any conflicting agency or motives introduced before
+    Swann’s death invalidates logic.
+  id: c_1
+  satisfaction_condition: Between s_1 and s_5, Swann is always under Tony’s blackmail
+    pressure and consent to commit the murder.
+  type: invariant
+  violation_condition: Player input or narrative attempts lead to Swann acting independently
+    without blackmail leverage or before s_1 or after s_5 when he is already dead.
+- description: The murder plan execution actions (s_3) must precede the failed assassination
+    attempt and Swann’s death (s_4).
+  id: c_2
+  satisfaction_condition: System only acknowledges the murder plan briefing and preparation
+    (s_3) before any attempt or failure thereof (s_4).
+  type: ordering
+  violation_condition: Player-induced sequence where Swann’s killing attempt or Margot’s
+    defense occurs before murder planning is logically established.
+- description: Margot kills Swann in self-defense during the failed assassination
+    attempt (s_4), never the initiator of unprovoked aggression.
+  id: c_3
+  satisfaction_condition: At s_4, the killing of Swann must be interpreted as Margot
+    defending herself against Swann’s attack.
+  type: invariant
+  violation_condition: Player’s actions or system states represent Margot as culpable
+    for initiating violence or attacking Swann first during s_4.
+- description: Tony manipulates the crime scene and instructs Margot to conceal his
+    interference only after Swann’s death and before formal police involvement (s_5).
+  id: c_4
+  satisfaction_condition: Between s_4 and s_6, Tony plants evidence as described and
+    persuades Margot to keep quiet about his instructions.
+  type: invariant
+  violation_condition: Player or narrative causes evidence tampering or Tony’s instructions
+    to Margot outside this window or prior to Swann’s death.
+- description: Police investigation and questioning (s_6) must follow the murder attempt
+    and Tony’s framing efforts (s_5).
+  id: c_5
+  satisfaction_condition: Police interrogation by Hubbard on events and inconsistencies
+    recorded only after s_5 has transpired.
+  type: ordering
+  violation_condition: Player triggers police interrogation or investigation before
+    the murder attempt and framing actions logically occur.
+- description: Margot must be arrested, tried, and convicted based on Tony’s framing
+    and investigation outcomes before the final police suspicion of Tony arises (achievement
+    of s_7).
+  id: c_6
+  satisfaction_condition: Margot's conviction (s_7) occurs before any police open
+    suspicion or re-investigation towards Tony.
+  type: achievement
+  violation_condition: Player or system exposes Tony’s involvement before Margot is
+    legally convicted.
+- description: Mark’s plea for Tony to confess (s_7) occurs before Tony’s refusal
+    and Hubbard’s developing suspicion (s_8).
+  id: c_7
+  satisfaction_condition: Mark’s appeal to Tony is present in the narrative prior
+    to Hubbard’s incriminating discoveries about Tony’s key and cash.
+  type: ordering
+  violation_condition: Player input causes Hubbard’s suspicion or discovery of Tony’s
+    evidence before Mark’s plea is made or acknowledged.
+- description: Hubbard’s discovery of Tony’s hidden key and cash (s_8) must precede
+    his covert reentry to the flat using Tony’s key (s_9).
+  id: c_8
+  satisfaction_condition: Hubbard only executes covert substitution of the raincoat
+    and uses Tony’s key after confirming hidden evidence indicating Tony’s guilt.
+  type: invariant
+  violation_condition: Player is allowed to perform or system acknowledges Hubbard’s
+    covert search actions before s_8 event.
+- description: Margot’s release and evidence demonstration proving she is unaware
+    of the hidden key (s_10) must occur before Tony’s exposure via inability to open
+    door with handbag key and subsequent use of hidden key (s_11).
+  id: c_9
+  satisfaction_condition: System depicts Margot re-entering without knowledge of the
+    hidden key before Tony’s failed attempt with handbag key and the later use of
+    the hidden key.
+  type: ordering
+  violation_condition: Player or system sequences Tony’s exposure or key revelations
+    before Margot’s release and her unsuccessful entry attempt.
+- description: Tony’s guilt and capture must be concretely proven by his use of the
+    hidden key at the front door with blocked escape (s_11), sealing the narrative
+    resolution.
+  id: c_10
+  satisfaction_condition: Tony’s unlocking of the front door with the secret key and
+    police containment happen as final proof of guilt in the narrative endpoint.
+  type: achievement
+  violation_condition: Player bypasses or negates this conclusive proof of guilt (e.g.,
+    Tony escapes or evidence is missing) invalidating the story resolution.
+- description: The narrative closure where Tony accepts arrest and drinks calmly in
+    the flat surrounded by police (s_12) must follow the sealing of his guilt and
+    blocking of escape (s_11).
+  id: c_11
+  satisfaction_condition: Narrative only ends with Tony in custody resignedly drinking
+    after all evidence and capture conditions at s_11 are met.
+  type: invariant
+  violation_condition: Player manipulates the story to avoid or skip Tony’s acceptance
+    and confinement following his exposure.
+initial_facts:
+- content: Tony Wendice is a retired ex-professional tennis player.
+  id: f_0
+  negated: false
+- content: Tony Wendice lives in a London flat with his wealthy wife Margot Wendice.
+  id: f_1
+  negated: false
+- content: Margot Wendice is having a secret affair with American crime-fiction writer
+    Mark Halliday.
+  id: f_2
+  negated: false
+- content: Tony Wendice suspects Margot's affair but has not yet discovered concrete
+    evidence.
+  id: f_3
+  negated: false
+- content: Tony Wendice has not yet discovered the love letter from Mark Halliday
+    that Margot once kept in her handbag.
+  id: f_4
+  negated: false
+- content: Tony Wendice holds feelings of resentment and jealousy about Margot's affair.
+  id: f_5
+  negated: false
+- content: Tony's life is currently idle following his retirement prompted by Margot's
+    complaints.
+  id: f_6
+  negated: false
+- content: Tony Wendice does not yet have direct knowledge of or interaction with
+    petty criminal C.A. Swann regarding blackmail or murder planning.
+  id: f_7
+  negated: false
+- content: The police, Chief Inspector Hubbard, and other law enforcement are not
+    yet involved in any investigation related to the Wendices or Margot's murder.
+  id: f_8
+  negated: false
+- content: Margot Wendice has not been arrested or charged with any crime.
+  id: f_9
+  negated: false
+- content: Tony Wendice has not yet manipulated any crime scene or planted evidence.
+  id: f_10
+  negated: false
+- content: All characters mentioned (Tony, Margot, Mark, Swann) are alive with no
+    violent incidents yet occurred.
+  id: f_11
+  negated: false
+- content: Margot has not revealed her affair to any third party including Tony.
+  id: f_12
+  negated: false
+meta:
+  genres: ["Thriller", "Crime"]
+  id: movie76
+  player_role: Tony Wendice
+  title: "Dial M for Murder"
+synopsis: Tony Wendice is an ex-professional tennis player who lives in a London flat
+  with his wealthy wife Margot. Tony retired after Margot complained about his busy
+  schedule, and she began an affair with American crime-fiction writer Mark Halliday,
+  which Tony secretly discovered. Motivated by resentment, jealousy, and greed, Tony
+  devises a plan to have Margot murdered. When Mark visits England, Margot introduces
+  him to Tony as a casual acquaintance. After sending the two lovers out for the evening,
+  Tony makes an excuse to meet at the flat with petty criminal C.A. Swann, an old
+  acquaintance from Cambridge. Tony has been following Swann in order to blackmail
+  him into committing the murder. Tony tells Swann of Margot's affair, including a
+  love letter from Mark which she once kept in her handbag. Six months ago, Tony stole
+  the handbag and anonymously blackmailed her. After tricking Swann into leaving his
+  fingerprints on the letter, Tony offers to pay him £1,000 to kill Margot. If he
+  refuses, Tony will turn him in to the police as the blackmailer. When Swann agrees,
+  Tony explains his plan. He will take Mark to a party, leaving Margot at home and
+  hiding her latchkey under the carpet on the staircase outside the front door of
+  the flat. Swann is to sneak into the flat after Margot goes to bed and hide behind
+  the curtains in front of the French doors leading to the garden. When Tony telephones
+  from the party at 11 p.m., Margot will go to the phone. Swann is to kill her from
+  behind, open the French doors, and leave signs suggesting a burglary gone wrong,
+  then exit through the front door, again hiding the key under the staircase carpet.
+  The plan works until Tony phones the flat later than intended, as his watch has
+  stopped. Swann, about to give up waiting, has already put the key back under the
+  staircase carpet when the phone rings. He tries to strangle Margot with a scarf,
+  but she defends herself with a pair of scissors, killing him. She then picks up
+  the telephone receiver and pleads for help. Realizing the plan has gone wrong, Tony
+  tells her not to do anything. At home, he calls the police, sends Margot to bed.
+  Then he moves what he assumes is Margot's latchkey from Swann's pocket into her
+  handbag, plants Mark's letter on Swann, and replaces Swann's scarf with one of Margot's
+  stockings. He also persuades Margot to hide the fact that he told her not to call
+  the police. The next day, Chief Inspector Hubbard questions the Wendices and Margot
+  makes several conflicting statements. When Hubbard explains that Swann must have
+  entered through the front door, Tony falsely claims to have seen Swann after Margot's
+  handbag was stolen and suggests that Swann made a copy of her key. Hubbard does
+  not believe that story because no key was found on Swann. Hubbard arrests Margot
+  after concluding that she killed Swann for blackmailing her with Mark's letter when
+  he came to collect. Margot is found guilty and sentenced to death for murder. On
+  the day before her scheduled execution, Mark tries to persuade Tony to save her
+  by telling the police that he hired Swann to kill her. Tony refuses, insisting the
+  story is too unrealistic, just before Hubbard arrives. With Mark hiding in the bedroom,
+  Hubbard asks Tony about money he has been spending lately, tricks him into revealing
+  that his latchkey is in his raincoat, and asks him about an attaché case. Tony claims
+  to have lost the case, but Mark notices it on the bed, full of cash. Realizing his
+  story is true, Mark stops Hubbard from leaving and explains his theory. Hubbard
+  claims to prefer Tony's story that Margot gathered the money to pay Swann before
+  deciding to kill him, but after Mark leaves, Hubbard discreetly swaps his own raincoat
+  with Tony's, and as soon as Tony has left, he uses Tony's key to re-enter the flat.
+  He really does suspect Tony, having discovered that the key in Margot's handbag
+  was Swann's. Mark returns after seeing Tony leave. Meanwhile, on Hubbard's orders,
+  police officers release Margot. She tries to unlock the door with the key in her
+  purse, then enters through the garden, proving she is unaware of the hidden key.
+  Hubbard has the handbag returned to the police station, where Tony retrieves it
+  after discovering that he has no key. When he is unable to unlock the front door
+  with the key from the bag, he takes Margot's key from the staircase and opens the
+  door, proving his guilt. With his escape routes blocked by Hubbard and another policeman,
+  Tony makes himself a drink.
+trajectory:
+- description: Tony Wendice, retired ex-professional tennis player, lives in a London
+    flat with his wealthy wife Margot. Margot is secretly having an affair with American
+    writer Mark Halliday, unknown to most but suspected by Tony. Tony holds resentment
+    and jealousy, his life idle since retirement at Margot's insistence.
+  id: s_0
+  key_delta: Tony uncovers Margot's infidelity through Mark's love letter, revealing
+    her affair and establishing the motive for his forthcoming plan.
+  trigger_event: Tony discovers Margot's affair with Mark and finds a love letter
+    Mark sent her, previously kept in her handbag.
+- description: Tony confronts and blackmails petty criminal C.A. Swann, an old acquaintance,
+    and coerces him into agreeing to murder Margot. Tony possesses evidence including
+    the love letter, and Swann is being manipulated under threat of police exposure.
+  id: s_1
+  key_delta: Swann is enlisted as the intended assassin, binding him into Tony's plan
+    through blackmail.
+  trigger_event: Tony meets Swann in the flat, shows him the letter, and blackmails
+    him into agreeing to kill Margot for £1,000.
+- description: Margot introduces Mark to Tony as a casual acquaintance. Tony plans
+    to remove both from the flat simultaneously, setting the stage for the murder
+    to be disguised as a burglary gone wrong.
+  id: s_2
+  key_delta: Tony orchestrates a diversion with Margot and Mark leaving, enabling
+    the murder attempt to proceed under cover of their absence.
+  trigger_event: Tony sends Margot and Mark out for the evening and arranges to meet
+    Swann at the flat later.
+- description: 'Tony hides Margot''s latchkey under the carpet outside the flat''s
+    front door and briefs Swann on the murder plan: Swann will hide by the French
+    doors, wait for Tony''s 11 p.m. call to lure Margot to the phone, then kill her
+    and stage a burglary.'
+  id: s_3
+  key_delta: The murder plan details are set in place, with the hidden key and Swann's
+    positioning assigned.
+  trigger_event: Tony places the latchkey under the carpet and explains the timed
+    sequence and location for the murder to Swann.
+- description: During the planned timeframe, Tony's watch stops and delays his phone
+    call. Swann, losing patience, has already started to abort but then tries to kill
+    Margot with a scarf when the phone rings. Margot defends herself and kills Swann
+    with scissors.
+  id: s_4
+  key_delta: The assassination attempt fails and results in Swann's death at Margot's
+    hands, a critical deviation from Tony's original plan.
+  trigger_event: Tony calls the flat late; Swann attempts to strangle Margot, but
+    she kills him in self-defense.
+- description: 'Tony arrives home to the aftermath: Margot with the dead Swann. Tony
+    tells Margot not to call the police and manipulates the crime scene by planting
+    evidence to implicate Margot and redirect suspicion towards Swann as the blackmailer.'
+  id: s_5
+  key_delta: Tony fabricates evidence and narrative to frame Margot, hiding his own
+    involvement and controlling the police investigation's start.
+  trigger_event: Tony moves Swann's fingerprints, places Mark's letter on Swann, swaps
+    scarves, and convinces Margot to conceal Tony's instruction not to alert authorities.
+- description: Chief Inspector Hubbard questions Tony and Margot. Margot gives conflicting
+    statements. Tony falsely claims Swann copied Margot's key after her handbag was
+    stolen to explain Swann's access to the flat.
+  id: s_6
+  key_delta: The police suspicion shifts to Margot based on Tony's misdirection and
+    Margot's confusing testimony.
+  trigger_event: During police interrogation, Hubbard challenges Margot and Tony's
+    account of events and finds inconsistencies.
+- description: Margot is arrested, charged with Swann's murder, and found guilty after
+    trial, sentenced to death. Mark tries to convince Tony to reveal the truth, suggesting
+    he change his story to save Margot.
+  id: s_7
+  key_delta: Margot's conviction becomes fixed, and an opportunity for exoneration
+    arises through Mark's proposal.
+  trigger_event: Mark appeals to Tony to confess the conspiracy to the police the
+    day before Margot's execution.
+- description: Tony refuses Mark's plea. Chief Inspector Hubbard arrives, conducts
+    a subtle investigation revealing Tony's hidden possession of a key and large sums
+    of money. Hubbard becomes suspicious of Tony's story.
+  id: s_8
+  key_delta: Hubbard gains evidence contradicting Tony's narrative and starts suspecting
+    Tony's direct involvement.
+  trigger_event: Hubbard questions Tony about finances, discovers key in Tony's raincoat,
+    and finds cash-filled attaché case on the bed.
+- description: Mark reveals his theory implicating Tony and stops Hubbard from leaving.
+    Hubbard adopts a façade of believing Tony's story but covertly swaps raincoats
+    to gain access to the flat with Tony's key.
+  id: s_9
+  key_delta: Police establish physical access using Tony's key, advancing their covert
+    investigation targeting Tony.
+  trigger_event: Hubbard swaps his raincoat with Tony's and reenters the flat using
+    Tony's key shortly after Tony departs.
+- description: Margot is released by police; she attempts to unlock the front door
+    with the key in her purse but enters through the garden, unaware of the hidden
+    key. The handbag is returned to the station, where Tony retrieves it but finds
+    no usable key inside.
+  id: s_10
+  key_delta: Margot's ignorance of the hidden key is confirmed; Tony's deception about
+    key possession is exposed.
+  trigger_event: Police release Margot, observe her failing to use the handbag key
+    to enter and later return the bag to the station for Tony.
+- description: Tony tries and fails to unlock the front door with the handbag key,
+    retrieves the hidden key from under the staircase carpet, and opens the door,
+    confirming his guilt. Police block his escape routes.
+  id: s_11
+  key_delta: Tony's possession of the secret key and his guilt are concretely proven,
+    sealing his fate.
+  trigger_event: Tony uses the hidden key to open the flat but finds himself trapped
+    by police presence.
+- description: With all escape routes blocked and guilt apparent, Tony makes himself
+    a drink in the flat, surrounded by police officers.
+  id: s_12
+  key_delta: Tony is trapped in the flat with the hidden-key scheme exposed, and
+    the police have him in custody.
+  trigger_event: Tony accepts his situation, calmly prepares a drink as police contain
+    him.

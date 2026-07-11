@@ -1,0 +1,302 @@
+commitments:
+- description: Brad and Janet must first become stranded and actively decide to leave
+    their car before encountering the castle and its residents, preventing premature
+    awareness or bypass of initial vulnerability.
+  id: c_0
+  satisfaction_condition: Node s_0 has been completed before s_1 is acknowledged.
+  type: ordering
+  violation_condition: Player actions or system acknowledgments imply arrival at or
+    interaction with the castle or castle residents (s_1 or beyond) before s_0 is
+    triggered.
+- description: Frank-N-Furter's introduction must precede any knowledge or interactions
+    involving his creation Rocky Horror, ensuring narrative causality and character
+    influence continuity.
+  id: c_1
+  satisfaction_condition: Node s_2 occurs before s_3 is acknowledged or any player
+    or NPC interaction references Rocky Horror's life state.
+  type: ordering
+  violation_condition: Player or system acknowledges Rocky Horror’s animation or existence
+    (s_3) without preceding acknowledgment of Frank’s introduction (s_2).
+- description: Between Frank's introduction (s_2) and the killing of Eddie (s_5),
+    no explicit violence causing a character’s death may occur, preserving narrative
+    pacing and character threat escalation.
+  id: c_2
+  satisfaction_condition: All narrative and player actions between nodes s_2 and s_5
+    must show no character deaths.
+  type: invariant
+  violation_condition: Any violent death other than Eddie’s in s_5 is triggered or
+    acknowledged before s_5.
+- description: The creation and animation of Rocky Horror (s_3) must occur before
+    any seduction or manipulation of Brad and Janet by Frank (s_6), preserving the
+    sequence of revealing Frank’s power and his creation’s role.
+  id: c_3
+  satisfaction_condition: Node s_3 is completed before s_6 is acknowledged.
+  type: ordering
+  violation_condition: Seduction or impersonation by Frank (s_6) occurs or is recognized
+    before the animation of Rocky Horror (s_3).
+- description: Janet’s discovery of Rocky’s vulnerability (s_7) must precede her becoming
+    intimate with Rocky (s_8), establishing conditional and causal relationship in
+    their developing connection.
+  id: c_4
+  satisfaction_condition: Node s_7 is completed before s_8 is acknowledged.
+  type: ordering
+  violation_condition: Janet’s physical intimacy with Rocky (s_8) occurs or is recognized
+    before discovering him in the vulnerable state (s_7).
+- description: Dr. Everett Scott’s arrival and discovery at the castle (s_9) must
+    precede the group's realization of Janet and Rocky hiding together (s_10), maintaining
+    logical investigation sequence.
+  id: c_5
+  satisfaction_condition: s_9 must be achieved before s_10 is recognized.
+  type: ordering
+  violation_condition: The revelation of Janet and Rocky hiding (s_10) is recognized
+    or acted upon before Dr. Scott’s presence (s_9).
+- description: Between the intruder’s discovery (s_9) and Frank’s Medusa Transducer
+    capture of the group (s_13), the group must retain autonomy and not be prematurely
+    immobilized or forced to perform.
+  id: c_6
+  satisfaction_condition: From s_9 to s_13, no permanent immobilization or performance
+    forcing occurs.
+  type: invariant
+  violation_condition: Group is immobilized or forced into performance states by Frank
+    before node s_13 occurs.
+- description: The key violent events (Eddie’s death in s_5 and the subsequent coup
+    killings in s_14) must both occur to establish the irreversibility of Frank’s
+    regime and shift in power.
+  id: c_7
+  satisfaction_condition: Both nodes s_5 (Eddie’s killing) and s_14 (coup and killings)
+    have been completed.
+  type: achievement
+  violation_condition: The narrative concludes without having both violent milestones
+    (s_5 and s_14) taking place.
+- description: Throughout the narrative from s_0 to s_15, the fundamental human characters
+    (Brad, Janet, Dr. Scott) must not be killed or permanently removed before the
+    final release by Riff Raff and Magenta at s_15, preserving survivor status in
+    the ending.
+  id: c_8
+  satisfaction_condition: No deaths or permanent removal of Brad, Janet, or Dr. Scott
+    occur from s_0 up to s_15.
+  type: invariant
+  violation_condition: Any of these three characters die or are irreversibly removed
+    before s_15.
+- description: The final departure of the castle and alien Transylvanians (s_15) must
+    occur after the overthrow coup by Riff Raff and Magenta (s_14), ensuring logical
+    resolution of power dynamics.
+  id: c_9
+  satisfaction_condition: Node s_14 completed before s_15 is acknowledged and triggered.
+  type: ordering
+  violation_condition: Castle departure (s_15) occurs before or without the coup and
+    killings (s_14).
+- description: Once the group is captured and transformed into statues by the Medusa
+    Transducer (s_13), they must remain under Frank’s control until the coup interrupts
+    the performance (s_14), preventing premature release or escape.
+  id: c_10
+  satisfaction_condition: Between s_13 and s_14, the group remains immobilized and
+    performing under Frank’s control.
+  type: invariant
+  violation_condition: Any release, escape, or loss of control over the group by Frank
+    happens before s_14.
+initial_facts:
+- content: It is a cold and rainy late November evening.
+  id: f_0
+  negated: false
+- content: Brad Majors and Janet Weiss are a newly-engaged couple.
+  id: f_1
+  negated: false
+- content: Brad Majors and Janet Weiss are stranded on a desolate road with a flat
+    tire.
+  id: f_2
+  negated: false
+- content: Brad Majors and Janet Weiss are inside (or just beside) their car, which
+    is stationary due to the flat tire.
+  id: f_3
+  negated: false
+- content: The surrounding environment is dark and isolated.
+  id: f_4
+  negated: false
+- content: Brad and Janet are not yet aware of the castle's existence.
+  id: f_5
+  negated: false
+- content: Brad and Janet have not yet decided to leave their car.
+  id: f_6
+  negated: false
+- content: Frank-N-Furter has not yet been introduced to Brad and Janet.
+  id: f_7
+  negated: false
+- content: Rocky Horror does not yet exist or has not yet been brought to life.
+  id: f_8
+  negated: false
+- content: Eddie has not yet appeared or arrived at the castle.
+  id: f_9
+  negated: false
+- content: Brad, Janet, and Dr. Everett Scott are alive and present in the world but
+    have not yet interacted in the story.
+  id: f_10
+  negated: false
+- content: Brad and Janet have not yet entered the castle.
+  id: f_11
+  negated: false
+- content: Brad and Janet have not yet encountered the Annual Transylvanian Convention
+    or its attendees.
+  id: f_12
+  negated: false
+meta:
+  genres: ["Musical", "Comedy"]
+  id: movie23
+  player_role: Frank N. Furter
+  title: "The Rocky Horror Picture Show"
+synopsis: The story, narrated by a criminologist, tells the tale of newly-engaged
+  couple Brad Majors and Janet Weiss, who find themselves lost and with a flat tire
+  on a cold and rainy late November evening. Seeking a phone with which to call for
+  help, Brad and Janet walk to a nearby castle, where they discover a group of strange
+  and outlandish people who are holding an Annual Transylvanian Convention. Brad and
+  Janet watch as the Transylvanians, servants and a tap-dancing groupie dance the
+  film's signature song, "Time Warp". They are soon swept into the world of Dr. Frank-N-Furter,
+  a self-proclaimed "Sweet Transvestite" from Transsexual, Transylvania. The ensemble
+  of convention attendees also includes servants Riff Raff, his sister Magenta, and
+  a groupie named Columbia. Frank claims to have discovered the "secret to life itself".
+  His creation, Rocky Horror, is brought to life. The ensuing celebration is soon
+  interrupted by Eddie, an ex-delivery boy, partial brain donor to Rocky, and Columbia's
+  lover, who rides out of a deep freeze on a motorcycle. In a jealous rage, Frank
+  corners him and kills him with an ice axe. He then departs with Rocky to a bridal
+  suite off of the laboratory. Brad and Janet are shown to separate bedrooms where
+  each is visited and seduced by Frank, who poses as Brad and then as Janet. Janet,
+  upset and emotional, wanders off to look for Brad, who she discovers, via a television
+  monitor, is having a post-coital chat with Frank. She then discovers Rocky, cowering
+  in his birth tank, hiding from Riff Raff, who has been tormenting him. While tending
+  to his wounds, Janet becomes intimate with Rocky, as Magenta and Columbia watch
+  from their bedroom monitor. After discovering that his creation is missing, Frank,
+  Brad and Riff Raff return to the lab, where Frank learns that an intruder has entered
+  the building. Dr. Everett Scott, Brad and Janet's old high school science teacher,
+  has come looking for his nephew, Eddie, but Frank suspects that Dr. Scott investigates
+  UFOs for the government. Upon learning of Brad and Janet's connection to Scott,
+  Frank suspects them of working for him. Frank, Dr. Scott, Brad, and Riff Raff then
+  discover Janet and Rocky together under the sheets in Rocky's birth tank, upsetting
+  Frank and Brad. Rocky and the guests are served dinner, which they soon realise
+  has been prepared from Eddie's mutilated body. Janet runs screaming into Rocky's
+  arms and is slapped and chased through the halls of the castle by a jealous Frank.
+  Janet, Brad, Dr. Scott, Rocky and Columbia all meet in Frank's lab, where Frank
+  captures them with the Medusa Transducer, transforming them into statues. They are
+  then forced to perform a live cabaret floor show and have a semi-orgy in the pool,
+  with Frank as the leader. The performance is interrupted by Riff Raff and Magenta,
+  who stage a coup and announce their plan to return to their home planet. In the
+  process, they kill Columbia, Rocky and Frank. They release Brad, Janet and Dr. Scott,
+  and then depart by lifting off in the Castle itself. The narrator then finishes
+  the film by concluding that the human race is equivalent to insects crawling on
+  the planet's surface.
+trajectory:
+- description: It is a cold and rainy late November evening. Brad Majors and Janet
+    Weiss, a newly-engaged couple, are stranded on a desolate road with a flat tire.
+    The surrounding environment is dark and isolated, emphasizing their vulnerability
+    and need for assistance.
+  id: s_0
+  key_delta: Brad and Janet are stranded outside a remote castle and commit to seeking
+    help there.
+  trigger_event: Brad and Janet decide to leave their car and walk in search of a
+    phone.
+- description: Brad and Janet arrive at a large, eerie castle illuminated against
+    the night sky. Inside, a crowd of strange and outlandish people are gathered for
+    the Annual Transylvanian Convention, creating a surreal and unsettling atmosphere.
+  id: s_1
+  key_delta: Exposure to the Transylvanian convention attendees and their bizarre
+    rituals begins, establishing the castle as a place of unconventional activities.
+  trigger_event: Brad and Janet enter the castle and observe the Transylvanians performing
+    the 'Time Warp' dance.
+- description: The self-proclaimed 'Sweet Transvestite' Dr. Frank-N-Furter, leader
+    of the Transylvanian guests, reveals himself to Brad and Janet. The setting is
+    the castle’s laboratory and living quarters, filled with scientific and theatrical
+    paraphernalia.
+  id: s_2
+  key_delta: Introduction of Frank-N-Furter as an influential figure controlling the
+    environment, shifting power dynamics toward him.
+  trigger_event: Frank-N-Furter greets Brad and Janet and introduces himself.
+- description: 'Frank shows Brad and Janet his scientific creation: Rocky Horror,
+    a muscular, artificially created man who has just been brought to life in the
+    lab''s birth tank.'
+  id: s_3
+  key_delta: Rocky Horror is revealed and animated as Frank’s creation, adding a new
+    living character with unknown intentions.
+  trigger_event: Eddie suddenly bursts from deep freeze into the lab on a motorcycle.
+- description: Eddie, a rebellious ex-delivery boy and face of prior experiments on
+    Rocky, suddenly bursts from a deep freeze on a motorcycle in the castle’s laboratory.
+    The mood intensifies with danger and conflict.
+  id: s_4
+  key_delta: Introduction of Eddie as a disruptive element linked to Frank’s experiments,
+    escalating tension.
+  trigger_event: Eddie arrives dramatically on a motorcycle, interrupting the celebration.
+- description: Following an aggressive encounter, Frank corners and kills Eddie with
+    an ice axe in the laboratory, and then departs with Rocky to a nearby bridal suite
+    branching off the lab. Brad and Janet remain separated in private bedrooms.
+  id: s_5
+  key_delta: Eddie’s death marks the first violent act, solidifying Frank’s dangerous
+    nature and isolating Brad and Janet.
+  trigger_event: After Eddie's murder, Frank moves Brad and Janet into separate rooms
+    and begins pursuing them one by one.
+- description: Brad and Janet are separately seduced by Frank, who impersonates each
+    of them in sequence. The bedrooms are filled with an unsettling intimacy and confusion,
+    as Frank manipulates both guests.
+  id: s_6
+  key_delta: Frank’s seductive manipulation deepens, compromising Brad and Janet’s
+    agency and blurring identity boundaries.
+  trigger_event: Frank visits Brad and then Janet, impersonating and seducing them.
+- description: Janet leaves her bedroom upset and finds Brad via a television monitor
+    in another room, in intimate conversation with Frank. She also discovers Rocky
+    cowering in his birth tank to avoid torment from Riff Raff.
+  id: s_7
+  key_delta: Janet gains visual access to Brad’s interaction with Frank and to Rocky’s
+    vulnerable state, expanding her situational awareness.
+  trigger_event: Janet physically moves through the castle and observes through monitors.
+- description: Janet tends to Rocky’s wounds and develops physical intimacy with him,
+    under the watchful gaze of Magenta and Columbia who observe from a bedroom monitor.
+  id: s_8
+  key_delta: Janet’s relationship with Rocky creates new interpersonal dynamics, shared
+    vulnerability, and a shift in allegiances.
+  trigger_event: Janet physically contacts Rocky, healing and becoming intimate.
+- description: Frank, Brad, and Riff Raff return to the laboratory to find an intruder
+    has entered. Dr. Everett Scott, Brad and Janet’s former science teacher, is present,
+    investigating his missing nephew Eddie.
+  id: s_9
+  key_delta: Introduction of Dr. Scott into the castle’s environment and narrative
+    tension involving investigation and suspicion.
+  trigger_event: Frank and others discover Dr. Scott inside the castle.
+- description: Frank suspects that Dr. Scott investigates UFOs for the government
+    and that Brad and Janet might be allied with him. They together discover that
+    Janet and Rocky are hiding together under the sheets in Rocky's birth tank.
+  id: s_10
+  key_delta: Revelation of Janet and Rocky’s concealment strains trust and heightens
+    internal conflict within the group.
+  trigger_event: Frank marches the group into the dining room and serves the meal.
+- description: Dinner is served to the group, but they soon realize that the meal
+    contains parts of Eddie’s mutilated body, underscoring the macabre nature of the
+    gathering.
+  id: s_11
+  key_delta: Disclosure of cannibalism and the grotesque use of Eddie’s remains marks
+    a moral and visceral turning point.
+  trigger_event: Group begins to eat dinner and discovers its composition.
+- description: Janet screams and flees into Rocky’s arms. Frank, driven by jealousy,
+    slaps and pursues Janet through the castle’s halls, causing chaos and distress.
+  id: s_12
+  key_delta: Physical violence and jealousy escalate the interpersonal conflicts and
+    destabilize the environment.
+  trigger_event: Janet runs from the dining area and encounters Frank’s violent response.
+- description: Brad, Janet, Dr. Scott, Rocky, and Columbia are captured by Frank in
+    his laboratory with the Medusa Transducer. They are transformed into statues and
+    forced to perform in a bizarre live cabaret show, including a semi-orgy in the
+    pool, with Frank controlling the spectacle.
+  id: s_13
+  key_delta: The group’s autonomy is nullified by Frank’s technology, forcing them
+    into performative captivity.
+  trigger_event: Frank activates the Medusa Transducer and immobilizes the group.
+- description: Riff Raff and Magenta stage a coup, killing Columbia, Rocky, and Frank.
+    They announce their plan to return to their home planet and depart by making the
+    castle itself lift off.
+  id: s_14
+  key_delta: Power shifts as Riff Raff and Magenta overthrow Frank’s regime and eliminate
+    primary characters, triggering the castle’s departure.
+  trigger_event: Riff Raff and Magenta execute the takeover and kill the key figures.
+- description: Brad, Janet, and Dr. Scott are freed by Riff Raff and Magenta and left
+    behind as the castle ascends and leaves Earth. The environment reverts to isolated
+    human reality, with a closing narration comparing humans to insects.
+  id: s_15
+  key_delta: Survivors are released from captivity; surreal Transylvanian influence
+    departs, leaving a bleak commentary on humanity.
+  trigger_event: The castle lifts off and departs, leaving the survivors behind.

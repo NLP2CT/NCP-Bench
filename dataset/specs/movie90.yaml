@@ -1,0 +1,293 @@
+commitments:
+- description: Mortimer’s bounty collection on Guy Calloway (s_1) must occur before
+    Manco kills Red 'Baby' Cavanagh (s_2), ensuring the proper establishment of bounty
+    targets and territorial tension.
+  id: c_0
+  satisfaction_condition: Node s_1 has been completed before node s_2 is triggered
+    in the narrative progression.
+  type: ordering
+  violation_condition: Manco kills Red 'Baby' Cavanagh (s_2) before Mortimer collects
+    bounty on Guy Calloway (s_1).
+- description: Manco and Mortimer must meet (s_3) before forming their alliance to
+    pursue Indio’s gang (s_4), so collaboration logically follows acknowledgment of
+    each other.
+  id: c_1
+  satisfaction_condition: Node s_3 (their meeting) is completed prior to node s_4
+    (deciding to team up).
+  type: ordering
+  violation_condition: Player action or narrative events start teamwork or infiltration
+    (s_4) without the prior meeting (s_3).
+- description: Between s_4 and s_5, Manco must maintain cover as a member of Indio's gang, preserving the infiltration premise critical for inside access to the robbery
+    and subsequent plans.
+  id: c_2
+  satisfaction_condition: Throughout nodes s_4 to s_5, Manco is recognized and treated as part of Indio’s gang by NPCs and narrative logic.
+  type: invariant
+  violation_condition: At any point between s_4 and s_5, Manco’s gang membership is
+    exposed or revoked, breaking the infiltration status.
+- description: The major bank robbery event (s_4) must occur before Manco and Mortimer
+    plan to steal the money (s_6), enforcing the logical progression from heist to
+    counter-heist.
+  id: c_3
+  satisfaction_condition: Node s_4 is completed before node s_6 is triggered.
+  type: ordering
+  violation_condition: Attempt to steal the bank money (s_6) before the robbery itself
+    has taken place (s_4).
+- description: Between s_8 and the standoff at s_10, Indio’s musical pocketwatch must
+    be the unique trigger for the gun duel start, so the iconic duel setup is unchanged.
+  id: c_4
+  satisfaction_condition: At s_8 and s_9, Indio’s pocketwatch chimes serve as the
+    exclusive signal to commence the duel.
+  type: invariant
+  violation_condition: The duel begins without Indio playing the pocketwatch or the
+    timing signal being different than the watch’s chimes.
+- description: Manco’s intervention with an identical pocketwatch and provision of
+    a Volcanic Rifle must precede the gun duel between Mortimer and Indio (s_9 before
+    s_10), to balance combat odds.
+  id: c_5
+  satisfaction_condition: Node s_9 occurs fully before the actual duel duel event
+    (s_10).
+  type: ordering
+  violation_condition: Mortimer and Indio’s duel begins (s_10) without Manco appearing
+    and providing assistance with the second pocketwatch and rifle (s_9).
+- description: The revelation of Mortimer’s sister in the pocketwatch photo and Mortimer's
+    killing of Indio for revenge (s_10) must precede Mortimer’s refusal of bounty
+    and the accounting of money by Manco (s_11) to preserve narrative causality.
+  id: c_6
+  satisfaction_condition: Node s_10 is completed before node s_11.
+  type: ordering
+  violation_condition: Player actions or narrative allow Mortimer to refuse bounty
+    or reveal sister before killing Indio and acquiring the watch.
+- description: Throughout nodes s_0 to s_12, the core threat of Indio’s gang remains until the final cleanup at s_12, disallowing premature
+    resolution or removal of key enemies.
+  id: c_7
+  satisfaction_condition: The narrative conflict with the gang persists until the final confrontation at node s_12 is completed.
+  type: invariant
+  violation_condition: The gang threat is entirely resolved or Manco leaves the territory before the final confrontation at s_12.
+- description: The narrative must culminate in Manco eliminating Groggy (s_12) to
+    prevent unresolved threats and ensure the final resolution of conflict.
+  id: c_8
+  satisfaction_condition: Player triggers Groggy’s death during or at s_12, confirming
+    all hostile threats are neutralized.
+  type: achievement
+  violation_condition: Player allows Groggy to survive and threaten Manco or prevent
+    Groggy’s death before the narrative end.
+- description: Manco’s final collection of the stolen Bank of El Paso money must come
+    after eliminating all gang members (s_12), ensuring the loot possession occurs
+    only after complete gang neutralization.
+  id: c_9
+  satisfaction_condition: Manco’s acquisition of the bank money happens only after
+    all enemies have been killed at s_12.
+  type: ordering
+  violation_condition: Loot is acquired by Manco before the gang is fully dealt with
+    or gang members remain alive after money is taken.
+initial_facts:
+- content: Manco is a bounty hunter riding into the western frontier town of Tucumcari.
+  id: f_0
+  negated: false
+- content: Colonel Mortimer is a bounty hunter present in the same outlaw territory.
+  id: f_1
+  negated: false
+- content: Outlaws Guy Calloway and Red 'Baby' Cavanagh have active bounties in Tucumcari.
+  id: f_2
+  negated: false
+- content: The atmosphere in Tucumcari is tense with lawlessness and presence of competing
+    bounty hunters.
+  id: f_3
+  negated: false
+- content: Manco is currently unaware of Colonel Mortimer’s identity and actions.
+  id: f_4
+  negated: false
+- content: Colonel Mortimer is currently unaware of Manco’s identity and actions.
+  id: f_5
+  negated: false
+- content: Manco holds no membership or affiliation with Indio’s gang at t=0.
+  id: f_6
+  negated: false
+- content: Indio and his gang are active antagonists present in the western territories.
+  id: f_7
+  negated: false
+- content: Manco does not possess any pocketwatch related to Indio or the young woman.
+  id: f_8
+  negated: false
+- content: Mortimer does not possess Indio's pocketwatch at t=0.
+  id: f_9
+  negated: false
+- content: No bank robbery has yet occurred at t=0.
+  id: f_10
+  negated: false
+- content: There is no current alliance or cooperation between Manco and Mortimer
+    at t=0.
+  id: f_11
+  negated: false
+- content: Manco is unaware of the final revelation about the young woman in the pocketwatch
+    photo.
+  id: f_12
+  negated: false
+- content: Mortimer is unaware of the relationship between the young woman in the
+    pocketwatch and himself.
+  id: f_13
+  negated: false
+- content: Manco does not currently possess the bank money from the Bank of El Paso.
+  id: f_14
+  negated: false
+- content: Groggy is an active member of Indio's gang and poses a threat at t=0.
+  id: f_15
+  negated: false
+meta:
+  genres: ["Western", "Action"]
+  id: movie90
+  player_role: Manco
+  title: "For a Few Dollars More"
+synopsis: Eastwood and Van Cleef portray two bounty hunters in pursuit of "El Indio",
+  one of the most wanted fugitives in the western territories, and his gang. Indio
+  is a ruthless, intelligent man. He has a musical pocketwatch that he plays before
+  engaging in gun duels. "When the chimes finish, begin", he says. Flashbacks reveal
+  that the watch originates from a young woman, who killed herself while being raped
+  by Indio after he had found her with her lover and killed him. The watch bears a
+  photo of the woman and was presented as a gift by the young man before being killed.
+  Colonel Mortimer illegally stops a train in Tucumcari, and soon after collects a
+  bounty of $1,000 on Guy Calloway. Mortimer's gunslinging skill is displayed as he
+  easily kills him from long distance. After collecting the bounty he inquires about
+  Red "Baby" Cavanagh, who has a $2,000 bounty, and was last seen in White Rocks.
+  Mortimer is told that Cavanagh has already been targeted by Eastwood's character,
+  who is referred to as "Manco". We see Manco ride into town and track down Cavanagh
+  at a saloon playing five-card draw poker. Manco kills him and his men, and takes
+  the bounty. Eventually, the two bounty hunters, after learning about each other
+  from different sources, meet in El Paso and, after butting heads, decide to team
+  up to take down Indio and his gang. Indio's primary goal is to rob the Bank of El
+  Paso and its disguised safe containing "almost a million dollars." Mortimer persuades
+  a reluctant Manco to join Indio's gang during the robbery in order to "get him between
+  two fires." Manco is offered membership in the gang after rescuing one of Indio's
+  friends from prison. When Indio robs the bank, he brings the gang and the money
+  to the small border town of Agua Caliente, where Mortimer reunites with Manco. The
+  hunchback Wild recognizes the Colonel from a previous encounter in which the Colonel
+  had deliberately insulted him and forces a showdown in which he is killed by the
+  Colonel. The Colonel then proves his worth to Indio by cracking open the safe without
+  using explosives, but Indio states his intention to wait a month if necessary to
+  allow the furor over the bank robbery to die down and locks the money away. Manco
+  and the Colonel plan to steal the bank money from Indio, but the bandits catch them
+  in the act and severely beat them. Indio's right-hand man Nino, on orders from Indio,
+  kills their guard and releases the bounty hunters. Indio informs his gang that they
+  "got away", and sends them after the escaped bounty hunters. He intends to kill
+  off his gang with the bounty killers while he and Nino take all the loot for themselves.
+  However, the smarter Groggy figures out what Indio is up to, and kills Nino. Before
+  he can kill Indio, he finds that the Colonel has already removed the stolen money
+  from where Indio had hidden it. Indio convinces Groggy to join forces with him to
+  trap the bounty-killers. The next morning, Manco and Mortimer shoot down the gang,
+  one by one, in the streets of the town. Standing alone, Mortimer shoots Groggy when
+  the outlaw tries to run for it, but then has his gun shot out of his hand by Indio,
+  who then takes out his pocketwatch and begins playing it. As the chimes nears the
+  end, Manco suddenly appears with an identical pocketwatch, playing the same tune
+  as Indio's, which Mortimer realizes had been taken from him earlier. As this happens,
+  Manco holds an 1854 Jennings Rifle Company Volcanic Rifle on Indio and gives his
+  gunbelt and pistol to Mortimer, evening the odds. "Now we start", Manco announces
+  and sits while Mortimer and Indio face off. During the standoff, Manco looks down
+  at the pocketwatch and sees the same picture of the woman Indio had raped. The music
+  finishes, and Mortimer outdraws and guns down Indio. At this juncture, Mortimer
+  takes Indio's pocketwatch. Manco gives him back the other watch and remarks on a
+  family resemblance; the Colonel replies, "Naturally, between brother and sister",
+  indicating that the young woman's portrait was that of Mortimer's sister. His revenge
+  complete, he decides to take no part of the bounty. As Manco tosses Indio's body
+  into a wagon with the corpses of the rest of the gang and counts them by the reward
+  for each one, he realizes he is short of the $27,000 total, and spins around to
+  gun down Groggy who had survived and was sneaking up behind him to kill him. As
+  he leaves, he recovers the money stolen from the Bank of El Paso, though it is not
+  clear whether he intends to return it. He then rides off into the distance with
+  his horse towing the wagon full of the lifeless bodies of the entire gang.
+trajectory:
+- description: Manco, a bounty hunter, rides into the western frontier town of Tucumcari,
+    where various outlaws including Guy Calloway and Red 'Baby' Cavanagh have active
+    bounties. The atmosphere is tense with lawlessness and the presence of competing
+    bounty hunters.
+  id: s_0
+  key_delta: Establishes the presence of two key bounty hunters, Mortimer and Manco,
+    with overlapping targets in the outlaw territory.
+  trigger_event: Colonel Mortimer illegally stops a train in Tucumcari.
+- description: Mortimer collects a $1,000 bounty by killing Guy Calloway from long
+    range at Tucumcari. Information circulates about Red 'Baby' Cavanagh having a
+    $2,000 bounty and being targeted by Manco.
+  id: s_1
+  key_delta: Manco locates Red 'Baby' Cavanagh, confirming the overlap in their pursuits
+    and setting the stage for competition between the bounty hunters.
+  trigger_event: Manco rides into town and enters a saloon where Red 'Baby' Cavanagh
+    is playing poker.
+- description: Inside the saloon, Manco kills Red 'Baby' Cavanagh and his men, then
+    collects the bounty. The tension between the bounty hunters exists but is indirect
+    as they operate separately.
+  id: s_2
+  key_delta: The two bounty hunters become aware of each other’s existence and conflicting
+    interests, leading to a decision to collaborate.
+  trigger_event: Manco and Mortimer meet each other for the first time in El Paso.
+- description: 'In El Paso, after initial friction, Manco and Mortimer agree to team
+    up to pursue their common target: El Indio and his gang who are planning a major
+    bank robbery.'
+  id: s_3
+  key_delta: Manco gains membership in Indio's gang, creating an inside position for
+    the bounty hunters.
+  trigger_event: Colonel Mortimer persuades Manco to infiltrate Indio's gang during
+    their planned bank robbery.
+- description: Manco rescues one of Indio's friends from prison and is accepted into
+    the gang. Indio prepares to rob the Bank of El Paso, where a large sum of money
+    is secured in a disguised safe.
+  id: s_4
+  key_delta: The major robbery occurs and the stolen money is in Indio's control,
+    escalating the stakes for all involved.
+  trigger_event: Indio successfully robs the Bank of El Paso and takes the gang plus
+    the money to Agua Caliente.
+- description: In the border town of Agua Caliente, Mortimer reunites with Manco.
+    The hunchback Wild, harboring a grudge against Mortimer, forces a duel and is
+    killed by Mortimer. Mortimer cracks open the safe without explosives as proof
+    of skill.
+  id: s_5
+  key_delta: Indio demonstrates patience and control over the loot; Mortimer proves
+    his value to the gang.
+  trigger_event: Indio locks away the stolen money, declaring he will wait a month
+    for investigations to subside.
+- description: Manco and Mortimer secretly plan to steal the bank money from Indio.
+    While caught in the act and severely beaten, they are unexpectedly released after
+    their guard is killed by Nino on Indio’s orders.
+  id: s_6
+  key_delta: The gang splits in loyalty and a trap is set by Indio against both the
+    bounty hunters and his own men.
+  trigger_event: Indio sends the gang to pursue the escaped bounty hunters, intending
+    to kill off his own men using them as bait.
+- description: Groggy, a smarter gang member, uncovers Indio’s plan, kills Nino, but
+    discovers that Mortimer has already removed the stolen money from its hiding place.
+  id: s_7
+  key_delta: Groggy and Indio form an alliance to counter the bounty hunters, escalating
+    the conflict.
+  trigger_event: Groggy convinces Indio to join forces with him to trap the bounty
+    hunters.
+- description: The next morning in Agua Caliente, Manco and Mortimer systematically
+    shoot down the gang members in the town streets, thinning Indio's forces severely.
+  id: s_8
+  key_delta: The final confrontation commences; Indio signals the start of a gun duel
+    with the distinctive watch chimes.
+  trigger_event: Manco steps in with the matching pocketwatch and stops Indio from exploiting Mortimer's disadvantage, forcing an even duel.
+- description: As Indio's watch chimes near the end, Manco appears with an identical pocketwatch. He holds a Volcanic Rifle on Indio and gives his gunbelt and pistol to Mortimer to even the odds.
+  id: s_9
+  key_delta: Manco successfully levels the playing field, setting up a fair gun duel between Mortimer and Indio.
+  trigger_event: Mortimer and Indio complete the pocketwatch duel, ending with Indio's death.
+- description: During the standoff, Manco looks at the pocketwatch photo and recognizes
+    it as the young woman Indio had raped. Mortimer uses the distraction to outdraw
+    and kill Indio.
+  id: s_10
+  key_delta: Indio is dead; Mortimer acquires the symbolic watch confirming his personal
+    revenge.
+  trigger_event: Mortimer takes Indio’s pocketwatch after killing him.
+- description: Manco returns the other pocketwatch to Mortimer, noting the resemblance
+    between the photo and Mortimer, who confirms the woman was his sister. Mortimer
+    declines any bounty as revenge is fulfilled.
+  id: s_11
+  key_delta: Mortimer’s revenge is revealed as a personal vendetta; the bounty hunters
+    settle their accounts.
+  trigger_event: Manco counts the dead gang members’ bounty money and realizes it
+    is short.
+- description: Manco suddenly shoots Groggy, who had survived and sneaked up on him,
+    eliminating the last threat. He loads the recovered bank money onto his wagon
+    and prepares to leave.
+  id: s_12
+  key_delta: All principal antagonists are neutralized; Manco takes possession of
+    the loot and departs, leaving the conflict resolved.
+  trigger_event: Manco rides away with his horse towing a wagon full of the gang’s
+    lifeless bodies and the stolen money.

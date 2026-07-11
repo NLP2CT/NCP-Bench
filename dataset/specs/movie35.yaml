@@ -1,0 +1,235 @@
+commitments:
+- description: Noah Cross's introduction and Mulwray's death (s_0) must occur before
+    any investigation or knowledge of Mulwray's murder attempts or Cross's involvement;
+    prevents premature exposure of Cross's role.
+  id: c_0
+  satisfaction_condition: Progression through node s_0 (Mulwray's death recovered
+    and initial context established) is achieved before nodes s_1 or later.
+  type: ordering
+  violation_condition: Investigators or other characters act as if Mulwray's murder
+    or Cross's involvement is known before s_0 completion, e.g., confronting Cross
+    with murder evidence before his death is discovered.
+- description: Throughout s_0 to s_2, Cross's manipulation of water flow and covert
+    land acquisition scheme must remain hidden and unconfirmed to investigators and
+    the broader public.
+  id: c_1
+  satisfaction_condition: Before arriving at s_2, investigators/NPCs have no confirmed
+    knowledge that the water releases are used to coerce landowners or that Cross
+    uses fake name real estate purchases.
+  type: invariant
+  violation_condition: Investigators or other characters prematurely expose or use
+    knowledge of Cross's land acquisition deception or water sabotage before s_2
+    is reached.
+- description: Cross's covert land acquisition strategy through fake purchases and
+    water resource manipulation is first substantively exposed at node s_2. This
+    milestone is necessary before later evidence can implicate him more directly.
+  id: c_2
+  satisfaction_condition: Investigators obtain documented proof or NPC confirmation
+    of the fake real estate purchases and water department intimidation schemes as
+    described in s_2.
+  type: achievement
+  violation_condition: Narrative ends or moves to final stages without this critical
+    understanding established.
+- description: The bifocal-glasses evidence becomes the first key direct murder link
+    implicating Cross at s_3, after earlier investigation has already exposed his
+    broader water-and-land conspiracy without yet resolving Mulwray's murder.
+  id: c_3
+  satisfaction_condition: Node s_3 is triggered after s_2, with investigators moving
+    from exposing Cross's broader land-and-water scheme to obtaining the bifocal-based
+    murder implication against him.
+  type: ordering
+  violation_condition: Investigators conclusively use the bifocal-glasses murder evidence
+    against Cross before the broader land acquisition conspiracy and water manipulation
+    scheme have been established.
+- description: From s_3 to s_5, Cross's public assertion of familial authority over
+    Katherine and his overt move to take custody of her must not be fully brought
+    into the open until the final confrontation; this maintains narrative tension
+    and logical escalation.
+  id: c_4
+  satisfaction_condition: Cross's claimed familial authority over Katherine becomes
+    openly asserted and central to the conflict only at or after the s_4 confrontation.
+  type: invariant
+  violation_condition: Narrative openly centers Cross's custody claim over Katherine
+    or resolves control of her before the required confrontational context at s_4.
+- description: Final climax (s_4) with confrontation between Cross, Evelyn, and Jake
+    leading to Evelyn's fatal shooting and Cross's wounding must be achieved before
+    narrative resolution to mark the story’s turning point.
+  id: c_5
+  satisfaction_condition: Climactic event of the shooting at Chinatown (s_4) occurs
+    with Evelyn’s death and Cross wounded physically on scene.
+  type: achievement
+  violation_condition: Narrative proceeds to resolution without this confrontation
+    and its consequences occurring.
+- description: Cross's uncontested control over Katherine and the effective survival
+    of his land dealings are reasserted only after the Chinatown climax (s_4), when
+    Gittes and his associates are released and the aftermath settles.
+  id: c_6
+  satisfaction_condition: Node s_5 must be reached only after s_4 confrontation and
+    aftermath have fully played out.
+  type: ordering
+  violation_condition: Gittes or other investigators gain freedom or knowledge of
+    Cross's fate and Katherine's custody before s_4 climax resolution.
+- description: Throughout the narrative from s_0 to s_5, the systemic corruption and
+    impunity surrounding Cross’s control over water and land interests must remain
+    unbroken; no permanent justice or reform is achieved within trajectory.
+  id: c_7
+  satisfaction_condition: At any point through s_0 to s_5, Cross retains influence
+    and no evidence or action fully dismantles his power or exposes systemic corruption
+    conclusively.
+  type: invariant
+  violation_condition: Narrative outcomes result in Cross losing all power, systemic
+    corruption being resolved, or full justice served before story end.
+initial_facts:
+- content: Noah Cross is a powerful and influential Los Angeles businessman with extensive
+    landholdings, including tracts in the northwest San Fernando Valley.
+  id: f_0
+  negated: false
+- content: Noah Cross was previously in business partnership with Hollis I. Mulwray,
+    chief engineer of the Los Angeles Department of Water and Power.
+  id: f_1
+  negated: false
+- content: Hollis I. Mulwray opposes the proposed new dam construction on grounds
+    of safety.
+  id: f_2
+  negated: false
+- content: The public water department and real estate development interests are in
+    tension, with Mulwray's opposition creating conflict.
+  id: f_3
+  negated: false
+- content: Noah Cross's involvement in any plot concerning Mulwray's death or land
+    acquisition schemes has not yet been discovered or confirmed by investigators
+    or the public at t=0.
+  id: f_4
+  negated: false
+- content: At t=0, the body of Hollis I. Mulwray is recovered drowned in a reservoir
+    under suspicious circumstances.
+  id: f_5
+  negated: false
+- content: Noah Cross has not publicly or privately acknowledged any connection to
+    or knowledge of Mulwray's death at t=0.
+  id: f_6
+  negated: false
+- content: Manipulation of water flow releases or land acquisition tactics involving
+    fake real estate purchases are unknown and unconfirmed to investigators and the
+    public at t=0.
+  id: f_7
+  negated: false
+- content: Jake Gittes has not yet been commissioned by Noah Cross to locate Katherine
+    Cross or involved in Cross-related investigations at t=0.
+  id: f_8
+  negated: false
+- content: Noah Cross maintains a façade of legitimacy and respectability publicly
+    at t=0.
+  id: f_9
+  negated: false
+- content: Katherine Cross is connected to Noah Cross's family but is not yet publicly
+    known to be missing or under active investigation at t=0.
+  id: f_10
+  negated: false
+- content: The systemic corruption and impunity surrounding Cross’s control over water
+    and land interests remain intact and unexposed at t=0.
+  id: f_11
+  negated: false
+- content: No confrontations, arrests, or direct accusations involving Noah Cross
+    have yet taken place at t=0.
+  id: f_12
+  negated: false
+meta:
+  genres: ["Mystery", "Thriller"]
+  id: movie35
+  player_role: Noah Cross
+  title: "Chinatown"
+synopsis: Noah Cross is a powerful Los Angeles businessman and former partner of
+  water engineer Hollis I. Mulwray, whose opposition to a new dam puts him at odds
+  with civic and development interests. After a woman posing as Evelyn Mulwray hires
+  private investigator Jake Gittes to tail Hollis, photographs of Hollis with the
+  young Katherine Cross trigger a scandal. The real Evelyn exposes the deception,
+  and Gittes's attempt to discover who used him leads him into the aftermath of Hollis's
+  death by drowning. As Gittes investigates suspicious nighttime water releases, attacks
+  by water department enforcers, and clues tied to obituaries and retirement-home
+  residents, he eventually identifies Cross and is later hired by him to find Katherine,
+  who has disappeared after Mulwray's death. Gittes's inquiry uncovers that land
+  in the northwest San Fernando Valley is being acquired in the names of dead or unwitting
+  people while water shortages and intimidation pressure landowners to sell, revealing
+  a scheme that Mulwray appears to have discovered before he was killed. Cross's hidden
+  interests come under greater threat when Evelyn and Gittes confirm the fraudulent
+  purchases, Ida Sessions is murdered, and forensic evidence shows Mulwray's body
+  was moved. Matters escalate when Gittes finds bifocal glasses in Evelyn's saltwater
+  pond and learns that Katherine is both Evelyn's sister and daughter, born from Cross's
+  sexual abuse. Gittes tries to help Evelyn and Katherine flee, but after Cross privately
+  admits his plan to annex, irrigate, and develop the Valley, Gittes confronts him
+  with the bifocals as evidence connecting him to Mulwray's murder. Mulvihill intervenes,
+  forcing Gittes to lead Cross to Katherine's hiding place in Chinatown. There, police
+  arrest Gittes, Cross openly claims Katherine as his granddaughter, and Evelyn shoots
+  Cross in the arm before being killed by police gunfire as she attempts to escape.
+  In the aftermath, Cross takes Katherine away, Gittes is released, and the corrupt
+  political order surrounding Cross's water and land empire remains intact.
+trajectory:
+- description: Noah Cross is introduced as a powerful and influential Los Angeles
+    businessman with extensive landholdings, including tracts in the northwest San
+    Fernando Valley. He previously partnered in business with Hollis I. Mulwray, the
+    chief engineer of the Los Angeles Department of Water and Power. The city is embroiled
+    in a controversy over plans for constructing a new dam, opposed by Mulwray on
+    safety grounds. The water department and real estate interests are in tension,
+    and Mulwray's position is causing conflict within these circles.
+  id: s_0
+  key_delta: Mulwray, an obstacle to water department and development plans, is dead
+    under suspicious conditions, escalating tensions and power struggles in the city.
+  trigger_event: The body of Hollis I. Mulwray is recovered drowned in a reservoir
+    under suspicious circumstances.
+- description: Noah Cross is informed of Mulwray's death and the investigation beginning.
+    He remains publicly calm but is involved behind the scenes. Katherine Cross, connected
+    to Noah's family, is missing following Mulwray's death. Cross still exerts control
+    over land acquisition strategies in the San Fernando Valley, aiming to incorporate
+    and develop the area through water supply manipulation.
+  id: s_1
+  key_delta: Cross actively recruits an investigator to find Katherine, demonstrating
+    direct involvement in concealing or controlling key people connected to Mulwray
+    and the water conflicts.
+  trigger_event: Noah Cross invites private investigator Jake Gittes to his estate
+    and offers him a job to locate Katherine Cross, indicating ongoing covert maneuvers
+    regarding family and land interests.
+- description: Noah Cross's land acquisition tactics in the northwest San Fernando
+    Valley appear complex and secretive, involving purchases in the names of individuals
+    unaware of the transactions, including residents of a retirement home. Cross orchestrates
+    water shortages to pressure landowners into selling, aiming to gain control of
+    irrigation and development rights.
+  id: s_2
+  key_delta: Cross's strategy to acquire and develop land through deception and manipulation
+    of water resources is confirmed, validating suspicions of corrupt land and water
+    exploitation schemes.
+  trigger_event: The investigation next turns from land fraud to murder evidence when
+    Gittes later discovers Cross's bifocals at Evelyn's home.
+- description: Noah Cross maintains a façade of legitimacy and respectability while
+    overseeing covert enforcement through his men, including Mulvihill, to intimidate
+    and control opposition. He remains a key power broker in the water department
+    and land development conflicts. Confidential communications and actions hint at
+    his involvement in silencing threats to his plans.
+  id: s_3
+  key_delta: Cross's direct link to evidence of Mulwray's murder is established, deepening
+    the implication of his personal involvement in eliminating obstacles to his plans.
+  trigger_event: Mulvihill forces Gittes to lead Cross to Katherine's hiding place,
+    setting up the Chinatown confrontation.
+- description: Noah Cross faces open conflict as Gittes is arrested by the police
+    acting under suspicion of complicity in the murder investigation. Cross asserts
+    his influence and claims guardianship over Katherine, presenting himself as her
+    grandfather to legitimize control over her. The tension culminates in a confrontation
+    with Evelyn Mulwray, who shoots Cross in resistance to his authority and threats.
+  id: s_4
+  key_delta: Cross is physically wounded but retains custody of Katherine, while Evelyn
+    Mulwray is fatally shot fleeing police fire. The power struggle over Katherine
+    and control of the land and water interests reaches a violent climax.
+  trigger_event: Police arrive at the Chinatown safe house where Katherine is hidden;
+    Evelyn shoots Cross and attempts to flee with Katherine.
+- description: After the fatal shooting of Evelyn Mulwray, Noah Cross holds Katherine,
+    maintaining his claimed familial and authoritative role. The police release Jake
+    Gittes and his associates, signaling a suppression of full justice. Escobar directs
+    the crowd and quietly manages the aftermath, while the political and business
+    status quo around water and land development remains largely intact, albeit marked
+    by tragic losses and corruption.
+  id: s_5
+  key_delta: Cross retains control over Katherine and his plans proceed unimpeded;
+    the corruption in water and land dealings remains entrenched, highlighting systemic
+    impunity.
+  trigger_event: Police release Gittes and associates and disperse the crime scene
+    crowd, leaving Cross in possession of Katherine and the corrupt order intact.

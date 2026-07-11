@@ -1,0 +1,356 @@
+commitments:
+- description: Julia’s death (s_0) must occur before the rivalry and sabotage between
+    Angier and Borden begins (s_1) to prevent premature blame attribution.
+  id: c_0
+  satisfaction_condition: Node s_0 is completed before node s_1 is triggered.
+  type: ordering
+  violation_condition: Player attempts to proceed to or acknowledge sabotage acts
+    (s_1) without first confirming Julia’s death (s_0).
+- description: The rivalry and sabotage phase (s_1 to s_6) must maintain the ongoing
+    mutual hostility without early reconciliation or cooperation.
+  id: c_1
+  satisfaction_condition: From s_1 through s_6, Angier and Borden continuously sabotage
+    each other’s acts and show enmity.
+  type: invariant
+  violation_condition: Player facilitates cooperation or mutual forgiveness between
+    Angier and Borden before s_6 is reached.
+- description: Angier’s discovery of Borden’s family life (s_2) must precede sabotage
+    of bullet catch (s_3) to preserve Angier’s jealousy motivation.
+  id: c_2
+  satisfaction_condition: Node s_2 completes before any sabotage of Borden’s acts
+    (s_3).
+  type: ordering
+  violation_condition: Player causes sabotage of Borden’s acts (s_3) before learning
+    about Borden’s family (s_2).
+- description: Angier must successfully replicate Borden’s 'Transported Man' trick
+    using Root (s_4) before initiating investigative attempts.
+  id: c_3
+  satisfaction_condition: Node s_4 is completed prior to sending Olivia to uncover
+    secrets (s_5).
+  type: achievement
+  violation_condition: Player triggers Olivia’s espionage or secretrelated events
+    (s_5) prior to Angier’s replication of the trick (s_4).
+- description: Olivia’s shift in loyalty (s_5) prevents Angier from directly obtaining
+    Borden’s real secrets early; information flow must remain mediated.
+  id: c_4
+  satisfaction_condition: From s_5 onwards, Olivia acts as an intermediary controlling
+    access to Borden’s diary, never directly confirming the secret without events
+    progressing.
+  type: invariant
+  violation_condition: Player obtains Borden’s true secret knowledge without Olivia’s
+    diary involvement or Olivia’s informed choice at s_5.
+- description: The keyword 'Tesla' as the key to secrets (s_7) must be revealed before
+    Angier pursues Nikola Tesla’s machine (s_8).
+  id: c_5
+  satisfaction_condition: Node s_7 completes before Angier visits Tesla’s lab (s_8).
+  type: ordering
+  violation_condition: Player triggers Angier’s Tesla lab visit or acquisition of
+    teleportation machine (s_8) without first having obtained the keyword (s_7).
+- description: Tesla’s machine inevitably creates duplicates; player decisions cannot
+    negate or change this duplication property during or after s_8.
+  id: c_6
+  satisfaction_condition: During and after s_8, actions or dialogue never deny the
+    machine’s duplication effect.
+  type: invariant
+  violation_condition: Player or system allows that teleportation machine works by
+    transporting original only, or denies duplication property post s_8.
+- description: Sarah’s suicide (s_9) and subsequent deterioration of Borden’s relationships
+    must precede Angier’s final perfected 'Real Transported Man' act debut (s_10).
+  id: c_7
+  satisfaction_condition: Node s_9 completes before s_10 is triggered.
+  type: ordering
+  violation_condition: Player advances to Angier’s final act (s_10) prior to Sarah’s
+    death and Borden’s personal downfall (s_9).
+- description: Borden must witness Angier’s drowning backstage (s_10) to enable the
+    consequent framing and arrest for murder (s_11).
+  id: c_8
+  satisfaction_condition: Evidence of Borden witnessing Angier’s fall (s_10) is established
+    before arrest and conviction events (s_11).
+  type: achievement
+  violation_condition: Player causes Borden’s arrest and conviction (s_11) without
+    the witnessing event of Angier’s drowning (s_10).
+- description: Borden’s imprisonment (s_11) and receipt of Angier’s diary must precede
+    discovery of Angier’s survival as Lord Caldlow (s_12).
+  id: c_9
+  satisfaction_condition: Node s_11 completes before s_12 is triggered.
+  type: ordering
+  violation_condition: Player attempts to reveal Angier’s living identity as Lord
+    Caldlow (s_12) before Borden’s conviction and diary acquisition (s_11).
+- description: Borden’s death and Fallon’s vow to continue their shared life (s_12)
+    is necessary before Cutter’s final confrontation with Caldlow/Angier (s_13).
+  id: c_10
+  satisfaction_condition: s_12 occurs prior to s_13, establishing Fallon's full role.
+  type: achievement
+  violation_condition: Player initiates Cutter’s confrontation and killing of Caldlow
+    (s_13) before Borden’s execution and the vow (s_12).
+- description: The true identity of Fallon and Borden as identical twins sharing lives,
+    including the finger mutilation and lover exchange, must remain consistent from
+    s_13 onward.
+  id: c_11
+  satisfaction_condition: Their twin identity and shared life narrative is confirmed
+    and unaltered once revealed from s_13 forward.
+  type: invariant
+  violation_condition: Player or system allows contradictory identity or denies twin
+    shared life after s_13 reveal.
+- description: The repetitive tragic cycle of Angier’s duplications and Julia’s drowning
+    must be established and ended with the fire consuming the building (s_14).
+  id: c_12
+  satisfaction_condition: Node s_14 is reached, ending the cycle definitively.
+  type: achievement
+  violation_condition: Player prevents or circumvents the destruction of the duplicating
+    machine and tanks (s_14), allowing indefinite repetition.
+- description: The film’s narrative closure recapping the opening bird magic illusion
+    and Fallon/Borden reclaiming Jess (s_15) must occur only after all prior key narrative
+    death and resolution events (s_0 to s_14).
+  id: c_13
+  satisfaction_condition: Node s_15 triggers strictly after node s_14 completes.
+  type: ordering
+  violation_condition: Player triggers the final resolution scene (s_15) prematurely,
+    before the concluding events including death and destruction (s_14).
+initial_facts:
+- content: Robert Angier is a magician's assistant performing with Alfred Borden and
+    ingénieur John Cutter under Milton the Magician.
+  id: f_0
+  negated: false
+- content: Robert Angier is married to Julia.
+  id: f_1
+  negated: false
+- content: Julia is performing a water cell escape act.
+  id: f_2
+  negated: false
+- content: Julia's water cell escape act has not yet resulted in drowning or any fatal
+    accident.
+  id: f_3
+  negated: false
+- content: Robert Angier has not yet blamed Alfred Borden for any incident.
+  id: f_4
+  negated: false
+- content: Robert Angier and Alfred Borden have not yet become bitter rivals or engaged
+    in sabotage.
+  id: f_5
+  negated: false
+- content: Robert Angier is not yet aware of any details about Borden's family life.
+  id: f_6
+  negated: false
+- content: No sabotage acts or competitive disruptions have been performed between
+    Angier and Borden.
+  id: f_7
+  negated: false
+- content: Robert Angier has not yet replicated Alfred Borden's 'Transported Man'
+    trick or begun using a look-alike.
+  id: f_8
+  negated: false
+- content: Olivia Wenscombe has not yet become involved with either magician or acted
+    as an intermediary.
+  id: f_9
+  negated: false
+- content: The keyword 'Tesla' has not yet been revealed to Robert Angier.
+  id: f_10
+  negated: false
+- content: Robert Angier has not yet pursued Nikola Tesla or acquired any teleportation
+    machine.
+  id: f_11
+  negated: false
+- content: Sarah, Borden's future wife, has not yet entered the story.
+  id: f_12
+  negated: false
+- content: Borden and Angier have not yet started personal romantic relationships
+    with other characters beyond their current known status.
+  id: f_13
+  negated: false
+- content: Borden has two intact fingers; no injuries from sabotage have occurred
+    yet.
+  id: f_14
+  negated: false
+- content: Robert Angier is unaware of the secrets held in any encrypted diaries or
+    personal documents belonging to Alfred Borden.
+  id: f_15
+  negated: false
+- content: There are no known imprisonments, arrests, or convictions related to either
+    magician.
+  id: f_16
+  negated: false
+- content: Robert Angier does not know of Alfred Borden’s identical twin or any shared
+    identities with Bernard Fallon.
+  id: f_17
+  negated: false
+meta:
+  genres: ["Mystery", "Thriller"]
+  id: movie78
+  player_role: Robert Angier
+  title: "The Prestige"
+synopsis: A magician shows a girl a magic trick, causing a bird to vanish and then
+  reappear in his hand. Magician Alfred Borden is sentenced for the murder of rival
+  Robert Angier. Both were assistants for "Milton the Magician" with ingénieur John
+  Cutter. Angier's wife Julia drowned performing a water cell act and Angier blames
+  Borden, who professes not to remember if he had tied her with an inappropriate knot.
+  The two become bitter competitors, disrupting each other's acts. Borden becomes
+  "The Professor" with the enigmatic Bernard Fallon as his ingénieur while Angier
+  becomes "The Great Danton" with the lovely Olivia Wenscombe and Cutter assisting.
+  The magic trick from the beginning of the movie is explained——the original bird
+  is crushed and replaced with a double. Angier is incensed when Borden meets and
+  marries Sarah and they have a daughter, Jess. Angier sabotages Borden's bullet catch,
+  costing Borden two fingers. Borden then ruins Angier's victimless bird cage act,
+  maiming an audience member, killing the dove, and damaging Angier's reputation.
+  Borden soon surprises with "The Transported Man", where he enters one cabinet and
+  exits another. Angier and Cutter argue over its possibility, with Cutter insisting
+  it is a double and Angier refusing to accept the possibility. Unable to understand
+  Borden's trick, Angier hires a look-alike actor Root to allow him to steal Borden's
+  general idea. "The New Transported Man" is a success, but Angier resents hiding
+  under the stage as Root gets the applause. He sends Olivia to discover Borden’s
+  secret but she resents the obsession and falls in love with Borden instead; she
+  leaves Borden's encrypted diary of tricks to Angier as a parting gift. Borden already
+  understood Angier's trick, but Olivia allows him to influence Root to ask for more
+  pay; Borden then completely ruins the act by removing a pad below the stage's trap
+  door, crippling Angier, and displaying a tied-up Root before the audience, turning
+  the routine into an advertisement for his own show. Angier and Cutter capture and
+  bury Fallon alive to be released for the key to Borden's trick and the keyword to
+  the diary's cipher. Borden professes that both are "Tesla" and Angier pursues Nikola
+  Tesla to Colorado Springs alone after Cutter abandons him to his obsession. Angier
+  pays Tesla to make a copy of a teleportation machine that he believed Borden used,
+  providing the inventor with much-needed financing after Edison's smear campaign
+  proves successful in drying up other sources. Angier finishes deciphering Borden's
+  diary to discover it was a fraud supplied by Olivia, but an angry confrontation
+  with Tesla reveals that his machine actually works, but creates duplicates. Thomas
+  Edison's henchmen arrive to torch the lab and Tesla leaves, although not before
+  completing Angier's machine and warning him to destroy it. Meanwhile, Borden's preoccupation
+  with magic and affair with Olivia alienate Sarah, who hangs herself. Borden's cold
+  response then leaves Olivia disaffected. Angier returns to London, electrifying
+  audiences with "The Real Transported Man", vanishing within the machine and reappearing
+  in the back of the hall. In reality, the machine creates a duplicate; it is left
+  unclear whether the original Angier is teleported or remains in the machine, but
+  the one left in the machine falls through a trap door and plunges into a water cell,
+  drowning. The tanks are disposed of by blind stage hands every night. Borden witnesses
+  Angier drown while snooping backstage and tries to save him but is caught and convicted
+  of murder, the opening of the film. In prison, Borden is visited by the agent of
+  a Lord Caldlow, who offers to care for Jess in exchange for Borden's secrets. Borden
+  is given Angier's diary and finds his conviction has been orchestrated, then discovers
+  that Lord Caldlow is the yet-living Angier when the lord arrives to collect the
+  secrets. Borden attempts to give them but Caldlow rips them to pieces without reading
+  them, before leaving with Jess. Borden is hanged, after commanding Fallon to live
+  for them both. Cutter learns that Caldlow has bought all of Angier's tricks, including
+  the machine, and visits Caldlow's estate to plead for its destruction. He recognises
+  Angier, who admits he has always been Lord Caldlow but pretended to be the American
+  Robert Angier to spare his family the embarrassment of his theatrical career. Cutter
+  realises Borden's death was planned but, unable to have Caldlow come forward, accompanies
+  him to store Tesla's machine beneath his theatre among the tanks previously used
+  for the duplicates. On his way out, Cutter recognises and nods to Fallon as Fallon
+  enters and shoots Caldlow. Fallon's disguise removed, he tells the dying Caldlow
+  that he and Borden were identical twins who shared their lives on stage and off.
+  He removed the ends of his own fingers to duplicate Borden's injury and the two
+  shared lovers to maintain the illusion of being a single man. Fallon reveals they
+  each loved one woman — Borden loved their late wife Sarah and survived, while Fallon
+  loved their mistress Olivia and died. Caldlow reveals his machine's own trick, repeatedly
+  recreating Julia's suffering in order to bask in the admiration of the crowd. Borden
+  leaves him to die as a fire consumes the building. The first scene of the film replays,
+  with the magician vanishing the bird for the delight of the little girl. This time,
+  the scene continues and Fallon/Borden appears to reclaim his daughter.
+trajectory:
+- description: Robert Angier is a magician's assistant performing with Alfred Borden
+    and ingénieur John Cutter under Milton the Magician. Angier is married to Julia,
+    who is performing a water cell escape act.
+  id: s_0
+  key_delta: Julia's death establishes blame between Angier and Borden, planting the
+    seeds of their rivalry.
+  trigger_event: Angier blames Borden for Julia's death, and grief hardens into a
+    lasting rivalry between them.
+- description: Angier and Borden, both assistants from the same troupe, become bitter
+    rivals. Angier is consumed by blame towards Borden for Julia's death.
+  id: s_1
+  key_delta: The rivalry escalates, disrupting their performances and deepening personal
+    and professional enmity.
+  trigger_event: Angier and Borden begin deliberately sabotaging each other's magic
+    acts.
+- description: Alfred Borden adopts the stage persona 'The Professor' with ingénieur
+    Bernard Fallon; Angier becomes 'The Great Danton' accompanied by Olivia Wenscombe
+    and Cutter.
+  id: s_2
+  key_delta: Angier's jealousy intensifies, leading him to actively sabotage Borden's
+    signature bullet catch act.
+  trigger_event: Angier discovers Borden has married Sarah and had a daughter, Jess.
+- description: Borden is performing a dangerous bullet catch act with two fingers
+    missing due to Angier's sabotage; Angier is preparing a victimless bird cage act.
+  id: s_3
+  key_delta: Angier's reputation is damaged, increasing hostility and competition
+    between them.
+  trigger_event: Borden ruins Angier’s bird cage act by injuring an audience member
+    and killing the dove.
+- description: Borden unveils 'The Transported Man' trick, baffling Angier and Cutter,
+    who debate its mechanism.
+  id: s_4
+  key_delta: Angier invests in mimicking Borden's act indirectly via Root, escalating
+    the rivalry with a deceptive strategy.
+  trigger_event: Angier hires a look-alike actor named Root to replicate Borden's
+    trick for him.
+- description: Root performs 'The New Transported Man' successfully as Angier hides
+    under the stage to receive applause.
+  id: s_5
+  key_delta: Olivia becomes involved with Borden and leaves her encrypted diary to
+    Angier, altering information flow.
+  trigger_event: Angier sends Olivia to Borden to discover his trick secrets.
+- description: Borden discovers Olivia's diary and understands Angier’s trick but
+    exploits conflicts by increasing Root’s demands and sabotaging the act.
+  id: s_6
+  key_delta: Borden’s sabotage publicly humiliates Angier’s act and irreversibly harms
+    Root, further escalating hostilities.
+  trigger_event: Borden removes safety measures in Angier’s stage, crippling Root
+    and exposing him tied up to the audience.
+- description: Angier and Cutter capture and bury Bernard Fallon alive to coerce the
+    secrets of Borden’s trick and diary cipher.
+  id: s_7
+  key_delta: Angier pursues Nikola Tesla to create a teleportation machine based on
+    the revealed keyword.
+  trigger_event: Fallon identifies the keyword 'Tesla' as the key to the diary and
+    the trick’s secret.
+- description: Angier visits Nikola Tesla’s lab in Colorado Springs; Tesla builds
+    a teleportation device capable of duplicating objects.
+  id: s_8
+  key_delta: Angier obtains a functioning teleportation machine creating duplicates,
+    despite the lab’s destruction.
+  trigger_event: Edison’s agents destroy Tesla’s lab; Tesla completes the machine
+    and warns Angier to destroy it.
+- description: Back in London, Borden’s obsession and affair with Olivia alienate
+    his wife Sarah.
+  id: s_9
+  key_delta: Borden’s personal life deteriorates irreversibly, affecting his relationships
+    and emotional state.
+  trigger_event: Sarah hangs herself, and Borden reacts coldly, causing Olivia’s discontent.
+- description: Angier debuts 'The Real Transported Man' illusion using Tesla’s machine,
+    vanishing on stage and reappearing in the audience.
+  id: s_10
+  key_delta: Borden witnesses Angier’s apparent death, setting the stage for his arrest
+    and betrayal.
+  trigger_event: Borden spies Angier drowning backstage after falling through the
+    trap door during the machine’s act.
+- description: Borden is arrested and convicted for Angier’s murder, despite his innocence;
+    he is imprisoned.
+  id: s_11
+  key_delta: Borden learns his conviction was orchestrated and that Lord Caldlow is
+    actually Angier alive.
+  trigger_event: Borden receives Angier’s diary and a visit from Lord Caldlow’s agent
+    offering care for his daughter Jess.
+- description: Borden meets Lord Caldlow (Angier), who tears up the diary without
+    reading and takes Jess; Borden awaits execution.
+  id: s_12
+  key_delta: Borden’s death is finalized, and Fallon assumes responsibility for Borden’s
+    legacy.
+  trigger_event: Borden is hanged after commanding Fallon to live for both of them.
+- description: Cutter visits Caldlow’s estate to plead for destruction of Tesla’s
+    machine but finds Caldlow is Angier, who has purchased all his own tricks.
+  id: s_13
+  key_delta: Fallon reveals he and Borden were identical twins sharing life and stage
+    identities, and kills Angier/Caldlow.
+  trigger_event: Fallon shoots Caldlow at the estate after removing his disguise.
+- description: Fallon explains the twin’s shared lives, loves, and the endless repetition
+    of Julia’s drowning through Angier’s machine.
+  id: s_14
+  key_delta: Angier is left to die among the burning tanks, and the surviving Borden
+    twin is free to reclaim Jess.
+  trigger_event: Fire breaks out consuming the building where Tesla’s machines and
+    tanks are stored.
+- description: The film’s opening magic trick replayed; magician vanishes a bird for
+    a little girl; Fallon/Borden appears to reclaim his daughter Jess.
+  id: s_15
+  key_delta: Resolution of Jess’s custody and symbolic restoration of Borden’s legacy.
+  trigger_event: Fallon/Borden’s appearance reclaiming Jess completes the narrative
+    closure.

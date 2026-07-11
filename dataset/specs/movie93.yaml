@@ -1,0 +1,388 @@
+commitments:
+- description: The ambush by Wade and his gang using Evans' cattle (s_0) must precede
+    Wade discovering and disarming Evans and his sons (s_1), preventing early knowledge
+    or interference with the ambush plan.
+  id: c_0
+  satisfaction_condition: Node s_0 completed before s_1 is triggered.
+  type: ordering
+  violation_condition: Player acknowledges or acts upon Wade disarming Evans and sons
+    (s_1) before the ambush has occurred (s_0).
+- description: Rescue of Evans and his sons by railroad guards and McElroy (s_2) must
+    happen only after Wade’s gang has been seen celebrating post-robbery (s_1), ensuring
+    the capture and recovery sequence integrity.
+  id: c_1
+  satisfaction_condition: Node s_1 complete before node s_2 is triggered.
+  type: ordering
+  violation_condition: Player bypasses gang celebration and rescue, or attempts to
+    rescue Evans and sons before Wade’s gang completion of the robbery is acknowledged.
+- description: From the confrontation in Bisbee with Hollander (s_3) to Wade’s
+    capture (s_4), Hollander’s hostile refusal to grant water rights and selling land
+    to railroad workers remains fixed and undisputed, underpinning Evans' motivation.
+  id: c_2
+  satisfaction_condition: Throughout nodes s_3 to s_4, no player action or system
+    response contradicts Hollander’s antagonistic stance.
+  type: invariant
+  violation_condition: Player successfully negotiates water rights or land ownership
+    in a way that contradicts Hollander’s refusal before s_4 is resolved.
+- description: Wade’s capture in Bisbee (s_4) must precede all subsequent escort preparations
+    (s_5) to maintain logical order of custody.
+  id: c_3
+  satisfaction_condition: Node s_4 complete before s_5 is initiated.
+  type: ordering
+  violation_condition: Escort preparations (s_5) or transport related actions begin
+    without confirming Wade’s capture (s_4).
+- description: During the journey from the ranch to Contention (s_5 through s_15),
+    Wade must remain a prisoner under guard with attempted escapes and threats escalating
+    accordingly; Wade’s lethal actions against escorts only occur after appropriate
+    progress triggers.
+  id: c_4
+  satisfaction_condition: Between s_5 and s_15, Wade’s hostility demonstrated by killing
+    Tucker and McElroy (s_7) happens only after escort mission is underway; until
+    then, Wade remains under guard without lethal violence.
+  type: invariant
+  violation_condition: Player causes Wade to kill or violently act before escort mission
+    (s_5) is properly initiated or before appropriate progression (between s_5 and
+    s_7).
+- description: William’s secret following (s_6) must occur only after the escort mission
+    is underway (s_5), preventing premature player knowledge or involvement of William
+    before mission start.
+  id: c_5
+  satisfaction_condition: s_5 complete before s_6 is triggered.
+  type: ordering
+  violation_condition: William accompanies or influences events before escort departure
+    (s_5).
+- description: Wade’s relationship evolution with Evans, including his saving of Evans
+    after Apache attack (s_8) and relenting from killing Evans after hearing the wooden
+    leg story (s_13), must follow the sequence to preserve narrative thematic and
+    character logic.
+  id: c_6
+  satisfaction_condition: Events s_8 through s_13 occur in order, with Wade’s protective
+    actions and character shifts only occurring post-Apache attack and post-revelation.
+  type: invariant
+  violation_condition: Player triggers Wade’s trust or protection of Evans before
+    the Apache attack (s_8) or prior to the wooden leg story revelation (s_13).
+- description: Wade’s capture and torture at the Chinese labor camp (s_9) must be
+    followed by the rescue attack by Evans and allies, ensuring the rescue event is
+    consequential and properly triggered.
+  id: c_7
+  satisfaction_condition: Node s_9 completed before the group’s arrival and rescue
+    attempt is made.
+  type: ordering
+  violation_condition: Player frees Wade or bypasses torture/rescue without triggering
+    the capture in s_9.
+- description: Wade’s arrival in Contention (s_10) and guarded hotel stay must occur
+    before Prince’s ambush and bounty offer to townsfolk (s_11), preserving cause
+    and effect of security collapse.
+  id: c_8
+  satisfaction_condition: s_10 complete before triggering s_11.
+  type: ordering
+  violation_condition: Ambush preparations (s_11) or bounty offers take place before
+    Wade is secured in Contention (s_10).
+- description: During the siege in Contention (s_11 through s_17), Evans remains committed
+    to delivering Wade to justice, rejecting Butterfield's bribe to let Wade go, and
+    instead negotiating a $1,000 fee and water rights to complete the mission.
+  id: c_9
+  satisfaction_condition: Evans consistently refuses Butterfield’s bribe (s_12) to
+    abandon the mission and sets new terms to deliver Wade.
+  type: invariant
+  violation_condition: Evans accepts the bribe to let Wade go or abandons the mission
+    before Wade’s transfer or resolution.
+- description: The climax with Wade boarding the train (s_15) and being attacked by
+    Prince (s_16) followed by Wade eliminating Prince and gang must occur in precise
+    sequence to enable narrative closure and justify Evans’ mortal wounding.
+  id: c_10
+  satisfaction_condition: Sequence s_15 then s_16 followed by s_17 and s_18 completed
+    without skipping or inversion.
+  type: ordering
+  violation_condition: Any player action causes Prince’s attack (s_16) prior to Wade
+    boarding the train (s_15) or skips Wade’s retaliation.
+- description: The narrative must reach the milestone where Wade is effectively surrendered
+    aboard the train and Evans is mortally wounded (s_17), ensuring mission success
+    and story closure.
+  id: c_11
+  satisfaction_condition: Node s_17 is triggered with Wade surrendering weapon aboard
+    train and Evans dying from wounds.
+  type: achievement
+  violation_condition: Player sidesteps or prevents Wade’s surrender or Evans’ mortal
+    wounding, preventing narrative resolution.
+- description: Throughout the narrative until resolution, Wade remains a dangerous
+    outlaw whose past escapes from Yuma prison are acknowledged (s_14), preserving
+    his character’s escape artist reputation as a logical background for tension.
+  id: c_12
+  satisfaction_condition: Wade’s history of escapes is revealed in or after s_14 and
+    not contradicted thereafter.
+  type: invariant
+  violation_condition: Player denies or erases Wade’s escape history before or after
+    s_14.
+initial_facts:
+- content: The location is Dan Evans' remote ranch in August 1884.
+  id: f_0
+  negated: false
+- content: Ben Wade and his gang are in the vicinity, preparing to ambush an armored
+    stagecoach.
+  id: f_1
+  negated: false
+- content: Ben Wade and his gang plan to use Dan Evans' cattle to blockade the road
+    for an ambush.
+  id: f_2
+  negated: false
+- content: Dan Evans is an impoverished rancher and a Civil War veteran.
+  id: f_3
+  negated: false
+- content: Dan Evans is awake and armed to prevent threats at his ranch.
+  id: f_4
+  negated: false
+- content: Dan Evans owes money to Glen Hollander.
+  id: f_5
+  negated: false
+- content: At t=0, Evans' barn has not yet been set on fire.
+  id: f_6
+  negated: true
+- content: Evans' two sons are with him at the ranch.
+  id: f_7
+  negated: false
+- content: Ben Wade's gang has not yet used the cattle to ambush the armored stagecoach.
+  id: f_8
+  negated: false
+- content: At t=0, Wade has not yet discovered or disarmed Dan Evans and his sons.
+  id: f_9
+  negated: false
+- content: At t=0, Wade has no physical custody or control over Evans or his sons.
+  id: f_10
+  negated: false
+- content: Railroad guards and Pinkerton agent Byron McElroy are not yet present or
+    involved.
+  id: f_11
+  negated: false
+- content: Glen Hollander's antagonistic stance toward Evans regarding water rights
+    and land sale is not yet explicitly observed by Ben Wade.
+  id: f_12
+  negated: false
+- content: Ben Wade is a dangerous and notorious outlaw, wanted by the authorities.
+  id: f_13
+  negated: false
+- content: At t=0, no violence or killing by Wade against escorts or others has occurred.
+  id: f_14
+  negated: false
+- content: At t=0, William (Evans' elder son) has not attempted to follow or join
+    Wade's escort mission.
+  id: f_15
+  negated: false
+- content: The ambush of the armored stagecoach by Wade and his gang has not yet happened.
+  id: f_16
+  negated: false
+- content: Evans’ barn condition is intact and has not been burned down or damaged.
+  id: f_17
+  negated: true
+- content: Ben Wade’s history of escaping from Yuma prison has not yet been revealed
+    or disclosed.
+  id: f_18
+  negated: false
+meta:
+  genres: ["Western", "Thriller"]
+  id: movie93
+  player_role: Ben Wade
+  title: "3:10 to Yuma"
+synopsis: In August 1884, Dan Evans, an impoverished rancher and Civil War veteran,
+  although sitting awake and armed to prevent it, has his barn set ablaze by two men
+  working for Glen Hollander, to whom Evans owes money. The next morning, as Evans
+  and his two sons drive their herd, they stumble upon outlaw Ben Wade and his gang
+  using Evans' cattle as a road blockade to ambush an armored stagecoach. As he loots
+  the stage, Wade discovers Evans and his two sons watching from the hills. Acknowledging
+  that they pose no threat to him and his gang, Wade takes their horses telling Evans
+  that he will leave them tied up on the road to Bisbee. Wade travels with his gang
+  to the town of Bisbee, Arizona to enjoy a celebratory drink at the local saloon.
+  Meanwhile, the railroad guards find Evans and his sons with Byron McElroy, a Pinkerton
+  agent and lone survivor of the ambush, tied up. Evans reveals Bisbee as Wade's likely
+  destination, where the guards immediately return, joined by Evans and McElroy. While
+  Doc Potter, the local medic/veterinarian, treats McElroy, Evans tries negotiating
+  with Hollander, who reveals his intentions to sell the land to the railroad workers
+  rather than grant water rights to Evans. Enraged at the loss of his livelihood and
+  land, Evans tries confronting Hollander in the nearby saloon, but instead he finds
+  Wade, whom he distracts long enough for the railroad guards to ambush and arrest
+  him. The coach's owner, Grayson Butterfield, enlists McElroy, Potter, Tucker, one
+  of Hollander's guards and Evans, who agrees for a $200 fee to deliver Wade for arrest.
+  From Evans' ranch, McElroy arranges a decoy wagon to distract Wade's gang, now led
+  by Charlie Prince (Ben Foster), while the real convoy charts a course for Contention,
+  where Wade will be put on the 3:10 P.M. train to Yuma Territorial Prison and sentenced.
+  As the group prepares to ride out, Evans' elder son William demands to accompany
+  them. Evans flatly refuses his demand. During the journey, Wade kills Tucker during
+  his sleep with a fork stolen from Evans' house, and later McElroy but is stopped
+  from escaping by the surprise arrival of William, who had followed the group all
+  the way from the ranch. Evans tries to pressure William to return back to the ranch,
+  but William declines. Wade seemingly accepts to have his son with him. While taking
+  a shortcut through a canyon, the group is attacked by Apaches. Evans tries to kill
+  them, but he is badly wounded. Wade saves him, arms himself, and kills the remaining
+  attackers. Following the shootout, Wade escapes to a Chinese laborer construction
+  camp blasting a tunnel through the mountain range, where the foreman captures Wade
+  for having killed his brother. One of his assistants, Zeke, tortures Wade with electric
+  shocks. Evans, William, Potter, and Butterfield appear and after unsuccessful attempts
+  at negotiation, Potter leads an attack on the foremen and his miners, freeing Wade.
+  As they flee on their horses, Potter is shot and killed, while Wade and Evans destroy
+  the tunnel behind them with dynamite. The group arrives in Contention several hours
+  before the train's scheduled arrival and check into the hotel, where they are soon
+  joined by several local marshals hired by Butterfield to protect them. Prince and
+  the gang ambushes and interrogates the survivor of the decoy wagon, learning that
+  Wade is being delivered to Contention and will board a train to Yuma; he then leaves
+  the wagon to burn with the survivor trapped in it. Later Prince meets the mine foreman.
+  Upon seeing Zeke with Wade's gun, Prince kills Zeke, the foreman and his assistant.
+  Upon arriving in Contention and discovering the heavy guard around Wade, Prince
+  offers every townsman a $200 bounty for every guard they kill. The marshals, unwilling
+  to fight against such steep odds, surrender to Prince, who kills them anyway. Butterfield
+  refuses to complete the mission, offering Evans the $200 salary even if Wade goes
+  free. Evans refuses, noting that was the amount the government paid him for the
+  loss of his leg. Instead he asks Butterfield to escort his son back to his ranch
+  and to pay his wife $1,000 and a guarantee of water rights from Hollander in exchange
+  for Evans delivering Wade to the train. After Butterfield agrees, Evans escorts
+  Wade out of the hotel and the two make their way across town, evading continuous
+  gunfire from the townsmen before taking refuge inside a storeroom. Wade, tired of
+  running, nearly strangles Evans; he relents when Evans reveals that the reason he
+  has a wooden leg is that his real leg was lost when Evans was shot by fellow soldiers
+  while in retreat from battle, a story that would shame his sons, and that delivering
+  Wade to Yuma would serve as an accomplishment his sons would admire. Wade relents
+  and agrees to board the train. The two return to the streets, dodging bullets before
+  barricading themselves in the station to wait for the train, where Wade reveals
+  that he's been to Yuma twice and escaped both times. Wade's gang set up positions
+  around the station as the train approaches. William, observing the events, stampedes
+  a herd of cattle that provides cover for Evans to push Wade onto the train. As Wade
+  boards, he congratulates Evans. At that moment, Prince steps up and shoots Evans
+  four times, despite Wade's shouted order to stop. Wade steps off the train and catches
+  the gun belt Prince tosses him. After a tense moment of silence, Wade abruptly executes
+  Prince and the rest of his gang. William appears and draws his gun on Wade but finds
+  he can't kill him; instead he turns to his dying father. Wade boards the train politely
+  and surrenders his weapon. Evans eventually dies as Wade leaves in the train. As
+  the train pulls away, he whistles for his horse, who pricks up his ears and canters
+  after the running train into the distance.
+trajectory:
+- description: The morning after his barn was burned, Dan Evans and his sons are driving
+    their herd when they encounter Ben Wade and his gang, who are preparing to act.
+  id: s_0
+  key_delta: Wade's gang has initiated a road blockade using Evans' cattle, setting
+    the stage for a stagecoach ambush.
+  trigger_event: Ben Wade and his gang use Dan Evans' cattle to block the road to
+    ambush an armored stagecoach.
+- description: On nearby hills, Wade spots Dan Evans and his two sons watching the
+    ambush. Wade and his gang complete the stagecoach robbery in a rugged, lawless
+    environment.
+  id: s_1
+  key_delta: Evans and his sons are disarmed and tied up by Wade after the robbery,
+    temporarily neutralizing them.
+  trigger_event: Wade discovers Evans and his sons watching and takes their horses,
+    leaving them tied up on the road to Bisbee.
+- description: In the town of Bisbee, Wade and his gang celebrate in the local saloon.
+    Meanwhile, railroad guards find Evans and his sons tied up alongside Byron McElroy,
+    the lone survivor of the ambush.
+  id: s_2
+  key_delta: Evans, his sons, and McElroy are rescued, introducing a law enforcement
+    presence.
+  trigger_event: Railroad guards find Evans and his family with McElroy, the lone
+    survivor of the ambush, tied up near the ambush site.
+- description: In Bisbee, Evans tries to negotiate with Glen Hollander, revealing
+    a growing conflict over land and water rights amid railroad expansion, creating
+    a tense and hostile atmosphere.
+  id: s_3
+  key_delta: A clear antagonistic motive of Hollander is established, deepening Evans'
+    land dispute.
+  trigger_event: Evans tries to negotiate with Hollander, who refuses to grant water
+    rights and intends to sell the land to railroad workers.
+- description: Back in Bisbee’s saloon, Wade is present when Evans confronts Hollander,
+    allowing railroad guards to ambush and arrest Wade, marking a critical power shift.
+  id: s_4
+  key_delta: Wade is apprehended and held prisoner, shifting the story towards delivering
+    him to justice.
+  trigger_event: Evans distracts Wade in the saloon, enabling the guards to capture
+    him.
+- description: At Evans’ ranch, preparations begin for transporting Wade to Contention;
+    McElroy organizes a decoy wagon as protection while Wade is held under guard.
+  id: s_5
+  key_delta: A planned escort mission is set in motion with multiple parties involved,
+    including Evans reluctantly agreeing to the fee.
+  trigger_event: McElroy arranges a decoy wagon, and the group agrees to escort Wade
+    for a cash fee.
+- description: The journey starts under a tense and guarded environment; Evans refuses
+    his son William's demand to join, increasing family tension.
+  id: s_6
+  key_delta: William becomes a hidden participant, altering group dynamics and increasing
+    potential complications.
+  trigger_event: William follows the group secretly despite Evans’ refusal to let
+    him accompany them.
+- description: During the journey, Wade secretly kills Tucker and McElroy; the atmosphere
+    turns dangerous and unpredictable.
+  id: s_7
+  key_delta: Loss of escorts weakens the group's security, underscoring Wade's lethal
+    resolve.
+  trigger_event: Wade murders Tucker and McElroy while traveling, escalating the threat
+    level.
+- description: An Apache attack ambushes the group in a canyon. Evans is wounded;
+    Wade saves him and kills the attackers, shifting their relationship.
+  id: s_8
+  key_delta: Evans is seriously injured and Wade becomes a reluctant protector, altering
+    their interaction.
+  trigger_event: Apaches attack, resulting in a shootout where Wade saves the wounded
+    Evans.
+- description: Wade is captured at a Chinese labor camp after fleeing and is tortured;
+    Evans and allies launch an attack to free him.
+  id: s_9
+  key_delta: Wade is liberated, but Potter is killed; the group's bond is further
+    cemented despite hazards.
+  trigger_event: Wade is captured and tortured; Evans, William, Potter, and Butterfield
+    attack the camp to rescue him.
+- description: The group reaches Contention hours before the train; marshals hired
+    provide a guarded, anxious atmosphere as they prepare for the transfer.
+  id: s_10
+  key_delta: Wade is secured in a guarded local hotel, preparing for transport to
+    Yuma prison.
+  trigger_event: Arrival in Contention with heavy guard presence as the train's arrival
+    approaches.
+- description: Prince and his gang discover Wade’s location and prepare an ambush,
+    offering bounties to townsfolk, escalating the threat imminently.
+  id: s_11
+  key_delta: Security collapses as the ambush escalates, forcing Evans and Wade to
+    evade imminent attack.
+  trigger_event: Prince kills marshals and hires townsmen to attack the guards protecting
+    Wade.
+- description: In the hotel, Butterfield offers Evans a bribe to release Wade, which
+    Evans refuses, committing fully to delivering Wade to justice.
+  id: s_12
+  key_delta: Evans' moral stance solidified, reinforcing his determination to see
+    Wade delivered despite temptation.
+  trigger_event: Evans rejects Butterfield’s bribe, setting terms to ensure his family’s
+    protection and water rights.
+- description: Evans and Wade evade gunfire through town to a storeroom, where Wade
+    contemplates killing Evans but relents after hearing Evans' story.
+  id: s_13
+  key_delta: A fragile understanding forms between Wade and Evans, deepening their
+    complex relationship.
+  trigger_event: Wade nearly strangles Evans during hiding but stops when Evans reveals
+    the origin of his wooden leg.
+- description: Barricaded inside the train station, Wade and Evans prepare to board
+    amid escalating violence, with Wade revealing his past prison escapes.
+  id: s_14
+  key_delta: The final standoff is set with Wade’s escape history foreshadowing conflict.
+  trigger_event: Wade and Evans take refuge in the station, awaiting the train while
+    Wade discloses his history of escapes.
+- description: William stampedes cattle to provide cover; Wade is pushed onto the
+    train amid heavy fire; the atmosphere is tense and lethal.
+  id: s_15
+  key_delta: Wade boards the train, almost securing delivery to prison.
+  trigger_event: William stampedes cattle, enabling Wade to board the train despite
+    ongoing gunfire.
+- description: Prince shoots Evans multiple times during the boarding; Wade kills
+    Prince and the remaining gang in a violent reprisal.
+  id: s_16
+  key_delta: Evans is mortally wounded; Wade eliminates major threat but losses are
+    incurred.
+  trigger_event: Prince shoots Evans; Wade responds by executing Prince and his gang.
+- description: William draws his gun on Wade but cannot shoot him; Wade boards the
+    train, surrendering his weapon as Evans lies dying.
+  id: s_17
+  key_delta: Wade is surrendered and captured; Evans faces death, closing the mission.
+  trigger_event: William aims at Wade but lowers his gun; Wade quietly boards and
+    surrenders.
+- description: The train departs Contention with Wade aboard; Evans dies; Wade whistles
+    for his horse that follows the moving train into the distance.
+  id: s_18
+  key_delta: Wade is carried away on the train to Yuma while Evans dies after getting
+    him aboard.
+  trigger_event: The train pulls away, carrying Wade; Evans succumbs to wounds on
+    the platform.

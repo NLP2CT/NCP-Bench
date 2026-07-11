@@ -1,0 +1,328 @@
+commitments:
+- description: The story must always present Brushy Bill Roberts' claim of being Billy
+    the Kid only after the initial encounter with the young attorney (s_0), preventing
+    premature acceptance of his identity before hearing his full story.
+  id: c_0
+  satisfaction_condition: Node s_0 (Brushy Bill begins telling his story) has occurred
+    before any acceptance or acknowledgment of his claim.
+  type: ordering
+  violation_condition: Player or system accepts or reveals Brushy Bill's identity
+    as Billy the Kid before node s_0 is reached.
+- description: The events of the flashback (s_1 to s_18) must unfold sequentially
+    to preserve narrative coherence and gradual discovery of events leading to Billy's
+    apparent death.
+  id: c_1
+  satisfaction_condition: All nodes from s_1 through s_18 occur strictly in their
+    defined order without skipping or reordering.
+  type: ordering
+  violation_condition: Any node s_j (j > i) occurs before node s_i in the player's
+    experience or system narration.
+- description: Brushy Bill's claim to be Billy the Kid remains unconfirmed and controversial
+    throughout the narrative until the epilogue, preserving the mystery and ambiguity.
+  id: c_2
+  satisfaction_condition: From s_0 through s_20, the system never definitively confirms
+    nor denies Brushy Bill’s true identity beyond 'possibility' and preserves ambiguity.
+  type: invariant
+  violation_condition: System or player forces a conclusive and irrefutable verdict
+    on Brushy Bill’s identity before the epilogue (s_20).
+- description: The narrative must reach the final epilogue (s_20) revealing the fates
+    of key figures and the unresolved debate, providing closure to the mystery framework.
+  id: c_3
+  satisfaction_condition: Node s_20 is reached and narrated, concluding the story
+    with the historic unresolved mystery.
+  type: achievement
+  violation_condition: The story ends or jumps to a conclusion without presenting
+    the epilogue at s_20.
+- description: Pat Garrett must switch roles from gang member to lawman before initiating
+    pursuit of Billy the Kid, preserving his character arc and logical motivations.
+  id: c_4
+  satisfaction_condition: Node s_7 (Garrett accepts sheriff role and forms posse)
+    occurs strictly after s_6 (Garrett leaves gang) and before any sustained pursuit
+    events (s_8+).
+  type: invariant
+  violation_condition: Garrett initiates official pursuit or chase of Billy before
+    accepting the sheriff position and forming posse at s_7.
+- description: Billy the Kid's imprisonment and failed political deal must precede
+    any escape attempts, preserving causal sequence for tension and plot.
+  id: c_5
+  satisfaction_condition: Nodes s_2 (warrants and arrest), s_3 (governor deal), and
+    s_4 (Billy is tricked) occur strictly in order before s_5 (escape via lynch mob
+    disguise).
+  type: ordering
+  violation_condition: Player triggers escape attempt or gang reunion before Billy's
+    arrest, political meeting, and failed testimony opportunity.
+- description: The death of gang members (Tom O'Folliard and Doc Scurlock) must occur
+    only after the pursuit by Garrett's posse has intensified and capture attempts
+    are underway.
+  id: c_6
+  satisfaction_condition: Node s_11 (Tom shot and killed) and s_12 (Doc sacrificed)
+    occur only after node s_10 (Garrett tracks Billy) has happened.
+  type: ordering
+  violation_condition: Player causes gang member deaths before the posse has located
+    or pursued the gang.
+- description: Billy's capture and formal sentencing must occur before any prison
+    escape attempt, maintaining narrative logic of incarceration before breakout.
+  id: c_7
+  satisfaction_condition: Node s_13 (Billy captured and sentenced) occurs strictly
+    before nodes s_14 and s_15 (pistol gifted and escape).
+  type: ordering
+  violation_condition: Billy escapes or receives aid in escaping before being officially
+    captured and sentenced.
+- description: Pat Garrett must not kill Billy the Kid directly; instead, the story
+    mandates faking Billy’s death at the end to preserve the unresolved mystery.
+  id: c_8
+  satisfaction_condition: At node s_18, Garrett refuses to shoot Billy and fakes his
+    death, sparing his life as per narrative.
+  type: invariant
+  violation_condition: Player or system triggers Garrett killing Billy outright, violating
+    the fabricated-death logic.
+- description: The system must not allow the lawyer character (or player assuming
+    his role) to conclusively prove Brushy Bill’s identity before the completion of
+    the full narrative arc and epilogue.
+  id: c_9
+  satisfaction_condition: Only after node s_19 (lawyer is convinced) and s_20 (epilogue)
+    is the subjective belief in Brushy Bill’s claim acknowledged; no earlier certainty
+    or proof is allowed.
+  type: invariant
+  violation_condition: The player or system reveals incontestable proof or acceptance
+    of Brushy Bill’s identity before nodes s_19 and s_20.
+initial_facts:
+- content: The setting is a modest, quiet room where a young attorney is present.
+  id: f_0
+  negated: false
+- content: Brushy Bill Roberts is an elderly man present in the room with the young
+    attorney.
+  id: f_1
+  negated: false
+- content: Brushy Bill Roberts claims to be William H. Bonney (Billy the Kid).
+  id: f_2
+  negated: false
+- content: The young attorney does not yet accept or confirm Brushy Bill's claim of
+    being Billy the Kid.
+  id: f_3
+  negated: false
+- content: Brushy Bill Roberts has not yet begun narrating his story.
+  id: f_4
+  negated: false
+- content: Pat Garrett’s role and actions beyond this meeting are not yet known or
+    commenced.
+  id: f_5
+  negated: false
+- content: No political or law enforcement actions related to Billy the Kid or Pat
+    Garrett have yet occurred or been revealed.
+  id: f_6
+  negated: false
+- content: The historical controversy regarding Billy the Kid's death and Brushy Bill's
+    identity is not yet resolved.
+  id: f_7
+  negated: false
+- content: Brushy Bill Roberts’ identity as Billy the Kid remains an unconfirmed claim
+    at this time.
+  id: f_8
+  negated: false
+meta:
+  genres: ["Western", "Action"]
+  id: movie95
+  player_role: Pat Garrett
+  title: "Young Guns II"
+synopsis: The film opens in 1950 with a young attorney talking to an elderly man named
+  Brushy Bill Roberts, who claims that he is William H. Bonney, whom "everyone" knows
+  to have been shot and killed by Pat Garrett in 1881. The majority of the film takes
+  place in flashbacks as the old man recalls his story for the lawyer, who asks if
+  the man has any proof that he is the famous outlaw. Brushy Bill's story begins with
+  the remaining Regulators having gone their separate ways. Billy has become part
+  of a new gang with "Arkansas" Dave Rudabaugh and Pat Garrett. The New Mexico governor
+  has issued warrants for the arrests of those involved in the Lincoln County wars,
+  including Billy, Doc Scurlock, and Jose Chavez y Chavez, who are dragged into town
+  and imprisoned to await hanging. Meanwhile, Billy meets with the new governor Lew
+  Wallace who agrees to pardon Billy if he testifies against the Dolan-Murphy faction.
+  Billy soon finds out that he was tricked into being arrested with no chance of testifying
+  against his old enemies. After escaping, Billy along with the help of Rudabaugh
+  and Garrett, pose as a lynch mob to spring his old comrades from a hanging. When
+  the gang successfully escape Lincoln, Billy mentions the Mexican Blackbird. Garrett
+  decides not to go with the gang and, instead, open a boarding house. As they make
+  a run for the border along with farmer Hendry William French and 14 year old Tom
+  O'Folliard, cattle baron John Simpson Chisum and Governor Wallace approach Garrett
+  to offer him the job as Lincoln County Sheriff and $1000 to use whatever resources
+  he needs to hunt Bonney down and kill him. Garrett agrees and, forming a posse,
+  begins his pursuit of the gang. Billy and the gang soon come to the town of White
+  Oaks where they meet up with former companion, Jane Greathouse who runs a local
+  bordello. Later that night, the town lynch mob comes for the gang and are intent
+  on a hanging. Deputy Carlisle tries to negotiate a deal, "the Indian" for a safe
+  rideout. Billy refuses the offer and pushes the Deputy out the door, who is then
+  accidentally killed by the lynch mob. Garrett soon tracks Billy to the bordello,
+  but is too late. Billy and his gang are continuously tracked by the posse, narrowly
+  evading capture, but Tom is soon shot dead by Garrett. As they hideout, Billy reveals
+  that the Mexican Blackbird doesn't exist; it was just a pawn to get the gang back
+  together and to keep riding. Doc is angered and tries to leave for home, but he
+  is shot by one of Garrett's men and sacrifices himself to enable his friends to
+  escape. Billy the Kid is soon brought back into Lincoln by Garrett and is sentenced
+  to death by hanging. He is visited by Jane Greathouse, who arranges to meet him
+  during his daily outhouse visit, where she gives him a pistol. Billy uses the pistol
+  to kill two guards and escapes to Old Fort Sumner. By the time he arrives, Dave
+  has abandoned the group to make his way to Mexico, and Chavez is dying from a bullet
+  wound. During the night Garrett finds Billy as he is unarmed. Billy asks Garrett
+  to let him hide in Mexico and tell the authorities that he killed him. Garrett declines
+  because he believes Billy would not be able to resist coming back to the United
+  States. Billy turns around, forcing Garrett to have to shoot him in the back, which
+  he does not. In the morning, a fake burial is staged for Billy and Garrett's horse
+  is seen being taken by Billy. The film ends with the lawyer being convinced that
+  Brushy Bill is Billy the Kid. The epilogue reveals that Dave was beheaded once he
+  reached Mexico to discourage more outlaws from crossing the border, Garrett's book
+  detailing his pursuit of Billy is a dismal failure and he is eventually shot and
+  killed, and despite corroboration from several surviving friends of the outlaw,
+  Brushy Bill Roberts was never credited as being Billy the Kid and he died shortly
+  after. The film ends saying that whether or not Brushy Bill was Billy the Kid remains
+  a mystery. The real Brushy Bill Roberts did in fact go before New Mexico Gov. Thomas
+  Mabry in 1950, but was discredited at a hearing that has been repeatedly criticized
+  for its circus atmosphere. In the years since, historical and forensic evidence
+  of varying degrees of credibility has emerged on both sides of the debate over the
+  true identity of Brushy Bill Roberts. Could he possibly in fact have been Billy
+  the Kid? The issue has never been conclusively decided, although the majority of
+  academic historians now tend to discount Robert's claims. However, the debate will
+  probably continue for a long time to come, as no irrefutable evidence that Roberts
+  was not the Kid has emerged, and without that some will always be willing to believe
+  that it is at least a possibility. The Brushy Bill story is another fascinating
+  mystery of the Old West era.
+trajectory:
+- description: In 1950, a young attorney meets an elderly man named Brushy Bill Roberts
+    who claims to be William H. Bonney, aka Billy the Kid, thought dead since 1881;
+    the scene is set in a modest, quiet room where the old man begins recounting his
+    story.
+  id: s_0
+  key_delta: Presentation of Brushy Bill Roberts claiming to be Billy the Kid; the
+    historical controversy regarding Billy's death is introduced.
+  trigger_event: Brushy Bill Roberts starts telling his story to the young attorney.
+- description: Flashback to post-Lincoln County War period where the remaining Regulators
+    have disbanded; Billy the Kid has joined a new outlaw gang with Arkansas Dave
+    Rudabaugh and Pat Garrett as members.
+  id: s_1
+  key_delta: Introduction of Billy the Kid’s new gang dynamics including key members
+    Garrett and Rudabaugh.
+  trigger_event: Billy narrates the formation of his new gang and the fractured status
+    of the Regulators.
+- description: The New Mexico governor issues arrest warrants for Billy, Doc Scurlock,
+    and Jose Chavez y Chavez for their roles in the Lincoln County wars; the scene
+    is tense with law enforcement action imminent.
+  id: s_2
+  key_delta: Billy and several members of his former gang are imprisoned, facing hanging
+    for their outlaw activities.
+  trigger_event: Warrants are issued and law enforcement arrests Billy and his comrades,
+    imprisoning them awaiting hanging.
+- description: Billy meets Governor Lew Wallace who offers him a pardon if he testifies
+    against the Dolan-Murphy faction; the meeting takes place in a formal governor’s
+    office filled with political tension.
+  id: s_3
+  key_delta: Introduction of a deal with the governor involving a pardon contingent
+    on turning against enemies.
+  trigger_event: Billy agrees to discuss potential pardon in exchange for testimony.
+- description: Billy discovers he was tricked and will not be allowed to testify;
+    he is effectively trapped with no political leverage, creating a window for action.
+  id: s_4
+  key_delta: Billy and comrades lose the chance of political bailout and face imminent
+    execution.
+  trigger_event: Billy realizes no testimony opportunity will be granted and plans
+    an escape.
+- description: Billy, Rudabaugh, and Garrett masquerade as a lynch mob to free Billy’s
+    old comrades from hanging; the event occurs under cover of darkness at the jail.
+  id: s_5
+  key_delta: Billy’s gang reunites and escapes Lincoln, temporarily avoiding death
+    sentence.
+  trigger_event: The staged lynch mob rescue successfully frees the prisoners from
+    imminent hanging.
+- description: Billy references the 'Mexican Blackbird' as they flee Lincoln; Pat
+    Garrett decides not to continue with the gang and instead opens a boarding house,
+    signaling a split.
+  id: s_6
+  key_delta: The gang’s cohesion fractures as Garrett leaves, marking diverging paths.
+  trigger_event: Garrett chooses to leave the gang and start a stable livelihood running
+    a boarding house.
+- description: Garrett is approached by cattle baron John Simpson Chisum and Governor
+    Wallace with an offer to become Lincoln County Sheriff and $1000 to pursue and
+    kill Billy; Garrett is in his boarding house considering the offer.
+  id: s_7
+  key_delta: Garrett shifts from gang member to lawman, initiating official pursuit
+    of Billy.
+  trigger_event: Garrett accepts the sheriff’s position and forms a posse to hunt
+    Billy the Kid.
+- description: Billy and his gang arrive in White Oaks and meet Jane Greathouse who
+    runs a bordello; the town atmosphere is hostile and law enforcement presence increases.
+  id: s_8
+  key_delta: The gang directly confronts violent civilian law enforcement threats
+    in White Oaks.
+  trigger_event: The local lynch mob arrives at the bordello intending to capture
+    and hang the gang.
+- description: Deputy Carlisle tries to negotiate a deal for safe passage involving
+    'the Indian,' which Billy rejects, leading to Carlisle’s accidental death by lynch
+    mob; tension escalates as violence erupts.
+  id: s_9
+  key_delta: Escalation of open conflict resulting in a death linked to Billy’s outright
+    defiance.
+  trigger_event: Billy pushes out Deputy Carlisle; Carlisle is killed accidentally
+    by lynch mob.
+- description: Garrett tracks Billy to the bordello but arrives too late; the posse
+    continues the pursuit with increasing intensity.
+  id: s_10
+  key_delta: The hunt intensifies, solidifying Garrett’s role as relentless pursuer.
+  trigger_event: Garrett locates but fails to capture Billy at the bordello.
+- description: Tom O'Folliard is shot and killed by Garrett during a narrow escape;
+    the gang is now grieving but continues flight under pressure.
+  id: s_11
+  key_delta: Gang suffers its first fatality at the hands of Garrett’s posse.
+  trigger_event: Tom is fatally wounded in a firefight initiated by Garrett's posse.
+- description: Doc Scurlock tries to leave but is shot and sacrifices himself for
+    the gang’s escape; the gang's morale and numbers decline significantly.
+  id: s_12
+  key_delta: Loss of a key gang member due to posse gunfire, weakening gang cohesion.
+  trigger_event: Doc is shot by posse members during an escape attempt, enabling the
+    others to flee.
+- description: Billy is captured by Garrett, brought back to Lincoln, and sentenced
+    to death by hanging; the town is tense with the prospect of Billy's execution.
+  id: s_13
+  key_delta: Billy becomes a prisoner facing execution, signaling near end of his
+    outlaw career.
+  trigger_event: Garrett delivers Billy to the authorities and he is formally sentenced
+    to death.
+- description: Billy is visited by Jane Greathouse in prison, who provides him a pistol
+    during his daily outhouse visit; prison interior is dim and guarded.
+  id: s_14
+  key_delta: Billy gains means to attempt a breakout from prison.
+  trigger_event: Jane secretly passes a pistol to Billy during his outhouse break.
+- description: Billy uses the pistol to kill two guards and escapes Lincoln jail;
+    he rides toward Old Fort Sumner to regroup.
+  id: s_15
+  key_delta: Billy’s escape prolongs his outlaw status and flight from law enforcement.
+  trigger_event: Billy shoots guards and escapes custody successfully.
+- description: At Old Fort Sumner, Billy finds Dave Rudabaugh has abandoned the group
+    and Chavez y Chavez is wounded and dying; the hideout is grim and tense.
+  id: s_16
+  key_delta: Gang splinters further with deathly wounds and desertion.
+  trigger_event: Billy’s arrival reveals Dave’s absence and Chavez’s mortal condition.
+- description: Garrett tracks Billy to Old Fort Sumner, where Billy is unarmed and
+    asks to hide in Mexico with a fake death reported; Garrett refuses fearing Billy’s
+    return.
+  id: s_17
+  key_delta: Billy’s plan for faked death is rejected, setting up final confrontation.
+  trigger_event: Billy offers to let Garrett fake his death, but Garrett declines
+    and prepares to shoot him.
+- description: Billy turns away from Garrett, forcing Garrett not to shoot him in
+    the back; no killing occurs. The next morning, a fake burial for Billy is staged
+    and Garrett’s horse is taken by Billy.
+  id: s_18
+  key_delta: Billy’s life is spared and public death is fabricated, creating uncertainty
+    in the historical record.
+  trigger_event: Garrett chooses not to kill Billy, faking his death instead.
+- description: In 1950, the lawyer becomes convinced Brushy Bill is Billy the Kid;
+    the room where the interview occurs is quiet, shadows suggesting mystery.
+  id: s_19
+  key_delta: The lawyer’s belief legitimizes Brushy Bill’s claims from the story perspective.
+  trigger_event: The lawyer accepts Brushy Bill’s story as plausible after hearing
+    the full account.
+- description: Epilogue reveals Dave was beheaded in Mexico, Garrett’s book failed
+    commercially and he was later killed, and Brushy Bill Roberts died uncredited
+    despite corroboration; historian debate remains unresolved.
+  id: s_20
+  key_delta: Story concludes with unresolved mystery about Brushy Bill’s true identity
+    and historical legacy.
+  trigger_event: Narration summarizes fates of key figures and ongoing controversy
+    about Brushy Bill’s identity.

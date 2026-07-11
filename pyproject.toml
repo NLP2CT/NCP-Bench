@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ncpbench"
+version = "0.1.0"
+description = "NCP-Bench dataset construction and evaluation framework"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+dependencies = ["PyYAML>=6.0"]
+
+[project.optional-dependencies]
+experiment = ["openai>=1.0", "python-dotenv>=1.0"]
+test = ["pytest>=8"]
+
+[project.urls]
+Repository = "https://github.com/yingpengma/NCP-Bench"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-dir]
+"" = "src"
+
+[tool.setuptools.package-data]
+ncpbench = ["prompts/*.txt"]

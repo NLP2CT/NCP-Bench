@@ -1,0 +1,471 @@
+commitments:
+- description: Pippin must encounter the palantír and witness Sauron's mind invasion
+    before Gandalf deduces Sauron's intent to attack Minas Tirith or before any strategic
+    response regarding Sauron's threat.
+  id: c_0
+  satisfaction_condition: Node s_1 has been achieved (Pippin's palantír vision and
+    Gandalf's deduction).
+  type: ordering
+  violation_condition: Any narrative or player action implying knowledge of Sauron's
+    plan or Gandalf's deduction before s_1 is completed.
+- description: Pippin must not reveal any information regarding Frodo or the Ring
+    to Sauron via the palantír at any point between s_1 and s_20 to preserve secrecy
+    of the Ring's location.
+  id: c_1
+  satisfaction_condition: Throughout nodes s_1 to s_20, Pippin consistently withholds
+    info about Frodo and the Ring; no NPC or player disclosure occurs.
+  type: invariant
+  violation_condition: Any event or player action that causes Pippin or any character
+    to reveal Frodo's or the Ring's whereabouts via the palantír or other means before
+    s_20.
+- description: Gandalf and Pippin must present themselves to Denethor at Minas Tirith
+    and formally request aid from Rohan before any alliance or troops from Rohan are
+    mobilized to assist Gondor.
+  id: c_2
+  satisfaction_condition: Node s_2 completed (meeting Denethor and requesting Rohan
+    aid) before s_4 or s_8 (Rohan's mobilization/beacon signaling).
+  type: ordering
+  violation_condition: Rohan's aid or troop movements initiated prior to the completion
+    of s_2.
+- description: Denethor refuses aid from Rohan due to suspicion of Gandalf and Aragorn,
+    maintaining political tension until his death at s_10.
+  id: c_3
+  satisfaction_condition: From s_2 up to and including s_9, Denethor does not call
+    Rohan for aid; suspicion remains unresolved.
+  type: invariant
+  violation_condition: Denethor calls for Rohan's aid earlier than s_10 or displays
+    trustful cooperation before Pippin's pledge and Gandalf's urgings.
+- description: Denethor must send Faramir on a mission to reclaim Osgiliath only after
+    the Morgul army led by the Nazgûl attacks and pushes Gondorian forces out.
+  id: c_4
+  satisfaction_condition: Node s_3 completed (Morgul army expulsion of Gondorians)
+    before s_4 and the dispatch of Faramir.
+  type: ordering
+  violation_condition: Faramir is sent on his mission or is gravely wounded/killed
+    before s_3 occurs.
+- description: Pippin must light the beacon fire as a signal to Rohan, triggering
+    their mobilization to assist Gondor in battle.
+  id: c_5
+  satisfaction_condition: Node s_4 completed with Pippin lighting the beacon and Rohan
+    being alerted and responding.
+  type: achievement
+  violation_condition: No successful beacon lighting occurs, or Rohan is not alerted
+    and mobilized by s_11.
+- description: Aragorn must receive the sword Andúril and the message of Arwen’s condition
+    from Elrond before pursuing the Paths of the Dead and claiming the Army of the
+    Dead’s allegiance.
+  id: c_6
+  satisfaction_condition: Node s_5 is completed with Aragorn receiving Andúril and
+    Elrond's message prior to s_7.
+  type: invariant
+  violation_condition: Aragorn attempts to claim the Army of the Dead or proceed with
+    the Paths of the Dead quest before acquiring Andúril and Elrond's message.
+- description: Éowyn's confession and Aragorn's reaffirmation of his love for Arwen
+    must occur before Aragorn departs to the Paths of the Dead or goes to battle.
+  id: c_7
+  satisfaction_condition: Node s_6 is completed before s_7 and s_8.
+  type: ordering
+  violation_condition: Aragorn departs without this emotional exchange occurring or
+    acknowledging Éowyn’s confession.
+- description: Aragorn, Legolas, and Gimli must secure the allegiance of the Army
+    of the Dead by brandishing Andúril and proving Aragorn’s heirship before the arrival
+    of forces at Minas Tirith.
+  id: c_8
+  satisfaction_condition: Node s_7 completed with the Army of the Dead sworn to Aragorn
+    prior to s_13.
+  type: achievement
+  violation_condition: Aragorn proceeds to the Black Gate or Minas Tirith battle without
+    having the Army of the Dead’s support.
+- description: Éowyn and Merry secretly join Théoden's forces without Théoden’s initial
+    knowledge, preserving the secrecy of their involvement until s_8 and s_11 respectively.
+  id: c_9
+  satisfaction_condition: From s_8 through s_11, the secret participation of Éowyn
+    and Merry is maintained without open revelation.
+  type: invariant
+  violation_condition: Any premature exposure of their participation or Théoden knowingly
+    includes them at the beginning of the march.
+- description: Denethor’s attempt to burn himself and Faramir alive and Gandalf’s
+    intervention must occur after Faramir is gravely wounded and believed dead, and
+    before Denethor’s death and the final defense of Minas Tirith.
+  id: c_10
+  satisfaction_condition: Node s_10 completed prior to s_11 and s_13.
+  type: ordering
+  violation_condition: Denethor dies, or Faramir is saved before this suicide attempt
+    sequence or contradicts the sequence outlined.
+- description: The Rohirrim’s cavalry charge led by Théoden must occur after Minas
+    Tirith’s siege is underway and after Pippin’s beacon signaling and Rohan’s mobilization.
+  id: c_11
+  satisfaction_condition: Node s_11 completed only after s_4 (beacon) and s_9 (siege)
+    have taken place.
+  type: ordering
+  violation_condition: Rohirrim charge occurs before the siege begins or before Rohan
+    is alerted and mobilized.
+- description: The Witch-king kills Théoden and is killed in turn by Éowyn with Merry’s
+    help during the battle, reinforcing the stakes of the battle and shifting the
+    morale of allies.
+  id: c_12
+  satisfaction_condition: Node s_12 occurs with these deaths acknowledged before s_13.
+  type: invariant
+  violation_condition: Either the Witch-king survives past the battle, Théoden stays
+    alive, or Éowyn does not kill the Witch-king with Merry’s aid.
+- description: Aragorn’s arrival at Minas Tirith with the Army of the Dead decisively
+    ends the siege battle by overwhelming Sauron’s forces.
+  id: c_13
+  satisfaction_condition: Node s_13 completed with Aragorn’s forces defeating the
+    enemy and the Army of the Dead being freed.
+  type: achievement
+  violation_condition: The siege concludes without Aragorn and the Army of the Dead’s
+    intervention or their failure to defeat Sauron’s forces.
+- description: Frodo and Sam’s trust must fracture due to Gollum’s manipulation before
+    Frodo is betrayed and left for Shelob’s attack.
+  id: c_14
+  satisfaction_condition: Node s_14 completed before s_15, with evident distrust and
+    Gollum’s treachery emerging.
+  type: invariant
+  violation_condition: Frodo and Sam maintain trust or Gollum’s betrayal occurs without
+    prior strain on their relationship.
+- description: Sam’s rescue of Frodo from Shelob’s lair and the orc tower must occur
+    after Frodo’s paralysis and Gollum’s betrayal.
+  id: c_15
+  satisfaction_condition: Node s_15 completed after s_14 and prior to journey continuation
+    towards Mount Doom (s_16).
+  type: ordering
+  violation_condition: Sam rescues Frodo before Frodo is attacked or paralyzed by
+    Shelob or before Gollum’s betrayal is established.
+- description: Aragorn’s army must advance to the Black Gate of Mordor to draw Sauron’s
+    attention only after Minas Tirith has been defended and the hobbits approach Mount
+    Doom.
+  id: c_16
+  satisfaction_condition: Node s_16 completed after s_13 (Minas Tirith defense) and
+    in parallel with s_14-15 (Frodo and Sam’s journey).
+  type: ordering
+  violation_condition: Aragorn’s distraction at the Black Gate occurs before Minas
+    Tirith’s siege or before the hobbits have reached Mordor.
+- description: Frodo must succumb to the Ring’s power at the Cracks of Doom, refusing
+    to destroy it, which triggers Gollum’s attack and the Ring’s eventual destruction.
+  id: c_17
+  satisfaction_condition: Node s_17 completed with Frodo’s refusal, followed by s_18
+    where Gollum seizes the Ring and falls.
+  type: invariant
+  violation_condition: Frodo destroys the Ring willingly or resists its power without
+    the final struggle involving Gollum.
+- description: The One Ring’s destruction at Mount Doom must be achieved through the
+    fall of Gollum into the lava, leading to Sauron’s downfall.
+  id: c_18
+  satisfaction_condition: Node s_18 completed describing the Ring’s destruction as
+    Gollum falls into lava with it.
+  type: achievement
+  violation_condition: The Ring remains intact, or both Frodo and Gollum fall without
+    the Ring’s destruction occurring.
+- description: Frodo and Sam must be rescued by the Eagles after the Ring is destroyed
+    and before leaving Mordor.
+  id: c_19
+  satisfaction_condition: Node s_19 completed with Eagles rescuing Frodo and Sam following
+    the Ring’s destruction.
+  type: ordering
+  violation_condition: No rescue occurs; Frodo and Sam perish or remain stranded after
+    the Ring’s destruction.
+- description: Aragorn must be crowned King of Gondor, reunited with Arwen and honored
+    alongside the hobbits, marking restoration and victory.
+  id: c_20
+  satisfaction_condition: Node s_20 completed with the coronation and reunions fulfilled.
+  type: achievement
+  violation_condition: Aragorn fails to be crowned or is not publicly recognized;
+    reunions and honors do not occur.
+- description: The four hobbits must return safely to the Shire and resume peaceful
+    life, including Sam’s marriage to Rosie Cotton.
+  id: c_21
+  satisfaction_condition: Node s_21 completed with hobbits’ return and Sam’s wedding
+    ceremony.
+  type: achievement
+  violation_condition: Any hobbit fails to return; Sam does not marry Rosie or peace
+    is not restored in the Shire.
+- description: Frodo’s departure for the Undying Lands with Gandalf and others marks
+    the definitive closure of the Ring’s saga and legacy transfer to Sam.
+  id: c_22
+  satisfaction_condition: Node s_22 completed with Frodo’s sea departure and Sam entrusted
+    with the quest’s account.
+  type: achievement
+  violation_condition: Frodo remains in Middle-earth or the saga ends without this
+    departure and passing of legacy.
+initial_facts:
+- content: Aragorn is physically located at Isengard's remains.
+  id: f_0
+  negated: false
+- content: Gandalf, Legolas, Gimli, Théoden, Gamling, Éomer, Merry, Pippin, Treebeard,
+    and Aragorn are gathered together at Isengard.
+  id: f_1
+  negated: false
+- content: The group has not yet departed from Isengard to Edoras.
+  id: f_2
+  negated: false
+- content: Pippin has not yet touched or looked into Saruman's recovered palantír;
+    he has no knowledge of Sauron's mind invasion.
+  id: f_3
+  negated: false
+- content: Gandalf has not yet deduced Sauron's intent to attack Minas Tirith.
+  id: f_4
+  negated: false
+- content: Denethor has not yet been contacted by Gandalf and Pippin.
+  id: f_5
+  negated: false
+- content: Denethor does not yet suspect Gandalf or Aragorn and has not refused or
+    accepted any aid requests from them.
+  id: f_6
+  negated: false
+- content: The Morgul army led by the Nazgûl has not yet attacked Osgiliath.
+  id: f_7
+  negated: false
+- content: Faramir has not yet been sent on any mission by Denethor.
+  id: f_8
+  negated: false
+- content: Pippin has not yet lit any beacon signal at Minas Tirith.
+  id: f_9
+  negated: false
+- content: The city of Minas Tirith is not yet under siege.
+  id: f_10
+  negated: false
+- content: Elrond has not yet informed Aragorn of Arwen's illness nor handed him the
+    reforged sword Andúril.
+  id: f_11
+  negated: false
+- content: Aragorn has not yet ventured to the Paths of the Dead or claimed allegiance
+    of the Army of the Dead.
+  id: f_12
+  negated: false
+- content: Éowyn has not yet expressed her love to Aragorn nor asked him not to join
+    the battle.
+  id: f_13
+  negated: false
+- content: Éowyn and Merry have not yet secretly joined Théoden's forces.
+  id: f_14
+  negated: false
+- content: Denethor is alive and has not attempted suicide.
+  id: f_15
+  negated: false
+- content: Faramir is alive and present in Minas Tirith, not yet wounded or sent on
+    any dangerous mission.
+  id: f_16
+  negated: false
+- content: Théoden, Aragorn, and the Rohirrim army have not yet mobilized or departed
+    Dunharrow.
+  id: f_17
+  negated: false
+- content: The Witch-king has not yet led any siege or assault on Minas Tirith.
+  id: f_18
+  negated: false
+- content: Frodo, Sam, and Gollum are not yet traveling near Minas Morgul or Mount
+    Doom.
+  id: f_19
+  negated: false
+- content: Frodo and Sam maintain trust and have not experienced Gollum's betrayal
+    or manipulation.
+  id: f_20
+  negated: false
+meta:
+  genres: ["Fantasy", "Adventure"]
+  id: movie51
+  player_role: Aragorn
+  title: "The Lord of the Rings——The Return of the King"
+synopsis: Gandalf, Aragorn, Legolas, Gimli, Théoden, Gamling, and Éomer meet up with
+  Merry, Pippin and Treebeard at Isengard. The group returns to Edoras, where Pippin
+  looks into Saruman's recovered palantír, in which Sauron appears and invades his
+  mind; Pippin tells him nothing regarding Frodo and the Ring. From this event, Gandalf
+  deduces that Sauron is planning to attack Minas Tirith. Gandalf rides with Pippin
+  to find Denethor, the Steward of Gondor, to whom Pippin swears his service. Gandalf
+  urges Denethor to call Rohan for aid, but Denethor declines, fearing Aragorn and
+  Gandalf plan to depose him. The Morgul army, led by the Nazgûl, drives the Gondorians
+  out of Osgiliath. Denethor sends his son Faramir on a suicide mission to reclaim
+  the city. Pippin lights a beacon, signaling Théoden and Aragorn to assemble the
+  Rohirrim for battle. Elrond informs Aragorn that Arwen did not go to the Undying
+  Lands, and is now dying. Believing their forces to be outnumbered by Sauron's, Elrond
+  gives Aragorn the sword Andúril to acquire the service of the Army of the Dead,
+  who owe allegiance to the heir of Isildur. Éowyn confesses her love for Aragorn
+  and asks him not to go, but Aragorn reaffirms his love for Arwen and heads into
+  battle. Accompanied by Legolas and Gimli, Aragorn ventures into the Paths of the
+  Dead and gains the loyalty of the King of the Dead and his men by brandishing Andúril,
+  proving himself the Heir of Isildur. At Dunharrow, Théoden rides off to war, unaware
+  that Éowyn and Merry have secretly joined his forces. Sauron's armies lay siege
+  to Minas Tirith, led by the Witch-king. Believing a grievously wounded Faramir to
+  be dead, Denethor tries to burn his son and himself alive, but Gandalf intervenes;
+  he saves Faramir, but Denethor commits suicide. Just as the Gondorians are about
+  to be overrun, the Rohirrim army arrives and counter-attacks in a massive cavalry
+  charge led by Théoden. This shifts the tide of the battle, and the Orcs begin to
+  retreat. However, the Haradrim arrive and join the Orc army, turning the tide. The
+  Witch-king kills Théoden, only to be killed himself by Éowyn with help from Merry.
+  On the verge of defeat, the Rohirrim are saved when Aragorn, Legolas, and Gimli
+  arrive with the Army of the Dead and overwhelm Sauron's forces, ending the battle.
+  Aragorn frees the Army of the Dead and their souls go to the afterlife. Meanwhile,
+  Frodo, Sam and Gollum travel to Minas Morgul. Sam overhears Gollum's plans to murder
+  them and take the Ring for himself. Gollum persuades Frodo that Sam wants the Ring
+  for himself, and Frodo angrily tells Sam to go home. A heartbroken Sam leaves, but
+  discovers Gollum's treachery and follows after them. Gollum betrays Frodo, leaving
+  him in the lair of the giant spider Shelob, who paralyzes Frodo before being wounded
+  and driven away by Sam. An Orc patrol captures Frodo and takes him to Sauron's fortress.
+  Sam rescues Frodo from the tower, and they continue the journey to Mount Doom. Meanwhile,
+  Aragorn leads his remaining men to the Black Gate of Mordor, distracting Sauron
+  and his forces and allowing Sam and Frodo to enter Mount Doom. Sam carries the weakened
+  Frodo up the volcano, but Gollum attacks them. At the Crack of Doom, Frodo succumbs
+  to the Ring's power, refusing to destroy it. Gollum attacks Frodo and bites his
+  finger off, seizing the Ring for himself. An enraged Frodo attacks Gollum, and they
+  both fall over the edge. At the last second, Frodo grabs onto the ledge, leaving
+  Gollum to fall into the lava, taking the Ring with him. As the Ring melts in the
+  volcano, Sauron is destroyed and the land of Mordor collapses, taking down most
+  of his forces. Frodo and Sam are saved from the rising lava by Eagles, led by Gandalf.
+  In the aftermath, Aragorn is crowned King, heralding a new age of peace, and is
+  reunited with Arwen and the four hobbits are bowed by all of Gondor for their courageous
+  efforts. The four Hobbits return home to the Shire, where Sam marries his childhood
+  sweetheart, Rosie Cotton. A few years later, Frodo leaves Middle-earth for the Undying
+  Lands with Gandalf, Bilbo, Elrond, Celeborn, and Galadriel, leaving his account
+  of their quest to Sam.
+trajectory:
+- description: At Isengard's remains, Aragorn stands among Gandalf, Legolas, Gimli,
+    Théoden, Gamling, Éomer, and the hobbits Merry and Pippin, along with Treebeard,
+    preparing to regroup and strategize in the wake of Saruman's defeat.
+  id: s_0
+  key_delta: Formation of a united group with leaders from Rohan, Gondor, and the
+    Fellowship, along with hobbits and Ents, consolidating their alliance.
+  trigger_event: The group begins the journey to Edoras to consolidate their forces
+    and plan next steps.
+- description: At Edoras, Pippin investigates Saruman's recovered palantír, observing
+    a vision of Sauron looming in the device.
+  id: s_1
+  key_delta: Sauron's intent to attack Minas Tirith becomes known; Pippin withholds
+    information about Frodo and the Ring, while Gandalf deduces the impending threat.
+  trigger_event: Pippin touches the palantír and witnesses Sauron invading his mind.
+- description: Gandalf rides with Pippin to Minas Tirith to seek an alliance with
+    Denethor, the Steward of Gondor, amidst growing tension in the city.
+  id: s_2
+  key_delta: Denethor refuses to call Rohan for aid, suspicious of Gandalf and Aragorn’s
+    intentions; Pippin pledges his service to Denethor.
+  trigger_event: Gandalf and Pippin arrive at Minas Tirith and meet Denethor to request
+    aid from Rohan.
+- description: The Morgul army led by the Nazgûl attacks Osgiliath; Gondor's defenses
+    begin to crumble under heavy assault.
+  id: s_3
+  key_delta: Gondor loses control of Osgiliath; Denethor dispatches his son Faramir
+    on a dangerous mission to reclaim the city.
+  trigger_event: The Nazgûl-led Morgul army pushes Gondorian forces out of Osgiliath.
+- description: At Minas Tirith, Pippin lights a beacon atop the city walls, signaling
+    for Rohan's aid as the threat grows more dire.
+  id: s_4
+  key_delta: Rohan is alerted to Gondor's peril, prompting imminent military mobilization
+    by Théoden and Aragorn.
+  trigger_event: Pippin ignites the beacon fire visible from distant Rohan.
+- description: In Rivendell, Elrond informs Aragorn of Arwen's critical condition
+    and confers upon him the reforged sword Andúril.
+  id: s_5
+  key_delta: Aragorn inherits the heirloom sword and the responsibility to claim the
+    allegiance of the Army of the Dead.
+  trigger_event: Aragorn receives Andúril and Elrond’s message about Arwen’s illness.
+- description: Éowyn expresses her love to Aragorn and pleads with him not to join
+    the battle, while Aragorn reaffirms his commitment to Arwen and the war effort.
+  id: s_6
+  key_delta: Emotional tensions within the group surface, clarifying Aragorn’s personal
+    commitments despite personal sacrifice.
+  trigger_event: Éowyn's confession and request met with Aragorn’s reaffirmed resolve
+    to fight.
+- description: Aragorn, accompanied by Legolas and Gimli, ventures into the Paths
+    of the Dead seeking the pledge of the King of the Dead and his spectral army.
+  id: s_7
+  key_delta: The Army of the Dead swears allegiance to Aragorn, strengthening his
+    forces significantly.
+  trigger_event: Aragorn brandishes Andúril before the Dead to assert his claim as
+    heir of Isildur.
+- description: At Dunharrow, Théoden rallies Rohan’s army and departs for Minas Tirith,
+    unaware that Éowyn and Merry have secretly joined the campaign.
+  id: s_8
+  key_delta: Rohan's army is fully mobilized, including secret volunteers, preparing
+    to support Gondor.
+  trigger_event: Théoden leads the Rohirrim cavalry out of Dunharrow toward battle.
+- description: Minas Tirith is under siege by Sauron’s forces, commanded by the Witch-king;
+    the city's defenders brace for a devastating assault.
+  id: s_9
+  key_delta: Open warfare begins at Minas Tirith, with heavy casualties and impending
+    threats to the city’s survival.
+  trigger_event: The Witch-king leads the attack on Minas Tirith’s gates and walls.
+- description: Believing Faramir dead, Denethor attempts to burn himself and his son
+    alive on a pyre, but Gandalf intervenes and rescues Faramir; Denethor commits
+    suicide.
+  id: s_10
+  key_delta: Denethor’s death leaves Minas Tirith without its Steward; Faramir survives
+    to fight another day.
+  trigger_event: Denethor’s suicidal act is thwarted by Gandalf in the city’s citadel.
+- description: The Rohirrim arrive at Minas Tirith, launching a massive cavalry charge
+    led by Théoden that pushes back the orcish forces and shifts the battle’s momentum.
+  id: s_11
+  key_delta: The tide of battle turns in favor of Gondor and its allies through the
+    Rohirrim assault.
+  trigger_event: The charging arrival of Rohan’s cavalry is seen on the battlefield
+    by Gondorians and orcs alike.
+- description: The Haradrim counterattack joins the orc army; the Witch-king kills
+    Théoden but is slain by Éowyn with Merry’s aid, intensifying the battle’s stakes.
+  id: s_12
+  key_delta: The Witch-king’s death weakens Sauron’s leadership; Théoden’s death causes
+    loss and rallying for Rohan’s forces.
+  trigger_event: Éowyn and Merry strike down the Witch-king amid the battle’s chaos.
+- description: Aragorn arrives at Minas Tirith with Legolas, Gimli, and the Army of
+    the Dead, overwhelming the remaining enemy forces and ending the battle.
+  id: s_13
+  key_delta: Sauron’s forces are decisively defeated at Minas Tirith; the Army of
+    the Dead is freed from its oath.
+  trigger_event: The spectral Army of the Dead sweeps through the battlefield with
+    Aragorn’s command.
+- description: Meanwhile, Frodo, Sam, and Gollum continue their perilous journey into
+    Mordor toward Mount Doom, with increasing tension and treachery within the group.
+  id: s_14
+  key_delta: Frodo and Sam’s trust fractures; Gollum’s betrayal plans become imminent.
+  trigger_event: The trio travels through Minas Morgul’s vicinity as Gollum’s duplicity
+    grows apparent.
+- description: Frodo is left paralyzed by Shelob’s attack after Gollum’s betrayal;
+    Sam battles Shelob and rescues Frodo from captivity in an orc tower.
+  id: s_15
+  key_delta: Frodo is saved from death; the hobbits continue their quest despite severe
+    hardships.
+  trigger_event: Sam fights Shelob and rescues the incapacitated Frodo from orc guards.
+- description: Aragorn leads the forces to the Black Gate of Mordor to distract Sauron’s
+    army, providing Frodo and Sam a chance to enter Mount Doom undetected.
+  id: s_16
+  key_delta: Distraction at the Black Gate enables stealth entry for Sam and Frodo
+    toward Mount Doom.
+  trigger_event: Aragorn’s army advances and challenges the Black Gate, drawing Sauron’s
+    attention.
+- description: Sam carries the weakened Frodo up Mount Doom; at the Cracks of Doom,
+    Frodo succumbs to the Ring's power, claiming it instead of destroying it.
+  id: s_17
+  key_delta: Frodo’s claim over the Ring allows Gollum to attack and seize it by biting
+    off Frodo’s finger.
+  trigger_event: Frodo refuses to destroy the Ring at the volcanic summit.
+- description: Frodo and Gollum struggle at the volcano’s edge; Frodo survives by
+    clutching the ledge, while Gollum falls into the lava with the Ring.
+  id: s_18
+  key_delta: The One Ring is destroyed with Gollum; the source of Sauron’s power is
+    annihilated.
+  trigger_event: Both fall into the fiery chasm, but Frodo grabs the ledge, Gollum
+    plunges with the Ring.
+- description: With the Ring destroyed, Mordor collapses; Eagles led by Gandalf rescue
+    Frodo and Sam from the rising lava and the battlefield stabilizes.
+  id: s_19
+  key_delta: Survival of the hobbits and collapse of Sauron’s domain, ending the war.
+  trigger_event: Eagles arrive and carry Frodo and Sam away from the devastated Mount
+    Doom.
+- description: In the aftermath, Aragorn is crowned King of Gondor; reunited with
+    Arwen and honored alongside the four hobbits for their bravery and endurance.
+  id: s_20
+  key_delta: Restoration of the kingdom under Aragorn’s rule; friendship and alliances
+    are celebrated.
+  trigger_event: The coronation ceremony in Minas Tirith and public recognition of
+    the heroes.
+- description: The four hobbits return to the Shire, where life returns to normal;
+    Sam marries Rosie Cotton, symbolizing peace and renewal.
+  id: s_21
+  key_delta: Reintegration into peaceful home life; hope for the future of the Shire.
+  trigger_event: The hobbits arrive at the Shire and Sam weds Rosie in a festive ceremony.
+- description: Years later, Frodo departs Middle-earth for the Undying Lands, accompanied
+    by Gandalf, Bilbo, Elrond, Celeborn, and Galadriel, leaving Sam as the custodian
+    of their tale.
+  id: s_22
+  key_delta: Closure of Frodo’s journey; legacy entrusted to Sam; end of the Ring’s
+    saga.
+  trigger_event: Frodo boards a ship departing the Grey Havens toward the West with
+    the company.

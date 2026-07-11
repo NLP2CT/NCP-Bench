@@ -1,0 +1,334 @@
+commitments:
+- description: The contract killing in Freedomtown must occur before Tony and group
+    receive green cards and enter Miami’s underworld.
+  id: c_0
+  satisfaction_condition: Node s_0 is completed before s_1 begins (i.e., assassination
+    of Cuban official and Freedomtown release precedes underworld dealings).
+  type: ordering
+  violation_condition: Player attempts to engage in drug trade or meet Frank Lopez
+    before completing the contract killing and release from Freedomtown (before completing
+    s_0).
+- description: The murder of Angel by Colombian dealers must precede the retaliatory
+    killing of the Colombians.
+  id: c_1
+  satisfaction_condition: Event of Angel’s chainsaw murder occurs before killing Colombians
+    (progress from s_1 to s_2).
+  type: ordering
+  violation_condition: Player initiates violence against Colombian dealers without
+    Angel being murdered first (i.e., no prior Angel murder).
+- description: Tony and Manny must personally meet Frank Lopez and deliver seized
+    money/drugs before being officially hired.
+  id: c_2
+  satisfaction_condition: Completion of meeting with Frank (s_2) occurs after avenging
+    Angel and retrieval of deal goods; hiring event triggers only afterward.
+  type: ordering
+  violation_condition: Player gains Frank's employment or access to his resources
+    before delivering the drugs and money or meeting him directly.
+- description: Tony’s protective stance toward his sister Gina regarding Manny is
+    consistent from s_3 onward.
+  id: c_3
+  satisfaction_condition: Throughout nodes s_3 to s_9, Tony consistently warns or
+    reacts protectively about Manny’s association with Gina.
+  type: invariant
+  violation_condition: Player allows Manny uninhibited access to Gina or ignores Tony’s
+    protective warnings prior to s_9 confrontation.
+- description: Tony must learn of Omar’s betrayal and witness his execution before
+    permanently trusting Sosa and dismissing Frank.
+  id: c_4
+  satisfaction_condition: Node s_4 (Bolivia meeting, Omar’s execution) precedes s_5
+    and s_6 where Tony’s relationship shifts from Frank to Sosa.
+  type: ordering
+  violation_condition: Player establishes independent dealings with Sosa or severs
+    ties with Frank before knowing Omar is an informant and seeing his death.
+- description: Frank’s anger and dissolution of partnership with Tony only occur after
+    Tony’s unauthorized deal with Sosa and pursuit of Elvira.
+  id: c_5
+  satisfaction_condition: Node s_5 is completed, showing Frank’s anger and partnership
+    end, before Tony openly establishes his own operation and relationship with Elvira.
+  type: ordering
+  violation_condition: Player is permitted to seize control of the empire or pursue
+    Elvira without first triggering Frank’s ire and partnership breakdown.
+- description: Attempted assassinations and police intimidation attempts must precede
+    confrontation with Frank and killing of Frank and Bernstein.
+  id: c_6
+  satisfaction_condition: Events of hits on Tony and police shake-down occur before
+    Tony confronts and kills Frank and Bernstein (s_6).
+  type: ordering
+  violation_condition: Player kills Frank or Bernstein before the prior attempt on
+    Tony’s life and police conflict have happened.
+- description: Tony’s cocaine addiction and internal empire tensions persist between
+    marriage to Elvira and legal troubles.
+  id: c_7
+  satisfaction_condition: From s_7 start to s_8 end, Tony exhibits cocaine abuse,
+    strained relationships with Manny and Elvira, and financial/legal pressures.
+  type: invariant
+  violation_condition: Player removes or ignores cocaine addiction signs, interpersonal
+    conflict, or legal jeopardy during s_7 to s_8 phases.
+- description: Assassination attempt on the Bolivian journalist must be planned and
+    called off before Sosa ends his business relationship with Tony.
+  id: c_8
+  satisfaction_condition: Node s_8 (failed assassination and Alberto’s death) completed
+    before s_9 where Sosa terminates ties with Tony.
+  type: ordering
+  violation_condition: Player proceeds to war declaration or loss of Sosa alliance
+    prior to planning and canceling the assassination attempt.
+- description: Tony discovering Manny and Gina’s secret marriage and killing Manny
+    must happen only after failed assassination and Sosa’s withdrawal.
+  id: c_9
+  satisfaction_condition: Node s_9’s events occur after s_8 and before war declaration
+    in s_10.
+  type: ordering
+  violation_condition: Player kills Manny out of context without prior discovery of
+    secret marriage and actual disappearance of Manny and Gina.
+- description: Tony declares war on Sosa only after killing Manny and bringing Gina
+    to his mansion, triggered by Sosa’s assault on Tony’s empire.
+  id: c_10
+  satisfaction_condition: s_10’s declaration of war happens strictly after killing
+    Manny in s_9 and before final assault and mansion attack.
+  type: ordering
+  violation_condition: Player initiates war or assault on Sosa before killing Manny
+    and consolidating Gina at the mansion.
+- description: Tony’s death after a violent last stand defending his mansion marks
+    the conclusive end of the narrative arc.
+  id: c_11
+  satisfaction_condition: Node s_11 triggers Tony’s mortal wounding, final battle,
+    and ultimate death at the mansion.
+  type: achievement
+  violation_condition: Player avoids Tony’s death or defeats final assault without
+    triggering the fatal shootout and Tony’s fall.
+initial_facts:
+- content: It is 1980.
+  id: f_0
+  negated: false
+- content: Tony Montana is a Cuban refugee.
+  id: f_1
+  negated: false
+- content: Tony Montana has recently arrived at Freedomtown refugee camp in Miami.
+  id: f_2
+  negated: false
+- content: Tony Montana is currently located inside Freedomtown refugee camp.
+  id: f_3
+  negated: false
+- content: Tony Montana is accompanied by his best friend Manny Ribera.
+  id: f_4
+  negated: false
+- content: Manny Ribera is currently located inside Freedomtown refugee camp.
+  id: f_5
+  negated: false
+- content: Tony Montana and Manny Ribera are also accompanied by their associates
+    Angel and Chi-Chi.
+  id: f_6
+  negated: false
+- content: Angel is currently located inside Freedomtown refugee camp.
+  id: f_7
+  negated: false
+- content: Chi-Chi is currently located inside Freedomtown refugee camp.
+  id: f_8
+  negated: false
+- content: Tony Montana, Manny Ribera, Angel, and Chi-Chi have been assigned a task
+    to assassinate a former Cuban government official.
+  id: f_9
+  negated: false
+- content: Frank Lopez, a wealthy drug dealer, has contracted Tony Montana and his
+    group to perform the assassination.
+  id: f_10
+  negated: false
+- content: Tony Montana and his group have not yet killed the former Cuban government
+    official.
+  id: f_11
+  negated: false
+- content: Tony Montana and his group have not yet been released from Freedomtown
+    refugee camp.
+  id: f_12
+  negated: false
+- content: Tony Montana and his group do not yet possess green cards.
+  id: f_13
+  negated: false
+- content: Tony Montana has not yet met Frank Lopez or any of his associates in the
+    criminal underworld.
+  id: f_14
+  negated: false
+- content: Tony Montana is not yet involved in Miami’s criminal underworld or drug
+    trade.
+  id: f_15
+  negated: false
+- content: Tony Montana is not aware of any betrayal by Omar Suarez.
+  id: f_16
+  negated: false
+- content: Tony Montana has not yet met Elvira Hancock.
+  id: f_17
+  negated: false
+- content: Tony Montana's protective attitude toward his sister Gina regarding Manny
+    is not yet established.
+  id: f_18
+  negated: false
+- content: Tony Montana’s mother Georgina and sister Gina live in Miami but Tony is
+    currently separated from them.
+  id: f_19
+  negated: false
+- content: Tony Montana is unaware of future events including his deal with Alejandro
+    Sosa, murders, and drug empire rise and fall.
+  id: f_20
+  negated: false
+- content: No attempted assassinations or police intimidation have yet occurred against
+    Tony Montana.
+  id: f_21
+  negated: false
+meta:
+  genres: ["Crime", "Drama"]
+  id: movie38
+  player_role: Tony Montana
+  title: "Scarface"
+synopsis: In 1980, Cuban refugee Tony Montana arrives in Miami during the Mariel boatlift.
+  He, along with his best friend Manny Ribera, and their associates Angel and Chi-Chi,
+  are sent to "Freedomtown", a refugee camp. In exchange for killing a former Cuban
+  government official at the request of wealthy drug dealer Frank Lopez, the group
+  are released from Freedomtown and given green cards. On the outside, they are offered
+  a deal by Frank's henchman Omar Suarez to buy cocaine from Colombian dealers. The
+  deal falls through and Angel is murdered with a chainsaw by the Colombians. Manny
+  and Chi-Chi storm the apartment before the same fate befalls Tony, and the Colombians
+  are killed. Suspecting that Omar betrayed them, Tony and Manny insist on taking
+  the money and drugs retrieved from the deal to Frank personally. Impressed, Frank
+  hires Tony and Manny. During their meeting, Tony meets, and is instantly attracted
+  to Elvira Hancock, Frank's girlfriend. Months later, Tony visits his mother Georgina,
+  and younger sister, Gina, of whom he is fiercely protective. His mother is disgusted
+  by his life of crime and throws him out. As Tony gets in his waiting car, Manny
+  comments on Gina's beauty before being warned by Tony to stay away from her. Frank
+  sends Tony and Omar to Bolivia to meet with cocaine kingpin Alejandro Sosa. Tony
+  agrees to a deal with Sosa without Frank's approval, and Omar leaves to contact
+  Frank. Sosa discloses that Omar is a police informant and then has Tony witness
+  as a beaten Omar is pushed to his death from a helicopter. Tony vouches for the
+  rest of his organization and Frank, and Sosa agrees to the deal, parting with a
+  warning that Tony should never betray him. In Miami, Frank is infuriated by Omar's
+  demise and the unauthorized deal struck by Tony. Frank and Tony's relationship dissolves,
+  and Tony establishes his own organization and informs Elvira of his intentions toward
+  her. At a nightclub, Tony is shaken down by corrupt detective Mel Bernstein, who
+  proposes to "tax" Tony's business dealings in return for police protection and information.
+  Tony angers Frank further by openly pursuing Elvira in the club. Tony sees Gina
+  dancing with a drug dealer. He throws the dealer out, and following a heated exchange
+  he slaps Gina. Manny takes Gina home. Hitmen attempt to assassinate Tony, but he
+  escapes. Suspecting that Frank sent both Bernstein and the hitmen, Tony, Manny and
+  Chi-Chi go to Frank's office, where they find him with Bernstein. When a planned
+  phone call by one of Tony's henchmen sets up Frank's involvement, Manny kills Frank
+  and Tony kills Bernstein. Tony takes Elvira and seizes Frank's empire. With Sosa's
+  supplies, Tony builds a multi-million dollar empire, and he later marries Elvira.
+  However, the operation struggles as Tony and Elvira excessively use cocaine, Tony's
+  money launderer demands more pay, and Manny grows resentful as Tony takes all credit
+  for their success. Eventually, Tony is charged with money laundering and tax evasion
+  after a police sting operation. Sosa offers to use his government connections to
+  keep Tony out of jail if Tony assassinates a Bolivian journalist intending to expose
+  Sosa during a speech to the United Nations. Later, Tony further pushes Manny and
+  Elvira away by blaming Manny for his arrest and accusing Elvira of being infertile
+  due to her drug use. After a fight, Elvira leaves Tony. In New York City, Tony,
+  Chi-Chi and Sosa's henchman Alberto prepare for the assassination. Alberto plants
+  a bomb on the journalist's car, but when he is unexpectedly accompanied by his family,
+  Tony calls off the mission. Alberto insists on continuing, forcing Tony to kill
+  him. Later, Tony learns that Manny and Gina have been missing for several days.
+  Returning home, Tony is contacted by a furious Sosa over the mission failure. Sosa
+  ends their business relationship and reminds Tony that he should not have betrayed
+  him. In search of Gina, Tony goes to his mother's house where he is given an address
+  in Coconut Grove. Arriving at the address, he finds Manny in a robe. When Tony also
+  sees Gina in a robe, he kills Manny. Gina tells Tony that she and Manny had just
+  gotten married and were planning to surprise him. Tony and his men take Gina to
+  Tony's mansion. Tony declares war on Sosa before burying his face in a large mound
+  of cocaine. Meanwhile, Sosa's men have already begun assaulting the mansion and
+  killing Tony's men. A drugged Gina accuses Tony of wanting her himself, before shooting
+  him in the leg. One of Sosa's men shoots Gina. Tony kills the man and becomes distraught
+  at the sight of Gina's corpse. In a cocaine-fueled fury, Tony uses a grenade-launcher
+  equipped rifle to assault Sosa's men. Tony is repeatedly shot, but continues to
+  fight until he is shot in the back. Tony's corpse falls into a fountain below, in
+  front of a statue reading "The World is Yours".
+trajectory:
+- description: In 1980, Tony Montana, a Cuban refugee, arrives at the overcrowded
+    Freedomtown refugee camp in Miami along with his best friend Manny Ribera and
+    their associates Angel and Chi-Chi amid the Mariel boatlift.
+  id: s_0
+  key_delta: Tony and his group accept the contract killing, marking their entry into
+    criminal dealings and initiating their release from the refugee camp with green
+    cards.
+  trigger_event: Tony and his group receive orders to assassinate a former Cuban government
+    official at the request of Frank Lopez.
+- description: Tony, Manny, Angel, and Chi-Chi are freed from Freedomtown and settle
+    into Miami’s criminal underworld, meeting Frank Lopez's henchman Omar Suarez and
+    offered a cocaine deal with Colombian dealers.
+  id: s_1
+  key_delta: Angel's murder escalates the conflict with the Colombian dealers and
+    causes Tony and his associates to retaliate violently, killing the Colombians.
+  trigger_event: The cocaine purchase deal with Colombians fails and Angel is brutally
+    murdered with a chainsaw by the Colombians.
+- description: After avenging Angel’s death by killing the Colombian dealers, Tony
+    and Manny suspect Omar Suarez’s betrayal and decide to deliver the seized drugs
+    and money directly to Frank Lopez.
+  id: s_2
+  key_delta: Tony officially becomes part of Frank Lopez's organization and meets
+    Elvira Hancock, Frank's girlfriend, sparking a personal attraction.
+  trigger_event: Frank Lopez personally meets Tony and Manny, is impressed, and formally
+    hires them.
+- description: Tony visits his mother Georgina and sister Gina, who live disapproving
+    of his criminal lifestyle, establishing Tony’s family ties and his protective
+    attitude towards Gina.
+  id: s_3
+  key_delta: Family dynamics are defined, with Tony’s protective stance creating a
+    personal boundary for Manny and foreshadowing later tensions.
+  trigger_event: Tony warns Manny to stay away from Gina following Manny’s comment
+    on her beauty.
+- description: Tony and Omar travel to Bolivia to meet with cocaine kingpin Alejandro
+    Sosa, representing Frank’s interests in expanding the drug empire.
+  id: s_4
+  key_delta: Tony gains Sosa’s trust by vouching for Frank and his organization but
+    also experiences betrayal and violence, deepening his involvement in the drug
+    trade.
+  trigger_event: During the meeting, Tony learns Omar is a police informant and witnesses
+    Omar’s execution by Sosa’s men.
+- description: Back in Miami, Frank Lopez is enraged by Omar’s death and Tony’s unauthorized
+    deal with Sosa, souring their relationship.
+  id: s_5
+  key_delta: The alliance between Tony and Frank dissolves; Tony begins establishing
+    his own drug operation and relationship with Elvira.
+  trigger_event: Tony openly pursues Elvira in a nightclub, escalating tensions with
+    Frank.
+- description: Tony’s growing independence triggers conflict, including a violent
+    altercation with Gina over her association with a drug dealer and a police shake-down
+    by detective Mel Bernstein.
+  id: s_6
+  key_delta: Tony kills both Frank and Bernstein, seizing control of Frank’s drug
+    empire and eliminating key rivals.
+  trigger_event: Attempted assassinations on Tony fail; Tony and his associates suspect
+    Frank's involvement and confront him.
+- description: Now leading a lucrative drug empire supplied by Sosa, Tony marries
+    Elvira but struggles with cocaine addiction, internal resentments, and financial
+    pressures.
+  id: s_7
+  key_delta: Tony’s criminal success brings legal jeopardy, and pressure mounts on
+    his empire and personal life.
+  trigger_event: Tony is charged with money laundering and tax evasion following a
+    police sting operation.
+- description: Sosa offers to protect Tony legally if he assassinates a Bolivian journalist
+    at the United Nations planning to expose him.
+  id: s_8
+  key_delta: The failed assassination attempt alienates Sosa, ending their business
+    relationship and signifying Tony’s increasing isolation.
+  trigger_event: Tony calls off the assassination when the journalist is unexpectedly
+    accompanied by his family, causing Tony to kill his own henchman Alberto who insists
+    on proceeding.
+- description: Tony returns home to find Manny and Gina missing, then discovers they
+    have secretly married, which triggers a fatal confrontation.
+  id: s_9
+  key_delta: Tony’s paranoia and possessiveness result in the irrevocable loss of
+    his best friend, further fracturing his personal circle.
+  trigger_event: Tony kills Manny upon finding him with Gina, misunderstanding the
+    situation.
+- description: Tony brings Gina back to his mansion and declares war on Sosa as his
+    criminal empire comes under violent assault.
+  id: s_10
+  key_delta: Tony experiences profound personal loss and physical injury, intensifying
+    the war with Sosa and his descent fueled by cocaine.
+  trigger_event: Sosa’s men attack Tony’s mansion; during the fighting, Gina shoots
+    Tony in the leg before being killed herself.
+- description: In a cocaine-addled rage, Tony fights back against Sosa’s men with
+    heavy weaponry despite being repeatedly shot.
+  id: s_11
+  key_delta: Tony’s death concludes his violent rise and fall, symbolizing the end
+    of his empire and the ultimate consequence of his choices.
+  trigger_event: Tony is finally shot in the back and falls dead into a fountain beneath
+    a statue reading 'The World is Yours'.

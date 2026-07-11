@@ -1,0 +1,360 @@
+commitments:
+- description: Elle's motivation to attend Harvard Law is triggered only after Warner
+    breaks up with her; the system must not allow acceptance or law school actions
+    before s_0 completes.
+  id: c_0
+  satisfaction_condition: 'Node s_0 completed: player has experienced Warner''s breakup
+    and Elle''s shattered expectations.'
+  type: ordering
+  violation_condition: Player triggers Elle's acceptance to Harvard (s_1) or law school
+    preparation before experiencing Warner's breakup (s_0).
+- description: Elle must receive an acceptance letter to Harvard Law before arriving
+    at Harvard and facing social challenges; prevents skipping law school admission
+    step.
+  id: c_1
+  satisfaction_condition: 'Node s_1 completed: player has received Harvard acceptance
+    and begun law school trajectory.'
+  type: ordering
+  violation_condition: Player attempts to enact s_2 (Harvard arrival and social disapproval)
+    or later events before acceptance letter (s_1) is obtained.
+- description: Elle's social status at Harvard is initially one of disapproval and
+    naivete until she shifts focus from Warner to her own success at s_3; this state
+    must persist in [s_2 to s_3).
+  id: c_2
+  satisfaction_condition: During nodes s_2 to before s_3, Elle is treated with social
+    disapproval and regarded as naive by peers.
+  type: invariant
+  violation_condition: Player alters social perception so that Elle is regarded as
+    respected or successful at Harvard before s_3 is reached.
+- description: Elle must decisively end her pursuit of Warner and begin focusing on
+    her own merit by securing an internship with Professor Callahan before advancing
+    the trial phase.
+  id: c_3
+  satisfaction_condition: Node s_3 completed, including Elle rejecting Warner and
+    obtaining Professsor Callahan internship.
+  type: achievement
+  violation_condition: Trial-related events (nodes s_4 and beyond) triggered without
+    Elle having rejected Warner or securing the internship.
+- description: Elle holds confidential knowledge about Brooke's liposuction alibi
+    that she must keep secret until the defense strategy is revealed post s_4; this
+    secret must never be prematurely disclosed.
+  id: c_4
+  satisfaction_condition: Between s_4 and trial resolution (before s_7), Brooke's
+    liposuction alibi remains confidential and undisclosed to prosecution or other
+    parties.
+  type: invariant
+  violation_condition: Player causes the liposuction alibi or related confidential
+    information to become public or known to prosecution before proper trial cross-examination
+    phase.
+- description: Vivian's friendship and trust toward Elle only forms after witnessing
+    Elle's integrity in keeping Brooke's secret, disallowing premature alliance or
+    cooperation.
+  id: c_5
+  satisfaction_condition: 'Node s_5 completed: Vivian befriends Elle post-discovery
+    of her integrity and reveals Warner''s admission circumstances.'
+  type: ordering
+  violation_condition: Player establishes Vivian as Elle's friend or ally before Elle
+    keeps Brooke's secret at s_4 and displays integrity.
+- description: Key prosecution witness (cabana boy) testimony discrediting must occur
+    only after Elle deduces and exposes his falsehood in the cross-examination at
+    s_5 to ensure proper trial build-up.
+  id: c_6
+  satisfaction_condition: Node s_5 completed with cabana boy's false testimony exposed
+    and discredited in courtroom.
+  type: ordering
+  violation_condition: Player attempts to discredit prosecution witness before gathering
+    sufficient evidence or without undergoing trial preparation shown in s_5.
+- description: Après Elle rejecting Callahan's advances and contemplating withdrawal
+    (end of s_6), player cannot advance to prosecution dismissal or changing attorneys
+    before Professor Stromwell helps Elle regain confidence.
+  id: c_7
+  satisfaction_condition: Node s_6 completed with Stromwell's encouragement and Elle
+    recommitting to law school.
+  type: invariant
+  violation_condition: Player triggers Elle's dismissal or trial lead attorney appointment
+    at s_7 or beyond before Stromwell intervention.
+- description: Elle must formally be hired as Brooke's lead attorney after Callahan
+    is dismissed, signifying Elle's legal responsibility before trial resolution actions
+    can proceed.
+  id: c_8
+  satisfaction_condition: Node s_7 completed in which Brooke dismisses Callahan and
+    hires Elle as lead attorney.
+  type: achievement
+  violation_condition: Player attempts to resolve trial outcomes, including exposing
+    Chutney's lie or exonerating Brooke before Elle is officially lead counsel.
+- description: Chutney's false alibi (washing permed hair) contradicting her testimony
+    about hearing a gunshot must remain unresolved and unexposed before cross-examination
+    under Elle's direct trial questioning at s_7.
+  id: c_9
+  satisfaction_condition: Prior to s_7 cross-examination, Chutney's alibi remains
+    unrefuted and unchallenged by Elle.
+  type: invariant
+  violation_condition: Player preempts trial logic by revealing Chutney's alibi falsehood
+    before proper cross-examination scene at s_7.
+- description: Trial must conclude with Chutney's confession and Brooke's exoneration;
+    this milestone is necessary to demonstrate Elle's legal success before narrative
+    closure.
+  id: c_10
+  satisfaction_condition: 'Node s_8 completed: Chutney confesses, Brooke cleared,
+    and justice served.'
+  type: achievement
+  violation_condition: Player attempts to end narrative or proceed to post-trial events
+    without trial resolution at s_8.
+- description: Elle rejects Warner's reconciliation attempt after trial resolution;
+    this rejection must be explicit and persistent to establish Elle's independence.
+  id: c_11
+  satisfaction_condition: After s_8, player has triggered Elle's firm rejection of
+    Warner's reconciliation attempts.
+  type: invariant
+  violation_condition: Player permits Elle to reconcile or continue romantic involvement
+    with Warner post-trial resolution (after s_8).
+- description: Elle's successful graduation with honors and full personal and professional
+    transformation must be realized and celebrated by the narrative end.
+  id: c_12
+  satisfaction_condition: 'Node s_9 completed: Elle graduates with honors, delivers
+    speech, and is placed in a prestigious law firm with mature relationships established.'
+  type: achievement
+  violation_condition: Narrative attempts to conclude or proceed to epilogue without
+    Elle graduating, giving speech, or having matured relationships as described in
+    s_9.
+initial_facts:
+- content: Elle Woods is a Southern California college student in her senior year.
+  id: f_0
+  negated: false
+- content: Elle Woods is serving as president of her sorority.
+  id: f_1
+  negated: false
+- content: Elle Woods is majoring in fashion merchandising.
+  id: f_2
+  negated: false
+- content: Elle Woods is seriously in love with her boyfriend, Warner Huntington III.
+  id: f_3
+  negated: false
+- content: Warner Huntington III is planning to attend Harvard Law School the following
+    year.
+  id: f_4
+  negated: false
+- content: Elle Woods expects Warner Huntington III to propose marriage to her.
+  id: f_5
+  negated: false
+- content: Elle Woods does not yet know that Warner will break up with her.
+  id: f_6
+  negated: false
+- content: Elle Woods has not started preparing for law school.
+  id: f_7
+  negated: false
+- content: Elle Woods has not taken the law school entrance exam.
+  id: f_8
+  negated: false
+- content: Elle Woods has not applied to Harvard Law School.
+  id: f_9
+  negated: false
+- content: Elle Woods has not received an acceptance letter to Harvard Law School.
+  id: f_10
+  negated: false
+- content: Elle Woods has not yet arrived at Harvard Law School.
+  id: f_11
+  negated: false
+- content: Elle Woods has not experienced social disapproval or ridicule from Harvard
+    classmates.
+  id: f_12
+  negated: false
+- content: Elle Woods has not yet met Paulette.
+  id: f_13
+  negated: false
+- content: Elle Woods has no knowledge of Warner's engagement to Vivian Kensington.
+  id: f_14
+  negated: false
+- content: Elle Woods is unaware of any legal case involving Brooke Taylor-Windham.
+  id: f_15
+  negated: false
+- content: Elle Woods has no internship or professional relationship with Professor
+    Callahan.
+  id: f_16
+  negated: false
+- content: Elle Woods is unaware of any confidential or sensitive information regarding
+    Brooke Taylor-Windham.
+  id: f_17
+  negated: false
+- content: Elle Woods has no friendship or alliance with Vivian Kensington.
+  id: f_18
+  negated: false
+- content: Elle Woods has not encountered or discredited the cabana boy's testimony.
+  id: f_19
+  negated: false
+- content: Elle Woods has not rejected any sexual advances from Professor Callahan
+    nor contemplated withdrawing from law school.
+  id: f_20
+  negated: false
+- content: Elle Woods has not received encouragement or intervention from Professor
+    Stromwell.
+  id: f_21
+  negated: false
+- content: Elle Woods has not been hired as lead attorney for Brooke Taylor-Windham.
+  id: f_22
+  negated: false
+- content: Chutney's false alibi involving washing her permed hair has not yet been
+    revealed or challenged.
+  id: f_23
+  negated: false
+- content: The trial against Brooke Taylor-Windham has not yet commenced.
+  id: f_24
+  negated: false
+- content: Warner Huntington III has not attempted to reconcile with Elle Woods.
+  id: f_25
+  negated: false
+- content: Elle Woods has not graduated from Harvard Law School.
+  id: f_26
+  negated: false
+- content: Elle Woods has not delivered a commencement speech.
+  id: f_27
+  negated: false
+- content: Elle Woods does not have a mature friendship with Vivian Kensington.
+  id: f_28
+  negated: false
+- content: Elle Woods does not have an established romantic relationship with Emmett
+    Richmond.
+  id: f_29
+  negated: false
+- content: Paulette is not yet a married woman expecting a child.
+  id: f_30
+  negated: false
+meta:
+  genres: ["Comedy", "Romance"]
+  id: movie45
+  player_role: Elle Woods
+  title: "Legally Blonde"
+synopsis: In her senior year as a Southern California college student, girlish sorority
+  president Elle Woods majors in fashion merchandising and is seriously in love with
+  her boyfriend, Warner Huntington III, who will attend Harvard Law School the following
+  year. She excitedly expects him to ask her to marry him, but instead he breaks up
+  with her. Desperate to win Warner back, Elle studies for and passes the law-school
+  entrance exam, applies to Harvard, and is accepted. Upon arriving at Harvard, her
+  classmates disapprove of her because of her naivete, and she discovers that Warner
+  is engaged to another student, Vivian Kensington. The only friend Elle makes is
+  Paulette, a divorced manicurist. Elle later helps Paulette gain custody of her dog
+  back from her ex-husband as well as seduce the delivery man on whom she has a crush.
+  After Vivian tricks Elle into attending a party in a Playboy Bunny costume, Elle
+  has a discussion with Warner and finally realizes he will never respect her. Now
+  determined to succeed on her own, Elle studies hard and wins an internship with
+  Professor Callahan, as do Warner and Vivian. They work with Callahan and an associate,
+  attorney Emmett Richmond, to defend Brooke Taylor-Windham, a famous fitness instructor
+  accused of murdering her much older billionaire husband, Hayworth Windham. Brooke
+  was once Elle's fitness instructor and a member of her sorority. Elle believes Brooke
+  is innocent, but Brooke's stepdaughter, Chutney, and the household cabana boy say
+  she is guilty, and that they saw Brooke standing over Windham's dead body, covered
+  in his blood, while Brooke testifies that she loved her husband and only found him
+  after he had been shot to death. Brooke refuses to provide Callahan an alibi, but
+  when Elle visits her in prison, Brooke admits that she had liposuction on the day
+  of the murder. Public knowledge of this fact would ruin Brooke's reputation as a
+  fitness instructor, so Elle agrees to keep it secret and refuses to reveal the alibi
+  to Callahan. Impressed by her integrity, Vivian starts to befriend Elle, also admitting
+  that Warner was put on Harvard's wait-list and only got in because his father pulled
+  some strings. The case against Brooke begins to weaken when Elle deduces that the
+  cabana boy is gay after he correctly identifies Elle's shoe style. During the cross-examination,
+  Emmett tricks him into identifying his boyfriend in court, proving that his testimony
+  about having an affair with Brooke was a lie. Impressed by her performance, Callahan
+  discusses Elle's future with her and then makes sexual advances on her, which Elle
+  immediately rejects. Overhearing part of the conversation, Vivian is frustrated
+  by Elle apparently using her sexuality to gain her internship. Elle, also thinking
+  that Callahan chose her for sexual reasons, decides to leave law school. Professor
+  Stromwell, who once removed Elle from her class for being unprepared, helps regain
+  Elle's spirit. Meanwhile, Emmett explains Elle's encounter with Callahan to Vivian
+  and Brooke. Brooke is enraged by that and Vivian realizes her mistake. Before the
+  trial continues, Brooke dismisses Callahan and hires Elle as her new attorney with
+  Emmett supervising. Elle begins shakily while cross-examining Chutney, who testifies
+  that she was home during her father's murder, but did not hear the gunshot because
+  she was in the shower washing her hair after getting her hair permed earlier that
+  day. Elle gets Chutney to reconfirm her story, then reveals that washing permed
+  hair within the first 24 hours would have deactivated the ammonium thioglycolate,
+  and Chutney's curls are still intact. Exposed, Chutney admits to killing Hayworth
+  accidentally because she thought he was Brooke, whom she hated for marrying her
+  father because she was Chutney's age. Brooke is exonerated, and Chutney is arrested.
+  After the trial, Warner tries to reconcile with Elle, but she rejects him, explaining
+  that she needs a boyfriend who is less of a "bonehead" in her new career. Two years
+  later, Elle, who has graduated with high honors, is the class-elected speaker at
+  the ceremony, and has been invited into one of Boston's best law firms; Vivian is
+  now Elle's best friend and has called off her engagement with Warner, who graduated
+  without honors and no girlfriend and with no job offers; Paulette has married her
+  delivery man and is expecting a baby girl to be named after Elle; and finally, Emmett
+  has started his own practice, is now Elle's boyfriend, and will propose to her that
+  night.
+trajectory:
+- description: Elle Woods is a Southern California college student in her senior year,
+    serving as sorority president and majoring in fashion merchandising. She is happily
+    in love with her boyfriend, Warner Huntington III, who is preparing to attend
+    Harvard Law School next year.
+  id: s_0
+  key_delta: Elle's expectations of engagement are shattered, introducing the motivation
+    to win Warner back.
+  trigger_event: Warner Huntington III breaks up with Elle instead of proposing marriage.
+- description: Elle decides to take control of her future by preparing for law school;
+    she studies for and passes the law-school entrance exam and applies to Harvard.
+  id: s_1
+  key_delta: Elle gains admission to Harvard Law, setting her on a new academic and
+    personal path.
+  trigger_event: Elle receives her acceptance letter from Harvard Law School.
+- description: Elle arrives at Harvard Law School and faces disapproval and ridicule
+    from classmates due to her girlish naivete. She discovers Warner is engaged to
+    another student, Vivian Kensington. Paulette, a divorced manicurist, becomes Elle's
+    only friend.
+  id: s_2
+  key_delta: Elle forms a loyal friendship with Paulette, gaining personal support
+    at Harvard.
+  trigger_event: Elle meets Paulette and helps her regain custody of her dog and start
+    a relationship with the delivery man.
+- description: At a party, Vivian tricks Elle into attending dressed as a Playboy
+    Bunny. After a confrontational discussion with Warner, Elle ends contact realizing
+    Warner will never respect her.
+  id: s_3
+  key_delta: Elle shifts from pursuing Warner to committing to her own academic and
+    professional development.
+  trigger_event: Elle decides to focus on her own success and works hard to secure
+    an internship with Professor Callahan.
+- description: Elle, Warner, and Vivian all work as interns with Professor Callahan
+    and Emmett Richmond. They prepare to defend Brooke Taylor-Windham, a fitness instructor
+    accused of murdering her billionaire husband.
+  id: s_4
+  key_delta: Elle gains confidential knowledge about Brooke’s alibi and establishes
+    trust, affecting the defense strategy.
+  trigger_event: Elle visits Brooke in prison and learns Brooke had liposuction on
+    the day of the murder, which she agrees to keep secret.
+- description: Impressed by Elle's integrity in keeping Brooke's secret, Vivian begins
+    to befriend Elle and reveals that Warner only got into Harvard through his father's
+    influence.
+  id: s_5
+  key_delta: The key prosecution witness is discredited, weakening the case against
+    Brooke.
+  trigger_event: During the trial, Elle deduces the cabana boy is lying and, with
+    Emmett’s help, exposes his false testimony.
+- description: After Elle's strong performance, Callahan makes a sexual advance which
+    Elle rejects. Vivian overhears a misunderstanding and resents Elle, who then decides
+    to leave Harvard Law School.
+  id: s_6
+  key_delta: Elle overcomes disillusionment and recommits to her legal studies.
+  trigger_event: Professor Stromwell intervenes and encourages Elle to regain her
+    confidence and stay in law school.
+- description: Emmett clarifies the misunderstanding about Callahan to Vivian and
+    Brooke. Brooke dismisses Callahan and hires Elle as her lead attorney with Emmett
+    supervising.
+  id: s_7
+  key_delta: Chutney’s fabricated story collapses, revealing her as the true murderer.
+  trigger_event: During cross-examination, Elle exposes Chutney’s false alibi by demonstrating
+    that Chutney’s hair is still curled despite claiming to have washed it that day.
+- description: Chutney confesses to accidentally killing her father, Brooke is exonerated,
+    and Chutney is arrested. Elle has proven her capability as a lawyer.
+  id: s_8
+  key_delta: Elle breaks free from her past relationship, affirming her independence
+    and self-respect.
+  trigger_event: Warner approaches Elle to reconcile, but she rejects him, seeking
+    a more mature partner.
+- description: 'Two years later, Elle has graduated Harvard Law with high honors,
+    is the class speaker, has a prestigious job offer, and her relationships have
+    matured: Vivian is her best friend, Warner is unattached and less successful,
+    Paulette is married and expecting a child named after Elle, and Emmett is her
+    boyfriend preparing to propose.'
+  id: s_9
+  key_delta: Elle's full professional and personal transformation is realized and
+    celebrated.
+  trigger_event: Elle prepares for the graduation ceremony where she will deliver
+    the commencement speech.

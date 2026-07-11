@@ -1,0 +1,393 @@
+commitments:
+- description: The implanted laser projector with a safe deposit box number must remain
+    undiscovered before node s_0.
+  id: c_0
+  satisfaction_condition: The system never reveals or acknowledges existence of the
+    implanted laser projector before s_0 is reached.
+  type: invariant
+  violation_condition: Player attempts or system declares knowledge or usage of the
+    implanted laser projector or safe deposit box number prior to s_0.
+- description: The protagonist must suffer amnesia and not recall his identity before
+    s_1 completes.
+  id: c_1
+  satisfaction_condition: The system acknowledges that the protagonist cannot remember
+    his identity until s_1 is reached and amnesia is triggered.
+  type: invariant
+  violation_condition: Player gains or is granted explicit memory or knowledge of
+    his identity prior to s_1.
+- description: Protagonist must regain physical safety on land and manifest unusual
+    skills despite amnesia by node s_2.
+  id: c_2
+  satisfaction_condition: By s_2, the protagonist is on land, fluent in multiple languages,
+    and recognized as having unusual skills despite memory loss.
+  type: achievement
+  violation_condition: The protagonist fails to demonstrate or system disallows recognition
+    of his language fluency and skills post arrival on land at or after s_2.
+- description: The protagonist must discover his combat skills by incapacitating police in Zürich before accessing the safe deposit box.
+  id: c_3
+  satisfaction_condition: Node s_3 (police combat) occurs before node s_4 (bank visit).
+  type: ordering
+  violation_condition: The protagonist accesses the safe deposit box or obtains his passports before discovering his combat skills against the police.
+- description: The protagonist must acquire passports and currencies from the safe deposit box, but leave the handgun behind, before the consulate chase.
+  id: c_4
+  satisfaction_condition: Node s_4 explicitly states the handgun is left behind, and occurs prior to the chase in s_5.
+  type: achievement
+  violation_condition: The protagonist takes the handgun from the safe deposit box or skips the bank visit.
+- description: Escape to the U.S. consulate must occur after the police pursuit and
+    before further flight from authorities.
+  id: c_5
+  satisfaction_condition: Node s_5 (escape to U.S. consulate) must follow s_4 and
+    precede later chase sequences.
+  type: ordering
+  violation_condition: Player bypasses or fails to enter the U.S. consulate after
+    police pursuit at s_4 before moving ahead.
+- description: The protagonist must form an alliance with Marie Kreutz by offering
+    payment in exchange for transportation by s_6.
+  id: c_6
+  satisfaction_condition: By s_6, Marie accepts the offer to assist and drive the
+    protagonist to Paris.
+  type: achievement
+  violation_condition: Marie refuses aid or no alliance is formed before s_6 proceeds.
+- description: CIA identifies the amnesiac as the high-priority target and activates
+    agents only after s_7.
+  id: c_7
+  satisfaction_condition: The activation order for Castel, Manheim, and The Professor
+    only happens at or after s_7 is reached.
+  type: invariant
+  violation_condition: Agents are dispatched or CIA knowledge about the man being
+    a target leaks prior to s_7.
+- description: The protagonist must confirm the 'Michael Kane' alias is a cover after
+    arrival in Paris and not before.
+  id: c_8
+  satisfaction_condition: Node s_8 (confirmation Michael Kane is reported dead) occurs
+    after arrival and before confronting pursuers.
+  type: ordering
+  violation_condition: Player uncovers or system reveals the alias death before arrival
+    at s_8 or safe deposit box investigation.
+- description: The protagonist must survive the ambush by Castel and defeat him in
+    combat at s_9.
+  id: c_9
+  satisfaction_condition: Castel's ambush occurs and the protagonist successfully
+    incapacitates or neutralizes him by s_9 completion.
+  type: achievement
+  violation_condition: The protagonist fails or is captured/killed during Castel’s
+    ambush.
+- description: Marie must discover wanted posters showing both her and the protagonist
+    only after Castel’s ambush at s_10.
+  id: c_10
+  satisfaction_condition: Marie finds wanted posters inside Castel’s belongings after
+    s_9 and before s_11.
+  type: invariant
+  violation_condition: Marie or player learns about wanted status before s_10 or without
+    Castel’s ambush event.
+- description: CIA’s deceptive planting of a corpse as 'Michael Kane' must occur only
+    after Castel’s death and before Wombosi’s assassination.
+  id: c_11
+  satisfaction_condition: CIA plants the corpse in s_11 strictly after s_10 and before
+    s_12.
+  type: ordering
+  violation_condition: Player or system reveals or triggers corpse planting before
+    Castel’s death or after Wombosi’s killing.
+- description: The Professor must assassinate Wombosi before the protagonist fully
+    recovers identity and leaves Treadstone.
+  id: c_12
+  satisfaction_condition: Wombosi is assassinated at s_12 prior to protagonist’s reveal
+    of full identity at s_16 or departure at s_17.
+  type: achievement
+  violation_condition: The player or system attempts assassination before s_12.
+- description: The protagonist and Marie must retreat to Eamon’s house and establish
+    a safe haven before The Professor attempts to assassinate the protagonist there.
+  id: c_13
+  satisfaction_condition: Node s_13 happens prior to s_14.
+  type: ordering
+  violation_condition: The Professor attacks before the protagonists settle at Eamon’s
+    house.
+- description: The protagonist must kill The Professor and gain information about
+    Treadstone before sending Marie away.
+  id: c_14
+  satisfaction_condition: The Professor is killed and divulges Treadstone connection
+    at s_14, prior to sending Marie away at s_15.
+  type: achievement
+  violation_condition: The Professor survives or leaves without revealing information
+    before s_15.
+- description: Tracking Conklin to the Treadstone safe house must happen only after
+    The Professor’s death and sending Marie away.
+  id: c_15
+  satisfaction_condition: Node s_15 (tracking Conklin) occurs after s_14 and after
+    Marie is sent away.
+  type: ordering
+  violation_condition: Player attempts to infiltrate or find Treadstone safe house
+    before s_14 or before Marie’s departure.
+- description: The protagonist must recover partial memories and reveal his real identity
+    and mission during confrontation with Conklin and Parsons.
+  id: c_16
+  satisfaction_condition: Flashbacks and identity revelation occur at s_16 during
+    safe house confrontation.
+  type: achievement
+  violation_condition: The system or player obtains or reveals these memories and
+    identity outside or before s_16.
+- description: The protagonist must sever ties with Treadstone and kill surviving
+    agents only after s_16 and before the narrative end.
+  id: c_17
+  satisfaction_condition: The protagonist leaves Treadstone and kills agents attempting
+    to assassinate him at s_17, following s_16.
+  type: invariant
+  violation_condition: The protagonist leaves Treadstone or kills agents before memory
+    recovery at s_16.
+- description: Abbott shuts down Treadstone and introduces Blackbriar only after protagonist’s
+    departure and Conklin’s death.
+  id: c_18
+  satisfaction_condition: Node s_18 occurs after s_17 (departure and agent kills)
+    and Conklin’s assassination.
+  type: ordering
+  violation_condition: CIA reorganization or shutdown attempts prior to protagonist’s
+    defection or before Conklin’s death.
+- description: The protagonist must reunite with Marie in Greece for closure and new
+    life at narrative end.
+  id: c_19
+  satisfaction_condition: The reunion at Marie’s scooter rental stand in Greece occurs
+    at or after s_19 to conclude narrative arc.
+  type: achievement
+  violation_condition: Player never meets Marie again or reunion is negated before
+    the narrative concludes.
+initial_facts:
+- content: The protagonist (unconscious man) is adrift in the Mediterranean Sea near
+    Marseille, aboard a small fishing boat.
+  id: f_0
+  negated: false
+- content: The protagonist is currently unconscious.
+  id: f_1
+  negated: false
+- content: The protagonist has two gunshot wounds in his back.
+  id: f_2
+  negated: false
+- content: A tiny laser projector is surgically implanted under the protagonist's
+    skin at the level of his hip.
+  id: f_3
+  negated: false
+- content: The implanted laser projector is unknown and undiscovered by the protagonist
+    and others at this moment.
+  id: f_4
+  negated: false
+- content: The protagonist has no memory of his identity and does not recall who he
+    is or how he got into the sea (he suffers from amnesia).
+  id: f_5
+  negated: false
+- content: The police, CIA, and other characters do not yet know about the protagonist
+    or his existence.
+  id: f_6
+  negated: false
+- content: The protagonist is alive and in a vulnerable physical condition due to
+    gunshot wounds and unconsciousness.
+  id: f_7
+  negated: false
+- content: No combat or escape events involving the protagonist have occurred yet.
+  id: f_8
+  negated: false
+- content: The protagonist has not yet formed any alliances or relationships.
+  id: f_9
+  negated: false
+- content: The protagonist has not acquired any items such as passports, currencies,
+    or weapons.
+  id: f_10
+  negated: false
+- content: CIA black ops programs such as Treadstone and related operatives have not
+    yet activated or targeted the protagonist.
+  id: f_11
+  negated: false
+- content: Locations such as Zürich, Paris, U.S. consulate, and Marie Kreutz's presence
+    are irrelevant or not yet interacted with by the protagonist.
+  id: f_12
+  negated: false
+- content: The protagonist is unaware of aliases such as 'Michael Kane' and does not
+    know his true personal or operational identity.
+  id: f_13
+  negated: false
+meta:
+  genres: ["Action", "Thriller"]
+  id: movie00
+  player_role: Jason Bourne
+  title: "The Bourne Identity"
+synopsis: In the Mediterranean Sea near Marseille, Italian fishermen find an unconscious
+  man floating adrift with two gunshot wounds in his back. The boat's medic finds
+  a tiny laser projector surgically implanted under the unknown man's skin at the
+  level of the hip. When activated, the laser projector displays the number of a safe
+  deposit box in Zürich. The man wakes up and discovers he is suffering from amnesia.
+  Over the next few days on the ship, the man finds he is fluent in several languages
+  and has unusual skills, but cannot remember anything about himself or why he was
+  in the ocean. When the ship docks, he sets off to investigate the safe deposit box.
+  At the CIA's headquarters, the agency's Deputy Director Ward Abbot learns about
+  a failed assassination attempt against exiled African dictator Nykwana Wombosi.
+  Meanwhile, in Zürich, the amnesiac incapacitates two policemen using advanced hand-to-hand
+  combat when they attempt to arrest him. The next morning, he visits a bank using
+  the number that was embedded in his hip, and opens a safe deposit box to find several
+  passports containing his picture, large amounts of assorted currencies, and a handgun.
+  He assumes the name from the first passport, Jason Bourne. He takes all the passports
+  and money, but leaves the handgun. As he leaves, a bank employee contacts Operation
+  Treadstone, a CIA black ops program. After being chased by police, Bourne escapes
+  into a U.S. consulate where he is again pursued by authorities. Bourne escapes and
+  encounters a Swiss woman named Marie Kreutz, offering her $10,000 to drive him to
+  an address in Paris. Meanwhile, Alexander Conklin, the head of Treadstone, assures
+  Abbott that he will destroy any evidence connecting them to Bourne, who was responsible
+  for the failed assassination attempt on Wombosi. He activates three "assets" to
+  take down Bourne——Castel, Manheim, and The Professor. Bourne arrives at the address
+  on his passport, and after studying the apartment, hits redial on his phone and
+  is connected to the Hotel Regina, which recognizes one of Bourne's passport aliases;
+  Michael Kane. Bourne is told that Kane died two weeks before in a car crash. Castel
+  ambushes Bourne and Marie at the apartment, but Bourne manages to defeat him after
+  a fight and attempts to interrogate him unsuccessfully. Marie finds wanted posters
+  in Castel's bag with both her and Bourne's pictures on them; as Bourne attempts
+  to calm her down, Castel jumps out of a window to his death. Marie goes into shock,
+  and Bourne escorts her from the building. Conklin plants a body in a Paris morgue
+  in an attempt to fool Wombosi into thinking Kane is dead, but Wombosi recognizes
+  that the body is not his assailant. The Professor assassinates Wombosi at his home.
+  Bourne investigates Wombosi and concludes that he was an assassin prior to his amnesia.
+  He and Marie leave the city and travel into the French countryside to stay at the
+  house of Marie's stepbrother Eamon, where Bourne decides that he no longer wants
+  to be who he was. In the morning, The Professor comes to kill Bourne. Bourne sends
+  Marie and Eamon to hide in the basement, while he grabs Eamon's shotgun and goes
+  out to find The Professor, blowing up a large propane tank as a distraction. After
+  a brief standoff in a cropfield, Bourne shoots The Professor twice and interrogates
+  him briefly. The Professor reveals their mutual connection to Treadstone before
+  dying. Bourne sends Marie away for her own safety. He contacts Conklin to arrange
+  a meet, but instead tracks Conklin's vehicle to discover the location of Treadstone's
+  safe house in Paris. Bourne breaks in and holds Conklin and logistics technician
+  Nicky Parsons at gunpoint, beginning to remember his last mission through successive
+  flashbacks. "Kane" was an assumed identity during his mission to infiltrate Wombosi's
+  entourage and kill him, but Bourne failed to kill Wombosi aboard his yacht when
+  he intended to because his children were sleeping nearby. Bourne fled and was shot
+  twice in the back in the process. Bourne tells Conklin that he is leaving Treadstone
+  and warns not to follow him. Realizing that their conversation is being overheard,
+  Bourne leaves Conklin and Parsons before killing two agents who try to kill him.
+  Abbott shuts down Treadstone and has Manheim kill Conklin. Abbott goes before an
+  oversight committee, dismissing Treadstone and previewing a new project codenamed
+  "Blackbriar". Some time later, Jason finds Marie renting out scooters to tourists
+  in Greece, and the two reunite.
+trajectory:
+- description: In the Mediterranean Sea near Marseille, a small fishing boat drifts
+    with an unconscious man aboard, who has two gunshot wounds in his back. The boat's
+    medic examines him and discovers a tiny laser projector implanted under his skin
+    at the hip.
+  id: s_0
+  key_delta: The existence of the implanted laser projector with a safe deposit box
+    number on the man is established, confirming he carries hidden information.
+  trigger_event: The boat's medic activates the implanted laser projector, which displays
+    a safe deposit box number in Zürich.
+- description: The unconscious man wakes up on the fishing boat, in an unknown state
+    with no memory of himself or how he came to be in the sea.
+  id: s_1
+  key_delta: The man experiences amnesia, establishing his information gap and identity
+    mystery.
+  trigger_event: The man regains consciousness without recollection and discovers
+    his amnesia.
+- description: The boat docks in port, and the amnesiac is fluent in multiple languages
+    with unusual skills but still cannot recall personal details or his past.
+  id: s_2
+  key_delta: The man is physically safe on land and poised for action; his linguistic
+    and skill advantages are established despite amnesia.
+  trigger_event: The fishing boat arrives at the dock, and the man prepares to leave
+    the ship.
+- description: In Zürich, the amnesiac is approached by police and instinctively incapacitates them using advanced hand-to-hand combat.
+  id: s_3
+  key_delta: The man discovers his lethal combat skills and provokes law enforcement attention before knowing his own identity.
+  trigger_event: After escaping the police confrontation, the man follows the safe-deposit clue to the Zurich bank the next morning.
+- description: The next morning, the man accesses a bank using the safe deposit box number, acquiring passports and money but leaving the handgun.
+  id: s_4
+  key_delta: The man obtains several passports with his picture and assorted currencies, assuming the name Jason Bourne, but intentionally leaves the weapon behind.
+  trigger_event: The bank visit and withdrawal alert Treadstone and local authorities, triggering the pursuit that drives him toward the U.S. consulate.
+- description: As he leaves the bank, an employee contacts Treadstone. The man is pursued by police and escapes into a U.S. consulate.
+  id: s_5
+  key_delta: The man is actively hunted by authorities and seeks refuge in an international safe haven.
+  trigger_event: After escaping the consulate, the man needs transport and recruits Marie to drive him to Paris.
+- description: Outside the consulate, the man encounters Marie Kreutz, a Swiss woman.
+  id: s_6
+  key_delta: An alliance is formed with Marie, providing the man transportation and
+    local assistance.
+  trigger_event: The man offers Marie $10,000 to drive him to an address in Paris.
+- description: At CIA headquarters, Deputy Director Ward Abbot learns of the failed
+    assassination of exiled dictator Nykwana Wombosi and activates operatives to track
+    down the amnesiac man.
+  id: s_7
+  key_delta: The man is formally identified as a high-priority target by the CIA's
+    black ops program.
+  trigger_event: Ward Abbot orders Operation Treadstone operatives Castel, Manheim,
+    and The Professor to apprehend the man.
+- description: The man arrives at the Paris apartment linked to one of the passports
+    and discovers that his passport alias 'Michael Kane' is reported dead.
+  id: s_8
+  key_delta: The man confirms his assumed identity is a cover and begins unraveling
+    his past identity complications.
+  trigger_event: Hotel Regina recognizes 'Michael Kane' as deceased in a recent car
+    crash when the man makes a phone call there.
+- description: Castel ambushes the man and Marie at the apartment, but the man defeats
+    Castel in a fight.
+  id: s_9
+  key_delta: The man confirms he is being hunted; he survives a lethal encounter and
+    now is solidly on the run.
+  trigger_event: Castel attacks the man and Marie unexpectedly in their apartment.
+- description: Marie discovers wanted posters bearing their pictures inside Castel's
+    belongings, and Castel dies after jumping from the window.
+  id: s_10
+  key_delta: The threat level increases as authorities have actively targeted both
+    the man and Marie.
+  trigger_event: Castel leaps to his death while trying to escape after the confrontation.
+- description: Back in CIA operations, Conklin attempts deception by planting a body
+    to mislead Wombosi about the man's death.
+  id: s_11
+  key_delta: The CIA’s covert dirty tactics to cover up their involvement are introduced.
+  trigger_event: A corpse is placed in a Paris morgue under the alias 'Michael Kane'.
+- description: The Professor successfully assassinates Nykwana Wombosi at his home.
+  id: s_12
+  key_delta: The original target’s assassination moves the plot forward and confirms
+    CIA lethal operations continue.
+  trigger_event: The Professor kills Wombosi, eliminating the target of the initial
+    failed assassination attempt.
+- description: The man and Marie travel to the French countryside, staying at Marie’s
+    stepbrother Eamon’s house, where the man contemplates abandoning his past identity.
+  id: s_13
+  key_delta: A temporary safe haven is established, and the man resolves to change
+    his life away from previous operatives.
+  trigger_event: The man and Marie arrive and settle at Eamon’s farm outside Paris.
+- description: The Professor arrives at Eamon’s house to kill the man; the man confronts
+    and kills The Professor after a brief standoff.
+  id: s_14
+  key_delta: The man eliminates one pursued assassin and gains crucial information
+    about their shared Treadstone connection.
+  trigger_event: The Professor attempts to assassinate the man at the countryside
+    house.
+- description: After The Professor’s death, the man sends Marie away for safety and
+    begins tracking Conklin to uncover more about Treadstone.
+  id: s_15
+  key_delta: The man gains actionable intelligence on the Treadstone program and its
+    operatives.
+  trigger_event: The man secretly follows Conklin’s vehicle to a Treadstone safe house
+    in Paris.
+- description: Inside the Treadstone safe house, the man holds Conklin and logistics
+    technician Nicky Parsons at gunpoint and experiences flashbacks revealing his
+    real identity and mission.
+  id: s_16
+  key_delta: Recovered partial memories clarify the man’s identity as Jason Bourne
+    and his failed mission to assassinate Wombosi.
+  trigger_event: The man confronts Conklin and Parsons, triggering fragmented memories
+    of his past as an assassin and operative.
+- description: The man tells Conklin he is leaving Treadstone, kills two agents who
+    attempt to assassinate him, and escapes the safe house.
+  id: s_17
+  key_delta: The man severs his operational ties from Treadstone and solidifies his
+    autonomy.
+  trigger_event: Two agents try to kill the man after his confrontation, but he kills
+    them and escapes.
+- description: Deputy Director Ward Abbot shuts down Treadstone and has Manheim kill
+    Conklin; Abbot briefs an oversight committee and introduces the next project,
+    Blackbriar.
+  id: s_18
+  key_delta: The political and organizational fallout from Bourne’s defection reshapes
+    CIA operations.
+  trigger_event: Abbott orders the termination of Treadstone and initiates the Blackbriar
+    program in a government hearing.
+- description: Some time later, in Greece, the man reunites with Marie, who rents
+    out scooters to tourists.
+  id: s_19
+  key_delta: The man reestablishes a personal connection and begins a new chapter
+    removed from his former covert life.
+  trigger_event: The man meets Marie at her scooter rental stand by the seaside.

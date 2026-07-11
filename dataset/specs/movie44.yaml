@@ -1,0 +1,315 @@
+commitments:
+- description: Cher cannot successfully renegotiate her grades based on teacher matchmaking
+    before she initiates and completes the matchmaking plan with Mr. Hall and Miss
+    Geist (s_1 then s_2).
+  id: c_0
+  satisfaction_condition: The matchmaking plan triggering and affective grade renegotiation
+    is acknowledged only after s_1 and s_2 have occurred sequentially.
+  type: ordering
+  violation_condition: The system accepts grade renegotiation success or teacher relationship
+    improvements without the matchmaking plan being initiated and confirmed in s_1
+    and s_2.
+- description: Cher’s superficial and mall-centric worldview remains intact and unchallenged
+    from s_0 until the matchmaking success shift in s_2.
+  id: c_1
+  satisfaction_condition: Player input and system recognition maintain Cher’s framing
+    as self-centered and superficial with mall-focus between s_0 and s_2 inclusive.
+  type: invariant
+  violation_condition: Any indication that Cher gains genuine community-oriented motivations
+    or emotional insight before s_2 is recognized as logical collapse.
+- description: Cher’s emotional shift toward valuing others beyond superficial reasons
+    must be triggered by observing positive effects of matchmaking (s_2).
+  id: c_2
+  satisfaction_condition: Cher shows genuine appreciation for the teachers’ happiness
+    and begins to care beyond personal benefit, occurring only at or after s_2.
+  type: achievement
+  violation_condition: Cher expresses meaningful altruistic motivation or emotional
+    maturity prior to s_2.
+- description: Cher’s social influence expansion by adopting Tai cannot proceed before
+    the positive matchmaking result with her teachers is realized (s_2 precedes s_3).
+  id: c_3
+  satisfaction_condition: Initiation of Tai’s makeover and social tutoring occurs
+    only at or after s_2 is completed.
+  type: ordering
+  violation_condition: The system acknowledges Tai’s makeover or social adoption before
+    the teachers’ matchmaking success.
+- description: Cher’s social status remains higher than Tai’s until Tai’s popularity
+    surge post-mall incident (s_3 to s_5 partway).
+  id: c_4
+  satisfaction_condition: During s_3 and s_4, Cher’s popularity is considered superior
+    and Tai’s less than Cher’s.
+  type: invariant
+  violation_condition: Tai’s popularity surpasses Cher’s before the mall incident
+    and the events described in s_5.
+- description: Elton’s rejection of Tai and pursuit of Cher must occur after the initial
+    Tai makeover and popularity rise (s_4), but before Tai’s popularity surpasses
+    Cher’s (before s_5).
+  id: c_5
+  satisfaction_condition: Elton’s romantic rejection and pursuit sequence located
+    strictly between s_4 and s_5 nodes.
+  type: ordering
+  violation_condition: Elton’s rejection or pursuit occurs outside of this sequence,
+    breaking social logic flow.
+- description: Cher does not recognize Christian’s homosexuality prior to the revelation
+    triggered by Murray’s laughter (between s_6 events).
+  id: c_6
+  satisfaction_condition: Cher’s naïve attempts and failure to notice Christian’s
+    orientation persist up to Murray’s telling.
+  type: invariant
+  violation_condition: Cher correctly identifies Christian’s homosexuality before
+    the Murray event or any player action that contradicts the naivety window.
+- description: Cher's friendship tension with Tai triggered by Tai’s interest in Josh
+    and subsequent quarrel must occur after Cher’s driver’s test failure (s_7).
+  id: c_7
+  satisfaction_condition: The quarrel and friendship tension event only acknowledged
+    after s_7’s failing driver's test event has completed.
+  type: ordering
+  violation_condition: Tai’s romantic interest in Josh or conflict with Cher is accepted
+    before Cher’s driver’s test failure.
+- description: Cher’s introspection and emotional growth, including acknowledging
+    her feelings for Josh, must be initiated only after the quarrel with Tai and driver’s
+    test failure (post-s_7).
+  id: c_8
+  satisfaction_condition: Cher’s reflective state and beginning of emotional maturation
+    triggered at s_8 or later.
+  type: achievement
+  violation_condition: Cher exhibits mature emotional insight or romantic feelings
+    for Josh prior to s_8.
+- description: Cher’s active participation in responsible, caring roles signaling
+    personal growth must only occur after her introspective emotional shift (from
+    s_8 forward).
+  id: c_9
+  satisfaction_condition: Cher’s leadership in disaster relief and romantic progression
+    with Josh happens from s_9 onwards.
+  type: invariant
+  violation_condition: Cher assumes mature caring activities or romantic intimacy
+    with Josh before s_8 reflection is completed.
+- description: All major social and romantic resolutions (teachers’ marriage, Tai
+    and Travis couple, friendship reconciliation, Cher and Josh’s romance) must be
+    achieved by the narrative end (s_10).
+  id: c_10
+  satisfaction_condition: Narrative completion includes stable positive resolutions
+    of all listed relationships and social orders at or by s_10.
+  type: achievement
+  violation_condition: Any final narrative state missing these stable resolutions
+    or ending with persistent unresolved conflicts in social or romantic dynamics.
+initial_facts:
+- content: Cher Horowitz is nearly sixteen years old, wealthy, popular, attractive,
+    and at the top of the Beverly Hills high school social scene.
+  id: f_0
+  negated: false
+- content: Cher Horowitz lives in a mansion with her father, Mel, who is a high-paid
+    litigator charging $500 an hour.
+  id: f_1
+  negated: false
+- content: Cher's mother is deceased, having died during a liposuction complication.
+  id: f_2
+  negated: false
+- content: Cher maintains a superficial, fashion-obsessed, mall-centric worldview
+    that is self-centered and unchallenged.
+  id: f_3
+  negated: false
+- content: Cher's best friend is Dionne Davenport, who is also rich, popular, and
+    hip.
+  id: f_4
+  negated: false
+- content: Josh, Cher's ex-stepbrother, is socially conscious, attends college, and
+    visits Cher at home intermittently.
+  id: f_5
+  negated: false
+- content: Cher and Josh have a contentious but not malicious relationship marked
+    by teasing and conflicting perspectives.
+  id: f_6
+  negated: false
+- content: Cher has not yet initiated any matchmaking plan involving Mr. Hall and
+    Miss Geist.
+  id: f_7
+  negated: false
+- content: Mr. Hall and Miss Geist are identified as hard-grading teachers who will
+    be assigned to Cher's classes.
+  id: f_8
+  negated: false
+- content: Cher has not yet observed any positive effect on Mr. Hall and Miss Geist's
+    relationship nor any grade renegotiation.
+  id: f_9
+  negated: false
+- content: Cher has not yet adopted Tai Frasier or begun any social influence expansion
+    related to Tai.
+  id: f_10
+  negated: false
+- content: Cher currently occupies the highest social status at her high school; Tai
+    Frasier is not yet popular.
+  id: f_11
+  negated: false
+- content: Cher has not yet experienced romantic misadventures or misunderstandings
+    involving Elton, Christian, or any other classmates.
+  id: f_12
+  negated: false
+- content: Cher has not yet taken her driver's test or encountered failure in it.
+  id: f_13
+  negated: false
+- content: Cher has not yet experienced any quarrel or tension in her friendship with
+    Tai.
+  id: f_14
+  negated: false
+- content: Cher is not yet reflecting introspectively on her life or emotional growth
+    and has no recognized romantic feelings for Josh.
+  id: f_15
+  negated: false
+- content: Cher has not yet taken on any responsible roles such as leading disaster
+    relief efforts.
+  id: f_16
+  negated: false
+- content: The teachers Mr. Hall and Miss Geist have not yet established any romantic
+    relationship or improved their grading behavior.
+  id: f_17
+  negated: false
+- content: Cher has no knowledge or awareness of any future events, outcomes, or relationship
+    shifts involving herself, Tai, Josh, or other characters.
+  id: f_18
+  negated: false
+meta:
+  genres: ["Comedy", "Romance"]
+  id: movie44
+  player_role: Cher Horowitz
+  title: "Clueless"
+synopsis: Cher Horowitz is a good-natured but superficial girl who is attractive,
+  popular, and extremely wealthy. At a few months shy of sixteen, she has risen to
+  the top of the high school social scene and is happy and self-assured in her insular,
+  fashion-obsessed world. She lives in a Beverly Hills mansion with her father, Mel,
+  a ferocious $500-an-hour litigator; her mother has long since died, having succumbed
+  to complications while undergoing liposuction. Cher's best friend is Dionne Davenport,
+  who is also rich, pretty, and hip, and understands what it's like to be envied.
+  Among the few people to find much fault with Cher is Josh, her socially conscious
+  ex-stepbrother who visits during a break from college. Josh and Cher spar continually
+  but without malice; she refers to him as "granola breath" and mocks his scruffy
+  idealism, while he teases her for being selfish, vain, and superficial, and says
+  that her only direction in life is "toward the mall." Illustrating that Cher's selfishness
+  is usually innocent and relatively harmless, Cher plays matchmaker for two lonely,
+  nerdy, hard-grading teachers, Mr. Hall and Miss Geist. She achieves her original
+  purpose – to make them relax their grading standards so she can renegotiate a bad
+  report card – but when she sees their newfound happiness, she realizes she likes
+  doing good deeds. Cher now decides that the ultimate way she can give back to the
+  community would be to "adopt" a "tragically unhip" new girl at school, Tai Frasier.
+  Cher and Dionne give Tai a makeover and initiate her into the mysteries of popularity.
+  Cher also tries to extinguish the strong mutual attraction between Tai and Travis,
+  an amiable skateboarding slacker, and to steer her toward Elton, a rich snob. Her
+  second matchmaking scheme backfires when Elton rejects Tai and makes a play for
+  Cher. Matters worsen, however, when Cher's "project" works a bit too well and Tai's
+  popularity begins to surpass Cher's, especially after Tai has a "near-death" adventure
+  at the mall that helps to skyrocket her to fame at school. Other classmates, including
+  Dionne and Cher's longtime rival, Amber, soon gravitate toward Tai, and Cher finds
+  herself demoted from queen to courtier at high school. Meanwhile, Cher has a couple
+  of romantic mishaps with boys at school. The first involves Elton; the next concerns
+  Christian, a handsome classmate with great fashion sense who turns out to be gay.
+  Cher naively and repeatedly fails to recognize Christian's homosexual tendencies,
+  and tries unsuccessfully to seduce him while they are alone one night watching Spartacus.
+  The next day, Dionne's boyfriend, Murray, roars with laughter, which makes Cher's
+  mistake clear to her at last. Events reach a crisis after Cher fails her driver's
+  test and can't "renegotiate" the result. When Cher goes home, crushed, Tai confides
+  that she's taken a fancy to Josh and wants Cher to help her "get" him. Cher says
+  she doesn't think Josh is right for her, and they quarrel. Cher, left all alone,
+  begins to think she has created a monster in her own image. Feeling "totally clueless",
+  she reflects on her priorities and her repeated failures to understand or appreciate
+  the people in her life. Most of all, she keeps thinking about Josh and Tai, and
+  wonders why she cares so much. After much soul-searching, Cher discovers she has
+  fallen in love with Josh. She begins making awkward but sincere efforts to live
+  a more useful life, even captaining the school's Pismo Beach disaster relief effort.
+  A scene near the end of the film finds Cher and Josh stumbling over how to admit
+  their mutual feelings for each other, finally culminating in a tender kiss on the
+  stairs of her home. The film has a happy Hollywood ending for Cher——Mr. Hall and
+  Miss Geist get married; her friendships with Tai and Dionne are reaffirmed; Tai
+  and Travis are in love; and, in Josh's arms, she too has now finally found love.
+trajectory:
+- description: Cher Horowitz, a wealthy and popular nearly sixteen-year-old girl,
+    is at the pinnacle of her high school social scene in Beverly Hills. She lives
+    in a mansion with her father, Mel, a high-paid litigator. Cher's mother is deceased.
+    Cher enjoys a superficial lifestyle surrounded by fashion and popularity, with
+    her best friend Dionne and her ex-stepbrother Josh visiting from college. Cher
+    sees life through a self-centered, mall-focused perspective, while Josh challenges
+    her views.
+  id: s_0
+  key_delta: Introduction of Cher's social world, relationships, and the first potential
+    challenge with her teachers' grading policy.
+  trigger_event: Cher learns that two hard-grading teachers, Mr. Hall and Miss Geist,
+    are assigned to her classes.
+- description: Cher observes that her bad report card results partly from strict grading
+    by Mr. Hall and Miss Geist, who seem serious and nerdy. The environment is set
+    with Cher's usual confident social standing intact.
+  id: s_1
+  key_delta: Cher initiates a plan to change the teachers’ behavior to get her grades
+    renegotiated by manipulating their personal happiness.
+  trigger_event: Cher decides to play matchmaker by arranging interactions between
+    Mr. Hall and Miss Geist.
+- description: Mr. Hall and Miss Geist start spending more time together and grow
+    happier, which mildly relaxes their grading approach. Cher’s original purpose
+    of better grades is achieved but she notices their improved happiness.
+  id: s_2
+  key_delta: Cher’s perspective shifts slightly towards appreciating the benefits
+    of her actions beyond self-interest.
+  trigger_event: Cher acknowledges the positive effect of her matchmaker efforts on
+    the teachers’ personal lives.
+- description: Cher plans to expand her social influence by adopting Tai Frasier,
+    a 'tragically unhip' new girl at school, intending to give her a makeover and
+    teach her about popularity. Dionne joins the effort.
+  id: s_3
+  key_delta: Tai transitions from an unknown outsider to a newly popular student under
+    Cher’s guidance.
+  trigger_event: Cher and Dionne perform Tai’s makeover and initiate her into high
+    school social life.
+- description: Tai begins attracting attention at school. Cher tries to interfere
+    in Tai’s romantic interests by encouraging Elton, a rich snob, while discouraging
+    Travis, a laid-back skateboarder.
+  id: s_4
+  key_delta: Cher’s matchmaking attempt backfires, complicating her social dynamics
+    with Tai and Elton.
+  trigger_event: Elton openly rejects Tai and unexpectedly shows romantic interest
+    in Cher instead.
+- description: Tai’s popularity surges, especially after a dramatic 'near-death' incident
+    at the mall, causing other students, including Dionne and rival Amber, to shift
+    their allegiance to Tai.
+  id: s_5
+  key_delta: Cher experiences a demotion from the top social position to a lesser
+    role within the school hierarchy.
+  trigger_event: Cher notices her social status declining as Tai becomes the new center
+    of popularity.
+- description: 'Cher encounters romantic misadventures: first with Elton, then with
+    Christian, a handsome classmate with great style who is gay. Cher fails to recognize
+    Christian’s orientation and tries unsuccessfully to seduce him.'
+  id: s_6
+  key_delta: Cher’s naivety in romance is exposed, marking a personal embarrassment
+    and social learning moment.
+  trigger_event: During a night alone watching Spartacus, Cher’s advances toward Christian
+    fail, and the next day Murray laughs upon revealing Christian’s homosexuality.
+- description: Cher fails her driver’s test and is unable to negotiate a passing grade.
+    Feeling disappointed and isolated, she returns home after a challenging day.
+  id: s_7
+  key_delta: Cher confronts tension in her friendship with Tai and recognizes the
+    consequences of her earlier social engineering.
+  trigger_event: Tai confesses she is interested in Josh and asks Cher for help to
+    pursue him, leading to a quarrel between the two girls.
+- description: Alone and reflective, Cher contemplates her repeated misunderstandings
+    and strained relationships with those around her. The atmosphere is introspective
+    and uncertain.
+  id: s_8
+  key_delta: Cher begins a gradual emotional shift toward recognizing her feelings
+    for Josh and valuing deeper relationships beyond superficial popularity.
+  trigger_event: Josh visits and Cher experiences awkward yet sincere attempts at
+    connection and mutual understanding.
+- description: Cher takes on more responsible roles, such as leading the school’s
+    relief effort for a disaster in Pismo Beach, signaling her move toward a more
+    useful and caring lifestyle.
+  id: s_9
+  key_delta: Cher’s personal growth culminates in romantic fulfillment with Josh and
+    the beginning of more mature, authentic connections.
+  trigger_event: Cher and Josh share a tender kiss on the stairs of her home, marking
+    the start of mutual romantic feelings.
+- description: 'The social and personal conflicts resolve: Mr. Hall and Miss Geist
+    marry; Tai and Travis become a couple; Cher’s friendships with Tai and Dionne
+    are reaffirmed; Cher and Josh begin a loving relationship. The atmosphere is celebratory
+    and harmonious.'
+  id: s_10
+  key_delta: Stable social order restored with positive personal growth and romantic
+    happy endings for Cher and her circle.
+  trigger_event: Final social gatherings and reconciliations occur at various school
+    and home settings.

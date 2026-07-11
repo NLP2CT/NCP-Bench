@@ -1,0 +1,54 @@
+cff-version: 1.2.0
+message: "If you use NCP-Bench, please cite the paper below."
+title: "NCP-Bench"
+type: software
+version: 0.1.0
+date-released: 2026-07-11
+repository-code: "https://github.com/yingpengma/NCP-Bench"
+url: "https://icml.cc/virtual/2026/poster/64786"
+authors:
+  - family-names: Ma
+    given-names: Yingpeng
+  - family-names: Yan
+    given-names: Jianhao
+  - family-names: Shi
+    given-names: Bei
+  - family-names: Kam
+    given-names: Ka Hou
+  - family-names: Wang
+    given-names: Runnan
+  - family-names: Liu
+    given-names: Xuebo
+  - family-names: Chen
+    given-names: Yulong
+  - family-names: Zhang
+    given-names: Yue
+  - family-names: Wong
+    given-names: Derek F.
+preferred-citation:
+  type: conference-paper
+  title: "Can LLM Agents Stick to the Script? Modeling Commitment in Interactive Narratives"
+  year: 2026
+  collection-title: "Proceedings of the 43rd International Conference on Machine Learning"
+  url: "https://icml.cc/virtual/2026/poster/64786"
+  conference:
+    name: "43rd International Conference on Machine Learning"
+  authors:
+    - family-names: Ma
+      given-names: Yingpeng
+    - family-names: Yan
+      given-names: Jianhao
+    - family-names: Shi
+      given-names: Bei
+    - family-names: Kam
+      given-names: Ka Hou
+    - family-names: Wang
+      given-names: Runnan
+    - family-names: Liu
+      given-names: Xuebo
+    - family-names: Chen
+      given-names: Yulong
+    - family-names: Zhang
+      given-names: Yue
+    - family-names: Wong
+      given-names: Derek F.

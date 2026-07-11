@@ -1,0 +1,277 @@
+commitments:
+- description: The murder of Miles Archer (s_1) must occur after Miss Ruth Wonderly
+    requests help and before Spade fully commits to investigating the murders.
+  id: c_0
+  satisfaction_condition: Node s_1 (Archer's murder) occurs strictly after s_0 (Wonderly
+    initiates the case) and before s_3 (Spade commits to investigating the murders).
+  type: ordering
+  violation_condition: Player or system acknowledges Archer's murder before Wonderly's
+    initial engagement (s_0), or draws conclusions based on impossible chronological
+    order.
+- description: Spade cannot identify O'Shaughnessy as Ruth Wonderly or learn of her
+    true identity and involvement before meeting her after Archer's murder (s_3).
+  id: c_1
+  satisfaction_condition: Node s_3 (meeting O'Shaughnessy revealing her identity)
+    happens before any admission or recognition of her duplicity within the story.
+  type: ordering
+  violation_condition: Player or system states O'Shaughnessy's true identity or motivation
+    before the in-story event s_3 occurs.
+- description: Between s_0 and s_3, the police suspicion positioning Spade as a suspect
+    in the murders (s_2) must hold true and prevent premature clearing of Spade.
+  id: c_2
+  satisfaction_condition: During nodes s_0 to s_3, police continue to question or
+    suspect Spade regarding the murders without resolution or exoneration.
+  type: invariant
+  violation_condition: Player or system declares Spade innocent before node s_3 or
+    however before police formally clear him.
+- description: Spade must come into possession of the Maltese Falcon (bundle) by node
+    s_8 as a material milestone essential for plot progression.
+  id: c_3
+  satisfaction_condition: Node s_8 triggers the dying man leaving the bundle (Falcon)
+    with Spade, establishing physical possession.
+  type: achievement
+  violation_condition: The story concludes or moves toward resolution without Spade
+    obtaining the Falcon or a physically equivalent proxy.
+- description: Revelation and negotiation of the Falcon's existence and value by Kasper
+    Gutman and associates must occur before the final resolution and arrests (s_6
+    before s_13).
+  id: c_4
+  satisfaction_condition: Gutman's offer and obsession with the Falcon (s_6) happens
+    prior to Spade revealing the true murderer and calling the police (s_13).
+  type: ordering
+  violation_condition: Player or system bypasses Gutman's negotiation or knowledge
+    and moves directly to final arrests or truth revelation.
+- description: From s_10 to s_14, the Maltese Falcon in Spade's possession remains
+    the item around which all main parties negotiate, and only becomes revealed as
+    fake at s_12.
+  id: c_5
+  satisfaction_condition: Between nodes s_10 and s_12, the Falcon is accepted as genuine
+    by all parties; only at s_12 is it revealed fake and this fact acknowledged.
+  type: invariant
+  violation_condition: Falcon's authenticity is questioned or revealed fake prior
+    to node s_12 or the system allows parties to act on the Falcon as fake before
+    that point.
+- description: Spade must identify and expose O'Shaughnessy as the murderer of Archer,
+    implicating her role before turning her over to the police (s_13 to s_14).
+  id: c_6
+  satisfaction_condition: By s_13, Spade has discovered and confronted O'Shaughnessy
+    about her killing Archer, leading to her eventual surrender at s_14.
+  type: achievement
+  violation_condition: Player or system moves to final resolution or hands O'Shaughnessy
+    over to police without Spade identifying her as the killer first.
+- description: Wilmer must be presented as the murderer of Thursby and Jacobi, and
+    as the candidate for surrender to police, before actual police involvement and
+    arrest actions in s_13.
+  id: c_7
+  satisfaction_condition: Wilmer is identified and agreed upon by Gutman, Cairo, and
+    Spade as the murderer and surrender candidate at or before s_11, prior to police
+    arrest at s_13.
+  type: ordering
+  violation_condition: Police involvement or arrest attempts proceed without Wilmer
+    first being singled out and prepared as the offender to be turned in.
+- description: Between s_0 and s_14, the narrative must never allow Spade to simultaneously
+    trust O'Shaughnessy while knowingly withholding her guilt, maintaining his moral
+    conflict.
+  id: c_8
+  satisfaction_condition: During the course of investigation and confrontation (up
+    to s_14), Spade's attitude toward O'Shaughnessy reflects suspicion or revealed
+    guilt; trust is withheld or rescinded upon discovery.
+  type: invariant
+  violation_condition: Player or system enables Spade to openly trust or ally fully
+    with O'Shaughnessy after uncovering her guilt without confrontation or consequences.
+initial_facts:
+- content: It is the year 1941, and Sam Spade and Miles Archer are together in Spade's
+    private investigator office in San Francisco.
+  id: f_0
+  negated: false
+- content: Miss Ruth Wonderly has arrived at Sam Spade's office to request help in
+    finding her missing sister.
+  id: f_1
+  negated: false
+- content: Sam Spade currently does not know the true identity of Miss Ruth Wonderly
+    beyond her stated name.
+  id: f_2
+  negated: false
+- content: No murders have occurred yet; Miles Archer is alive and no suspicion has
+    been cast on Spade.
+  id: f_3
+  negated: false
+- content: The police (including Detective Tom Polhaus and Lieutenant Dundy) have
+    not yet interacted with or suspected Sam Spade.
+  id: f_4
+  negated: false
+- content: Sam Spade has not yet come into possession of any Maltese Falcon or similar
+    object.
+  id: f_5
+  negated: false
+- content: Neither Kasper Gutman, Joel Cairo, Wilmer, nor any other key secondary
+    characters related to the Falcon have met or engaged with Sam Spade.
+  id: f_6
+  negated: false
+- content: Sam Spade's cognitive state at the initial moment is one of ignorance about
+    the murders, the true identity of Wonderly, and the whereabouts or significance
+    of the Maltese Falcon.
+  id: f_7
+  negated: false
+meta:
+  genres: ["Film-Noir", "Mystery"]
+  id: movie30
+  player_role: Sam Spade
+  title: "The Maltese Falcon"
+synopsis: In 1539 the Knight Templars of Malta, paid tribute to Charles V of Spain,
+  by sending him a Golden Falcon encrusted from beak to claw with rarest jewels—but
+  pirates seized the galley carrying this priceless token and the fate of the Maltese
+  Falcon remains a mystery to this day. Introductory text appearing after the film's
+  opening credits. In 1941 San Francisco, private investigators Sam Spade and Miles
+  Archer meet prospective client Miss Ruth Wonderly. She claims to be looking for
+  her missing sister, who is involved with a man named Floyd Thursby. Wonderly is
+  to meet Thursby. After receiving a substantial retainer, Archer volunteers to follow
+  her that night and help get her sister back. That night, Spade is informed that
+  Archer has been killed. He meets his friend, Police Detective Tom Polhaus, at the
+  murder scene. He then calls Wonderly's hotel, but she has checked out. He is grilled
+  by Polhaus and his supervisor, Lieutenant Dundy, who inform him that Thursby was
+  also murdered that same evening. Dundy suggests that Spade had the opportunity and
+  motive to kill Thursby, who likely killed Archer. Archer's widow believes that Spade
+  shot his partner so he could have her. Later that morning, Spade meets Wonderly,
+  now calling herself Brigid O'Shaughnessy. She explains that Thursby was her partner
+  and probably killed Archer, but claims to have no idea who killed Thursby. Spade
+  agrees to investigate the murders. At his office, Spade meets Joel Cairo, who first
+  offers him a $5,000 fee to find a "black figure of a bird," then pulls a gun on
+  him in order to search for it. Spade manages to knock Cairo out and go through his
+  belongings. When Cairo revives, he hires Spade. Later that evening, Spade tells
+  O'Shaughnessy about Cairo. When Cairo shows up, it becomes clear that Spade's acquaintances
+  know each other. Cairo becomes agitated when O'Shaughnessy reveals that the "Fat
+  Man" is in San Francisco. In the morning, Spade goes to Cairo's hotel, where he
+  spots Wilmer, a young man who had been following him earlier. He gives Wilmer a
+  message for his boss, Kasper Gutman, the "Fat Man". Spade meets Gutman. Gutman begins
+  to talk about the Falcon, but becomes evasive, causing Spade to storm out. Later,
+  Wilmer takes Spade at gunpoint to see Gutman. Spade overpowers Wilmer, but meets
+  with Gutman anyway. Gutman relates the history of the Maltese Falcon. He offers
+  Spade $25,000 for the bird and a quarter of the proceeds from its sale. Then Spade
+  passes out; his drink was spiked. Wilmer, Gutman and Cairo depart. When Spade awakens,
+  he searches the suite and finds a newspaper with the arrival time of the freighter
+  La Paloma circled. He goes to the dock, only to find the ship on fire, so he returns
+  to his office. A man clutching a bundle wrapped in newspaper bursts in and staggers
+  toward Spade before dying. The contents of his wallet identify the dead man as Captain
+  Jacobi of the La Paloma. The bundle contains the Maltese Falcon. The phone rings.
+  O'Shaughnessy gives an address and then screams before the line goes dead. Spade
+  stashes the package in a bus terminal baggage room, then goes to the address. It
+  turns out to be an empty lot. Spade returns home and finds O'Shaughnessy hiding
+  in a doorway. He takes her inside, and finds Gutman, Cairo, and Wilmer waiting for
+  him, guns drawn. Gutman gives Spade $10,000 for the Falcon, but Spade tells them
+  that part of his price is someone he can turn over to the police for the murders
+  of Archer, Thursby, and Captain Jacobi. Spade suggests Wilmer as the best choice,
+  since he certainly killed Thursby and Jacobi. After some intense negotiation, Gutman
+  and Cairo agree; Wilmer is knocked out in a scuffle. Spade gets the details of what
+  happened and who killed whom, so that he can present a convincing story to the police
+  along with Wilmer. Just after dawn, Spade calls his secretary, Effie Perrine, to
+  bring him the bundle. However, when Gutman inspects the black statuette, he discovers
+  that it is a fake. He suggests that he and Cairo return to Istanbul to continue
+  their quest. After they leave, Spade calls the police and tells them where to pick
+  up the pair. Spade then angrily confronts O'Shaughnessy, telling her he knows she
+  killed Archer to implicate Thursby, her unwanted accomplice. O'Shaughnessy cannot
+  believe that Spade would turn her over to the police, but he does, despite his feelings
+  for her.
+trajectory:
+- description: In 1941 San Francisco, at private investigator Sam Spade's office,
+    the atmosphere is tense but business-as-usual. Spade and his partner Miles Archer
+    are present, starting their day before meeting a new client.
+  id: s_0
+  key_delta: Introduction of client Ruth Wonderly, who requests help finding her missing
+    sister connected to Floyd Thursby, planting the initial conflict.
+  trigger_event: Miss Ruth Wonderly arrives at Spade's office seeking their services.
+- description: Spade and Archer have accepted the case and made plans. Miles Archer
+    volunteers to follow Wonderly that night to locate her sister.
+  id: s_1
+  key_delta: Miles Archer is dead, and Spade is pulled into a murder investigation
+    as a likely suspect.
+  trigger_event: That night, Spade is informed that Miles Archer has been killed.
+- description: At the murder scene, Spade meets Police Detective Tom Polhaus and Lieutenant
+    Dundy. The police suspect Spade might have been involved in the murders.
+  id: s_2
+  key_delta: Spade's association with Wonderly is cast into suspicion, and he loses
+    track of her whereabouts.
+  trigger_event: Spade calls Wonderly's hotel, but discovers she has checked out.
+- description: The morning after Archer's murder, Spade meets Wonderly, who reveals
+    herself as Brigid O'Shaughnessy and claims ignorance about Thursby's murder.
+  id: s_3
+  key_delta: Spade commits to probing the intertwined murders and associated mysteries.
+  trigger_event: Spade agrees to investigate the murders of Archer and Thursby upon
+    O'Shaughnessy's request.
+- description: In Spade's office, Joel Cairo arrives, first trying to pay for locating
+    a black bird figurine, then threatening Spade with a gun.
+  id: s_4
+  key_delta: Introduction of Cairo as another key player linked to the coveted black
+    bird object, reinforcing the central mystery.
+  trigger_event: Spade overpowers Cairo and searches his belongings; Cairo then hires
+    Spade legitimately.
+- description: Spade, O'Shaughnessy, and Cairo converge, revealing connections among
+    themselves and others seeking the valuable bird. Cairo is agitated by mention
+    of the 'Fat Man.'
+  id: s_5
+  key_delta: Wilmer's appearance ties Spade more directly to Kasper Gutman, the 'Fat
+    Man,' expanding the circle of intrigue.
+  trigger_event: Spade visits Cairo's hotel the next morning and encounters Wilmer,
+    a young man who has been following him.
+- description: Spade meets Kasper Gutman, who evasively discusses the Maltese Falcon
+    and offers Spade a large sum for it.
+  id: s_6
+  key_delta: Gutman openly reveals his obsession with the Falcon; Spade is incapacitated,
+    escalating danger and urgency.
+  trigger_event: Spade's drink is spiked during the meeting, and Gutman, Cairo, and
+    Wilmer leave the suite.
+- description: Upon regaining consciousness, Spade explores the suite and discovers
+    a newspaper with the arrival time of the ship La Paloma circled, hinting at the
+    Falcon's arrival.
+  id: s_7
+  key_delta: The presumed delivery of the Falcon is sabotaged; the Falcon's whereabouts
+    remain unknown but suspicious.
+  trigger_event: Spade finds the freighter La Paloma on fire at the dock when he goes
+    to investigate.
+- description: Back at his office, a dying man identified as Captain Jacobi of La
+    Paloma enters, clutching a newspaper-wrapped bundle.
+  id: s_8
+  key_delta: Spade gains physical possession of the bundle, identified as the Maltese
+    Falcon, advancing the plot materially.
+  trigger_event: Captain Jacobi dies, leaving the bundle behind.
+- description: Spade receives a mysterious phone call from O'Shaughnessy giving an
+    address, then screaming and the line goes dead.
+  id: s_9
+  key_delta: O'Shaughnessy is in danger or involved in a trap; the trail to the Falcon
+    becomes precarious.
+  trigger_event: Spade goes to the address given, but finds only an empty lot.
+- description: Returning home, Spade finds O'Shaughnessy hiding nearby and brings
+    her inside; Gutman, Cairo, and Wilmer confront him with guns drawn.
+  id: s_10
+  key_delta: A tense negotiation among all parties around the Falcon, shifting from
+    mere pursuit to bargaining and survival.
+  trigger_event: Gutman offers $10,000 for the Falcon, negotiating terms with Spade
+    involving the surrender of a murderer.
+- description: Spade proposes handing over Wilmer to the police as the murderer of
+    Archer, Thursby, and Jacobi; after a scuffle, Wilmer is knocked out.
+  id: s_11
+  key_delta: Spade asserts control by setting conditions for the Falcon's exchange
+    and preparing to resolve the murders legally.
+  trigger_event: Spade gathers the details of the murders to present a convincing
+    narrative to law enforcement.
+- description: Just before dawn, Spade calls his secretary to retrieve the Falcon
+    from the baggage room; Gutman inspects the statuette.
+  id: s_12
+  key_delta: The true Maltese Falcon remains elusive; Gutman and Cairo abandon the
+    immediate quest, altering the pursuit's dynamics.
+  trigger_event: Gutman discovers the Falcon is a fake and decides to return to Istanbul
+    with Cairo.
+- description: After Gutman and Cairo leave, Spade phones the police to inform them
+    where to arrest the pair.
+  id: s_13
+  key_delta: The murderer's identity among the main characters is exposed; Spade chooses
+    law and justice over personal feelings.
+  trigger_event: Spade confronts O'Shaughnessy and reveals his knowledge that she
+    killed Archer to implicate Thursby.
+- description: O'Shaughnessy is shocked at Spade's betrayal, but Spade turns her over
+    to the police despite his feelings for her.
+  id: s_14
+  key_delta: Resolution of primary criminal conflicts; Spade solidifies his role as
+    the morally complex but determined investigator.
+  trigger_event: Spade officially hands O'Shaughnessy over to the authorities, closing
+    the case's major conflicts.

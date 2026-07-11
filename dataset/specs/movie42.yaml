@@ -1,0 +1,241 @@
+commitments:
+- description: Lon's engagement to Allie (s_0) must be established before Allie reveals
+    seeing Noah again (s_1), ensuring the narrative respects the social and emotional
+    baseline of the engagement before conflict arises.
+  id: c_0
+  satisfaction_condition: s_0 is completed before s_1 is triggered in the narrative
+    progression.
+  type: ordering
+  violation_condition: Allie reveals spending time with Noah (s_1) before Lon's engagement
+    to Allie (s_0) has been established or accepted by the player.
+- description: Between s_1 and s_3, Lon maintains engagement status with Allie with
+    emotional tension allowed but without termination of the engagement, preserving
+    the narrative tension of an unresolved commitment.
+  id: c_1
+  satisfaction_condition: Throughout s_1 to s_3, Lon and Allie remain engaged; Lon
+    does not end or cancel the engagement.
+  type: invariant
+  violation_condition: Player causes Lon to break off or dissolve the engagement before
+    s_3 is reached.
+- description: Allie’s delivery of Noah's concealed letters (s_5 to s_6) must occur
+    before any explicit commitment shift from Lon to Noah, preventing premature awareness
+    of the true past in the narrative.
+  id: c_2
+  satisfaction_condition: Noah’s letters are delivered and read (s_5 and s_6) before
+    Allie chooses Noah and leaves Lon (s_6).
+  type: ordering
+  violation_condition: Allie declares commitment or being with Noah before receiving
+    and reading Noah’s letters from her mother.
+- description: The narrative must reach Allie's explicit choice to leave Lon and be
+    with Noah (s_6), as it is the key turning point that dissolves the engagement
+    and alters the central relationship dynamic.
+  id: c_3
+  satisfaction_condition: Player or system triggers Allie choosing Noah and leaving
+    Lon as a resolved event within s_6.
+  type: achievement
+  violation_condition: Narrative ends or advances beyond s_6 without Allie making
+    an explicit choice to leave Lon and commit to Noah.
+- description: After s_6, Lon’s active involvement in Allie’s immediate romantic situation
+    ceases (through s_7), preventing reversion or reinstatement of Lon’s romantic
+    engagement with Allie once she commits to Noah.
+  id: c_4
+  satisfaction_condition: From s_6 onwards, Lon no longer acts to regain Allie’s romantic
+    commitment; Allie openly lives with Noah without Lon's successful intervention.
+  type: invariant
+  violation_condition: Player activates or causes Lon to regain or continue active
+    romantic engagement with Allie after her explicit choice in s_6.
+- description: The narrative reading frame in the present (Duke reading Allie's story)
+    must remain consistent and precede Allie's momentary lucidity and memory of the
+    past romance, preserving the logic of memory restoration triggered by the story.
+  id: c_5
+  satisfaction_condition: The contained past narrative is read by Duke to Allie before
+    she regains brief lucid memory and recognition of their shared history.
+  type: ordering
+  violation_condition: Allie demonstrates lucidity or recollection of the story before
+    Duke has read the narrative to her.
+- description: Allie's Alzheimer's disease causes recurrent memory loss after lucidity;
+    system must ensure that episodes of recall and relapse alternate until the final
+    resolution, preventing permanent early recovery.
+  id: c_6
+  satisfaction_condition: After initial lucidity and memory recall, Allie relapses
+    into confusion and requires sedation before final lucid reunion with Noah.
+  type: invariant
+  violation_condition: Once Allie regains memory, the system allows permanent memory
+    retention without subsequent relapse prior to the final sequence.
+- description: The narrative must conclude with the elderly Allie and Noah reunited
+    in mutual love and dying peacefully in each other's arms, signifying the story's
+    emotional and thematic closure.
+  id: c_7
+  satisfaction_condition: The final scene depicts elderly Allie and Noah found dead
+    together, embraced with mutual love affirmed and no unresolved romantic conflict
+    remaining.
+  type: achievement
+  violation_condition: The narrative ends without this final mutual reunion and peaceful
+    joint death, leaving ambiguous or antagonistic conclusion.
+initial_facts:
+- content: Lon Hammond Jr. is engaged to Allie Hamilton.
+  id: f_0
+  negated: false
+- content: Lon Hammond Jr. is a handsome, sophisticated lawyer from old Southern money.
+  id: f_1
+  negated: false
+- content: Allie Hamilton is a seventeen-year-old heiress.
+  id: f_2
+  negated: false
+- content: Allie Hamilton's parents approve of her engagement to Lon Hammond Jr.
+  id: f_3
+  negated: false
+- content: Lon Hammond Jr. and Allie Hamilton are in Charleston, South Carolina.
+  id: f_4
+  negated: false
+- content: At t=0, Lon Hammond Jr. is unaware that Allie has had a past romantic relationship
+    with Noah Calhoun.
+  id: f_5
+  negated: false
+- content: At t=0, Allie Hamilton has not revealed to Lon Hammond Jr. that she has
+    been spending time with Noah Calhoun.
+  id: f_6
+  negated: false
+- content: At t=0, the engagement between Lon Hammond Jr. and Allie Hamilton is intact
+    and not terminated.
+  id: f_7
+  negated: false
+- content: At t=0, Noah Calhoun's letters to Allie Hamilton have not been delivered
+    to or received by Allie.
+  id: f_8
+  negated: false
+- content: At t=0, Allie Hamilton has not made any explicit choice to leave Lon Hammond
+    Jr. for Noah Calhoun.
+  id: f_9
+  negated: false
+- content: Lon Hammond Jr.'s active romantic involvement with Allie Hamilton is ongoing
+    at t=0.
+  id: f_10
+  negated: false
+- content: At t=0, the story that Duke will read to Allie has not yet been read.
+  id: f_11
+  negated: false
+- content: At t=0, Allie Hamilton has no lucidity or memory restoration related to
+    the story being read by Duke.
+  id: f_12
+  negated: false
+meta:
+  genres: ["Romance", "Drama"]
+  id: movie42
+  player_role: Lon Hammond Jr.
+  title: "The Notebook"
+synopsis: At a modern-day nursing home, an elderly man named Duke begins to read a
+  romantic story from his notebook to a fellow patient. The story he tells begins
+  in 1940. In Seabrook Island, South Carolina, local country boy Noah Calhoun is smitten
+  with seventeen-year-old heiress Allie Hamilton after seeing her at a carnival, and
+  they share an idyllic summer love affair. Noah takes Allie to an abandoned house,
+  which he explains that he intends to buy for them. Later that evening, she asks
+  him to make love to her, but they are interrupted by Noah's friend Fin with the
+  news that Allie's parents have the police out looking for her. When Allie and Noah
+  return to her parents' mansion, they ban her from seeing Noah, whom they say is
+  "trash, trash, trash not for you!". The two break up and the next morning, Allie's
+  mother announces that the family is returning home to Charleston. Noah writes a
+  letter each day to Allie for one year, but Allie's mom intercepts them all and keeps
+  them hidden from Allie. As each lover sees there is no contact from the other, Noah
+  and Allie have no choice but to move on with their lives; Noah and Fin enlist to
+  fight in World War II and Fin is killed in battle. Allie becomes a volunteer in
+  a hospital for wounded soldiers, where she meets an officer named Lon Hammond, Jr.,
+  a young lawyer who is handsome, sophisticated, charming and comes from old Southern
+  money. The two eventually become engaged, to the delight of Allie's parents, but
+  Allie sees Noah's face when Lon asks her to marry him. When Noah returns home from
+  the war, he discovers his father has sold their home so that Noah can buy the abandoned
+  house, fulfilling his lifelong dream to buy it for the departed Allie, whom by now
+  he hasn't seen for several years. While visiting Charleston, Noah witnesses Allie
+  and Lon kissing at a restaurant; he convinces himself that if he fixes up the house,
+  Allie will come back to him. Later, Allie is startled to read in the newspaper that
+  Noah has completed the house and she visits him in Seabrook. In the present, it
+  is made clear that the elderly woman is in fact Allie, who is suffering from Alzheimer's
+  disease and cannot remember any of the events of the film so far. Duke, the man
+  who is reading to her, is her husband, but Allie cannot recognize him. Back in the
+  forties, the day after Allie arrives in Seabrook, she and Noah renew their relationship
+  and make love. In the morning, Allie's mother appears on Noah's doorstep, telling
+  Allie that Lon has come to Seabrook to take her home. She takes Allie out for a
+  drive, and reveals that 25 years earlier, she also loved a common man. She leaves
+  Allie with a bundle of letters -- all of Noah's letters, and hopes that Allie will
+  make the right choice. Allie confesses to Lon that she has been spending time with
+  Noah. He is angry but says that he still loves her. Allie tells him she knows she
+  should be with him, but she remains indecisive. In the present, Duke asks Allie
+  whom she chose. Becoming lucid, she remembers that the story Duke was reading is
+  the story of how they met. Young Allie appears at Noah's doorstep, having left Lon
+  at the hotel and chosen Noah. Elderly Allie suddenly remembers her past; after finding
+  out about her illness, she herself wrote their story in the notebook with instructions
+  for Noah to "read this to me, and I'll come back to you". But only minutes later
+  Allie relapses, losing her memories of Noah. She panics, not understanding who he
+  is, and has to be sedated. The elderly Noah has a heart attack, and we see Allie
+  is alone for a time. However, as soon as he is sufficiently recovered, Noah goes
+  to Allie's room one evening to find her lucid again. Allie questions Noah about
+  what will happen to them when she won't be able to remember anything anymore, and
+  he reassures her that he will never leave her. She asks him if he thinks their love
+  for each other is strong enough to "take them away together"; he replies that he
+  thinks their love could do anything. After telling each other that they love one
+  another, they both fall asleep in Allie's bed. The next morning, a nurse finds them
+  dead in each others' arms.
+trajectory:
+- description: In Charleston, South Carolina, young Lon Hammond Jr., a handsome, sophisticated
+    lawyer from old Southern money, is engaged to Allie Hamilton, a seventeen-year-old
+    heiress. Allie's parents approve of this engagement. The social atmosphere is
+    posh and formal, with the looming presence of her past summer love, Noah Calhoun,
+    unknown to Lon at this point.
+  id: s_0
+  key_delta: Allie and Lon become engaged with the blessing of her family, establishing
+    the socially approved path for Allie.
+  trigger_event: Lon formally proposes marriage to Allie, and she accepts.
+- description: Lon and Allie spend time together at hotel and social venues in Charleston,
+    displaying their engagement to family and acquaintances. Allie is seen conflicted,
+    though this is not externally expressed. Lon maintains his charm and devotion.
+  id: s_1
+  key_delta: Lon learns about Allie's renewed contact with Noah, causing strain and
+    uncertainty in the engagement.
+  trigger_event: Allie reveals to Lon that she has been spending time with Noah Calhoun.
+- description: Lon confronts Allie about her time with Noah but declares he still
+    loves her. The engagement remains socially intact, but under personal tension.
+    The environment remains socially formal but emotionally charged.
+  id: s_2
+  key_delta: The engagement persists under tension; Lon's feelings are complicated
+    but he does not end the relationship.
+  trigger_event: Lon gives Allie space, showing conflicted support despite his anger.
+- description: Noah Calhoun has recently returned from World War II and has completed
+    renovating the abandoned house he promised to Allie. In Seabrook Island, Noah
+    awaits Allie's decision, maintaining hope she will choose him as she visits.
+  id: s_3
+  key_delta: Allie has made the personal choice to leave Lon and physically return
+    to Noah, altering the romantic dynamic.
+  trigger_event: Allie arrives at Noah's house to reunite with him after leaving the
+    hotel where Lon stayed.
+- description: At Noah's restored house on Seabrook Island, Allie and Noah renew their
+    romantic relationship, sharing an intimate night. The setting is intimate, warm
+    and hopeful. Outside influences are absent at this moment.
+  id: s_4
+  key_delta: The external societal and familial constraint reasserts itself through
+    Lon’s intervention.
+  trigger_event: Noah's mother appears at the house the following morning to inform
+    Allie of Lon's arrival to retrieve her.
+- description: Lon arrives at Noah's house to ask Allie to return with him. The atmosphere
+    is tense; Allie is torn. Lon expresses anger but reiterates his love for her.
+    Allie remains indecisive in the face of this confrontation.
+  id: s_5
+  key_delta: Noah’s letters, previously hidden, are delivered to Allie, representing
+    the full factual context of their past communication.
+  trigger_event: Allie’s mother takes her away for a drive and leaves behind a bundle
+    of sealed letters from Noah.
+- description: In the car with her mother, Allie receives and opens Noah's letters,
+    gaining insight into his enduring love and the history she was unaware of. The
+    environment is private and emotional but externally quiet.
+  id: s_6
+  key_delta: Allie makes an explicit commitment to Noah, dissolving her engagement
+    to Lon.
+  trigger_event: Allie chooses in favor of Noah and leaves Lon's company to be with
+    Noah at his house.
+- description: At Noah’s home in Seabrook, Allie and Noah begin their life together
+    as a couple. Their relationship is openly reunited, with mutual love and renewed
+    trust. Social and familial opposition persists but is now secondary.
+  id: s_7
+  key_delta: Lon’s active role in the direct relationship triangle ceases; the couple
+    begins building their future.
+  trigger_event: World War II ends and Lon’s presence fades from Allie’s immediate
+    reality, as she openly lives with Noah.

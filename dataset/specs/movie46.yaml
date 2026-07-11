@@ -1,0 +1,361 @@
+commitments:
+- description: Edward's nature as a storyteller and Will's initial distrust must remain
+    consistent from s_0 to s_13, disallowing any premature acceptance of Edward's
+    stories as literal truth.
+  id: c_0
+  satisfaction_condition: From s_0 up to but not including s_13, the system maintains
+    that Edward exaggerates and Will does not fully trust him; narrative elements
+    reflect skepticism.
+  type: invariant
+  violation_condition: If before s_13 the player or system acknowledges Edward's tales
+    as completely factual or allows Will to fully trust and accept Edward's stories
+    as truth.
+- description: The estrangement of Will and Edward must precede their reconciliation
+    efforts prompted by Edward's health decline, preserving emotional narrative progression
+    from s_2 to s_3.
+  id: c_1
+  satisfaction_condition: Node s_2 (three years no contact) must be completed before
+    triggering s_3 (Edward's health fails and Will returns).
+  type: ordering
+  violation_condition: If the narrative allows Edward's health decline or Will's return
+    to occur before or without the established estrangement at s_2.
+- description: Will cannot fully understand or reassess his father's stories before
+    confronting Edward directly about the truth at s_13, preventing premature resolution
+    of the core conflict.
+  id: c_2
+  satisfaction_condition: The confrontation at s_13 must occur before Will reaches
+    conclusions about the truthfulness or meaning of Edward's stories.
+  type: ordering
+  violation_condition: If Will comes to a final, positive trust or acceptance of Edward's
+    stories without undergoing the confrontation at s_13.
+- description: Edward's stories include exaggerations but are grounded in kernels
+    of truth; this premise must hold from s_13 through s_18, shaping Will's eventual
+    realization.
+  id: c_3
+  satisfaction_condition: Between s_13 and s_18, information and NPC interactions
+    acknowledge that Edward's tales are partially true with embellishments rather
+    than pure fiction.
+  type: invariant
+  violation_condition: If Edward's stories are revealed to be entirely fabricated
+    or entirely literal, eliminating the nuanced truth/exaggeration balance before
+    s_18.
+- description: Will's visit to Spectre and meeting with Jenny (s_14, s_15) must occur
+    before the final hospitalization and storytelling role reversal at s_16, preserving
+    narrative causality and knowledge acquisition.
+  id: c_4
+  satisfaction_condition: Nodes s_14 and s_15 occur strictly before node s_16.
+  type: ordering
+  violation_condition: If the story proceeds to Edward's hospital scene and role reversal
+    (s_16) before Will has visited Spectre and spoken to Jenny.
+- description: Will must tell Edward the final story before Edward dies, ensuring
+    closure and completion of their narrative arc by s_17.
+  id: c_5
+  satisfaction_condition: By or during s_17, Will narrates the story of 'how it all
+    ends' to Edward before Edward's death and symbolic transformation.
+  type: achievement
+  violation_condition: If Edward dies without Will having told this final story or
+    the narrative skips this storytelling exchange.
+- description: Edward's death and transformation into the big fish is a fixed narrative
+    event and symbolism that must not be altered or negated after s_17.
+  id: c_6
+  satisfaction_condition: At s_17 and beyond, Edward's death and transformation into
+    the fish always occur as described.
+  type: invariant
+  violation_condition: If Edward survives without transformation or if the symbolic
+    farewell and transformation into the fish are omitted or reversed.
+- description: Will's acceptance of Edward's legacy and continuation of storytelling
+    occurs only after attending the funeral and realizing the truth behind the stories
+    at s_18.
+  id: c_7
+  satisfaction_condition: Node s_18 (funeral and realization) must occur before s_19
+    (Will passes on the stories to his own son).
+  type: ordering
+  violation_condition: If Will passes on Edward's stories to his son before attending
+    the funeral and reassessing the stories' truthfulness.
+- description: 'Romantic relationships and fidelity: Edward only truly loves Sandra
+    and does not have an affair with Jenny throughout s_6 to s_15, excluding infidelity
+    implications.'
+  id: c_8
+  satisfaction_condition: Between s_6 and s_15, narrative consistently supports that
+    Edward's romantic loyalty lies solely with Sandra as confirmed by Jenny at s_15.
+  type: invariant
+  violation_condition: If the narrative allows confirmed infidelity, or Edward reciprocates
+    romantic feelings with Jenny beyond friendship during this period.
+initial_facts:
+- content: Edward Bloom is telling a tall tale about catching an enormous uncatchable
+    fish using his wedding ring as bait at Will Bloom's wedding party.
+  id: f_0
+  negated: false
+- content: Will Bloom is present at his wedding party and listens to Edward Bloom's
+    story with skepticism.
+  id: f_1
+  negated: false
+- content: Edward Bloom is known by attendees as a storyteller who frequently exaggerates
+    or invents tales.
+  id: f_2
+  negated: false
+- content: Will Bloom distrusts his father Edward due to a pattern of exaggeration
+    and perceived dishonesty.
+  id: f_3
+  negated: false
+- content: Will Bloom has not reconciled with Edward Bloom and holds emotional distance
+    from him.
+  id: f_4
+  negated: false
+- content: Joséphine, Will's wife, is present and engaged in conversation with Will
+    about his feelings toward Edward's storytelling.
+  id: f_5
+  negated: false
+- content: Edward Bloom is alive, physically well, and attending Will Bloom's wedding
+    party.
+  id: f_6
+  negated: false
+- content: Will Bloom does not yet know the truthful or factual accuracy of Edward's
+    stories beyond their usual exaggeration.
+  id: f_7
+  negated: false
+- content: The strained relationship and future estrangement between Will and Edward
+    have not yet occurred.
+  id: f_8
+  negated: false
+- content: Edward has not yet revealed any stories or facts about his childhood, the
+    town of Spectre, Jenny, or other characters.
+  id: f_9
+  negated: false
+- content: The core conflict between Will's trust and Edward's storytelling nature
+    is not yet resolved or directly confronted.
+  id: f_10
+  negated: false
+- content: No supernatural elements or Edward's adventures post-wedding party are
+    known or revealed at this moment.
+  id: f_11
+  negated: false
+- content: Will is unaware of Edward's future health decline or hospitalization.
+  id: f_12
+  negated: false
+- content: Edward Bloom has not yet suffered a stroke or become incapacitated.
+  id: f_13
+  negated: false
+- content: Will has not yet visited Spectre or met the older Jenny.
+  id: f_14
+  negated: false
+- content: Edward's romantic relationships, including his love for Sandra Templeton
+    and friendship with Jenny, are unknown to Will at this point.
+  id: f_15
+  negated: false
+- content: Will has not yet confronted Edward about the truthfulness of his stories.
+  id: f_16
+  negated: false
+- content: Will has not yet begun to reassess or accept Edward's stories as partially
+    true or containing kernels of truth.
+  id: f_17
+  negated: false
+- content: Edward’s death, transformation into the big fish, and the symbolic farewell
+    have not occurred.
+  id: f_18
+  negated: false
+- content: Will has not yet passed Edward's stories to his own son or embraced the
+    legacy of storytelling.
+  id: f_19
+  negated: false
+meta:
+  genres: ["Fantasy", "Drama"]
+  id: movie46
+  player_role: Ed Bloom - Young
+  title: "Big Fish"
+synopsis: At his son's wedding party, Edward Bloom tells the same tale he's told many
+  times over the years——on the day Will was born, he was out catching an enormous
+  uncatchable fish, using his wedding ring as bait. Will is annoyed, explaining to
+  his wife Joséphine that because his father never told the straight truth about anything,
+  he felt unable to trust him. He is troubled to think that he might have a similarly
+  difficult relationship with his future children. Will's relationship with his father
+  becomes so strained that they do not talk for three years. But when his father's
+  health starts to fail, Will and the now pregnant Joséphine return to Alabama. On
+  the plane, Will recalls his father's tale of how he braved a swamp as a child, and
+  met a witch who showed him his death in her glass eye. With this knowledge, Edward
+  knew there were no odds he could not face. Edward continues telling tall tales,
+  claiming he spent three years confined to a bed as a child because his body was
+  growing too fast. He became a successful sports player, but found the town of Ashton
+  too small for his ambition, and set off with the misunderstood giant Karl. Edward
+  discovers the hidden town of Spectre, where everyone is friendly to the point of
+  comfortably walking around barefoot. Edward leaves because he does not want to settle
+  anywhere yet, but promises to a young girl named Jenny that he will return. Karl
+  and Edward begin working at a circus; Edward works without pay, as he has been promised
+  by the ringmaster Amos Calloway that each month he will learn something new about
+  a girl he fell in love with. Three years later, having only learned trivia about
+  her, Edward discovers Amos is a werewolf. In return for his refusal to harm him
+  in his monstrous state, Amos tells Edward the girl's name is Sandra Templeton and
+  she studies at Auburn University. Edward learns Sandra is engaged to Don Price,
+  whom Edward always overshadowed during his days in Ashton. Sandra makes Edward promise
+  not to fight Don. Don beats Edward up when he learns about his feelings for her,
+  but this only disgusts Sandra into ending their engagement and falling for Edward.
+  Edward later reveals that Don died from a heart attack on the toilet bowl at an
+  early age. During his recovery, Edward is conscripted by the army and sent to the
+  Korean War. He parachutes into the middle of a show entertaining North Korean troops,
+  steals important documents, and convinces Siamese twin dancers Ping and Jing to
+  help him get back to the United States, where he will make them stars. He is unable
+  to contact anyone on his journey home, and the military declares him dead. This
+  limits Edward's job options when he does return home, so he becomes a traveling
+  salesman. Meeting the poet Norther Winslow from Spectre again, he unwittingly helps
+  him rob a bank, which is already bankrupt. Edward suggests Winslow work at Wall
+  Street, and Winslow thanks Edward for his advice by sending him $10,000, which he
+  uses to buy a dream house. Still unimpressed by his father's stories, Will demands
+  to know the truth, but Edward explains that is who he is——a storyteller. Will finds
+  Spectre, and meets an older Jenny, who explains that Edward rescued the town from
+  bankruptcy by buying it at an auction and rebuilding it with financial help from
+  many of his previous acquaintances. Will suggests his father had been having an
+  affair with Jenny, to which she replies that while she had indeed fallen in love
+  with him, Edward could never love any woman other than Sandra. When Will returns
+  home, he is informed his father had a stroke and is at the hospital. He goes to
+  visit him there and finds him only partly conscious, and unable to speak at length.
+  Since Edward can no longer tell stories, he asks Will to tell him the story of how
+  it all ends——escaping from the hospital, they go to the river where everyone in
+  Edward's life appears to bid him goodbye. Will carries his father into the river
+  where he becomes what he always had been——a very big fish. Edward then dies, knowing
+  his son finally understands his love of storytelling. At the funeral, Will sees
+  many of his father's more unusual friends, including Amos, Karl, Ping and Jing,
+  and Norther Winslow. Will realizes that his father's stories were true, only exaggerated,
+  making Karl a giant and making Ping and Jing conjoined when they are merely twins.
+  When his own son is born, Will passes on his father's stories, remarking that his
+  father became his stories, allowing him to live forever.
+trajectory:
+- description: At the wedding party of Will Bloom, Edward Bloom entertains guests
+    by telling a tall tale about catching an enormous fish on the day Will was born,
+    creating an atmosphere of festivity mixed with skepticism.
+  id: s_0
+  key_delta: Introduction of Edward's storytelling nature and the beginning of Will's
+    distrust due to his father's pattern of exaggeration.
+  trigger_event: Edward tells the story of catching an uncatchable giant fish using
+    his wedding ring as bait.
+- description: After the wedding party, Will talks with his wife Joséphine, expressing
+    frustration that Edward never tells the truth and that this has damaged their
+    father-son relationship.
+  id: s_1
+  key_delta: Will's troubled perception of his father is explicitly stated, highlighting
+    the emotional conflict underpinning their estrangement.
+  trigger_event: Will explains to Joséphine his feelings about his father's dishonesty
+    and its impact on trust.
+- description: Will and Edward have ceased communication for three years, setting
+    the stage for a strained family dynamic.
+  id: s_2
+  key_delta: The father-son relationship is formally broken, marking a significant
+    emotional and communicative rupture.
+  trigger_event: The absence of contact between Will and Edward over a three-year
+    period.
+- description: Edward's health declines; Will and his pregnant wife Joséphine prepare
+    to return to Alabama to care for him.
+  id: s_3
+  key_delta: The physical vulnerability of Edward imposes a necessity for Will to
+    reengage with his father and past.
+  trigger_event: Will and Joséphine decide to travel back to Alabama due to Edward's
+    failing health.
+- description: On the plane heading to Alabama, Will recalls Edward's childhood tale
+    of braving a swamp and meeting a witch who showed him his own death in her glass
+    eye.
+  id: s_4
+  key_delta: Will begins mentally reconnecting with Edward's stories, opening a pathway
+    to understanding his father's mindset.
+  trigger_event: Will reminisces about Edward's story of the swamp witch while in
+    flight.
+- description: Edward continues narrating exaggerated tales from his youth, including
+    a period of rapid physical growth and athletic success; he then leaves his small
+    hometown seeking greater ambitions with his giant friend Karl.
+  id: s_5
+  key_delta: Establishment of Edward's adventurous past and departure from his hometown,
+    introducing characters central to his journey.
+  trigger_event: Edward recounts his childhood growth and decision to leave Ashton
+    with Karl.
+- description: Edward discovers the hidden town of Spectre, a quaint, barefoot-friendly
+    community, and promises a young girl named Jenny he will return someday.
+  id: s_6
+  key_delta: Introduction of Spectre and personal relationship with Jenny, setting
+    a future commitment.
+  trigger_event: Edward finds Spectre and interacts with Jenny, making a promise to
+    her.
+- description: Edward and Karl join a circus where Edward works without pay, hoping
+    to learn about a girl he loves; he discovers the ringmaster Amos Calloway is a
+    werewolf.
+  id: s_7
+  key_delta: Disclosure of supernatural elements in Edward's world and development
+    of his romantic interests.
+  trigger_event: Edward uncovers Amos Calloway's werewolf identity while working in
+    the circus.
+- description: Edward learns the girl he loves is Sandra Templeton, engaged to Don
+    Price, a rival from Ashton; Edward promises not to confront Don but is beaten
+    up by Don when the feelings are revealed.
+  id: s_8
+  key_delta: Conflict with Don Price escalates, impacting Edward's romantic pursuit
+    and social standing.
+  trigger_event: Don Price assaults Edward upon learning of his feelings for Sandra.
+- description: Sandra breaks off her engagement with Don, falls for Edward, and later
+    Edward reveals that Don died prematurely of a heart attack.
+  id: s_9
+  key_delta: Edward's romantic relationship with Sandra begins, while Don's fate is
+    sealed off-screen.
+  trigger_event: Sandra ends engagement with Don and starts a relationship with Edward.
+- description: During recovery from his injuries, Edward is conscripted and sent to
+    fight in the Korean War, where he executes a daring mission stealing important
+    documents with the help of Siamese twins Ping and Jing.
+  id: s_10
+  key_delta: Edward's military service and alliance with Ping and Jing expands his
+    experiences and alliances.
+  trigger_event: Edward parachutes into a North Korean entertainer show and initiates
+    the document theft.
+- description: The military declares Edward dead due to lost contact; upon return,
+    limited job prospects lead him to become a traveling salesman.
+  id: s_11
+  key_delta: Edward's status as presumed dead forces a new lifestyle and impacts future
+    opportunities.
+  trigger_event: Edward returns home to limited options after being presumed dead.
+- description: Edward reunites with poet Norther Winslow from Spectre, unknowingly
+    aiding in a bank robbery; afterwards, Winslow rewards Edward with $10,000, enabling
+    him to buy his dream home.
+  id: s_12
+  key_delta: Financial stability is established through Winslow's gift, helping Edward
+    settle down.
+  trigger_event: Winslow sends Edward money, which Edward uses to purchase a house.
+- description: Will confronts Edward demanding the truth behind his stories; Edward
+    reaffirms that he is a storyteller by nature.
+  id: s_13
+  key_delta: Will’s skepticism reaches a climax, establishing the core conflict over
+    truth versus storytelling.
+  trigger_event: Will challenges Edward to reveal the truth about his tales.
+- description: Will visits Spectre and meets an older Jenny, who reveals Edward saved
+    the town from bankruptcy and rebuilt it with help from his acquaintances.
+  id: s_14
+  key_delta: Reveals Edward's tangible achievements behind the stories, adding dimension
+    to his legend.
+  trigger_event: Will arrives in Spectre and speaks to Jenny about Edward's impact.
+- description: Jenny confirms her love for Edward but affirms that he could never
+    love anyone other than Sandra, putting to rest rumors of infidelity.
+  id: s_15
+  key_delta: Clarification of Edward’s romantic loyalty and denial of an affair with
+    Jenny.
+  trigger_event: Jenny discusses her relationship with Edward with Will.
+- description: Will is informed of Edward’s stroke; he visits Edward in the hospital
+    where Edward is weak and unable to speak, but asks Will to tell him the story
+    of how it all ends.
+  id: s_16
+  key_delta: Edward’s incapacitation forces a role reversal where Will becomes the
+    storyteller.
+  trigger_event: Will arrives at the hospital and Edward requests a final storytelling
+    exchange.
+- description: Will escapes the hospital with Edward; at the river, Edward's friends
+    appear to say farewell as Edward transforms into a giant fish, symbolizing his
+    return to myth.
+  id: s_17
+  key_delta: Edward's death and symbolic transformation conclude his personal journey
+    and legends.
+  trigger_event: Will carries Edward to the river where the farewell takes place.
+- description: At Edward’s funeral, Will observes his father’s unusual friends, realizing
+    the stories were true but exaggerated, reassessing his understanding of his father.
+  id: s_18
+  key_delta: Will acknowledges the kernel of truth within Edward’s tales, reshaping
+    his perspective.
+  trigger_event: Will attends the funeral and sees Edward’s acquaintances gathered.
+- description: With the birth of his own son, Will passes on Edward’s stories, embracing
+    storytelling as a means to preserve his father's legacy and love forever.
+  id: s_19
+  key_delta: Continuation of Edward’s storytelling tradition through Will, achieving
+    legacy and emotional reconciliation.
+  trigger_event: Will tells his son the stories Edward once told him.

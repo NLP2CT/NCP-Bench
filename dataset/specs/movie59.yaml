@@ -1,0 +1,330 @@
+commitments:
+- description: The accusation of Dastan for King Sharaman's murder (s_3) cannot occur
+    before the assassination event actually happens.
+  id: c_0
+  satisfaction_condition: Node s_3 (King's death by poisoned robe) has occurred before
+    the accusation and exile of Dastan (s_4).
+  type: ordering
+  violation_condition: The system accepts or triggers the accusation or exile of Dastan
+    without the prior occurrence of the King’s death by poisoning.
+- description: Nizam must remain the true orchestrator of King Sharaman's murder discovered
+    only after sufficient investigation (between s_3 and s_6).
+  id: c_1
+  satisfaction_condition: Nizam’s culpability is revealed to the player/Narrative
+    only at or after s_6, based on observable facts like his burned hand and evidence.
+  type: invariant
+  violation_condition: The system acknowledges or allows the player/Narrative to conclusively
+    accuse Nizam as the murderer before s_6.
+- description: The dagger's time-reversing power must be revealed and demonstrated
+    to the protagonist before it can be used strategically later.
+  id: c_2
+  satisfaction_condition: Dastan discovers and uses the dagger to reverse time (node
+    s_5) at least once before the final confrontation and sacrifice (nodes s_12 and
+    beyond).
+  type: achievement
+  violation_condition: The dagger’s time-reversal capability is used or acknowledged
+    by any character before s_5 or without an explicit prior demonstration.
+- description: Political peace via Tamina's marriage agreement to Tus must logically
+    follow her capture and recognition of the dagger’s significance.
+  id: c_3
+  satisfaction_condition: Tamina’s arrest and acceptance to marry Tus (s_2) occurs
+    after her capture and observing the dagger in play (s_1).
+  type: ordering
+  violation_condition: The narrative reflects Tamina agreeing to marry Tus or political
+    peace forming before her arrest or before the dagger is known (before s_1).
+- description: Dastan’s possession of the dagger initiates a unique temporal awareness
+    that only he can retain during time manipulations.
+  id: c_4
+  satisfaction_condition: Throughout s_5 to s_16, only Dastan remembers temporal rewind
+    events, and no other character independently retains or reveals past rewound states.
+  type: invariant
+  violation_condition: Any character other than Dastan independently recalls or shows
+    knowledge of rewound events without Dastan’s intervention or sharing.
+- description: Nizam must seize control of the Dagger only after Tus is killed, escalating
+    the conflict to the final confrontation phase.
+  id: c_5
+  satisfaction_condition: Nizam kills Tus and takes the dagger at or after s_13 temporal
+    marker.
+  type: ordering
+  violation_condition: Nizam gains the dagger or kills Tus before s_13 or without
+    Tus’s previous involvement in the narrative.
+- description: Nizam’s death and the restoration of order through Tus must happen
+    after Dastan reveals his innocence by rewinding time using the dagger.
+  id: c_6
+  satisfaction_condition: At s_16, Dastan rewinds time, exposes Nizam’s treachery,
+    and Tus kills Nizam, resolving the conflict.
+  type: achievement
+  violation_condition: Nizam dies or is removed from power before the time rewind
+    and public accusation at s_16, or the conflict is resolved without this sequence.
+- description: The apocalyptic risk of the Sandglass being opened by Nizam must always
+    be recognized and warned against by Tamina before any attempt to use it.
+  id: c_7
+  satisfaction_condition: From s_7 through s_15, Tamina explicitly warns about the
+    Sandglass’s destructive potential prior to or concurrent with any action near
+    the Sandglass.
+  type: invariant
+  violation_condition: The narrative allows Nizam or any character to use or interact
+    with the Sandglass without prior warning to or concern from Tamina about the apocalypse.
+- description: Dastan’s sacrifice and Tus’s subsequent resurrection of Dastan via
+    dagger time rewind must happen only after the dagger is securely back in protagonist
+    hands.
+  id: c_8
+  satisfaction_condition: The dagger is recovered by Seso at s_11 before Dastan sacrifices
+    himself and Tus rewinds time at s_12.
+  type: ordering
+  violation_condition: Dastan performs the sacrifice or Tus rewinds time with the
+    dagger before its retrieval or outside the s_11 to s_12 phase.
+- description: The narrative must conclude with a hopeful alliance between Dastan
+    and Tamina, acknowledging the dagger’s power and hinting at a future together.
+  id: c_9
+  satisfaction_condition: At s_17, Dastan returns the dagger to Tamina and they agree
+    on alliance symbolized by walking together and open acknowledgment of dagger’s
+    power.
+  type: achievement
+  violation_condition: The story ends or the player reaches the final state without
+    this alliance, return of the dagger, or hopeful future being explicitly shown.
+initial_facts:
+- content: Nizam is in the Persian royal court under King Sharaman's reign.
+  id: f_0
+  negated: false
+- content: Dastan is an orphan adopted prince living in the Persian royal court.
+  id: f_1
+  negated: false
+- content: Tus and Garsiv are Dastan's royal-blooded adoptive brothers living in the
+    Persian royal court.
+  id: f_2
+  negated: false
+- content: There is growing suspicion in the Persian royal court that Alamut is trading
+    weapons to Persia's enemies.
+  id: f_3
+  negated: false
+- content: Nizam is aligned with the royal family preparing for a preemptive strike
+    on Alamut.
+  id: f_4
+  negated: false
+- content: King Sharaman is alive and the ruler of the Persian Empire.
+  id: f_5
+  negated: false
+- content: Dastan is not in possession of any unique dagger or artifact.
+  id: f_6
+  negated: false
+- content: Princess Tamina of Alamut is not captured or arrested.
+  id: f_7
+  negated: false
+- content: No political marriage agreement or peace alliance has been made involving
+    Tamina.
+  id: f_8
+  negated: false
+- content: Nizam's true role in a conspiracy, including King Sharaman's murder, is
+    not yet known or suspected by the royal court or player.
+  id: f_9
+  negated: false
+- content: The Dagger of Time does not exist in the Persian royal court or in possession
+    of any character.
+  id: f_10
+  negated: false
+- content: Nizam does not have any burned or injured hand reflecting guilt.
+  id: f_11
+  negated: false
+- content: No assassin activities or threats against Dastan or the royal family have
+    occurred.
+  id: f_12
+  negated: false
+- content: No knowledge exists regarding the Sandglass or its apocalyptic risk.
+  id: f_13
+  negated: false
+- content: Dastan has no knowledge of the dagger's time-reversing power.
+  id: f_14
+  negated: false
+- content: The Persian royal court is preparing for a coordinated attack on Alamut
+    based on intelligence of arms trafficking.
+  id: f_15
+  negated: false
+meta:
+  genres: ["Fantasy", "Action"]
+  id: movie59
+  player_role: Nizam
+  title: "Prince of Persia——The Sands of Time"
+synopsis: An attack on the sacred city of Alamut is planned by Dastan, an orphan in
+  the Persian Empire adopted by King Sharaman; his royal-blooded adoptive brothers,
+  Tus and Garsiv; and his uncle, Nizam, after Alamut is believed to be selling weapons
+  to Persia's enemies. Dastan leads a surprise attack to open the city's gates to
+  allow the army in; during the ensuing battle, Dastan comes into possession of a
+  unique dagger. Alamut's princess, Tamina, is arrested and agrees to marry Tus in
+  order to achieve peace after noticing Dastan's dagger. Dastan unknowingly presents
+  a poisoned robe, given to him by Tus, to his father, who dies upon donning it. After
+  being blamed for the murder, Dastan flees Alamut with Tamina. When Tamina attempts
+  to kill the prince, Dastan discovers the dagger can reverse time and only the one
+  who activates it is aware of what happened. After an encounter with shady ostrich
+  racing-organizer Sheik and his men, Dastan and Tamina head to Avrat for Sharaman's
+  funeral. Dastan attempts to convince Nizam that he did not kill his father but Garsiv
+  and the city guards appear and attack Dastan and he is forced to escape. Dastan
+  catches up with Tamina and explains that Nizam was behind the murder because his
+  hands were burned. Once Tamina finally explains everything about the Dagger, Dastan
+  realizes why Nizam wants the Dagger of Time——to use it with the massive Sandglass
+  to go back in time and undo saving Sharaman from a lion so he could become king.
+  He fabricated the false allegations that Alamut had been dealing weapons to Persia's
+  enemies so that he would have the opportunity to search the city for the Sandglass.
+  However, Tamina warns that opening the Sandglass would release the sands, triggering
+  an apocalyptic sandstorm that would destroy the entire world. Meanwhile, Nizam hires
+  the lethal Hassansins to slay Dastan. Dastan and Tamina are again captured by Sheik
+  Amar, seeking to rebuild his ruined business by turning them in for bounty. But
+  that night, the Hassansin leader, Zolm attacks the group with vipers, which are
+  killed by Dastan with the dagger. Amar decides to go along with Dastan and Tamina
+  to a secret sanctuary near India. They run into Garsiv's men. Dastan manages to
+  persuade his brother that he is innocent, only for Garsiv to be fatally wounded
+  by a Hassansin. The Hassansins attack, while Dastan and Tamina sneak away to the
+  secret cave where they can hide the Dagger. After Dastan prevents Tamina from giving
+  up her life to protect the Dagger, they are found and Zolm manages to snatch the
+  Dagger of Time from Tamina. Garsiv saves Dastan from a Hassansin just before he
+  dies. The group returns to Alamut to reveal the truth about Nizam and the Dagger
+  to Tus. Seso manages to take back the Dagger after a battle with Setam, the Hassansin
+  who killed Garsiv, that ends up killing both men. Dastan confronts Tus and explains
+  the dagger's mechanics to him and then stabs the dagger into his heart, killing
+  himself. Tus brings Dastan back to life by rewinding time and realizes his brother
+  has been innocent all along. But Nizam arrives, kills Tus, and takes the Dagger,
+  leaving a Hassansin, Ghazab, to kill Dastan. Tamina arrives to help Dastan defeat
+  Ghazab as Nizam goes to the Sandglass caves beneath Alamut. Dastan and Tamina go
+  behind, and on the way Tamina kills Zolm with the Hassansin's own snake, while preventing
+  him from killing Dastan. The pair share a kiss. They reach Nizam before he can pierce
+  the Sandglass with the Dagger, but he knocks Tamina and Dastan over the edge. Dastan
+  grabs hold of Tamina. Admitting that she loves him, Tamina asks Dastan to stop Nizam,
+  saying it's been his destiny all along. She lets go of his hand, leaving Dastan
+  devastated. Dastan pulls himself up just as Nizam stabs the Sandglass with the Dagger.
+  Dastan grabs hold and activates the dagger. This causes Dastan to go back to the
+  immediate aftermath of the invasion of Alamut. Dastan reveals Nizam's treachery.
+  Nizam, realizing the allegation will be confirmed by an investigation ordered by
+  Tus, attacks Dastan, but is eventually stabbed in the chest by Tus's blade and dies.
+  After apologizing for the ransacking of her city, Tus suggests that perhaps Tamina
+  should become Dastan's wife as a sign of good will since he is the "conqueror and
+  savior of her city". Prince Dastan returns the Dagger of Time to Tamina and the
+  two take a walk together. During their conversation, Dastan hints at his knowledge
+  of the dagger's power and tells Tamina that he looks forward to a future with her.
+trajectory:
+- description: Nizam is in the Persian royal court, where Dastan, an orphaned adopted
+    prince, and his royal adoptive brothers Tus and Garsiv live under King Sharaman.
+    Suspicion is growing about Alamut allegedly trading weapons to enemies of Persia,
+    and tensions simmer beneath the surface.
+  id: s_0
+  key_delta: The Persian Empire plans a coordinated attack on Alamut with Nizam working
+    alongside the royal family to justify the assault.
+  trigger_event: King Sharaman and his princes prepare to launch a preemptive strike
+    on Alamut based on intel of arms trafficking.
+- description: Alamut is under surprise attack; Dastan leads the assault and opens
+    the city gates to the Persian army. Amidst chaos, Dastan comes into possession
+    of a mysterious dagger with unique properties.
+  id: s_1
+  key_delta: The dagger's acquisition introduces a powerful artifact into the conflict
+    unknown to others, altering future events.
+  trigger_event: Dastan breaches Alamut’s defenses and finds the unique dagger during
+    the battle.
+- description: Princess Tamina of Alamut is captured and agrees to marry Tus to secure
+    peace, recognizing Dastan's dagger as significant.
+  id: s_2
+  key_delta: A political alliance is formed to maintain peace, but latent mistrust
+    persists between factions.
+  trigger_event: Tamina is formally arrested and consents to the political marriage
+    proposal by Tus.
+- description: Dastan unknowingly presents a poisoned robe, given to him by Tus, to
+    King Sharaman, who dies after wearing it.
+  id: s_3
+  key_delta: King Sharaman’s death triggers political chaos; Dastan becomes the prime
+    suspect in a murder plot.
+  trigger_event: King Sharaman dons the poisoned robe at a royal gathering.
+- description: Dastan, blamed for the king’s death, flees Alamut accompanied by Princess
+    Tamina who initially attempts to kill him.
+  id: s_4
+  key_delta: Dastan enters exile, and Tamina’s perception of him begins to shift as
+    they flee together.
+  trigger_event: Dastan escapes the palace grounds with Tamina following an escalating
+    confrontation.
+- description: During the journey, Dastan discovers the dagger's power to reverse
+    time locally, while only the activator retains memories of the reversal.
+  id: s_5
+  key_delta: The dagger’s time-reversal capability becomes known and usable, providing
+    strategic advantage.
+  trigger_event: Dastan activates the dagger in a critical moment to undo Tamina’s
+    attempted attack.
+- description: Nizam’s hand is burned, revealing a motive; Dastan explains to Tamina
+    that Nizam orchestrated King Sharaman’s murder to access the Sandglass beneath
+    Alamut.
+  id: s_6
+  key_delta: Nizam is identified as the true antagonist seeking the Dagger and Sandglass
+    for power manipulation.
+  trigger_event: Dastan confronts Tamina with evidence of Nizam's injuries linked
+    to his treachery.
+- description: Tamina reveals the Sandglass’s destructive potential if opened; Nizam
+    hires assassins (Hassansins) to eliminate Dastan and seize the dagger.
+  id: s_7
+  key_delta: Nizam escalates his campaign to secure the Dagger and Sandglass by lethal
+    means.
+  trigger_event: Assassins arrive in Persia, and threats to Dastan and Tamina escalate.
+- description: Dastan and Tamina are captured by Sheikh Amar who wants to claim the
+    bounty but are saved when the Hassansins attack the group with vipers.
+  id: s_8
+  key_delta: Dastan proves deadly with the dagger, forcing a reluctant alliance with
+    Amar for safety.
+  trigger_event: Assassins led by Zolm attack Amar’s compound at night.
+- description: The group journeys to a secret sanctuary near India but are ambushed
+    by Garsiv’s men. Dastan convinces Garsiv of his innocence before Garsiv is fatally
+    wounded by a Hassansin.
+  id: s_9
+  key_delta: Garsiv’s death eliminates a royal ally but confirms the depth of Nizam’s
+    conspiracy.
+  trigger_event: Garsiv confronts Dastan and is attacked during the Hassansin skirmish.
+- description: Dastan and Tamina reach a cave to hide the dagger; after a confrontation,
+    Zolm steals the dagger and Garsiv dies saving Dastan.
+  id: s_10
+  key_delta: The Dagger is lost to enemy hands, heightening the stakes of its retrieval.
+  trigger_event: The Hassansins overrun the sanctuary and seize the dagger in a violent
+    skirmish.
+- description: Dastan, Tamina, and allies return to Alamut to expose Nizam to Tus.
+    A brutal fight ensues for the dagger, ending with both Seso and Setam (Hassansin)
+    dead and the dagger recovered by Seso.
+  id: s_11
+  key_delta: The dagger returns to the protagonists, enabling Dastan to reveal Nizam’s
+    treachery.
+  trigger_event: The dagger changes hands after a deadly confrontation within Alamut
+    walls.
+- description: Dastan explains the dagger’s powers to Tus, then sacrifices himself
+    by stabbing the dagger into his own heart. Tus revives Dastan by rewinding time
+    with the dagger.
+  id: s_12
+  key_delta: Time manipulation proves possible, confirming Dastan’s innocence and
+    undermining Nizam’s plans.
+  trigger_event: Dastan activates the dagger’s power on himself, demonstrating its
+    time-altering ability.
+- description: Nizam kills Tus, steals the dagger, and leaves a Hassansin named Ghazab
+    to kill Dastan. Tamina intervenes to aid Dastan in fighting off Ghazab.
+  id: s_13
+  key_delta: Nizam gains direct control over the dagger and accelerates his plan to
+    use the Sandglass.
+  trigger_event: Nizam assassinates Tus and commandeers the dagger amidst palace upheaval.
+- description: Dastan and Tamina pursue Nizam to the Sandglass caves beneath Alamut;
+    Tamina kills Zolm during the chase while saving Dastan.
+  id: s_14
+  key_delta: The final confrontation site is reached, and key enemy leaders are eliminated.
+  trigger_event: The pair navigate underground tunnels, confronting Hassansin enemy
+    forces.
+- description: Dastan and Tamina reach Nizam as he attempts to stab the Sandglass
+    with the dagger, triggering a catastrophic event. Both are knocked over the edge;
+    Dastan barely holds Tamina’s hand before she lets go, expressing her love and
+    acceptance of his destiny.
+  id: s_15
+  key_delta: Nizam initiates the apocalyptic chain; the emotional bond between Dastan
+    and Tamina is affirmed.
+  trigger_event: Nizam violently attacks the Sandglass while confronting Dastan and
+    Tamina.
+- description: Dastan activates the dagger, traveling back in time to just after the
+    invasion. He exposes Nizam’s treachery publicly. Nizam attacks but is killed by
+    Tus, resolving the conflict.
+  id: s_16
+  key_delta: Nizam is removed as threat by Tus; political and temporal order restored.
+  trigger_event: Dastan uses the dagger to rewind and reveal the truth to the court.
+- description: With peace restored, Tus apologizes to Tamina for the city’s suffering
+    and suggests the marriage to Dastan as a sign of goodwill. Dastan returns the
+    dagger to Tamina, and they walk together, hinting at a hopeful future.
+  id: s_17
+  key_delta: A new era begins symbolized by the alliance and understanding of the
+    dagger’s power.
+  trigger_event: The royal family reconciles and formalizes alliances after the upheaval.

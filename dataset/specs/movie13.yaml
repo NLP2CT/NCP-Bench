@@ -1,0 +1,306 @@
+commitments:
+- description: The alien spacecraft must jettison the pod (s_0) before any human or
+    team activities begin to ensure extraterrestrial presence is introduced first.
+  id: c_0
+  satisfaction_condition: Node s_0 event has occurred prior to the initiation of node
+    s_1 or any subsequent nodes.
+  type: ordering
+  violation_condition: Player forces team or human activity nodes (s_1 or later) to
+    occur before the pod entry event s_0.
+- description: The team’s insertion into the jungle (s_1) must happen before discovering
+    the helicopter wreckage and special forces remains (s_2) to maintain logical chronological
+    progression.
+  id: c_1
+  satisfaction_condition: Node s_1 occurs before s_2.
+  type: ordering
+  violation_condition: Player attempts to reveal or investigate the crash site or
+    remains before the team has been inserted into the jungle.
+- description: The team must not obtain full intelligence about the previous failed
+    missions or true nature of the rescue mission (CIA ploy) before s_4 to avoid premature
+    exposure of betrayal and mission manipulation.
+  id: c_2
+  satisfaction_condition: Prior to node s_4, no information or acknowledgment of the
+    CIA deception is accessible or accepted as true by the team.
+  type: invariant
+  violation_condition: Player gains or triggers definitive knowledge/acknowledgment
+    of the rescue mission's true purpose and CIA betrayal before node s_4.
+- description: The Predator’s presence and thermal stalking (s_5) must be established before the first abduction (s_6), and this initial threat must be revealed before further lethal encounters (s_7 onwards) to maintain narrative tension.
+  id: c_3
+  satisfaction_condition: Node s_5 occurs before s_6, and both are completed before any team deaths subsequent to Hawkins (node s_7 and later).
+  type: achievement
+  violation_condition: Player causes Predator kills or direct attacks on the team (s_6) before the thermal observation (s_5) is established, or causes kills beyond Hawkins before s_6 is completed.
+- description: The team discovering and briefly seeing the Predator (s_7) must occur
+    before they attempt traps or tactics based on knowledge (s_8) to maintain proper
+    knowledge acquisition sequence.
+  id: c_4
+  satisfaction_condition: Node s_7 (Blain death and Predator sighting) occurs before
+    node s_8 (trap attempt and Anna's insight).
+  type: ordering
+  violation_condition: Player initiates trapping efforts or discusses the creature
+    intelligently (s_8) before any confirmed Predator sighting at s_7.
+- description: The team’s reduction in strength by Predator kills must reflect the
+    order and number of deaths as per trajectory nodes (Hawkins, Blain, Mac, Dillon,
+    Billy, Poncho) to uphold story continuity and challenge escalation.
+  id: c_5
+  satisfaction_condition: Deaths occur in the narrative logical order and no team
+    member is killed before official kill nodes s_6 through s_10 respectively.
+  type: invariant
+  violation_condition: Player causes deaths out of order, skips deaths, or prevents
+    expected character deaths before their designated nodes or timeline segments.
+- description: Dutch’s understanding that the Predator only hunts armed targets and
+    his sending unarmed Anna to extraction (s_11) must hold true to justify stealth
+    tactics and final showdown conditions.
+  id: c_6
+  satisfaction_condition: Player enables Dutch to evade Predator by masking heat signature
+    with mud at s_11 before hand-to-hand fight.
+  type: invariant
+  violation_condition: Player uses Anna as armed combatant or reveals knowledge of
+    Predator hunting behavior before node s_11.
+- description: Dutch’s evasion by mud camouflage (s_11) and witnessing Predator’s
+    active camouflage failure must occur before Dutch prepares traps and starts the
+    fire to bait the Predator (s_12).
+  id: c_7
+  satisfaction_condition: s_11 occurs before s_12.
+  type: ordering
+  violation_condition: Player starts offensive baiting/trapping (s_12) without Dutch
+    first exploiting mud camouflage or seeing Predator’s true form.
+- description: The Predator must discard its ranged electronic weapons and initiate
+    hand-to-hand combat (s_13) only after Dutch has baited it and traps are set, preserving
+    the climax’s narrative escalation.
+  id: c_8
+  satisfaction_condition: Node s_12 (baiting with fire) is completed before node s_13
+    (hand-to-hand combat initiation).
+  type: ordering
+  violation_condition: Player initiates melee combat with Predator before Dutch’s
+    offensive baiting and trap preparation.
+- description: Dutch must mortally wound the Predator through the trap counterweight
+    crush (s_14) to provide conclusive resolution of the battle.
+  id: c_9
+  satisfaction_condition: The trap counterweight is triggered crushing the Predator
+    during node s_14.
+  type: achievement
+  violation_condition: Player causes the Predator’s defeat without activating the
+    trap or through alternate means violating the climactic milestone.
+- description: The Predator activates self-destruct with escalating human-like laughter
+    (s_15) following mortal wounding, forcing Dutch’s narrow escape and concluding
+    the threat.
+  id: c_10
+  satisfaction_condition: After s_14’s mortal wound, the Predator self-destructs as
+    described in s_15, with Dutch narrowly escaping.
+  type: invariant
+  violation_condition: Player prevents or alters the Predator’s self-destruct sequence
+    or the manner of sound and timing after its defeat.
+- description: Dutch and Anna must be extracted safely by helicopter at story end
+    (s_16), closing the narrative arc of survival and rescue.
+  id: c_11
+  satisfaction_condition: Helicopter arrives and extracts Dutch and Anna after the
+    self-destruct event.
+  type: achievement
+  violation_condition: Player kills or prevents rescue of Dutch and Anna after the
+    final explosion, or extracts them prematurely before s_15.
+initial_facts:
+- content: At time t=0, an alien spacecraft has jettisoned a pod that is currently
+    descending through Earth's atmosphere toward a remote jungle area on Earth.
+  id: f_0
+  negated: false
+- content: At time t=0, Major Alan 'Dutch' Schaefer and his team have not yet arrived
+    in the Central American jungle.
+  id: f_1
+  negated: false
+- content: At time t=0, Mac Eliot, Blain Cooper, Billy Sole, Jorge 'Poncho' Ramirez,
+    and Rick Hawkins have not yet been inserted into the jungle.
+  id: f_2
+  negated: false
+- content: At time t=0, George Dillon has not yet joined or accompanied Dutch and
+    his team.
+  id: f_3
+  negated: false
+- content: At time t=0, the alien pod has not yet reached the Earth's surface.
+  id: f_4
+  negated: false
+- content: At time t=0, no human military or guerrilla activity has yet occurred in
+    the targeted jungle area.
+  id: f_5
+  negated: false
+- content: At time t=0, the existence or presence of the Predator creature (the player
+    role) is not known or observed by any human characters.
+  id: f_6
+  negated: false
+- content: At time t=0, there is no knowledge or awareness by any character of previous
+    failed rescue missions or CIA manipulations related to the current operation.
+  id: f_7
+  negated: false
+- content: At time t=0, no helicopters have crashed, and no remains of Special Forces
+    bodies exist or have been discovered.
+  id: f_8
+  negated: false
+- content: At time t=0, the jungle environment is quiet and unpopulated except for
+    the descending pod; no rescue mission or team insertion has yet taken place.
+  id: f_9
+  negated: false
+meta:
+  genres: ["Action", "Sci-Fi"]
+  id: movie13
+  player_role: The Predator
+  title: "Predator"
+synopsis: An alien spacecraft enters the Earth's atmosphere and jettisons a pod, which
+  descends onto the planet. Some time later, Major Alan "Dutch" Schaefer  arrives
+  in Central America with his elite team for an operation to rescue a presidential
+  cabinet minister and his aide who had been abducted by guerrilla forces. The team
+  consists of Mac Eliot , Blain Cooper , Billy Sole , Jorge "Poncho" Ramirez , and
+  Rick Hawkins . Dutch's old military friend George Dillon , now working for the CIA,
+  accompanies them as a liaison. The team is inserted into the jungle by helicopter
+  and begins its hunt. They soon find the wreckage of a downed helicopter and later,
+  the remains of Army Special Forces, whose presence in the country mystifies Dutch,
+  while shocking them that the bodies are found to be hanged with their skin removed.
+  They track the guerillas to a heavily defended rebel encampment which they destroy,
+  except for a woman named Anna  whom they take prisoner. Dutch is enraged when Dillon
+  confesses the rescue mission had been a ploy to get his group to attack the camp
+  and that the men they found earlier had disappeared in a failed rescue of two CIA
+  agents. As the team make their way to the extraction point, they are observed from
+  afar by an unknown creature using thermal imaging. Anna briefly escapes, but when
+  Hawkins catches her, he is seized and dragged off. The nearly invisible creature
+  spares the unarmed Anna. Moments later, while the team is looking for Hawkins' killer,
+  Blain is killed. Mac physically sees the creature and opens fire on it, but it disappears
+  into the jungle. Anna offers the team insight on the creature which is something
+  of a local legend. The team sets a trap, but it avoids capture, severely wounding
+  Poncho in the process. Mac and Dillon are killed in the ensuing chase, and Billy
+  is slain making a stand. The Predator catches up to Dutch and engages in a short
+  shootout during which Poncho is killed. Realizing the creature only attacks those
+  possessing weapons, a wounded Dutch sends Anna unarmed to the extraction point.
+  Jumping off a waterfall, he narrowly escapes the creature by inadvertently masking
+  his body's heat signature with mud and witnesses the Predator's true form when its
+  active camouflage fails in the water. Dutch applies more mud, improvises various
+  weaponry and traps, then baits the Predator into coming out by starting a large
+  fire. Hearing Dutch's war-cry, the Predator arrives to investigate and eventually
+  traps him. Discarding its electronic weaponry, the alien challenges Dutch to hand-to-hand
+  combat. Battered and barely able to move, Dutch manages to drop the counterweight
+  from one of his traps, which falls and crushes the creature. As Dutch asks the mortally
+  wounded alien what it is, the creature mimics his question in garbled English and
+  then activates a self-destruct mechanism on its wrist device while laughing, gradually
+  increasing its laugh into a human-like pitch. Dutch barely escapes the massive explosion
+  and is rescued by helicopter along with Anna.
+trajectory:
+- description: An alien spacecraft is entering Earth's atmosphere and releases a pod
+    that begins its descent through the atmosphere towards a remote jungle area on
+    Earth. The environment is tense and unpopulated as the pod descends.
+  id: s_0
+  key_delta: Introduction of the extraterrestrial element entering Earth undetected;
+    the pod is now on Earth’s surface.
+  trigger_event: The pod lands undetected in the jungle as Dutch's team is dispatched
+    into the same region.
+- description: Major Alan 'Dutch' Schaefer and his elite team have arrived by helicopter
+    in a dense Central American jungle to conduct a rescue operation of a presidential
+    cabinet minister and his aide abducted by guerrillas.
+  id: s_1
+  key_delta: Introduction of human military forces and the mission setting in hostile
+    jungle territory.
+  trigger_event: Dutch and his team are inserted into the jungle by helicopter.
+- description: The team discovers the wreckage of a downed helicopter and the bodies
+    of Army Special Forces soldiers who have been hanged and skinned. The environment
+    is ominous, dense jungle surroundings imply danger.
+  id: s_2
+  key_delta: Evidence of a previous failed military mission and an unknown hostile
+    presence becomes apparent.
+  trigger_event: The team finds the helicopter wreckage and the mutilated remains
+    of Special Forces troops.
+- description: The team locates and destroys a heavily defended guerrilla encampment,
+    capturing a female survivor named Anna. Morale is tense; jungle warfare context
+    is intensified.
+  id: s_3
+  key_delta: Guerrilla opposition is neutralized and potential intelligence source
+    (Anna) is obtained.
+  trigger_event: The team attacks and overtakes the rebel camp, taking Anna prisoner.
+- description: Dutch learns from George Dillon that the rescue mission was a covert
+    ploy to provoke an attack on the camp; the special forces deaths were from a failed
+    prior CIA agent rescue. The team proceeds through dense jungle terrain towards
+    the extraction point.
+  id: s_4
+  key_delta: Revelation that their mission was manipulated and betrayal by the CIA
+    liaison alters team trust and objective clarity.
+  trigger_event: Dillon confesses the true purpose of the mission to Dutch and the
+    team.
+- description: The team is being stalked in the jungle, with an unknown creature observing
+    them via thermal imaging from a distance. The atmosphere is tense and foreboding
+    in the dense foliage.
+  id: s_5
+  key_delta: Introduction of the Predator as a hostile invisible hunter targeting
+    the team.
+  trigger_event: The unseen hunter makes its first move, seizing Hawkins when Anna
+    tries to flee.
+- description: Anna temporarily escapes captivity but is recaptured after Hawkins
+    is seized and dragged off by the creature. The jungle is silent except for signs
+    of the unseen predator's presence.
+  id: s_6
+  key_delta: The Predator begins direct lethal interaction with the team, escalating
+    threat level.
+  trigger_event: Hawkins is taken by the creature during Anna's escape and recapture.
+- description: Blain is killed during an encounter; Mac sees the creature briefly
+    and fires at it, but it vanishes into the jungle. The team is aware now of a flesh-and-blood
+    hunter with advanced camouflage.
+  id: s_7
+  key_delta: Confirmation of an intelligent invisible predator that can kill team
+    members stealthily.
+  trigger_event: Blain’s death and Mac’s sighting of the Predator.
+- description: Anna provides information identifying the creature as part of a local
+    legend. The team attempts to trap it, but it evades capture and severely wounds
+    Poncho in the process.
+  id: s_8
+  key_delta: The Predator's superior hunting skills and lethality are further demonstrated;
+    team’s knowledge base expands.
+  trigger_event: The team attempts and fails to trap the creature, resulting in Poncho's
+    injury.
+- description: Mac and Dillon are killed during a chase by the Predator. The atmosphere
+    grows increasingly dangerous and desperate in the jungle environment.
+  id: s_9
+  key_delta: Significant reduction in team strength and increase in threat presence.
+  trigger_event: Mac and Dillon are killed by the Predator while fleeing.
+- description: Billy is killed defending the group; Dutch encounters the Predator
+    again, initiating a firefight during which Poncho is killed. The jungle setting
+    is now a hostile hunting ground with decimated survivors.
+  id: s_10
+  key_delta: Survival stakes increase with continued Predator kills; team members
+    critically reduced.
+  trigger_event: Billy's death and Dutch’s shootout with the Predator where Poncho
+    is killed.
+- description: Dutch realizes the Predator hunts only armed targets and sends the
+    unarmed Anna to extraction. He escapes the Predator by covering himself in mud
+    to mask his heat signature and witnesses the Predator’s true form when its cloak
+    fails underwater.
+  id: s_11
+  key_delta: Dutch gains critical insight into the Predator’s hunting method and visual
+    confirmation of its form.
+  trigger_event: Dutch evades the Predator by using mud while jumping off a waterfall
+    and sees its active camouflage fail.
+- description: Dutch improvises weapons and traps with mud camouflage and lures the
+    Predator by starting a large fire. The jungle is transformed into a battleground
+    marked by traps and flames.
+  id: s_12
+  key_delta: Dutch takes offensive action leveraging knowledge and environment to
+    engage the Predator on his terms.
+  trigger_event: Dutch starts a large fire to bait the Predator.
+- description: The Predator arrives and traps Dutch, discarding its electronic weapons
+    and challenging him to hand-to-hand combat in the jungle clearing.
+  id: s_13
+  key_delta: The combat escalates to a primal, physical duel between Dutch and the
+    Predator.
+  trigger_event: The Predator confronts Dutch and discards its weapons for melee combat.
+- description: Dutch, battered and barely able to move, drops the counterweight of
+    a trap, crushing the Predator. The jungle falls silent after the devastating impact.
+  id: s_14
+  key_delta: The Predator is mortally wounded and defeated by Dutch.
+  trigger_event: Dutch activates the trap that crushes the Predator.
+- description: As Dutch questions the mortally wounded Predator, the creature mimics
+    his question in broken English and activates a self-destruct sequence on its wrist
+    device. Dutch escapes the massive explosion.
+  id: s_15
+  key_delta: Final fatal threat neutralized with Predator’s self-destruction; Dutch
+    survives the explosion.
+  trigger_event: The Predator activates self-destruct and laughs in escalating human-like
+    pitch.
+- description: Dutch and Anna are rescued by helicopter from the jungle area post-explosion,
+    the environment shows the aftermath of the conflict with charred earth and silence.
+  id: s_16
+  key_delta: Survival and extraction of the last team members marking the mission’s
+    conclusion.
+  trigger_event: Rescue helicopter arrives and extracts Dutch and Anna.
