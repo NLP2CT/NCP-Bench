@@ -28,7 +28,7 @@ loads this file automatically:
 python experiments/run.py \
   --spec movie00 \
   --max-turns 1 \
-  --max-tokens 2048 \
+  --max-tokens 8092 \
   --output-dir runs/quickstart
 ```
 
