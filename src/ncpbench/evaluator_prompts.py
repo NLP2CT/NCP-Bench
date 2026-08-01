@@ -159,8 +159,11 @@ def _format_trajectory(context: "TurnAuditContext") -> str:
 def _format_current_node(context: "TurnAuditContext") -> str:
     current = None
     for node in context.trajectory:
-        if node.occurred:
+        if not node.occurred:
             current = node
+            break
+    if current is None and context.trajectory:
+        current = context.trajectory[-1]
     if current is None:
         return "(None)"
     return "\n".join(
@@ -218,11 +221,10 @@ def _format_checker_history(history: object) -> str:
 
 
 def _current_trajectory_node(request: "TrajectoryCheckRequest") -> object | None:
-    current = None
     for node in request.trajectory:
-        if node.occurred:
-            current = node
-    return current
+        if not node.occurred:
+            return node
+    return None
 
 
 def _format_checker_node(node: object | None) -> str:

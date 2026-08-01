@@ -49,9 +49,11 @@ class MetricInputError(ValueError):
 def compute_episode_metrics(result: EpisodeResult) -> EpisodeMetrics:
     """Compute the metrics reported by the paper for one episode result.
 
-    Trajectory progress follows the experiment artifacts: the initially reached
-    trajectory node counts toward the numerator. Commitment satisfaction uses all
-    commitment types, matching the paper tables.
+    Trajectory progress follows the experiment artifacts: a node counts toward
+    the numerator only after its own trigger and key delta have both been
+    judged to have occurred, so progress starts at 0 and reaches 1 only when
+    every node has completed. Commitment satisfaction uses all commitment
+    types, matching the paper tables.
     """
 
     episode = _mapping(result.get("episode"), "episode")

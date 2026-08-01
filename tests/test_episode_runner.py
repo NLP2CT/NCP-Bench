@@ -96,7 +96,7 @@ class EpisodeRunnerTests(unittest.TestCase):
         self.assertIn("f_1: A key is in the lock.", auditor.calls[1][1])
         self.assertIn("f_1: A key is in the lock.", auditor.calls[3][1])
         self.assertIn("f_2: The door is open.", auditor.calls[3][1])
-        self.assertIn("- n_1: status=occurred", auditor.calls[4][1])
+        self.assertIn("- n_0: status=occurred", auditor.calls[4][1])
 
         self.assertFalse(result.has_conflict)
         self.assertEqual(
@@ -107,9 +107,9 @@ class EpisodeRunnerTests(unittest.TestCase):
                 Fact("f_2", "The door is open."),
             ),
         )
-        self.assertEqual([node.occurred for node in result.session.state.trajectory], [True, True])
+        self.assertEqual([node.occurred for node in result.session.state.trajectory], [True, False])
         self.assertEqual([turn.turn_id for turn in result.session.state.history], [-1, 0])
-        self.assertEqual(result.newly_occurred_node_ids, ("n_1",))
+        self.assertEqual(result.newly_occurred_node_ids, ("n_0",))
         self.assertEqual(result.new_satisfaction_ids, ("c_0",))
         self.assertEqual(result.session.pending_fact_updates, PendingFactUpdates())
 

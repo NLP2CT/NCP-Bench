@@ -21,14 +21,14 @@ from ncpbench.runner import (
 
 
 class EpisodeStateTests(unittest.TestCase):
-    def test_initialization_activates_only_the_first_trajectory_node(self) -> None:
+    def test_initialization_leaves_every_trajectory_node_pending(self) -> None:
         state = initialize_episode_state(
             (Fact("f_0", "A sealed door."),),
             (_commitment("c_0", kind="invariant"),),
             (_node("t_0"), _node("t_1")),
         )
 
-        self.assertEqual([node.occurred for node in state.trajectory], [True, False])
+        self.assertEqual([node.occurred for node in state.trajectory], [False, False])
         self.assertEqual(state.facts, (Fact("f_0", "A sealed door."),))
 
     def test_fact_updates_keep_negated_facts_and_stable_collision_rule(self) -> None:
@@ -64,7 +64,7 @@ class EpisodeStateTests(unittest.TestCase):
             state,
             turn,
             _evaluation(add_facts=("The door is open.",), negate_fact_ids=("f_0",)),
-            (TrajectoryAssessment("t_1", True, "The change occurred."),),
+            (TrajectoryAssessment("t_0", True, "The change occurred."),),
             (
                 CommitmentAssessment("c_achievement", "satisfied", "Goal met."),
                 CommitmentAssessment("c_invariant", "pending", "Still active."),
@@ -80,9 +80,9 @@ class EpisodeStateTests(unittest.TestCase):
                 Fact("f_2", "The door is open."),
             ),
         )
-        self.assertEqual([node.occurred for node in transition.state.trajectory], [True, True])
+        self.assertEqual([node.occurred for node in transition.state.trajectory], [True, False])
         self.assertEqual(transition.state.history, (turn,))
-        self.assertEqual(transition.newly_occurred_node_ids, ("t_1",))
+        self.assertEqual(transition.newly_occurred_node_ids, ("t_0",))
         self.assertEqual(transition.new_satisfaction_ids, ("c_achievement",))
         self.assertTrue(all_achievement_commitments_resolved(transition.state))
 

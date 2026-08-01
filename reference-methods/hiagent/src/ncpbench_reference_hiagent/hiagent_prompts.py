@@ -76,10 +76,11 @@ def _template() -> str:
 def _current_node(request: NarratorRequest) -> str:
     if not request.trajectory:
         return "(None)"
-    index = 0
+    index = len(request.trajectory) - 1
     for candidate_index, node in enumerate(request.trajectory):
-        if node.occurred:
+        if not node.occurred:
             index = candidate_index
+            break
     node = request.trajectory[index]
     return "\n".join((f"- node_id: {node.id}", f" | description: {node.description}", f" | trigger: {node.trigger_event}", f" | delta: {node.key_delta}"))
 

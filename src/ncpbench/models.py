@@ -29,9 +29,10 @@ class Commitment:
 class TrajectoryNode:
     """One trajectory milestone and its runtime progress marker.
 
-    ``occurred`` means that the episode has reached this node. The current node's
-    trigger and key delta still need to occur before the runner advances to the
-    next node.
+    ``occurred`` means the node's own trigger and key delta have both been
+    judged to have occurred, completing the node. The current node is the
+    first node that has not yet occurred; no node is occurred when an
+    episode starts.
     """
 
     id: str

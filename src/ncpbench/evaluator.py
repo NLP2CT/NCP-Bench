@@ -202,15 +202,15 @@ class TurnEvaluator:
         )
 
 class TrajectoryChecker:
-    """Advance one position when the current node's trigger and delta occur."""
+    """Complete the current node when its trigger and delta both occur."""
 
     def __init__(self, auditor: AuditorClient, prompts: EvaluationPrompts | None = None) -> None:
         self._auditor = auditor
         self._prompts = prompts or load_evaluation_prompts()
 
     def check(self, request: TrajectoryCheckRequest) -> tuple[TrajectoryAssessment, ...]:
-        current_index = _last_occurred_node_index(request.trajectory)
-        if current_index is None or current_index >= len(request.trajectory) - 1:
+        current_index = _first_pending_node_index(request.trajectory)
+        if current_index is None:
             return ()
 
         prompt = render_trajectory_check(self._prompts, request)
@@ -224,7 +224,7 @@ class TrajectoryChecker:
         reason = f"trigger: {trigger_reason or 'missing'} | delta: {delta_reason or 'missing'}"
         return (
             TrajectoryAssessment(
-                target_node_id=request.trajectory[current_index + 1].id,
+                target_node_id=request.trajectory[current_index].id,
                 occurred=trigger_occurred and delta_occurred,
                 reason=reason,
             ),
@@ -260,12 +260,11 @@ class CommitmentChecker:
         )
 
 
-def _last_occurred_node_index(trajectory: Sequence[TrajectoryNode]) -> int | None:
-    current_index: int | None = None
+def _first_pending_node_index(trajectory: Sequence[TrajectoryNode]) -> int | None:
     for index, node in enumerate(trajectory):
-        if node.occurred:
-            current_index = index
-    return current_index
+        if not node.occurred:
+            return index
+    return None
 
 
 def _parse_fact_update(raw: str) -> FactUpdate:

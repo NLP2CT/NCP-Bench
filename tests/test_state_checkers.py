@@ -28,18 +28,18 @@ class ScriptedAuditor:
 class StateCheckerTests(unittest.TestCase):
     def test_trajectory_checker_preserves_prompt_and_one_step_transition_rule(self) -> None:
         auditor = ScriptedAuditor(
-            ['{"trigger": {"occurred": true, "reason": "The key is revealed."}, "delta": {"occurred": true, "reason": "The door opens."}}']
+            ['{"trigger": {"occurred": true, "reason": "A note appears."}, "delta": {"occurred": true, "reason": "The clue is secured."}}']
         )
 
         assessment = TrajectoryChecker(auditor).check(_trajectory_request())
 
         self.assertEqual(assessment[0].target_node_id, "n1")
         self.assertTrue(assessment[0].occurred)
-        self.assertEqual(assessment[0].reason, "trigger: The key is revealed. | delta: The door opens.")
+        self.assertEqual(assessment[0].reason, "trigger: A note appears. | delta: The clue is secured.")
         self.assertEqual([stage for stage, _ in auditor.calls], ["trajectory_check"])
         self.assertEqual(
             hashlib.sha256(auditor.calls[0][1][0]["content"].encode("utf-8")).hexdigest(),
-            "a91a7e9529f8646a26cc94fccd90f35c7123d5963404ed0b413ce6beb40b34e8",
+            "bdac32c8f48948b6936b43b6f4548d0959edcf8fb00f21467b4ec1341131b01e",
         )
 
     def test_trajectory_checker_rejects_invalid_audit_after_two_retries(self) -> None:

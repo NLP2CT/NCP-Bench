@@ -112,15 +112,15 @@ def initialize_episode_state(
     commitments: Sequence[Commitment],
     trajectory: Sequence[TrajectoryNode],
 ) -> EpisodeState:
-    """Create the initial runner state with the first trajectory node reached.
+    """Create the initial runner state with no trajectory node completed.
 
-    A reached node is the current milestone, not a claim that its trigger and
-    delta have completed.
+    The first node is the current milestone, but it counts toward trajectory
+    progress only after its own trigger and key delta have both occurred.
     """
 
     normalized_facts = _normalize_facts(facts)
     normalized_trajectory = tuple(
-        replace(node, occurred=index == 0) for index, node in enumerate(trajectory)
+        replace(node, occurred=False) for node in trajectory
     )
     return EpisodeState(
         facts=normalized_facts,
@@ -488,8 +488,7 @@ def _next_turn_id(history: Sequence[StoryTurn]) -> int:
 
 
 def _current_node_id(trajectory: Sequence[TrajectoryNode]) -> str | None:
-    current_node: str | None = None
     for node in trajectory:
-        if node.occurred:
-            current_node = node.id
-    return current_node
+        if not node.occurred:
+            return node.id
+    return None

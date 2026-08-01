@@ -93,11 +93,11 @@ class ReferenceNarratorTests(unittest.TestCase):
 
         self.assertEqual(
             hashlib.sha256(build_generation_prompt(request).encode("utf-8")).hexdigest(),
-            "f25d50e582da95f423edc006af1734f0bddc2356b18aebcffcff1e133cd2d446",
+            "36e1ac491e640da0f40cfeda30e65b9c370190605b9717c22928c9189e01455e",
         )
         self.assertEqual(
             hashlib.sha256(build_hiagent_turn_context(request).encode("utf-8")).hexdigest(),
-            "e1abf44c17e2a45be9e5b335366d9ecc53ce9bcaa3a8330bfd9cb24bfcb3de53",
+            "c7ffa63aa79cf9f54af927fd035bd05282baf7b8b86482e17cf7cf3069a4cbf7",
         )
 
         for package in ("baseline", "hiagent"):

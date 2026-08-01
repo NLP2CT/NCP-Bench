@@ -91,13 +91,13 @@ facts, commitments, and reference trajectory used by the runner.
 
 ## Trajectory Progress
 
-The first trajectory node is reached when an episode starts. A reached node is
-the current narrative milestone; its trigger and key delta have not necessarily
-completed. At the end of each successful turn, the trajectory auditor checks
-the current node. When both its trigger and delta have occurred, the next node
-becomes reached. Accordingly, trajectory progress is the number of reached
-nodes divided by the total number of nodes, including the initially reached
-first node.
+The first trajectory node is the current milestone when an episode starts, but
+no node is completed yet. At the end of each successful turn, the trajectory
+auditor checks the current node. When both its trigger and key delta have
+occurred, that node is completed and the next node becomes current.
+Accordingly, trajectory progress is the number of completed nodes divided by
+the total number of nodes: it starts at 0 and reaches 1 only when every node
+has completed.
 
 ## Evaluate A Narrator
 

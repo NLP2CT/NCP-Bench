@@ -71,10 +71,11 @@ def _prompt_template() -> str:
 def _current_node(request: NarratorRequest) -> str:
     if not request.trajectory:
         return "(None)"
-    current_index = 0
+    current_index = len(request.trajectory) - 1
     for index, node in enumerate(request.trajectory):
-        if node.occurred:
+        if not node.occurred:
             current_index = index
+            break
     node = request.trajectory[current_index]
     return "\n".join(
         (

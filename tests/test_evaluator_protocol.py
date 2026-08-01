@@ -67,8 +67,8 @@ class EvaluatorProtocolTests(unittest.TestCase):
         )
         expected_hashes = (
             "c1935d2477b888b6a68a7447f8ad8c4afb5e6eb9dc7fa143e25f68aa935c4cfc",
-            "5342b9d07cc98a9d63b0c79f21a0eaef5dfa4782cb3741f7339e8c22faddf0c9",
-            "5b4c6f240edc2c23af27a0a98e327764ce650d44993a43b72e027b22690a6b26",
+            "995961d21c99c637ff3ed941e7795a0071b509776ad05d589eae4b288ed17e58",
+            "040dc92801505c3d8060852b373cdde7b33b9925d76927e4a66a8ccc268553b7",
         )
 
         self.assertEqual(tuple(hashlib.sha256(prompt.encode("utf-8")).hexdigest() for prompt in rendered), expected_hashes)
