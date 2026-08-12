@@ -1,10 +1,10 @@
-# NCP-Bench
+<h1 align="center">NCP-Bench</h1>
 
 <p align="center">
   <a href="https://arxiv.org/abs/2608.08160"><b>📄 arXiv</b></a> |
   <a href="https://openreview.net/forum?id=JoJUWsQBp0&noteId=cIuEdqlTup"><b>📝 OpenReview</b></a> |
-  <a href="https://icml.cc/virtual/2026/poster/64786"><b>🎓 ICML 2026</b></a> |
-  <a href="https://huggingface.co/papers/2608.08160"><b>🤗 Hugging Face</b></a> |
+  <a href="https://icml.cc/virtual/2026/poster/64786"><b>🎓 ICML</b></a> |
+  <a href="https://huggingface.co/papers/2608.08160"><b>🤗 Daily Papers</b></a> |
   <a href="https://github.com/yingpengma/NCP-Bench"><b>💻 代码</b></a> |
   <a href="#dataset-zh"><b>📦 数据集</b></a>
 </p>
@@ -17,7 +17,7 @@
   <a href="#citation-zh"><b>📝 引用</b></a>
 </p>
 
-English README: [README.md](README.md)
+> English README: [README.md](README.md)
 
 NCP-Bench 是 ICML 2026 论文 **[Can LLM Agents Stick to the Script? A Benchmark for Long-Horizon Consistency in Interactive Narratives](https://arxiv.org/abs/2608.08160)** 的官方代码仓库。
 
@@ -285,13 +285,10 @@ pytest -q
 ## 📝 引用
 
 ```bibtex
-@inproceedings{
-ma2026can,
-title={Can {LLM} Agents Stick to the Script? A Benchmark for Long-Horizon Consistency in Interactive Narratives},
-author={Yingpeng Ma and Jianhao Yan and Bei Shi and Ka Hou Kam and Runnan Wang and Xuebo Liu and Yulong Chen and Yue Zhang and Derek F. Wong},
-booktitle={Forty-third International Conference on Machine Learning},
-year={2026},
-url={https://openreview.net/forum?id=JoJUWsQBp0}
+@inproceedings{macan,
+  title={Can LLM Agents Stick to the Script? Modeling Commitment in Interactive Narratives},
+  author={Ma, Yingpeng and Yan, Jianhao and Shi, Bei and Kam, Ka Hou and Wang, Runnan and Liu, Xuebo and Chen, Yulong and Zhang, Yue and Wong, Derek F},
+  booktitle={Forty-third International Conference on Machine Learning}
 }
 ```
 
