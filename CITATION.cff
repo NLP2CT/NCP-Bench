@@ -27,12 +27,12 @@ authors:
     given-names: Derek F.
 preferred-citation:
   type: conference-paper
-  title: "Can LLM Agents Stick to the Script? Modeling Commitment in Interactive Narratives"
+  title: "Can LLM Agents Stick to the Script? A Benchmark for Long-Horizon Consistency in Interactive Narratives"
   year: 2026
-  collection-title: "Proceedings of the 43rd International Conference on Machine Learning"
-  url: "https://icml.cc/virtual/2026/poster/64786"
+  collection-title: "Forty-third International Conference on Machine Learning"
+  url: "https://openreview.net/forum?id=JoJUWsQBp0"
   conference:
-    name: "43rd International Conference on Machine Learning"
+    name: "Forty-third International Conference on Machine Learning"
   authors:
     - family-names: Ma
       given-names: Yingpeng
