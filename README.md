@@ -1,4 +1,4 @@
-# NCP-Bench
+<h1 align="center">NCP-Bench</h1>
 
 <p align="center">
   <a href="https://arxiv.org/abs/2608.08160"><b>📄 arXiv</b></a> |
