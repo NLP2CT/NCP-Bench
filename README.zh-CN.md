@@ -285,10 +285,11 @@ pytest -q
 ## 📝 引用
 
 ```bibtex
-@inproceedings{macan,
-  title={Can LLM Agents Stick to the Script? Modeling Commitment in Interactive Narratives},
+@article{ma2026can,
+  title={Can LLM Agents Stick to the Script? A Benchmark for Long-Horizon Consistency in Interactive Narratives},
   author={Ma, Yingpeng and Yan, Jianhao and Shi, Bei and Kam, Ka Hou and Wang, Runnan and Liu, Xuebo and Chen, Yulong and Zhang, Yue and Wong, Derek F},
-  booktitle={Forty-third International Conference on Machine Learning}
+  journal={arXiv preprint arXiv:2608.08160},
+  year={2026}
 }
 ```
 
